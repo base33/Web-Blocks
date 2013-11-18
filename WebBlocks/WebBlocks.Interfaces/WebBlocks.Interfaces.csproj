@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9DF2B481-A599-47C0-A664-7AA882949DD3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebBlocks.Interfaces</RootNamespace>
+    <AssemblyName>WebBlocks.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="businesslogic">
+      <HintPath>..\..\Lib\Umbraco V6.1.6\businesslogic.dll</HintPath>
+    </Reference>
+    <Reference Include="cms">
+      <HintPath>..\..\Lib\Umbraco V6.1.6\cms.dll</HintPath>
+    </Reference>
+    <Reference Include="interfaces">
+      <HintPath>..\..\Lib\Umbraco V6.1.6\interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="umbraco">
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Core">
+      <HintPath>..\..\Lib\Umbraco V6.1.6\Umbraco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.MacroEngines">
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.MacroEngines.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.macroRenderings">
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.macroRenderings.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IBlock.cs" />
+    <Compile Include="IContainer.cs" />
+    <Compile Include="IContainerPermissions.cs" />
+    <Compile Include="IContainerRenderer.cs" />
+    <Compile Include="IRenderingEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

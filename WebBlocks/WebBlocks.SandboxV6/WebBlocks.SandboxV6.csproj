@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F52A3F81-1F02-4750-8859-11ADDCDB0FB4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebBlocks.SandboxV6</RootNamespace>
+    <AssemblyName>WebBlocks.SandboxV6</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="interfaces, Version=1.0.5021.24867, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="umbraco, Version=1.0.5021.24870, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Core, Version=1.0.5021.24867, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\Umbraco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.DataLayer, Version=1.0.5021.24868, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.editorControls, Version=1.0.5021.24871, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.editorControls.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.MacroEngines, Version=1.0.5021.24871, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.MacroEngines.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.macroRenderings, Version=1.0.5021.24869, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.macroRenderings.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.providers, Version=1.0.5021.24869, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Web.UI, Version=1.0.5021.24872, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\Umbraco.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.XmlSerializers, Version=1.0.5021.24870, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="UmbracoExamine, Version=0.6.0.24869, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\UmbracoExamine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\Splashes\booting.aspx" />
+    <Content Include="Config\Splashes\noNodes.aspx" />
+    <Content Include="Css\960.css" />
+    <Content Include="Css\global.css" />
+    <Content Include="Css\reset.css" />
+    <Content Include="Css\wysiwyg.css" />
+    <Content Include="Views\Shared\RichTextBlock.cshtml" />
+    <Content Include="Views\Partials\FlexsliderSlideBlock.cshtml" />
+    <Content Include="Views\Shared\BlockPreviewRender.cshtml" />
+    <Content Include="Views\HomePage.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Partials\TopNavigation.cshtml" />
+    <Content Include="Views\Partials\HomeFeatureBlock.cshtml" />
+    <Content Include="Views\Partials\FlexsliderContainerRenderer.cshtml" />
+    <Content Include="Views\Partials\SubNavigationBlock.cshtml" />
+    <Content Include="Views\Shared\LiveEditRender.cshtml" />
+    <None Include="Views\Shared\SurfaceControllerBlock.cshtml" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomContainers\FlexsliderContainer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SurfaceControllers\ContactFormSurfaceController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\404handlers.config" />
+    <Content Include="Config\applications.config" />
+    <Content Include="Config\BaseRestExtensions.config" />
+    <Content Include="Config\ClientDependency.config" />
+    <Content Include="Config\Dashboard.config" />
+    <Content Include="Config\EmbeddedMedia.config" />
+    <Content Include="Config\ExamineIndex.config" />
+    <Content Include="Config\ExamineSettings.config" />
+    <Content Include="Config\feedProxy.config" />
+    <Content Include="Config\FileSystemProviders.config" />
+    <Content Include="Config\log4net.config" />
+    <Content Include="Config\metablogConfig.config" />
+    <Content Include="Config\restExtensions.config" />
+    <Content Include="Config\scripting.config" />
+    <Content Include="Config\Skinning.config" />
+    <Content Include="Config\tinyMceConfig.config" />
+    <Content Include="Config\trees.config" />
+    <Content Include="Config\umbracoSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\UrlRewriting.config" />
+    <Content Include="Config\xsltExtensions.config" />
+    <Content Include="Views\Global.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config.transform" />
+    <Content Include="Views\ContentPage_LeftMenu.cshtml" />
+    <Content Include="Views\Partials\ContactForm_SurfaceController.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MacroScripts\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="Views\MacroPartials\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebBlocks.Interfaces\WebBlocks.Interfaces.csproj">
+      <Project>{9df2b481-a599-47c0-a664-7aa882949dd3}</Project>
+      <Name>WebBlocks.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebBlocks.Model\WebBlocks.Model.csproj">
+      <Project>{7198e4c7-f43c-43cc-b2d5-e7e903c1277b}</Project>
+      <Name>WebBlocks.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebBlocks.Utilities\WebBlocks.Utilities.csproj">
+      <Project>{81284ffc-c9d3-4ca1-9683-1adb0b80ead5}</Project>
+      <Name>WebBlocks.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebBlocks\WebBlocks.csproj">
+      <Project>{71be79b7-8148-446b-b44b-8f12d1eaf734}</Project>
+      <Name>WebBlocks</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2296</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50369/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(SolutionDir)..\lib\Umbraco V6.1.6\*.dll" "$(ProjectDir)$(OutDir)"
+
+
+copy "$(SolutionDir)WebBlocks\DataTypes\WebBlocks\WebBlocks.ascx" "$(ProjectDir)usercontrols\webblocks\"
+copy "$(SolutionDir)WebBlocks\Views\LiveEditRender.cshtml" "$(ProjectDir)views\shared\"
+
+copy "$(SolutionDir)WebBlocks\Scripts\WebBlocks.js" "$(ProjectDir)umbraco\plugins\webblocks\scripts\"
+copy "$(SolutionDir)WebBlocks\Scripts\WebBlocks.Models.js" "$(ProjectDir)umbraco\plugins\webblocks\scripts\"
+copy "$(SolutionDir)WebBlocks\Scripts\WebBlocks.LiveEdit.js" "$(ProjectDir)umbraco\plugins\webblocks\scripts\"
+copy "$(SolutionDir)WebBlocks\Scripts\libraries\*.css" "$(ProjectDir)umbraco\plugins\webblocks\scripts\libraries\"
+
+copy "$(SolutionDir)WebBlocks\CSS\WebBlocks.css" "$(ProjectDir)umbraco\plugins\webblocks\css\"
+copy "$(SolutionDir)WebBlocks\CSS\WebBlocks.LiveEdit.css" "$(ProjectDir)umbraco\plugins\webblocks\css\"
+copy "$(SolutionDir)WebBlocks\CSS\libraries\*.css" "$(ProjectDir)umbraco\plugins\webblocks\css\libraries\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

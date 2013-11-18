@@ -1,0 +1,35 @@
+﻿
+@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+
+<div class="grid_12 homeSlider">
+    <div class='flexslider'>
+        <ul class='slides'>
+
+            @foreach (NodeBlock block in (List<IBlock>)ViewData["Blocks"])
+            {
+                <li>
+                    <img src="@Umbraco.Media(@block.Content.image).Url" alt="@block.Content.Name" />
+                    <span>
+					    <div class="sliderText">
+						    @if(block.Content.title != "") {
+							    <div class="title">
+								    @if(block.Content.link != "") 
+                                    { 
+                                        <a href="@Umbraco.TypedContent(block.Content.link).Url">@block.Content.title</a> 
+                                    }
+								    else 
+                                    { 
+                                        @block.Content.title 
+                                    }
+							    </div>
+						    }
+							
+						    @(block.Content.caption != "" ? block.Content.caption : "")
+					    </div>
+				    </span>
+                </li>
+            }
+
+        </ul>
+    </div>
+</div>

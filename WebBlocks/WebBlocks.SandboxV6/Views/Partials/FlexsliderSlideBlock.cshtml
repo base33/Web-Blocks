@@ -1,0 +1,9 @@
+﻿
+@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+
+
+@{
+    WebBlocks.CssClasses.Add("flexsliderBlockPreview");
+    <img alt="Slide" src="@Umbraco.Media(@CurrentBlock.image).Url" class="grid_2"/>
+    <span>Slide</span>
+}

@@ -1,0 +1,26 @@
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+
+@{ 
+	var level = 1;
+	var ulClass = "";
+    var parent = CurrentPage.AncestorOrSelf(level);
+	if (parent != null) 
+    {
+		var homeSelected = parent.Id == CurrentPage.Id ? " class=\"selected\"" : "";
+		
+		<ul @Html.Raw(ulClass)>
+			<li @Html.Raw(homeSelected)>
+				<a href="@parent.Url">Home</a>
+			</li>
+			
+			@foreach (var item in parent.Children) 
+            {
+                var selected = Array.IndexOf(CurrentPage.Path.Split(','), item.Id.ToString()) >= 0 ? " class=\"selected\"" : "";
+				<li @Html.Raw(selected)>
+					<a href="@item.Url">@item.Name</a>
+				</li>
+			}
+		</ul>
+    }
+}
+

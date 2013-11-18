@@ -1,0 +1,43 @@
+﻿@using WebBlocks.SandboxV6.CustomContainers
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    Layout = "Global.cshtml";
+}
+
+
+@section Content {
+	<div class="container_12 clearfix">
+            @Html.Container(new Container {
+                Name = "fullWidthSliderContainer",
+                CssClass = "contentBlock_12 homeSlider",
+                ContainerRenderer = new FlexsliderContainer(),
+                Blocks = new List<IBlock>
+                    {
+                        new NodeBlock(1075),
+                        new NodeBlock(1080)
+                    },
+                ContainerPermissions = new AllowedBlocks("flexsliderSlideBlock")
+            })
+
+        @Html.Container(new Container {
+                Name = "ContentContainer",
+                CssClass = "contentBlock_8",
+                Blocks = new List<IBlock>
+                    {
+                        new NodeBlock { Id = 1059, Class = "grid_8" }
+                    },
+                DynamicWysiwygClass = "grid_8"
+            })
+
+        @Html.Container(new Container {
+                Name = "LeftWidgetContainer",
+                CssClass = "contentBlock_4",
+                Blocks = new List<IBlock>
+                    {
+                        new NodeBlock(1064)
+                    },
+                DynamicWysiwygClass = "grid_4"
+            })
+    </div>
+}

@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{71BE79B7-8148-446B-B44B-8F12D1EAF734}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebBlocks</RootNamespace>
+    <AssemblyName>WebBlocks</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="businesslogic">
+      <HintPath>..\..\Lib\Umbraco V6.1.6\businesslogic.dll</HintPath>
+    </Reference>
+    <Reference Include="cms">
+      <HintPath>..\..\Lib\Umbraco V6.1.6\cms.dll</HintPath>
+    </Reference>
+    <Reference Include="interfaces">
+      <HintPath>..\..\Lib\Umbraco V6.1.6\interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="umbraco">
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Core, Version=1.0.5021.24867, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\Umbraco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.DataLayer, Version=1.0.5021.24868, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.editorControls, Version=1.0.5021.24871, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.editorControls.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.MacroEngines, Version=1.0.5021.24871, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.MacroEngines.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.macroRenderings, Version=1.0.5021.24869, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.macroRenderings.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.providers, Version=1.0.5021.24869, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Web.UI, Version=1.0.5021.24872, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\Umbraco.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.XmlSerializers, Version=1.0.5021.24870, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="UmbracoExamine, Version=0.6.0.24869, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\UmbracoExamine.dll</HintPath>
+    </Reference>
+    <Reference Include="UrlRewritingNet.UrlRewriter">
+      <HintPath>..\..\Lib\Umbraco V6.1.6\UrlRewritingNet.UrlRewriter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\Libraries\jeegoocontext.css" />
+    <Content Include="CSS\Libraries\jquery-ui.custom.css" />
+    <Content Include="CSS\Libraries\jquery.sidr.dark.css" />
+    <Content Include="CSS\WebBlocks.css" />
+    <Content Include="DataTypes\WebBlocks\WebBlocks.ascx" />
+    <TypeScriptCompile Include="Scripts\jQuery.Definition.ts" />
+    <TypeScriptCompile Include="Scripts\WebBlocks.Models.ts" />
+    <TypeScriptCompile Include="Scripts\WebBlocks.ts" />
+    <TypeScriptCompile Include="Scripts\jQuery.JeeGooContext.Definition.ts" />
+    <Content Include="Scripts\Libraries\jQuery.jeegoocontext.js" />
+    <Content Include="Scripts\Libraries\jquery.sidr.min.js" />
+    <Content Include="Scripts\Libraries\WebBlocks.Old.js" />
+    <TypeScriptCompile Include="Scripts\WebBlocks.LiveEdit.ts" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\WebBlocksAPI.cs" />
+    <Compile Include="BaseService\WebBlocksBase.cs" />
+    <Compile Include="Extensions\HtmlContainerExtension.cs" />
+    <Compile Include="DataTypes\WebBlocks\WebBlocksPreValuesAccessor.cs" />
+    <Compile Include="DataTypes\WebBlocks\WebBlocks.ascx.cs">
+      <DependentUpon>WebBlocks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataTypes\WebBlocks\WebBlocks.ascx.designer.cs">
+      <DependentUpon>WebBlocks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DataTypes\WebBlocks\WebBlocksCustomControl.cs" />
+    <Compile Include="DataTypes\WebBlocks\WebBlocksDataType.cs" />
+    <Compile Include="DataTypes\WebBlocks\WebBlocksPrevalueEditor.cs" />
+    <Compile Include="Extensions\HtmlWebBlocksBuilderExtension.cs" />
+    <Compile Include="Extensions\HtmlWebBlocksLiveEdit.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ContainerProvider.cs" />
+    <Compile Include="Providers\PublishedContentProvider.cs" />
+    <Compile Include="RemovePreviewCookie.ashx.cs">
+      <DependentUpon>RemovePreviewCookie.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Serialisation\ContainersSerialiser.cs" />
+    <Compile Include="Serialisation\JavascriptConverters\ContainersConverter.cs" />
+    <Compile Include="SurfaceControllers\BlockRenderSurfaceController.cs" />
+    <Compile Include="Views\BlockView.cs" />
+    <Compile Include="Views\RenderingEngines\PartialViewRenderingEngine.cs" />
+    <Compile Include="Views\RenderingEngines\RazorMacroRenderingEngine.cs" />
+    <Compile Include="ViewTemplates\WebBlocksTemplatePage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RemovePreviewCookie.ashx" />
+    <Content Include="Views\WebBlockViews\BlockPreviewRender.cshtml" />
+    <Content Include="Views\WebBlockViews\LiveEditRender.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebBlocks.Interfaces\WebBlocks.Interfaces.csproj">
+      <Project>{9df2b481-a599-47c0-a664-7aa882949dd3}</Project>
+      <Name>WebBlocks.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebBlocks.Model\WebBlocks.Model.csproj">
+      <Project>{7198e4c7-f43c-43cc-b2d5-e7e903c1277b}</Project>
+      <Name>WebBlocks.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebBlocks.Utilities\WebBlocks.Utilities.csproj">
+      <Project>{81284ffc-c9d3-4ca1-9683-1adb0b80ead5}</Project>
+      <Name>WebBlocks.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Target Name="BeforeBuild">
+    <Exec Command="&quot;$(PROGRAMFILES)\Microsoft SDKs\TypeScript\tsc&quot; @(TypeScriptCompile ->'&quot;%(fullpath)&quot;', ' ')" />
+  </Target>
+  <Target Name="BeforeBuild">
+    <Exec Command="&quot;$(PROGRAMFILES)\Microsoft SDKs\TypeScript\tsc&quot; @(TypeScriptCompile ->'&quot;%(fullpath)&quot;', ' ')" />
+  </Target>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55390</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1762/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES3</TypeScriptTarget>
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptTarget>ES3</TypeScriptTarget>
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
