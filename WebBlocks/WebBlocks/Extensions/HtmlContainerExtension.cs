@@ -121,6 +121,9 @@ namespace WebBlocks.Extensions
             //if were not in the builder remove all template blocks that have been deleted
             if (!WebBlocksUtility.IsInBuilder)
                 blocks.RemoveAll(b => b.IsDeleted == true);
+
+            //remove any blocks that have been deleted from Umbraco
+            blocks.RemoveAll(b => b is NodeBlock && ((NodeBlock)b).Content == null);
         }
 
         /// <summary>

@@ -25,7 +25,23 @@
 </script>
 
 @{
+    @* set blocks root node so that we can build the left tree *@
     IPublishedContent blocksRootNode = new WebBlocks.Utilities.Umbraco.DynamicContent((int)ViewData["wbBlocksRootNode"]);
+    
+    @* build up the stylesheets styles *@
+    var stylesheetId = (int)ViewData["wbStylesheetId"];
+
+    var stylesheet = new umbraco.cms.businesslogic.web.StyleSheet(stylesheetId);
+    var wysiwygStyleSheet = string.Format("/css/{0}.css", stylesheet.Text);
+    string wysiwygStyles = "";
+    foreach (var style in stylesheet.Properties)
+    {
+        wysiwygStyles += string.Format("{0}={1};", style.Text, style.Alias);
+    }
+    wysiwygStyles = wysiwygStyles.TrimEnd(',');
+    
+    
+    
     WebBlocks.Utilities.WebBlocks.WebBlocksUtility.IsInBuilder = true;
 }
 
@@ -130,8 +146,8 @@
             umbraco_advancedMode: true,
             umbraco_maximumDefaultImageWidth: "500",
             language: "en",
-            content_css: "<%= selectedRichTextCss %>",
-            theme_umbraco_styles: "<%= selectedRichTextStyles %>",
+            content_css: "@wysiwygStyleSheet",
+            theme_umbraco_styles: "@wysiwygStyles",
             theme_umbraco_buttons1: "code,separator,undo,redo,cut,copy,pasteword,separator,umbracocss,separator,bold,italic,separator,justifyleft,justifycenter,justifyright,separator,bullist,numlist,outdent,indent,separator,link,unlink,anchor,separator,image,separator,charmap,table",
             theme_umbraco_buttons2: "",
             theme_umbraco_buttons3: "",

@@ -114,6 +114,7 @@ $(document).ready(function () {
 
     //double click edit block event
     $('.block').live('dblclick', function () {
+        currentActiveBlock = $(this);
         editBlock($(this));
     });
 
@@ -221,7 +222,7 @@ $(document).ready(function () {
         var blockId = $(blockElement).attr("wbid");
         var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?pageId=" + currentNodeId + "&blockId=" + blockId;
         $.get(url, function (data) {
-            $(wbCanvas + " .block[wbid='" + blockId + "']").each(function () {
+            $(".container .block[wbid='" + blockId + "']").each(function () {
                 $(this).html($(data).html());
             });
         });
