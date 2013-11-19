@@ -102,6 +102,14 @@ $(document).ready(function () {
     // END OF DRAGGING SUPPORT FOR UMBRACO
     //////////////////////////////////////////
 
+    $(".sidr li a").click(function () {
+        var subMenu = $(this).parent().find("ul");
+
+        if (subMenu.length > 0) {
+            $(subMenu[0]).slideToggle(200);
+        }
+    });
+
     $(".container").sortable({ revert: true });
 
     //double click edit block event

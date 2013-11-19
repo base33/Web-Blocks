@@ -29,14 +29,13 @@
     WebBlocks.Utilities.WebBlocks.WebBlocksUtility.IsInBuilder = true;
 }
 
-<div style="position:fixed;top:0;left:0;z-index:10000;width:100%;">
-    <a id="wbBlockMenuDisplay" href="#sidr" style="box-shadow:0px 1px 12px rgba(50, 50, 50, 0.75);-moz-box-shadow:0px 1px 12px rgba(50, 50, 50, 0.75);-webkit-box-shadow: 0px 1px 12px rgba(50, 50, 50, 0.75);float:left;padding:10px 10px 0 10px;height:35px;background:#333333;color:white;">Open Blocks</a> 
-    <a id="wbSave" href="#" style="box-shadow:0px 1px 12px rgba(50, 50, 50, 0.75);-moz-box-shadow:0px 1px 12px rgba(50, 50, 50, 0.75);-webkit-box-shadow: 0px 1px 12px rgba(50, 50, 50, 0.75);margin-left:5px;float:left;padding:10px 20px 0 20px;height:35px;vertical-align: middle;background:#333333;color:white;">Save</a> 
-    <a id="wbSaveAndPublish" href="#" style="box-shadow:0px 1px 12px rgba(50, 50, 50, 0.75);-moz-box-shadow:0px 1px 12px rgba(50, 50, 50, 0.75);-webkit-box-shadow: 0px 1px 12px rgba(50, 50, 50, 0.75);margin-left:5px;float:left;padding:10px 20px 0 20px;height:35px;vertical-align: middle;background:#333333;color:white;">Save & Publish</a> 
-    <a id="wbDelete" href="#" style="background:url('/umbraco/plugins/webblocks/images/trash.png') no-repeat black !important;background-position:center !important;padding:0px 40px 15px;box-shadow:0px 1px 12px rgba(50, 50, 50, 0.75);-moz-box-shadow:0px 1px 12px rgba(50, 50, 50, 0.75);-webkit-box-shadow: 0px 1px 12px rgba(50, 50, 50, 0.75);margin-left:5px;float:right;height:50px;vertical-align: middle;background:#333333;color:white;">
-        
-    </a>
-    <a id="wbExit" href="@Request.Url.AbsoluteUri.Split('?').First()" style="box-shadow:0px 1px 12px rgba(50, 50, 50, 0.75);-moz-box-shadow:0px 1px 12px rgba(50, 50, 50, 0.75);-webkit-box-shadow: 0px 1px 12px rgba(50, 50, 50, 0.75);margin-left:5px;float:left;padding:10px 20px 0 20px;height:35px;vertical-align: middle;background:#333333;color:white;">Exit Live Edit</a> 
+<div id="wbLiveEditNav">
+    <a id="wbBlockMenuDisplay" href="#sidr" class="button">Open Blocks</a> 
+    <a id="wbSave" href="#" class="button">Save</a> 
+    <a id="wbSaveAndPublish" href="#" class="button">Save & Publish</a> 
+    <a id="wbExit" href="@Request.Url.AbsoluteUri.Split('?').First()" class="button">Exit Live Edit</a>
+    <a id="wbDelete" href="#" class="button trash"></a>
+    
 </div>
 
 @* render the menu where blocks can be dragged from *@
@@ -91,7 +90,7 @@
 {
     if (blockParent.Children.Any())
     {
-        <ul>
+        <ul style="display:none;">
             @foreach (var block in blockParent.Children)
             {
                 string icon = iconProvider[block.DocumentTypeAlias];

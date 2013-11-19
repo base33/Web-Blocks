@@ -30,7 +30,7 @@ namespace WebBlocks.Model
             Id = 0;
             Class = "";
             Attributes = new Dictionary<string, string>();
-            IsTemplateBlock = true;
+            IsTemplateBlock = false;
             IsDeleted = false;
         }
     }

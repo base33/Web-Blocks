@@ -22,6 +22,7 @@ using Umbraco.Web.Models;
 using WebBlocks.Utilities.Umbraco;
 using System.IO;
 using System.Web.Mvc.Html;
+using WebBlocks.API;
 
 namespace WebBlocks.Views
 {
@@ -31,23 +32,29 @@ namespace WebBlocks.Views
         /// Renders the block
         /// </summary>
         /// <returns>rendered html for the block</returns>
-        public void Render(Block block, HtmlHelper html, bool renderContainer = true)
+        public string Render(Block block, HtmlHelper html, bool renderContainer = true)
         {
             if (!HttpContext.Current.Response.IsClientConnected)
-                return;
+                return "";
 
             if (block is NodeBlock)
-                RenderNodeBlock(block as NodeBlock, html, renderContainer);
+                return RenderNodeBlock(block as NodeBlock, html, renderContainer);
             else
-                RenderWysiwygBlock(block as WysiwygBlock, html);
+                return RenderWysiwygBlock(block as WysiwygBlock, html);
         }
 
-        protected void RenderNodeBlock(NodeBlock block, HtmlHelper html, bool renderContainer)
+        protected string RenderNodeBlock(NodeBlock block, HtmlHelper html, bool renderContainer)
         {
+            //initialise WebBlocksAPI
+            WebBlocksAPI blockInstanceAPI = new WebBlocksAPI();
+            blockInstanceAPI.CssClasses = new List<string>();
+            blockInstanceAPI.BlockElement = "";
+            blockInstanceAPI.BlockAttributes = new Dictionary<string, string>();
+
             IRenderingEngine renderingEngine = ResolveRenderingEngine(block);
 
             //if rendering engine is null then the document doesn't exist anymore
-            if (renderingEngine == null) return;
+            if (renderingEngine == null || block.Content == null) return "";
 
             //set the block model for the view to access
             WebBlocksUtility.CurrentBlockContent = block.Content;
@@ -60,7 +67,14 @@ namespace WebBlocks.Views
             //render
             string renderedContent = renderingEngine.Render(html);
 
-            List<string> CssClasses = CacheHelper.Get<List<string>>("wbCssClasses") ?? new List<string>();
+            List<string> CssClasses = blockInstanceAPI.CssClasses;
+            
+
+            string blockElement = blockInstanceAPI.BlockElement ?? "div";
+            blockElement = blockElement != "" ? blockElement : "div";
+
+            Dictionary<string, string> blockAttributeDictionary = blockInstanceAPI.BlockAttributes;
+            string blockAttributes = string.Join(" ", blockAttributeDictionary.Keys.Select(c => c + "='" + blockAttributeDictionary[c] + "'"));
 
             string blockClass = string.Format("{0}{1}{0}{2}{3}{4}", 
                 block.Class.Length > 0 ? " " : "", 
@@ -71,13 +85,13 @@ namespace WebBlocks.Views
             blockClass = WebBlocksUtility.IsInBuilder ? "block " + blockClass : blockClass;
 
             if (renderContainer)
-                renderedContent = string.Format("<div class='{0}'{1}{2}{3}>{4}</div>", 
-                    blockClass, blockIdAttribute, blockTemplateAttribute, blockDeletedAttribute, renderedContent);
+                renderedContent = string.Format("<{0} class='{1}'{2}{3}{4}{5}>{6}</{0}>", 
+                    blockElement, blockClass, blockIdAttribute, blockTemplateAttribute, blockDeletedAttribute, blockAttributes, renderedContent);
 
-            html.ViewContext.Writer.Write(renderedContent);
+            return renderedContent;
         }
 
-        protected void RenderWysiwygBlock(WysiwygBlock block, HtmlHelper html)
+        protected string RenderWysiwygBlock(WysiwygBlock block, HtmlHelper html)
         {
             string webBlocksId = WebBlocksUtility.IsInBuilder ? string.Format(" wbid='{0}'", block.Id) : "";
 
@@ -89,7 +103,7 @@ namespace WebBlocks.Views
                 string.Format(" templateblock='{0}'", block.IsTemplateBlock.ToString().ToLower()) : "";
             string blockDeletedAttribute = WebBlocksUtility.IsInBuilder && block.IsDeleted ? " deletedBlock='deleted' style='display:none;visibilty:hidden;'" : "";
 
-            html.ViewContext.Writer.Write("<div{0} class='{1}'{2}{3}>{4}</div>", webBlocksId, blockClass, blockTemplateAttribute, blockDeletedAttribute,
+            return string.Format("<div{0} class='{1}'{2}{3}>{4}</div>", webBlocksId, blockClass, blockTemplateAttribute, blockDeletedAttribute,
                 HttpUtility.UrlDecode(block.Content));
         }
 

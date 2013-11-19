@@ -86,6 +86,14 @@ $(document).ready(function () {
         draggedEl = undefined;
     });
 
+    $(".sidr li a").click(function () {
+        var subMenu = $(this).parent().find("ul");
+
+        if (subMenu.length > 0) {
+            $(subMenu[0]).slideToggle(200);
+        }
+    });
+
     $(".container").sortable({ revert: true });
 
     $('.block').live('dblclick', function () {

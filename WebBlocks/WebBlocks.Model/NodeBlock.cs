@@ -20,9 +20,10 @@ namespace WebBlocks.Model
             {
                 if (content == null)
                 {
-                    content = new DynamicPublishedContent(WebBlocksUtility.IsInBuilder ?
-                        new DynamicContent(UmbracoContext.Current.Application.Services.ContentService.GetById(Id)) :
-                        new UmbracoHelper(UmbracoContext.Current).TypedContent(Id));
+                    var temp = WebBlocksUtility.IsInBuilder ? new DynamicContent(UmbracoContext.Current.Application.Services.ContentService.GetById(Id)) :
+                        new UmbracoHelper(UmbracoContext.Current).TypedContent(Id);
+                    if(temp != null)
+                        content = new DynamicPublishedContent(temp);
                 }
                 return content;
             }

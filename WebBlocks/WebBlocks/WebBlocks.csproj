@@ -122,6 +122,7 @@
     <Content Include="CSS\Libraries\jquery-ui.custom.css" />
     <Content Include="CSS\Libraries\jquery.sidr.dark.css" />
     <Content Include="CSS\WebBlocks.css" />
+    <Content Include="CSS\WebBlocks.LiveEdit.css" />
     <Content Include="DataTypes\WebBlocks\WebBlocks.ascx" />
     <TypeScriptCompile Include="Scripts\jQuery.Definition.ts" />
     <TypeScriptCompile Include="Scripts\WebBlocks.Models.ts" />

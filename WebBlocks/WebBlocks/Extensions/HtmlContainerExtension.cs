@@ -54,7 +54,14 @@ namespace WebBlocks.Extensions
 
         private static void RenderStandardContainer(IContainer container, HtmlHelper<RenderModel> html)
         {
+            string renderedBlocks = "";
             string containerPermissionAttr = WebBlocksUtility.IsInBuilder ? BuildContainerPermissionsAttr(container.ContainerPermissions) : "";
+
+            BlockView blockView = new BlockView();
+            foreach (Block block in container.Blocks)
+            {
+                renderedBlocks += blockView.Render(block, html);
+            }
 
             html.ViewContext.Writer.Write("<{0}{1}{2}{3}{4}{5}>",
                                           container.Element,
@@ -65,11 +72,7 @@ namespace WebBlocks.Extensions
                                                 string.Format(" dynamicWysiwygClass='{0}'", container.DynamicWysiwygClass) : "",
                                           BuildHtmlAttrString(container.Attributes));
 
-            BlockView blockView = new BlockView();
-            foreach (Block block in container.Blocks)
-            {
-                blockView.Render(block, html);
-            }
+            html.ViewContext.Writer.Write(renderedBlocks);
 
             html.ViewContext.Writer.Write("</{0}>", container.Element);
         }

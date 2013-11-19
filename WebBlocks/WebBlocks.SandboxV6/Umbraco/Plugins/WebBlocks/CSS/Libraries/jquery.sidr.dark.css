@@ -12,6 +12,7 @@ font-size:15px;
 background:#333;
 color:#fff;
 box-shadow: -6px 0px 34px black;
+border-right:2px solid #292929 !important;
 }
 
 .sidr .sidr-inner {
@@ -67,7 +68,6 @@ margin:0;
 }
 
 .sidr ul li:hover,.sidr ul li.active,.sidr ul li.sidr-class-active {
-border-top:none;
 line-height:48px;
 }
 
@@ -93,7 +93,6 @@ border-bottom:none;
 }
 
 .sidr ul li ul li:hover,.sidr ul li ul li.active,.sidr ul li ul li.sidr-class-active {
-border-top:none;
 line-height:40px;
 }
 
@@ -101,6 +100,30 @@ line-height:40px;
 color:rgba(255,255,255,0.8);
 padding-left:30px;
 }
+
+.sidr ul li ul li ul {
+border-bottom:none;
+margin:0;
+}
+
+.sidr ul li ul li ul li {
+line-height:40px;
+font-size:13px;
+}
+
+.sidr ul li ul li ul li:last-child {
+border-bottom:none;
+}
+
+.sidr ul li ul li ul li:hover,.sidr ul li ul li ul li.active,.sidr ul li ul li ul li.sidr-class-active {
+line-height:40px;
+}
+
+.sidr ul li ul li ul li a,.sidr ul li ul li ul li span {
+color:rgba(255,255,255,0.8);
+padding-left:45px;
+}
+
 
 .sidr form {
 margin:0 15px;
@@ -150,3 +173,6 @@ margin-left:15px;
 margin-right:15px;
 }
 
+.sidr a:hover {
+    background-color:#262626 !important;
+}
