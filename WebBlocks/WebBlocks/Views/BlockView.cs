@@ -103,7 +103,7 @@ namespace WebBlocks.Views
                 string.Format(" templateblock='{0}'", block.IsTemplateBlock.ToString().ToLower()) : "";
             string blockDeletedAttribute = WebBlocksUtility.IsInBuilder && block.IsDeleted ? " deletedBlock='deleted' style='display:none;visibilty:hidden;'" : "";
 
-            return string.Format("<div{0} class='{1}'{2}{3}>{4}</div>", webBlocksId, blockClass, blockTemplateAttribute, blockDeletedAttribute,
+            return string.Format("<{0}{1} class='{2}'{3}{4}>{5}</div>", block.Element, webBlocksId, blockClass, blockTemplateAttribute, blockDeletedAttribute,
                 HttpUtility.UrlDecode(block.Content));
         }
 

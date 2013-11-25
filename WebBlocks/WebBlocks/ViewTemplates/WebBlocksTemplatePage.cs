@@ -25,7 +25,7 @@ namespace WebBlocks.ViewTemplates
                     }
                     else
                     {
-                        WebBlocksUtility.CurrentPageContent = new DynamicPublishedContent((new UmbracoHelper(UmbracoContext)).TypedContent(UmbracoContext.Current.PageId));
+                        WebBlocksUtility.CurrentPageContent = new DynamicPublishedContent((new UmbracoHelper(UmbracoContext)).TypedContent(UmbracoContext.Current.PageId)).AsDynamic();
                     }
                 }
 

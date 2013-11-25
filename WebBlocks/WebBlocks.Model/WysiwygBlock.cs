@@ -9,5 +9,6 @@ namespace WebBlocks.Model
     public class WysiwygBlock : Block, IBlock
     {
         public string Content;
+        public string Element = "div";
     }
 }

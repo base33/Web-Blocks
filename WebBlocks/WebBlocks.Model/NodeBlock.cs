@@ -24,6 +24,15 @@ namespace WebBlocks.Model
                         new UmbracoHelper(UmbracoContext.Current).TypedContent(Id);
                     if(temp != null)
                         content = new DynamicPublishedContent(temp);
+
+                    if (WebBlocksUtility.IsInBuilder || UmbracoContext.Current.InPreviewMode)
+                    {
+                        content = new DynamicPublishedContent(new DynamicContent(Id)).AsDynamic();
+                    }
+                    else
+                    {
+                        content = new DynamicPublishedContent((new UmbracoHelper(UmbracoContext.Current)).TypedContent(Id)).AsDynamic();
+                    }
                 }
                 return content;
             }

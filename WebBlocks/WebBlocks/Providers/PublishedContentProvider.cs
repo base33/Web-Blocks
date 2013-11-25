@@ -11,12 +11,12 @@ namespace WebBlocks.Providers
     {
         public static DynamicPublishedContent Load(int nodeId)
         {
-            return new DynamicPublishedContent(new DynamicContent(nodeId));
+            return new DynamicPublishedContent(new DynamicContent(nodeId)).AsDynamic();
         }
 
         public static DynamicPublishedContent Load(string nodeId)
         {
-            return new DynamicPublishedContent(new DynamicContent(int.Parse(nodeId)));
+            return Load(int.Parse(nodeId));
         }
     }
 }

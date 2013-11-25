@@ -3,6 +3,7 @@
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 @{
+    if(umbraco.BusinessLogic.User.GetCurrent() == null) { return; }
     if (Request.QueryString["LE"] == null)
     { 
         <div style="position:fixed;top:0;left:0;z-index:10000;width:100%;">
@@ -16,6 +17,7 @@
 <link type="text/css" rel="stylesheet" href="/umbraco/plugins/webblocks/css/libraries/jquery.sidr.dark.css" />
 <link type="text/css" rel="stylesheet" href="/umbraco/plugins/webblocks/css/webblocks.liveedit.css" />
 
+<script type="text/javascript" src="https://raw.github.com/furf/jquery-ui-touch-punch/master/jquery.ui.touch-punch.js"></script>
 <script type="text/javascript" src="/umbraco/plugins/tinymce3/tinymce3tinymceCompress.aspx?themes=umbraco&plugins=contextmenu,umbracomacro,noneditable,inlinepopups,table,advlink,media,paste,spellchecker,umbracoimg,umbracocss&languages=en"></script>
 <script type="text/javascript" src="/umbraco/plugins/webblocks/scripts/libraries/jquery.sidr.min.js"></script>
 <script type="text/javascript" src="/umbraco/plugins/webblocks/scripts/webblocks.models.js"></script>
@@ -188,4 +190,5 @@
 
 <!-- NOTES:
     http://stackoverflow.com/questions/3279477/ipad-drag-and-drop
+http://stackoverflow.com/questions/4755505/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
      -->
