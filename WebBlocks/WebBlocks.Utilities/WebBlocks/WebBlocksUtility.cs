@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Umbraco.Core.Models;
 using Umbraco.Web;
 using Umbraco.Web.Models;
 using WebBlocks.Utilities.Cache;
@@ -32,6 +33,12 @@ namespace WebBlocks.Utilities.WebBlocks
         {
             get { return CacheHelper.Get<DynamicPublishedContent>("wbCurrentBlockContent"); }
             set { CacheHelper.Add("wbCurrentBlockContent", value); }
+        }
+
+        public static IPublishedContent CurrentPageIPublishedContent
+        {
+            get { return CacheHelper.Get<IPublishedContent>("wbCurrentPageIPublishedContent"); }
+            set { CacheHelper.Add("wbCurrentPageIPublishedContent", value); }
         }
     }
 }

@@ -26,6 +26,7 @@ namespace WebBlocks.Extensions
             {
                 WebBlocksUtility.CurrentPageNodeId = UmbracoContext.Current.PageId ?? 0;
                 WebBlocksUtility.CurrentPageContent = PublishedContentProvider.Load(UmbracoContext.Current.PageId ?? 0);
+                WebBlocksUtility.CurrentPageIPublishedContent = new UmbracoHelper(UmbracoContext.Current).TypedContent(UmbracoContext.Current.PageId);
             }
         }
 
@@ -59,7 +60,8 @@ namespace WebBlocks.Extensions
             BlockView blockView = new BlockView();
             foreach (Block block in container.Blocks)
             {
-                renderedBlocks += blockView.Render(block, html);
+                string renderedBlock = blockView.Render(block, html);
+                renderedBlocks += renderedBlock ?? "";
             }
 
             html.ViewContext.Writer.Write("<{0}{1}{2}{3}{4}{5}>",

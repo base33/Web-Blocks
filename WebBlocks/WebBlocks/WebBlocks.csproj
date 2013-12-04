@@ -153,7 +153,6 @@
     <Compile Include="Extensions\HtmlWebBlocksLiveEdit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ContainerProvider.cs" />
-    <Compile Include="Providers\PublishedContentProvider.cs" />
     <Compile Include="RemovePreviewCookie.ashx.cs">
       <DependentUpon>RemovePreviewCookie.ashx</DependentUpon>
     </Compile>

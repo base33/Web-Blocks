@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Umbraco.Web;
 using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
 using WebBlocks.API;
+using WebBlocks.Providers;
 using WebBlocks.Utilities.Umbraco;
 using WebBlocks.Utilities.WebBlocks;
 
@@ -13,10 +15,16 @@ namespace WebBlocks.SurfaceControllers
 {
     public class BlockRenderSurfaceController : SurfaceController
     {
+        /// <summary>
+        /// Renders a block based on a given block node id
+        /// </summary>
+        /// <returns></returns>
         [ActionName("RenderBlock")]
         public ActionResult RenderBlock()
         {
             if (umbraco.BusinessLogic.User.GetCurrent() == null) throw new HttpException(401, "Unauthorized");
+
+            WebBlocksUtility.IsInBuilder = true;
 
             WebBlocksAPI blockInstanceApi = new WebBlocksAPI();
             blockInstanceApi.BlockElement = "div";
@@ -26,9 +34,10 @@ namespace WebBlocks.SurfaceControllers
             int pageId = int.Parse(Request.QueryString["pageId"]);
             int blockId = int.Parse(Request.QueryString["blockId"]);
             WebBlocksUtility.CurrentPageNodeId = pageId;
-            WebBlocksUtility.CurrentPageContent = new DynamicPublishedContent(new DynamicContent(pageId));
-            WebBlocksUtility.CurrentBlockContent = new DynamicPublishedContent(new DynamicContent(blockId));
-            WebBlocksUtility.IsInBuilder = true;
+            WebBlocksUtility.CurrentPageContent = PublishedContentProvider.Load(pageId);
+            WebBlocksUtility.CurrentBlockContent = PublishedContentProvider.Load(blockId);
+            WebBlocksUtility.CurrentPageIPublishedContent = new UmbracoHelper(UmbracoContext.Current).TypedContent(pageId);
+
             return PartialView("BlockPreviewRender");
         }
     }

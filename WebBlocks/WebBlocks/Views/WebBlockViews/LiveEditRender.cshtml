@@ -27,6 +27,9 @@
 </script>
 
 @{
+    @* set isinbuilder to true so that unpublished content is displayed *@
+    WebBlocks.Utilities.WebBlocks.WebBlocksUtility.IsInBuilder = true;
+    
     @* set blocks root node so that we can build the left tree *@
     IPublishedContent blocksRootNode = new WebBlocks.Utilities.Umbraco.DynamicContent((int)ViewData["wbBlocksRootNode"]);
     
@@ -41,10 +44,6 @@
         wysiwygStyles += string.Format("{0}={1};", style.Text, style.Alias);
     }
     wysiwygStyles = wysiwygStyles.TrimEnd(',');
-    
-    
-    
-    WebBlocks.Utilities.WebBlocks.WebBlocksUtility.IsInBuilder = true;
 }
 
 <div id="wbLiveEditNav">

@@ -13,6 +13,7 @@ using umbraco.MacroEngines;
 using umbraco.NodeFactory;
 using umbraco.cms.businesslogic.macro;
 using System.Web.Mvc.Html;
+using WebBlocks.Utilities.WebBlocks;
 
 namespace WebBlocks.Views.RenderingEngines
 {
@@ -24,7 +25,7 @@ namespace WebBlocks.Views.RenderingEngines
         public string Render(HtmlHelper html)
         {
             //UmbracoHelper helper = new UmbracoHelper(UmbracoContext.Current);
-            return html.Partial(Macro.ScriptName, new RenderModel(UmbracoContext.Current.PublishedContentRequest.PublishedContent)).ToHtmlString();
+            return html.Partial(Macro.ScriptName, null).ToHtmlString();//UmbracoContext.Current.PublishedContentRequest.PublishedContent)).ToHtmlString();
         }
     }
 }

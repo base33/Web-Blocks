@@ -9,9 +9,17 @@ using WebBlocks.Providers;
 
 namespace WebBlocks.BaseService
 {
+    /// <summary>
+    /// Restful service for Web Blocks in the backoffice and front end live edit
+    /// </summary>
     [RestExtension("WebBlocks")]
     public class WebBlocksBase
     {
+        /// <summary>
+        /// Gets the block type/node type alias for a block based on a passed node id
+        /// /base/WebBlocks/GetBlockDocType?id={node id}
+        /// </summary>
+        /// <returns></returns>
         [RestExtensionMethod(ReturnXml = false)]
         public static string GetBlockDocType()
         {
@@ -24,6 +32,11 @@ namespace WebBlocks.BaseService
             return docType;
         }
 
+        /// <summary>
+        /// Saves the json to the page node
+        /// /base/WebBlocks/SaveWebBlocks?pageId={page node id}
+        /// </summary>
+        /// <returns></returns>
         [RestExtensionMethod(ReturnXml = false)]
         public static string SaveWebBlocks()
         {
@@ -38,6 +51,11 @@ namespace WebBlocks.BaseService
             return "";
         }
 
+        /// <summary>
+        /// Saves the json to the page node and publishes it
+        /// /base/WebBlocks/SaveAndPublishWebBlocks?pageId={page node id}
+        /// </summary>
+        /// <returns></returns>
         [RestExtensionMethod(ReturnXml = false)]
         public static string SaveAndPublishWebBlocks()
         {

@@ -124,7 +124,9 @@
     <Content Include="Views\Partials\SubNavigationBlock.cshtml" />
     <Content Include="Views\Shared\LiveEditRender.cshtml" />
     <None Include="Views\Shared\SurfaceControllerBlock.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomContainers\FlexsliderContainer.cs" />

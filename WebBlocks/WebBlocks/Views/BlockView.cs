@@ -32,19 +32,22 @@ namespace WebBlocks.Views
         /// Renders the block
         /// </summary>
         /// <returns>rendered html for the block</returns>
-        public string Render(Block block, HtmlHelper html, bool renderContainer = true)
+        public string Render(Block block, HtmlHelper html)
         {
             if (!HttpContext.Current.Response.IsClientConnected)
                 return "";
 
             if (block is NodeBlock)
-                return RenderNodeBlock(block as NodeBlock, html, renderContainer);
+                return RenderNodeBlock(block as NodeBlock, html);
             else
                 return RenderWysiwygBlock(block as WysiwygBlock, html);
         }
 
-        protected string RenderNodeBlock(NodeBlock block, HtmlHelper html, bool renderContainer)
+        protected string RenderNodeBlock(NodeBlock block, HtmlHelper html)
         {
+            //check if the node exists
+            if (block.Content == null) return null;
+
             //initialise WebBlocksAPI
             WebBlocksAPI blockInstanceAPI = new WebBlocksAPI();
             blockInstanceAPI.CssClasses = new List<string>();
@@ -64,8 +67,17 @@ namespace WebBlocks.Views
                 string.Format(" templateblock='{0}'", block.IsTemplateBlock.ToString().ToLower()) : "";
             string blockDeletedAttribute = WebBlocksUtility.IsInBuilder && block.IsDeleted ? " deletedBlock='deleted' style='display:none;visibilty:hidden;'" : "";
 
+            string renderedContent = "";
+
             //render
-            string renderedContent = renderingEngine.Render(html);
+            try
+            {
+                renderedContent = renderingEngine.Render(html);
+            }
+            catch(Exception ex)
+            {
+                renderedContent = HttpUtility.HtmlEncode(ex.ToString());
+            }
 
             List<string> CssClasses = blockInstanceAPI.CssClasses;
             
@@ -84,9 +96,8 @@ namespace WebBlocks.Views
                 String.Join(" ", CssClasses));
             blockClass = WebBlocksUtility.IsInBuilder ? "block " + blockClass : blockClass;
 
-            if (renderContainer)
-                renderedContent = string.Format("<{0} class='{1}'{2}{3}{4}{5}>{6}</{0}>", 
-                    blockElement, blockClass, blockIdAttribute, blockTemplateAttribute, blockDeletedAttribute, blockAttributes, renderedContent);
+            renderedContent = string.Format("<{0} class='{1}'{2}{3}{4}{5}>{6}</{0}>", 
+                blockElement, blockClass, blockIdAttribute, blockTemplateAttribute, blockDeletedAttribute, blockAttributes, renderedContent);
 
             return renderedContent;
         }
@@ -129,14 +140,7 @@ namespace WebBlocks.Views
 
         public void RenderPreview(HtmlHelper html)
         {
-            var blockContent = WebBlocksUtility.CurrentBlockContent;
-            string renderedBlock = html.Partial(blockContent.DocumentTypeAlias, null).ToHtmlString();
-
-            List<string> CssClasses = CacheHelper.Get<List<string>>("wbCssClasses") ?? new List<string>();
-            string htmlContent = string.Format("<div class='block {0}{1}' wbid='{2}'>", blockContent.GetProperty("cssClasses").Value,
-                " " + String.Join(" ", CssClasses), blockContent.Id);
-            htmlContent += renderedBlock;
-            htmlContent += "</div>";
+            string htmlContent = Render(new NodeBlock(WebBlocksUtility.CurrentBlockContent.Id), html);
 
             html.ViewContext.Writer.Write(htmlContent);
         }

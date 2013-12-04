@@ -6,6 +6,7 @@ using Umbraco.Web.Models;
 using WebBlocks.Model;
 using WebBlocks.Serialisation;
 using WebBlocks.Utilities.Cache;
+using WebBlocks.Utilities.Umbraco;
 using WebBlocks.Utilities.WebBlocks;
 
 namespace WebBlocks.Providers
