@@ -19,9 +19,9 @@ namespace WebBlocks.Utilities.Umbraco
             int startIndex = 0;
             for (int i = 0; i < matches.Count; i++)
             {
-                result += source.Substring(startIndex, matches[i].Groups[1].Index - startIndex);
-                result += (new Node(int.Parse(matches[i].Groups[1].Value))).Url;
-                startIndex = matches[i].Groups[1].Index + matches[i].Groups[1].Length;
+                result += source.Substring(startIndex, matches[i].Groups[0].Index - startIndex);
+                result += (new Node(int.Parse(matches[i].Groups[1].Value))).Url.Substring(1);
+                startIndex = matches[i].Groups[0].Index + matches[i].Groups[0].Length;
             }
             result += source.Substring(startIndex);
             return result;

@@ -6,6 +6,7 @@ using umbraco.BusinessLogic;
 using Umbraco.Web;
 using Umbraco.Web.BaseRest;
 using WebBlocks.Providers;
+using WebBlocks.Utilities.Umbraco;
 
 namespace WebBlocks.BaseService
 {
@@ -40,14 +41,12 @@ namespace WebBlocks.BaseService
         [RestExtensionMethod(ReturnXml = false)]
         public static string SaveWebBlocks()
         {
+            if (User.GetCurrent() == null) return "";
             int nodeId = int.Parse(HttpContext.Current.Request.QueryString["pageId"]);
             string webBlocksJSON = HttpContext.Current.Request.Form["wbJSON"];
-
-            if (User.GetCurrent() != null)
-            {
-                var node = UmbracoContext.Current.Application.Services.ContentService.GetById(nodeId);
-                node.SetValue("webBlocks", webBlocksJSON);
-            }
+            webBlocksJSON = LocalLinkHelper.ResolveLocalLinks(webBlocksJSON);
+            var node = UmbracoContext.Current.Application.Services.ContentService.GetById(nodeId);
+            node.SetValue("webBlocks", webBlocksJSON);
             return "";
         }
 
@@ -59,15 +58,14 @@ namespace WebBlocks.BaseService
         [RestExtensionMethod(ReturnXml = false)]
         public static string SaveAndPublishWebBlocks()
         {
+            if (User.GetCurrent() == null) return "";
+
             int nodeId = int.Parse(HttpContext.Current.Request.QueryString["pageId"]);
             string webBlocksJSON = HttpContext.Current.Request.Form["wbJSON"];
-
-            if (User.GetCurrent() != null)
-            {
-                var node = UmbracoContext.Current.Application.Services.ContentService.GetById(nodeId);
-                node.SetValue("webBlocks", webBlocksJSON);
-                UmbracoContext.Current.Application.Services.ContentService.Publish(node, User.GetCurrent().Id);
-            }
+            webBlocksJSON = LocalLinkHelper.ResolveLocalLinks(webBlocksJSON);
+            var node = UmbracoContext.Current.Application.Services.ContentService.GetById(nodeId);
+            node.SetValue("webBlocks", webBlocksJSON);
+            UmbracoContext.Current.Application.Services.ContentService.Publish(node, User.GetCurrent().Id);
             
             return "";
         }
