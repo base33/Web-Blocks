@@ -81,6 +81,7 @@
     <Compile Include="Umbraco\DynamicContent.cs" />
     <Compile Include="Umbraco\DynamicContentProperty.cs" />
     <Compile Include="Umbraco\IconProvider.cs" />
+    <Compile Include="Umbraco\LocalLinkHelper.cs" />
     <Compile Include="Umbraco\PublishedContentProvider.cs" />
     <Compile Include="WebBlocks\WebBlocksUtility.cs" />
   </ItemGroup>

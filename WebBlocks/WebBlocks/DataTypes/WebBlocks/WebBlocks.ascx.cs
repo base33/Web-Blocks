@@ -41,6 +41,9 @@ namespace WebBlocks.DataTypes.WebBlocks
         {
             get
             {
+                string json = txtLayoutJSON.Text;
+                json = LocalLinkHelper.ResolveLocalLinks(json);
+                txtLayoutJSON.Text = json;
                 return txtLayoutJSON.Text;
             }
             set
