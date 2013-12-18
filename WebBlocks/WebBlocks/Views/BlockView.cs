@@ -110,12 +110,16 @@ namespace WebBlocks.Views
 
             blockClass = WebBlocksUtility.IsInBuilder ? "block " + blockClass : blockClass;
 
-            string blockTemplateAttribute = WebBlocksUtility.IsInBuilder ?
-                string.Format(" templateblock='{0}'", block.IsTemplateBlock.ToString().ToLower()) : "";
+            string blockTemplateAttribute = WebBlocksUtility.IsInBuilder ? string.Format(" templateblock='{0}'", block.IsTemplateBlock.ToString().ToLower()) : "";
             string blockDeletedAttribute = WebBlocksUtility.IsInBuilder && block.IsDeleted ? " deletedBlock='deleted' style='display:none;visibilty:hidden;'" : "";
 
-            return string.Format("<{0}{1} class='{2}'{3}{4}>{5}</div>", block.Element, webBlocksId, blockClass, blockTemplateAttribute, blockDeletedAttribute,
-                HttpUtility.UrlDecode(block.Content));
+            WebBlocks.Helpers.TinyMCE tinyMceHelper = new Helpers.TinyMCE();
+            Node currentNode = Node.GetCurrent();
+
+            string blockContent = WebBlocksUtility.IsInBuilder ? block.Content : umbraco.library.RenderMacroContent(tinyMceHelper.ReplaceMacroTags(HttpUtility.UrlDecode(block.Content)), currentNode.Id);
+
+            return string.Format("<{0}{1} class='{2}'{3}{4}>{5}</{0}>", block.Element, webBlocksId, blockClass, blockTemplateAttribute, blockDeletedAttribute,
+                HttpUtility.UrlDecode(blockContent));
         }
 
         protected IRenderingEngine ResolveRenderingEngine(NodeBlock block)

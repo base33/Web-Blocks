@@ -1,4 +1,4 @@
-﻿@using System.Linq;
+@using System.Linq;
 @using Umbraco.Core.Models;
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
@@ -139,7 +139,7 @@
             theme: "umbraco",
             umbraco_path: "/umbraco",
             width: 700,
-            height: 400,
+            height: 425,
             theme_umbraco_toolbar_location: "external",
             skin: "umbraco",
             inlinepopups_skin: "umbraco",
@@ -149,7 +149,7 @@
             language: "en",
             content_css: "@wysiwygStyleSheet",
             theme_umbraco_styles: "@wysiwygStyles",
-            theme_umbraco_buttons1: "code,separator,undo,redo,cut,copy,pasteword,separator,umbracocss,separator,bold,italic,separator,justifyleft,justifycenter,justifyright,separator,bullist,numlist,outdent,indent,separator,link,unlink,anchor,separator,image,separator,charmap,table",
+            theme_umbraco_buttons1: "code,separator,undo,redo,cut,copy,pasteword,separator,umbracocss,separator,bold,italic,separator,justifyleft,justifycenter,justifyright,separator,bullist,numlist,outdent,indent,separator,link,unlink,anchor,separator,image,separator,charmap,table,umbracomacro",
             theme_umbraco_buttons2: "",
             theme_umbraco_buttons3: "",
             theme_umbraco_toolbar_align: "left",
@@ -177,7 +177,7 @@
             invalid_elements: 'font',
             spellchecker_rpc_url: 'GoogleSpellChecker.ashx',
             entity_encoding: 'raw',
-            theme_umbraco_pageId: '<%= currentDocument.Id %>',
+            theme_umbraco_pageId: currentNodeId,
             theme_umbraco_versionId: '92aefc72-6274-453f-981b-9f15e1582c68',
             umbraco_toolbar_id: "tinyMceWysiwygMenuBar",
             elements: "tinyMceWysiwyg",
