@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebBlocks.ascx.cs" Inherits="WebBlocks.DataTypes.WebBlocks.WebBlocks" %>
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebBlocks.ascx.cs" Inherits="WebBlocks.DataTypes.WebBlocks.WebBlocks" %>
 
 <asp:TextBox ID="txtLayoutJSON" runat="server" TextMode="MultiLine" style="display: none;"></asp:TextBox>
 <asp:TextBox ID="txtPageHtml" runat="server" TextMode="MultiLine" style="display: none;"></asp:TextBox>
@@ -103,7 +103,7 @@
             theme: "umbraco",
             umbraco_path: "/umbraco",
             width: 700,
-            height: 400,
+            height: 425,
             theme_umbraco_toolbar_location: "external",
             skin: "umbraco",
             inlinepopups_skin: "umbraco",
@@ -113,7 +113,7 @@
             language: "en",
             content_css: "<%= selectedRichTextCss %>",
             theme_umbraco_styles: "<%= selectedRichTextStyles %>",
-            theme_umbraco_buttons1: "code,separator,undo,redo,cut,copy,pasteword,separator,umbracocss,separator,bold,italic,separator,justifyleft,justifycenter,justifyright,separator,bullist,numlist,outdent,indent,separator,link,unlink,anchor,separator,image,separator,charmap,table",
+            theme_umbraco_buttons1: "code,separator,undo,redo,cut,copy,pasteword,separator,umbracocss,separator,bold,italic,separator,justifyleft,justifycenter,justifyright,separator,bullist,numlist,outdent,indent,separator,link,unlink,anchor,separator,image,separator,charmap,table,umbracomacro",
             theme_umbraco_buttons2: "",
             theme_umbraco_buttons3: "",
             theme_umbraco_toolbar_align: "left",

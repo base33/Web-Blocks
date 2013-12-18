@@ -23,6 +23,7 @@ using WebBlocks.Utilities.Umbraco;
 using System.IO;
 using System.Web.Mvc.Html;
 using WebBlocks.API;
+using WebBlocks.Helpers;
 
 namespace WebBlocks.Views
 {
@@ -113,10 +114,9 @@ namespace WebBlocks.Views
             string blockTemplateAttribute = WebBlocksUtility.IsInBuilder ? string.Format(" templateblock='{0}'", block.IsTemplateBlock.ToString().ToLower()) : "";
             string blockDeletedAttribute = WebBlocksUtility.IsInBuilder && block.IsDeleted ? " deletedBlock='deleted' style='display:none;visibilty:hidden;'" : "";
 
-            WebBlocks.Helpers.TinyMCE tinyMceHelper = new Helpers.TinyMCE();
-            Node currentNode = Node.GetCurrent();
+            TinyMCE tinyMceHelper = new TinyMCE();
 
-            string blockContent = WebBlocksUtility.IsInBuilder ? block.Content : umbraco.library.RenderMacroContent(tinyMceHelper.ReplaceMacroTags(HttpUtility.UrlDecode(block.Content)), currentNode.Id);
+            string blockContent = WebBlocksUtility.IsInBuilder ? block.Content : umbraco.library.RenderMacroContent(tinyMceHelper.ReplaceMacroTags(HttpUtility.UrlDecode(block.Content)), WebBlocksUtility.CurrentPageNodeId);
 
             return string.Format("<{0}{1} class='{2}'{3}{4}>{5}</{0}>", block.Element, webBlocksId, blockClass, blockTemplateAttribute, blockDeletedAttribute,
                 HttpUtility.UrlDecode(blockContent));
