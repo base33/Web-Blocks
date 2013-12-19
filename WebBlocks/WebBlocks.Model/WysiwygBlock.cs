@@ -6,7 +6,7 @@ using WebBlocks.Interfaces;
 
 namespace WebBlocks.Model
 {
-    public class WysiwygBlock : Block, IBlock
+    public class WysiwygBlock : Block
     {
         public string Content;
         public string Element = "div";

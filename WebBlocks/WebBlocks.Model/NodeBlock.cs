@@ -10,7 +10,7 @@ using WebBlocks.Utilities.WebBlocks;
 
 namespace WebBlocks.Model
 {
-    public class NodeBlock : Block, IBlock
+    public class NodeBlock : Block
     {
         protected DynamicPublishedContent content = null;
 
@@ -18,11 +18,8 @@ namespace WebBlocks.Model
         {
             get
             {
-                if (content == null)
-                {
-                    content = PublishedContentProvider.Load(id);
-                }
-                return content;
+                content = PublishedContentProvider.Load(id);
+                return content != null ? content.AsDynamic() : null;
             }
         }
 

@@ -15,21 +15,7 @@ namespace WebBlocks.ViewTemplates
         {
             get
             {
-                if (WebBlocksUtility.CurrentPageContent == null)
-                {
-                    if (WebBlocksUtility.IsInBuilder || UmbracoContext.InPreviewMode)
-                    {
-                        if (WebBlocksUtility.CurrentPageNodeId == 0)
-                            WebBlocksUtility.CurrentPageNodeId = UmbracoContext.Current.PageId ?? 0;
-                        WebBlocksUtility.CurrentPageContent = PublishedContentProvider.Load(WebBlocksUtility.CurrentPageNodeId);
-                    }
-                    else
-                    {
-                        WebBlocksUtility.CurrentPageContent = new DynamicPublishedContent((new UmbracoHelper(UmbracoContext)).TypedContent(UmbracoContext.Current.PageId)).AsDynamic();
-                    }
-                }
-
-                return WebBlocksUtility.CurrentPageContent;
+                return WebBlocksUtility.CurrentPageContent.AsDynamic();
             }
         }
 
@@ -38,7 +24,7 @@ namespace WebBlocks.ViewTemplates
             get
             {
                 //return published model
-                return WebBlocksUtility.CurrentBlockContent;
+                return WebBlocksUtility.CurrentBlockContent.AsDynamic();
             }
         }
 

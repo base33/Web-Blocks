@@ -174,6 +174,10 @@
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WebBlocks.Examine\WebBlocks.Examine.csproj">
+      <Project>{ee2e8c6b-e343-4fa5-a684-dbc447f8133f}</Project>
+      <Name>WebBlocks.Examine</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebBlocks.Interfaces\WebBlocks.Interfaces.csproj">
       <Project>{9df2b481-a599-47c0-a664-7aa882949dd3}</Project>
       <Name>WebBlocks.Interfaces</Name>

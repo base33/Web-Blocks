@@ -23,10 +23,11 @@ namespace WebBlocks.Utilities.Umbraco
         /// <returns>DynamicPublishedContent instance for a given node id</returns>
         public static DynamicPublishedContent Load(int nodeId)
         {
-            IPublishedContent content = WebBlocksUtility.IsInBuilder ? new DynamicContent(nodeId) :
-                        (new UmbracoHelper(UmbracoContext.Current)).TypedContent(nodeId);
+            IPublishedContent content = WebBlocksUtility.IsInBuilder
+                                            ? new DynamicContent(nodeId)
+                                            : (new UmbracoHelper(UmbracoContext.Current)).TypedContent(nodeId);
 
-            return content != null ? new DynamicPublishedContent(content).AsDynamic() : null;
+            return content != null ? new DynamicPublishedContent(content) : null;
         }
 
         /// <summary>

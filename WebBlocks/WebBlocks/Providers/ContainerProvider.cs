@@ -16,22 +16,15 @@ namespace WebBlocks.Providers
     /// </summary>
     public class ContainerProvider
     {
+        protected List<Container> containers = new List<Container>();
+
         /// <summary>
         /// List of all containers saved on the page
         /// </summary>
         public List<Container> Containers
         {
-            get { return CacheHelper.Get<List<Container>>("wbCurrentPageContainers"); }
-            set { CacheHelper.Add("wbCurrentPageContainers", value); }
-        }
-
-        /// <summary>
-        /// Whether containers have been loaded already
-        /// </summary>
-        protected bool ContainersLoaded
-        {
-            get { return CacheHelper.Get<bool>("wbCurrentPageContainersLoaded"); }
-            set { CacheHelper.Add("wbCurrentPageContainersLoaded", value); }
+            get { return containers; }
+            set { containers = value; }
         }
 
         /// <summary>
@@ -39,22 +32,80 @@ namespace WebBlocks.Providers
         /// </summary>
         public ContainerProvider()
         {
-            if (ContainersLoaded) return;
-            string json = WebBlocksUtility.CurrentPageContent.GetPropertyValue("webBlocks");
-            DeserialiseContainers(json);
+            var json = WebBlocksUtility.CurrentPageContent.GetPropertyValue("webBlocks");
+            LoadContainersFromJson(json, true, WebBlocksUtility.CurrentPageNodeId.ToString());
         }
 
         /// <summary>
         /// Initialises and loads the containers for a specified page
         /// </summary>
         /// <param name="pageId"></param>
-        public ContainerProvider(int pageId)
+        /// <param name="cacheForRequestLife">Should the containers for this page be cached (recommended if recalling the same page containers twice)</param>
+        public ContainerProvider(int pageId, bool cacheForRequestLife = false)
         {
-            if (ContainersLoaded) return;
-            DynamicPublishedContent content = PublishedContentProvider.Load(pageId);
-            string json = WebBlocksUtility.CurrentPageContent.GetPropertyValue("webBlocks");
-            DeserialiseContainers(json);
+            LoadPageContainers(pageId, cacheForRequestLife);
         }
+
+        #region Loading Methods
+        /// <summary>
+        /// Loads the containers for the given page and caches it if specified
+        /// </summary>
+        /// <param name="pageId">The page id</param>
+        /// <param name="cacheForRequestLife">Whether to cache for the life of the request</param>
+        protected void LoadPageContainers(int pageId, bool cacheForRequestLife)
+        {
+            string cacheId = "wbPageContainers_" + pageId.ToString();
+
+            if (cacheForRequestLife && CacheHelper.Exists(cacheId))
+            {
+                //load from cache
+                var containerProvider = CacheHelper.Get<ContainerProvider>(cacheId);
+                containers = containerProvider.containers;
+            }
+            else
+            {
+                //load from Umbraco
+                DynamicPublishedContent content = PublishedContentProvider.Load(pageId);
+                string json = content.GetPropertyValue("webBlocks");
+                LoadContainersFromJson(json,  cacheForRequestLife, pageId.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Loads containers from JSON into the current Container Provider and 
+        /// caches the result for the life of the request
+        /// </summary>
+        /// <param name="json">The json for the list of containers</param>
+        /// <param name="cacheForRequestLife">whether to cache the deserialised list</param>
+        /// <param name="uniqueKey">the unique key used for the cache if cacheForRequestLife is set to true</param>
+        protected void LoadContainersFromJson(string json, bool cacheForRequestLife, string uniqueKey)
+        {
+            string cacheId = "wbPageContainers_" + uniqueKey;
+
+            if (cacheForRequestLife && CacheHelper.Exists(cacheId))
+            {
+                //load from cache
+                var containerProvider = CacheHelper.Get<ContainerProvider>(cacheId);
+                containers = containerProvider.containers;
+            }
+            else
+            {
+                containers = DeserialiseContainers(json);
+                if(cacheForRequestLife)
+                    CacheHelper.Add(cacheId, this);
+            }
+        }
+
+        /// <summary>
+        /// Deserialises the saved builder content
+        /// </summary>
+        /// <param name="json"></param>
+        protected List<Container> DeserialiseContainers(string json)
+        {
+            var serialiser = new ContainersSerialiser();
+            return serialiser.DeserialiseContainers(json);
+        }
+        #endregion
 
         /// <summary>
         /// Get a container by id
@@ -65,17 +116,6 @@ namespace WebBlocks.Providers
         {
             if (Containers == null) return null;
             return Containers.FirstOrDefault(c => c.Name == name);
-        }
-
-        /// <summary>
-        /// Deserialises the saved builder content
-        /// </summary>
-        /// <param name="json"></param>
-        protected void DeserialiseContainers(string json)
-        {
-            ContainersSerialiser serialiser = new ContainersSerialiser();
-            Containers = serialiser.DeserialiseContainers(json);
-            ContainersLoaded = true;
         }
     }
 }

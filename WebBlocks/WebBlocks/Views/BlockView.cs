@@ -40,8 +40,8 @@ namespace WebBlocks.Views
 
             if (block is NodeBlock)
                 return RenderNodeBlock(block as NodeBlock, html);
-            else
-                return RenderWysiwygBlock(block as WysiwygBlock, html);
+            
+            return RenderWysiwygBlock(block as WysiwygBlock, html);
         }
 
         protected string RenderNodeBlock(NodeBlock block, HtmlHelper html)
@@ -49,19 +49,20 @@ namespace WebBlocks.Views
             //check if the node exists
             if (block.Content == null) return null;
 
-            //initialise WebBlocksAPI
+            //set the block model for the view to access
+            WebBlocksUtility.CurrentBlockContent = block.Content;
+
+            //initialise WebBlocksAPI for the view
             WebBlocksAPI blockInstanceAPI = new WebBlocksAPI();
             blockInstanceAPI.CssClasses = new List<string>();
             blockInstanceAPI.BlockElement = "";
             blockInstanceAPI.BlockAttributes = new Dictionary<string, string>();
 
+            //set up the rendering engine for the view
             IRenderingEngine renderingEngine = ResolveRenderingEngine(block);
 
             //if rendering engine is null then the document doesn't exist anymore
             if (renderingEngine == null || block.Content == null) return "";
-
-            //set the block model for the view to access
-            WebBlocksUtility.CurrentBlockContent = block.Content;
 
             string blockIdAttribute = WebBlocksUtility.IsInBuilder ? string.Format(" wbid='{0}'", block.Id) : "";
             string blockTemplateAttribute = WebBlocksUtility.IsInBuilder ? 
@@ -93,7 +94,7 @@ namespace WebBlocks.Views
                 block.Class.Length > 0 ? " " : "", 
                 block.Class,
                 WebBlocksUtility.CurrentBlockContent.GetPropertyValue("cssClasses"),
-                CssClasses.Count() > 0 ? " " : "",
+                CssClasses.Any() ? " " : "",
                 String.Join(" ", CssClasses));
             blockClass = WebBlocksUtility.IsInBuilder ? "block " + blockClass : blockClass;
 
@@ -126,7 +127,7 @@ namespace WebBlocks.Views
         {
             try
             {
-                Document blockDoc = new Document(block.Id);
+                var blockDoc = new Document(block.Id);
 
                 //resolve with partial view
                 IRenderingEngine engine = new PartialViewRenderingEngine
