@@ -1,0 +1,25 @@
+﻿@using WebBlocks.SandboxV6.CustomContainers
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Global.cshtml";
+}
+
+@section Content
+{
+    <div class="container_12 clearfix">
+        @Html.Container(new Container()
+        {
+            Name = "VideoContainer",
+            CssClass = "contentBlock_12",
+            ContainerPermissions = new AllowedBlocks("YouTubeVideoBlock"),
+            ContainerRenderer = new YouTubeChannelContainer()
+        })
+
+        @*Html.Container(new Container()
+        {
+            Name = "ContentContainer",
+            CssClass = "contentBlock_12",
+            DynamicWysiwygClass = "grid_12"
+        })*@
+    </div>
+}

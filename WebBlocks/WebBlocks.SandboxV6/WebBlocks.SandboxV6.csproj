@@ -123,6 +123,8 @@
     <Content Include="Views\Partials\FlexsliderContainerRenderer.cshtml" />
     <Content Include="Views\Partials\SubNavigationBlock.cshtml" />
     <Content Include="Views\Shared\LiveEditRender.cshtml" />
+    <Content Include="Views\Partials\YouTubeVideoBlock.cshtml" />
+    <Content Include="Views\Partials\YouTubeVideoChannel.cshtml" />
     <None Include="Views\Shared\SurfaceControllerBlock.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -130,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomContainers\FlexsliderContainer.cs" />
+    <Compile Include="CustomContainers\YouTubeChannelContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SurfaceControllers\ContactFormSurfaceController.cs" />
   </ItemGroup>
@@ -161,6 +164,7 @@
     <Content Include="Views\Web.config.transform" />
     <Content Include="Views\ContentPage_LeftMenu.cshtml" />
     <Content Include="Views\Partials\ContactForm_SurfaceController.cshtml" />
+    <Content Include="Views\VideoChannelTemplate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
