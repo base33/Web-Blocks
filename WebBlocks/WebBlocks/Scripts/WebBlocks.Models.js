@@ -6,7 +6,9 @@ var __extends = this.__extends || function (d, b) {
 };
 var WebBlocks;
 (function (WebBlocks) {
+    // Class
     var Container = (function () {
+        // Constructor
         function Container() {
             this.Blocks = new Array();
         }
@@ -15,7 +17,7 @@ var WebBlocks;
                 return a.Id == block.Id;
             }))
                 this.Blocks.push(block);
-else if (confirm("This block has already been added.  Are you sure you wish to add the block again?"))
+            else if (confirm("This block has already been added.  Are you sure you wish to add the block again?"))
                 this.Blocks.push(block);
         };
 
@@ -30,14 +32,12 @@ else if (confirm("This block has already been added.  Are you sure you wish to a
 
     var Block = (function () {
         function Block() {
-        }
-        Block.prototype.constructor = function () {
             this.Id = 0;
             this.SortOrder = 1;
             this.IsTemplateBlock = false;
             this.__type = "";
             this.IsDeleted = false;
-        };
+        }
         return Block;
     })();
     WebBlocks.Block = Block;
@@ -95,3 +95,4 @@ else if (confirm("This block has already been added.  Are you sure you wish to a
     })();
     WebBlocks.CollectionHelper = CollectionHelper;
 })(WebBlocks || (WebBlocks = {}));
+//# sourceMappingURL=WebBlocks.Models.js.map

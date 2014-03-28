@@ -66,8 +66,13 @@ namespace WebBlocks.Providers
             {
                 //load from Umbraco
                 DynamicPublishedContent content = PublishedContentProvider.Load(pageId);
+
+                if (content == null)
+                    return;
+
                 string json = content.GetPropertyValue("webBlocks");
-                LoadContainersFromJson(json,  cacheForRequestLife, pageId.ToString());
+                if(!string.IsNullOrEmpty(json))
+                    LoadContainersFromJson(json,  cacheForRequestLife, pageId.ToString());
             }
         }
 

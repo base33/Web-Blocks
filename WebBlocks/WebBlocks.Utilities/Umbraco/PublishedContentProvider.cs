@@ -23,6 +23,7 @@ namespace WebBlocks.Utilities.Umbraco
         /// <returns>DynamicPublishedContent instance for a given node id</returns>
         public static DynamicPublishedContent Load(int nodeId)
         {
+            ContextHelper.EnsureHttpContext();
             IPublishedContent content = WebBlocksUtility.IsInBuilder
                                             ? new DynamicContent(nodeId)
                                             : (new UmbracoHelper(UmbracoContext.Current)).TypedContent(nodeId);

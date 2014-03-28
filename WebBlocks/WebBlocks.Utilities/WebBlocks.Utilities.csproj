@@ -78,6 +78,7 @@
     <Compile Include="Cache\CacheHelper.cs" />
     <Compile Include="MVC\HtmlClosure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Umbraco\ContextHelper.cs" />
     <Compile Include="Umbraco\DynamicContent.cs" />
     <Compile Include="Umbraco\DynamicContentProperty.cs" />
     <Compile Include="Umbraco\IconProvider.cs" />

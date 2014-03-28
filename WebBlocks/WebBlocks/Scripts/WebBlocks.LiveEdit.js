@@ -4,6 +4,9 @@ $(document).ready(function () {
 
     $('#wbBlockMenuDisplay').sidr({ displace: false });
 
+    //////////////////////////////////////////
+    // DRAGGING SUPPORT FOR UMBRACO
+    //////////////////////////////////////////
     var draggedEl = undefined;
     var currentMousePos = { x: -1, y: -1 };
 
@@ -47,6 +50,7 @@ $(document).ready(function () {
         draggedEl = $(this);
 
         $(this).draggable({
+            //appendTo: 'body',
             helper: 'clone',
             cursor: 'move',
             speed: 1000,
@@ -58,6 +62,7 @@ $(document).ready(function () {
         return false;
     });
 
+    // Go through all page wysiwyg blocks that are empty and update their class
     $('.pageWysiwygBlock').each(function (index, pageWysiwygBlock) {
         if ($.trim($(pageWysiwygBlock).html()) == '') {
             $(pageWysiwygBlock).addClass('wysiwygOff');
@@ -71,12 +76,15 @@ $(document).ready(function () {
             if ($(draggedParentEl).hasClass("wbAddWysiwygBlock")) {
                 var newId = generateRandomNumber(10000, 52000);
 
+                //as long as no other wysiwyg blocks have the same id
                 if ($(".pageWysiwygBlock[wbid='" + newId + "']").length <= 0) {
                     var dynamicWysiwygClass = $(currentContainer).attr("dynamicWysiwygClass");
 
+                    //add the wysiwyg block
                     $(currentContainer).append("<div class='block pageWysiwygBlock wysiwygOff " + dynamicWysiwygClass + "' templateBlock='true' wbid='" + newId + "'></div>");
                 }
             } else {
+                //add block
                 addBlock($(draggedEl).attr("wbid"), currentContainer);
             }
             $.sidr('open', 'sidr');
@@ -86,6 +94,9 @@ $(document).ready(function () {
         draggedEl = undefined;
     });
 
+    //////////////////////////////////////////
+    // END OF DRAGGING SUPPORT FOR UMBRACO
+    //////////////////////////////////////////
     $(".sidr li a").click(function () {
         var subMenu = $(this).parent().find("ul");
 
@@ -96,6 +107,7 @@ $(document).ready(function () {
 
     $(".container").sortable({ revert: true });
 
+    //double click edit block event
     $('.block').live('dblclick', function () {
         currentActiveBlock = $(this);
         editBlock($(this));
@@ -107,14 +119,21 @@ $(document).ready(function () {
             return true;
         },
         drop: function (event, ui) {
+            // If test in place to ignore the sortable instance of the droppable function
             if ($(ui.draggable).hasClass("block")) {
                 $(ui.draggable).css({ "z-index": 9999999 });
 
+                //setTimeout(function () {
+                //$(ui.draggable).effect("explode", { pieces: 25 }, 600, function () {
                 deleteBlock(ui.draggable, $(ui.draggable).parents(".container"));
+                // $(".container").sortable({ revert: true });
+                //});
+                //}, 1500);
             }
         }
     });
 
+    // Instantiate the tinymce dialog
     var $tinymceDialog = $('#tinymce').dialog({
         title: 'Edit WYSIWYG Content',
         width: 730,
@@ -153,9 +172,11 @@ $(document).ready(function () {
             }
         },
         close: function () {
+            //tinyMCE.EditorManager.execCommand('mceRemoveControl', true, 'tinymce');
         }
     });
 
+    // Instantiate the edit block iframe for other types of nodes
     var $editBlockIframeDialog = $('#editBlockIframe').dialog({
         title: 'Edit Block',
         width: 800,
@@ -170,6 +191,7 @@ $(document).ready(function () {
         }
     });
 
+    //prepare for save
     $("#wbSave").click(function () {
         var containers = BuildContainerArray();
 
@@ -201,12 +223,17 @@ $(document).ready(function () {
     }
 
     function addBlock(blockId, containerElement) {
+        //validate the block - get the block doc type
         $.get("/base/WebBlocks/GetBlockDocType?id=" + blockId, function (data) {
+            //get whether it is valid
             var result = validateBlock(data, containerElement);
 
+            //if its a valid block
             if (result.Valid) {
+                //add the block
                 addBlockToContainer(blockId, containerElement);
             } else {
+                //show the appropriate error message
                 var message = result.Type == "Allowed" ? "The following blocks are allowed:<br/>" : "The following blocks are not allowed:<br/>";
 
                 for (var i = 0; i < result.DocTypes.length; i++) {
@@ -235,6 +262,7 @@ $(document).ready(function () {
             $(blockContent).css("display", "none");
             $(containerElement).append(blockContent);
             $(blockContent).fadeIn(400);
+            //(<JeeGooContext>$('#canvas .block')).jeegoocontext('wbBlockContextMenu', contextMenuOptions);
         });
     }
 
@@ -250,11 +278,15 @@ $(document).ready(function () {
     }
 
     function deleteBlock(blockElement, containerElement) {
+        // $(blockElement).effect("shake", { times: 4, distance: 6 }, 50, function () {
+        //$(blockElement).effect("explode", { pieces: 25 }, 600, function () {
         $(blockElement).hide();
         if (hasAttrValue(blockElement, "templateBlock", "true"))
             $(blockElement).attr("deletedBlock", "deleted");
-else
+        else
             $(blockElement).remove();
+        //});
+        //});
     }
 
     function validateBlock(blockDocType, containerElement) {
@@ -308,6 +340,7 @@ else
     function hasAttrValue(element, attributeName, valueExpected) {
         var attr = $(element).attr(attributeName);
 
+        //some older browsers return false
         if (typeof attr !== 'undefined' && attr !== false) {
             return attr == valueExpected;
         }
@@ -327,3 +360,4 @@ else
         return i;
     }
 });
+//# sourceMappingURL=WebBlocks.LiveEdit.js.map

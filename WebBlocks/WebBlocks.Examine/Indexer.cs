@@ -45,8 +45,25 @@ namespace WebBlocks.Examine
 
                 e.Fields.Add("WBContainer_" + container.Name, containerContent);
                 wysiwyg += " " + containerContent;
+            }            
+            SetWBWysiwig(e, "WBWysiwyg", DecodeString(wysiwyg));
+        }
+
+        private void SetWBWysiwig(IndexingNodeDataEventArgs e, string key, string wysiwyg)
+        {
+            if (e.Fields.ContainsKey(key))
+            {
+                e.Fields[key] = wysiwyg;
+                return;
             }
-            e.Fields.Add("WBWysiwyg", wysiwyg);
+            e.Fields.Add(key, wysiwyg);
+        }
+
+        private static string DecodeString(string preview)
+        {
+            string strippedPreview = HttpUtility.UrlDecode(preview);
+            strippedPreview = HttpUtility.HtmlDecode(strippedPreview);
+            return umbraco.library.StripHtml(strippedPreview);
         }
     }
 }
