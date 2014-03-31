@@ -9,8 +9,9 @@ namespace WebBlocks.Utilities.Umbraco
 {
     public class LocalLinkHelper
     {
-        public const string LocalLinkRegex = "%7BlocalLink:([0-9]{0,9})%7D";
-        
+        //public const string LocalLinkRegex = "%7BlocalLink:([0-9]{0,9})%7D";
+        public const string LocalLinkRegex = "{localLink:([0-9]{0,9})}";
+
         public static string ResolveLocalLinks(string source)
         {
             Regex regex = new Regex(LocalLinkRegex, RegexOptions.Multiline | RegexOptions.IgnoreCase);
