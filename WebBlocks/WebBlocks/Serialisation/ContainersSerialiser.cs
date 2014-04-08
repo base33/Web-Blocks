@@ -15,13 +15,23 @@ namespace WebBlocks.Serialisation
     public class ContainersSerialiser
     {
         /// <summary>
-        /// Deserialises the json into a list of container
+        /// Deserialises the JSON into a list of container
         /// </summary>
         /// <param name="json"></param>
         /// <returns></returns>
         public List<Container> DeserialiseContainers(string json)
         {
             return JsonConvert.DeserializeObject<List<Container>>(json, new ContainersConverter());
+        }
+
+        /// <summary>
+        /// Serialise the list of containers into JSON
+        /// </summary>
+        /// <param name="containers"></param>
+        /// <returns></returns>
+        public string SerialiseContainers(List<Container> containers)
+        {
+            return JsonConvert.SerializeObject(containers);
         }
     }
 }

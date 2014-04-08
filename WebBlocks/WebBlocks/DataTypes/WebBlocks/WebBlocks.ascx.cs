@@ -17,6 +17,7 @@ using umbraco;
 using System.Net;
 using System.IO;
 using umbraco.presentation.preview;
+using WebBlocks.Helpers;
 
 namespace WebBlocks.DataTypes.WebBlocks
 {
@@ -62,6 +63,11 @@ namespace WebBlocks.DataTypes.WebBlocks
             LoadRichTextEditorStyles();
             RenderBlockContextMenu();
             RenderScripts();
+
+            if (IsPostBack)
+            {
+                txtLayoutJSON.Text = HtmlImgHelper.ResizeImages(txtLayoutJSON.Text);
+            }
         }
 
         public void RenderBlockContextMenu()
