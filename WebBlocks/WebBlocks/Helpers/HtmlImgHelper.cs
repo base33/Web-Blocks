@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using WebBlocks.Model;
+using WebBlocks.Providers;
 using WebBlocks.Serialisation;
 
 namespace WebBlocks.Helpers
@@ -20,9 +21,9 @@ namespace WebBlocks.Helpers
             ContainersSerialiser containerSerialiser = new ContainersSerialiser();
             List<Container> containers = containerSerialiser.DeserialiseContainers(json);
             List<WysiwygBlock> wysiwygBlocks = (from c in containers
-                                                from b in c.Blocks
-                                                where b is WysiwygBlock
-                                                select b as WysiwygBlock).ToList();
+                                         from b in c.Blocks
+                                         where b is WysiwygBlock
+                                         select b as WysiwygBlock).ToList();
 
 
             foreach (WysiwygBlock block in wysiwygBlocks)

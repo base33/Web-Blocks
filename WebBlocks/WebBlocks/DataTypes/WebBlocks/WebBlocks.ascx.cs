@@ -64,7 +64,7 @@ namespace WebBlocks.DataTypes.WebBlocks
             RenderBlockContextMenu();
             RenderScripts();
 
-            if (IsPostBack)
+            if(IsPostBack)
             {
                 txtLayoutJSON.Text = HtmlImgHelper.ResizeImages(txtLayoutJSON.Text);
             }
