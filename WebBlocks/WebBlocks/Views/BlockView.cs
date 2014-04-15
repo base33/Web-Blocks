@@ -72,14 +72,7 @@ namespace WebBlocks.Views
             string renderedContent = "";
 
             //render
-            try
-            {
-                renderedContent = renderingEngine.Render(html);
-            }
-            catch(Exception ex)
-            {
-                renderedContent = HttpUtility.HtmlEncode(ex.ToString());
-            }
+            renderedContent = renderingEngine.Render(html);
 
             List<string> CssClasses = blockInstanceAPI.CssClasses;
             

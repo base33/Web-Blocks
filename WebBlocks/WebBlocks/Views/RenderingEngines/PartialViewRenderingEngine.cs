@@ -24,8 +24,14 @@ namespace WebBlocks.Views.RenderingEngines
 
         public string Render(HtmlHelper html)
         {
-            //UmbracoHelper helper = new UmbracoHelper(UmbracoContext.Current);
-            return html.Partial(Macro.ScriptName, null).ToHtmlString();//UmbracoContext.Current.PublishedContentRequest.PublishedContent)).ToHtmlString();
+            try
+            {
+                return html.Partial(Macro.ScriptName, html.ViewData).ToHtmlString();
+            }
+            catch(Exception ex)
+            {
+                return HttpUtility.HtmlEncode(ex.ToString());
+            }
         }
     }
 }

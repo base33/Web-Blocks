@@ -17,7 +17,11 @@ $(document).ready(function () {
     var draggedEl;
     var dragging = false;
 
-    $.get("/umbraco/dialogs/preview.aspx?id=" + currentNodeId, function (data) {
+    $.get("/umbraco/dialogs/preview.aspx?id=" + currentNodeId)
+      .error(function (jqXHR, textStatus, errorThrown) {
+          $(wbCanvas).html(jqXHR.responseText);
+      })
+      .success(function (data) {
         data = data.replace("<body", "<body><div id='wbBackEnd'").replace("</body>", "</div></body>");
         var body = $(data).filter('#wbBackEnd');
         $(wbCanvas).fadeOut(200, function () {
