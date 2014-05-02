@@ -38,14 +38,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="businesslogic">
-      <HintPath>..\..\Lib\Umbraco V6.1.6\businesslogic.dll</HintPath>
+    <Reference Include="businesslogic, Version=1.0.5021.24868, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco v6.2\businesslogic.dll</HintPath>
     </Reference>
-    <Reference Include="cms">
-      <HintPath>..\..\Lib\Umbraco V6.1.6\cms.dll</HintPath>
+    <Reference Include="cms, Version=1.0.5021.24868, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco v6.2\cms.dll</HintPath>
     </Reference>
-    <Reference Include="interfaces">
-      <HintPath>..\..\Lib\Umbraco V6.1.6\interfaces.dll</HintPath>
+    <Reference Include="interfaces, Version=1.0.5021.24867, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco v6.2\interfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
@@ -66,12 +69,13 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="umbraco">
-      <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.dll</HintPath>
+    <Reference Include="umbraco, Version=1.0.5021.24870, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco v6.2\umbraco.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Core, Version=1.0.5021.24867, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lib\Umbraco V6.1.6\Umbraco.Core.dll</HintPath>
+      <HintPath>..\..\Lib\Umbraco v6.2\Umbraco.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

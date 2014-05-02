@@ -29,5 +29,25 @@ namespace WebBlocks.Utilities.Umbraco
         {
             get { return property.Version; }
         }
+
+        public object DataValue
+        {
+            get { return property.Value; }
+        }
+
+        public bool HasValue
+        {
+            get { return property.Value != null; }
+        }
+
+        public string PropertyTypeAlias
+        {
+            get { return property.Alias; }
+        }
+
+        public object XPathValue
+        {
+            get { return property.Value; }
+        }
     }
 }

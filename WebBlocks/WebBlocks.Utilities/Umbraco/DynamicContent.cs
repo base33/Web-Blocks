@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using umbraco.BusinessLogic;
 using Umbraco.Core.Models;
+using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 
 namespace WebBlocks.Utilities.Umbraco
@@ -172,6 +173,43 @@ namespace WebBlocks.Utilities.Umbraco
                 result = property != null ? property.Value : "";
             }
             return true;
+        }
+
+
+        public IEnumerable<IPublishedContent> ContentSet
+        {
+            get { return new List<IPublishedContent> { this }; }
+        }
+
+        public global::Umbraco.Core.Models.PublishedContent.PublishedContentType ContentType
+        {
+            get { return PublishedContentType.Get(PublishedItemType.Content, ContentType.Alias); }
+        }
+
+        public int GetIndex()
+        {
+            return content.Id;
+        }
+
+        public IPublishedContentProperty GetProperty(string alias, bool recurse)
+        {
+            var currentContent = content;
+            do
+            {
+                var property = currentContent.Properties.FirstOrDefault(c => c.Alias == alias);
+
+                if(property != null && property.Value != null)
+                    return new DynamicContentProperty(property);
+                else
+                    currentContent = content.Parent();
+            } while (currentContent.Level > -1 && recurse);
+
+            return null;
+        }
+
+        public bool IsDraft
+        {
+            get { return true; }
         }
     }
 }
