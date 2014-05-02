@@ -59,6 +59,7 @@ interface JQueryAjaxSettings {
 */
 interface JQueryXHR extends XMLHttpRequest {
     overrideMimeType();
+    error(callback: any): any;
 }
 
 /*
