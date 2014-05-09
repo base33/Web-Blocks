@@ -34,6 +34,7 @@ namespace WebBlocks.Serialisation.JavascriptConverters
             switch (type)
             {
                 case "NodeBlock":
+                    jObject.Remove("Content");
                     return new NodeBlock();
                 case "WysiwygBlock":
                     return new WysiwygBlock();
