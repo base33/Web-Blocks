@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MentorWebBlocks</id>
+    <version>3.2</version>
+    <title>Mentor Web Blocks</title>
+    <authors>Craig Noble</authors>
+    <owners>Mentor Digital</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>http://www.mentorwebblocks.com/</projectUrl>
+    <iconUrl>http://www.mentorwebblocks.com/images/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Mentor Web Blocks adds drag and drop website building functionality for content editors, and excellent code encapsulation for developers.
+
+For Developers
+
+The Web Blocks system has been developed to encapsulate code for each block in a re-usable and loosely coupled way. Blocks can now makes use of Partial Views, neatly organising your scripts into re-usable and shareable snippets. Templates can be developed to be pre-populated with blocks and also blocks can be added retrospectively to templates populating all pages using this template with the new block that has been added. For interface developers the Web Blocks system is very flexible and can adapted to work with any interface framework.
+
+The Web Blocks system provides the ability to drag blocks of content into defined areas on a preview canvas, directly from the content tree. Users can create blocks in the content tree in the same way as creating normal pages i.e. from pre-defined block/content types.  Content editors can also update their content live from the front end of the web site.  Blocks behave just like any other node in the content tree and can have parameters just like normal content pages. Once created blocks can be dragged into the preview panel and re-ordered by dragging around the canvas. Once on the canvas, a block can be double-clicked to pop-up an overlay showing the parameters of that block including WYSISYG editor, media pickers etc.</description>
+    <releaseNotes>Adds a Web Blocks: Builder datatype to the umbraco datatypes</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags> Mentor Web Blocks Drag and Drop Umbraco </tags>
+  </metadata>
+  <files>
+	<file src="WebBlocks\Css\**" target="content\Umbraco\Plugins\WebBlocks\Css\" />
+	<file src="WebBlocks\Scripts\*.js" target="content\Umbraco\Plugins\WebBlocks\Scripts\" />
+	<file src="WebBlocks\Scripts\Libraries\**" target="content\Umbraco\Plugins\WebBlocks\Scripts\" />
+	<file src="WebBlocks\Views\WebBlockViews\*.cshtml" target="content\Views\Shared\" />
+	<file src="WebBlocks\RemovePreviewCookie.ashx" target="content\" />
+	<file src="WebBlocks\WebBlocksProtectedPage.ashx" target="content\" />
+	<file src="WebBlocks\Images\**" target="content\Umbraco\Plugins\WebBlocks\Images\" />
+	<file src="WebBlocks\DataTypes\WebBlocks\WebBlocks.ascx" target="content\Usercontrols\WebBlocks\" />
+	<file src="WebBlocks.SandboxV6\Views\Shared\RichTextBlock.cshtml" target="content\Views\Shared\RichTextBlock.cshtml" />
+	<file src="WebBlocks.SandboxV6\Views\Shared\SurfaceControllerBlock.cshtml" target="content\Views\Shared\SurfaceControllerBlock.cshtml" />
+	<file src="WebBlocks\Views\web.config.transform" target="content\Views\web.config.transform" />
+	
+	<file src="WebBlocks\bin\WebBlocks.dll" target="lib\net\WebBlocks.dll" />
+	<file src="WebBlocks.Examine\bin\WebBlocks.Examine.dll" target="lib\net\WebBlocks.Examine.dll" />
+	<file src="WebBlocks.Interfaces\bin\debug\WebBlocks.Interfaces.dll" target="lib\net\WebBlocks.Interfaces.dll" />
+	<file src="WebBlocks.Model\bin\WebBlocks.Model.dll" target="lib\net\WebBlocks.Model.dll" />
+	<file src="WebBlocks.Utilities\bin\WebBlocks.Utilities.dll" target="lib\net\WebBlocks.Utilities.dll" />
+	<file src="WebBlocks.SandboxV6\bin\WebBlocks.SandboxV6.dll" target="lib\net\WebBlocks.SandboxV6.dll" />
+
+  </files>
+</package>

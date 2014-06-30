@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<configuration>
+  <system.web.webPages.razor>
+    <pages>
+      <namespaces>
+        <add namespace="WebBlocks.Model" />
+        <add namespace="WebBlocks.Interfaces"/>
+        <add namespace="WebBlocks.Extensions"/>
+      </namespaces>
+    </pages>
+  </system.web.webPages.razor>
+</configuration>
