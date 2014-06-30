@@ -28,5 +28,18 @@ namespace WebBlocks.DataTypes.WebBlocks
         {
             get { return HttpUtility.UrlDecode(preValueEditor.BackEndScriptInclude); }
         }
+
+        public string ProtectedPageUsername
+        {
+            get { return preValueEditor.ProtectedPageUsername;  }
+        }
+
+        public string ProtectedPagePassword
+        {
+            get
+            {
+                return preValueEditor.ProtectedPagePassword;
+            }
+        }
     }
 }

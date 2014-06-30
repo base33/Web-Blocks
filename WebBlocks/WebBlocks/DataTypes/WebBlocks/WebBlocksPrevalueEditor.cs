@@ -28,6 +28,8 @@ namespace WebBlocks.DataTypes.WebBlocks
         protected CheckBoxList ChkStylesheetList { get; set; }
         protected TextBox TxtBlockSourceNodeId { get; set; }
         protected TextBox TxtBackEndScriptInclude { get; set; }
+        protected TextBox TxtUsername { get; set; }
+        protected TextBox TxtPassword { get; set; }
         #endregion
 
         public WebBlocksPrevalueEditor(BaseDataType dataType)
@@ -47,6 +49,8 @@ namespace WebBlocks.DataTypes.WebBlocks
                 SavePreValue(PropertyIndex.RichTextEditorStylesheet, GetCheckBoxSelections(ChkStylesheetList), vals);
                 SavePreValue(PropertyIndex.BlockSourceNodeId, TxtBlockSourceNodeId.Text, vals);
                 SavePreValue(PropertyIndex.BackEndScriptInclude, TxtBackEndScriptInclude.Text, vals);
+                SavePreValue(PropertyIndex.ProtectedPageUsername, TxtUsername.Text, vals);
+                SavePreValue(PropertyIndex.ProtectedPagePassword, TxtPassword.Text, vals);
             }
         }
 
@@ -66,6 +70,8 @@ namespace WebBlocks.DataTypes.WebBlocks
             SetCheckBoxBasedOnSelection(ChkStylesheetList, RichTextEditorStylesheet.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries));
             TxtBlockSourceNodeId.Text = GetPreValue(PropertyIndex.BlockSourceNodeId, x => x.Value, "-1");
             TxtBackEndScriptInclude.Text = GetPreValue(PropertyIndex.BackEndScriptInclude, x => x.Value, "");
+            TxtUsername.Text = GetPreValue(PropertyIndex.ProtectedPageUsername, x => x.Value, "");
+            TxtPassword.Text = GetPreValue(PropertyIndex.ProtectedPagePassword, x => x.Value, "");
         }
 
         protected override void CreateChildControls()
@@ -83,10 +89,16 @@ namespace WebBlocks.DataTypes.WebBlocks
 
             TxtBackEndScriptInclude = new TextBox {ID = "TxtBackEndScriptInclude", TextMode = TextBoxMode.MultiLine };
 
+            TxtUsername = new TextBox { ID = "TxtUsername" };
+
+            TxtPassword = new TextBox { ID = "TxtPassword", TextMode = TextBoxMode.Password };
+
             //add the controls to get the viewstate on postbacks
             Controls.Add(ChkStylesheetList);
             Controls.Add(TxtBlockSourceNodeId);
             Controls.Add(TxtBackEndScriptInclude);
+            Controls.Add(TxtUsername);
+            Controls.Add(TxtPassword);
         }
 
         protected override void Render(HtmlTextWriter writer)
@@ -117,6 +129,21 @@ namespace WebBlocks.DataTypes.WebBlocks
             TxtBackEndScriptInclude.RenderControl(writer);
             writer.Write("</div></div>");
 
+            writer.Write("<hr/>");
+
+            writer.Write("<div style='padding-bottom:15px;'>");
+            writer.Write("<div><b>Protected page username (required to render the preview of a protected page):</b></div>");
+            writer.Write("<div>");
+            TxtUsername.RenderControl(writer);
+            writer.Write("</div></div>");
+
+            writer.Write("<div style='padding-bottom:15px;'>");
+            writer.Write("<div><b>Protected page password (required to render the preview of a protected page):</b></div>");
+            writer.Write("<div>");
+            TxtPassword.RenderControl(writer);
+            writer.Write("</div></div>");
+
+
             writer.RenderEndTag();
 
             StringBuilder sb = new StringBuilder();
@@ -135,7 +162,9 @@ namespace WebBlocks.DataTypes.WebBlocks
         {
             RichTextEditorStylesheet = 0,
             BlockSourceNodeId = 1,
-            BackEndScriptInclude = 2
+            BackEndScriptInclude = 2,
+            ProtectedPageUsername = 3,
+            ProtectedPagePassword = 4
         }
         #endregion
 
@@ -160,6 +189,19 @@ namespace WebBlocks.DataTypes.WebBlocks
         public string BackEndScriptInclude
         {
             get { return GetPreValue(PropertyIndex.BackEndScriptInclude, x => x.Value, ""); }
+        }
+
+        public string ProtectedPageUsername
+        {
+            get
+            {
+                return GetPreValue(PropertyIndex.ProtectedPageUsername, x => x.Value, "");
+            }
+        }
+
+        public string ProtectedPagePassword
+        {
+            get { return GetPreValue(PropertyIndex.ProtectedPagePassword, x => x.Value, ""); }
         }
         #endregion
 

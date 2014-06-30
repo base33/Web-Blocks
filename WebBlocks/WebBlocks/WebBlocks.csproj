@@ -165,6 +165,9 @@
     <Compile Include="Views\RenderingEngines\PartialViewRenderingEngine.cs" />
     <Compile Include="Views\RenderingEngines\RazorMacroRenderingEngine.cs" />
     <Compile Include="ViewTemplates\WebBlocksTemplatePage.cs" />
+    <Compile Include="WebBlocksProtectedPage.ashx.cs">
+      <DependentUpon>WebBlocksProtectedPage.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="RemovePreviewCookie.ashx" />
@@ -176,6 +179,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="WebBlocksProtectedPage.ashx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebBlocks.Interfaces\WebBlocks.Interfaces.csproj">

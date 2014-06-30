@@ -131,6 +131,10 @@ namespace WebBlocks.DataTypes.WebBlocks
             sb.AppendFormat("var txtHiddenLayoutClientId = '{0}';", txtLayoutJSON.ClientID);
             sb.AppendFormat("var plcCotnfextMenuClientId = '{0}';", plcContextMenu.ClientID);
             sb.AppendFormat("var wbCanvas = '#{0}';", canvasRender.ClientID);
+            sb.AppendFormat("var isProtectedPage = {0};", umbraco.library.IsProtected(currentDocument.Id, currentDocument.Path) ? "true" : "false");
+            sb.AppendFormat("var username = '{0}';", PreValueAccessor.ProtectedPageUsername);
+            sb.AppendFormat("var password = '{0}';", PreValueAccessor.ProtectedPagePassword);
+            sb.AppendFormat("var webBlocksGuid = '{0}';", Guid.NewGuid());
             cs.RegisterStartupScript(GetType(), "WebBlocks", sb.ToString(), true);
 
             plcBackEndScriptIncludes.Controls.Add(new Literal() { Text = PreValueAccessor.BackEndScriptIncludes });
