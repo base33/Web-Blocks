@@ -862,7 +862,7 @@
         </member>
         <member name="T:Umbraco.Web.Cache.UnpublishedPageCacheRefresher">
             <summary>
-            A cache refresher used for non-published content, this is primarily to notify Examine indexes to update
+            A cache refresher used for non-published content, this is primarily to notify Examine indexes to update and to refresh the RuntimeCacheRefresher
             </summary>
         </member>
         <member name="M:Umbraco.Web.Cache.UnpublishedPageCacheRefresher.DeserializeFromJsonPayload(System.String)">

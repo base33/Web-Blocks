@@ -2907,24 +2907,6 @@
             <param name="postedFile"></param>
             <returns></returns>
         </member>
-        <member name="M:umbraco.editorControls.uploadField.FindControlRecursive``1(System.Web.UI.Control,System.String)">
-            <summary>
-            Recursively finds a control with the specified identifier.
-            </summary>
-            <typeparam name="T">
-            The type of control to be found.
-            </typeparam>
-            <param name="parent">
-            The parent control from which the search will start.
-            </param>
-            <param name="id">
-            The identifier of the control to be found.
-            </param>
-            <returns>
-            The control with the specified identifier, otherwise <see langword="null"/> if the control 
-            is not found.
-            </returns>
-        </member>
         <member name="M:umbraco.editorControls.uploadField.Render(System.Web.UI.HtmlTextWriter)">
             <summary> 
             Render this control to the output parameter specified.

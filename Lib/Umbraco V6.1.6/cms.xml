@@ -146,6 +146,18 @@
             that support permissions in the future.
             </remarks>
         </member>
+        <member name="T:umbraco.BusinessLogic.Actions.ActionChangeDocType">
+            <summary>
+            This action is invoked when the document type of a piece of content is changed
+            </summary>
+        </member>
+        <member name="M:umbraco.BusinessLogic.Actions.ActionChangeDocType.#ctor">
+            <summary>
+            A public constructor exists ONLY for backwards compatibility in regards to 3rd party add-ons.
+            All Umbraco assemblies should use the singleton instantiation (this.Instance)
+            When this applicatio is refactored, this constuctor should be made private.
+            </summary>
+        </member>
         <member name="T:umbraco.BusinessLogic.Actions.ActionCopy">
             <summary>
             This action is invoked when copying a document, media, member 
@@ -1292,6 +1304,15 @@
             </summary>
             <param name="Id">The id.</param>
         </member>
+        <member name="M:umbraco.cms.businesslogic.CMSNode.#ctor(System.Int32,System.Object[])">
+            <summary>
+            This is purely for a hackity hack hack hack in order to make the new Document(id, version) constructor work because
+            the Version property needs to be set on the object before setupNode is called, otherwise it never works! this allows
+            inheritors to set default data before setupNode() is called.
+            </summary>
+            <param name="id"></param>
+            <param name="ctorArgs"></param>
+        </member>
         <member name="M:umbraco.cms.businesslogic.CMSNode.#ctor(System.Int32,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:umbraco.cms.businesslogic.CMSNode"/> class.
@@ -1357,6 +1378,13 @@
             This allows inheritors to set the underlying text property without persisting the change to the database.
             </summary>
             <param name="txt"></param>
+        </member>
+        <member name="M:umbraco.cms.businesslogic.CMSNode.PreSetupNode(System.Object[])">
+            <summary>
+            This is purely for a hackity hack hack hack in order to make the new Document(id, version) constructor work because
+            the Version property needs to be set on the object before setupNode is called, otherwise it never works!
+            </summary>
+            <param name="ctorArgs"></param>
         </member>
         <member name="M:umbraco.cms.businesslogic.CMSNode.setupNode">
             <summary>
@@ -1691,6 +1719,13 @@
             Deletes the current Content object, must be overridden in the child class.
             </summary>
         </member>
+        <member name="M:umbraco.cms.businesslogic.Content.PreSetupNode(System.Object[])">
+            <summary>
+            This is purely for a hackity hack hack hack in order to make the new Document(id, version) constructor work because
+            the Version property needs to be set on the object before setupNode is called, otherwise it never works!
+            </summary>
+            <param name="ctorArgs"></param>
+        </member>
         <member name="M:umbraco.cms.businesslogic.Content.InitializeContent(System.Int32,System.Guid,System.DateTime,System.String)">
             <summary>
             Sets up the ContentType property for this content item and sets the addition content properties manually.
@@ -1845,6 +1880,7 @@
             <param name="icon"></param>
             <param name="thumbnail"></param>
             <param name="masterContentType"></param>
+            <param name="isContainer"></param>
             <remarks>
             This is like creating a ContentType node using optimized mode but this lets you set
             all of the properties that are initialized normally from the database.
@@ -3789,6 +3825,12 @@
             </summary>
             <param name="dt">The membertype which are being deleted</param>
         </member>
+        <member name="M:umbraco.cms.businesslogic.member.Member.Save(System.Boolean)">
+            <summary>
+            Used to persist object changes to the database
+            </summary>
+            <param name="raiseEvents"></param>
+        </member>
         <member name="M:umbraco.cms.businesslogic.member.Member.Save">
             <summary>
             Used to persist object changes to the database. In Version3.0 it's just a stub for future compatibility
@@ -3806,6 +3848,19 @@
             <summary>
             Deltes the current member
             </summary>
+        </member>
+        <member name="M:umbraco.cms.businesslogic.member.Member.ChangePassword(System.String)">
+            <summary>
+            Sets the password for the user - ensure it is encrypted or hashed based on the active membership provider - you must 
+            call Save() after using this method
+            </summary>
+            <param name="newPassword"></param>
+        </member>
+        <member name="M:umbraco.cms.businesslogic.member.Member.GetPassword">
+            <summary>
+            Returns the currently stored password - this may be encrypted or hashed string depending on the active membership provider
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:umbraco.cms.businesslogic.member.Member.AddGroup(System.Int32)">
             <summary>
@@ -3902,13 +3957,6 @@
             </summary>
             <returns>True if the the current visitor is logged in</returns>
         </member>
-        <member name="M:umbraco.cms.businesslogic.member.Member.memberExists(System.Int32)">
-            <summary>
-            Make a lookup in the database to verify if a member truely exists
-            </summary>
-            <param name="NodeId">The node id of the member</param>
-            <returns>True is a record exists in db</returns>
-        </member>
         <member name="M:umbraco.cms.businesslogic.member.Member.CurrentMemberId">
             <summary>
             Gets the current visitors memberid
@@ -3932,11 +3980,6 @@
             A list of all members in the current umbraco install
             
             Note: is ressource intensive, use with care.
-            </summary>
-        </member>
-        <member name="P:umbraco.cms.businesslogic.member.Member.Text">
-            <summary>
-            The name of the member
             </summary>
         </member>
         <member name="P:umbraco.cms.businesslogic.member.Member.Password">
@@ -4081,7 +4124,6 @@
             MemberType
             
             Due to the inheritance of the ContentType class, it enables definition of generic datafields on a Members.
-            
         </member>
         <member name="M:umbraco.cms.businesslogic.member.MemberType.#ctor(System.Int32)">
             <summary>
@@ -4143,7 +4185,7 @@
         </member>
         <member name="M:umbraco.cms.businesslogic.member.MemberType.Save">
             <summary>
-            Used to persist object changes to the database. In Version3.0 it's just a stub for future compatibility
+            Used to persist object changes to the database
             </summary>
         </member>
         <member name="M:umbraco.cms.businesslogic.member.MemberType.GetByAlias(System.String)">
@@ -5354,6 +5396,12 @@
             Summary description for Access.
             </summary>
         </member>
+        <member name="M:umbraco.cms.businesslogic.web.Access.UpdateInMemoryDocument(System.Xml.XmlDocument)">
+            <summary>
+            Used to refresh cache among servers in an LB scenario
+            </summary>
+            <param name="newDoc"></param>
+        </member>
         <member name="T:umbraco.cms.businesslogic.web.Document">
             <summary>
             Document represents a webpage,
@@ -5493,7 +5541,7 @@
         </member>
         <member name="M:umbraco.cms.businesslogic.web.Document.SendToPublication(umbraco.BusinessLogic.User)">
             <summary>
-            Executes handlers and events for the Send To Publication action.
+            Saves and executes handlers and events for the Send To Publication action.
             </summary>
             <param name="u">The User</param>
         </member>
@@ -6454,12 +6502,9 @@
             <summary>
             Sends the notifications for the specified user regarding the specified node and action.
             </summary>
-            <param name="Node">The node.</param>
+            <param name="node">The node.</param>
             <param name="user">The user.</param>
-            <param name="Action">The action.</param>
-        </member>
-        <member name="M:umbraco.cms.businesslogic.workflow.Notification.sendNotification(umbraco.BusinessLogic.User,umbraco.BusinessLogic.User,umbraco.cms.businesslogic.web.Document,umbraco.interfaces.IAction)">
-            TODO: Include update with html mail notification and document contents
+            <param name="action">The action.</param>
         </member>
         <member name="M:umbraco.cms.businesslogic.workflow.Notification.GetUserNotifications(umbraco.BusinessLogic.User)">
             <summary>
@@ -6472,14 +6517,14 @@
             <summary>
             Returns the notifications for a node
             </summary>
-            <param name="user"></param>
+            <param name="node"></param>
             <returns></returns>
         </member>
         <member name="M:umbraco.cms.businesslogic.workflow.Notification.DeleteNotifications(umbraco.cms.businesslogic.CMSNode)">
             <summary>
             Deletes notifications by node
             </summary>
-            <param name="nodeId"></param>
+            <param name="node"></param>
         </member>
         <member name="M:umbraco.cms.businesslogic.workflow.Notification.DeleteNotifications(umbraco.BusinessLogic.User)">
             <summary>
@@ -6498,53 +6543,17 @@
             <summary>
             Creates a new notification
             </summary>
-            <param name="User">The user.</param>
-            <param name="Node">The node.</param>
-            <param name="ActionLetter">The action letter.</param>
+            <param name="user">The user.</param>
+            <param name="node">The node.</param>
+            <param name="actionLetter">The action letter.</param>
         </member>
         <member name="M:umbraco.cms.businesslogic.workflow.Notification.UpdateNotifications(umbraco.BusinessLogic.User,umbraco.cms.businesslogic.CMSNode,System.String)">
             <summary>
             Updates the notifications.
             </summary>
-            <param name="User">The user.</param>
-            <param name="Node">The node.</param>
-            <param name="Notifications">The notifications.</param>
-        </member>
-        <member name="M:umbraco.cms.businesslogic.workflow.Notification.ReplaceHTMLSymbols(System.String@)">
-            <summary>
-            Replaces the HTML symbols with the character equivalent.
-            </summary>
-            <param name="oldString">The old string.</param>
-        </member>
-        <member name="M:umbraco.cms.businesslogic.workflow.Notification.CompareText(System.String,System.String)">
-            <summary>
-            Compares the text.
-            </summary>
-            <param name="oldText">The old text.</param>
-            <param name="newText">The new text.</param>
-            <returns></returns>
-        </member>
-        <member name="M:umbraco.cms.businesslogic.workflow.Notification.CompareText(System.String,System.String,System.Boolean,System.Boolean)">
-            <summary>
-            Compares the text.
-            </summary>
-            <param name="oldText">The old text.</param>
-            <param name="newText">The new text.</param>
-            <param name="displayInsertedText">if set to <c>true</c> [display inserted text].</param>
-            <param name="displayDeletedText">if set to <c>true</c> [display deleted text].</param>
-            <returns></returns>
-        </member>
-        <member name="M:umbraco.cms.businesslogic.workflow.Notification.CompareText(System.String,System.String,System.Boolean,System.Boolean,System.String,System.String)">
-            <summary>
-            Compares the text.
-            </summary>
-            <param name="oldText">The old text.</param>
-            <param name="newText">The new text.</param>
-            <param name="displayInsertedText">if set to <c>true</c> [display inserted text].</param>
-            <param name="displayDeletedText">if set to <c>true</c> [display deleted text].</param>
-            <param name="insertedStyle">The inserted style.</param>
-            <param name="deletedStyle">The deleted style.</param>
-            <returns></returns>
+            <param name="user">The user.</param>
+            <param name="node">The node.</param>
+            <param name="notifications">The notifications.</param>
         </member>
         <member name="P:umbraco.cms.businesslogic.workflow.Notification.SqlHelper">
             <summary>

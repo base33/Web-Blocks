@@ -3320,12 +3320,24 @@
             <summary>
             List of PropertyGroups available on this ContentType
             </summary>
-            <remarks>A PropertyGroup corresponds to a Tab in the UI</remarks>
+            <remarks>
+            A PropertyGroup corresponds to a Tab in the UI
+            </remarks>
         </member>
         <member name="P:Umbraco.Core.Models.ContentTypeBase.PropertyTypes">
             <summary>
             List of PropertyTypes available on this ContentType.
             This list aggregates PropertyTypes across the PropertyGroups.
+            </summary>
+            <remarks>
+            Marked as DoNotClone because the result of this property is not the natural result of the data, it is 
+            a union of data so when auto-cloning if the setter is used it will be setting the unnatural result of the 
+            data. We manually clone this instead. 
+            </remarks>
+        </member>
+        <member name="P:Umbraco.Core.Models.ContentTypeBase.NonGroupedPropertyTypes">
+            <summary>
+            Returns the property type collection containing types that are non-groups - used for tests
             </summary>
         </member>
         <member name="P:Umbraco.Core.Models.ContentTypeBase.HasPropertyTypeBeenRemoved">
@@ -3512,6 +3524,22 @@
             <summary>
             Gets or sets the Alias of the ContentType
             </summary>
+        </member>
+        <member name="T:Umbraco.Core.Models.DoNotCloneAttribute">
+            <summary>
+            Used to attribute properties that have a setter and are a reference type
+            that should be ignored for cloning when using the DeepCloneHelper
+            </summary>
+            <remarks>
+            
+            This attribute must be used:
+            * when the property is backed by a field but the result of the property is the un-natural data stored in the field
+             
+            This attribute should not be used:
+            * when the property is virtual
+            * when the setter performs additional required logic other than just setting the underlying field
+            
+            </remarks>
         </member>
         <member name="M:Umbraco.Core.Models.DeepCloneHelper.DeepCloneRefProperties(Umbraco.Core.Models.IDeepCloneable,Umbraco.Core.Models.IDeepCloneable)">
             <summary>
@@ -3700,6 +3728,11 @@
         <member name="P:Umbraco.Core.Models.PreValue.Id">
             <summary>
             The database id for the pre-value field value
+            </summary>
+        </member>
+        <member name="P:Umbraco.Core.Models.PreValue.SortOrder">
+            <summary>
+            The sort order stored for the pre-value field value
             </summary>
         </member>
         <member name="T:Umbraco.Core.Models.PreValueCollection">
@@ -7589,7 +7622,13 @@
             <param name="httpContext">The HttpContextBase corresponding to the HttpRequest.</param>
             <exception cref="T:System.ArgumentNullException"><paramref name="httpContext"/> is <c>null</c>.</exception>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Umbraco.Core.ObjectResolution.LazyManyObjectsResolverBase`2.#ctor(System.Collections.Generic.IEnumerable{System.Lazy{System.Type}},Umbraco.Core.ObjectResolution.ObjectLifetimeScope)" -->
+        <member name="M:Umbraco.Core.ObjectResolution.LazyManyObjectsResolverBase`2.#ctor(System.Collections.Generic.IEnumerable{System.Lazy{System.Type}},Umbraco.Core.ObjectResolution.ObjectLifetimeScope)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Umbraco.Core.ObjectResolution.LazyManyObjectsResolverBase`2"/> class with an initial list
+            <remarks>If <paramref name="scope"/> is per HttpRequest then there must be a current HttpContext.</remarks>
+            <exception cref="T:System.InvalidOperationException"><paramref name="scope"/> is per HttpRequest but the current HttpContext is null.</exception>
+            </summary>
+        </member>
         <member name="M:Umbraco.Core.ObjectResolution.LazyManyObjectsResolverBase`2.#ctor(System.Func{System.Collections.Generic.IEnumerable{System.Type}},Umbraco.Core.ObjectResolution.ObjectLifetimeScope)">
             <summary>
             Initializes a new instance of the <see cref="T:Umbraco.Core.ObjectResolution.LazyManyObjectsResolverBase`2"/> class with an initial list
@@ -9920,12 +9959,6 @@
             Method to call when Entity is being saved
             </summary>
             <remarks>Created date is set and a Unique key is assigned</remarks>
-        </member>
-        <member name="M:Umbraco.Core.Models.ContentType.UpdatingEntity">
-            <summary>
-            Method to call when Entity is being updated
-            </summary>
-            <remarks>Modified Date is set and a new Version guid is set</remarks>
         </member>
         <member name="M:Umbraco.Core.Models.ContentType.Clone(System.String)">
             <summary>
@@ -20265,14 +20298,14 @@
             file is cached temporarily until app startup completes.
             </summary>
             <param name="appContext"></param>
-            <param name="detectBinChanges"></param>
+            <param name="detectChanges"></param>
         </member>
         <member name="M:Umbraco.Core.PluginManager.#ctor(System.Boolean)">
             <summary>
             Creates a new PluginManager
             </summary>
-            <param name="detectCodeChanges">
-            If true will detect changes in the /bin folder and therefor load plugins from the 
+            <param name="detectChanges">
+            If true will detect changes in the /bin folder, app_code, etc... and therefor load plugins from the 
             cached plugins file if one is found. If false will never use the cache file for plugins
             </param>
         </member>
@@ -20475,9 +20508,9 @@
             The setter is generally only used for unit tests
             </remarks>
         </member>
-        <member name="P:Umbraco.Core.PluginManager.HaveAssembliesChanged">
+        <member name="P:Umbraco.Core.PluginManager.RequiresRescanning">
             <summary>
-            Returns a bool if the assemblies in the /bin have changed since they were last hashed.
+            Returns a bool if the assemblies in the /bin, app_code, global.asax, etc... have changed since they were last hashed.
             </summary>
         </member>
         <member name="P:Umbraco.Core.PluginManager.CachedAssembliesHash">

@@ -420,6 +420,12 @@
             <param name="node"></param>
             <param name="type"></param>
         </member>
+        <member name="M:UmbracoExamine.UmbracoContentIndexer.RefreshIndexerDataFromDataService">
+            <summary>
+            Used to refresh the current IndexerData from the data in the DataService. This can be used
+            if there are more properties added/removed from the database
+            </summary>
+        </member>
         <member name="M:UmbracoExamine.UmbracoContentIndexer.OnGatheringNodeData(Examine.IndexingNodeDataEventArgs)">
             <summary>
             Override this method to strip all html from all user fields before raising the event, then after the event 

@@ -151,6 +151,12 @@
             Through this class new application trees can be created, modified and deleted. 
             </summary>
         </member>
+        <member name="M:umbraco.BusinessLogic.ApplicationTree.GetRuntimeType">
+            <summary>
+            Returns the CLR type based on it's assembly name stored in the config
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:umbraco.BusinessLogic.ApplicationTree.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:umbraco.BusinessLogic.ApplicationTree"/> class.
@@ -684,6 +690,12 @@
         <member name="M:umbraco.BasePages.ClientTools.ChangeContentFrameUrl(System.String)">
             <summary>
             Changes the content in the content frame to the specified URL
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:umbraco.BasePages.ClientTools.ReloadContentFrameUrlIfPathLoaded(System.String)">
+            <summary>
+            Reloads the content in the content frame if the specified URL is currently loaded
             </summary>
             <param name="url"></param>
         </member>
@@ -1995,7 +2007,7 @@
         </member>
         <member name="M:umbraco.BusinessLogic.User.Save">
             <summary>
-            Used to persist object changes to the database. In Version3.0 it's just a stub for future compatibility
+            Used to persist object changes to the database.
             </summary>
         </member>
         <member name="M:umbraco.BusinessLogic.User.GetPassword">
@@ -2082,7 +2094,7 @@
             Gets all users by login name.
             </summary>
             <param name="login">The login.</param>
-            <param name="">whether to use a partial match</param>
+            <param name="partialMatch">whether to use a partial match</param>
             <returns></returns>
         </member>
         <member name="M:umbraco.BusinessLogic.User.MakeNew(System.String,System.String,System.String,umbraco.BusinessLogic.UserType)">
@@ -2102,7 +2114,7 @@
             <param name="lname">The lname.</param>
             <param name="passw">The passw.</param>
             <param name="email">The email.</param>
-            <param name="ut">The ut.</param>
+            <param name="ut">The ut.</param>        
         </member>
         <member name="M:umbraco.BusinessLogic.User.Update(System.Int32,System.String,System.String,System.String,umbraco.BusinessLogic.UserType)">
             <summary>
@@ -2113,6 +2125,15 @@
             <param name="lname">The lname.</param>
             <param name="email">The email.</param>
             <param name="ut">The ut.</param>
+        </member>
+        <member name="M:umbraco.BusinessLogic.User.Update(System.Int32,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Updates the membership provider properties
+            </summary>
+            <param name="id">The id.</param>
+            <param name="email"></param>
+            <param name="disabled"></param>
+            <param name="noConsole"></param>        
         </member>
         <member name="M:umbraco.BusinessLogic.User.getUserId(System.String,System.String)">
             <summary>
@@ -2280,14 +2301,6 @@
             Gets or sets a value indicating whether this <see cref="T:umbraco.BusinessLogic.User"/> is disabled.
             </summary>
             <value><c>true</c> if disabled; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="P:umbraco.BusinessLogic.User.DefaultToLiveEditing">
-            <summary>
-            Gets or sets a value indicating whether a user should be redirected to liveediting by default.
-            </summary>
-            <value>
-            	<c>true</c> if defaults to live editing; otherwise, <c>false</c>.
-            </value>
         </member>
         <member name="P:umbraco.BusinessLogic.User.StartNodeId">
             <summary>
