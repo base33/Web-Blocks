@@ -22,11 +22,14 @@ $(document).ready(function () {
     var dragging = false;
 
     ensureLoggedInForProtectedPage(function () {
-        $.get("/umbraco/dialogs/preview.aspx?id=" + currentNodeId + "&webBlocksGuid=" + webBlocksGuid)
-            .error(function (jqXHR, textStatus, errorThrown) {
+        $.ajax({
+            type: 'GET',
+            url: "/umbraco/dialogs/preview.aspx?id=" + currentNodeId + "&webBlocksGuid=" + webBlocksGuid,
+            dataType: 'html',
+            error: function (jqXHR, textStatus, errorThrown) {
                 $(wbCanvas).html(jqXHR.responseText);
-            })
-            .success(function (data) {
+            },
+            success: function (data) {
                 webBlocksLogOut();
                 data = data.replace("<body", "<body><div id='wbBackEnd'").replace("</body>", "</div></body>");
                 var body = $(data).filter('#wbBackEnd');
@@ -314,56 +317,71 @@ $(document).ready(function () {
                         function rerenderBlock(blockElement) {
                             var blockId = $(blockElement).attr("wbid");
                             var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?pageId=" + currentNodeId + "&blockId=" + blockId;
-                            $.get(url, function (data) {
-                                $(wbCanvas + " .block[wbid='" + blockId + "']").each(function () {
-                                    $(this).html($(data).html());
-                                    $(this).find("a").click(function (e) { e.preventDefault(); return false; });
-                                });
+                            $.ajax({
+                                type: 'GET',
+                                url: url,
+                                dataType: 'html',
+                                success: function (data) {
+                                    $(wbCanvas + " .block[wbid='" + blockId + "']").each(function () {
+                                        $(this).html($(data).html());
+                                        $(this).find("a").click(function (e) { e.preventDefault(); return false; });
+                                    });
+                                }
                             });
                         }
 
                         function addBlock(blockId, containerElement) {
                             //validate the block - get the block doc type
-                            $.get("/base/WebBlocks/GetBlockDocType?id=" + blockId, function (data) {
-                                //get whether it is valid
-                                var result = validateBlock(data, containerElement);
+                            $.ajax({
+                                type: 'GET',
+                                url: "/base/WebBlocks/GetBlockDocType?id=" + blockId,
+                                dataType: 'html',
+                                success: function (data) {
+                                    //get whether it is valid
+                                    var result = validateBlock(data, containerElement);
 
-                                //if its a valid block
-                                if (result.Valid) {
-                                    //add the block
-                                    addBlockToContainer(blockId, containerElement);
-                                }
-                                else {
-                                    //show the appropriate error message
-                                    var message = result.Type == "Allowed" ? "The following blocks are allowed:<br/>" : "The following blocks are not allowed:<br/>";
-
-                                    for (var i = 0; i < result.DocTypes.length; i++) {
-                                        message += result.DocTypes[i] + ",";
+                                    //if its a valid block
+                                    if (result.Valid) {
+                                        //add the block
+                                        addBlockToContainer(blockId, containerElement);
                                     }
+                                    else {
+                                        //show the appropriate error message
+                                        var message = result.Type == "Allowed" ? "The following blocks are allowed:<br/>" : "The following blocks are not allowed:<br/>";
 
-                                    message = message.substring(0, message.length - 1);
-
-                                    $("#containerPermissionsDialog .containerPermissionsMessage").html(message);
-                                    $("#containerPermissionsDialog").dialog({
-                                        modal: true,
-                                        buttons: {
-                                            Ok: function () {
-                                                $(this).dialog("close");
-                                            }
+                                        for (var i = 0; i < result.DocTypes.length; i++) {
+                                            message += result.DocTypes[i] + ",";
                                         }
-                                    });
+
+                                        message = message.substring(0, message.length - 1);
+
+                                        $("#containerPermissionsDialog .containerPermissionsMessage").html(message);
+                                        $("#containerPermissionsDialog").dialog({
+                                            modal: true,
+                                            buttons: {
+                                                Ok: function () {
+                                                    $(this).dialog("close");
+                                                }
+                                            }
+                                        });
+                                    }
                                 }
                             });
                         }
 
                         function addBlockToContainer(blockId, containerElement) {
                             var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?pageId=" + currentNodeId + "&blockId=" + blockId;
-                            $.get(url, function (data) {
-                                var blockContent = $(data);
-                                $(blockContent).css("display", "none");
-                                $(containerElement).append(blockContent);
-                                $(blockContent).fadeIn(400);
-                                (<JeeGooContext>$('#canvas .block')).jeegoocontext('wbBlockContextMenu', contextMenuOptions);
+                            $.ajax({
+                                type: 'GET',
+                                url: url,
+                                dataType: 'html',
+                                success: function (data) {
+                                    var blockContent = $(data);
+                                    $(blockContent).css("display", "none");
+                                    $(containerElement).append(blockContent);
+                                    $(blockContent).fadeIn(400);
+                                    (<JeeGooContext>$('#canvas .block')).jeegoocontext('wbBlockContextMenu', contextMenuOptions);
+                                }
                             });
                         }
 
@@ -436,7 +454,8 @@ $(document).ready(function () {
                         }
                     });
                 });
-            });
+            }
+        });
     });
 });
 
