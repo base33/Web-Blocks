@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WebBlocks.Interfaces;
 using WebBlocks.Utilities.Cache;
+using WebBlocks.Utilities.WebBlocks;
 
 namespace WebBlocks.API
 {
@@ -33,6 +35,14 @@ namespace WebBlocks.API
                 return CacheHelper.Get<List<string>>("wbCssClasses"); 
             }
             set { CacheHelper.Add("wbCssClasses", value); }
+        }
+
+        public IContainer CurrentContainer
+        {
+            get
+            {
+                return WebBlocksUtility.CurrentContainer;
+            }
         }
     }
 }

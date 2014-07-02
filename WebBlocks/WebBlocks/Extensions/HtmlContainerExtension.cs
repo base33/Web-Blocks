@@ -38,6 +38,8 @@ namespace WebBlocks.Extensions
 
             container.Blocks = container.Blocks.OrderBy(b => b.SortOrder).ToList();
 
+            WebBlocksUtility.CurrentContainer = container;
+
             //if the container is being rendered for the builder or a container renderer has not been specified
             if (WebBlocksUtility.IsInBuilder || (!WebBlocksUtility.IsInBuilder && container.ContainerRenderer == null))
             {
@@ -48,7 +50,6 @@ namespace WebBlocks.Extensions
                 container.ContainerRenderer.Render(container, html);
             }
 
-            
             return "";
         }
 

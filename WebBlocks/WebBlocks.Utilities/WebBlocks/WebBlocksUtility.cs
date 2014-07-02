@@ -5,6 +5,7 @@ using System.Web;
 using Umbraco.Core.Models;
 using Umbraco.Web;
 using Umbraco.Web.Models;
+using WebBlocks.Interfaces;
 using WebBlocks.Utilities.Cache;
 
 namespace WebBlocks.Utilities.WebBlocks
@@ -39,6 +40,15 @@ namespace WebBlocks.Utilities.WebBlocks
         {
             get { return CacheHelper.Get<IPublishedContent>("wbCurrentPageIPublishedContent"); }
             set { CacheHelper.Add("wbCurrentPageIPublishedContent", value); }
+        }
+
+        public static IContainer CurrentContainer
+        {
+            get { return CacheHelper.Get<IContainer>("wbCurrentContainer"); }
+            set 
+            {
+                CacheHelper.Add("wbCurrentContainer", value);  
+            }
         }
     }
 }

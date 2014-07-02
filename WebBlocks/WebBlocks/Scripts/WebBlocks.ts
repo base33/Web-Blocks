@@ -317,6 +317,7 @@ $(document).ready(function () {
                             $.get(url, function (data) {
                                 $(wbCanvas + " .block[wbid='" + blockId + "']").each(function () {
                                     $(this).html($(data).html());
+                                    $(this).find("a").click(function (e) { e.preventDefault(); return false; });
                                 });
                             });
                         }

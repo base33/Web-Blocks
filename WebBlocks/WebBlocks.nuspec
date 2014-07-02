@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MentorWebBlocks</id>
-    <version>3.2</version>
+    <version>3.3</version>
     <title>Mentor Web Blocks</title>
     <authors>Craig Noble</authors>
     <owners>Mentor Digital</owners>
@@ -24,7 +24,7 @@ The Web Blocks system provides the ability to drag blocks of content into define
   <files>
 	<file src="WebBlocks\Css\**" target="content\Umbraco\Plugins\WebBlocks\Css\" />
 	<file src="WebBlocks\Scripts\*.js" target="content\Umbraco\Plugins\WebBlocks\Scripts\" />
-	<file src="WebBlocks\Scripts\Libraries\**" target="content\Umbraco\Plugins\WebBlocks\Scripts\" />
+	<file src="WebBlocks\Scripts\Libraries\*.js" target="content\Umbraco\Plugins\WebBlocks\Scripts\Libraries\" />
 	<file src="WebBlocks\Views\WebBlockViews\*.cshtml" target="content\Views\Shared\" />
 	<file src="WebBlocks\RemovePreviewCookie.ashx" target="content\" />
 	<file src="WebBlocks\WebBlocksProtectedPage.ashx" target="content\" />
