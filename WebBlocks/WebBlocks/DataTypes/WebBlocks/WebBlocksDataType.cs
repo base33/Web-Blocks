@@ -9,7 +9,8 @@ namespace WebBlocks.DataTypes.WebBlocks
     public class WebBlocksDataType : AbstractDataEditor
     {
         private WebBlocksPrevalueEditor webBlocksPrevalueEditor;
-        private WebBlocksCustomControl webBlocksControl = new WebBlocksCustomControl();
+        private WebBlocksPreValueRepository webBlocksPrevalueRepository = null;
+        private WebBlocksCustomControl webBlocksControl;
 
         public override Guid Id
         {
@@ -21,7 +22,8 @@ namespace WebBlocks.DataTypes.WebBlocks
 
         public WebBlocksDataType()
         {
-            webBlocksPrevalueEditor = webBlocksPrevalueEditor ?? (webBlocksPrevalueEditor = new WebBlocksPrevalueEditor(this));
+            webBlocksControl = new WebBlocksCustomControl();
+            webBlocksPrevalueEditor = webBlocksPrevalueEditor ?? (webBlocksPrevalueEditor = new WebBlocksPrevalueEditor(this, webBlocksPrevalueRepository));
             RenderControl = webBlocksControl;
             webBlocksControl.Init += WebBlocks_Init;
             DataEditorControl.OnSave += DataEditorControlOnOnSave;
@@ -30,6 +32,7 @@ namespace WebBlocks.DataTypes.WebBlocks
 
         protected void WebBlocks_Init(object sender, EventArgs e)
         {
+            webBlocksPrevalueRepository = new WebBlocksPreValueRepository(this.DataTypeDefinitionId);
             webBlocksControl.value = base.Data.Value ?? "";
         }
 

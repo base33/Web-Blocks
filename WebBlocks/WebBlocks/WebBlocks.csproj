@@ -137,8 +137,10 @@
   <ItemGroup>
     <Compile Include="API\WebBlocksAPI.cs" />
     <Compile Include="BaseService\WebBlocksBase.cs" />
+    <Compile Include="DataTypes\WebBlocks\PropertyIndex.cs" />
+    <Compile Include="DataTypes\WebBlocks\WebBlocksPreValueRepository.cs" />
+    <Compile Include="DataTypes\WebBlocks\WebBlocksTinyMCEConfiguration.cs" />
     <Compile Include="Extensions\HtmlContainerExtension.cs" />
-    <Compile Include="DataTypes\WebBlocks\WebBlocksPreValuesAccessor.cs" />
     <Compile Include="DataTypes\WebBlocks\WebBlocks.ascx.cs">
       <DependentUpon>WebBlocks.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

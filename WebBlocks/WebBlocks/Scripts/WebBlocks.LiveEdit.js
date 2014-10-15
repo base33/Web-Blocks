@@ -136,8 +136,8 @@ $(document).ready(function () {
     // Instantiate the tinymce dialog
     var $tinymceDialog = $('#tinymce').dialog({
         title: 'Edit WYSIWYG Content',
-        width: 730,
-        height: 580,
+        width: 'auto',
+        height: 'auto',
         closeOnEscape: true,
         autoOpen: false,
         buttons: {
