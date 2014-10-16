@@ -166,6 +166,7 @@ $(document).ready(function () {
                     $('.mceToolbarExternal').show();
                     tinymceLoaded = true;
                     tinyMCE.activeEditor.setContent(currentActiveBlock.html());
+                    $tinymceDialog.dialog({ position: "center" });
                 });
             } else {
                 tinyMCE.activeEditor.setContent(currentActiveBlock.html());

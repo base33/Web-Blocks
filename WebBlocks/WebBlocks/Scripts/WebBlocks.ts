@@ -312,6 +312,7 @@ function webBlocksApp(data) {
                             $('.mceToolbarExternal').show();
                             tinymceLoaded = true;
                             tinyMCE.activeEditor.setContent(currentActiveBlock.html());
+                            $tinymceDialog.dialog({ position: "center" });
                         });
                     }
                     else {
