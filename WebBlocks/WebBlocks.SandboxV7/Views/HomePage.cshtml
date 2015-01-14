@@ -1,0 +1,25 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    Layout = "Global.cshtml";
+    //var d = new umbraco.cms.businesslogic.web.Document(Request.GetItemAs<int>("id"));
+    //var pc = new umbraco.presentation.preview.PreviewContent(UmbracoUser, Guid.NewGuid(), false);
+    //pc.PrepareDocument(UmbracoUser, d, true);
+    //pc.SavePreviewSet();
+    //docLit.Text = d.Text;
+    //changeSetUrl.Text = pc.PreviewsetPath;
+    //pc.ActivatePreviewCookie();
+    //Response.Redirect("../../" + d.Id.ToString(CultureInfo.InvariantCulture) + ".aspx", true);
+}
+
+
+@section Content {
+	<div class="container_12 clearfix">
+            @Html.Container(new Container {
+                Name = "fullWidthSliderContainer",
+                CssClass = "contentBlock_12 homeSlider",
+                Blocks = new List<IBlock>(),
+                ContainerPermissions = new AllowedBlocks("flexsliderSlideBlock")
+            })
+    </div>
+}

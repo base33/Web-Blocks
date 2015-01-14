@@ -1,0 +1,30 @@
+﻿@using System.Linq;
+@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+
+@{
+    WebBlocks.CssClasses.Add("grid_3");
+    var subNavRoot = CurrentPage.AncestorOrSelf(2);
+}
+<div class="siteBlock featureBlock">
+	<div class="blockTitle">
+		<a href="@subNavRoot.Url" @Html.Raw(CurrentPage.Id == subNavRoot.Id ? "style=\"text-decoration:underline;\"" : "")>
+			@subNavRoot.Name
+		</a>
+	</div>
+	
+	@if (subNavRoot.Children != null && subNavRoot.Children.Count() > 0)
+    {		
+		<div class="blockContent">
+			<ul class="subnav">
+				@foreach (var child in subNavRoot.Children.Where("umbracoNaviHide != true"))
+                {
+                    var selectedClass = CurrentPage.Id == child.Id ? "selected" : "";
+									
+					<li class="@selectedClass">
+						<a href="@child.Url">@child.Name</a>
+					</li>
+				}
+			</ul>		
+		</div>
+	}
+</div>

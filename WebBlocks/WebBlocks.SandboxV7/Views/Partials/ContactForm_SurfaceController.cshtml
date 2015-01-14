@@ -1,0 +1,38 @@
+﻿@using WebBlocks.SandboxV6.SurfaceControllers
+@using WebBlocks.API;
+
+@model ContactFormModel
+
+@{
+    Html.EnableClientValidation(true);
+    Html.EnableUnobtrusiveJavaScript(true);
+}
+
+@if (Convert.ToBoolean(TempData["IsSuccessful"]))
+{
+    <h1>Thank you for your message</h1>
+}
+else
+{
+    WebBlocksAPI api = new WebBlocksAPI();
+    api.CssClasses.Add("grid_9 contactForm");
+    using (Html.BeginUmbracoForm<ContactFormSurfaceController>("HandleContactForm"))
+    {
+        @Html.ValidationSummary(true)
+        @Html.AntiForgeryToken()
+        
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { placeholder = "Name: " })
+        @Html.ValidationMessageFor(model => model.Name)
+        <br />
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email, new { placeholder = "Email: " })
+        @Html.ValidationMessageFor(model => model.Email)
+    <br />
+        @Html.LabelFor(model => model.Message)
+        @Html.TextBoxFor(model => model.Message, new { placeholder = "Message: " })
+        @Html.ValidationMessageFor(model => model.Message)
+        <br />
+        <input type="submit" value="Submit"/>
+    }
+}

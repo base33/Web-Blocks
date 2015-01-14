@@ -1,0 +1,5 @@
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+	
+@{
+    Html.RenderAction((string)CurrentBlock.action, (string)CurrentBlock.controller);
+}

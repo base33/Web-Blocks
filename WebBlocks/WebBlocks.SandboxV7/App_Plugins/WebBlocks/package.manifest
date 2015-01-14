@@ -1,0 +1,24 @@
+{   
+    propertyEditors: [      
+        {
+            alias: "WebBlocks.LayoutBuilder",
+            name: "Mentor Web Blocks",
+            hideLabel: true,
+            valueType: "JSON",
+            editor: {
+                view: "~/App_Plugins/WebBlocks/LayoutBuilder.html"
+            }
+        }
+    ]
+    ,
+    javascript: [
+        '~/App_Plugins/WebBlocks/layoutbuilder.controller.js',
+		'~/App_Plugins/WebBlocks/layoutbuilder.directives.js',
+		"~/App_Plugins/WebBlocks/dialogs/webblocks.contextmenudialog.js",
+		"~/App_Plugins/WebBlocks/dialogs/webblocks.addblockdialog.js",
+		"~/App_Plugins/WebBlocks/dialogs/webblocks.blockstoragedialog.js",
+		"~/App_Plugins/WebBlocks/dialogs/webblocks.recyclebindialog.js",
+		"~/App_Plugins/WebBlocks/assets/draggable.js",
+		"~/App_Plugins/WebBlocks/assets/touchpunch.js"
+    ]
+}

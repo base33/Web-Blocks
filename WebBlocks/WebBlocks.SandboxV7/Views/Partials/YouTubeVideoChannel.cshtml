@@ -1,0 +1,45 @@
+@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+@{    
+var blocks = (List<IBlock>)ViewData["Blocks"];
+}
+
+<div class="contentBlock_12 container">
+	<div class="block grid_12 videoChannel">
+		<div class="videoPlayer">
+            @if (blocks.Any())
+            {
+                <iframe width="600" height="400" src="//www.youtube.com/embed/@(((NodeBlock)blocks[0]).Content.videoId)" frameborder="0" allowfullscreen></iframe>
+            }
+		</div>
+		<div class="videoPlaylist">
+			<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+			<div class="viewport">
+				<ul class="overview">
+					@foreach (NodeBlock block in blocks)
+                    {
+                        <li videoId="@block.Content.videoId">
+							<img src="http://img.youtube.com/vi/@block.Content.videoId/sddefault.jpg" />
+							<span>
+								<span class="title">@block.Content.title</span>
+								<p>@block.Content.subTitle</p>
+							</span>
+						</li>
+                        }
+                                    
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/scripts/tinyscrollbar.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.videoPlaylist').tinyscrollbar();
+
+        $(".videoPlaylist li").click(function () {
+            var videoId = $(this).attr("videoId");
+            $(".videoPlayer iframe").attr("src", "//www.youtube.com/embed/" + videoId);
+        });
+    });
+</script>

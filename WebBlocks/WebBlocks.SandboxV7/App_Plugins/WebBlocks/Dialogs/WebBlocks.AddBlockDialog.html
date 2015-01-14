@@ -1,0 +1,28 @@
+﻿<div ng-controller="WebBlocks.AddBlockDialogCtrl" class="umb-panel merchello-side-panel">
+    <div class="umb-modalcolumn-header">
+        <h1 class="ng-binding">Add Block</h1>
+    </div>
+    <div class="umb-panel-body with-header with-footer">
+        <ul class="umb-actions">
+            <li class="action ng-scope">
+                <a prevent-default="">
+                    <i class=" icon icon-newspaper-alt">
+                    </i>
+                    <span class="menu-label ng-binding" style="font-size:15px;">Wysiwyg Block</span>
+                </a>
+            </li>
+        </ul>
+        <div>
+            <umb-tree application="content" hideheader="true" hideoptions="true" isdialog="true" section="content" treealias="" ng-model="selectedContent">
+            </umb-tree>
+        </div>
+        
+    </div>
+    <div class="umb-panel-footer">
+        <div class="umb-el-wrap umb-panel-buttons">
+            <div class="btn-toolbar umb-btn-toolbar pull-right">
+                <input type="button" class="btn btn-success" ng-click="submit()" value="Close" />
+            </div>
+        </div>
+    </div>
+</div>

@@ -71,12 +71,6 @@ namespace WebBlocks.Utilities.Umbraco
             get { return content.ContentType.Id; }
         }
 
-        public IPublishedContentProperty GetProperty(string alias)
-        {
-            Property property = content.Properties.FirstOrDefault(c => c.Alias == alias);
-            return property != null ? new DynamicContentProperty(property) : null;
-        }
-
         public int Id
         {
             get { return content.Id; }
@@ -112,7 +106,7 @@ namespace WebBlocks.Utilities.Umbraco
             get { return content.Path; }
         }
 
-        public ICollection<IPublishedContentProperty> Properties
+        public ICollection<IPublishedProperty> Properties
         {
             get
             {
@@ -191,7 +185,7 @@ namespace WebBlocks.Utilities.Umbraco
             return content.Id;
         }
 
-        public IPublishedContentProperty GetProperty(string alias, bool recurse)
+        public IPublishedProperty GetProperty(string alias, bool recurse)
         {
             var currentContent = content;
             do
@@ -202,7 +196,7 @@ namespace WebBlocks.Utilities.Umbraco
                     return new DynamicContentProperty(property);
                 else
                     currentContent = content.Parent();
-            } while (currentContent.Level > -1 && recurse);
+            } while (currentContent != null && currentContent.Level > -1 && recurse);
 
             return null;
         }
@@ -210,6 +204,14 @@ namespace WebBlocks.Utilities.Umbraco
         public bool IsDraft
         {
             get { return true; }
+        }
+
+
+
+        public IPublishedProperty GetProperty(string alias)
+        {
+            var property = content.Properties.FirstOrDefault(c => c.Alias == alias);
+            return new DynamicContentProperty(property);
         }
     }
 }

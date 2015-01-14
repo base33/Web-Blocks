@@ -1,0 +1,5301 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>FanoeConfig.txt</guid>
+      <orgPath>/App_Plugins/Grid/Config</orgPath>
+      <orgName>FanoeConfig.txt</orgName>
+    </file>
+    <file>
+      <guid>embed_videowrapper.cshtml</guid>
+      <orgPath>/App_Plugins/Grid/Editors/Render</orgPath>
+      <orgName>embed_videowrapper.cshtml</orgName>
+    </file>
+    <file>
+      <guid>media_round.cshtml</guid>
+      <orgPath>/App_Plugins/Grid/Editors/Render</orgPath>
+      <orgName>media_round.cshtml</orgName>
+    </file>
+    <file>
+      <guid>media_text_right.cshtml</guid>
+      <orgPath>/App_Plugins/Grid/Editors/Render</orgPath>
+      <orgName>media_text_right.cshtml</orgName>
+    </file>
+    <file>
+      <guid>media_wide.cshtml</guid>
+      <orgPath>/App_Plugins/Grid/Editors/Render</orgPath>
+      <orgName>media_wide.cshtml</orgName>
+    </file>
+    <file>
+      <guid>quote_with_description.cshtml</guid>
+      <orgPath>/App_Plugins/Grid/Editors/Render</orgPath>
+      <orgName>quote_with_description.cshtml</orgName>
+    </file>
+    <file>
+      <guid>media_with_description.html</guid>
+      <orgPath>/App_Plugins/Grid/Editors/Views</orgPath>
+      <orgName>media_with_description.html</orgName>
+    </file>
+    <file>
+      <guid>quote_with_description.html</guid>
+      <orgPath>/App_Plugins/Grid/Editors/Views</orgPath>
+      <orgName>quote_with_description.html</orgName>
+    </file>
+    <file>
+      <guid>Bootstrap2.cshtml</guid>
+      <orgPath>/Views/Partials/Grid</orgPath>
+      <orgName>Bootstrap2.cshtml</orgName>
+    </file>
+    <file>
+      <guid>Bootstrap3.cshtml</guid>
+      <orgPath>/Views/Partials/Grid</orgPath>
+      <orgName>Bootstrap3.cshtml</orgName>
+    </file>
+    <file>
+      <guid>Fanoe.cshtml</guid>
+      <orgPath>/Views/Partials/Grid</orgPath>
+      <orgName>Fanoe.cshtml</orgName>
+    </file>
+    <file>
+      <guid>Base.cshtml</guid>
+      <orgPath>/Views/Partials/Grid/Editors</orgPath>
+      <orgName>Base.cshtml</orgName>
+    </file>
+    <file>
+      <guid>Embed.cshtml</guid>
+      <orgPath>/Views/Partials/Grid/Editors</orgPath>
+      <orgName>Embed.cshtml</orgName>
+    </file>
+    <file>
+      <guid>Macro.cshtml</guid>
+      <orgPath>/Views/Partials/Grid/Editors</orgPath>
+      <orgName>Macro.cshtml</orgName>
+    </file>
+    <file>
+      <guid>Media.cshtml</guid>
+      <orgPath>/Views/Partials/Grid/Editors</orgPath>
+      <orgName>Media.cshtml</orgName>
+    </file>
+    <file>
+      <guid>Rte.cshtml</guid>
+      <orgPath>/Views/Partials/Grid/Editors</orgPath>
+      <orgName>Rte.cshtml</orgName>
+    </file>
+    <file>
+      <guid>Textstring.cshtml</guid>
+      <orgPath>/Views/Partials/Grid/Editors</orgPath>
+      <orgName>Textstring.cshtml</orgName>
+    </file>
+    <file>
+      <guid>Home.cshtml</guid>
+      <orgPath>/Views</orgPath>
+      <orgName>Home.cshtml</orgName>
+    </file>
+    <file>
+      <guid>Master.cshtml</guid>
+      <orgPath>/Views</orgPath>
+      <orgName>Master.cshtml</orgName>
+    </file>
+    <file>
+      <guid>TextPage.cshtml</guid>
+      <orgPath>/Views</orgPath>
+      <orgName>TextPage.cshtml</orgName>
+    </file>
+    <file>
+      <guid>fanoe.js</guid>
+      <orgPath>/scripts</orgPath>
+      <orgName>fanoe.js</orgName>
+    </file>
+    <file>
+      <guid>bootstrap.min.js</guid>
+      <orgPath>/js</orgPath>
+      <orgName>bootstrap.min.js</orgName>
+    </file>
+    <file>
+      <guid>jquery.min.js</guid>
+      <orgPath>/js</orgPath>
+      <orgName>jquery.min.js</orgName>
+    </file>
+    <file>
+      <guid>bootstrap.min.css</guid>
+      <orgPath>/css</orgPath>
+      <orgName>bootstrap.min.css</orgName>
+    </file>
+    <file>
+      <guid>fanoe.css</guid>
+      <orgPath>/css</orgPath>
+      <orgName>fanoe.css</orgName>
+    </file>
+    <file>
+      <guid>rte.css</guid>
+      <orgPath>/css</orgPath>
+      <orgName>rte.css</orgName>
+    </file>
+    <file>
+      <guid>style.css</guid>
+      <orgPath>/css</orgPath>
+      <orgName>style.css</orgName>
+    </file>
+    <file>
+      <guid>MainNavigation.cshtml</guid>
+      <orgPath>/Views/Partials</orgPath>
+      <orgName>MainNavigation.cshtml</orgName>
+    </file>
+    <file>
+      <guid>BottomNavigation.cshtml</guid>
+      <orgPath>/Views/Partials</orgPath>
+      <orgName>BottomNavigation.cshtml</orgName>
+    </file>
+    <file>
+      <guid>Fanoe.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Fanoe.dll</orgName>
+    </file>
+    <file>
+      <guid>fanoe-denmark.jpg</guid>
+      <orgPath>/media/1012</orgPath>
+      <orgName>fanoe-denmark.jpg</orgName>
+    </file>
+    <file>
+      <guid>9686845888_e2d216ce81_b_dark_small.jpg</guid>
+      <orgPath>/media/1022</orgPath>
+      <orgName>9686845888_e2d216ce81_b_dark_small.jpg</orgName>
+    </file>
+    <file>
+      <guid>9027510123_92a91b5cf4_b_dark.jpg</guid>
+      <orgPath>/media/1013</orgPath>
+      <orgName>9027510123_92a91b5cf4_b_dark.jpg</orgName>
+    </file>
+    <file>
+      <guid>9017002308_81dfd2c1d5_b_dark.jpg</guid>
+      <orgPath>/media/1014</orgPath>
+      <orgName>9017002308_81dfd2c1d5_b_dark.jpg</orgName>
+    </file>
+    <file>
+      <guid>14257753719_2c02b94030_h.jpg</guid>
+      <orgPath>/media/1015</orgPath>
+      <orgName>14257753719_2c02b94030_h.jpg</orgName>
+    </file>
+    <file>
+      <guid>14435759945_a2c58e9ed6_h.jpg</guid>
+      <orgPath>/media/1016</orgPath>
+      <orgName>14435759945_a2c58e9ed6_h.jpg</orgName>
+    </file>
+    <file>
+      <guid>14359779226_df7329d607_h_dark.jpg</guid>
+      <orgPath>/media/1017</orgPath>
+      <orgName>14359779226_df7329d607_h_dark.jpg</orgName>
+    </file>
+    <file>
+      <guid>10818851674_e375a8751e_b.jpg</guid>
+      <orgPath>/media/1018</orgPath>
+      <orgName>10818851674_e375a8751e_b.jpg</orgName>
+    </file>
+    <file>
+      <guid>14448232381_8f994d2adc_h_dark.jpg</guid>
+      <orgPath>/media/1024</orgPath>
+      <orgName>14448232381_8f994d2adc_h_dark.jpg</orgName>
+    </file>
+    <file>
+      <guid>screen-shot-2014-12-01-at-121327.png</guid>
+      <orgPath>/media/1038</orgPath>
+      <orgName>screen-shot-2014-12-01-at-121327.png</orgName>
+    </file>
+    <file>
+      <guid>14434411872_8e663d6de0_h.jpg</guid>
+      <orgPath>/media/1027</orgPath>
+      <orgName>14434411872_8e663d6de0_h.jpg</orgName>
+    </file>
+    <file>
+      <guid>14435732345_c9f5b48dfa_h_dark.jpg</guid>
+      <orgPath>/media/1028</orgPath>
+      <orgName>14435732345_c9f5b48dfa_h_dark.jpg</orgName>
+    </file>
+    <file>
+      <guid>9026528992_d38fbc2e28_o_dark.jpg</guid>
+      <orgPath>/media/1031</orgPath>
+      <orgName>9026528992_d38fbc2e28_o_dark.jpg</orgName>
+    </file>
+    <file>
+      <guid>9039247947_e15a9d8850_b.jpg</guid>
+      <orgPath>/media/1032</orgPath>
+      <orgName>9039247947_e15a9d8850_b.jpg</orgName>
+    </file>
+    <file>
+      <guid>whole-earth-catalog.jpg</guid>
+      <orgPath>/media/1033</orgPath>
+      <orgName>whole-earth-catalog.jpg</orgName>
+    </file>
+    <file>
+      <guid>9015601712_72e44263e4_b.jpg</guid>
+      <orgPath>/media/1037</orgPath>
+      <orgName>9015601712_72e44263e4_b.jpg</orgName>
+    </file>
+    <file>
+      <guid>1912289_753997844648209_7099291360101379579_o.jpg</guid>
+      <orgPath>/media/1036</orgPath>
+      <orgName>1912289_753997844648209_7099291360101379579_o.jpg</orgName>
+    </file>
+    <file>
+      <guid>14441035391_7ee1d0d166_h_darken.jpg</guid>
+      <orgPath>/media/1044</orgPath>
+      <orgName>14441035391_7ee1d0d166_h_darken.jpg</orgName>
+    </file>
+    <file>
+      <guid>form-bg.png</guid>
+      <orgPath>/media/1023</orgPath>
+      <orgName>form-bg.png</orgName>
+    </file>
+    <file>
+      <guid>14386124825_d43f359900_h_cropped.jpg</guid>
+      <orgPath>/media/1046</orgPath>
+      <orgName>14386124825_d43f359900_h_cropped.jpg</orgName>
+    </file>
+    <file>
+      <guid>9027509991_ff12bd87e4_b_small_cropped.jpg</guid>
+      <orgPath>/media/1047</orgPath>
+      <orgName>9027509991_ff12bd87e4_b_small_cropped.jpg</orgName>
+    </file>
+    <file>
+      <guid>sharingiscaring_cropped.jpg</guid>
+      <orgPath>/media/1048</orgPath>
+      <orgName>sharingiscaring_cropped.jpg</orgName>
+    </file>
+    <file>
+      <guid>353f8422-b767-457c-ab8c-f0cb5539aa83_9027510123_92a91b5cf4_b_dark.jpg</guid>
+      <orgPath>/media/1049</orgPath>
+      <orgName>9027510123_92a91b5cf4_b_dark.jpg</orgName>
+    </file>
+    <file>
+      <guid>logo.jpg</guid>
+      <orgPath>/media/1042</orgPath>
+      <orgName>logo.jpg</orgName>
+    </file>
+    <file>
+      <guid>BlogPost.cshtml</guid>
+      <orgPath>/Views</orgPath>
+      <orgName>BlogPost.cshtml</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>Fanoe Starter Kit</name>
+      <version>1.0.0</version>
+      <license url="http://opensource.org/licenses/MIT">MIT License</license>
+      <url>http://umbraco.com</url>
+      <requirements>
+        <major>3</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Umbraco HQ</name>
+      <website>http://umbraco.com</website>
+    </author>
+    <readme><![CDATA[]]></readme>
+  </info>
+  <Documents>
+    <DocumentSet importMode="root">
+      <Home id="1070" parentID="-1" level="1" creatorID="0" sortOrder="0" createDate="2014-12-01T17:08:35" updateDate="2014-12-04T12:54:20" nodeName="Home" urlName="home" path="-1,1070" isDoc="" nodeType="1057" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1053" nodeTypeAlias="Home">
+        <siteDescription><![CDATA[This is an official Umbraco Starter kit. It shows of the newest features in Umbraco and is the perfect place to start for newcomers.. Everything is made to be taken apart. It's your own little playground. Enjoy!]]></siteDescription>
+        <siteTitle><![CDATA[Fanoe - Umbraco Starter Kit]]></siteTitle>
+        <siteLogo><![CDATA[/media/1042/logo.jpg]]></siteLogo>
+        <content><![CDATA[{
+  "name": "1 column layout",
+  "sections": [
+    {
+      "grid": 12,
+      "rows": [
+        {
+          "name": "Banner",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "rte",
+                "banner_headline",
+                "banner_tagline"
+              ],
+              "config": {},
+              "styles": {
+                "margin-bottom": "60px"
+              },
+              "controls": [
+                {
+                  "value": "Welcome to Fanoe",
+                  "editor": {
+                    "name": "Banner Headline",
+                    "alias": "banner_headline",
+                    "view": "textstring",
+                    "icon": "icon-coin",
+                    "config": {
+                      "style": "font-size: 36px; line-height: 45px; font-weight: bold; text-align:center",
+                      "markup": "<h1 style='font-size:62px;text-align:center'>#value#</h1>"
+                    }
+                  }
+                },
+                {
+                  "value": "This is the new default starter kit for Umbraco, we enjoy building things that not only look great, but also work great.",
+                  "editor": {
+                    "name": "Banner Tagline",
+                    "alias": "banner_tagline",
+                    "view": "textstring",
+                    "icon": "icon-coin",
+                    "config": {
+                      "style": "font-size: 25px; line-height: 35px; font-weight: normal; text-align:center",
+                      "markup": "<h2 style='font-weight: 100; font-size: 40px;text-align:center'>#value#</h2>"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "grid": 4,
+              "allowAll": false,
+              "allowed": [
+                "rte",
+                "media"
+              ],
+              "controls": [
+                {
+                  "value": "<h2>The starter kit</h2>\n<p>Congratulations on getting up and running with the “Fanoe” starter kit. It's a great way to get to know the Grid datatype.</p>\n<p><a href=\"/{localLink:1078}\" title=\"The starter kit\">Learn about the starter kit →</a><a href=\"/{localLink:1078}\" title=\"The Starterkit\"><br /></a></p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            },
+            {
+              "grid": 4,
+              "allowAll": false,
+              "allowed": [
+                "rte",
+                "media"
+              ],
+              "controls": [
+                {
+                  "value": "<h2>Learn the basics</h2>\n<p>To get started on the right foot make sure to check out our documentation - from tutorials to API reference.</p>\n<p><a href=\"/{localLink:1079}\" title=\"Basics\">Off to the docs →</a></p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            },
+            {
+              "grid": 4,
+              "allowAll": false,
+              "allowed": [
+                "rte",
+                "media"
+              ],
+              "controls": [
+                {
+                  "value": "<h2>Master classes</h2>\n<p>The best way to learn Umbraco is through the Master classes that’s running every month in most regions.</p>\n<p><a href=\"/{localLink:1080}\" title=\"Masterclasses\">Learn about the masterclasses →</a></p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "background-image": "url(/media/1044/14441035391_7ee1d0d166_h_darken.jpg)"
+          },
+          "config": {
+            "class": "dark"
+          },
+          "id": "d28a05da-2404-c1e7-6265-01b07fc5f722"
+        },
+        {
+          "name": "Two column",
+          "areas": [
+            {
+              "grid": 6,
+              "allowAll": false,
+              "allowed": [
+                "rte",
+                "media",
+                "media_round",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "<h1>Umbraco Forms</h1>\n<p>With our add-on product Umbraco Forms it’s a breeze to create any type of form you can imagine.</p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            },
+            {
+              "grid": 6,
+              "allowAll": false,
+              "allowed": [
+                "rte",
+                "media",
+                "media_round",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "<h1>Package repository</h1>\n<p>At Our Umbraco you’ll find hundreds of free packages made and maintained by the community.</p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "background-image": "url(/media/1023/form-bg.png)"
+          },
+          "config": {
+            "class": "light"
+          },
+          "id": "5362ea7d-e729-078b-e717-a1e7aa69fd4b"
+        },
+        {
+          "name": "Full width image",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "media_wide_cropped",
+                "media_wide"
+              ],
+              "controls": [
+                {
+                  "value": {
+                    "focalPoint": {
+                      "left": 0.5,
+                      "top": 0.5
+                    },
+                    "id": 1127,
+                    "image": "/media/1046/14386124825_d43f359900_h_cropped.jpg"
+                  },
+                  "editor": {
+                    "name": "Image wide",
+                    "alias": "media_wide",
+                    "view": "media",
+                    "render": "/App_Plugins/Grid/Editors/Render/media_wide.cshtml",
+                    "icon": "icon-picture"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "full triangle"
+          },
+          "id": "953b3802-6b4f-20ed-66f9-9a855e9afdd4"
+        },
+        {
+          "name": "Two column",
+          "areas": [
+            {
+              "grid": 6,
+              "allowAll": false,
+              "allowed": [
+                "rte",
+                "media",
+                "media_round",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "<h2>Sharing is caring</h2>\n<p>Our Umbraco is our community hub, bringing together over a hundred thousand people every month sharing knowledge in the forum, documentation, blogs, packages and much more.</p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            },
+            {
+              "grid": 6,
+              "allowAll": false,
+              "allowed": [
+                "rte",
+                "media",
+                "media_round",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "<h2>Born global, loving local</h2>\n<p>If you can’t make it to CodeGarden, that doesn’t mean you have to miss the chance of hanging out with the Umbraco community. You can do just that through the many local user groups and meetups</p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "purple"
+          },
+          "id": "29cac0ff-d8e9-605b-9e7b-6809dce55edd"
+        },
+        {
+          "name": "Banner",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "rte",
+                "banner_headline",
+                "banner_tagline"
+              ],
+              "controls": [
+                {
+                  "value": "<h1 style=\"text-align: center;\">CodeGarden</h1>\n<h5 style=\"text-align: center;\">Every year in June, around 500 Umbracians gather in Denmark for our annual conference “CodeGarden”.</h5>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "background-image": "url(/media/1028/14435732345_c9f5b48dfa_h_dark.jpg)"
+          },
+          "config": {
+            "class": "dark"
+          },
+          "id": "0093bd05-735a-9623-8509-28085818745c"
+        }
+      ]
+    }
+  ]
+}]]></content>
+        <LandingPage id="1077" parentID="1070" level="2" creatorID="0" sortOrder="0" createDate="2014-12-01T17:08:35" updateDate="2014-12-03T15:26:37" nodeName="Learn" urlName="learn" path="-1,1070,1077" isDoc="" nodeType="1058" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1054" nodeTypeAlias="LandingPage">
+          <umbracoNaviHide>0</umbracoNaviHide>
+          <TextPage id="1078" parentID="1077" level="3" creatorID="1" sortOrder="0" createDate="2014-12-01T17:08:35" updateDate="2014-12-03T19:34:27" nodeName="The starter kit" urlName="the-starter-kit" path="-1,1070,1077,1078" isDoc="" nodeType="1059" creatorName="Sebastiaan Jansen" writerName="Sebastiaan Jansen" writerID="1" template="1054" nodeTypeAlias="TextPage">
+            <content><![CDATA[{
+  "name": "1 column layout",
+  "sections": [
+    {
+      "grid": 12,
+      "rows": [
+        {
+          "name": "Image w. text",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "banner_headline",
+                "rte",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "Fanø",
+                  "editor": {
+                    "name": "Banner Headline",
+                    "alias": "banner_headline",
+                    "view": "textstring",
+                    "icon": "icon-coin",
+                    "config": {
+                      "style": "font-size: 36px; line-height: 45px; font-weight: bold; text-align:center",
+                      "markup": "<h1 style='font-size:62px;text-align:center'>#value#</h1>"
+                    }
+                  }
+                },
+                {
+                  "value": "<h5 style=\"text-align: center;\">Fanø is a Danish island in the North Sea off the coast of southwestern Denmark, and is the very northernmost of the Danish Wadden Sea Islands. Fanø municipality is the municipality that covers the island and its seat is the town of Nordby.</h5>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "background-image": "url(/media/1012/fanoe-denmark.jpg)"
+          },
+          "config": {
+            "class": "dark"
+          },
+          "id": "789b4b02-6a1e-bbff-9435-939d83f6e895"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "<h1 dir=\"ltr\"><span><span>How is this starter kit made?</span></span></h1>\n<p dir=\"ltr\"><span>Congratulations on getting up and running with Umbraco and the “Fanoe” starter kit. The idea with this starter kit is to let you explore some of the simple things Umbraco can do for a typical content powered website using “The Grid” feature.</span></p>\n<p><span>To get the most out of this starter kit and get started on the right foot, make sure to watch the “Grid” tutorial on Umbraco.TV which will take you through how the entire starter kit was made. From implementing the HTML mockups in Umbraco and using the powerful features in the Grid to give maximum freedom and flexibility for editors - without compromising the design.</span></p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "light"
+          },
+          "id": "3f0013b7-f55e-cdd9-6ed9-7ad2f8696157"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "While walking around on Fanø, you will notice that almost all traditional houses have a little window above the front door with a model boat.\nThis is a very traditional good luck charm for the men away at sea. The economy of the island was almost entirely based on fishing and every family home has the model boat to ensure the safe return of sailors",
+                  "editor": {
+                    "name": "Quote",
+                    "alias": "quote",
+                    "view": "textstring",
+                    "icon": "icon-quote",
+                    "config": {
+                      "style": "border-left: 3px solid #ccc; padding: 10px; color: #ccc; font-family: serif; font-variant: italic; font-size: 18px",
+                      "markup": "<blockquote>#value#</blockquote>"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "yellow"
+          },
+          "id": "3bd5271f-c171-8435-ba19-00008abd3af5"
+        }
+      ]
+    }
+  ]
+}]]></content>
+          </TextPage>
+          <TextPage id="1079" parentID="1077" level="3" creatorID="1" sortOrder="1" createDate="2014-12-01T17:08:35" updateDate="2014-12-04T14:15:37" nodeName="Basics" urlName="basics" path="-1,1070,1077,1079" isDoc="" nodeType="1059" creatorName="Sebastiaan Jansen" writerName="Sebastiaan Jansen" writerID="1" template="1054" nodeTypeAlias="TextPage">
+            <content><![CDATA[{
+  "name": "1 column layout",
+  "sections": [
+    {
+      "grid": 12,
+      "rows": [
+        {
+          "name": "Image w. text",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "banner_headline",
+                "rte",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "Learn the basics",
+                  "editor": {
+                    "name": "Banner Headline",
+                    "alias": "banner_headline",
+                    "view": "textstring",
+                    "icon": "icon-coin",
+                    "config": {
+                      "style": "font-size: 36px; line-height: 45px; font-weight: bold; text-align:center",
+                      "markup": "<h1 style='font-size:62px;text-align:center'>#value#</h1>"
+                    }
+                  }
+                },
+                {
+                  "value": "<h5 style=\"text-align: center;\">While we recommend everyone to get an Umbraco.TV subscription to learn the ins and outs of Umbraco, maybe you prefer a more traditional tutorial or detailed technical documentation.</h5>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "background-image": "url(/media/1047/9027509991_ff12bd87e4_b_small_cropped.jpg)"
+          },
+          "config": {
+            "class": "dark"
+          },
+          "id": "97df8f64-dc98-40a9-e5f3-ac065983d6bd"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "<h1 style=\"text-align: center;\">Create a basic website in Umbraco</h1>\n<p style=\"text-align: center;\">At Our Umbraco you’ll find both and we definitely recommend reading the guide on <a href=\"http://our.umbraco.org/documentation/Using-Umbraco/Creating-Basic-Site/?utm_source=core&amp;utm_medium=starterkit&amp;utm_content=topic-link&amp;utm_campaign=fanoe\">creating a basic website in Umbraco</a><a href=\"#\" target=\"_blank\" title=\"Create a basic website in Umbraco\"><br /></a></p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "purple"
+          },
+          "id": "070e60ae-26d9-a277-5b04-97a52f73e34d"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "<h2 dir=\"ltr\"><span>Sharpen those Razor skills</span></h2>\n<p dir=\"ltr\"><span>Umbraco uses Razor - a templating engine from Microsoft - as the main way to generate pages. If you’ve never used it before and in particular if you’ve never used ASP.NET before, It might seem a little daunting, but fear not. The template editor in the back office provides snippets and a Query Builder to get you up to speed.</span></p>\n<p dir=\"ltr\"><span>Once you know the basics, it’s also nice to know that there’s <a href=\"http://our.umbraco.org/projects/developer-tools/umbraco-v6-mvc-razor-cheatsheets/?utm_source=core&amp;utm_medium=starterkit&amp;utm_content=topic-link&amp;utm_campaign=fanoe\">cheat sheets</a> covering the most common methods - ready to print out for office decoration.</span></p>\n<h2 dir=\"ltr\"><span>Extend with the API</span></h2>\n<p dir=\"ltr\"><span>If you want to extend Umbraco even further, you can use our .NET API to programmatically create Content, Media, Members and anything else that’s possible through the back office. For a quick start, <a href=\"http://umbraco.com/follow-us/blog-archive/2013/1/22/introducing-contentservice-aka-the-v6-api/?utm_source=core&amp;utm_medium=starterkit&amp;utm_content=topic-link&amp;utm_campaign=fanoe\">you can follow this tutorial</a></span><span> and for full reference, don’t miss <a href=\"http://our.umbraco.org/documentation/reference/Management-v6/Services/?utm_source=core&amp;utm_medium=starterkit&amp;utm_content=topic-link&amp;utm_campaign=fanoe\">the thorough documentation on Our</a>.</span></p>\n<p> </p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "light"
+          },
+          "id": "16f56cd2-374c-8c6c-c91c-7d65b8b264cd"
+        }
+      ]
+    }
+  ]
+}]]></content>
+          </TextPage>
+          <TextPage id="1080" parentID="1077" level="3" creatorID="0" sortOrder="2" createDate="2014-12-01T17:08:35" updateDate="2014-12-04T14:06:13" nodeName="Masterclasses" urlName="masterclasses" path="-1,1070,1077,1080" isDoc="" nodeType="1059" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1054" nodeTypeAlias="TextPage">
+            <content><![CDATA[{
+  "name": "1 column layout",
+  "sections": [
+    {
+      "grid": 12,
+      "rows": [
+        {
+          "name": "Image w. text",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "banner_headline",
+                "rte",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "Masterclasses",
+                  "editor": {
+                    "name": "Banner Headline",
+                    "alias": "banner_headline",
+                    "view": "textstring",
+                    "icon": "icon-coin",
+                    "config": {
+                      "style": "font-size: 36px; line-height: 45px; font-weight: bold; text-align:center",
+                      "markup": "<h1 style='font-size:62px;text-align:center'>#value#</h1>"
+                    }
+                  }
+                },
+                {
+                  "value": "<h5 style=\"text-align: center;\">The best and fastest way to learn Umbraco is through the official Master classes that are running every month in most regions.</h5>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "background-image": "url(/media/1022/9686845888_e2d216ce81_b_dark_small.jpg)"
+          },
+          "config": {
+            "class": "dark"
+          },
+          "id": "2d34e33a-a1ef-04d5-9445-e1f1633bc362"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "<h3 style=\"text-align: center;\">The masterclasses are ran by either the Umbraco HQ or by the most experienced community heroes and use thoroughly tested materials to ensure you’ll return as a fully skilled Umbraco craftsperson.</h3>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "blue"
+          },
+          "id": "5312fa7b-3d5c-e9c0-4d0c-f6ae5d73e168"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "<h2 dir=\"ltr\"><span>Get it right from the beginning</span></h2>\n<p dir=\"ltr\"><span>While Umbraco is a simple tool, it’s important that you use it the right way. The Level 1 master class is designed to make sure that any Web Developer - also with no previous ASP.NET knowledge - can create advanced multi-lingual sites by the end of the course.</span></p>\n<p> </p>\n<h2 dir=\"ltr\"><span>Become an expert</span></h2>\n<p dir=\"ltr\"><span>Once you know the basics, you can step up your game by attending the Level 2 master class. While the first masterclass is focused on implementing a site, this Masterclass will teach you how the .net APIs work and how to integrate and extend Umbraco. Whether that’s creating content programmatically or integrating a third party e-commerce engine or CRM.</span></p>\n<p> </p>\n<h2 dir=\"ltr\"><span>Worth the investment</span></h2>\n<p dir=\"ltr\"><span>All attendees at the official Umbraco Masterclasses receive a certification which is the best way to make yourself noticed in the Umbraco ecosystem. So whether you’re looking to move up in the ranks of your company or are a free agent, you shouldn’t be doing Umbraco without becoming certified. The investment will come back many times, so make sure to <a href=\"http://umbraco.com/products/training/?utm_source=core&amp;utm_medium=starterkit&amp;utm_content=topic-link&amp;utm_campaign=fanoe\" target=\"_blank\" title=\"Masterclasses\">keep an eye out for a Masterclass near you</a>.</span></p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "light"
+          },
+          "id": "a3ddf743-1622-7eec-6ea4-08caef854559"
+        }
+      ]
+    }
+  ]
+}]]></content>
+          </TextPage>
+        </LandingPage>
+        <LandingPage id="1081" parentID="1070" level="2" creatorID="0" sortOrder="1" createDate="2014-12-01T17:08:35" updateDate="2014-12-03T15:26:42" nodeName="Explore" urlName="explore" path="-1,1070,1081" isDoc="" nodeType="1058" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1054" nodeTypeAlias="LandingPage">
+          <umbracoNaviHide>0</umbracoNaviHide>
+          <TextPage id="1082" parentID="1081" level="3" creatorID="0" sortOrder="0" createDate="2014-12-01T17:08:35" updateDate="2014-12-03T15:24:46" nodeName="Our Umbraco" urlName="our-umbraco" path="-1,1070,1081,1082" isDoc="" nodeType="1059" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1054" nodeTypeAlias="TextPage">
+            <content><![CDATA[{
+  "name": "1 column layout",
+  "sections": [
+    {
+      "grid": 12,
+      "rows": [
+        {
+          "name": "Image w. text",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "banner_headline",
+                "rte",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "Sharing is caring",
+                  "editor": {
+                    "name": "Banner Headline",
+                    "alias": "banner_headline",
+                    "view": "textstring",
+                    "icon": "icon-coin",
+                    "config": {
+                      "style": "font-size: 36px; line-height: 45px; font-weight: bold; text-align:center",
+                      "markup": "<h1 style='font-size:62px;text-align:center'>#value#</h1>"
+                    }
+                  }
+                },
+                {
+                  "value": "<h5 style=\"text-align: center;\">Our Umbraco is our community hub, bringing together over a hundred thousand people every month sharing knowledge in the forum, documentation, blogs, packages and much more.</h5>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "background-image": "url(/media/1048/sharingiscaring_cropped.jpg)"
+          },
+          "config": {
+            "class": "dark"
+          },
+          "id": "0efee164-ea45-3657-66c2-04db5cbdcd37"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "<h2>Get help</h2>\n<p>If you’re stuck in your Umbraco project, the friendly forum is the place to visit. We take pride in keeping a friendly atmosphere in our forums despite the rapid growth of the project, so remember that the easier and friendlier you ask the more likely you are to get a quality reply.</p>\n<p> </p>\n<h2 dir=\"ltr\"><span>Karma<br /></span></h2>\n<p dir=\"ltr\">On “Our” we have a virtual currency called “Karma” - think of it as likes worth counting. When you give people help, they can appreciate this by giving you a virtual high five. In addition to the joy of knowing that your help meant something, you also get karma points and while money doesn’t buy you happiness, a little bit of karma can. </p>\n<p dir=\"ltr\"><span>In other words, don’t forget to say thanks - it doesn’t cost you anything!</span></p>\n<p dir=\"ltr\"> </p>\n<h2 dir=\"ltr\"><span>Give back<br /></span></h2>\n<p dir=\"ltr\">Once you’ve become better at Umbraco, remember to set aside a little bit of time to be the help you got. It’ll keep the snowball effect rolling and by pulling together as a community, it doesn’t take much effort from everybody to make Umbraco community the best in the industry when it comes to get a fast and friendly quality response.</p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "light"
+          },
+          "id": "0e64a81c-519d-ed35-7e28-35e2d441a044"
+        },
+        {
+          "name": "Wide image",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "media_wide",
+                "media_wide_cropped"
+              ],
+              "controls": [
+                {
+                  "value": {
+                    "focalPoint": {
+                      "left": 0.54,
+                      "top": 0.34082397003745318
+                    },
+                    "id": 1130,
+                    "image": "/media/1049/9027510123_92a91b5cf4_b_dark.jpg"
+                  },
+                  "editor": {
+                    "name": "Image wide cropped",
+                    "alias": "media_wide_cropped",
+                    "view": "media",
+                    "render": "media",
+                    "icon": "icon-picture",
+                    "config": {
+                      "size": {
+                        "width": 1920,
+                        "height": 700
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "full triangle"
+          },
+          "id": "1efceb16-6a36-e18b-905a-b372c3d8b5e1"
+        }
+      ]
+    }
+  ]
+}]]></content>
+          </TextPage>
+          <TextPage id="1083" parentID="1081" level="3" creatorID="0" sortOrder="1" createDate="2014-12-01T17:08:35" updateDate="2014-12-04T14:05:32" nodeName="Codegarden" urlName="codegarden" path="-1,1070,1081,1083" isDoc="" nodeType="1059" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1054" nodeTypeAlias="TextPage">
+            <content><![CDATA[{
+  "name": "1 column layout",
+  "sections": [
+    {
+      "grid": 12,
+      "rows": [
+        {
+          "name": "Image w. text",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "banner_headline",
+                "rte",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "CodeGarden",
+                  "editor": {
+                    "name": "Banner Headline",
+                    "alias": "banner_headline",
+                    "view": "textstring",
+                    "icon": "icon-coin",
+                    "config": {
+                      "style": "font-size: 36px; line-height: 45px; font-weight: bold; text-align:center",
+                      "markup": "<h1 style='font-size:62px;text-align:center'>#value#</h1>"
+                    }
+                  }
+                },
+                {
+                  "value": "<h5 style=\"text-align: center;\"><span>Every year in June, around 500 Umbracians gather in Denmark for our annual conference “CodeGarden”.</span></h5>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "background-image": "url(/media/1014/9017002308_81dfd2c1d5_b_dark.jpg)"
+          },
+          "config": {
+            "class": "dark"
+          },
+          "id": "d851bdc5-cb0c-e982-a1aa-f1cdda3e39c0"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "<h2 dir=\"ltr\"><span>Well, it used to be a conference</span></h2>\n<p dir=\"ltr\"><span>but today we like to think of it more as a “festival”. Lasting three days from early mornings to late evenings, it’s packed with a combination of learning everything about Umbraco to the who’s who in the community in a laid back atmosphere where you’ll feel at home.</span></p>\n<h2 dir=\"ltr\"><span>Great sessions</span></h2>\n<p dir=\"ltr\"><span>At Umbraco you’ll find sessions that’ll take your skills to the next level. From large-scale implementation to highly specialized sites, you really shouldn’t miss out on the opportunity to learn from those who have come before you.</span></p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "light"
+          },
+          "id": "afbe6cbd-a903-1c91-4d7e-fafa73515de6"
+        },
+        {
+          "name": "Wide image",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "media_wide",
+                "media_wide_cropped"
+              ],
+              "controls": [
+                {
+                  "value": {
+                    "focalPoint": {
+                      "left": 0.5,
+                      "top": 0.5056179775280899
+                    },
+                    "id": 1123,
+                    "image": "/media/1015/14257753719_2c02b94030_h.jpg",
+                    "thumbnail": "/umbraco/backoffice/UmbracoApi/Images/GetBigThumbnail?originalImagePath=%2Fmedia%2F1015%2F14257753719_2c02b94030_h.jpg"
+                  },
+                  "editor": {
+                    "name": "Image wide cropped",
+                    "alias": "media_wide_cropped",
+                    "view": "media",
+                    "render": "media",
+                    "icon": "icon-picture",
+                    "config": {
+                      "size": {
+                        "width": 1920,
+                        "height": 700
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "full"
+          },
+          "id": "4bbedf99-360e-905c-2bd3-71b458ab4647"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "In raw numbers, Codegarden is: 500+ attendees, 3 packed days, 20+ sessions, 26 passionate speakers, 3 workshops, 1 keynote, a hack room, 2 rounds of bingo and 3563 cups of fair trade coffee",
+                  "editor": {
+                    "name": "Quote",
+                    "alias": "quote",
+                    "view": "textstring",
+                    "icon": "icon-quote",
+                    "config": {
+                      "style": "border-left: 3px solid #ccc; padding: 10px; color: #ccc; font-family: serif; font-variant: italic; font-size: 18px",
+                      "markup": "<blockquote>#value#</blockquote>"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "yellow"
+          },
+          "id": "6bfba7ba-f732-8193-3d38-2980e262142d"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "<h2 dir=\"ltr\"><span>Influence the project</span></h2>\n<p dir=\"ltr\"><span>Aside from the regular sessions and workshops CodeGarden also provides a unique approach to conferencing. It is called Open Space Technology and is all about networking, problem solving. This means you are not just limited to the scheduled topics but can put your own passions on the agenda and influence the future of the project.</span></p>\n<h2 dir=\"ltr\"><span>Loads of fun</span></h2>\n<p dir=\"ltr\"><span>In the community we value having a great time, so CodeGarden evenings are packed with social events. From canal tours of Copenhagen (with free beer and champagne) to evening parties and the infamous Umbraco bingo and dinner which can’t be described in words.</span></p>\n<h2 dir=\"ltr\"><span>Get your ticket</span></h2>\n<p><span>CodeGarden always ends up selling out, so make sure to reserve your ticket. The earlier you order the cheaper it is and if you’re on a stretch budget there’s a big chance that a friendly local Umbracian will have a couch to spare.<br /></span></p>\n<p><span><a href=\"http://umbraco.com/cg15/?utm_source=core&amp;utm_medium=starterkit&amp;utm_content=topic-link&amp;utm_campaign=fanoe\">Buy ticket for Codegarden</a></span></p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "light"
+          },
+          "id": "edebcf94-a4b1-fec5-5bc6-f8f677b03b16"
+        },
+        {
+          "name": "Wide image",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "media_wide",
+                "media_wide_cropped"
+              ],
+              "controls": [
+                {
+                  "value": {
+                    "focalPoint": {
+                      "left": 0.605,
+                      "top": 0.33333333333333331
+                    },
+                    "id": 1124,
+                    "image": "/media/1016/14435759945_a2c58e9ed6_h.jpg",
+                    "thumbnail": "/umbraco/backoffice/UmbracoApi/Images/GetBigThumbnail?originalImagePath=%2Fmedia%2F1016%2F14435759945_a2c58e9ed6_h.jpg"
+                  },
+                  "editor": {
+                    "name": "Image wide cropped",
+                    "alias": "media_wide_cropped",
+                    "view": "media",
+                    "render": "media",
+                    "icon": "icon-picture",
+                    "config": {
+                      "size": {
+                        "width": 1920,
+                        "height": 700
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "full triangle"
+          },
+          "id": "96ec2067-0a50-459a-4d95-714b5b8ac4b6"
+        }
+      ]
+    }
+  ]
+}]]></content>
+          </TextPage>
+          <TextPage id="1084" parentID="1081" level="3" creatorID="0" sortOrder="2" createDate="2014-12-01T17:08:35" updateDate="2014-12-04T14:09:55" nodeName="Meetup groups" urlName="meetup-groups" path="-1,1070,1081,1084" isDoc="" nodeType="1059" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1054" nodeTypeAlias="TextPage">
+            <content><![CDATA[{
+  "name": "1 column layout",
+  "sections": [
+    {
+      "grid": 12,
+      "rows": [
+        {
+          "name": "Image w. text",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "banner_headline",
+                "rte",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "Born global, loving local",
+                  "editor": {
+                    "name": "Banner Headline",
+                    "alias": "banner_headline",
+                    "view": "textstring",
+                    "icon": "icon-coin",
+                    "config": {
+                      "style": "font-size: 36px; line-height: 45px; font-weight: bold; text-align:center",
+                      "markup": "<h1 style='font-size:62px;text-align:center'>#value#</h1>"
+                    }
+                  }
+                },
+                {
+                  "value": "<h5 style=\"text-align: center;\">If you can’t make it to CodeGarden, that doesn’t mean you have to miss the chance of hanging out with the Umbraco community and finally - if you can’t come to the community, why not have the community come to you by starting a local user group?</h5>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "background-image": "url(/media/1017/14359779226_df7329d607_h_dark.jpg)"
+          },
+          "config": {
+            "class": "dark"
+          },
+          "id": "3dd3ea61-c394-5ce1-91d8-93f4a41b0dc0"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "<h2 dir=\"ltr\"><span>Umbraco Meetups</span></h2>\n<p dir=\"ltr\"><span>From London to New York, from Denmark in the north to Australia in the south - there’s local Umbraco User groups all over the world that <a href=\"http://our.umbraco.org/events/?utm_source=core&amp;utm_medium=starterkit&amp;utm_content=topic-link&amp;utm_campaign=fanoe\">arrange regular meetups</a>. The format is usually a laid back atmosphere where people share their knowledge and new people are always welcome. So make sure to <a href=\"http://umbraco.meetup.com/\">check out Meetup.com for a local group</a> and if you’re not lucky, why not start one - it’s not that hard.</span></p>\n<p> </p>\n<h2 dir=\"ltr\"><span>Local Festivals</span></h2>\n<p dir=\"ltr\"><span>Inspired by CodeGarden, there’s more and more annual local Umbraco events. Originated from the community in the United Kingdom, there’s “Umbraco Festivals” going on in many countries around the world. These are one day events packed with sessions that often combine advanced Umbraco topics with discussing how local awareness can be improved. And as they are driven by the community and often sponsored by local Umbraco partners, they’re usually very inexpensive events to attend.</span></p>\n<p> </p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "light"
+          },
+          "id": "3f2b5540-7c52-4631-3877-6be5f61f6a12"
+        },
+        {
+          "name": "Wide image",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "media_wide",
+                "media_wide_cropped"
+              ],
+              "controls": [
+                {
+                  "value": {
+                    "focalPoint": {
+                      "left": 0.49583333333333335,
+                      "top": 0.53
+                    },
+                    "id": 1126,
+                    "image": "/media/1018/10818851674_e375a8751e_b.jpg",
+                    "thumbnail": "/umbraco/backoffice/UmbracoApi/Images/GetBigThumbnail?originalImagePath=%2Fmedia%2F1018%2F10818851674_e375a8751e_b.jpg"
+                  },
+                  "editor": {
+                    "name": "Image wide cropped",
+                    "alias": "media_wide_cropped",
+                    "view": "media",
+                    "render": "media",
+                    "icon": "icon-picture",
+                    "config": {
+                      "size": {
+                        "width": 1920,
+                        "height": 700
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "full"
+          },
+          "id": "102d5bec-3fb5-4d1a-cd9f-2baeeb5cdc44"
+        }
+      ]
+    }
+  ]
+}]]></content>
+          </TextPage>
+        </LandingPage>
+        <LandingPage id="1085" parentID="1070" level="2" creatorID="0" sortOrder="2" createDate="2014-12-01T17:08:35" updateDate="2014-12-03T15:26:47" nodeName="Extend" urlName="extend" path="-1,1070,1085" isDoc="" nodeType="1058" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1054" nodeTypeAlias="LandingPage">
+          <umbracoNaviHide>0</umbracoNaviHide>
+          <TextPage id="1086" parentID="1085" level="3" creatorID="0" sortOrder="0" createDate="2014-12-01T17:08:35" updateDate="2014-12-03T19:19:55" nodeName="Umbraco Forms" urlName="umbraco-forms" path="-1,1070,1085,1086" isDoc="" nodeType="1059" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1054" nodeTypeAlias="TextPage">
+            <content><![CDATA[{
+  "name": "1 column layout",
+  "sections": [
+    {
+      "grid": 12,
+      "rows": [
+        {
+          "name": "Image w. text",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "banner_headline",
+                "rte",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "Umbraco forms",
+                  "editor": {
+                    "name": "Banner Headline",
+                    "alias": "banner_headline",
+                    "view": "textstring",
+                    "icon": "icon-coin",
+                    "config": {
+                      "style": "font-size: 36px; line-height: 45px; font-weight: bold; text-align:center",
+                      "markup": "<h1 style='font-size:62px;text-align:center'>#value#</h1>"
+                    }
+                  }
+                },
+                {
+                  "value": "<h5 style=\"text-align: center;\">With our add-on product Umbraco Forms it’s a breeze to create anything from simple contact forms to advanced questionnaires.</h5>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "background-image": "url(/media/1023/form-bg.png)"
+          },
+          "config": {
+            "class": "light"
+          },
+          "id": "0a170745-ecbd-f642-0e5c-8475e6fae812"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "<h1 style=\"text-align: center;\">You won't need to write a single line of code.</h1>\n<p style=\"text-align: center;\">Instead, you can create, edit and administer your form via a user interface that is a fully integrated part of Umbraco.</p>\n<p style=\"text-align: center;\"> </p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                },
+                {
+                  "value": "<iframe src=\"//player.vimeo.com/video/110229004\" width=\"360\" height=\"203\" frameborder=\"0\" title=\"Form installer intro\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
+                  "editor": {
+                    "name": "Embed",
+                    "alias": "embed",
+                    "view": "embed",
+                    "render": "/App_Plugins/Grid/Editors/Render/embed_videowrapper.cshtml",
+                    "icon": "icon-movie-alt"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "dark"
+          },
+          "id": "17022257-5f35-360f-8cec-f574221fc457"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "<h1>Why does Umbraco Forms cost money?</h1>\n<p>At the Umbraco HQ we employ 15 full-time employees to ensure that the core is of the highest quality and constantly evolves. As we believe in keeping great ideas sustainable, we’ve never taken outside investment, but solely rely on income from products that enhance - but don’t limit - the open source core. We believe this is the best, long term solution and we hope you agree.</p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "light"
+          },
+          "id": "190b7767-6b42-cd23-1d01-ad7e2ff24a6d"
+        }
+      ]
+    }
+  ]
+}]]></content>
+          </TextPage>
+          <TextPage id="1087" parentID="1085" level="3" creatorID="0" sortOrder="1" createDate="2014-12-01T17:08:35" updateDate="2014-12-03T19:22:16" nodeName="Package repository" urlName="package-repository" path="-1,1070,1085,1087" isDoc="" nodeType="1059" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1054" nodeTypeAlias="TextPage">
+            <content><![CDATA[{
+  "name": "1 column layout",
+  "sections": [
+    {
+      "grid": 12,
+      "rows": [
+        {
+          "name": "Image w. text",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "banner_headline",
+                "rte",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "Package repository",
+                  "editor": {
+                    "name": "Banner Headline",
+                    "alias": "banner_headline",
+                    "view": "textstring",
+                    "icon": "icon-coin",
+                    "config": {
+                      "style": "font-size: 36px; line-height: 45px; font-weight: bold; text-align:center",
+                      "markup": "<h1 style='font-size:62px;text-align:center'>#value#</h1>"
+                    }
+                  }
+                },
+                {
+                  "value": "<h5 style=\"text-align: center;\"><span>At Our Umbraco you’ll find hundreds of free packages made and maintained by the community.</span></h5>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "background-image": "url(/media/1024/14448232381_8f994d2adc_h_dark.jpg)"
+          },
+          "config": {
+            "class": "dark"
+          },
+          "id": "0fc8f95c-1db8-6d29-788c-58a23c47634a"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "<h2 dir=\"ltr\"><span>Swim in the ocean of packages</span></h2>\n<p dir=\"ltr\"><span>From complete e-commerce platforms to integration with 3rd party services such as MailChimp and YouTube to developer tools that’ll boost your productivity.</span></p>\n<p dir=\"ltr\"><span>While you can download the packages on Our, you can also browse and install them directly from within the backoffice - called the “Package Repository” (yes, we should find a sexier name!). Those packages are filtered to ensure they’ll work with your Umbraco installation (based on version) and only packages that have been approved by at least 15 community people make the cut.</span></p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "light"
+          },
+          "id": "9bc7883d-fd02-84d2-a790-9e0174b22e77"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "If you like the package, make sure to give it a high five.",
+                  "editor": {
+                    "name": "Quote",
+                    "alias": "quote",
+                    "view": "textstring",
+                    "icon": "icon-quote",
+                    "config": {
+                      "style": "border-left: 3px solid #ccc; padding: 10px; color: #ccc; font-family: serif; font-variant: italic; font-size: 18px",
+                      "markup": "<blockquote>#value#</blockquote>"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "yellow"
+          },
+          "id": "a01e8642-d4a9-30d4-d8ef-ae31a0f7f83e"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": {
+                    "focalPoint": {
+                      "left": 0.5,
+                      "top": 0.5
+                    },
+                    "id": 1120,
+                    "image": "/media/1038/screen-shot-2014-12-01-at-121327.png",
+                    "paragraph": "Once you’ve installed a package, make sure to give feedback. Whether the install was successful or not, it’ll help the next person trying to give it a go. At Our Umbraco you can report compatibility with a few simple clicks.",
+                    "headline": "Give feedback"
+                  },
+                  "editor": {
+                    "name": "Image w/ text right",
+                    "alias": "media_text_right",
+                    "view": "/App_Plugins/Grid/Editors/Views/media_with_description.html",
+                    "render": "/App_Plugins/Grid/Editors/Render/media_text_right.cshtml",
+                    "icon": "icon-picture"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "light"
+          },
+          "id": "96916694-116a-637c-2319-a5b077e80bd9"
+        }
+      ]
+    }
+  ]
+}]]></content>
+          </TextPage>
+        </LandingPage>
+        <BlogPostRepository id="1071" parentID="1070" level="2" creatorID="0" sortOrder="3" createDate="2014-12-01T17:08:35" updateDate="2014-12-03T15:24:46" nodeName="Blog" urlName="blog" path="-1,1070,1071" isDoc="" nodeType="1056" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1106" nodeTypeAlias="BlogPostRepository">
+          <umbracoNaviHide>1</umbracoNaviHide>
+          <BlogPost id="1072" parentID="1071" level="3" creatorID="0" sortOrder="0" createDate="2014-12-01T17:08:35" updateDate="2014-12-03T19:29:31" nodeName="Tall trees have deep roots" urlName="tall-trees-have-deep-roots" path="-1,1070,1071,1072" isDoc="" nodeType="1055" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1052" nodeTypeAlias="BlogPost">
+            <content><![CDATA[{
+  "name": "1 column layout",
+  "sections": [
+    {
+      "grid": 12,
+      "rows": [
+        {
+          "name": "Banner",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "rte",
+                "banner_headline",
+                "headline",
+                "abstract",
+                "paragraph",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "<h1 style=\"text-align: center;\" dir=\"ltr\"><span>Tall trees have deep roots</span></h1>\n<h5 style=\"text-align: center;\" dir=\"ltr\"><span>You may think of Umbraco solely as the piece of software that runs the website you’re currently viewing. But like impressive trees, it would be nothing without the roots that bring it to life - and in the case of Umbraco, it’s our community.</span></h5>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "background-image": "url(/media/1028/14435732345_c9f5b48dfa_h_dark.jpg)"
+          },
+          "config": {
+            "class": "dark"
+          },
+          "id": "2bd04b6a-0561-05c8-aa48-7ee47fde287f"
+        },
+        {
+          "name": "Article full width",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "media_text_right",
+                "headline",
+                "abstract",
+                "paragraph",
+                "quote",
+                "media",
+                "code",
+                "rte",
+                "embed",
+                "headline_centered"
+              ],
+              "controls": [
+                {
+                  "value": "<h2 dir=\"ltr\"><span>The origins of the roots</span></h2>\n<p dir=\"ltr\"><span>date back to 2003 where the first version of Umbraco saw its light. Back then nobody could predict what it would become and especially not Niels Hartvig who simply designed and built Umbraco as a tool to quickly produce sites for his freelance clients and make sure they had a user-friendly way of updating it.</span></p>\n<p dir=\"ltr\"><span>But in 2004 he decided to open source the work and with help of friends Kasper Bumbech and Anders Pollas with whom he shared office space, the first version of Umbraco as open source saw the light of the day on February 16th 2005.</span></p>\n<p><span>In the early days, the community was purely virtual and since it was the days before Facebook and Twitter, the early adopters communicated through a Yahoo Mailinglist. From the seeds of talking Umbraco via email, the idea of an Umbraco conference surfaced and in March 2005, <a href=\"https://groups.yahoo.com/neo/groups/umbraco/conversations/messages/195\" target=\"_blank\" title=\"Codegarden was born\">CodeGarden was born…</a></span></p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "light"
+          },
+          "id": "7a2e4652-8523-3ade-053d-f7873c9c8020"
+        },
+        {
+          "name": "Image wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "media_wide_cropped",
+                "media_wide"
+              ],
+              "controls": [
+                {
+                  "value": {
+                    "focalPoint": {
+                      "left": 0.5,
+                      "top": 0.5
+                    },
+                    "id": 1108,
+                    "image": "/media/1027/14434411872_8e663d6de0_h.jpg"
+                  },
+                  "editor": {
+                    "name": "Image wide",
+                    "alias": "media_wide",
+                    "view": "media",
+                    "render": "/App_Plugins/Grid/Editors/Render/media_wide.cshtml",
+                    "icon": "icon-picture"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "full triangle"
+          },
+          "id": "5fc9f47f-3ac1-4627-df26-2922b584e288"
+        },
+        {
+          "name": "Article full width",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "media_text_right",
+                "headline",
+                "abstract",
+                "paragraph",
+                "quote",
+                "media",
+                "code",
+                "rte",
+                "embed",
+                "headline_centered"
+              ],
+              "controls": [
+                {
+                  "value": "<h2 dir=\"ltr\"><span>Since v1 of CodeGarden in 2005</span></h2>\n<p dir=\"ltr\"><span>thousands of people have attended what is considered a must experience event for any “Umbracian”; it’s where everything Umbraco comes to life. From seeing the latest progress, sharing knowledge with fellow community members, having memorable times in the wonderful city of Copenhagen and returning energized with new knowledge and inspiration.</span></p>\n<p dir=\"ltr\"><span>But more than anything, it’s the special vibe that has always been a keystone in everything that surrounds Umbraco. As coined by Hudson Maul back in 2006 - it’s “The Friendly CMS”.</span></p>\n<h2 dir=\"ltr\"><br /><br /></h2>\n<p> </p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "light"
+          },
+          "id": "84b00350-7168-7858-0b37-e452f05d7664"
+        }
+      ]
+    }
+  ]
+}]]></content>
+            <introduction><![CDATA[You may think of Umbraco solely as the piece of software that runs the website you’re currently viewing. But like impressive trees, it would be nothing without the roots that bring it to life - and in the case of Umbraco, it’s our community.]]></introduction>
+          </BlogPost>
+          <BlogPost id="1073" parentID="1071" level="3" creatorID="0" sortOrder="1" createDate="2014-12-01T17:08:35" updateDate="2014-12-03T19:27:01" nodeName="Different Flowers Make a Bouquet" urlName="different-flowers-make-a-bouquet" path="-1,1070,1071,1073" isDoc="" nodeType="1055" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1052" nodeTypeAlias="BlogPost">
+            <content><![CDATA[{
+  "name": "1 column layout",
+  "sections": [
+    {
+      "grid": 12,
+      "rows": [
+        {
+          "name": "Banner",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "rte",
+                "banner_headline",
+                "headline",
+                "abstract",
+                "paragraph",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "<h1 style=\"text-align: center;\">Different Flowers Make a Bouquet</h1>\n<h5 style=\"text-align: center;\">It may only take two to tango, but a party worth remembering is a completely different story.</h5>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "background-image": "url(/media/1031/9026528992_d38fbc2e28_o_dark.jpg)"
+          },
+          "config": {
+            "class": "dark"
+          },
+          "id": "63d1f52a-a6be-2459-a337-22f97cdb15bb"
+        },
+        {
+          "name": "Article full width",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "media_text_right",
+                "headline",
+                "abstract",
+                "paragraph",
+                "quote",
+                "media",
+                "code",
+                "rte",
+                "embed",
+                "headline_centered"
+              ],
+              "controls": [
+                {
+                  "value": "<h2 dir=\"ltr\"><span>Umbraco is a huge family </span></h2>\n<p dir=\"ltr\"><span>including its share of drunk uncles, scary mothers in-law, supercilious grandfathers and loud kids. Yet, while some may prefer sticking to their own class, it’s exactly the diversity that makes us great.</span></p>\n<p dir=\"ltr\"><span>Without diversity, status quo becomes king. At Umbraco we don’t believe in the status quo. We believe it’s the sum of our differences - whether designer, developer or editor, whether nationality, religion or gender, heck, whether Apple or PC - that it’s the nutrition for moving forward.</span></p>\n<p dir=\"ltr\"><span>When you open your eyes for the qualities in other people, you open up an astounding opportunity to learn. Our world - and our differences - is a buffet of eye-opening knowledge just waiting for you. So make sure to treat everyone friendly and with the highest respect. Don't be the judge.</span></p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "light"
+          },
+          "id": "8e82e5c1-8583-3d32-2742-c02b96060643"
+        },
+        {
+          "name": "Image wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "media_wide_cropped",
+                "media_wide"
+              ],
+              "controls": [
+                {
+                  "value": {
+                    "focalPoint": {
+                      "left": 0.5,
+                      "top": 0.5
+                    },
+                    "id": 1113,
+                    "image": "/media/1032/9039247947_e15a9d8850_b.jpg"
+                  },
+                  "editor": {
+                    "name": "Image wide",
+                    "alias": "media_wide",
+                    "view": "media",
+                    "render": "/App_Plugins/Grid/Editors/Render/media_wide.cshtml",
+                    "icon": "icon-picture"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "full triangle"
+          },
+          "id": "d8ceaabf-535b-16db-e4ae-522fc0555846"
+        }
+      ]
+    }
+  ]
+}]]></content>
+            <introduction><![CDATA[It may only take two to tango, but a party worth remembering is a completely different story. Including its share of drunk uncles, scary mothers in-law, supercilious grandfathers and loud kids. Yet, while some may prefer sticking to their own class, it’s exactly the diversity that makes us great.]]></introduction>
+          </BlogPost>
+          <BlogPost id="1074" parentID="1071" level="3" creatorID="0" sortOrder="2" createDate="2014-12-01T17:08:35" updateDate="2014-12-03T19:25:00" nodeName="Only the curious have something to find" urlName="only-the-curious-have-something-to-find" path="-1,1070,1071,1074" isDoc="" nodeType="1055" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1052" nodeTypeAlias="BlogPost">
+            <content><![CDATA[{
+  "name": "1 column layout",
+  "sections": [
+    {
+      "grid": 12,
+      "rows": [
+        {
+          "name": "Image wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "media_wide_cropped",
+                "media_wide"
+              ],
+              "controls": [
+                {
+                  "value": {
+                    "focalPoint": {
+                      "left": 0.49514563106796117,
+                      "top": 0.19
+                    },
+                    "id": 1115,
+                    "image": "/media/1033/whole-earth-catalog.jpg"
+                  },
+                  "editor": {
+                    "name": "Image wide cropped",
+                    "alias": "media_wide_cropped",
+                    "view": "media",
+                    "render": "media",
+                    "icon": "icon-picture",
+                    "config": {
+                      "size": {
+                        "width": 1920,
+                        "height": 700
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "full"
+          },
+          "id": "ec390b52-0259-8b7f-fc86-56374ea6ca63"
+        },
+        {
+          "name": "Article full width",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "media_text_right",
+                "headline",
+                "abstract",
+                "paragraph",
+                "quote",
+                "media",
+                "code",
+                "rte",
+                "embed",
+                "headline_centered"
+              ],
+              "controls": [
+                {
+                  "value": "<h1 style=\"text-align: left;\" dir=\"ltr\"><span>Only the curious have something to find</span></h1>\n<p>A Danish comedy duo once said that “adults are just kids gone insane” and maybe it’s not all wrong. Somewhere between the confused teenage years and growing up as responsible adults we do tend to go a little mad. We forget to play, to experiment, to risk.</p>\n<p dir=\"ltr\"><span>Yet, we all dream about - and need - a little adventure every now and then. At the Umbraco community we praise those who dare to play and take risks. At the many Umbraco events around the world, brave people share their ideas through opinionated talks and at Our Umbraco courageous coders share their packages that extend the feature set of Umbraco.</span></p>\n<p dir=\"ltr\"><span>You should as well. After all, what do you </span><span>really</span><span> have to lose? Nothing compared to what you have to gain: becoming a better craftsperson, inspiring others and the satisfaction of seeing the download number of your work increase week after week. If we don’t strive for moving forward - whether professionals or amateurs - then what’s the point?</span></p>\n<p> </p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                },
+                {
+                  "value": "“Once you stop learning, you start dying”\n- Albert Einstein",
+                  "editor": {
+                    "name": "Quote",
+                    "alias": "quote",
+                    "view": "textstring",
+                    "icon": "icon-quote",
+                    "config": {
+                      "style": "border-left: 3px solid #ccc; padding: 10px; color: #ccc; font-family: serif; font-variant: italic; font-size: 18px",
+                      "markup": "<blockquote>#value#</blockquote>"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "dark"
+          },
+          "id": "bdc66e02-87e6-7aa6-34a8-c0e5f834af79"
+        }
+      ]
+    }
+  ]
+}]]></content>
+            <introduction><![CDATA[A Danish comedy duo once said that “adults are just kids gone insane” and maybe it’s not all wrong. Somewhere between the confused teenage years and growing up as responsible adults we do tend to go a little mad. We forget to play, to experiment, to risk.]]></introduction>
+          </BlogPost>
+        </BlogPostRepository>
+        <LandingPage id="1132" parentID="1070" level="2" creatorID="0" sortOrder="4" createDate="2014-12-03T15:28:45" updateDate="2014-12-04T14:14:04" nodeName="Contact" urlName="contact" path="-1,1070,1132" isDoc="" nodeType="1058" creatorName="Administrator" writerName="Sebastiaan Jansen" writerID="1" template="1054" nodeTypeAlias="LandingPage">
+          <umbracoNaviHide>1</umbracoNaviHide>
+          <content><![CDATA[{
+  "name": "1 column layout",
+  "sections": [
+    {
+      "grid": 12,
+      "rows": [
+        {
+          "name": "Image w. text",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "banner_headline",
+                "rte",
+                "quote"
+              ],
+              "controls": [
+                {
+                  "value": "Contact",
+                  "editor": {
+                    "name": "Banner Headline",
+                    "alias": "banner_headline",
+                    "view": "textstring",
+                    "icon": "icon-coin",
+                    "config": {
+                      "style": "font-size: 36px; line-height: 45px; font-weight: bold; text-align:center",
+                      "markup": "<h1 style='font-size:62px;text-align:center'>#value#</h1>"
+                    }
+                  }
+                },
+                {
+                  "value": "<h5 style=\"text-align: center;\">From volunteers to experts to core team. You can reach us all and we're a friendly bunch that love to talk Umbraco</h5>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "background-image": "url(/media/1036/1912289_753997844648209_7099291360101379579_o.jpg)"
+          },
+          "config": {
+            "class": "dark"
+          },
+          "id": "d827c464-3074-0ddf-f57f-0fdc73a7c1ea"
+        },
+        {
+          "name": "Article Wide",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "headline",
+                "abstract",
+                "code",
+                "quote",
+                "embed",
+                "media",
+                "media_text_right",
+                "rte",
+                "paragraph"
+              ],
+              "controls": [
+                {
+                  "value": "<h2>The forum</h2>\n<p>For questions on how to use Umbraco, the forum section on Our Umbraco is the best place to start.</p>\n<p><a href=\"http://our.umbraco.org/forum/?utm_source=core&amp;utm_medium=starterkit&amp;utm_content=topic-link&amp;utm_campaign=fanoe\">Go to the forum →</a></p>\n<p> </p>\n<h2>Getting help</h2>\n<p>For getting help with implementing Umbraco, look at our list of Certified Umbraco partners</p>\n<p><a href=\"http://umbraco.com/certified-partners/?utm_source=core&amp;utm_medium=starterkit&amp;utm_content=topic-link&amp;utm_campaign=fanoe\">List of Certified Umbraco Partners →</a></p>\n<p> </p>\n<h2><span>Get in touch</span></h2>\n<p><span>For enquiries on professional support and bug fixing warranty, get in touch with the Umbraco HQ</span></p>\n<p><a href=\"http://umbraco.com/contact/?utm_source=core&amp;utm_medium=starterkit&amp;utm_content=topic-link&amp;utm_campaign=fanoe\">Umbraco HQ →</a></p>",
+                  "editor": {
+                    "name": "Rich text editor",
+                    "alias": "rte",
+                    "view": "rte",
+                    "icon": "icon-article"
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "dark"
+          },
+          "id": "0ac7fdc7-fd78-c735-33a3-7bc4c335f978"
+        },
+        {
+          "name": "Wide image",
+          "areas": [
+            {
+              "grid": 12,
+              "allowAll": false,
+              "allowed": [
+                "media_wide",
+                "media_wide_cropped"
+              ],
+              "controls": [
+                {
+                  "value": {
+                    "focalPoint": {
+                      "left": 0.4825,
+                      "top": 0.6067415730337079
+                    },
+                    "id": 1119,
+                    "image": "/media/1037/9015601712_72e44263e4_b.jpg"
+                  },
+                  "editor": {
+                    "name": "Image wide cropped",
+                    "alias": "media_wide_cropped",
+                    "view": "media",
+                    "render": "media",
+                    "icon": "icon-picture",
+                    "config": {
+                      "size": {
+                        "width": 1920,
+                        "height": 700
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {},
+          "config": {
+            "class": "full triangle"
+          },
+          "id": "9e6631ec-ae55-1949-94ae-dc232e421489"
+        }
+      ]
+    }
+  ]
+}]]></content>
+        </LandingPage>
+      </Home>
+    </DocumentSet>
+  </Documents>
+  <DocumentTypes>
+    <DocumentType>
+      <Info>
+        <Name>Blog Post</Name>
+        <Alias>BlogPost</Alias>
+        <Icon>icon-edit</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description />
+        <AllowAtRoot>False</AllowAtRoot>
+        <IsListView>False</IsListView>
+        <Compositions />
+        <AllowedTemplates>
+          <Template>BlogPost</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>BlogPost</DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Content</Name>
+          <Alias>content</Alias>
+          <Type>Umbraco.Grid</Type>
+          <Definition>a3785f08-73d5-406b-855f-8e52805c22e2</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation />
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Introduction</Name>
+          <Alias>introduction</Alias>
+          <Type>Umbraco.TextboxMultiple</Type>
+          <Definition>c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3</Definition>
+          <Tab>Introduction</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation />
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>12</Id>
+          <Caption>Content</Caption>
+          <SortOrder>2</SortOrder>
+        </Tab>
+        <Tab>
+          <Id>16</Id>
+          <Caption>Introduction</Caption>
+          <SortOrder>1</SortOrder>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>Blog Post Repository</Name>
+        <Alias>BlogPostRepository</Alias>
+        <Icon>.sprTreeFolder</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description />
+        <AllowAtRoot>False</AllowAtRoot>
+        <IsListView>True</IsListView>
+        <Compositions />
+        <AllowedTemplates>
+          <Template>BlogOverview</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>BlogOverview</DefaultTemplate>
+      </Info>
+      <Structure>
+        <DocumentType>BlogPost</DocumentType>
+      </Structure>
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Hide in bottom navigation?</Name>
+          <Alias>umbracoNaviHide</Alias>
+          <Type>Umbraco.TrueFalse</Type>
+          <Definition>92897bc6-a5f3-4ffe-ae27-f2e7e33dda49</Definition>
+          <Tab />
+          <Mandatory>False</Mandatory>
+          <Validation />
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs />
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>Home</Name>
+        <Alias>Home</Alias>
+        <Icon>icon-home</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description />
+        <AllowAtRoot>True</AllowAtRoot>
+        <IsListView>False</IsListView>
+        <Compositions />
+        <AllowedTemplates>
+          <Template>Home</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>Home</DefaultTemplate>
+      </Info>
+      <Structure>
+        <DocumentType>LandingPage</DocumentType>
+      </Structure>
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Site Description</Name>
+          <Alias>siteDescription</Alias>
+          <Type>Umbraco.TextboxMultiple</Type>
+          <Definition>c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3</Definition>
+          <Tab>Site</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation />
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Site Title</Name>
+          <Alias>siteTitle</Alias>
+          <Type>Umbraco.Textbox</Type>
+          <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+          <Tab>Site</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation />
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Site Logo</Name>
+          <Alias>siteLogo</Alias>
+          <Type>Umbraco.UploadField</Type>
+          <Definition>84c6b441-31df-4ffe-b67e-67d5bc3ae65a</Definition>
+          <Tab>Site</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation />
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Content</Name>
+          <Alias>content</Alias>
+          <Type>Umbraco.Grid</Type>
+          <Definition>bc957e81-2cdc-4fe3-bab2-ca4110cdff68</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation />
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>13</Id>
+          <Caption>Site</Caption>
+          <SortOrder>2</SortOrder>
+        </Tab>
+        <Tab>
+          <Id>17</Id>
+          <Caption>Content</Caption>
+          <SortOrder>1</SortOrder>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>Landing Page</Name>
+        <Alias>LandingPage</Alias>
+        <Icon>icon-stamp</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description />
+        <AllowAtRoot>False</AllowAtRoot>
+        <IsListView>False</IsListView>
+        <Compositions />
+        <AllowedTemplates>
+          <Template>TextPage</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>TextPage</DefaultTemplate>
+      </Info>
+      <Structure>
+        <DocumentType>TextPage</DocumentType>
+      </Structure>
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Hide in bottom navigation?</Name>
+          <Alias>umbracoNaviHide</Alias>
+          <Type>Umbraco.TrueFalse</Type>
+          <Definition>92897bc6-a5f3-4ffe-ae27-f2e7e33dda49</Definition>
+          <Tab />
+          <Mandatory>False</Mandatory>
+          <Validation />
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>Content</Name>
+          <Alias>content</Alias>
+          <Type>Umbraco.Grid</Type>
+          <Definition>21944c98-8e32-4475-807d-61a60c1ab070</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation />
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>18</Id>
+          <Caption>Content</Caption>
+          <SortOrder>0</SortOrder>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>Text Page</Name>
+        <Alias>TextPage</Alias>
+        <Icon>icon-document</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description />
+        <AllowAtRoot>False</AllowAtRoot>
+        <IsListView>False</IsListView>
+        <Compositions />
+        <AllowedTemplates>
+          <Template>TextPage</Template>
+        </AllowedTemplates>
+        <DefaultTemplate>TextPage</DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>Content</Name>
+          <Alias>content</Alias>
+          <Type>Umbraco.Grid</Type>
+          <Definition>21944c98-8e32-4475-807d-61a60c1ab070</Definition>
+          <Tab>Content</Tab>
+          <Mandatory>False</Mandatory>
+          <Validation />
+          <Description><![CDATA[]]></Description>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>15</Id>
+          <Caption>Content</Caption>
+          <SortOrder>0</SortOrder>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+  </DocumentTypes>
+  <Templates>
+    <Template>
+      <Name>Blog Overview</Name>
+      <Alias>BlogOverview</Alias>
+      <Master>Master</Master>
+      <Design><![CDATA[@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+<div role="content">
+
+	<section class="light blogarchive equalizer">
+		<div class="container">
+
+			<div class="row">
+				@foreach(var post in CurrentPage.Children) 
+				{
+					<div class="col-sm-6">
+						<div class="content equal">
+							<a href="@post.Url">
+								<div class="date">@post.CreateDate.ToLongDateString()</div>
+								<h2>@post.Name</h2>		
+								<p>@Umbraco.Truncate(post.Introduction, 240, true)</p>
+							</a>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	</section>
+
+</div>]]></Design>
+    </Template>
+    <Template>
+      <Name>Blog Post</Name>
+      <Alias>BlogPost</Alias>
+      <Master>Master</Master>
+      <Design><![CDATA[@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+@CurrentPage.GetGridHtml("content", "fanoe")]]></Design>
+    </Template>
+    <Template>
+      <Name>Home</Name>
+      <Alias>Home</Alias>
+      <Master>Master</Master>
+      <Design><![CDATA[@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+@CurrentPage.GetGridHtml("content", "fanoe")]]></Design>
+    </Template>
+    <Template>
+      <Name>Master</Name>
+      <Alias>Master</Alias>
+      <Design><![CDATA[@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+	var home = @CurrentPage.Site();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="@CurrentPage.siteDescription">
+
+    <title>@CurrentPage.Name | @CurrentPage._siteTitle</title>
+	
+	<!-- Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Merriweather:400,700,300,900" rel="stylesheet" type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css">
+	
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/fanoe.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-8 col-sm-12 col-md-4">
+			<a href="@home.Url">
+            	<div class="brand" style="background-image:url('@(home.SiteLogo)?height=65&width=205&bgcolor=000')"></div>
+			</a>
+          </div>
+          <div class="col-sm-12 col-md-8">
+            <nav>
+			  
+              @{ Html.RenderPartial("MainNavigation"); }
+
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div id="toggle" class="toggle">
+        <a href="#" class="cross"><span></span></a>
+      </div>
+    </header>
+	
+    @RenderBody()
+
+    <footer class="field dark">
+      <div class="container">
+        <div class="row">
+			
+		  @{ Html.RenderPartial("BottomNavigation"); }
+
+        </div>
+      </div>
+    </footer>
+    
+    <!-- Javascripts -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+	<script src="/scripts/fanoe.js"></script>
+  </body>
+</html>]]></Design>
+    </Template>
+    <Template>
+      <Name>Text page</Name>
+      <Alias>TextPage</Alias>
+      <Master>Master</Master>
+      <Design><![CDATA[@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+@CurrentPage.GetGridHtml("content", "fanoe")]]></Design>
+    </Template>
+  </Templates>
+  <Stylesheets>
+    <Stylesheet>
+      <Name>bootstrap.min</Name>
+      <FileName>bootstrap.min</FileName>
+      <Content><![CDATA[.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+  float: left;
+}
+.col-xs-12 {
+  width: 100%;
+}
+.col-xs-11 {
+  width: 91.66666666666666%;
+}
+.col-xs-10 {
+  width: 83.33333333333334%;
+}
+.col-xs-9 {
+  width: 75%;
+}
+.col-xs-8 {
+  width: 66.66666666666666%;
+}
+.col-xs-7 {
+  width: 58.333333333333336%;
+}
+.col-xs-6 {
+  width: 50%;
+}
+.col-xs-5 {
+  width: 41.66666666666667%;
+}
+.col-xs-4 {
+  width: 33.33333333333333%;
+}
+.col-xs-3 {
+  width: 25%;
+}
+.col-xs-2 {
+  width: 16.666666666666664%;
+}
+.col-xs-1 {
+  width: 8.333333333333332%;
+}
+.col-xs-pull-12 {
+  right: 100%;
+}
+.col-xs-pull-11 {
+  right: 91.66666666666666%;
+}
+.col-xs-pull-10 {
+  right: 83.33333333333334%;
+}
+.col-xs-pull-9 {
+  right: 75%;
+}
+.col-xs-pull-8 {
+  right: 66.66666666666666%;
+}
+.col-xs-pull-7 {
+  right: 58.333333333333336%;
+}
+.col-xs-pull-6 {
+  right: 50%;
+}
+.col-xs-pull-5 {
+  right: 41.66666666666667%;
+}
+.col-xs-pull-4 {
+  right: 33.33333333333333%;
+}
+.col-xs-pull-3 {
+  right: 25%;
+}
+.col-xs-pull-2 {
+  right: 16.666666666666664%;
+}
+.col-xs-pull-1 {
+  right: 8.333333333333332%;
+}
+.col-xs-pull-0 {
+  right: 0%;
+}
+.col-xs-push-12 {
+  left: 100%;
+}
+.col-xs-push-11 {
+  left: 91.66666666666666%;
+}
+.col-xs-push-10 {
+  left: 83.33333333333334%;
+}
+.col-xs-push-9 {
+  left: 75%;
+}
+.col-xs-push-8 {
+  left: 66.66666666666666%;
+}
+.col-xs-push-7 {
+  left: 58.333333333333336%;
+}
+.col-xs-push-6 {
+  left: 50%;
+}
+.col-xs-push-5 {
+  left: 41.66666666666667%;
+}
+.col-xs-push-4 {
+  left: 33.33333333333333%;
+}
+.col-xs-push-3 {
+  left: 25%;
+}
+.col-xs-push-2 {
+  left: 16.666666666666664%;
+}
+.col-xs-push-1 {
+  left: 8.333333333333332%;
+}
+.col-xs-push-0 {
+  left: 0%;
+}
+.col-xs-offset-12 {
+  margin-left: 100%;
+}
+.col-xs-offset-11 {
+  margin-left: 91.66666666666666%;
+}
+.col-xs-offset-10 {
+  margin-left: 83.33333333333334%;
+}
+.col-xs-offset-9 {
+  margin-left: 75%;
+}
+.col-xs-offset-8 {
+  margin-left: 66.66666666666666%;
+}
+.col-xs-offset-7 {
+  margin-left: 58.333333333333336%;
+}
+.col-xs-offset-6 {
+  margin-left: 50%;
+}
+.col-xs-offset-5 {
+  margin-left: 41.66666666666667%;
+}
+.col-xs-offset-4 {
+  margin-left: 33.33333333333333%;
+}
+.col-xs-offset-3 {
+  margin-left: 25%;
+}
+.col-xs-offset-2 {
+  margin-left: 16.666666666666664%;
+}
+.col-xs-offset-1 {
+  margin-left: 8.333333333333332%;
+}
+.col-xs-offset-0 {
+  margin-left: 0%;
+}
+@media (min-width: 768px) {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    float: left;
+  }
+  .col-sm-12 {
+    width: 100%;
+  }
+  .col-sm-11 {
+    width: 91.66666666666666%;
+  }
+  .col-sm-10 {
+    width: 83.33333333333334%;
+  }
+  .col-sm-9 {
+    width: 75%;
+  }
+  .col-sm-8 {
+    width: 66.66666666666666%;
+  }
+  .col-sm-7 {
+    width: 58.333333333333336%;
+  }
+  .col-sm-6 {
+    width: 50%;
+  }
+  .col-sm-5 {
+    width: 41.66666666666667%;
+  }
+  .col-sm-4 {
+    width: 33.33333333333333%;
+  }
+  .col-sm-3 {
+    width: 25%;
+  }
+  .col-sm-2 {
+    width: 16.666666666666664%;
+  }
+  .col-sm-1 {
+    width: 8.333333333333332%;
+  }
+  .col-sm-pull-12 {
+    right: 100%;
+  }
+  .col-sm-pull-11 {
+    right: 91.66666666666666%;
+  }
+  .col-sm-pull-10 {
+    right: 83.33333333333334%;
+  }
+  .col-sm-pull-9 {
+    right: 75%;
+  }
+  .col-sm-pull-8 {
+    right: 66.66666666666666%;
+  }
+  .col-sm-pull-7 {
+    right: 58.333333333333336%;
+  }
+  .col-sm-pull-6 {
+    right: 50%;
+  }
+  .col-sm-pull-5 {
+    right: 41.66666666666667%;
+  }
+  .col-sm-pull-4 {
+    right: 33.33333333333333%;
+  }
+  .col-sm-pull-3 {
+    right: 25%;
+  }
+  .col-sm-pull-2 {
+    right: 16.666666666666664%;
+  }
+  .col-sm-pull-1 {
+    right: 8.333333333333332%;
+  }
+  .col-sm-pull-0 {
+    right: 0%;
+  }
+  .col-sm-push-12 {
+    left: 100%;
+  }
+  .col-sm-push-11 {
+    left: 91.66666666666666%;
+  }
+  .col-sm-push-10 {
+    left: 83.33333333333334%;
+  }
+  .col-sm-push-9 {
+    left: 75%;
+  }
+  .col-sm-push-8 {
+    left: 66.66666666666666%;
+  }
+  .col-sm-push-7 {
+    left: 58.333333333333336%;
+  }
+  .col-sm-push-6 {
+    left: 50%;
+  }
+  .col-sm-push-5 {
+    left: 41.66666666666667%;
+  }
+  .col-sm-push-4 {
+    left: 33.33333333333333%;
+  }
+  .col-sm-push-3 {
+    left: 25%;
+  }
+  .col-sm-push-2 {
+    left: 16.666666666666664%;
+  }
+  .col-sm-push-1 {
+    left: 8.333333333333332%;
+  }
+  .col-sm-push-0 {
+    left: 0%;
+  }
+  .col-sm-offset-12 {
+    margin-left: 100%;
+  }
+  .col-sm-offset-11 {
+    margin-left: 91.66666666666666%;
+  }
+  .col-sm-offset-10 {
+    margin-left: 83.33333333333334%;
+  }
+  .col-sm-offset-9 {
+    margin-left: 75%;
+  }
+  .col-sm-offset-8 {
+    margin-left: 66.66666666666666%;
+  }
+  .col-sm-offset-7 {
+    margin-left: 58.333333333333336%;
+  }
+  .col-sm-offset-6 {
+    margin-left: 50%;
+  }
+  .col-sm-offset-5 {
+    margin-left: 41.66666666666667%;
+  }
+  .col-sm-offset-4 {
+    margin-left: 33.33333333333333%;
+  }
+  .col-sm-offset-3 {
+    margin-left: 25%;
+  }
+  .col-sm-offset-2 {
+    margin-left: 16.666666666666664%;
+  }
+  .col-sm-offset-1 {
+    margin-left: 8.333333333333332%;
+  }
+  .col-sm-offset-0 {
+    margin-left: 0%;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+  .col-md-11 {
+    width: 91.66666666666666%;
+  }
+  .col-md-10 {
+    width: 83.33333333333334%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+  .col-md-8 {
+    width: 66.66666666666666%;
+  }
+  .col-md-7 {
+    width: 58.333333333333336%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-5 {
+    width: 41.66666666666667%;
+  }
+  .col-md-4 {
+    width: 33.33333333333333%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-2 {
+    width: 16.666666666666664%;
+  }
+  .col-md-1 {
+    width: 8.333333333333332%;
+  }
+  .col-md-pull-12 {
+    right: 100%;
+  }
+  .col-md-pull-11 {
+    right: 91.66666666666666%;
+  }
+  .col-md-pull-10 {
+    right: 83.33333333333334%;
+  }
+  .col-md-pull-9 {
+    right: 75%;
+  }
+  .col-md-pull-8 {
+    right: 66.66666666666666%;
+  }
+  .col-md-pull-7 {
+    right: 58.333333333333336%;
+  }
+  .col-md-pull-6 {
+    right: 50%;
+  }
+  .col-md-pull-5 {
+    right: 41.66666666666667%;
+  }
+  .col-md-pull-4 {
+    right: 33.33333333333333%;
+  }
+  .col-md-pull-3 {
+    right: 25%;
+  }
+  .col-md-pull-2 {
+    right: 16.666666666666664%;
+  }
+  .col-md-pull-1 {
+    right: 8.333333333333332%;
+  }
+  .col-md-pull-0 {
+    right: 0%;
+  }
+  .col-md-push-12 {
+    left: 100%;
+  }
+  .col-md-push-11 {
+    left: 91.66666666666666%;
+  }
+  .col-md-push-10 {
+    left: 83.33333333333334%;
+  }
+  .col-md-push-9 {
+    left: 75%;
+  }
+  .col-md-push-8 {
+    left: 66.66666666666666%;
+  }
+  .col-md-push-7 {
+    left: 58.333333333333336%;
+  }
+  .col-md-push-6 {
+    left: 50%;
+  }
+  .col-md-push-5 {
+    left: 41.66666666666667%;
+  }
+  .col-md-push-4 {
+    left: 33.33333333333333%;
+  }
+  .col-md-push-3 {
+    left: 25%;
+  }
+  .col-md-push-2 {
+    left: 16.666666666666664%;
+  }
+  .col-md-push-1 {
+    left: 8.333333333333332%;
+  }
+  .col-md-push-0 {
+    left: 0%;
+  }
+  .col-md-offset-12 {
+    margin-left: 100%;
+  }
+  .col-md-offset-11 {
+    margin-left: 91.66666666666666%;
+  }
+  .col-md-offset-10 {
+    margin-left: 83.33333333333334%;
+  }
+  .col-md-offset-9 {
+    margin-left: 75%;
+  }
+  .col-md-offset-8 {
+    margin-left: 66.66666666666666%;
+  }
+  .col-md-offset-7 {
+    margin-left: 58.333333333333336%;
+  }
+  .col-md-offset-6 {
+    margin-left: 50%;
+  }
+  .col-md-offset-5 {
+    margin-left: 41.66666666666667%;
+  }
+  .col-md-offset-4 {
+    margin-left: 33.33333333333333%;
+  }
+  .col-md-offset-3 {
+    margin-left: 25%;
+  }
+  .col-md-offset-2 {
+    margin-left: 16.666666666666664%;
+  }
+  .col-md-offset-1 {
+    margin-left: 8.333333333333332%;
+  }
+  .col-md-offset-0 {
+    margin-left: 0%;
+  }
+}
+@media (min-width: 1200px) {
+  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    float: left;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+  .col-lg-11 {
+    width: 91.66666666666666%;
+  }
+  .col-lg-10 {
+    width: 83.33333333333334%;
+  }
+  .col-lg-9 {
+    width: 75%;
+  }
+  .col-lg-8 {
+    width: 66.66666666666666%;
+  }
+  .col-lg-7 {
+    width: 58.333333333333336%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-5 {
+    width: 41.66666666666667%;
+  }
+  .col-lg-4 {
+    width: 33.33333333333333%;
+  }
+  .col-lg-3 {
+    width: 25%;
+  }
+  .col-lg-2 {
+    width: 16.666666666666664%;
+  }
+  .col-lg-1 {
+    width: 8.333333333333332%;
+  }
+  .col-lg-pull-12 {
+    right: 100%;
+  }
+  .col-lg-pull-11 {
+    right: 91.66666666666666%;
+  }
+  .col-lg-pull-10 {
+    right: 83.33333333333334%;
+  }
+  .col-lg-pull-9 {
+    right: 75%;
+  }
+  .col-lg-pull-8 {
+    right: 66.66666666666666%;
+  }
+  .col-lg-pull-7 {
+    right: 58.333333333333336%;
+  }
+  .col-lg-pull-6 {
+    right: 50%;
+  }
+  .col-lg-pull-5 {
+    right: 41.66666666666667%;
+  }
+  .col-lg-pull-4 {
+    right: 33.33333333333333%;
+  }
+  .col-lg-pull-3 {
+    right: 25%;
+  }
+  .col-lg-pull-2 {
+    right: 16.666666666666664%;
+  }
+  .col-lg-pull-1 {
+    right: 8.333333333333332%;
+  }
+  .col-lg-pull-0 {
+    right: 0%;
+  }
+  .col-lg-push-12 {
+    left: 100%;
+  }
+  .col-lg-push-11 {
+    left: 91.66666666666666%;
+  }
+  .col-lg-push-10 {
+    left: 83.33333333333334%;
+  }
+  .col-lg-push-9 {
+    left: 75%;
+  }
+  .col-lg-push-8 {
+    left: 66.66666666666666%;
+  }
+  .col-lg-push-7 {
+    left: 58.333333333333336%;
+  }
+  .col-lg-push-6 {
+    left: 50%;
+  }
+  .col-lg-push-5 {
+    left: 41.66666666666667%;
+  }
+  .col-lg-push-4 {
+    left: 33.33333333333333%;
+  }
+  .col-lg-push-3 {
+    left: 25%;
+  }
+  .col-lg-push-2 {
+    left: 16.666666666666664%;
+  }
+  .col-lg-push-1 {
+    left: 8.333333333333332%;
+  }
+  .col-lg-push-0 {
+    left: 0%;
+  }
+  .col-lg-offset-12 {
+    margin-left: 100%;
+  }
+  .col-lg-offset-11 {
+    margin-left: 91.66666666666666%;
+  }
+  .col-lg-offset-10 {
+    margin-left: 83.33333333333334%;
+  }
+  .col-lg-offset-9 {
+    margin-left: 75%;
+  }
+  .col-lg-offset-8 {
+    margin-left: 66.66666666666666%;
+  }
+  .col-lg-offset-7 {
+    margin-left: 58.333333333333336%;
+  }
+  .col-lg-offset-6 {
+    margin-left: 50%;
+  }
+  .col-lg-offset-5 {
+    margin-left: 41.66666666666667%;
+  }
+  .col-lg-offset-4 {
+    margin-left: 33.33333333333333%;
+  }
+  .col-lg-offset-3 {
+    margin-left: 25%;
+  }
+  .col-lg-offset-2 {
+    margin-left: 16.666666666666664%;
+  }
+  .col-lg-offset-1 {
+    margin-left: 8.333333333333332%;
+  }
+  .col-lg-offset-0 {
+    margin-left: 0%;
+  }
+}
+@-ms-viewport {
+  width: device-width;
+}
+.visible-xs,
+tr.visible-xs,
+th.visible-xs,
+td.visible-xs {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  .visible-xs {
+    display: block !important;
+  }
+  table.visible-xs {
+    display: table;
+  }
+  tr.visible-xs {
+    display: table-row !important;
+  }
+  th.visible-xs,
+  td.visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-xs.visible-sm {
+    display: block !important;
+  }
+  table.visible-xs.visible-sm {
+    display: table;
+  }
+  tr.visible-xs.visible-sm {
+    display: table-row !important;
+  }
+  th.visible-xs.visible-sm,
+  td.visible-xs.visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .visible-xs.visible-md {
+    display: block !important;
+  }
+  table.visible-xs.visible-md {
+    display: table;
+  }
+  tr.visible-xs.visible-md {
+    display: table-row !important;
+  }
+  th.visible-xs.visible-md,
+  td.visible-xs.visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1200px) {
+  .visible-xs.visible-lg {
+    display: block !important;
+  }
+  table.visible-xs.visible-lg {
+    display: table;
+  }
+  tr.visible-xs.visible-lg {
+    display: table-row !important;
+  }
+  th.visible-xs.visible-lg,
+  td.visible-xs.visible-lg {
+    display: table-cell !important;
+  }
+}
+.visible-sm,
+tr.visible-sm,
+th.visible-sm,
+td.visible-sm {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  .visible-sm.visible-xs {
+    display: block !important;
+  }
+  table.visible-sm.visible-xs {
+    display: table;
+  }
+  tr.visible-sm.visible-xs {
+    display: table-row !important;
+  }
+  th.visible-sm.visible-xs,
+  td.visible-sm.visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm {
+    display: block !important;
+  }
+  table.visible-sm {
+    display: table;
+  }
+  tr.visible-sm {
+    display: table-row !important;
+  }
+  th.visible-sm,
+  td.visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .visible-sm.visible-md {
+    display: block !important;
+  }
+  table.visible-sm.visible-md {
+    display: table;
+  }
+  tr.visible-sm.visible-md {
+    display: table-row !important;
+  }
+  th.visible-sm.visible-md,
+  td.visible-sm.visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1200px) {
+  .visible-sm.visible-lg {
+    display: block !important;
+  }
+  table.visible-sm.visible-lg {
+    display: table;
+  }
+  tr.visible-sm.visible-lg {
+    display: table-row !important;
+  }
+  th.visible-sm.visible-lg,
+  td.visible-sm.visible-lg {
+    display: table-cell !important;
+  }
+}
+.visible-md,
+tr.visible-md,
+th.visible-md,
+td.visible-md {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  .visible-md.visible-xs {
+    display: block !important;
+  }
+  table.visible-md.visible-xs {
+    display: table;
+  }
+  tr.visible-md.visible-xs {
+    display: table-row !important;
+  }
+  th.visible-md.visible-xs,
+  td.visible-md.visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-md.visible-sm {
+    display: block !important;
+  }
+  table.visible-md.visible-sm {
+    display: table;
+  }
+  tr.visible-md.visible-sm {
+    display: table-row !important;
+  }
+  th.visible-md.visible-sm,
+  td.visible-md.visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .visible-md {
+    display: block !important;
+  }
+  table.visible-md {
+    display: table;
+  }
+  tr.visible-md {
+    display: table-row !important;
+  }
+  th.visible-md,
+  td.visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1200px) {
+  .visible-md.visible-lg {
+    display: block !important;
+  }
+  table.visible-md.visible-lg {
+    display: table;
+  }
+  tr.visible-md.visible-lg {
+    display: table-row !important;
+  }
+  th.visible-md.visible-lg,
+  td.visible-md.visible-lg {
+    display: table-cell !important;
+  }
+}
+.visible-lg,
+tr.visible-lg,
+th.visible-lg,
+td.visible-lg {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  .visible-lg.visible-xs {
+    display: block !important;
+  }
+  table.visible-lg.visible-xs {
+    display: table;
+  }
+  tr.visible-lg.visible-xs {
+    display: table-row !important;
+  }
+  th.visible-lg.visible-xs,
+  td.visible-lg.visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-lg.visible-sm {
+    display: block !important;
+  }
+  table.visible-lg.visible-sm {
+    display: table;
+  }
+  tr.visible-lg.visible-sm {
+    display: table-row !important;
+  }
+  th.visible-lg.visible-sm,
+  td.visible-lg.visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .visible-lg.visible-md {
+    display: block !important;
+  }
+  table.visible-lg.visible-md {
+    display: table;
+  }
+  tr.visible-lg.visible-md {
+    display: table-row !important;
+  }
+  th.visible-lg.visible-md,
+  td.visible-lg.visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1200px) {
+  .visible-lg {
+    display: block !important;
+  }
+  table.visible-lg {
+    display: table;
+  }
+  tr.visible-lg {
+    display: table-row !important;
+  }
+  th.visible-lg,
+  td.visible-lg {
+    display: table-cell !important;
+  }
+}
+.hidden-xs {
+  display: block !important;
+}
+table.hidden-xs {
+  display: table;
+}
+tr.hidden-xs {
+  display: table-row !important;
+}
+th.hidden-xs,
+td.hidden-xs {
+  display: table-cell !important;
+}
+@media (max-width: 767px) {
+  .hidden-xs,
+  tr.hidden-xs,
+  th.hidden-xs,
+  td.hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-xs.hidden-sm,
+  tr.hidden-xs.hidden-sm,
+  th.hidden-xs.hidden-sm,
+  td.hidden-xs.hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-xs.hidden-md,
+  tr.hidden-xs.hidden-md,
+  th.hidden-xs.hidden-md,
+  td.hidden-xs.hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .hidden-xs.hidden-lg,
+  tr.hidden-xs.hidden-lg,
+  th.hidden-xs.hidden-lg,
+  td.hidden-xs.hidden-lg {
+    display: none !important;
+  }
+}
+.hidden-sm {
+  display: block !important;
+}
+table.hidden-sm {
+  display: table;
+}
+tr.hidden-sm {
+  display: table-row !important;
+}
+th.hidden-sm,
+td.hidden-sm {
+  display: table-cell !important;
+}
+@media (max-width: 767px) {
+  .hidden-sm.hidden-xs,
+  tr.hidden-sm.hidden-xs,
+  th.hidden-sm.hidden-xs,
+  td.hidden-sm.hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-sm,
+  tr.hidden-sm,
+  th.hidden-sm,
+  td.hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-sm.hidden-md,
+  tr.hidden-sm.hidden-md,
+  th.hidden-sm.hidden-md,
+  td.hidden-sm.hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .hidden-sm.hidden-lg,
+  tr.hidden-sm.hidden-lg,
+  th.hidden-sm.hidden-lg,
+  td.hidden-sm.hidden-lg {
+    display: none !important;
+  }
+}
+.hidden-md {
+  display: block !important;
+}
+table.hidden-md {
+  display: table;
+}
+tr.hidden-md {
+  display: table-row !important;
+}
+th.hidden-md,
+td.hidden-md {
+  display: table-cell !important;
+}
+@media (max-width: 767px) {
+  .hidden-md.hidden-xs,
+  tr.hidden-md.hidden-xs,
+  th.hidden-md.hidden-xs,
+  td.hidden-md.hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-md.hidden-sm,
+  tr.hidden-md.hidden-sm,
+  th.hidden-md.hidden-sm,
+  td.hidden-md.hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-md,
+  tr.hidden-md,
+  th.hidden-md,
+  td.hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .hidden-md.hidden-lg,
+  tr.hidden-md.hidden-lg,
+  th.hidden-md.hidden-lg,
+  td.hidden-md.hidden-lg {
+    display: none !important;
+  }
+}
+.hidden-lg {
+  display: block !important;
+}
+table.hidden-lg {
+  display: table;
+}
+tr.hidden-lg {
+  display: table-row !important;
+}
+th.hidden-lg,
+td.hidden-lg {
+  display: table-cell !important;
+}
+@media (max-width: 767px) {
+  .hidden-lg.hidden-xs,
+  tr.hidden-lg.hidden-xs,
+  th.hidden-lg.hidden-xs,
+  td.hidden-lg.hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-lg.hidden-sm,
+  tr.hidden-lg.hidden-sm,
+  th.hidden-lg.hidden-sm,
+  td.hidden-lg.hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-lg.hidden-md,
+  tr.hidden-lg.hidden-md,
+  th.hidden-lg.hidden-md,
+  td.hidden-lg.hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .hidden-lg,
+  tr.hidden-lg,
+  th.hidden-lg,
+  td.hidden-lg {
+    display: none !important;
+  }
+}
+.visible-print,
+tr.visible-print,
+th.visible-print,
+td.visible-print {
+  display: none !important;
+}
+@media print {
+  .visible-print {
+    display: block !important;
+  }
+  table.visible-print {
+    display: table;
+  }
+  tr.visible-print {
+    display: table-row !important;
+  }
+  th.visible-print,
+  td.visible-print {
+    display: table-cell !important;
+  }
+  .hidden-print,
+  tr.hidden-print,
+  th.hidden-print,
+  td.hidden-print {
+    display: none !important;
+  }
+}
+]]></Content>
+    </Stylesheet>
+    <Stylesheet>
+      <Name>fanoe</Name>
+      <FileName>fanoe</FileName>
+      <Content><![CDATA[html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	border: 0;
+	background: transparent;
+	vertical-align: baseline;
+	font-size: 100%;
+}
+
+body {
+	line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+nav ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	vertical-align: baseline;
+	font-size: 100%;
+}
+
+ins {
+	background-color: #ff9;
+	color: #000;
+	text-decoration: none;
+}
+
+mark {
+	background-color: #ff9;
+	color: #000;
+	font-weight: bold;
+	font-style: italic;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+hr {
+	display: block;
+	margin: 1em 0;
+	padding: 0;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #cccccc;
+}
+
+input,
+select {
+	vertical-align: middle;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+.dark {
+	background: #1c1c1e;
+}
+
+.dark * {
+	color: #fff;
+}
+
+.dark a,
+.dark a:visited {
+	color: #f45376;
+}
+
+.dark a:hover,
+.dark a:visited:hover {
+	text-decoration: underline;
+}
+
+.dark a.button {
+	border: 1px solid #fff;
+	background: rgba(255, 255, 255, 0);
+	color: #fff;
+}
+
+.dark a.button:hover {
+	background: #fff;
+	color: #000;
+}
+
+.dark a.button.fill {
+	background: #fff;
+	color: #000;
+}
+
+.dark a.button.fill:hover {
+	background: rgba(255, 255, 255, 0.5);
+	color: #fff;
+}
+
+.dark code,
+.dark pre {
+	background-color: rgba(248, 248, 248, 0.1);
+}
+
+.dark + .triangle:before {
+	border-color: transparent transparent transparent #1c1c1e;
+}
+
+.light {
+	background: #fff;
+}
+
+.light * {
+	color: #000;
+}
+
+.light a,
+.light a:visited {
+	color: #f45376 !important;
+}
+
+.light a:hover,
+.light a:visited:hover {
+	text-decoration: underline;
+}
+
+.light a.button {
+	border: 1px solid #000;
+	background: transparent;
+	color: #000;
+}
+
+.light a.button:hover {
+	background: #000;
+	color: #fff;
+}
+
+.light a.button.fill {
+	background: #000;
+	color: #fff;
+}
+
+.light a.button.fill:hover {
+	background: rgba(0, 0, 0, 0.2);
+	color: #000;
+}
+
+.light code,
+.light pre {
+	background-color: #f8f8f8;
+}
+
+.light + .triangle:before {
+	border-color: transparent transparent transparent #fff;
+}
+
+.yellow {
+	background: #FFCC01;
+}
+
+.yellow * {
+	color: #000;
+}
+
+.yellow a,
+.yellow a:visited {
+	color: #f42146;
+}
+
+.yellow a.button {
+	border: 1px solid #000;
+	background: transparent;
+	color: #000;
+}
+
+.yellow a.button:hover {
+	background: #000;
+	color: #FFCC01;
+}
+
+.yellow a.button.fill {
+	background: #000;
+	color: #FFCC01;
+}
+
+.yellow a.button.fill:hover {
+	background: rgba(0, 0, 0, 0.2);
+	color: #000;
+}
+
+.yellow + .triangle:before {
+	border-color: transparent transparent transparent #FFCC01;
+}
+
+.blue {
+	background: #51c1f5;
+}
+
+.blue * {
+	color: #fff;
+}
+
+.blue a,
+.blue a:visited {
+	text-decoration: underline;
+}
+
+.blue a:hover,
+.blue a:visited:hover {
+	text-decoration: none;
+}
+
+.blue a.button {
+	border: 1px solid #fff;
+	background: rgba(255, 255, 255, 0);
+	text-decoration: none;
+}
+
+.blue a.button:hover {
+	background: #fff;
+	color: #51c1f5;
+}
+
+.blue a.button.fill {
+	background: #fff;
+	color: #51c1f5;
+}
+
+.blue a.button.fill:hover {
+	background: rgba(255, 255, 255, 0.5);
+	color: #fff;
+}
+
+.blue + .triangle:before {
+	border-color: transparent transparent transparent #51c1f5;
+}
+
+.purple {
+	background: #C2357B;
+}
+
+.purple * {
+	color: #fff;
+}
+
+.purple a,
+.purple a:visited {
+	text-decoration: underline;
+}
+
+.purple a:hover,
+.purple a:visited:hover {
+	text-decoration: none;
+}
+
+.purple a.button {
+	border: 1px solid #fff;
+	background: rgba(255, 255, 255, 0);
+	text-decoration: none;
+}
+
+.purple a.button:hover {
+	background: #fff;
+	color: #C2357B;
+}
+
+.purple a.button.fill {
+	background: #fff;
+	color: #C2357B;
+}
+
+.purple a.button.fill:hover {
+	background: rgba(255, 255, 255, 0.5);
+	color: #fff;
+}
+
+.purple + .triangle:before {
+	border-color: transparent transparent transparent #C2357B;
+}
+
+.round {
+	border-radius: 50%;
+}
+
+.text--center {
+	text-align: center;
+}
+
+.text--center .seperator {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.center,
+.center img {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.vcenter {
+	display: inline-block;
+	vertical-align: middle;
+	float: none;
+}
+
+body {
+	font-family: "Lato", sans-serif;
+	line-height: 1.4;
+}
+
+h1 {
+	font-weight: 900;
+}
+
+h2,
+h3,
+h4 {
+	font-weight: 700;
+}
+
+h1 {
+	letter-spacing: -.2px;
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.60rem;
+	font-weight: 900;
+}
+
+h3 {
+	font-size: 1.3rem;
+}
+
+h4 {
+	font-size: 1.1rem;
+	margin-bottom: 3px;
+}
+
+h5 {
+	font-size: 2rem;
+	font-weight: 100;
+	margin: 0;
+}
+
+h5 + * {
+	margin-bottom: 20px;
+}
+
+h5 a {
+	font-size: inherit;
+	font-family: inherit !important;
+}
+
+strong {
+	font-weight: 900;
+}
+
+p,
+blockquote,
+li,
+a {
+	font-size: 1rem;
+	line-height: 1.6;
+	letter-spacing: 0.2px;
+}
+
+p,
+blockquote,
+li {
+	color: #4d4d4d;
+	font-weight: 400;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+	width: auto;
+	white-space: nowrap;
+}
+
+blockquote {
+	color: #2c2c2c;
+	font-size: 1.2rem;
+}
+
+blockquote:before,
+blockquote:after {
+	display: inline-block;
+	padding: 0 2px;
+	font-size: 1.4rem;
+	content: '"';
+}
+
+a.button {
+	border-radius: 3px;
+	padding: 8px 18px !important;
+	margin-top: 20px;
+	font-family: "Lato", sans-serif !important;
+	font-size: 1rem;
+	background: transparent;
+	transition: all .2s ease-in-out;
+}
+
+a.button:hover {
+	background: #000;
+	color: #fff;
+	text-decoration: none !important;
+}
+
+a.button.fill {
+	background: #000;
+	color: #fff;
+}
+
+a.button.fill:hover {
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	text-decoration: none;
+}
+
+html,
+body {
+	width: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	background: transparent;
+	min-height: 100%;
+	min-width: 100%;
+	font-size: 17px;
+}
+
+*[role="content"] {
+	position: relative;
+	min-height: calc(100vh - 486px);
+}
+
+header {
+	background: #000;
+	padding: 30px 0;
+	position: relative;
+}
+
+header .container {
+	max-width: 100%;
+	padding: 0;
+}
+
+header .row {
+	margin: 0;
+}
+
+.brand {
+	margin: 0 auto;
+	width: 205px;
+	height: 114px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#toggle {
+	position: absolute;
+	right: 30px;
+	top: 50%;
+	-webkit-transform: translateY(-40%);
+	-ms-transform: translateY(-40%);
+	transform: translateY(-40%);
+}
+
+.toggle {
+	position: relative;
+	z-index: 999;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.toggle .cross {
+	transition-duration: 0s;
+	transition-delay: .1s;
+}
+
+.toggle .cross span:before {
+	transition-property: margin,  -webkit-transform;
+	transition-property: margin,  transform;
+	transition-duration: .1s;
+	transition-delay: .1s,  0;
+}
+
+.toggle .cross span:after {
+	transition-property: margin,  -webkit-transform;
+	transition-property: margin,  transform;
+	transition-duration: .1s;
+	transition-delay: .1s,  0;
+}
+
+.toggle .cross.open span {
+	background-color: transparent;
+	transition-delay: .1s;
+}
+
+.toggle .cross.open span:before {
+	margin-top: 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	transition-delay: 0,  .1s;
+	background-color: #c6c5cd;
+}
+
+.toggle .cross.open span:after {
+	margin-top: 0;
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	transition-delay: 0,  .1s;
+	background-color: #c6c5cd;
+}
+
+.toggle span {
+	margin: 0 auto;
+	position: relative;
+	z-index: 999;
+	top: 12px;
+	width: 25px;
+	height: 2px;
+	background-color: #fff;
+	display: block;
+}
+
+.toggle span:before,
+.toggle span:after {
+	position: absolute;
+	content: '';
+	width: 25px;
+	height: 2px;
+	background-color: #fff;
+	display: block;
+}
+
+.toggle span:before {
+	margin-top: -7px;
+}
+
+.toggle span:after {
+	margin-top: 7px;
+}
+
+nav {
+	z-index: 999;
+	background: rgba(0, 0, 0, 0.95);
+	text-align: right;
+	left: 0px;
+	right: 0px;
+	display: block;
+	position: relative;
+	transition: height 300ms ease-in-out;
+}
+
+nav > ul {
+	padding: 20px;
+	position: relative;
+	display: inline-table;
+	width: 100%;
+}
+
+nav > ul li {
+	position: relative;
+	font-family: "Lato", sans-serif;
+}
+
+nav > ul li a,
+nav > ul li span {
+	cursor: pointer;
+	display: inline-block;
+	padding: 25px;
+	font-size: 20px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.75);
+}
+
+nav > ul li a:hover,
+nav > ul li span:hover {
+	color: #fff;
+}
+
+nav > ul li span {
+	cursor: default;
+}
+
+nav > ul li:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+nav > ul li.selected > a,
+nav > ul li.selected span {
+	color: #fff;
+	font-weight: 700;
+}
+
+nav li > ul {
+	position: absolute;
+}
+
+nav li > ul li {
+	float: none;
+	display: block;
+	position: relative;
+}
+
+nav li > ul li a {
+	font-size: 17px;
+	padding: 15px 15px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+nav li > ul li a:hover {
+	color: #fff;
+}
+
+nav li > ul > li > ul {
+	left: 100%;
+	top: 0;
+	display: none;
+}
+
+.dark,
+.light,
+.yellow,
+.blue,
+.purple {
+	display: block;
+	margin: 0 auto;
+	padding: 50px 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	color: #000;
+}
+
+.dark .row,
+.light .row,
+.yellow .row,
+.blue .row,
+.purple .row {
+	margin: 0;
+}
+
+.dark .row div[class^="col-"],
+.light .row div[class^="col-"],
+.yellow .row div[class^="col-"],
+.blue .row div[class^="col-"],
+.purple .row div[class^="col-"] {
+	margin-bottom: 50px;
+}
+
+.dark p,
+.light p,
+.yellow p,
+.blue p,
+.purple p,
+.dark a,
+.light a,
+.yellow a,
+.blue a,
+.purple a,
+.dark blockquote,
+.light blockquote,
+.yellow blockquote,
+.blue blockquote,
+.purple blockquote,
+.dark li,
+.light li,
+.yellow li,
+.blue li,
+.purple li {
+	font-family: "Merriweather", serif;
+}
+
+.dark h1,
+.light h1,
+.yellow h1,
+.blue h1,
+.purple h1 {
+	margin-bottom: 10px;
+}
+
+.dark h2,
+.light h2,
+.yellow h2,
+.blue h2,
+.purple h2,
+.dark h3,
+.light h3,
+.yellow h3,
+.blue h3,
+.purple h3 {
+	margin: 0 0 5px;
+}
+
+.dark p,
+.light p,
+.yellow p,
+.blue p,
+.purple p {
+	letter-spacing: 0.2px;
+	margin: 0 auto;
+}
+
+.dark p + *,
+.light p + *,
+.yellow p + *,
+.blue p + *,
+.purple p + * {
+	margin-top: 20px;
+}
+
+.dark a,
+.light a,
+.yellow a,
+.blue a,
+.purple a {
+	position: relative;
+	display: inline-block;
+}
+
+.dark img,
+.light img,
+.yellow img,
+.blue img,
+.purple img {
+	padding: 20px 0;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	margin: 30px 0;
+}
+
+.dark li,
+.light li,
+.yellow li,
+.blue li,
+.purple li {
+	padding: 2px 0 0;
+}
+
+.blogarchive div[class^="col-"] {
+	margin-bottom: 20px !important;
+}
+
+.blogarchive .equal {
+	width: 100%;
+}
+
+.blogarchive a {
+	white-space: normal;
+	transition: all 200ms ease;
+	padding: 12px 18px;
+	background: rgba(0, 0, 0, 0.08);
+	display: block;
+}
+
+.blogarchive a:hover {
+	text-decoration: none;
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.blogarchive a:hover p {
+	color: #2a2a2a;
+}
+
+.blogarchive .date {
+	font-size: .9rem;
+	text-align: right;
+	margin-bottom: 5px;
+}
+
+.blogarchive h2 {
+	font-size: 1.2rem;
+	font-family: "Lato", sans-serif;
+	transition: all 200ms ease;
+}
+
+.blogarchive p {
+	font-size: 1rem;
+	color: #7f7d7d;
+	transition: all 200ms ease;
+}
+
+footer ul {
+	margin: 15px auto 0;
+	text-align: center;
+}
+
+footer ul li {
+	position: relative;
+	display: block;
+	text-align: left;
+	padding: 0 0 5px 0;
+	margin: 0;
+	line-height: 1;
+}
+
+footer.dark a {
+	color: rgba(255, 255, 255, 0.6) !important;
+	font-size: 1rem;
+	border-bottom: 1px solid transparent;
+	padding-bottom: 3px;
+	font-family: "Lato", sans-serif;
+	font-weight: 100;
+}
+
+footer.dark a:hover {
+	color: rgba(255, 255, 255, 0.9) !important;
+	border-bottom: 1px solid #fff !important;
+	padding-bottom: 3px;
+	text-decoration: none;
+}
+
+ul {
+	margin-left: 20px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+blockquote {
+	padding: 10px;
+	text-align: center;
+	position: relative;
+	font-size: 1.3rem;
+}
+
+blockquote + * {
+	padding: 30px 10px;
+}
+
+* + ul {
+	margin-bottom: 30px;
+}
+
+.equal {
+	display: table;
+	table-layout: fixed;
+}
+
+.equal .vcenter {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.full {
+	margin: 0;
+	padding: 0 !important;
+	overflow: hidden;
+}
+
+.full * {
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+	line-height: 0;
+}
+
+.full .wide {
+	width: 100%;
+	height: auto;
+}
+
+.small {
+	font-size: .85rem;
+}
+
+code,
+pre {
+	overflow: auto;
+	padding: 6px 10px;
+	border-radius: 3px;
+	background-color: rgba(248, 248, 248, 0.3);
+	font-size: .9rem;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	line-height: 2.3;
+}
+
+.gallery .row > div {
+	margin-bottom: 2%;
+}
+
+.gallery img {
+	margin: 0;
+}
+
+.video-wrapper {
+	margin: 30px auto;
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+}
+
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.breadcrumb {
+	background: rgba(0, 0, 0, 0.6);
+	transition: all 200ms ease-in-out;
+}
+
+.breadcrumb a,
+.breadcrumb a:visited {
+	color: #fff;
+	font-size: 1rem;
+}
+
+.breadcrumb:hover {
+	background: black;
+}
+
+@media (min-width: 768px) {
+
+.dark,
+.light,
+.yellow,
+.blue,
+.purple {
+	padding: 80px 0;
+}
+
+.dark img,
+.light img,
+.yellow img,
+.blue img,
+.purple img {
+	padding: 0;
+}
+
+.blogarchive a {
+	background: rgba(0, 0, 0, 0.02);
+}
+
+.blogarchive a {
+	min-height: 250px;
+	overflow: hidden;
+}
+
+.blogarchive a:hover h2 {
+	-webkit-transform: translateY(-3px);
+	-ms-transform: translateY(-3px);
+	transform: translateY(-3px);
+}
+
+.breadcrumb {
+	padding: 4px 8px;
+	position: absolute;
+	left: 40px;
+	top: 40px;
+}
+
+.breadcrumb a {
+	font-size: 1.2rem;
+}
+
+}
+
+@media (min-width: 992px) {
+
+.triangle + .dark:before {
+	border-color: transparent transparent transparent #1c1c1e;
+}
+
+.triangle + .light:before {
+	border-color: transparent transparent transparent #fff;
+}
+
+.triangle + .yellow:before {
+	border-color: transparent transparent transparent #FFCC01;
+}
+
+.triangle + .blue:before {
+	border-color: transparent transparent transparent #51c1f5;
+}
+
+.triangle + .purple:before {
+	border-color: transparent transparent transparent #C2357B;
+}
+
+header {
+	padding: 15px 0;
+}
+
+header .container {
+	max-width: 960px;
+	padding: 0 20px;
+}
+
+#toggle {
+	display: none;
+}
+
+nav {
+	margin: 0 auto;
+	background: none;
+	width: 100%;
+}
+
+nav > ul {
+	padding-right: 0;
+	width: auto;
+}
+
+nav > ul li {
+	float: left;
+}
+
+nav > ul li a,
+nav > ul li span {
+	font-size: 15px;
+}
+
+nav > ul li:last-child a {
+	padding-right: 0;
+}
+
+nav li > ul {
+	left: 0;
+	top: 75%;
+	display: none;
+	white-space: nowrap;
+	height: auto;
+	margin-bottom: 0;
+	margin-left: 10px;
+	text-align: left;
+	background: rgba(0, 0, 0, 0.8);
+	padding: 5px 8px 5px 0;
+}
+
+nav li > ul li a {
+	padding: 8px 15px;
+	font-size: 15px;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+nav .has-child:hover > .sublevel {
+	display: block;
+}
+
+.dark .row div[class^="col-"],
+.light .row div[class^="col-"],
+.yellow .row div[class^="col-"],
+.blue .row div[class^="col-"],
+.purple .row div[class^="col-"] {
+	margin-bottom: 20px;
+}
+
+.triangle {
+	position: relative;
+}
+
+.triangle img {
+	position: relative;
+	z-index: 100;
+}
+
+.triangle:before {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 150px 100vw;
+	border-color: inherit;
+	position: absolute;
+	z-index: 120;
+}
+
+.triangle + .light,
+.triangle + .dark,
+.triangle + .blue,
+.triangle + .yellow,
+.triangle + .purple {
+	position: relative;
+}
+
+.triangle + .light:before,
+.triangle + .dark:before,
+.triangle + .blue:before,
+.triangle + .yellow:before,
+.triangle + .purple:before {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 150px 0 0 100vw;
+	border-color: none;
+	position: absolute;
+	z-index: 120;
+	top: -150px;
+}
+
+.video-wrapper {
+	margin: 60px auto;
+}
+
+}
+
+@media (max-width: 992px) {
+
+body {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+nav {
+	-webkit-transform: translateX(100%);
+	-ms-transform: translateX(100%);
+	transform: translateX(100%);
+	opacity: 1;
+	transition: -webkit-transform 300ms ease-in-out, opacity 300ms ease-in-out;
+	transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+	text-align: center;
+	position: absolute;
+	top: 144px;
+}
+
+nav.open {
+	opacity: 1;
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+}
+
+nav > ul {
+	margin: 0;
+}
+
+nav > ul li:first-child a {
+	padding: 10px 25px;
+}
+
+nav > ul li a,
+nav > ul li span {
+	padding: 25px 25px 10px 25px;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+nav > ul li.selected > a,
+nav > ul li.selected span {
+	color: #fff;
+	font-weight: 700;
+}
+
+nav > ul li.selected ul {
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	height: 120%;
+}
+
+nav li > ul {
+	-webkit-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+	position: relative;
+	text-align: center;
+	transition: all 300ms ease-in-out;
+	height: 0;
+	margin: 0;
+}
+
+}
+
+@media (max-width: 992px) and (max-width: 992px) {
+
+nav > ul li.selected ul li a {
+	color: #fff;
+	font-weight: 500;
+}
+
+}
+
+@media (max-width: 768px) {
+
+.breadcrumb {
+	text-align: center;
+	padding: 20px 0;
+	background: black;
+}
+
+}
+]]></Content>
+    </Stylesheet>
+    <Stylesheet>
+      <Name>rte</Name>
+      <FileName>
+      </FileName>
+      <Content><![CDATA[]]></Content>
+      <Properties>
+        <Property>
+          <Name>Header</Name>
+          <Alias>h1</Alias>
+          <Value>font-size: 1.5rem;</Value>
+        </Property>
+        <Property>
+          <Name>Header 2</Name>
+          <Alias>h2</Alias>
+          <Value>font-size: 1.4rem;</Value>
+        </Property>
+        <Property>
+          <Name>Header 3</Name>
+          <Alias>h3</Alias>
+          <Value>font-size: 1.2rem;</Value>
+        </Property>
+        <Property>
+          <Name>Smooth</Name>
+          <Alias>h5</Alias>
+          <Value>font-size: 1rem; font-weight: 100;</Value>
+        </Property>
+        <Property>
+          <Name>Paragraph</Name>
+          <Alias>p</Alias>
+          <Value>font-size: 1rem;</Value>
+        </Property>
+        <Property>
+          <Name>Blockquote</Name>
+          <Alias>blockquote</Alias>
+          <Value>font-style: italic;</Value>
+        </Property>
+      </Properties>
+    </Stylesheet>
+    <Stylesheet>
+      <Name>style</Name>
+      <FileName>style</FileName>
+      <Content><![CDATA[/* Go crazy with your own styles here */
+]]></Content>
+    </Stylesheet>
+  </Stylesheets>
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes>
+    <DataType Name="Grid Blogpost" Id="Umbraco.Grid" Definition="a3785f08-73d5-406b-855f-8e52805c22e2" DatabaseType="Ntext">
+      <PreValues>
+        <PreValue Id="88" Value="{&#xD;&#xA;  &quot;styles&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;label&quot;: &quot;Set a background image&quot;,&#xD;&#xA;      &quot;description&quot;: &quot;Set a row background&quot;,&#xD;&#xA;      &quot;key&quot;: &quot;background-image&quot;,&#xD;&#xA;      &quot;view&quot;: &quot;imagepicker&quot;,&#xD;&#xA;      &quot;modifier&quot;: &quot;url({0})&quot;,&#xD;&#xA;      &quot;applyTo&quot;: &quot;row&quot;&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;config&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;label&quot;: &quot;Background color&quot;,&#xD;&#xA;      &quot;description&quot;: &quot;Choose background color&quot;,&#xD;&#xA;      &quot;key&quot;: &quot;class&quot;,&#xD;&#xA;      &quot;view&quot;: &quot;radiobuttonlist&quot;,&#xD;&#xA;      &quot;applyTo&quot;: &quot;row&quot;,&#xD;&#xA;      &quot;prevalues&quot;: [&#xD;&#xA;        &quot;light&quot;,&#xD;&#xA;        &quot;dark&quot;,&#xD;&#xA;        &quot;yellow&quot;,&#xD;&#xA;        &quot;blue&quot;,&#xD;&#xA;        &quot;purple&quot;,&#xD;&#xA;        &quot;full&quot;,&#xD;&#xA;        &quot;full triangle&quot;&#xD;&#xA;      ]&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;columns&quot;: 12,&#xD;&#xA;  &quot;templates&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;1 column layout&quot;,&#xD;&#xA;      &quot;sections&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 12&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;layouts&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Article&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 3,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;media_round&quot;,&#xD;&#xA;            &quot;paragraph&quot;&#xD;&#xA;          ]&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 1,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: []&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 8,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;abstract&quot;,&#xD;&#xA;            &quot;paragraph&quot;,&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;headline&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Banner&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 12,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;banner_headline&quot;,&#xD;&#xA;            &quot;headline&quot;,&#xD;&#xA;            &quot;abstract&quot;,&#xD;&#xA;            &quot;paragraph&quot;,&#xD;&#xA;            &quot;quote&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Image wide&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 12,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;media_wide_cropped&quot;,&#xD;&#xA;            &quot;media_wide&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Article full width&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 12,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;media_text_right&quot;,&#xD;&#xA;            &quot;headline&quot;,&#xD;&#xA;            &quot;abstract&quot;,&#xD;&#xA;            &quot;paragraph&quot;,&#xD;&#xA;            &quot;quote&quot;,&#xD;&#xA;            &quot;media&quot;,&#xD;&#xA;            &quot;code&quot;,&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;embed&quot;,&#xD;&#xA;            &quot;headline_centered&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Article two col&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 12,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;headline&quot;,&#xD;&#xA;            &quot;quote&quot;&#xD;&#xA;          ]&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 6,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;abstract&quot;,&#xD;&#xA;            &quot;media&quot;,&#xD;&#xA;            &quot;code&quot;,&#xD;&#xA;            &quot;quote&quot;,&#xD;&#xA;            &quot;paragraph&quot;&#xD;&#xA;          ]&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 6,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;quote&quot;,&#xD;&#xA;            &quot;code&quot;,&#xD;&#xA;            &quot;media&quot;,&#xD;&#xA;            &quot;paragraph&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    }&#xD;&#xA;  ]&#xD;&#xA;}" Alias="items" />
+        <PreValue Id="89" Value="{&#xD;&#xA;  &quot;toolbar&quot;: [&#xD;&#xA;    &quot;styleselect&quot;,&#xD;&#xA;    &quot;bold&quot;,&#xD;&#xA;    &quot;italic&quot;,&#xD;&#xA;    &quot;alignleft&quot;,&#xD;&#xA;    &quot;aligncenter&quot;,&#xD;&#xA;    &quot;bullist&quot;,&#xD;&#xA;    &quot;numlist&quot;,&#xD;&#xA;    &quot;link&quot;&#xD;&#xA;  ],&#xD;&#xA;  &quot;stylesheets&quot;: [&#xD;&#xA;    &quot;rte&quot;&#xD;&#xA;  ],&#xD;&#xA;  &quot;dimensions&quot;: {&#xD;&#xA;    &quot;height&quot;: 500&#xD;&#xA;  },&#xD;&#xA;  &quot;maxImageSize&quot;: 500&#xD;&#xA;}" Alias="rte" />
+      </PreValues>
+    </DataType>
+    <DataType Name="Grid FrontPage" Id="Umbraco.Grid" Definition="bc957e81-2cdc-4fe3-bab2-ca4110cdff68" DatabaseType="Ntext">
+      <PreValues>
+        <PreValue Id="94" Value="{&#xD;&#xA;  &quot;styles&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;label&quot;: &quot;Set a background image&quot;,&#xD;&#xA;      &quot;description&quot;: &quot;Set a row background&quot;,&#xD;&#xA;      &quot;key&quot;: &quot;background-image&quot;,&#xD;&#xA;      &quot;view&quot;: &quot;imagepicker&quot;,&#xD;&#xA;      &quot;modifier&quot;: &quot;url({0})&quot;,&#xD;&#xA;      &quot;applyTo&quot;: &quot;row&quot;&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;label&quot;: &quot;Add spacing&quot;,&#xD;&#xA;      &quot;description&quot;: &quot;Add spacing under element&quot;,&#xD;&#xA;      &quot;key&quot;: &quot;margin-bottom&quot;,&#xD;&#xA;      &quot;view&quot;: &quot;textstring&quot;&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;config&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;label&quot;: &quot;Background color&quot;,&#xD;&#xA;      &quot;description&quot;: &quot;Choose background color&quot;,&#xD;&#xA;      &quot;key&quot;: &quot;class&quot;,&#xD;&#xA;      &quot;view&quot;: &quot;radiobuttonlist&quot;,&#xD;&#xA;      &quot;applyTo&quot;: &quot;row&quot;,&#xD;&#xA;      &quot;prevalues&quot;: [&#xD;&#xA;        &quot;light&quot;,&#xD;&#xA;        &quot;dark&quot;,&#xD;&#xA;        &quot;yellow&quot;,&#xD;&#xA;        &quot;blue&quot;,&#xD;&#xA;        &quot;purple&quot;,&#xD;&#xA;        &quot;full&quot;,&#xD;&#xA;        &quot;full triangle&quot;&#xD;&#xA;      ]&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;columns&quot;: 12,&#xD;&#xA;  &quot;templates&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;1 column layout&quot;,&#xD;&#xA;      &quot;sections&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 12&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;layouts&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Banner&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 12,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;banner_headline&quot;,&#xD;&#xA;            &quot;banner_tagline&quot;&#xD;&#xA;          ]&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 4,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;media&quot;&#xD;&#xA;          ]&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 4,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;media&quot;&#xD;&#xA;          ]&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 4,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;media&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Full width content&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 12,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;media&quot;,&#xD;&#xA;            &quot;media_round&quot;,&#xD;&#xA;            &quot;quote&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Two column&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 6,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;media&quot;,&#xD;&#xA;            &quot;media_round&quot;,&#xD;&#xA;            &quot;quote&quot;&#xD;&#xA;          ]&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 6,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;media&quot;,&#xD;&#xA;            &quot;media_round&quot;,&#xD;&#xA;            &quot;quote&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Three column&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 4&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 4,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;headline&quot;,&#xD;&#xA;            &quot;headline_centered&quot;,&#xD;&#xA;            &quot;paragraph&quot;,&#xD;&#xA;            &quot;media_round&quot;&#xD;&#xA;          ]&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 4&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;40/60&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 4,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;media&quot;,&#xD;&#xA;            &quot;media_round&quot;,&#xD;&#xA;            &quot;quote&quot;&#xD;&#xA;          ]&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 8,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;media&quot;,&#xD;&#xA;            &quot;media_round&quot;,&#xD;&#xA;            &quot;quote&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;60/40&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 8,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;media&quot;,&#xD;&#xA;            &quot;media_round&quot;,&#xD;&#xA;            &quot;quote&quot;&#xD;&#xA;          ]&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 4,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;media&quot;,&#xD;&#xA;            &quot;media_round&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Full width image&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 12,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;media_wide_cropped&quot;,&#xD;&#xA;            &quot;media_wide&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    }&#xD;&#xA;  ]&#xD;&#xA;}" Alias="items" />
+        <PreValue Id="95" Value="{&#xD;&#xA;  &quot;toolbar&quot;: [&#xD;&#xA;    &quot;styleselect&quot;,&#xD;&#xA;    &quot;bold&quot;,&#xD;&#xA;    &quot;italic&quot;,&#xD;&#xA;    &quot;alignleft&quot;,&#xD;&#xA;    &quot;aligncenter&quot;,&#xD;&#xA;    &quot;alignright&quot;,&#xD;&#xA;    &quot;bullist&quot;,&#xD;&#xA;    &quot;numlist&quot;,&#xD;&#xA;    &quot;link&quot;&#xD;&#xA;  ],&#xD;&#xA;  &quot;stylesheets&quot;: [&#xD;&#xA;    &quot;rte&quot;&#xD;&#xA;  ],&#xD;&#xA;  &quot;dimensions&quot;: {&#xD;&#xA;    &quot;height&quot;: 500&#xD;&#xA;  },&#xD;&#xA;  &quot;maxImageSize&quot;: 500&#xD;&#xA;}" Alias="rte" />
+      </PreValues>
+    </DataType>
+    <DataType Name="Grid TextPage" Id="Umbraco.Grid" Definition="21944c98-8e32-4475-807d-61a60c1ab070" DatabaseType="Ntext">
+      <PreValues>
+        <PreValue Id="82" Value="{&#xD;&#xA;  &quot;styles&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;label&quot;: &quot;Set a background image&quot;,&#xD;&#xA;      &quot;description&quot;: &quot;Set a row background&quot;,&#xD;&#xA;      &quot;key&quot;: &quot;background-image&quot;,&#xD;&#xA;      &quot;view&quot;: &quot;imagepicker&quot;,&#xD;&#xA;      &quot;modifier&quot;: &quot;url({0})&quot;,&#xD;&#xA;      &quot;applyTo&quot;: &quot;row&quot;&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;config&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;label&quot;: &quot;Background color&quot;,&#xD;&#xA;      &quot;description&quot;: &quot;Choose background color&quot;,&#xD;&#xA;      &quot;key&quot;: &quot;class&quot;,&#xD;&#xA;      &quot;view&quot;: &quot;radiobuttonlist&quot;,&#xD;&#xA;      &quot;applyTo&quot;: &quot;row&quot;,&#xD;&#xA;      &quot;prevalues&quot;: [&#xD;&#xA;        &quot;light&quot;,&#xD;&#xA;        &quot;dark&quot;,&#xD;&#xA;        &quot;yellow&quot;,&#xD;&#xA;        &quot;blue&quot;,&#xD;&#xA;        &quot;purple&quot;,&#xD;&#xA;        &quot;full&quot;,&#xD;&#xA;        &quot;full triangle&quot;&#xD;&#xA;      ]&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;columns&quot;: 12,&#xD;&#xA;  &quot;templates&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;1 column layout&quot;,&#xD;&#xA;      &quot;sections&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 12&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;layouts&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Headline&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 12,&#xD;&#xA;          &quot;editors&quot;: [&#xD;&#xA;            &quot;headline&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Article&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 4&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 8&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Wide image&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 12,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;media_wide&quot;,&#xD;&#xA;            &quot;media_wide_cropped&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Image w. text&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 12,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;banner_headline&quot;,&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;quote&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;name&quot;: &quot;Article Wide&quot;,&#xD;&#xA;      &quot;areas&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;grid&quot;: 12,&#xD;&#xA;          &quot;allowAll&quot;: false,&#xD;&#xA;          &quot;allowed&quot;: [&#xD;&#xA;            &quot;headline&quot;,&#xD;&#xA;            &quot;abstract&quot;,&#xD;&#xA;            &quot;code&quot;,&#xD;&#xA;            &quot;quote&quot;,&#xD;&#xA;            &quot;embed&quot;,&#xD;&#xA;            &quot;media&quot;,&#xD;&#xA;            &quot;media_text_right&quot;,&#xD;&#xA;            &quot;rte&quot;,&#xD;&#xA;            &quot;paragraph&quot;&#xD;&#xA;          ]&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    }&#xD;&#xA;  ]&#xD;&#xA;}" Alias="items" />
+        <PreValue Id="83" Value="{&#xD;&#xA;  &quot;toolbar&quot;: [&#xD;&#xA;    &quot;styleselect&quot;,&#xD;&#xA;    &quot;bold&quot;,&#xD;&#xA;    &quot;italic&quot;,&#xD;&#xA;    &quot;alignleft&quot;,&#xD;&#xA;    &quot;aligncenter&quot;,&#xD;&#xA;    &quot;bullist&quot;,&#xD;&#xA;    &quot;numlist&quot;,&#xD;&#xA;    &quot;link&quot;&#xD;&#xA;  ],&#xD;&#xA;  &quot;stylesheets&quot;: [&#xD;&#xA;    &quot;rte&quot;&#xD;&#xA;  ],&#xD;&#xA;  &quot;dimensions&quot;: {&#xD;&#xA;    &quot;height&quot;: 500&#xD;&#xA;  },&#xD;&#xA;  &quot;maxImageSize&quot;: 500&#xD;&#xA;}" Alias="rte" />
+      </PreValues>
+    </DataType>
+  </DataTypes>
+  <Actions>
+    <Action runat="install" undo="false" alias="FanoeInstaller" />
+  </Actions>
+</umbPackage>

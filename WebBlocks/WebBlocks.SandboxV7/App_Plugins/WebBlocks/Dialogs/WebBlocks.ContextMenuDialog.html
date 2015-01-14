@@ -1,0 +1,23 @@
+﻿<div ng-controller="WebBlocks.ContextMenuDialogCtrl">
+    <div class="umb-modalcolumn-header">
+        <h1 class="ng-binding">Edit Block</h1>
+    </div>
+    <div class="umb-modalcolumn-body">
+        <ul class="umb-actions">
+            <li ng-repeat="event in model.events" class="action ng-scope">
+                <a prevent-default="" ng-click="triggerAction(event.name)">
+                    <i class=" icon {{event.icon}}">
+                    </i>
+                    <span class="menu-label ng-binding">{{event.name}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="umb-modal-footer">
+        <div class="umb-el-wrap umb-modal-buttons">
+            <div class="btn-toolbar umb-btn-toolbar pull-right">
+                <input type="button" class="btn btn-success" ng-click="submit()" value="Close" />
+            </div>
+        </div>
+    </div>
+</div>

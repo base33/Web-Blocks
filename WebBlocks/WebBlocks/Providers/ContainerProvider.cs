@@ -32,7 +32,7 @@ namespace WebBlocks.Providers
         /// </summary>
         public ContainerProvider()
         {
-            var json = WebBlocksUtility.CurrentPageContent.GetPropertyValue("webBlocks");
+            var json = WebBlocksUtility.CurrentPageContent.GetPropertyValue<string>("webBlocks") ?? "";
             LoadContainersFromJson(json, true, WebBlocksUtility.CurrentPageNodeId.ToString());
         }
 
@@ -70,7 +70,7 @@ namespace WebBlocks.Providers
                 if (content == null)
                     return;
 
-                string json = content.GetPropertyValue("webBlocks");
+                string json = content.GetPropertyValue<string>("webBlocks");
                 if(!string.IsNullOrEmpty(json))
                     LoadContainersFromJson(json,  cacheForRequestLife, pageId.ToString());
             }

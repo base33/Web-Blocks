@@ -7,7 +7,7 @@ using Umbraco.Web;
 
 namespace WebBlocks.Utilities.Umbraco
 {
-    public class DynamicContentProperty : IPublishedContentProperty
+    public class DynamicContentProperty : IPublishedProperty
     {
         Property property;
 

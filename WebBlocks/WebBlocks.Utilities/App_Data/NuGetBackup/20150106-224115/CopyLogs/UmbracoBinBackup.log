@@ -1,0 +1,77 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : 06 January 2015 22:41:15
+   Source : C:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.Utilities\bin\
+     Dest : C:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.Utilities\App_Data\NuGetBackup\20150106-224115\bin\
+
+    Files : *.*
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                  47	C:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.Utilities\bin\
+	    New File  		  126976	businesslogic.dll  0%  100%  
+	    New File  		  124935	businesslogic.xml  0%  100%  
+	    New File  		  142336	ClientDependency.Core.dll  0%   92%  100%  
+	    New File  		  577536	cms.dll  0%   45%   90%  100%  
+	    New File  		  328830	cms.xml  0%   39%   79%  100%  
+	    New File  		   55296	controls.dll  0%  100%  
+	    New File  		    8883	controls.xml  0%  100%  
+	    New File  		  122880	CookComputing.XmlRpcV2.dll  0%  100%  
+	    New File  		   87040	Examine.dll  0%  100%  
+	    New File  		  134656	HtmlAgilityPack.dll  0%   97%  100%  
+	    New File  		  120523	HtmlAgilityPack.xml  0%  100%  
+	    New File  		  200704	ICSharpCode.SharpZipLib.dll  0%   65%  100%  
+	    New File  		   24576	interfaces.dll  0%  100%  
+	    New File  		   11809	interfaces.xml  0%  100%  
+	    New File  		  258048	log4net.dll  0%   50%  100%  
+	    New File  		  786432	Lucene.Net.dll  0%   33%   66%  100%  
+	    New File  		   1.4 m	Lucene.Net.xml  0%   16%   33%   50%   67%   84%  100%  
+	    New File  		   11264	Microsoft.ApplicationBlocks.Data.dll  0%  100%  
+	    New File  		   23640	Microsoft.Web.Mvc.FixedDisplayModes.dll  0%  100%  
+	    New File  		  396288	MiniProfiler.dll  0%   33%   66%   99%  100%  
+	    New File  		  226295	MiniProfiler.xml  0%   57%  100%  
+	    New File  		  391680	MySql.Data.dll  0%   33%   66%  100%  
+	    New File  		  391680	Newtonsoft.Json.dll  0%   33%   66%  100%  
+	    New File  		  432314	Newtonsoft.Json.xml  0%   30%   60%   90%  100%  
+	    New File  		  168616	System.Net.Http.Formatting.dll  0%   77%  100%  
+	    New File  		  137872	System.Net.Http.Formatting.xml  0%   95%  100%  
+	    New File  		  323240	System.Web.Http.dll  0%   40%   81%  100%  
+	    New File  		   73312	System.Web.Http.WebHost.dll  0%  100%  
+	    New File  		    9936	System.Web.Http.WebHost.xml  0%  100%  
+	    New File  		  379561	System.Web.Http.xml  0%   34%   69%  100%  
+	    New File  		  192512	TidyNet.dll  0%   68%  100%  
+	    New File  		   1.5 m	Umbraco.Core.dll  0%   16%   32%   48%   65%   81%   97%  100%  
+	    New File  		   1.1 m	Umbraco.Core.xml  0%   21%   43%   64%   86%  100%  
+	    New File  		  164352	umbraco.DataLayer.dll  0%   79%  100%  
+	    New File  		  120668	umbraco.DataLayer.xml  0%  100%  
+	    New File  		   1.5 m	umbraco.dll  0%   16%   33%   49%   66%   83%   99%  100%  
+	    New File  		   37888	umbraco.providers.dll  0%  100%  
+	    New File  		   50632	umbraco.providers.xml  0%  100%  
+	    New File  		   1.2 m	umbraco.xml  0%   20%   40%   61%   81%  100%  
+	    New File  		   49664	umbraco.XmlSerializers.dll  0%  100%  
+	    New File  		   36864	UmbracoExamine.dll  0%  100%  
+	    New File  		   32643	UmbracoExamine.xml  0%  100%  
+	    New File  		    6656	WebBlocks.Interfaces.dll  0%  100%  
+	    New File  		    7680	WebBlocks.Interfaces.pdb  0%  100%  
+	    New File  		   16384	WebBlocks.Utilities.dll  0%  100%  
+	    New File  		     196	WebBlocks.Utilities.dll.config  0%  100%  
+	    New File  		   52736	WebBlocks.Utilities.pdb  0%  100%  
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         0         0         0         0         0
+   Files :        47        47         0         0         0         0
+   Bytes :   13.43 m   13.43 m         0         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+
+
+   Speed :            15266644 Bytes/sec.
+   Speed :             873.564 MegaBytes/min.
+   Ended : 06 January 2015 22:41:16
+

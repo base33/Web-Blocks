@@ -1,0 +1,128 @@
+﻿<div ng-controller="WebBlocks.LayoutBuilder">
+
+    <div wb-sticky class="wb-action-bar" style="top:15px">
+        <a class="btn" href="#" ng-click="toggleUmbracoNavigation()" title="{{state.navigationVisible ? 'Hide Navigation' : 'Show Navigation'}}" prevent-default="">
+            <i ng-class="state.navigationVisible ? 'icon-navigation-left' : 'icon-navigation-right'"></i>
+            <i class="icon-list"></i>
+        </a>
+        <a ui-draggable class="btn" href="#" ng-click="showAddBlockDialog()" title="Add Block" prevent-default>
+            <i class="icon-add"></i>
+            <i class="icon-browser-window"></i>
+            Add Block
+        </a>
+        <a ui-draggable class="btn" href="#" ng-click="showBlockStorageDialog()" title="Storage" prevent-default>
+            <i class="icon-thumbnails"></i>
+            Block Storage
+        </a>
+        <a ui-draggable class="btn" href="#" ng-click="showRecycleBinDialog()" title="Recycle Bin" prevent-default>
+            <i class="icon-trash"></i>
+            Recycle Bin
+        </a>
+    </div>
+   <!-- add folder to store blocks for later
+    recycle bin
+
+    render angular html normal way via front-end and then, or, 
+    if we can't because the page is unpublished, we will need to generate the cache, and then redirect with a angular flag
+       
+       load wysiwygs already editable!
+       
+       -->
+    <!--<div class="umb-editor umb-rte">
+        <umb-editor model='editornotes'></umb-editor>
+    </div>    eventhandler="dialogTreeEventHandler"     ng-show="ui.showWysiwygEditor"  -->
+
+    
+    
+
+    <div id="webBlocksWrapper" wb-prevent-default-on-click style="margin-left:-240px;margin-top:30px;">
+
+        <div ng-show="ui.showIFrameEditor">
+            <iframe src="{{editorIframeSrc}}" height="800" width="800"></iframe>
+        </div>
+
+        <!-- Canvas -->
+        <div id="outerCanvas" style="width:{{config.canvasWidth}}px;" ng-show="ui.showLayoutBuilder">
+            <div id="canvas" style="width:{{config.canvasWidth}}px;">
+                <div id="canvasRender">
+                    <!--<ng-include src="'/App_Plugins/WebBlocks/LayoutBuilder.Test.html'" />-->
+
+                    <div class="container_12 clearfix">
+
+                        <div class="contentBlock_9">
+
+                            <div ui-sortable="getSortableOptions(model.containers.contentContainer.blocks)" ng-model="model.containers.contentContainer.blocks" wb-container-model="model.containers.contentContainer" ng-drop="true" ng-drop-success="handleBlockDropped($data, $event, $container)" class="contentBlock_9 wbcontainer">
+
+                                <div wb-block
+                                     wb-on-double-click="editBlock"
+                                     wb-on-double-tap="editBlock"
+                                     wb-on-right-click="showEditBlockDialog"
+                                     wb-on-touch-hold="showEditBlockDialog"
+                                     wb-container-model="model.containers.contentContainer"
+                                     ng-model="block"
+                                     ng-repeat="block in model.containers.contentContainer.blocks">
+                                </div>
+
+                            </div>
+
+                            <div class="contentBlock_9">
+                                <div class="grid_9">
+                                    <h1>This is some static content in the template</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum tempor ligula nec porttitor. Proin blandit fringilla sapien, a pulvinar purus aliquam eget. Ut non tortor sit amet orci tincidunt feugiat eu eu odio. Mauris et risus scelerisque, congue purus sed, rutrum erat. Aliquam erat volutpat. Maecenas pretium ex ipsum, vel venenatis arcu tristique sit amet. Cras id sodales velit, non tempus est. Nam sit amet massa eu velit suscipit dignissim id nec ligula.</p>
+                                </div>
+                            </div>
+
+                            <div ui-sortable="getSortableOptions(model.containers.bottomContainer.blocks)" ng-model="model.containers.bottomContainer.blocks" wb-container-model="model.containers.bottomContainer" ng-drop="true" ng-drop-success="handleBlockDropped($data, $event, $container)" class="contentBlock_9 wbcontainer">
+
+                                <div wb-block
+                                     wb-on-double-click="editBlock"
+                                     wb-on-double-tap="editBlock"
+                                     wb-on-right-click="showEditBlockDialog"
+                                     wb-on-touch-hold="showEditBlockDialog"
+                                     wb-container-model="model.containers.bottomContainer"
+                                     ng-model="block"
+                                     ng-repeat="block in model.containers.bottomContainer.blocks">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div ui-sortable="getSortableOptions(model.containers.sideContainer.blocks)" ng-model="model.containers.sideContainer.blocks" wb-container-model="model.containers.sideContainer" ng-drop="true" ng-drop-success="handleBlockDropped($data, $event, $container)" class="contentBlock_3 wbcontainer">
+
+                            <div wb-block
+                                 wb-on-double-click="editBlock"
+                                 wb-on-double-tap="editBlock"
+                                 wb-on-right-click="showEditBlockDialog"
+                                 wb-on-touch-hold="showEditBlockDialog"
+                                 wb-container-model="model.containers.sideContainer"
+                                 ng-model="block"
+                                 ng-repeat="block in model.containers.sideContainer.blocks">
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+<!--ng-bind-html="block.html"-->
+
+
+
+<!--<div ui-sortable style="margin-left:-240px;width:100%;height:400px;background:blue;">
+        <div ng-repeat="block in blocks" ng-bind-html="block.html" style="width:200px;"></div>
+    </div>-->

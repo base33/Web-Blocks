@@ -1,0 +1,26 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : 06 January 2015 14:04:37
+   Source : C:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.SandboxV7\bin\
+     Dest : C:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.SandboxV7\App_Data\NuGetBackup\20150106-140436\bin\
+
+    Files : *.*
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                   0	C:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.SandboxV7\bin\
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         0         0         0         0         0
+   Files :         0         0         0         0         0         0
+   Bytes :         0         0         0         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+   Ended : 06 January 2015 14:04:37
+

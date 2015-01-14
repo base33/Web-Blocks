@@ -1,0 +1,92 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : 06 January 2015 22:51:08
+   Source : C:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\bin\
+     Dest : C:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\App_Data\NuGetBackup\20150106-225108\bin\
+
+    Files : *.*
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                  62	C:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\bin\
+	    New File  		  144384	AutoMapper.dll  0%   90%  100%  
+	    New File  		   78138	AutoMapper.xml  0%  100%  
+	    New File  		  126976	businesslogic.dll  0%  100%  
+	    New File  		  124935	businesslogic.xml  0%  100%  
+	    New File  		  142336	ClientDependency.Core.dll  0%   92%  100%  
+	    New File  		  577536	cms.dll  0%   45%   90%  100%  
+	    New File  		  328830	cms.xml  0%   39%   79%  100%  
+	    New File  		   51712	controls.dll  0%  100%  
+	    New File  		    9068	controls.xml  0%  100%  
+	    New File  		  122880	CookComputing.XmlRpcV2.dll  0%  100%  
+	    New File  		   87040	Examine.dll  0%  100%  
+	    New File  		  222720	Examine.pdb  0%   58%  100%  
+	    New File  		  134656	HtmlAgilityPack.dll  0%   97%  100%  
+	    New File  		  120523	HtmlAgilityPack.xml  0%  100%  
+	    New File  		  200704	ICSharpCode.SharpZipLib.dll  0%   65%  100%  
+	    New File  		   24576	interfaces.dll  0%  100%  
+	    New File  		   11809	interfaces.xml  0%  100%  
+	    New File  		  258048	log4net.dll  0%   50%  100%  
+	    New File  		  786432	Lucene.Net.dll  0%   33%   66%  100%  
+	    New File  		   1.4 m	Lucene.Net.xml  0%   16%   33%   50%   67%   84%  100%  
+	    New File  		   11264	Microsoft.ApplicationBlocks.Data.dll  0%  100%  
+	    New File  		   23640	Microsoft.Web.Mvc.FixedDisplayModes.dll  0%  100%  
+	    New File  		  396288	MiniProfiler.dll  0%   33%   66%   99%  100%  
+	    New File  		  226295	MiniProfiler.xml  0%   57%  100%  
+	    New File  		  391680	MySql.Data.dll  0%   33%   66%  100%  
+	    New File  		  391680	Newtonsoft.Json.dll  0%   33%   66%  100%  
+	    New File  		  432314	Newtonsoft.Json.xml  0%   30%   60%   90%  100%  
+	    New File  		  168616	System.Net.Http.Formatting.dll  0%   77%  100%  
+	    New File  		  137872	System.Net.Http.Formatting.xml  0%   95%  100%  
+	    New File  		  323240	System.Web.Http.dll  0%   40%   81%  100%  
+	    New File  		   73312	System.Web.Http.WebHost.dll  0%  100%  
+	    New File  		    9936	System.Web.Http.WebHost.xml  0%  100%  
+	    New File  		  379561	System.Web.Http.xml  0%   34%   69%  100%  
+	    New File  		  192512	TidyNet.dll  0%   68%  100%  
+	    New File  		   1.5 m	Umbraco.Core.dll  0%   16%   32%   48%   65%   81%   97%  100%  
+	    New File  		   1.1 m	Umbraco.Core.xml  0%   21%   43%   64%   86%  100%  
+	    New File  		  164352	umbraco.DataLayer.dll  0%   79%  100%  
+	    New File  		  120668	umbraco.DataLayer.xml  0%  100%  
+	    New File  		   1.5 m	umbraco.dll  0%   16%   33%   49%   66%   83%   99%  100%  
+	    New File  		  372736	umbraco.editorControls.dll  0%   35%   70%  100%  
+	    New File  		  166687	umbraco.editorControls.xml  0%   78%  100%  
+	    New File  		  125952	umbraco.MacroEngines.dll  0%  100%  
+	    New File  		    3935	umbraco.MacroEngines.xml  0%  100%  
+	    New File  		   24576	umbraco.macroRenderings.dll  0%  100%  
+	    New File  		    2055	umbraco.macroRenderings.xml  0%  100%  
+	    New File  		   37888	umbraco.providers.dll  0%  100%  
+	    New File  		   50632	umbraco.providers.xml  0%  100%  
+	    New File  		   86016	Umbraco.Web.UI.dll  0%  100%  
+	    New File  		   1.2 m	umbraco.xml  0%   20%   40%   61%   81%  100%  
+	    New File  		   49664	umbraco.XmlSerializers.dll  0%  100%  
+	    New File  		   36864	UmbracoExamine.dll  0%  100%  
+	    New File  		   32643	UmbracoExamine.xml  0%  100%  
+	    New File  		   22528	UrlRewritingNet.UrlRewriter.dll  0%  100%  
+	    New File  		   48128	WebBlocks.dll  0%  100%  
+	    New File  		    1496	WebBlocks.dll.config  0%  100%  
+	    New File  		    6656	WebBlocks.Interfaces.dll  0%  100%  
+	    New File  		    7680	WebBlocks.Interfaces.pdb  0%  100%  
+	    New File  		    8704	WebBlocks.Model.dll  0%  100%  
+	    New File  		   36352	WebBlocks.Model.pdb  0%  100%  
+	    New File  		  122368	WebBlocks.pdb  0%  100%  
+	    New File  		   16384	WebBlocks.Utilities.dll  0%  100%  
+	    New File  		   58880	WebBlocks.Utilities.pdb  0%  100%  
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         0         0         0         0         0
+   Files :        62        62         0         0         0         0
+   Bytes :   14.83 m   14.83 m         0         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+
+
+   Speed :            29304024 Bytes/sec.
+   Speed :            1676.789 MegaBytes/min.
+   Ended : 06 January 2015 22:51:09
+

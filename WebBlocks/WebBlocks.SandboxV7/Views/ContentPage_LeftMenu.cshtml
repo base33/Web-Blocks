@@ -1,0 +1,31 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    Layout = "Global.cshtml";
+}
+
+
+
+@section Content {
+    <div class="container_12 clearfix">
+        @Html.Container(new Container
+           {
+               Name = "WidgetContainer",
+               CssClass = "contentBlock_3",
+               DynamicWysiwygClass = "grid_3",
+               Blocks = new List<IBlock> { new NodeBlock(1101) }
+           })
+
+        @Html.Container(new Container
+           {
+               Name = "ContentContainer",
+               CssClass = "contentBlock_9",
+               DynamicWysiwygClass = "grid_9",
+               Blocks = new List<IBlock>() 
+               { 
+                   new WysiwygBlock { Id = 1, Class = "grid_9" },
+                   new WysiwygBlock { Id = 2, Class = "grid_9" }
+               }
+           })
+    </div>
+}

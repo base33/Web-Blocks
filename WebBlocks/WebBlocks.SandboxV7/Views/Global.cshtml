@@ -1,0 +1,81 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+    
+}
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<title>@CurrentPage.Name</title>
+			<meta name="description" content="@CurrentPage.metaDescription"/>
+			<meta name="description" content="@CurrentPage.metaKeywords"/>
+			<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
+			
+			<!-- STYLESHEETS ====================================================================================== -->
+			<link type="text/css" rel="stylesheet" href="/css/960.css" />
+    		<link type="text/css" rel="stylesheet" href="/css/global.css" />
+			<!-- ================================================================================================== -->
+			
+			<!-- JAVASCRIPT ======================================================================================= -->
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+			<script type="text/javascript" src="/scripts/Mentor_Flexslider.js"></script>
+			<script type="text/javascript" src="/scripts/application.js"></script>
+			<!-- ================================================================================================== -->
+        @RenderSection("headContent", false)
+    </head>
+    <body>
+        @Html.WebBlocksLiveEdit(1055, 1069)
+        <!-- HEADER ========================================================================================== -->
+        <div class="siteHeader">
+            <div class="container_12 clearfix">
+                <div class="grid_4">
+                    <a href="/" class="siteLogo">Web Blocks</a>
+                </div>
+					  
+                <div class="grid_6 push_2" align="right">
+                    <br/>
+                    <h4>
+                        Contact <a target="_blank" href="http://www.mentordigital.co.uk/" title="Mentor Digital is a full service digital agency based in Bristol. We offer web design, software development, digital media &amp; video production services to clients in Bristol, and across the UK.">Mentor Digital</a> for bespoke umbraco development, design and support<br/>
+                        <a href="mailto:&#105;&#110;&#102;&#111;&#064;&#109;&#101;&#110;&#116;&#111;&#114;&#100;&#105;&#103;&#105;&#116;&#097;&#108;&#046;&#099;&#111;&#046;&#117;&#107;?Subject=Umbraco%20web%20development">&#105;&#110;&#102;&#111;&#064;&#109;&#101;&#110;&#116;&#111;&#114;&#100;&#105;&#103;&#105;&#116;&#097;&#108;&#046;&#099;&#111;&#046;&#117;&#107;</a>
+                    </h4>
+						  
+                </div>
+					  
+                <div class="grid_12 navMain">
+                    @Html.Partial("TopNavigation")
+                </div>
+            </div>
+        </div>
+        <!-- ================================================================================================= -->
+        
+        <!-- CONTENT ========================================================================================= -->
+		<div class="siteContent">
+            @* Anything in this will be rendered in the backend *@
+            @using(@Html.WebBlocksBuilder())
+            {
+			    @RenderSection("content", true)
+            }
+		</div>
+        <!-- ================================================================================================= -->
+
+        <!-- FOOTER ========================================================================================== -->
+		<div class="siteFooter">
+			<div class="container_12 clearfix">
+				<div class="grid_6 clearfix">
+					
+				</div>
+						
+				<div class="grid_4 push_2">
+					<strong>MENTOR WEB BLOCKS RUNWAY SITE</strong>
+				</div>
+						
+				<div class="grid_12">
+					<a target="_blank" href="http://www.mentordigital.co.uk/" title="Mentor Digital is a full service digital agency based in Bristol. We offer web design, software development, digital media &amp; video production services to clients in Bristol, and across the UK.">Web Design</a>
+				</div>
+			</div>
+		</div>
+		<!-- ================================================================================================= -->
+    </body>
+</html>

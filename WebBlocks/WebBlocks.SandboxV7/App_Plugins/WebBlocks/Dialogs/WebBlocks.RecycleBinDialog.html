@@ -1,0 +1,37 @@
+﻿<div ng-controller="WebBlocks.RecycleBinDialogCtrl">
+    <div class="umb-modalcolumn-header">
+        <h1 class="ng-binding">Recycle Bin</h1>
+    </div>
+    <div class="umb-panel-body with-header with-footer">
+        <h5 class="wbDialogTitle">Manage recycle bin:</h5>
+        <ul class="umb-actions">
+            <li ng-show="draggableBlockArray.length" class="action ng-scope">
+                <a prevent-default="" ng-click="deleteAllBlocks()" title="Delete All">
+                    <i class="icon icon-bomb" style="color:red;">
+                    </i>
+                    <span class="menu-label ng-binding">Delete All</span>
+                </a>
+            </li>
+
+            <li ng-repeat="draggableBlock in draggableBlockArray" ng-show="draggableBlockArray.length" class="action ng-scope">
+                <a ng-drag="true" ng-drag-data="draggableBlock" prevent-default="" title="{{getWysiwygContent(draggableBlock)}}">
+                    <i class="icon icon-folder">
+                    </i>
+                    <span class="menu-label ng-binding">{{draggableBlock.block.name}}</span>
+                    <i ng-click="deleteBlock(draggableBlock)" class="wbRedIconHover icon icon-delete pull-right"></i>
+                </a>
+            </li>
+
+            <li ng-hide="draggableBlockArray.length > 0" class="action ng-scope">
+                Empty!
+            </li>
+        </ul>
+    </div>
+    <div class="umb-panel-footer">
+        <div class="umb-el-wrap umb-panel-buttons">
+            <div class="btn-toolbar umb-btn-toolbar pull-right">
+                <input type="button" class="btn btn-success" ng-click="submit()" value="Close" />
+            </div>
+        </div>
+    </div>
+</div>
