@@ -197,7 +197,7 @@
         };
 
         $scope.showAddBlockDialog = function () {
-            dialogService.open({ template: "/app_plugins/WebBlocks/Dialogs/WebBlocks.AddBlockDialog.html", show: true });
+            dialogService.open({ template: "/app_plugins/WebBlocks/Dialogs/WebBlocks.AddBlockDialog.html", modelData: { rootId: -1, uiScope: $scope }, show: true });
         };
 
         $scope.showBlockStorageDialog = function () {

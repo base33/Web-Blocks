@@ -19,6 +19,13 @@
             return text;
         }
 
+        $scope.deleteAllBlocks = function () {
+            if (confirm("Are you sure you wish to delete all blocks?")) {
+                emptyArray($scope.draggableBlockArray);
+                emptyArray($scope.dialogOptions.modelData);
+            }
+        }
+
         $scope.deleteBlock = function (draggableBlock) {
             if (confirm("Are you sure you wish to delete this block?")) {
                 removeFromArray(dialogOptions.modelData, draggableBlock.block);

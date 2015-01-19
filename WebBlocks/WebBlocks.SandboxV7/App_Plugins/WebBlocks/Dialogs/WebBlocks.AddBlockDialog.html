@@ -1,22 +1,57 @@
-﻿<div ng-controller="WebBlocks.AddBlockDialogCtrl" class="umb-panel merchello-side-panel">
+﻿<div ng-controller="WebBlocks.AddBlockDialogCtrl">
     <div class="umb-modalcolumn-header">
         <h1 class="ng-binding">Add Block</h1>
     </div>
     <div class="umb-panel-body with-header with-footer">
-        <ul class="umb-actions">
-            <li class="action ng-scope">
-                <a prevent-default="">
-                    <i class=" icon icon-newspaper-alt">
-                    </i>
-                    <span class="menu-label ng-binding" style="font-size:15px;">Wysiwyg Block</span>
+        <h5 class="wbDialogTitle" style="float:left;">Drag your blocks into a container:</h5>
+        <div ng-click="handleClick()" style="position:relative;border-bottom:1px solid #ddd;width:100%;display:block;float:left;height:40px;width:100%;">
+            <a ng-drag="true" ng-drag-data="model">
+                <div style="width: 25px;padding: 10px 0px;float: left;display:inline-block;">
+                    <i class="icon icon-newspaper-alt" style="font-size: 20px;"></i>
+                </div>
+                <div style="display:inline-block;padding: 10px 0px;">
+                    <span style="font-size: 14px;margin:10px;">Wysiwyg Block</span>
+                </div>
+            </a>
+        </div>
+
+        <h5 class="wbDialogTitle" style="float:left;">Content:</h5>
+        <div style="width:420px;display:block;overflow-y:scroll;position: absolute;top: 100px;bottom: 0px;">
+
+            <div ng-show="viewNavigationSource.Parent != null" ng-animate="'slide'" ng-click="loadChildNavigationIntoMenu(viewNavigationSource.Parent)" class="wb-navigation-item" style="position:relative;border-bottom:1px solid #E8E8E8;width:100%;display:block;float:left;height:40px;width: 400px;">
+                <a prevent-default="" style="float: left; height: 40px; border-radius: 50px; background: white;">
+                    <div style="width: 25px;padding: 10px 0px;float: left;display:inline-block;">
+                        <i class="icon icon-left-double-arrow" style="font-size: 20px;"></i>
+                    </div>
+                    <div style="display:inline-block;padding: 10px 0px;">
+                        <span style="font-size: 14px;margin:10px;">Back</span>
+                    </div>
                 </a>
-            </li>
-        </ul>
-        <div>
+            </div>
+
+            <div ng-animate="'slide'" ng-hide="viewNavigationSource == {}" class="wb-navigation-item {{navigationModel.positionClass}}" ng-repeat="navigationModel in viewNavigationSource.Children | orderBy:'Model.Name'" style="position:relative;border-bottom:1px solid #E8E8E8;width:100%;display:block;float:left;height:40px;width: 400px;">
+                <div style="float:right;display:inline-block;width:34px;height:40px;">
+                    <a ng-click="loadChildNavigationIntoMenu(navigationModel)" ng-show="navigationModel.Model.HasChildren" style=""><i class="icon icon-right-double-arrow" style="float:right;padding: 10px;"></i></a>
+                </div>
+                <a ng-click="handleNavigationMore(navigationModel)" class="umb-options wb-umb-options" style="float:right;position:relative;margin-top:5px;">
+                    <i></i><i></i><i></i>
+                </a>
+                <a ng-drag="true" ng-drag-data="model" prevent-default="" style="float: left; height: 40px; border-radius: 50px; background: white;">
+                    <div style="width: 25px;padding: 10px 0px;float: left;display:inline-block;">
+                        <i class="icon {{navigationModel.Model.IconClass}}" style="font-size: 20px;"></i>
+                    </div>
+                    <div style="display:inline-block;padding: 10px 0px;">
+                        <span style="font-size: 14px;margin:10px;">{{navigationModel.Model.Name}}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--<div>
             <umb-tree application="content" hideheader="true" hideoptions="true" isdialog="true" section="content" treealias="" ng-model="selectedContent">
             </umb-tree>
-        </div>
-        
+        </div>-->
+
     </div>
     <div class="umb-panel-footer">
         <div class="umb-el-wrap umb-panel-buttons">

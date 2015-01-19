@@ -286,7 +286,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\WebBlocks.Examine\WebBlocks.Examine.csproj">
       <Project>{ee2e8c6b-e343-4fa5-a684-dbc447f8133f}</Project>
@@ -299,10 +298,6 @@
     <ProjectReference Include="..\WebBlocks.Model\WebBlocks.Model.csproj">
       <Project>{7198e4c7-f43c-43cc-b2d5-e7e903c1277b}</Project>
       <Name>WebBlocks.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebBlocks.Providers\WebBlocks.Providers.csproj">
-      <Project>{1e55512a-7f3d-4d6f-971b-07c495fa0c68}</Project>
-      <Name>WebBlocks.Providers</Name>
     </ProjectReference>
     <ProjectReference Include="..\WebBlocks.Utilities\WebBlocks.Utilities.csproj">
       <Project>{81284ffc-c9d3-4ca1-9683-1adb0b80ead5}</Project>

@@ -1,6 +1,6 @@
 ﻿<div ng-controller="WebBlocks.LayoutBuilder">
 
-    <div wb-sticky class="wb-action-bar" style="top:15px">
+    <div wb-sticky class="wb-action-bar">
         <a class="btn" href="#" ng-click="toggleUmbracoNavigation()" title="{{state.navigationVisible ? 'Hide Navigation' : 'Show Navigation'}}" prevent-default="">
             <i ng-class="state.navigationVisible ? 'icon-navigation-left' : 'icon-navigation-right'"></i>
             <i class="icon-list"></i>
@@ -18,7 +18,18 @@
             <i class="icon-trash"></i>
             Recycle Bin
         </a>
+
+        <!-- session buttons -->
+        <span ng-show="ui.showIFrameEditor">
+            <a ui-draggable class="btn btn-success" href="#" ng-show="ui.showIFrameEditor" ng-click="ui.showIFrameEditor = false;ui.showLayoutBuilder = true" title="Recycle Bin" prevent-default>
+                <i class="icon-pencil"></i>
+                Finish Editing
+            </a>
+        </span>
+        
     </div>
+
+
    <!-- add folder to store blocks for later
     recycle bin
 
@@ -28,17 +39,15 @@
        load wysiwygs already editable!
        
        -->
-    <!--<div class="umb-editor umb-rte">
-        <umb-editor model='editornotes'></umb-editor>
-    </div>    eventhandler="dialogTreeEventHandler"     ng-show="ui.showWysiwygEditor"  -->
+    
 
     
     
 
     <div id="webBlocksWrapper" wb-prevent-default-on-click style="margin-left:-240px;margin-top:30px;">
 
-        <div ng-show="ui.showIFrameEditor">
-            <iframe src="{{editorIframeSrc}}" height="800" width="800"></iframe>
+        <div ng-show="ui.showIFrameEditor" class="wb-browser-window">
+            <iframe src="{{editorIframeSrc}}" height="500" width="800"></iframe>
         </div>
 
         <!-- Canvas -->

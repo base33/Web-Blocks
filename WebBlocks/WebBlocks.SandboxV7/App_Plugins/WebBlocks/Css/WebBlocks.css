@@ -103,7 +103,26 @@ body.umbracoPage .menubar img { vertical-align:initial; }
 }
 
 .wb-action-bar {
-    position:absolute;z-index:55555;top:15px;left:20px;padding:5px;border:1px solid #ddd;border-radius: 3px;width:446px;margin-bottom:5px;background:#ECECEC;box-shadow:0px 0px 9px -5px;
+    position:absolute;z-index:55555;top:15px;left:20px;padding:5px;border:1px solid #ddd;border-radius: 3px;margin-bottom:5px;background:#ECECEC;box-shadow:0px 0px 9px -5px;
+}
+
+.wb-action-bar > * {
+    float:left;
+    margin-left:5px;
+}
+.wb-action-bar > *:first-child {
+    margin-left:0px;
+}
+
+.wb-action-bar > span {
+    margin: -5px -5px -5px 5px;
+    padding: 5px;
+    border-radius: 0px 2px 2px 0px;
+
+    background: #d3d3d3; /* Old browsers */
+   
+
+
 }
 
 .wb-wysiwyg-action-bar {
@@ -123,5 +142,31 @@ body.umbracoPage .menubar img { vertical-align:initial; }
     color: #b3b3b3;
     text-transform: uppercase;
     white-space: nowrap;
+}
+
+.wb-browser-window {
+    
+    padding: 10px;
+    border: 1px solid #cdcdcd;
+    border-radius: 13px;
+    background: #ddd;
+    display: inline-block;
 
 }
+
+.wb-browser-window iframe {
+    
+    border: 1px solid #cdcdcd;
+    border-radius: 10px;
+
+}
+
+.wb-navigation-item .wb-umb-options {
+    display:none;
+    visibility:hidden;
+}
+.wb-navigation-item:hover .wb-umb-options {
+    display:inline-block;
+    visibility: visible;
+}
+
