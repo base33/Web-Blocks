@@ -170,3 +170,44 @@ body.umbracoPage .menubar img { vertical-align:initial; }
     visibility: visible;
 }
 
+
+/* slide animation */
+.wbslide-hide,.wbslide-show{
+    -webkit-transition:all cubic-bezier(0.77,0,0.175,1) .5s;
+    -moz-transition:all cubic-bezier(0.77,0,0.175,1) .5s;
+    -o-transition:all cubic-bezier(0.77,0,0.175,1) .5s;
+    transition:all cubic-bezier(0.77,0,0.175,1) .5s
+
+}
+
+.wbslide-hide{
+    -webkit-transform:translateX(0);
+    -moz-transform:translateX(0);
+    -ms-transform:translateX(0);
+    transform:translateX(0)
+
+}
+
+.wbslide-hide.wbslide-hide-active{
+    -webkit-transform:translateX(-100%);
+    -moz-transform:translateX(-100%);
+    -ms-transform:translateX(-100%);
+    transform:translateX(-100%)
+
+}
+
+.wbslide-show{
+    -webkit-transform:translateX(-100%);
+    -moz-transform:translateX(-100%);
+    -ms-transform:translateX(-100%);
+    transform:translateX(-100%)
+
+}
+
+.wbslide-show.wbslide-show-active{
+    -webkit-transform:translateX(0);
+    -moz-transform:translateX(0);
+    -ms-transform:translateX(0);
+    transform:translateX(0)
+
+}
