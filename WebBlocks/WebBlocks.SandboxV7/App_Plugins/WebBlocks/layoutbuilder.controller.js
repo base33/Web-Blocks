@@ -24,7 +24,7 @@
                     blocks: [
                         {
                             _type: blockType.NODE,
-                            contentId: 1000,
+                            id: 1000,
                             name: "Angular powered",
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="http://www.andrewboni.com/images/2013-08-25/angularjs.jpeg" /></div><div class="blockTitle">Angular powered</div></div>',
                             sortOrder: 1,
@@ -38,7 +38,7 @@
                         },
                         {
                             _type: blockType.NODE,
-                            contentId: 1000,
+                            id: 1000,
                             name: "Open source",
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="https://octodex.github.com/images/octobiwan.jpg" /></div><div class="blockTitle">Open source</div></div>',
                             sortOrder: 1,
@@ -52,7 +52,7 @@
                         },
                         {
                             _type: blockType.NODE,
-                            contentId: 1000,
+                            id: 1000,
                             name: 'Drag and Drop feature block',
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="http://dockphp.com/img/drag-icon.png" /></div><div class="blockTitle">Drag and Drop</div></div>',
                             sortOrder: 2,
@@ -66,6 +66,7 @@
                         },
                         {
                             _type: blockType.WYSIWYG,
+                            id: "jsdfskn",
                             name: "Wysiwyg",
                             html: "<div class='umb-editor umb-rte'><umb-editor model='block.editornotes'></umb-editor></div>",
                             content: "<p>This is a test</p>",
@@ -86,7 +87,7 @@
 
                         {
                             _type: blockType.NODE,
-                            contentId: 1000,
+                            id: 1000,
                             name: 'Introduction to Web Blocks feature block',
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="http://www.mentorwebblocks.com/images/logo.png" /></div><div class="blockTitle">Welcome to Web Blocks</div></div>',
                             sortOrder: 1,
@@ -100,7 +101,7 @@
                         },
                         {
                             _type: blockType.NODE,
-                            contentId: 1000,
+                            id: 1000,
                             name: 'Content Editor friendly',
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="http://d1v2fthkvl8xh8.cloudfront.net/wp-content/uploads/2011/10/donoterasewriting.jpg" /></div><div class="blockTitle">Content editor friendly</div></div>',
                             sortOrder: 2,
@@ -119,7 +120,7 @@
                         
                         {
                             _type: blockType.NODE,
-                            contentId: 1000,
+                            id: 1000,
                             name: "Friendly support",
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="https://www.innoforce.com/sites/default/files/images/various/support.png" /></div><div class="blockTitle">Friendly support</div></div>',
                             sortOrder: 2,
@@ -133,6 +134,7 @@
                         },
                         {
                             _type: blockType.WYSIWYG,
+                            id: "dfkjsndfkjn",
                             name: "Wysiwyg",
                             html: "<div class='umb-editor umb-rte'><umb-editor model='block.editornotes'></umb-editor></div>",
                             content: "<p>This is a test</p>",
@@ -152,6 +154,15 @@
             blockStorage: [],
             recycleBin: []
         };
+
+        $scope.customBlocks = [{
+            name: "H1 Block",
+            properties: [{
+                type: "textstring",
+                name: "h1Content",
+            }],
+            html: "<h1>%h1Content%</h1>"
+        }]
 
         $scope.ui = {
             showLayoutBuilder: true,
@@ -179,16 +190,36 @@
         //        }
         //    }
         //};
+        
 
         $scope.handleBlockDropped = function (data, event, containerElement) {
             var container = $scope.$eval($(containerElement).attr("wb-container-model"));
-            container.blocks.push(data.block);
+
+            if (data.loadContent == true) {
+                data.block.name = "Something";
+                data.block.element.tag = "div";
+                data.block.element.classes = "grid_3";
+                data.block.element.attrs = [];
+                data.block.content = "<h1>I was dragged</h1>";
+            }
+
+            var block = data.block;
+
+            if (data.shouldClone == true) {
+                //clone the block
+                block = {};
+                angular.copy(data.block, block);
+            }
+
+            container.blocks.push(block);
 
             if (data.shouldRemoveFromOrigin) {
+                //note: block array is the block array source
                 //remove block from any origin block arrays passed - such as the recycle bin
                 for (var i = 0; i < data.originBlockArray.length; i++)
                     removeFromArray(data.originBlockArray[i], data.block);
 
+                //note: draggable block array is the draggable view model for the block
                 //remove the draggable block model from any arrays passed - such as the recycle bin dialog draggable block array
                 for (var i = 0; i < data.originDraggableBlockArray.length; i++) {
                     removeFromArray(data.originDraggableBlockArray[i], data);
@@ -292,6 +323,8 @@
         };
 
         $scope.handleEditBlockDialog = function (event) {
+            if (typeof (event) == 'undefined') return;
+
             var block = event.eventData.block;
             var blockElement = event.eventData.blockElement;
             var container = event.eventData.container;

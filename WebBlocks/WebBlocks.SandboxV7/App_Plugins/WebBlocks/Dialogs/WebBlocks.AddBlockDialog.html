@@ -1,4 +1,4 @@
-﻿<div ng-controller="WebBlocks.AddBlockDialogCtrl">
+﻿<div ng-controller="WebBlocks.AddBlockDialogCtrl" class="wbNoSelect">
     <div class="umb-modalcolumn-header">
         <h1 class="ng-binding">Add Block</h1>
     </div>
@@ -18,8 +18,8 @@
         <h5 class="wbDialogTitle" style="float:left;">Content:</h5>
         <div style="width:420px;display:block;overflow-y:scroll;position: absolute;top: 100px;bottom: 0px;">
 
-            <div ng-show="viewNavigationSource.Parent != null" ng-animate="'wbslide'" ng-click="loadChildNavigationIntoMenu(viewNavigationSource.Parent)" class="wb-navigation-item" style="display:none;position:relative;border-bottom:1px solid #E8E8E8;width:100%;float:left;height:40px;width: 400px;">
-                <a prevent-default="" style="float: left; height: 40px; border-radius: 50px; background: white;">
+            <div ng-show="viewNavigationSource.navigationModel.Parent != null" ng-animate="'wbslide'" ng-click="loadChildNavigationIntoMenu(viewNavigationSource.navigationModel.Parent)" class="wb-navigation-item" style="display:none;position:relative;border-bottom:1px solid #E8E8E8;width:100%;float:left;height:40px;width: 400px;">
+                <a prevent-default="" style="float: left; height: 40px;">
                     <div style="width: 25px;padding: 10px 0px;float: left;display:inline-block;">
                         <i class="icon icon-left-double-arrow" style="font-size: 20px;"></i>
                     </div>
@@ -29,14 +29,14 @@
                 </a>
             </div>
 
-            <div ng-animate="'wbslide'" ng-hide="viewNavigationSource == {}" class="wb-navigation-item" ng-repeat="navigationModel in viewNavigationSource.Children | orderBy:'Model.Name'" style="position:relative;border-bottom:1px solid #E8E8E8;width:100%;display:block;float:left;height:40px;width: 400px;">
+            <div ng-animate="'wbslide'" ng-hide="!viewNavigationSource.show" class="wb-navigation-item" ng-repeat="navigationModel in viewNavigationSource.navigationModel.Children | orderBy:'Model.Name'" style="position:relative;border-bottom:1px solid #E8E8E8;width:100%;display:block;float:left;height:40px;width: 400px;">
                 <div style="float:right;display:inline-block;width:34px;height:40px;">
                     <a ng-click="loadChildNavigationIntoMenu(navigationModel)" ng-show="navigationModel.Model.HasChildren" style=""><i class="icon icon-right-double-arrow" style="float:right;padding: 10px;"></i></a>
                 </div>
                 <a ng-click="handleNavigationMore(navigationModel)" class="umb-options wb-umb-options" style="float:right;position:relative;margin-top:5px;">
                     <i></i><i></i><i></i>
                 </a>
-                <a ng-drag="true" ng-drag-data="model" prevent-default="" style="float: left; height: 40px; border-radius: 50px; background: white;">
+                <a ng-drag="true" ng-drag-data="navigationModel.DraggableBlock" prevent-default="" class="wb-draggable-item" style="float: left; height: 40px; border-radius: 3px;">
                     <div style="width: 25px;padding: 10px 0px;float: left;display:inline-block;">
                         <i class="icon {{navigationModel.Model.IconClass}}" style="font-size: 20px;"></i>
                     </div>

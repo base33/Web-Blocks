@@ -1,8 +1,9 @@
 ﻿angular.module("umbraco")
     .controller("WebBlocks.AddBlockDialogCtrl",
-    function ($scope, appState, eventsService, assetsService, dialogService) {
+    function ($scope, $timeout, appState, eventsService, assetsService, dialogService) {
         var dialogOptions = $scope.dialogOptions;
         $scope.viewNavigationSource = [];
+        $scope.menuLoadDelay = 0;
 
         $scope.handleClick = function () {
             alert("click");
@@ -15,6 +16,8 @@
         }
 
         $scope.handleNavigationAction = function (event) {
+            if (typeof (event) == 'undefined') return;
+
             var navigationModel = event.eventData.navigationModel;
             switch (event.event) {
                 case 'Create':
@@ -31,22 +34,25 @@
             }
         };
 
-        $scope.getBreadcrumb = function (navigationModel) {
-            var breadcrumb = "";
-            if(navigationModel.Parent != null)
-                breadcrumb = $scope.getBreadcrumb(navigationModel.Parent);
-            breadcrumb = (breadcrumb + (navigationModel.Parent != null ? " > " : "") + navigationModel.Model.Name);
-            return (breadcrumb.length > 80 ? ".." : "") + breadcrumb.substr(breadcrumb.length - Math.min(80, breadcrumb.length));
-        };
+        //$scope.getBreadcrumb = function (navigationModel) {
+        //    var breadcrumb = "";
+        //    if(navigationModel.Parent != null)
+        //        breadcrumb = $scope.getBreadcrumb(navigationModel.Parent);
+        //    breadcrumb = (breadcrumb + (navigationModel.Parent != null ? " > " : "") + navigationModel.Model.Name);
+        //    return (breadcrumb.length > 80 ? ".." : "") + breadcrumb.substr(breadcrumb.length - Math.min(80, breadcrumb.length));
+        //};
 
         $scope.loadChildNavigationIntoMenu = function (navigationModel) {
             var childNavigationItems = getChildNavigationItems(navigationModel.Model.Id);
-            $scope.viewNavigationSource = {};
-            setTimeout(function () { }, 2000);
-            for (var i = 0; i < childNavigationItems.length; i++) {
-                navigationModel.Children.push(new NavigationViewModel(navigationModel, childNavigationItems[i]));
-            }
-            $scope.viewNavigationSource = navigationModel;
+            $scope.viewNavigationSource.show = false;
+            $timeout(function () {
+                for (var i = 0; i < childNavigationItems.length; i++) {
+                    navigationModel.Children.push(new NavigationViewModel(navigationModel, childNavigationItems[i]));
+                }
+                $scope.viewNavigationSource.navigationModel = navigationModel;
+                $scope.viewNavigationSource.show = true;
+            }, $scope.menuLoadDelay);
+            $scope.menuLoadDelay = 200;
         };
 
 
@@ -72,7 +78,26 @@
         var NavigationViewModel = function (parent, navigationItemModel) {
             this.Parent = parent,
             this.Model = navigationItemModel,
-            this.positionClass = "";
+            this.DraggableBlock = {
+                block: {
+                    _type: "NODE",
+                    id: 1000,
+                    html: "",
+                    content: "",
+                    sortOrder: 10000,
+                    sessionId: "", //edit wysiwyg block session
+                    element: {
+                        tag: "div",
+                        classes: "",
+                        attrs: []
+                    }
+                },
+                shouldClone: true,
+                loadContent: true,
+                originBlockArray: [dialogOptions.modelData],
+                originDraggableBlockArray: [$scope.draggableBlockArray],
+                shouldRemoveFromOrigin: true
+            }
             this.Children = []
         }
 
@@ -88,7 +113,7 @@
             $scope.model = dialogOptions.modelData.rootId;
             $scope.uiScope = dialogOptions.modelData.uiScope;
             $scope.root = new NavigationViewModel(null, new NavigationItemModel($scope.model, "Root", "Null", "icon-folder", true));
-            $scope.viewNavigationSource = [];
+            $scope.viewNavigationSource = { show: true, navigationItem: $scope.root };
             $scope.loadChildNavigationIntoMenu($scope.root)
         }
 
