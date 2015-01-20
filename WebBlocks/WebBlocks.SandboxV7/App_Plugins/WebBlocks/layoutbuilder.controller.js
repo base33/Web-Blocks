@@ -1,12 +1,9 @@
 ﻿angular.module("umbraco")
     .controller("WebBlocks.LayoutBuilder",
     function ($scope, appState, eventsService, assetsService, dialogService, notificationsService, $compile) {
-        var blockType = {
-            WYSIWYG: "WYSIWYG",
-            NODE: "NODE"
-        };
+       
 
-        $scope.wysiwygEditorUrl = "/App_Plugins/WebBlocks/LayoutBuilder.WysiwygEditor.html";
+        //$scope.wysiwygEditorUrl = "/App_Plugins/WebBlocks/LayoutBuilder.WysiwygEditor.html";
 
         $scope.config = {
             canvasWidth: 960
@@ -21,9 +18,10 @@
         $scope.model = {
             containers: {
                 "contentContainer": {
+                    wysiwygClass: "grid_9",
                     blocks: [
                         {
-                            _type: blockType.NODE,
+                            _type: WebBlocksType.NODE,
                             id: 1000,
                             name: "Angular powered",
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="http://www.andrewboni.com/images/2013-08-25/angularjs.jpeg" /></div><div class="blockTitle">Angular powered</div></div>',
@@ -37,7 +35,7 @@
                             }
                         },
                         {
-                            _type: blockType.NODE,
+                            _type: WebBlocksType.NODE,
                             id: 1000,
                             name: "Open source",
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="https://octodex.github.com/images/octobiwan.jpg" /></div><div class="blockTitle">Open source</div></div>',
@@ -51,7 +49,7 @@
                             }
                         },
                         {
-                            _type: blockType.NODE,
+                            _type: WebBlocksType.NODE,
                             id: 1000,
                             name: 'Drag and Drop feature block',
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="http://dockphp.com/img/drag-icon.png" /></div><div class="blockTitle">Drag and Drop</div></div>',
@@ -65,7 +63,7 @@
                             }
                         },
                         {
-                            _type: blockType.WYSIWYG,
+                            _type: WebBlocksType.WYSIWYG,
                             id: "jsdfskn",
                             name: "Wysiwyg",
                             html: "<div class='umb-editor umb-rte'><umb-editor model='block.editornotes'></umb-editor></div>",
@@ -74,7 +72,7 @@
                             sessionId: "", //edit wysiwyg block session id
                             element: {
                                 tag: "div",
-                                classes: "grid_9 block wysiwyg",
+                                classes: "",
                                 attrs: [
                                     { name: "test", value: "booya" }
                                 ]
@@ -83,10 +81,11 @@
                     ]
                 },
                 "sideContainer": {
+                    wysiwygClass: "grid_3",
                     blocks: [
 
                         {
-                            _type: blockType.NODE,
+                            _type: WebBlocksType.NODE,
                             id: 1000,
                             name: 'Introduction to Web Blocks feature block',
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="http://www.mentorwebblocks.com/images/logo.png" /></div><div class="blockTitle">Welcome to Web Blocks</div></div>',
@@ -100,7 +99,7 @@
                             }
                         },
                         {
-                            _type: blockType.NODE,
+                            _type: WebBlocksType.NODE,
                             id: 1000,
                             name: 'Content Editor friendly',
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="http://d1v2fthkvl8xh8.cloudfront.net/wp-content/uploads/2011/10/donoterasewriting.jpg" /></div><div class="blockTitle">Content editor friendly</div></div>',
@@ -116,10 +115,11 @@
                     ]
                 },
                 "bottomContainer": {
+                    wysiwygClass: "grid_9",
                     blocks: [
                         
                         {
-                            _type: blockType.NODE,
+                            _type: WebBlocksType.NODE,
                             id: 1000,
                             name: "Friendly support",
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="https://www.innoforce.com/sites/default/files/images/various/support.png" /></div><div class="blockTitle">Friendly support</div></div>',
@@ -133,7 +133,7 @@
                             }
                         },
                         {
-                            _type: blockType.WYSIWYG,
+                            _type: WebBlocksType.WYSIWYG,
                             id: "dfkjsndfkjn",
                             name: "Wysiwyg",
                             html: "<div class='umb-editor umb-rte'><umb-editor model='block.editornotes'></umb-editor></div>",
@@ -142,7 +142,7 @@
                             sessionId: "", //edit wysiwyg block session
                             element: {
                                 tag: "div",
-                                classes: "grid_9 block wysiwyg",
+                                classes: "",
                                 attrs: [
                                     { name: "test", value: "booya" }
                                 ]
@@ -195,7 +195,8 @@
         $scope.handleBlockDropped = function (data, event, containerElement) {
             var container = $scope.$eval($(containerElement).attr("wb-container-model"));
 
-            if (data.loadContent == true) {
+            if (data.loadContent == true && data.block._type != "WYSIWYG") {
+                //todo: ajax load content
                 data.block.name = "Something";
                 data.block.element.tag = "div";
                 data.block.element.classes = "grid_3";
@@ -228,7 +229,7 @@
         };
 
         $scope.showAddBlockDialog = function () {
-            dialogService.open({ template: "/app_plugins/WebBlocks/Dialogs/WebBlocks.AddBlockDialog.html", modelData: { rootId: -1, uiScope: $scope }, show: true });
+            dialogService.open({ template: "/app_plugins/WebBlocks/Dialogs/WebBlocks.AddBlockDialog.html", modelData: { rootId: 1063, uiScope: $scope }, show: true });
         };
 
         $scope.showBlockStorageDialog = function () {
@@ -249,14 +250,17 @@
         $scope.activeEditSessions = {};
 
         $scope.editBlock = function (blockElement, block, container) {
-            if (block._type == blockType.NODE) {
-                $scope.ui.showLayoutBuilder = false;
-                $scope.ui.showIFrameEditor = true;
-                $scope.editorIframeSrc = "/umbraco/#/content/content/edit/1052";
+            if (block._type == WebBlocksType.NODE) {
+                $scope.$apply(function () {
+                    $scope.ui.showLayoutBuilder = false;
+                    $scope.ui.showIFrameEditor = true;
+                    $scope.editorIframeSrc = "/umbraco/#/content/content/edit/1052";
+                });
             }
-            else if (block._type == blockType.WYSIWYG) {
+            else if (block._type == WebBlocksType.WYSIWYG) {
+               
                 var session = {
-                    id: generateSessionId(),
+                    id: WebBlocksUniqueIdGenerator.GenerateSessionId(),
                     block: block,
                     element: blockElement,
                     tinyMceConfig: {
@@ -282,7 +286,7 @@
                 setTimeout(function () {
                     $(blockElement).click();
                 }, 2500);
-                
+
 
                 //disable sorting on parent container
                 $(blockElement.parent()).sortable("disable");
@@ -304,6 +308,7 @@
 
             //enable sorting on parent container
             $(session.element.parent()).sortable("enable");
+            notificationsService.success("Successfully updated");
         };
 
         // handle wysiwyg cancel update event, for session
@@ -320,6 +325,7 @@
 
             //enable sorting on parent container
             $(session.element.parent()).sortable("enable");
+            notificationsService.warning("Update cancelled");
         };
 
         $scope.handleEditBlockDialog = function (event) {
@@ -352,17 +358,7 @@
             }
         }
 
-        var generateSessionId = (function () {
-            function s4() {
-                return Math.floor((1 + Math.random()) * 0x10000)
-                           .toString(16)
-                           .substring(1);
-            }
-            return function() {
-                return s4() + s4() + s4() + s4()  +
-                       s4()  + s4() + s4() + s4();
-            };
-        })();
+        
 
         //Button Click - ToggleUmbracoNavigation
         $scope.toggleUmbracoNavigation = function () {
@@ -406,3 +402,55 @@
         
     });
 
+var WebBlocksType = {
+    WYSIWYG: "WYSIWYG",
+    NODE: "NODE"
+};
+
+var WebBlocksApiUrls = {
+    GetNavigationChildren: function (id) {
+        return "/umbraco/WebBlocks/WebBlocksApi/GetChildren?id=" + id;
+    }
+};
+
+var WebBlocksApiClient = function ($http) {
+
+    // Gets the navigation children for a specific content id
+    this.GetNavigationChildren = function (id, callback) {
+        var url = WebBlocksApiUrls.GetNavigationChildren(id);
+        $http.get(url)
+            .success(function (data, status, headers, config) {
+                callback(data);
+            })
+    }
+
+};
+
+var WebBlocksUniqueIdGenerator = {
+    
+    //generates an id for a session
+    GenerateSessionId: (function () {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                       .toString(16)
+                       .substring(1);
+        }
+        return function () {
+            return s4() + s4() + s4() + s4() +
+                   s4() + s4() + s4() + s4();
+        };
+    })(),
+
+    //generates an id for wysiwygs
+    GenerateWysiwygId: (function () {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                       .toString(16)
+                       .substring(1);
+        }
+        return function () {
+            return s4() + s4() + s4() + s4() +
+                   s4() + s4() + s4() + s4();
+        };
+    })()
+};

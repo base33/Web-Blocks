@@ -1,13 +1,30 @@
 ﻿angular.module("umbraco")
     .controller("WebBlocks.AddBlockDialogCtrl",
-    function ($scope, $timeout, appState, eventsService, assetsService, dialogService) {
+    function ($scope, $timeout, $http, appState, eventsService, assetsService, dialogService) {
         var dialogOptions = $scope.dialogOptions;
         $scope.viewNavigationSource = [];
         $scope.menuLoadDelay = 0;
 
-        $scope.handleClick = function () {
-            alert("click");
-        }
+        $scope.templateDraggableWysiwygBlock = {
+            block: {
+                _type: WebBlocksType.WYSIWYG,
+                id: WebBlocksUniqueIdGenerator.GenerateWysiwygId(),
+                html: "<div class='umb-editor umb-rte'><umb-editor model='block.editornotes'></umb-editor></div>",
+                content: "<p>Double click or right click on me to edit</p>",
+                sortOrder: 10000,
+                sessionId: "", //edit wysiwyg block session
+                element: {
+                    tag: "div",
+                    classes: "",
+                    attrs: []
+                }
+            },
+            shouldClone: true,
+            loadContent: true,
+            originBlockArray: [],
+            originDraggableBlockArray: [],
+            shouldRemoveFromOrigin: false
+        };
 
         $scope.handleNavigationMore = function (navigationModel) {
             var events = [{ name: "Create", icon: "icon-add" },{ name: "Edit on page", icon: "icon-edit" }, { name: "Edit in new window", icon: "icon-folder" }];
@@ -34,18 +51,22 @@
             }
         };
 
-        //$scope.getBreadcrumb = function (navigationModel) {
-        //    var breadcrumb = "";
-        //    if(navigationModel.Parent != null)
-        //        breadcrumb = $scope.getBreadcrumb(navigationModel.Parent);
-        //    breadcrumb = (breadcrumb + (navigationModel.Parent != null ? " > " : "") + navigationModel.Model.Name);
-        //    return (breadcrumb.length > 80 ? ".." : "") + breadcrumb.substr(breadcrumb.length - Math.min(80, breadcrumb.length));
-        //};
-
         $scope.loadChildNavigationIntoMenu = function (navigationModel) {
-            var childNavigationItems = getChildNavigationItems(navigationModel.Model.Id);
             $scope.viewNavigationSource.show = false;
+
+            //load the children from the API
+            var webBlocksApiClient = new WebBlocksApiClient($http);
+            webBlocksApiClient.GetNavigationChildren(navigationModel.Model.Id, function (childNavigationItems) {
+                // call the callback function
+                $scope.loadChildNavigationIntoMenuCallback(navigationModel, childNavigationItems);
+            });
+        };
+
+        // navigationModel = the navigation view model which will be the new root of the menu
+        // childNavigationItems = the navigation items loaded from the api (we will create navigation view models for each, ready for the menu)
+        $scope.loadChildNavigationIntoMenuCallback = function (navigationModel, childNavigationItems) {
             $timeout(function () {
+                navigationModel.Children = [];
                 for (var i = 0; i < childNavigationItems.length; i++) {
                     navigationModel.Children.push(new NavigationViewModel(navigationModel, childNavigationItems[i]));
                 }
@@ -56,32 +77,21 @@
         };
 
 
-        function getChildNavigationItems(sourceId) {
-            return [new NavigationItemModel(1000, "Twitter Feed Block", "Twitter Feed Block", "icon-bird", Math.random() >= 0.5),
-                new NavigationItemModel(1000, "Facebook Feed Block", "Facebook Feed Block", "icon-bird", Math.random() >= 0.5),
-                new NavigationItemModel(1000, "Instagram Feed Block", "Instagram Feed Block", "icon-bird", Math.random() >= 0.5), new NavigationItemModel(1000, "Twitter Feed Block", "Twitter Feed Block", "icon-bird", Math.random() >= 0.5),
-                new NavigationItemModel(1000, "Facebook Feed Block", "Facebook Feed Block", "icon-bird", Math.random() >= 0.5),
-                new NavigationItemModel(1000, "Instagram Feed Block", "Instagram Feed Block", "icon-bird", Math.random() >= 0.5), new NavigationItemModel(1000, "Twitter Feed Block", "Twitter Feed Block", "icon-bird", Math.random() >= 0.5),
-                new NavigationItemModel(1000, "Facebook Feed Block", "Facebook Feed Block", "icon-bird", Math.random() >= 0.5),
-                new NavigationItemModel(1000, "Instagram Feed Block", "Instagram Feed Block", "icon-bird", Math.random() >= 0.5), new NavigationItemModel(1000, "Twitter Feed Block", "Twitter Feed Block", "icon-bird", Math.random() >= 0.5),
-                new NavigationItemModel(1000, "Facebook Feed Block", "Facebook Feed Block", "icon-bird", Math.random() >= 0.5),
-                new NavigationItemModel(1000, "Instagram Feed Block", "Instagram Feed Block", "icon-bird", Math.random() >= 0.5), new NavigationItemModel(1000, "Twitter Feed Block", "Twitter Feed Block", "icon-bird", Math.random() >= 0.5),
-                new NavigationItemModel(1000, "Facebook Feed Block", "Facebook Feed Block", "icon-bird", Math.random() >= 0.5),
-                new NavigationItemModel(1000, "Instagram Feed Block", "Instagram Feed Block", "icon-bird", Math.random() >= 0.5), new NavigationItemModel(1000, "Twitter Feed Block", "Twitter Feed Block", "icon-bird", Math.random() >= 0.5),
-                new NavigationItemModel(1000, "Facebook Feed Block", "Facebook Feed Block", "icon-bird", Math.random() >= 0.5),
-                new NavigationItemModel(1000, "Instagram Feed Block", "Instagram Feed Block", "icon-bird", Math.random() >= 0.5),
-            ];
-        }
+        $scope.onWysiwygDragComplete = function (data, event) {
+            $scope.templateDraggableWysiwygBlock.id = WebBlocksUniqueIdGenerator.GenerateWysiwygId();
+        };
 
-        
+
+        //models
 
         var NavigationViewModel = function (parent, navigationItemModel) {
             this.Parent = parent,
             this.Model = navigationItemModel,
             this.DraggableBlock = {
                 block: {
-                    _type: "NODE",
+                    _type: WebBlocksType.NODE,
                     id: 1000,
+                    name: "Wysiwyg block",
                     html: "",
                     content: "",
                     sortOrder: 10000,
@@ -97,7 +107,7 @@
                 originBlockArray: [dialogOptions.modelData],
                 originDraggableBlockArray: [$scope.draggableBlockArray],
                 shouldRemoveFromOrigin: true
-            }
+            },
             this.Children = []
         }
 
@@ -119,3 +129,25 @@
 
         init();
     });
+
+
+
+
+
+
+//function getChildNavigationItems(sourceId) {
+//    return [new NavigationItemModel(1000, "Twitter Feed Block", "Twitter Feed Block", "icon-bird", Math.random() >= 0.5),
+//        new NavigationItemModel(1000, "Facebook Feed Block", "Facebook Feed Block", "icon-bird", Math.random() >= 0.5),
+//        new NavigationItemModel(1000, "Instagram Feed Block", "Instagram Feed Block", "icon-bird", Math.random() >= 0.5), new NavigationItemModel(1000, "Twitter Feed Block", "Twitter Feed Block", "icon-bird", Math.random() >= 0.5),
+//        new NavigationItemModel(1000, "Facebook Feed Block", "Facebook Feed Block", "icon-bird", Math.random() >= 0.5),
+//        new NavigationItemModel(1000, "Instagram Feed Block", "Instagram Feed Block", "icon-bird", Math.random() >= 0.5), new NavigationItemModel(1000, "Twitter Feed Block", "Twitter Feed Block", "icon-bird", Math.random() >= 0.5),
+//        new NavigationItemModel(1000, "Facebook Feed Block", "Facebook Feed Block", "icon-bird", Math.random() >= 0.5),
+//        new NavigationItemModel(1000, "Instagram Feed Block", "Instagram Feed Block", "icon-bird", Math.random() >= 0.5), new NavigationItemModel(1000, "Twitter Feed Block", "Twitter Feed Block", "icon-bird", Math.random() >= 0.5),
+//        new NavigationItemModel(1000, "Facebook Feed Block", "Facebook Feed Block", "icon-bird", Math.random() >= 0.5),
+//        new NavigationItemModel(1000, "Instagram Feed Block", "Instagram Feed Block", "icon-bird", Math.random() >= 0.5), new NavigationItemModel(1000, "Twitter Feed Block", "Twitter Feed Block", "icon-bird", Math.random() >= 0.5),
+//        new NavigationItemModel(1000, "Facebook Feed Block", "Facebook Feed Block", "icon-bird", Math.random() >= 0.5),
+//        new NavigationItemModel(1000, "Instagram Feed Block", "Instagram Feed Block", "icon-bird", Math.random() >= 0.5), new NavigationItemModel(1000, "Twitter Feed Block", "Twitter Feed Block", "icon-bird", Math.random() >= 0.5),
+//        new NavigationItemModel(1000, "Facebook Feed Block", "Facebook Feed Block", "icon-bird", Math.random() >= 0.5),
+//        new NavigationItemModel(1000, "Instagram Feed Block", "Instagram Feed Block", "icon-bird", Math.random() >= 0.5),
+//    ];
+//}

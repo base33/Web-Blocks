@@ -30,8 +30,13 @@ angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
                 var attribute = block.element.attrs[i];
                 attr.$set(attribute.name, attribute.value);
             }
+
+            var blockClasses = block.element.classes;
+            if (block._type == "WYSIWYG")
+                blockClasses = "wbWysiwyg " + container.wysiwygClass;
+            
             //add all block classes
-            elem.addClass(block.element.classes);
+            elem.addClass(blockClasses);
             //add the block content to the block
             $(elem).html(block.content);
             //disable all buttons, submits, and anchortag

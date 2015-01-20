@@ -161,20 +161,86 @@ body.umbracoPage .menubar img { vertical-align:initial; }
 
 }
 
-.wb-navigation-item .wb-umb-options {
-    display:none;
-    visibility:hidden;
+.wb-navigation-items {
+    width:420px;display:block;overflow-y:scroll;position: absolute;top: 100px;bottom: 0px;z-index:88888888;
 }
-.wb-navigation-item:hover {
-    background: #f6f6f6;
-}
-.wb-draggable-item.dragging {
-    background: white;
-}
-.wb-navigation-item:hover .wb-umb-options {
-    display:inline-block;
-    visibility: visible;
-}
+
+    .wb-navigation-item {
+        position:relative;border-bottom:1px solid #E8E8E8;width:100%;display:block;float:left;height:40px;width: 400px;
+    }
+        .wb-navigation-item:hover {
+            background: #f6f6f6;
+        }
+
+        .wb-navigation-item > .wb-navigation-item-load-children{
+            float:right;display:inline-block;width:34px;height:40px;
+        }
+
+            .wb-navigation-item > .wb-navigation-item-load-children i {
+                float:right;padding: 10px;
+            }
+
+        .wb-navigation-item > .wb-navigation-item-more {
+            float:right;position:relative;margin-top:5px;
+        }
+
+            .wb-navigation-item:hover > .wb-navigation-item-more {
+                display:inline-block;
+                visibility: visible;
+            }
+
+        .wb-navigation-item > .wb-draggable-item {
+            float: left; height: 40px; border-radius: 3px;
+        }
+        
+            .wb-navigation-item > .wb-draggable-item > .wb-draggable-item-icon {
+                width: 25px;padding: 10px 0px;float: left;display:inline-block;
+            }
+
+                .wb-navigation-item > .wb-draggable-item > .wb-draggable-item-icon i {
+                    font-size: 20px;
+                }
+
+            .wb-navigation-item > .wb-draggable-item > .wb-draggable-item-name {
+                 display:inline-block;padding: 10px 0px;
+            }
+
+            .wb-navigation-item > .wb-draggable-item > .wb-draggable-item-name > span {
+                font-size: 14px;margin:10px;
+            }
+       
+            .wb-draggable-item.dragging {
+                background: white;
+                z-index:9999999;
+            }
+
+        .wb-navigation-item > .wb-navigation-item-more {
+            display:none;
+            visibility:hidden;
+        }
+
+        /* Back button styling */
+        .wb-navigation-item > .wb-navigation-back {
+            float: left; height: 40px;
+        }
+
+            .wb-navigation-item > .wb-navigation-back > .wb-navigation-back-icon {
+                width: 25px;padding: 10px 0px;float: left;display:inline-block;
+            }
+
+                .wb-navigation-back > .wb-navigation-back-icon > i {
+                    font-size: 20px;
+                }
+            .wb-navigation-item > .wb-navigation-back > .wb-navigation-back-name {
+                display:inline-block;padding: 10px 0px;
+            }
+
+                .wb-navigation-item > .wb-navigation-back > .wb-navigation-back-name > span {
+                    font-size: 14px;margin:10px;
+                }
+
+
+
 
 
 /* slide animation */
@@ -205,7 +271,9 @@ body.umbracoPage .menubar img { vertical-align:initial; }
     -ms-transform:translateX(-100%);
     transform:translateX(-100%);
     opacity: 0;
-
+    height: 0px;
+    margin-top:20px;
+    margin-bottom: 20px;
 }
 
 .wbslide-show{
@@ -235,4 +303,15 @@ body.umbracoPage .menubar img { vertical-align:initial; }
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.wbWysiwyg {
+    -webkit-transition:background cubic-bezier(0,0,0.6,1) .15s;
+    -moz-transition:background cubic-bezier(0,0,0.6,1) .15s;
+    -o-transition:background cubic-bezier(0,0,0.6,1) .15s;
+    transition:background cubic-bezier(0,0,0.6,1) .15s;
+}
+
+.wbWysiwyg:hover {
+    background: #F8F8F8;
 }

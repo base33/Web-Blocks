@@ -244,7 +244,7 @@
     <Content Include="App_Plugins\WebBlocks\package.manifest" />
     <Content Include="Views\HomePage.cshtml" />
     <Content Include="Views\Global.cshtml" />
-    <Content Include="Views\Partials\HomeFeatureBlock.cshtml" />
+    <Content Include="Views\Partials\FeatureBlock.cshtml" />
     <Content Include="App_Plugins\WebBlocks\Dialogs\WebBlocks.ContextMenuDialog.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

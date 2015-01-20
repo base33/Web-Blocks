@@ -1,10 +1,6 @@
 ﻿angular.module("umbraco")
     .controller("WebBlocks.BlockStorageDialogCtrl",
     function ($scope, appState, eventsService, assetsService, dialogService) {
-        var blockType = {
-            WYSIWYG: "WYSIWYG",
-            NODE: "NODE"
-        };
 
         var dialogOptions = $scope.dialogOptions;
         $scope.draggableBlockArray = [];
@@ -12,7 +8,7 @@
         $scope.getWysiwygContent = function (draggableBlock) {
             var text = "";
             var block = draggableBlock.block;
-            if (block._type == blockType.WYSIWYG) {
+            if (block._type == WebBlocksType.WYSIWYG) {
                 text = $(block.content).text();
                 text = text.substr(0, Math.min(text.length, 100));
             }
