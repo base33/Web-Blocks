@@ -43,7 +43,7 @@
                     $scope.uiScope.ui.showIFrameEditor = true;
                     $scope.uiScope.ui.showLayoutBuilder = false;
                     $scope.uiScope.editorIframeSrc = "/umbraco/#/content/content/edit/" + navigationModel.Model.Id;
-                    $scope.submit($scope.viewNavigationSource.Model.Id);
+                    //$scope.submit($scope.viewNavigationSource.Model.Id);
                     break;
                 case 'Edit in new window':
                     window.open("/umbraco/#/content/content/edit/" + navigationModel.Model.Id, "_blank");
@@ -90,8 +90,8 @@
             this.DraggableBlock = {
                 block: {
                     _type: WebBlocksType.NODE,
-                    id: 1000,
-                    name: "Wysiwyg block",
+                    id: navigationItemModel.Id,
+                    name: navigationItemModel.Name,
                     html: "",
                     content: "",
                     sortOrder: 10000,

@@ -196,12 +196,10 @@
             var container = $scope.$eval($(containerElement).attr("wb-container-model"));
 
             if (data.loadContent == true && data.block._type != "WYSIWYG") {
-                //todo: ajax load content
-                data.block.name = "Something";
-                data.block.element.tag = "div";
-                data.block.element.classes = "grid_3";
-                data.block.element.attrs = [];
-                data.block.content = "<h1>I was dragged</h1>";
+
+                loadBlockContent(data.block, function(updatedBlock) {
+                    $scope.$digest();
+                });
             }
 
             var block = data.block;
@@ -228,8 +226,33 @@
             }
         };
 
+        function loadBlockContent(block, callback) {
+            var segments = window.location.hash.split("/");
+            var currentContentId = segments[segments.length - 1];
+            var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?pageId=" + currentContentId + "&blockId=" + block.id;
+            $.ajax({
+                type: 'GET',
+                url: url,
+                dataType: 'html',
+                cache: false,
+                success: function (data) {
+                    $scope.$digest(function () {
+                        var renderedBlockEl = $(data)
+                        block.element.tag = "div";
+                        block.element.classes = $(renderedBlockEl).attr("class");
+                        block.element.attrs = [];
+                        block.content = block.html();
+                    });
+                    
+                    //var blockContent = $(data);
+                    //$(blockContent).css("display", "none");
+                    //$(containerElement).append(blockContent);
+                }
+            });
+        }
+
         $scope.showAddBlockDialog = function () {
-            dialogService.open({ template: "/app_plugins/WebBlocks/Dialogs/WebBlocks.AddBlockDialog.html", modelData: { rootId: 1063, uiScope: $scope }, show: true });
+            dialogService.open({ template: "/app_plugins/WebBlocks/Dialogs/WebBlocks.AddBlockDialog.html", modelData: { rootId: -1, uiScope: $scope }, show: true });
         };
 
         $scope.showBlockStorageDialog = function () {

@@ -24,9 +24,7 @@ namespace WebBlocks.Controllers
         {
             var contentService = UmbracoContext.Application.Services.ContentService;
 
-            IContent root = contentService.GetById(id);
-            
-            return root.Children()
+            return contentService.GetChildren(id)
                 .Select(c => new NavigationItem { Id = c.Id, Name = c.Name, ContentType = c.ContentType.Alias, IconClass = c.ContentType.Icon, HasChildren = c.Children().Any() });
         }
 

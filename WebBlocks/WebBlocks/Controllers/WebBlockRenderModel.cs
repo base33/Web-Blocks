@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WebBlocks.Controllers
 {
-    class WebBlockRenderModel
+    public class WebBlockRenderModel
     {
     }
 }

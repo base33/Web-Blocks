@@ -261,10 +261,10 @@ body.umbracoPage .menubar img { vertical-align:initial; }
 }
 
 .wbslide-hide.wbslide-hide-active{
-    -webkit-transition:all cubic-bezier(0,0,0.6,1) .25s;
-    -moz-transition:all cubic-bezier(0,0,0.6,1) .25s;
-    -o-transition:all cubic-bezier(0,0,0.6,1) .25s;
-    transition:all cubic-bezier(0,0,0.6,1) .25s;
+    -webkit-transition:all cubic-bezier(0,0,0.6,1) .15s;
+    -moz-transition:all cubic-bezier(0,0,0.6,1) .15s;
+    -o-transition:all cubic-bezier(0,0,0.6,1) .15s;
+    transition:all cubic-bezier(0,0,0.6,1) .15s;
 
     -webkit-transform:translateX(-100%);
     -moz-transform:translateX(-100%);
