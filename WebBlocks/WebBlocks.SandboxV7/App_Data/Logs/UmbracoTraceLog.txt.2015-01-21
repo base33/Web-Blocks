@@ -1,0 +1,628 @@
+﻿2015-01-21 09:38:46,173 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2015-01-21 09:38:46,263 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 86ms)
+2015-01-21 09:38:46,268 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-01-21 09:38:46,407 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 36 (took 138ms)
+2015-01-21 09:38:46,942 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2015-01-21 09:38:46,943 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2015-01-21 09:38:46,944 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2015-01-21 09:38:46,945 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 1ms)
+2015-01-21 09:38:47,012 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2015-01-21 09:38:47,013 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 5 (took 1ms)
+2015-01-21 09:38:47,014 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2015-01-21 09:38:47,018 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 36 (took 3ms)
+2015-01-21 09:38:47,412 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2015-01-21 09:38:47,413 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2015-01-21 09:38:47,413 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2015-01-21 09:38:47,414 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2015-01-21 09:38:50,771 [10] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2015-01-21 09:38:51,261 [10] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2015-01-21 09:38:56,631 [10] INFO  Umbraco.Web.UmbracoModule - [Thread 5] Setting OriginalRequestUrl: localhost:52546/umbraco
+2015-01-21 09:38:56,954 [10] INFO  umbraco.content - [Thread 5] Loading content from disk cache...
+2015-01-21 09:38:57,200 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2015-01-21 09:38:57,220 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 0ms)
+2015-01-21 09:39:00,739 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2015-01-21 09:39:00,740 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 1ms)
+2015-01-21 09:40:06,954 [10] INFO  umbraco.BusinessLogic.Log - [Thread 12] Log scrubbed.  Removed all items older than 2014-11-22 09:40:06
+2015-01-21 09:41:33,345 [10] INFO  umbraco.BusinessLogic.Log - [Thread 6] Log scrubbed.  Removed all items older than 2014-11-22 09:41:33
+2015-01-21 09:42:59,759 [10] INFO  umbraco.BusinessLogic.Log - [Thread 12] Log scrubbed.  Removed all items older than 2014-11-22 09:42:59
+2015-01-21 09:44:26,175 [10] INFO  umbraco.BusinessLogic.Log - [Thread 15] Log scrubbed.  Removed all items older than 2014-11-22 09:44:26
+2015-01-21 09:45:52,591 [10] INFO  umbraco.BusinessLogic.Log - [Thread 21] Log scrubbed.  Removed all items older than 2014-11-22 09:45:52
+2015-01-21 09:47:18,994 [10] INFO  umbraco.BusinessLogic.Log - [Thread 24] Log scrubbed.  Removed all items older than 2014-11-22 09:47:18
+2015-01-21 09:48:45,410 [10] INFO  umbraco.BusinessLogic.Log - [Thread 24] Log scrubbed.  Removed all items older than 2014-11-22 09:48:45
+2015-01-21 09:50:11,822 [10] INFO  umbraco.BusinessLogic.Log - [Thread 24] Log scrubbed.  Removed all items older than 2014-11-22 09:50:11
+2015-01-21 09:51:38,236 [10] INFO  umbraco.BusinessLogic.Log - [Thread 35] Log scrubbed.  Removed all items older than 2014-11-22 09:51:38
+2015-01-21 09:53:04,637 [10] INFO  umbraco.BusinessLogic.Log - [Thread 33] Log scrubbed.  Removed all items older than 2014-11-22 09:53:04
+2015-01-21 09:54:31,045 [10] INFO  umbraco.BusinessLogic.Log - [Thread 39] Log scrubbed.  Removed all items older than 2014-11-22 09:54:31
+2015-01-21 09:55:57,451 [10] INFO  umbraco.BusinessLogic.Log - [Thread 38] Log scrubbed.  Removed all items older than 2014-11-22 09:55:57
+2015-01-21 09:57:23,864 [10] INFO  umbraco.BusinessLogic.Log - [Thread 41] Log scrubbed.  Removed all items older than 2014-11-22 09:57:23
+2015-01-21 09:58:50,284 [10] INFO  umbraco.BusinessLogic.Log - [Thread 51] Log scrubbed.  Removed all items older than 2014-11-22 09:58:50
+2015-01-21 10:00:16,691 [10] INFO  umbraco.BusinessLogic.Log - [Thread 53] Log scrubbed.  Removed all items older than 2014-11-22 10:00:16
+2015-01-21 10:01:43,113 [10] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 10:01:43
+2015-01-21 10:03:09,524 [10] INFO  umbraco.BusinessLogic.Log - [Thread 55] Log scrubbed.  Removed all items older than 2014-11-22 10:03:09
+2015-01-21 10:04:35,929 [10] INFO  umbraco.BusinessLogic.Log - [Thread 58] Log scrubbed.  Removed all items older than 2014-11-22 10:04:35
+2015-01-21 10:06:02,332 [10] INFO  umbraco.BusinessLogic.Log - [Thread 63] Log scrubbed.  Removed all items older than 2014-11-22 10:06:02
+2015-01-21 10:07:28,744 [10] INFO  umbraco.BusinessLogic.Log - [Thread 64] Log scrubbed.  Removed all items older than 2014-11-22 10:07:28
+2015-01-21 10:08:55,158 [10] INFO  umbraco.BusinessLogic.Log - [Thread 65] Log scrubbed.  Removed all items older than 2014-11-22 10:08:55
+2015-01-21 10:10:21,571 [10] INFO  umbraco.BusinessLogic.Log - [Thread 69] Log scrubbed.  Removed all items older than 2014-11-22 10:10:21
+2015-01-21 10:11:47,978 [10] INFO  umbraco.BusinessLogic.Log - [Thread 67] Log scrubbed.  Removed all items older than 2014-11-22 10:11:47
+2015-01-21 10:13:14,394 [10] INFO  umbraco.BusinessLogic.Log - [Thread 67] Log scrubbed.  Removed all items older than 2014-11-22 10:13:14
+2015-01-21 10:14:40,802 [10] INFO  umbraco.BusinessLogic.Log - [Thread 67] Log scrubbed.  Removed all items older than 2014-11-22 10:14:40
+2015-01-21 10:16:07,217 [10] INFO  umbraco.BusinessLogic.Log - [Thread 67] Log scrubbed.  Removed all items older than 2014-11-22 10:16:07
+2015-01-21 10:17:33,629 [10] INFO  umbraco.BusinessLogic.Log - [Thread 67] Log scrubbed.  Removed all items older than 2014-11-22 10:17:33
+2015-01-21 10:19:00,040 [10] INFO  umbraco.BusinessLogic.Log - [Thread 77] Log scrubbed.  Removed all items older than 2014-11-22 10:19:00
+2015-01-21 10:20:26,462 [10] INFO  umbraco.BusinessLogic.Log - [Thread 74] Log scrubbed.  Removed all items older than 2014-11-22 10:20:26
+2015-01-21 10:21:52,879 [10] INFO  umbraco.BusinessLogic.Log - [Thread 83] Log scrubbed.  Removed all items older than 2014-11-22 10:21:52
+2015-01-21 19:17:34,715 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2015-01-21 19:17:34,779 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 49ms)
+2015-01-21 19:17:34,807 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-01-21 19:17:35,031 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 36 (took 218ms)
+2015-01-21 19:17:35,827 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2015-01-21 19:17:35,827 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2015-01-21 19:17:35,831 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2015-01-21 19:17:35,847 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 15ms)
+2015-01-21 19:17:36,003 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2015-01-21 19:17:36,011 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 5 (took 5ms)
+2015-01-21 19:17:36,011 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2015-01-21 19:17:36,047 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 36 (took 36ms)
+2015-01-21 19:17:36,563 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2015-01-21 19:17:36,567 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2015-01-21 19:17:36,571 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2015-01-21 19:17:36,575 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 4ms)
+2015-01-21 19:17:41,947 [10] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2015-01-21 19:17:42,643 [10] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2015-01-21 19:17:47,939 [10] INFO  Umbraco.Web.UmbracoModule - [Thread 6] Setting OriginalRequestUrl: localhost:52546/umbraco
+2015-01-21 19:17:48,471 [10] INFO  umbraco.content - [Thread 6] Loading content from disk cache...
+2015-01-21 19:17:49,339 [10] INFO  Umbraco.Core.PluginManager - [Thread 6] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2015-01-21 19:17:49,347 [10] INFO  Umbraco.Core.PluginManager - [Thread 6] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 5ms)
+2015-01-21 19:17:53,451 [10] INFO  Umbraco.Core.PluginManager - [Thread 6] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2015-01-21 19:17:53,455 [10] INFO  Umbraco.Core.PluginManager - [Thread 6] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 5ms)
+2015-01-21 19:18:57,464 [10] INFO  umbraco.BusinessLogic.Log - [Thread 11] Log scrubbed.  Removed all items older than 2014-11-22 19:18:57
+2015-01-21 19:20:23,804 [10] INFO  umbraco.BusinessLogic.Log - [Thread 8] Log scrubbed.  Removed all items older than 2014-11-22 19:20:23
+2015-01-21 19:21:50,198 [10] INFO  umbraco.BusinessLogic.Log - [Thread 11] Log scrubbed.  Removed all items older than 2014-11-22 19:21:50
+2015-01-21 19:23:16,603 [10] INFO  umbraco.BusinessLogic.Log - [Thread 19] Log scrubbed.  Removed all items older than 2014-11-22 19:23:16
+2015-01-21 19:24:43,010 [10] INFO  umbraco.BusinessLogic.Log - [Thread 21] Log scrubbed.  Removed all items older than 2014-11-22 19:24:43
+2015-01-21 19:26:09,417 [10] INFO  umbraco.BusinessLogic.Log - [Thread 14] Log scrubbed.  Removed all items older than 2014-11-22 19:26:09
+2015-01-21 19:26:23,166 [10] INFO  Umbraco.Web.Security.WebSecurity - [Thread 19] User Id: 0 logged in
+2015-01-21 19:26:23,682 [10] INFO  Umbraco.Core.PluginManager - [Thread 14] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 19:26:23,682 [10] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 8ms)
+2015-01-21 19:26:24,140 [10] INFO  Umbraco.Core.PluginManager - [Thread 18] Starting resolution types of umbraco.interfaces.IApplication
+2015-01-21 19:26:24,148 [10] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 6ms)
+2015-01-21 19:26:24,692 [10] INFO  Umbraco.Core.PluginManager - [Thread 18] Starting resolution types of umbraco.interfaces.ITree
+2015-01-21 19:26:24,698 [10] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 6ms)
+2015-01-21 19:26:24,819 [10] INFO  Umbraco.Core.PluginManager - [Thread 18] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 19:26:24,819 [10] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 19:26:24,830 [10] INFO  Umbraco.Core.PluginManager - [Thread 18] Starting resolution types of umbraco.interfaces.ITree
+2015-01-21 19:26:24,833 [10] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 2ms)
+2015-01-21 19:27:20,017 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 24] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 19:27:20,210 [10] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 24] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebBlocks.Utilities.Umbraco.DynamicContentProperty.get_Value() in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.Utilities\Umbraco\DynamicContentProperty.cs:line 41
+   at Umbraco.Web.PublishedContentExtensions.GetPropertyValue(IPublishedContent content, String alias)
+   at Umbraco.Web.Models.DynamicPublishedContent.GetPropertyValue(String alias)
+   at WebBlocks.Views.BlockView.RenderNodeBlock(NodeBlock block, HtmlHelper html) in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\Views\BlockView.cs:line 86
+   at WebBlocks.Views.BlockView.Render(Block block, HtmlHelper html) in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\Views\BlockView.cs:line 42
+   at WebBlocks.Views.BlockView.RenderPreview(HtmlHelper html) in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\Views\BlockView.cs:line 144
+   at ASP._Page_Views_Shared_BlockPreviewRender_cshtml.Execute() in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.SandboxV7\Views\Shared\BlockPreviewRender.cshtml:line 5
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2015-01-21 19:27:35,828 [10] INFO  umbraco.BusinessLogic.Log - [Thread 26] Log scrubbed.  Removed all items older than 2014-11-22 19:27:35
+2015-01-21 19:29:02,243 [10] INFO  umbraco.BusinessLogic.Log - [Thread 26] Log scrubbed.  Removed all items older than 2014-11-22 19:29:02
+2015-01-21 19:30:28,666 [10] INFO  umbraco.BusinessLogic.Log - [Thread 17] Log scrubbed.  Removed all items older than 2014-11-22 19:30:28
+2015-01-21 19:30:51,485 [10] INFO  Umbraco.Core.PluginManager - [Thread 26] Starting resolution types of umbraco.interfaces.ICacheRefresher
+2015-01-21 19:30:51,485 [10] INFO  Umbraco.Core.PluginManager - [Thread 26] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 20 (took 3ms)
+2015-01-21 19:31:05,803 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 19:31:05,816 [10] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 25] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebBlocks.Utilities.Umbraco.DynamicContentProperty.get_Value() in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.Utilities\Umbraco\DynamicContentProperty.cs:line 41
+   at Umbraco.Web.PublishedContentExtensions.GetPropertyValue(IPublishedContent content, String alias)
+   at Umbraco.Web.Models.DynamicPublishedContent.GetPropertyValue(String alias)
+   at WebBlocks.Views.BlockView.RenderNodeBlock(NodeBlock block, HtmlHelper html) in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\Views\BlockView.cs:line 86
+   at WebBlocks.Views.BlockView.Render(Block block, HtmlHelper html) in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\Views\BlockView.cs:line 42
+   at WebBlocks.Views.BlockView.RenderPreview(HtmlHelper html) in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\Views\BlockView.cs:line 144
+   at ASP._Page_Views_Shared_BlockPreviewRender_cshtml.Execute() in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.SandboxV7\Views\Shared\BlockPreviewRender.cshtml:line 5
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2015-01-21 19:31:55,055 [10] INFO  umbraco.BusinessLogic.Log - [Thread 17] Log scrubbed.  Removed all items older than 2014-11-22 19:31:55
+2015-01-21 19:32:52,590 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2015-01-21 19:32:52,646 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 43ms)
+2015-01-21 19:32:52,670 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-01-21 19:32:52,762 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 36 (took 91ms)
+2015-01-21 19:32:53,186 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2015-01-21 19:32:53,190 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 4ms)
+2015-01-21 19:32:53,194 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2015-01-21 19:32:53,198 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 5ms)
+2015-01-21 19:32:53,306 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2015-01-21 19:32:53,310 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 5 (took 4ms)
+2015-01-21 19:32:53,310 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2015-01-21 19:32:53,326 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 36 (took 15ms)
+2015-01-21 19:32:53,658 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2015-01-21 19:32:53,662 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2015-01-21 19:32:53,662 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2015-01-21 19:32:53,666 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 3ms)
+2015-01-21 19:32:58,871 [10] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2015-01-21 19:32:59,662 [10] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2015-01-21 19:33:03,671 [10] INFO  Umbraco.Web.UmbracoModule - [Thread 6] Setting OriginalRequestUrl: localhost:52546/umbraco
+2015-01-21 19:33:03,671 [10] INFO  Umbraco.Web.UmbracoModule - [Thread 5] Setting OriginalRequestUrl: localhost:52546/umbraco
+2015-01-21 19:33:03,671 [10] INFO  Umbraco.Web.UmbracoModule - [Thread 7] Setting OriginalRequestUrl: localhost:52546/umbraco
+2015-01-21 19:33:04,083 [10] INFO  umbraco.content - [Thread 5] Loading content from disk cache...
+2015-01-21 19:33:04,858 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2015-01-21 19:33:04,875 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 4ms)
+2015-01-21 19:33:20,652 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2015-01-21 19:33:20,660 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 7ms)
+2015-01-21 19:34:19,536 [10] INFO  umbraco.BusinessLogic.Log - [Thread 8] Log scrubbed.  Removed all items older than 2014-11-22 19:34:19
+2015-01-21 19:34:37,664 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 6] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 19:38:20,092 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2015-01-21 19:38:20,139 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 28ms)
+2015-01-21 19:38:20,179 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-01-21 19:38:21,755 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 36 (took 1570ms)
+2015-01-21 19:38:22,028 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2015-01-21 19:38:22,064 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 36ms)
+2015-01-21 19:38:22,064 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2015-01-21 19:38:22,120 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 52ms)
+2015-01-21 19:38:22,276 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2015-01-21 19:38:22,324 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 5 (took 47ms)
+2015-01-21 19:38:22,324 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2015-01-21 19:38:22,380 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 36 (took 55ms)
+2015-01-21 19:38:22,660 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2015-01-21 19:38:22,712 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 52ms)
+2015-01-21 19:38:22,712 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2015-01-21 19:38:22,740 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 27ms)
+2015-01-21 19:38:25,795 [7] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2015-01-21 19:38:26,153 [7] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2015-01-21 19:38:27,098 [7] INFO  Umbraco.Web.UmbracoModule - [Thread 8] Setting OriginalRequestUrl: localhost:52546/umbraco
+2015-01-21 19:38:27,296 [7] INFO  umbraco.content - [Thread 8] Loading content from disk cache...
+2015-01-21 19:38:27,691 [7] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2015-01-21 19:38:27,723 [7] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 37ms)
+2015-01-21 19:38:30,096 [7] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2015-01-21 19:38:30,189 [7] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 82ms)
+2015-01-21 19:38:50,708 [7] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 19:39:31,809 [7] INFO  umbraco.BusinessLogic.Log - [Thread 5] Log scrubbed.  Removed all items older than 2014-11-22 19:39:31
+2015-01-21 19:40:58,178 [7] INFO  umbraco.BusinessLogic.Log - [Thread 13] Log scrubbed.  Removed all items older than 2014-11-22 19:40:58
+2015-01-21 19:42:24,580 [7] INFO  umbraco.BusinessLogic.Log - [Thread 10] Log scrubbed.  Removed all items older than 2014-11-22 19:42:24
+2015-01-21 19:43:50,990 [7] INFO  umbraco.BusinessLogic.Log - [Thread 16] Log scrubbed.  Removed all items older than 2014-11-22 19:43:50
+2015-01-21 19:45:17,404 [7] INFO  umbraco.BusinessLogic.Log - [Thread 5] Log scrubbed.  Removed all items older than 2014-11-22 19:45:17
+2015-01-21 19:46:43,820 [7] INFO  umbraco.BusinessLogic.Log - [Thread 19] Log scrubbed.  Removed all items older than 2014-11-22 19:46:43
+2015-01-21 19:48:10,230 [7] INFO  umbraco.BusinessLogic.Log - [Thread 21] Log scrubbed.  Removed all items older than 2014-11-22 19:48:10
+2015-01-21 19:49:36,635 [7] INFO  umbraco.BusinessLogic.Log - [Thread 23] Log scrubbed.  Removed all items older than 2014-11-22 19:49:36
+2015-01-21 19:51:03,039 [7] INFO  umbraco.BusinessLogic.Log - [Thread 17] Log scrubbed.  Removed all items older than 2014-11-22 19:51:03
+2015-01-21 19:52:29,445 [7] INFO  umbraco.BusinessLogic.Log - [Thread 23] Log scrubbed.  Removed all items older than 2014-11-22 19:52:29
+2015-01-21 19:53:55,853 [7] INFO  umbraco.BusinessLogic.Log - [Thread 24] Log scrubbed.  Removed all items older than 2014-11-22 19:53:55
+2015-01-21 19:55:22,261 [7] INFO  umbraco.BusinessLogic.Log - [Thread 31] Log scrubbed.  Removed all items older than 2014-11-22 19:55:22
+2015-01-21 19:56:48,670 [7] INFO  umbraco.BusinessLogic.Log - [Thread 30] Log scrubbed.  Removed all items older than 2014-11-22 19:56:48
+2015-01-21 19:58:15,093 [7] INFO  umbraco.BusinessLogic.Log - [Thread 29] Log scrubbed.  Removed all items older than 2014-11-22 19:58:15
+2015-01-21 19:58:15,591 [7] INFO  Umbraco.Web.Security.WebSecurity - [Thread 31] User Id: 0 logged in
+2015-01-21 19:58:16,132 [7] INFO  Umbraco.Core.PluginManager - [Thread 34] Starting resolution types of umbraco.interfaces.IApplication
+2015-01-21 19:58:16,224 [7] INFO  Umbraco.Core.PluginManager - [Thread 34] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 89ms)
+2015-01-21 19:59:41,506 [7] INFO  umbraco.BusinessLogic.Log - [Thread 34] Log scrubbed.  Removed all items older than 2014-11-22 19:59:41
+2015-01-21 20:01:07,918 [7] INFO  umbraco.BusinessLogic.Log - [Thread 29] Log scrubbed.  Removed all items older than 2014-11-22 20:01:07
+2015-01-21 20:02:34,324 [7] INFO  umbraco.BusinessLogic.Log - [Thread 22] Log scrubbed.  Removed all items older than 2014-11-22 20:02:34
+2015-01-21 20:04:00,738 [7] INFO  umbraco.BusinessLogic.Log - [Thread 20] Log scrubbed.  Removed all items older than 2014-11-22 20:04:00
+2015-01-21 20:05:27,149 [7] INFO  umbraco.BusinessLogic.Log - [Thread 18] Log scrubbed.  Removed all items older than 2014-11-22 20:05:27
+2015-01-21 20:06:53,542 [7] INFO  umbraco.BusinessLogic.Log - [Thread 21] Log scrubbed.  Removed all items older than 2014-11-22 20:06:53
+2015-01-21 20:08:19,956 [7] INFO  umbraco.BusinessLogic.Log - [Thread 20] Log scrubbed.  Removed all items older than 2014-11-22 20:08:19
+2015-01-21 20:09:46,358 [7] INFO  umbraco.BusinessLogic.Log - [Thread 37] Log scrubbed.  Removed all items older than 2014-11-22 20:09:46
+2015-01-21 20:42:19,525 [7] INFO  umbraco.BusinessLogic.Log - [Thread 14] Log scrubbed.  Removed all items older than 2014-11-22 20:42:19
+2015-01-21 20:43:45,947 [7] INFO  umbraco.BusinessLogic.Log - [Thread 37] Log scrubbed.  Removed all items older than 2014-11-22 20:43:45
+2015-01-21 20:45:12,347 [7] INFO  umbraco.BusinessLogic.Log - [Thread 43] Log scrubbed.  Removed all items older than 2014-11-22 20:45:12
+2015-01-21 20:46:38,764 [7] INFO  umbraco.BusinessLogic.Log - [Thread 44] Log scrubbed.  Removed all items older than 2014-11-22 20:46:38
+2015-01-21 20:47:38,880 [7] INFO  Umbraco.Web.Security.WebSecurity - [Thread 48] User Id: 0 logged in
+2015-01-21 20:47:38,923 [7] INFO  Umbraco.Core.PluginManager - [Thread 48] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 20:47:38,983 [7] INFO  Umbraco.Core.PluginManager - [Thread 48] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 52ms)
+2015-01-21 20:47:39,249 [7] INFO  Umbraco.Core.PluginManager - [Thread 48] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 20:47:39,250 [7] INFO  Umbraco.Core.PluginManager - [Thread 48] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 20:47:39,254 [7] INFO  Umbraco.Core.PluginManager - [Thread 48] Starting resolution types of umbraco.interfaces.ITree
+2015-01-21 20:47:39,273 [7] INFO  Umbraco.Core.PluginManager - [Thread 48] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 18ms)
+2015-01-21 20:48:05,193 [7] INFO  umbraco.BusinessLogic.Log - [Thread 48] Log scrubbed.  Removed all items older than 2014-11-22 20:48:05
+2015-01-21 20:49:31,574 [7] INFO  umbraco.BusinessLogic.Log - [Thread 49] Log scrubbed.  Removed all items older than 2014-11-22 20:49:31
+2015-01-21 20:50:57,989 [7] INFO  umbraco.BusinessLogic.Log - [Thread 44] Log scrubbed.  Removed all items older than 2014-11-22 20:50:57
+2015-01-21 20:52:24,393 [7] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 20:52:24
+2015-01-21 20:53:50,806 [7] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-11-22 20:53:50
+2015-01-21 20:55:17,217 [7] INFO  umbraco.BusinessLogic.Log - [Thread 51] Log scrubbed.  Removed all items older than 2014-11-22 20:55:17
+2015-01-21 20:56:43,629 [7] INFO  umbraco.BusinessLogic.Log - [Thread 49] Log scrubbed.  Removed all items older than 2014-11-22 20:56:43
+2015-01-21 20:58:10,041 [7] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 20:58:10
+2015-01-21 20:59:36,451 [7] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 20:59:36
+2015-01-21 21:01:02,861 [7] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 21:01:02
+2015-01-21 21:02:29,279 [7] INFO  umbraco.BusinessLogic.Log - [Thread 43] Log scrubbed.  Removed all items older than 2014-11-22 21:02:29
+2015-01-21 21:03:55,703 [7] INFO  umbraco.BusinessLogic.Log - [Thread 57] Log scrubbed.  Removed all items older than 2014-11-22 21:03:55
+2015-01-21 21:05:22,116 [7] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-11-22 21:05:22
+2015-01-21 21:06:48,526 [7] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 21:06:48
+2015-01-21 21:08:14,945 [7] INFO  umbraco.BusinessLogic.Log - [Thread 56] Log scrubbed.  Removed all items older than 2014-11-22 21:08:14
+2015-01-21 21:09:41,351 [7] INFO  umbraco.BusinessLogic.Log - [Thread 51] Log scrubbed.  Removed all items older than 2014-11-22 21:09:41
+2015-01-21 21:10:23,020 [7] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 49] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2015-01-21 21:10:52,178 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Determining hash of code files on disk
+2015-01-21 21:10:52,178 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Hash determined (took 7ms)
+2015-01-21 21:10:52,193 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-01-21 21:10:52,511 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 36 (took 313ms)
+2015-01-21 21:10:52,590 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2015-01-21 21:10:52,590 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 6ms)
+2015-01-21 21:10:52,590 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2015-01-21 21:10:52,605 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 7ms)
+2015-01-21 21:10:52,621 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2015-01-21 21:10:52,621 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 5 (took 4ms)
+2015-01-21 21:10:52,621 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2015-01-21 21:10:52,621 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 36 (took 4ms)
+2015-01-21 21:10:52,652 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2015-01-21 21:10:52,668 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 5ms)
+2015-01-21 21:10:52,668 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2015-01-21 21:10:52,668 [47] INFO  Umbraco.Core.PluginManager - [Thread 48] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 6ms)
+2015-01-21 21:10:53,861 [47] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 48] Initializing Examine and binding to business logic events
+2015-01-21 21:10:53,934 [47] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 48] Adding examine event handlers for index providers: 3
+2015-01-21 21:10:55,921 [47] INFO  Umbraco.Web.UmbracoModule - [Thread 46] Setting OriginalRequestUrl: localhost:52546/umbraco
+2015-01-21 21:10:56,038 [47] INFO  umbraco.content - [Thread 46] Loading content from disk cache...
+2015-01-21 21:10:56,136 [47] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2015-01-21 21:10:56,146 [47] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 9ms)
+2015-01-21 21:10:56,731 [47] INFO  Umbraco.Web.Security.WebSecurity - [Thread 53] User Id: 0 logged in
+2015-01-21 21:10:56,732 [47] INFO  Umbraco.Web.Security.WebSecurity - [Thread 43] User Id: 0 logged in
+2015-01-21 21:10:56,734 [47] INFO  Umbraco.Web.Security.WebSecurity - [Thread 54] User Id: 0 logged in
+2015-01-21 21:10:56,892 [47] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2015-01-21 21:10:56,919 [47] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 26ms)
+2015-01-21 21:10:57,272 [47] INFO  Umbraco.Core.PluginManager - [Thread 49] Starting resolution types of umbraco.interfaces.IApplication
+2015-01-21 21:10:57,291 [47] INFO  Umbraco.Core.PluginManager - [Thread 49] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 18ms)
+2015-01-21 21:10:58,776 [47] INFO  Umbraco.Core.PluginManager - [Thread 43] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:10:58,841 [47] INFO  Umbraco.Core.PluginManager - [Thread 43] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 56ms)
+2015-01-21 21:10:59,321 [47] INFO  Umbraco.Core.PluginManager - [Thread 49] Starting resolution types of umbraco.interfaces.ITree
+2015-01-21 21:10:59,337 [47] INFO  Umbraco.Core.PluginManager - [Thread 49] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 20ms)
+2015-01-21 21:10:59,368 [47] INFO  Umbraco.Core.PluginManager - [Thread 49] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:10:59,369 [47] INFO  Umbraco.Core.PluginManager - [Thread 49] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 21:10:59,371 [47] INFO  Umbraco.Core.PluginManager - [Thread 49] Starting resolution types of umbraco.interfaces.ITree
+2015-01-21 21:10:59,386 [47] INFO  Umbraco.Core.PluginManager - [Thread 49] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 14ms)
+2015-01-21 21:11:09,780 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 49] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:11:57,083 [47] INFO  umbraco.BusinessLogic.Log - [Thread 43] Log scrubbed.  Removed all items older than 2014-11-22 21:11:57
+2015-01-21 21:13:23,488 [47] INFO  umbraco.BusinessLogic.Log - [Thread 53] Log scrubbed.  Removed all items older than 2014-11-22 21:13:23
+2015-01-21 21:14:50,159 [47] INFO  umbraco.BusinessLogic.Log - [Thread 57] Log scrubbed.  Removed all items older than 2014-11-22 21:14:49
+2015-01-21 21:16:16,332 [47] INFO  umbraco.BusinessLogic.Log - [Thread 53] Log scrubbed.  Removed all items older than 2014-11-22 21:16:16
+2015-01-21 21:17:42,748 [47] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 21:17:42
+2015-01-21 21:19:09,158 [47] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 21:19:09
+2015-01-21 21:20:35,581 [47] INFO  umbraco.BusinessLogic.Log - [Thread 43] Log scrubbed.  Removed all items older than 2014-11-22 21:20:35
+2015-01-21 21:20:52,677 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 54] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:22:01,983 [47] INFO  umbraco.BusinessLogic.Log - [Thread 46] Log scrubbed.  Removed all items older than 2014-11-22 21:22:01
+2015-01-21 21:23:28,402 [47] INFO  umbraco.BusinessLogic.Log - [Thread 53] Log scrubbed.  Removed all items older than 2014-11-22 21:23:28
+2015-01-21 21:24:54,809 [47] INFO  umbraco.BusinessLogic.Log - [Thread 57] Log scrubbed.  Removed all items older than 2014-11-22 21:24:54
+2015-01-21 21:26:21,221 [47] INFO  umbraco.BusinessLogic.Log - [Thread 56] Log scrubbed.  Removed all items older than 2014-11-22 21:26:21
+2015-01-21 21:27:47,624 [47] INFO  umbraco.BusinessLogic.Log - [Thread 43] Log scrubbed.  Removed all items older than 2014-11-22 21:27:47
+2015-01-21 21:28:35,298 [47] INFO  Umbraco.Core.PluginManager - [Thread 44] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:28:35,298 [47] INFO  Umbraco.Core.PluginManager - [Thread 44] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 21:28:46,748 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 46] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:29:14,035 [47] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-11-22 21:29:14
+2015-01-21 21:29:46,472 [47] INFO  Umbraco.Core.PluginManager - [Thread 54] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:29:46,472 [47] INFO  Umbraco.Core.PluginManager - [Thread 54] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 21:30:00,516 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 56] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:30:40,451 [47] INFO  umbraco.BusinessLogic.Log - [Thread 56] Log scrubbed.  Removed all items older than 2014-11-22 21:30:40
+2015-01-21 21:31:25,137 [47] INFO  Umbraco.Core.PluginManager - [Thread 43] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:31:25,137 [47] INFO  Umbraco.Core.PluginManager - [Thread 43] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 21:31:30,651 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 50] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:31:36,524 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 56] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:32:06,861 [47] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-11-22 21:32:06
+2015-01-21 21:33:07,375 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 40] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:33:33,274 [47] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 21:33:33
+2015-01-21 21:34:59,685 [47] INFO  umbraco.BusinessLogic.Log - [Thread 43] Log scrubbed.  Removed all items older than 2014-11-22 21:34:59
+2015-01-21 21:35:21,058 [47] INFO  Umbraco.Core.PluginManager - [Thread 44] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:35:21,058 [47] INFO  Umbraco.Core.PluginManager - [Thread 44] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 21:35:39,701 [47] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:35:39,701 [47] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 21:35:47,907 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 44] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:36:26,086 [47] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-11-22 21:36:26
+2015-01-21 21:37:05,140 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 46] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:37:52,497 [47] INFO  umbraco.BusinessLogic.Log - [Thread 40] Log scrubbed.  Removed all items older than 2014-11-22 21:37:52
+2015-01-21 21:39:18,907 [47] INFO  umbraco.BusinessLogic.Log - [Thread 53] Log scrubbed.  Removed all items older than 2014-11-22 21:39:18
+2015-01-21 21:39:54,031 [47] INFO  Umbraco.Core.PluginManager - [Thread 43] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:39:54,031 [47] INFO  Umbraco.Core.PluginManager - [Thread 43] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 21:40:04,194 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 53] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:40:45,320 [47] INFO  umbraco.BusinessLogic.Log - [Thread 40] Log scrubbed.  Removed all items older than 2014-11-22 21:40:45
+2015-01-21 21:41:24,292 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 40] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:42:11,729 [47] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 21:42:11
+2015-01-21 21:43:38,135 [47] INFO  umbraco.BusinessLogic.Log - [Thread 41] Log scrubbed.  Removed all items older than 2014-11-22 21:43:38
+2015-01-21 21:44:53,654 [47] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:44:53,654 [47] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 21:44:59,267 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 46] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:45:04,546 [47] INFO  umbraco.BusinessLogic.Log - [Thread 49] Log scrubbed.  Removed all items older than 2014-11-22 21:45:04
+2015-01-21 21:45:06,870 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 53] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:45:37,265 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 46] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:46:30,948 [47] INFO  umbraco.BusinessLogic.Log - [Thread 45] Log scrubbed.  Removed all items older than 2014-11-22 21:46:30
+2015-01-21 21:47:57,357 [47] INFO  umbraco.BusinessLogic.Log - [Thread 40] Log scrubbed.  Removed all items older than 2014-11-22 21:47:57
+2015-01-21 21:49:23,758 [47] INFO  umbraco.BusinessLogic.Log - [Thread 49] Log scrubbed.  Removed all items older than 2014-11-22 21:49:23
+2015-01-21 21:50:04,165 [47] INFO  Umbraco.Core.PluginManager - [Thread 41] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:50:04,165 [47] INFO  Umbraco.Core.PluginManager - [Thread 41] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 21:50:09,899 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 40] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:50:50,164 [47] INFO  umbraco.BusinessLogic.Log - [Thread 44] Log scrubbed.  Removed all items older than 2014-11-22 21:50:50
+2015-01-21 21:51:47,949 [47] INFO  Umbraco.Core.PluginManager - [Thread 41] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:51:47,949 [47] INFO  Umbraco.Core.PluginManager - [Thread 41] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 21:51:56,944 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 12] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:51:59,982 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 45] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:52:02,552 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 53] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:52:04,412 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 41] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:52:15,156 [47] INFO  Umbraco.Core.PluginManager - [Thread 53] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:52:15,156 [47] INFO  Umbraco.Core.PluginManager - [Thread 53] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 21:52:16,577 [47] INFO  umbraco.BusinessLogic.Log - [Thread 53] Log scrubbed.  Removed all items older than 2014-11-22 21:52:16
+2015-01-21 21:53:22,231 [47] INFO  Umbraco.Core.PluginManager - [Thread 51] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:53:22,231 [47] INFO  Umbraco.Core.PluginManager - [Thread 51] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 21:53:42,989 [47] INFO  umbraco.BusinessLogic.Log - [Thread 49] Log scrubbed.  Removed all items older than 2014-11-22 21:53:42
+2015-01-21 21:55:09,401 [47] INFO  umbraco.BusinessLogic.Log - [Thread 53] Log scrubbed.  Removed all items older than 2014-11-22 21:55:09
+2015-01-21 21:55:42,182 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 45] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:55:43,963 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 57] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:55:45,808 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 46] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:56:35,816 [47] INFO  umbraco.BusinessLogic.Log - [Thread 43] Log scrubbed.  Removed all items older than 2014-11-22 21:56:35
+2015-01-21 21:58:02,226 [47] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 21:58:02
+2015-01-21 21:58:33,585 [47] INFO  Umbraco.Core.PluginManager - [Thread 53] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:58:33,585 [47] INFO  Umbraco.Core.PluginManager - [Thread 53] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 21:58:38,826 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 40] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:58:41,166 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 51] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:58:43,185 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 50] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:58:44,898 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 12] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:59:22,407 [47] INFO  Umbraco.Core.PluginManager - [Thread 12] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 21:59:22,408 [47] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 21:59:27,196 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 44] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:59:28,640 [47] INFO  umbraco.BusinessLogic.Log - [Thread 12] Log scrubbed.  Removed all items older than 2014-11-22 21:59:28
+2015-01-21 21:59:29,008 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 49] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 21:59:30,567 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:00:55,080 [47] INFO  umbraco.BusinessLogic.Log - [Thread 57] Log scrubbed.  Removed all items older than 2014-11-22 22:00:55
+2015-01-21 22:01:03,000 [47] INFO  Umbraco.Core.PluginManager - [Thread 57] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 22:01:03,000 [47] INFO  Umbraco.Core.PluginManager - [Thread 57] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 22:01:08,503 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 44] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:01:10,513 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 46] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:01:14,172 [47] INFO  Umbraco.Core.PluginManager - [Thread 54] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 22:01:14,172 [47] INFO  Umbraco.Core.PluginManager - [Thread 54] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 22:01:40,966 [47] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 53] Content 'Feature Block example' with Id '1059' has been published.
+2015-01-21 22:01:58,134 [47] INFO  Umbraco.Core.PluginManager - [Thread 53] Starting resolution types of umbraco.interfaces.ICacheRefresher
+2015-01-21 22:01:58,226 [47] INFO  Umbraco.Core.PluginManager - [Thread 53] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 20 (took 92ms)
+2015-01-21 22:02:08,384 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 45] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:02:21,461 [47] INFO  umbraco.BusinessLogic.Log - [Thread 12] Log scrubbed.  Removed all items older than 2014-11-22 22:02:21
+2015-01-21 22:03:47,867 [47] INFO  umbraco.BusinessLogic.Log - [Thread 49] Log scrubbed.  Removed all items older than 2014-11-22 22:03:47
+2015-01-21 22:05:14,278 [47] INFO  umbraco.BusinessLogic.Log - [Thread 43] Log scrubbed.  Removed all items older than 2014-11-22 22:05:14
+2015-01-21 22:06:40,687 [47] INFO  umbraco.BusinessLogic.Log - [Thread 53] Log scrubbed.  Removed all items older than 2014-11-22 22:06:40
+2015-01-21 22:08:07,098 [47] INFO  umbraco.BusinessLogic.Log - [Thread 57] Log scrubbed.  Removed all items older than 2014-11-22 22:08:07
+2015-01-21 22:09:33,515 [47] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-11-22 22:09:33
+2015-01-21 22:10:59,930 [47] INFO  umbraco.BusinessLogic.Log - [Thread 40] Log scrubbed.  Removed all items older than 2014-11-22 22:10:59
+2015-01-21 22:12:26,341 [47] INFO  umbraco.BusinessLogic.Log - [Thread 55] Log scrubbed.  Removed all items older than 2014-11-22 22:12:26
+2015-01-21 22:13:52,755 [47] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-11-22 22:13:52
+2015-01-21 22:15:19,172 [47] INFO  umbraco.BusinessLogic.Log - [Thread 55] Log scrubbed.  Removed all items older than 2014-11-22 22:15:19
+2015-01-21 22:16:45,587 [47] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-11-22 22:16:45
+2015-01-21 22:18:11,995 [47] INFO  umbraco.BusinessLogic.Log - [Thread 45] Log scrubbed.  Removed all items older than 2014-11-22 22:18:11
+2015-01-21 22:19:38,409 [47] INFO  umbraco.BusinessLogic.Log - [Thread 44] Log scrubbed.  Removed all items older than 2014-11-22 22:19:38
+2015-01-21 22:21:04,819 [47] INFO  umbraco.BusinessLogic.Log - [Thread 53] Log scrubbed.  Removed all items older than 2014-11-22 22:21:04
+2015-01-21 22:22:31,229 [47] INFO  umbraco.BusinessLogic.Log - [Thread 44] Log scrubbed.  Removed all items older than 2014-11-22 22:22:31
+2015-01-21 22:23:57,634 [47] INFO  umbraco.BusinessLogic.Log - [Thread 46] Log scrubbed.  Removed all items older than 2014-11-22 22:23:57
+2015-01-21 22:25:24,043 [47] INFO  umbraco.BusinessLogic.Log - [Thread 46] Log scrubbed.  Removed all items older than 2014-11-22 22:25:24
+2015-01-21 22:26:16,331 [47] INFO  Umbraco.Web.Security.WebSecurity - [Thread 46] User Id: 0 logged in
+2015-01-21 22:26:50,457 [47] INFO  umbraco.BusinessLogic.Log - [Thread 12] Log scrubbed.  Removed all items older than 2014-11-22 22:26:50
+2015-01-21 22:27:37,805 [47] INFO  Umbraco.Core.PluginManager - [Thread 44] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 22:27:37,805 [47] INFO  Umbraco.Core.PluginManager - [Thread 44] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 22:27:46,486 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 41] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:27:53,482 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 44] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:28:16,871 [47] INFO  umbraco.BusinessLogic.Log - [Thread 44] Log scrubbed.  Removed all items older than 2014-11-22 22:28:16
+2015-01-21 22:29:43,302 [47] INFO  umbraco.BusinessLogic.Log - [Thread 49] Log scrubbed.  Removed all items older than 2014-11-22 22:29:43
+2015-01-21 22:29:44,658 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 22:29:44,658 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 22:29:49,706 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 45] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:29:55,081 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 49] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:30:48,993 [47] INFO  Umbraco.Core.PluginManager - [Thread 57] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 22:30:48,994 [47] INFO  Umbraco.Core.PluginManager - [Thread 57] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 22:30:54,749 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 55] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:31:00,129 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 12] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:31:09,486 [47] INFO  Umbraco.Core.PluginManager - [Thread 54] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 22:31:09,486 [47] INFO  Umbraco.Core.PluginManager - [Thread 54] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 22:31:09,722 [47] INFO  umbraco.BusinessLogic.Log - [Thread 49] Log scrubbed.  Removed all items older than 2014-11-22 22:31:09
+2015-01-21 22:31:21,871 [47] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 43] Content 'Feature Block example' with Id '1059' has been published.
+2015-01-21 22:32:36,110 [47] INFO  umbraco.BusinessLogic.Log - [Thread 55] Log scrubbed.  Removed all items older than 2014-11-22 22:32:36
+2015-01-21 22:33:31,753 [47] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 22:33:31,753 [47] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 22:33:37,111 [47] INFO  Umbraco.Core.PluginManager - [Thread 12] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 22:33:37,112 [47] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 22:33:42,712 [47] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 55] An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebBlocks.Utilities.Umbraco.DynamicContent.get_Id() in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.Utilities\Umbraco\DynamicContent.cs:line 76
+   at Umbraco.Web.Models.DynamicPublishedContent.get_Id()
+   at WebBlocks.Views.BlockView.RenderPreview(HtmlHelper html) in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\Views\BlockView.cs:line 146
+   at ASP._Page_Views_Shared_BlockPreviewRender_cshtml.Execute() in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.SandboxV7\Views\Shared\BlockPreviewRender.cshtml:line 5
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2015-01-21 22:33:58,183 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 49] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:34:02,509 [47] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-11-22 22:34:02
+2015-01-21 22:34:04,146 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 40] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:34:33,388 [47] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 54] Content 'Feature Block example' with Id '1059' has been published.
+2015-01-21 22:34:35,034 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 12] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:35:17,454 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 56] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:35:28,923 [47] INFO  umbraco.BusinessLogic.Log - [Thread 53] Log scrubbed.  Removed all items older than 2014-11-22 22:35:28
+2015-01-21 22:36:33,885 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 53] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:36:55,338 [47] INFO  umbraco.BusinessLogic.Log - [Thread 12] Log scrubbed.  Removed all items older than 2014-11-22 22:36:55
+2015-01-21 22:37:10,109 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 44] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:37:22,880 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 51] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:38:21,747 [47] INFO  umbraco.BusinessLogic.Log - [Thread 49] Log scrubbed.  Removed all items older than 2014-11-22 22:38:21
+2015-01-21 22:38:40,077 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 45] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:39:48,158 [47] INFO  umbraco.BusinessLogic.Log - [Thread 41] Log scrubbed.  Removed all items older than 2014-11-22 22:39:48
+2015-01-21 22:41:14,571 [47] INFO  umbraco.BusinessLogic.Log - [Thread 44] Log scrubbed.  Removed all items older than 2014-11-22 22:41:14
+2015-01-21 22:41:30,405 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 46] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:41:31,664 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:42:40,982 [47] INFO  umbraco.BusinessLogic.Log - [Thread 57] Log scrubbed.  Removed all items older than 2014-11-22 22:42:40
+2015-01-21 22:44:07,382 [47] INFO  umbraco.BusinessLogic.Log - [Thread 40] Log scrubbed.  Removed all items older than 2014-11-22 22:44:07
+2015-01-21 22:45:33,791 [47] INFO  umbraco.BusinessLogic.Log - [Thread 57] Log scrubbed.  Removed all items older than 2014-11-22 22:45:33
+2015-01-21 22:47:00,197 [47] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-11-22 22:47:00
+2015-01-21 22:47:08,175 [47] INFO  Umbraco.Core.PluginManager - [Thread 57] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 22:47:08,175 [47] INFO  Umbraco.Core.PluginManager - [Thread 57] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 22:47:17,863 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 41] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:47:20,933 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 45] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 22:48:26,607 [47] INFO  umbraco.BusinessLogic.Log - [Thread 57] Log scrubbed.  Removed all items older than 2014-11-22 22:48:26
+2015-01-21 22:49:53,020 [47] INFO  umbraco.BusinessLogic.Log - [Thread 53] Log scrubbed.  Removed all items older than 2014-11-22 22:49:53
+2015-01-21 22:51:19,436 [47] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 22:51:19
+2015-01-21 22:52:45,851 [47] INFO  umbraco.BusinessLogic.Log - [Thread 49] Log scrubbed.  Removed all items older than 2014-11-22 22:52:45
+2015-01-21 22:54:12,260 [47] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 22:54:12
+2015-01-21 22:55:38,674 [47] INFO  umbraco.BusinessLogic.Log - [Thread 41] Log scrubbed.  Removed all items older than 2014-11-22 22:55:38
+2015-01-21 22:57:05,085 [47] INFO  umbraco.BusinessLogic.Log - [Thread 45] Log scrubbed.  Removed all items older than 2014-11-22 22:57:05
+2015-01-21 22:58:31,496 [47] INFO  umbraco.BusinessLogic.Log - [Thread 55] Log scrubbed.  Removed all items older than 2014-11-22 22:58:31
+2015-01-21 22:59:57,899 [47] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 22:59:57
+2015-01-21 23:01:24,309 [47] INFO  umbraco.BusinessLogic.Log - [Thread 12] Log scrubbed.  Removed all items older than 2014-11-22 23:01:24
+2015-01-21 23:02:04,946 [47] INFO  Umbraco.Core.PluginManager - [Thread 54] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 23:02:04,946 [47] INFO  Umbraco.Core.PluginManager - [Thread 54] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 23:02:24,378 [47] INFO  Umbraco.Core.PluginManager - [Thread 44] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 23:02:24,379 [47] INFO  Umbraco.Core.PluginManager - [Thread 44] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 23:02:50,726 [47] INFO  umbraco.BusinessLogic.Log - [Thread 54] Log scrubbed.  Removed all items older than 2014-11-22 23:02:50
+2015-01-21 23:02:51,524 [47] INFO  Umbraco.Core.PluginManager - [Thread 50] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 23:02:51,524 [47] INFO  Umbraco.Core.PluginManager - [Thread 50] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 23:03:27,281 [47] INFO  Umbraco.Core.PluginManager - [Thread 43] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 23:03:27,281 [47] INFO  Umbraco.Core.PluginManager - [Thread 43] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 23:03:36,290 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:03:42,631 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 50] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:03:52,229 [47] INFO  Umbraco.Core.PluginManager - [Thread 56] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 23:03:52,229 [47] INFO  Umbraco.Core.PluginManager - [Thread 56] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 23:04:09,297 [47] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 12] Content 'Feature Block example' with Id '1059' has been published.
+2015-01-21 23:04:17,136 [47] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-11-22 23:04:17
+2015-01-21 23:04:21,657 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 45] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:04:53,810 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 40] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:05:43,548 [47] INFO  umbraco.BusinessLogic.Log - [Thread 57] Log scrubbed.  Removed all items older than 2014-11-22 23:05:43
+2015-01-21 23:06:09,722 [47] INFO  Umbraco.Core.PluginManager - [Thread 54] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 23:06:09,722 [47] INFO  Umbraco.Core.PluginManager - [Thread 54] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 23:06:29,937 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 12] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:06:37,671 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 50] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:06:51,115 [47] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 23:06:51,115 [47] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 23:07:04,699 [47] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 46] Content 'Feature Block example' with Id '1059' has been published.
+2015-01-21 23:07:09,961 [47] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-11-22 23:07:09
+2015-01-21 23:07:11,716 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:07:55,548 [47] INFO  Umbraco.Core.PluginManager - [Thread 45] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 23:07:55,548 [47] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 23:08:09,641 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 23:08:09,641 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 23:08:20,562 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 56] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:08:24,430 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 44] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:08:32,113 [47] INFO  Umbraco.Core.PluginManager - [Thread 49] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 23:08:32,113 [47] INFO  Umbraco.Core.PluginManager - [Thread 49] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 23:08:36,369 [47] INFO  umbraco.BusinessLogic.Log - [Thread 53] Log scrubbed.  Removed all items older than 2014-11-22 23:08:36
+2015-01-21 23:08:53,855 [47] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 55] Content 'Feature Block example' with Id '1059' has been published.
+2015-01-21 23:09:02,038 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 12] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:10:02,782 [47] INFO  umbraco.BusinessLogic.Log - [Thread 56] Log scrubbed.  Removed all items older than 2014-11-22 23:10:02
+2015-01-21 23:10:31,613 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 51] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:10:35,751 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 49] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:10:46,991 [47] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 55] Content 'Feature Block example' with Id '1059' has been published.
+2015-01-21 23:10:48,982 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 49] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:11:16,161 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 12] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:11:22,855 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 12] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:11:29,194 [47] INFO  umbraco.BusinessLogic.Log - [Thread 51] Log scrubbed.  Removed all items older than 2014-11-22 23:11:29
+2015-01-21 23:11:41,530 [47] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 44] Content 'Feature Block example' with Id '1059' has been published.
+2015-01-21 23:11:48,068 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 50] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:12:55,605 [47] INFO  umbraco.BusinessLogic.Log - [Thread 49] Log scrubbed.  Removed all items older than 2014-11-22 23:12:55
+2015-01-21 23:14:22,009 [47] INFO  umbraco.BusinessLogic.Log - [Thread 40] Log scrubbed.  Removed all items older than 2014-11-22 23:14:22
+2015-01-21 23:14:42,439 [47] INFO  Umbraco.Core.PluginManager - [Thread 41] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 23:14:42,439 [47] INFO  Umbraco.Core.PluginManager - [Thread 41] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 23:14:47,050 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 55] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:14:48,238 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 12] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:15:02,091 [47] INFO  Umbraco.Core.PluginManager - [Thread 53] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 23:15:02,092 [47] INFO  Umbraco.Core.PluginManager - [Thread 53] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 23:15:13,188 [47] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 55] Content 'Feature Block example' with Id '1059' has been published.
+2015-01-21 23:15:14,987 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 57] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:15:48,420 [47] INFO  umbraco.BusinessLogic.Log - [Thread 49] Log scrubbed.  Removed all items older than 2014-11-22 23:15:48
+2015-01-21 23:17:14,831 [47] INFO  umbraco.BusinessLogic.Log - [Thread 53] Log scrubbed.  Removed all items older than 2014-11-22 23:17:14
+2015-01-21 23:18:41,273 [47] INFO  umbraco.BusinessLogic.Log - [Thread 41] Log scrubbed.  Removed all items older than 2014-11-22 23:18:41
+2015-01-21 23:20:07,656 [47] INFO  umbraco.BusinessLogic.Log - [Thread 50] Log scrubbed.  Removed all items older than 2014-11-22 23:20:07
+2015-01-21 23:21:21,465 [47] INFO  Umbraco.Core.PluginManager - [Thread 54] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 23:21:21,465 [47] INFO  Umbraco.Core.PluginManager - [Thread 54] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 23:21:26,958 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 54] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:21:28,125 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 46] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:21:31,862 [47] INFO  Umbraco.Core.PluginManager - [Thread 46] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-21 23:21:31,862 [47] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-21 23:21:34,057 [47] INFO  umbraco.BusinessLogic.Log - [Thread 45] Log scrubbed.  Removed all items older than 2014-11-22 23:21:34
+2015-01-21 23:21:51,523 [47] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 49] Content 'Feature Block example' with Id '1059' has been published.
+2015-01-21 23:21:54,792 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 40] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:22:02,510 [47] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 43] Content 'Feature Block example' with Id '1059' has been published.
+2015-01-21 23:22:03,793 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 44] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:22:17,344 [47] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 56] Content 'Feature Block example' with Id '1059' has been published.
+2015-01-21 23:22:18,508 [47] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 54] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-21 23:23:00,474 [47] INFO  umbraco.BusinessLogic.Log - [Thread 40] Log scrubbed.  Removed all items older than 2014-11-22 23:23:00

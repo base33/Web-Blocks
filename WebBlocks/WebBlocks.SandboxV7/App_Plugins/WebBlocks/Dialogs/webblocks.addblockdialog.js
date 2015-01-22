@@ -13,6 +13,7 @@
                 content: "<p>Double click or right click on me to edit</p>",
                 sortOrder: 10000,
                 sessionId: "", //edit wysiwyg block session
+                shouldRerender: true,
                 element: {
                     tag: "div",
                     classes: "",
@@ -95,7 +96,7 @@
                     html: "",
                     content: "",
                     sortOrder: 10000,
-                    sessionId: "", //edit wysiwyg block session
+                    shouldRerender: false,
                     element: {
                         tag: "div",
                         classes: "",
@@ -104,9 +105,9 @@
                 },
                 shouldClone: true,
                 loadContent: true,
-                originBlockArray: [dialogOptions.modelData],
-                originDraggableBlockArray: [$scope.draggableBlockArray],
-                shouldRemoveFromOrigin: true
+                originBlockArray: [],
+                originDraggableBlockArray: [],
+                shouldRemoveFromOrigin: false
             },
             this.Children = []
         }

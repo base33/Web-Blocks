@@ -25,52 +25,82 @@ angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
             var block = scope.$eval(attr.ngModel);
             var container = scope.$parent.$eval(attr.wbContainerModel);
 
-            //assign all block attributes
-            for (var i = 0; i < block.element.attrs.length; i++) {
-                var attribute = block.element.attrs[i];
-                attr.$set(attribute.name, attribute.value);
-            }
+            render();
+            bindEvents();
 
-            var blockClasses = block.element.classes;
-            if (block._type == "WYSIWYG")
-                blockClasses = "wbWysiwyg " + container.wysiwygClass;
-            
-            //add all block classes
-            elem.addClass(blockClasses);
-            //add the block content to the block
-            $(elem).html(block.content);
-            //disable all buttons, submits, and anchortag
-            $(elem).find("a, input[type='button'], input[type='submit'], button").on("click", function (e) {
-                e.preventDefault();
-                return false;
-            });
+            setInterval(function () {
+                if (block.shouldRerender) {
+                    block.shouldRerender = false;
+                    render();
+                }
+            }, 2000);
+            //scope.$watch(function () {
+            //    return block.shouldRerender;
+            //},
+            //function (shouldRenderValue, oldShouldRenderValue) {
+            //    i
+            //});
 
-            //bind block to double click event
-            if (attr.wbOnDoubleClick) {
-                elem.bind("dblclick", function ($event) {
-                    scope.$eval(attr.wbOnDoubleClick)(elem, block, container);
+            function render() {
+                var requiredAttributes = ["wb-block", "wb-on-double-click", "wb-on-double-tap", "wb-on-right-click", "wb-on-touch-hold", "wb-container-model", "ng-model", "ng-repeat"];
+                $.each($(elem)[0].attributes, function () {
+                    // this.attributes is not a plain object, but an array
+                    // of attribute nodes, which contain both the name and value
+                    if (this.specified && requiredAttributes.indexOf(this.name) < 0) {
+                        elem.removeAttr(this.name)
+                    }
+                });
+
+                //assign all block attributes
+                for (var i = 0; i < block.element.attrs.length; i++) {
+                    var attribute = block.element.attrs[i];
+                    attr.$set(attribute.name, attribute.value);
+                }
+
+                attr.$set("class", "");
+                var blockClasses = block.element.classes;
+                if (block._type == "WYSIWYG")
+                    blockClasses = "wbWysiwyg " + container.wysiwygClass;
+
+                //add all block classes
+                elem.addClass(blockClasses);
+                //add the block content to the block
+                $(elem).html(block.content);
+                //disable all buttons, submits, and anchortag
+                $(elem).find("a, input[type='button'], input[type='submit'], button").on("click", function (e) {
+                    e.preventDefault();
+                    return false;
                 });
             }
 
-            //bind to the mouse down right click event
-            elem.bind("mousedown", function ($event) {
-                if ($event.which == 3) {
-                    $event.preventDefault();
-                    scope.$eval(attr.wbOnRightClick)(elem, block, container);
-                    return false;
+            function bindEvents() {
+                //bind block to double click event
+                if (attr.wbOnDoubleClick) {
+                    elem.bind("dblclick", function ($event) {
+                        scope.$eval(attr.wbOnDoubleClick)(elem, block, container);
+                    });
                 }
-            });
-            elem.bind("taphold", function ($event) {
-                if ($event.which == 3) {
-                    $event.preventDefault();
-                    scope.$eval(attr.wbOnTouchHold)(elem, block, container);
+
+                //bind to the mouse down right click event
+                elem.bind("mousedown", function ($event) {
+                    if ($event.which == 3) {
+                        $event.preventDefault();
+                        scope.$eval(attr.wbOnRightClick)(elem, block, container);
+                        return false;
+                    }
+                });
+                elem.bind("taphold", function ($event) {
+                    if ($event.which == 3) {
+                        $event.preventDefault();
+                        scope.$eval(attr.wbOnTouchHold)(elem, block, container);
+                        return false;
+                    }
+                });
+                //prevent default right click context menu
+                elem.bind("contextmenu", function () {
                     return false;
-                }
-            });
-            //prevent default right click context menu
-            elem.bind("contextmenu", function () {
-                return false;
-            });
+                });
+            }
         }
     };
 });

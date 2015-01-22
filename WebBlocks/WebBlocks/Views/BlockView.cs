@@ -24,6 +24,7 @@ using System.IO;
 using System.Web.Mvc.Html;
 using WebBlocks.API;
 using WebBlocks.Helpers;
+using Newtonsoft.Json;
 
 namespace WebBlocks.Views
 {
@@ -64,10 +65,11 @@ namespace WebBlocks.Views
             //if rendering engine is null then the document doesn't exist anymore
             if (renderingEngine == null || block.Content == null) return "";
 
-            string blockIdAttribute = WebBlocksUtility.IsInBuilder ? string.Format(" wbid='{0}'", block.Id) : "";
-            string blockTemplateAttribute = WebBlocksUtility.IsInBuilder ? 
-                string.Format(" templateblock='{0}'", block.IsTemplateBlock.ToString().ToLower()) : "";
-            string blockDeletedAttribute = WebBlocksUtility.IsInBuilder && block.IsDeleted ? " deletedBlock='deleted' style='display:none;visibilty:hidden;'" : "";
+            //string blockIdAttribute = WebBlocksUtility.IsInBuilder ? string.Format(" wbid='{0}'", block.Id) : "";
+            string blockJsonAttribute = string.Format("wbBlockJson='{0}'", JsonConvert.SerializeObject(block));
+            //string blockTemplateAttribute = WebBlocksUtility.IsInBuilder ? 
+            //    string.Format(" templateblock='{0}'", block.IsTemplateBlock.ToString().ToLower()) : "";
+            //string blockDeletedAttribute = WebBlocksUtility.IsInBuilder && block.IsDeleted ? " deletedBlock='deleted' style='display:none;visibilty:hidden;'" : "";
 
             string renderedContent = "";
 
@@ -86,13 +88,12 @@ namespace WebBlocks.Views
             string blockClass = string.Format("{0}{1}{0}{2}{3}{4}", 
                 block.Class.Length > 0 ? " " : "", 
                 block.Class,
-                WebBlocksUtility.CurrentBlockContent.GetPropertyValue("cssClasses"),
+                WebBlocksUtility.CurrentBlockContent.GetPropertyValue("cssClasses") ?? "",
                 CssClasses.Any() ? " " : "",
                 String.Join(" ", CssClasses));
-            blockClass = WebBlocksUtility.IsInBuilder ? "block " + blockClass : blockClass;
 
-            renderedContent = string.Format("<{0} class='{1}'{2}{3}{4}{5}>{6}</{0}>", 
-                blockElement, blockClass, blockIdAttribute, blockTemplateAttribute, blockDeletedAttribute, blockAttributes, renderedContent);
+            renderedContent = string.Format("<{0} class='{1}'{2} {3}>{4}</{0}>", 
+                blockElement, blockClass, blockAttributes, blockJsonAttribute, renderedContent);
 
             return renderedContent;
         }

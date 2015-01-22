@@ -15,11 +15,16 @@
 
 @section Content {
 	<div class="container_12 clearfix">
-            @Html.Container(new Container {
-                Name = "fullWidthSliderContainer",
-                CssClass = "contentBlock_12 homeSlider",
-                Blocks = new List<IBlock>(),
-                ContainerPermissions = new AllowedBlocks("flexsliderSlideBlock")
-            })
+            @Html.Container(new Container
+       {
+           Name = "fullWidthSliderContainer",
+           CssClass = "contentBlock_12 homeSlider",
+           Blocks = new List<IBlock>()
+           {
+               new NodeBlock(1059),
+               new WysiwygBlock(1)
+           },
+           ContainerPermissions = new AllowedBlocks("flexsliderSlideBlock")
+       })
     </div>
 }

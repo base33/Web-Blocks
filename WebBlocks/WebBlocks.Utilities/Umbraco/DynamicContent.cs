@@ -211,7 +211,7 @@ namespace WebBlocks.Utilities.Umbraco
         public IPublishedProperty GetProperty(string alias)
         {
             var property = content.Properties.FirstOrDefault(c => c.Alias == alias);
-            return new DynamicContentProperty(property);
+            return property != null ? new DynamicContentProperty(property) : null;
         }
     }
 }

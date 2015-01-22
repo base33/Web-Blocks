@@ -13,7 +13,10 @@
             navigationVisible: false
         };
 
-        $scope.editorIframeSrc = "";
+        $scope.iframeSession = {
+            src: "",
+            blockId: 0
+        }
 
         $scope.model = {
             containers: {
@@ -26,6 +29,7 @@
                             name: "Angular powered",
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="http://www.andrewboni.com/images/2013-08-25/angularjs.jpeg" /></div><div class="blockTitle">Angular powered</div></div>',
                             sortOrder: 1,
+                            shouldRerender: true,
                             element: {
                                 tag: "div",
                                 classes: "grid_3 block",
@@ -40,6 +44,7 @@
                             name: "Open source",
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="https://octodex.github.com/images/octobiwan.jpg" /></div><div class="blockTitle">Open source</div></div>',
                             sortOrder: 1,
+                            shouldRerender: true,
                             element: {
                                 tag: "div",
                                 classes: "grid_3 block",
@@ -54,6 +59,7 @@
                             name: 'Drag and Drop feature block',
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="http://dockphp.com/img/drag-icon.png" /></div><div class="blockTitle">Drag and Drop</div></div>',
                             sortOrder: 2,
+                            shouldRerender: true,
                             element: {
                                 tag: "div",
                                 classes: "grid_3 block",
@@ -70,6 +76,7 @@
                             content: "<p>This is a test</p>",
                             sortOrder: 1,
                             sessionId: "", //edit wysiwyg block session id
+                            shouldRerender: true,
                             element: {
                                 tag: "div",
                                 classes: "",
@@ -90,6 +97,7 @@
                             name: 'Introduction to Web Blocks feature block',
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="http://www.mentorwebblocks.com/images/logo.png" /></div><div class="blockTitle">Welcome to Web Blocks</div></div>',
                             sortOrder: 1,
+                            shouldRerender: true,
                             element: {
                                 tag: "div",
                                 classes: "grid_3 block",
@@ -104,6 +112,7 @@
                             name: 'Content Editor friendly',
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="http://d1v2fthkvl8xh8.cloudfront.net/wp-content/uploads/2011/10/donoterasewriting.jpg" /></div><div class="blockTitle">Content editor friendly</div></div>',
                             sortOrder: 2,
+                            shouldRerender: true,
                             element: {
                                 tag: "div",
                                 classes: "grid_3 block",
@@ -124,6 +133,7 @@
                             name: "Friendly support",
                             content: '<div class="siteBlock featureBlock"><div class="blockImage"><img src="https://www.innoforce.com/sites/default/files/images/various/support.png" /></div><div class="blockTitle">Friendly support</div></div>',
                             sortOrder: 2,
+                            shouldRerender: true,
                             element: {
                                 tag: "div",
                                 classes: "grid_3 block",
@@ -140,6 +150,7 @@
                             content: "<p>This is a test</p>",
                             sortOrder: 1,
                             sessionId: "", //edit wysiwyg block session
+                            shouldRerender: true,
                             element: {
                                 tag: "div",
                                 classes: "",
@@ -195,13 +206,6 @@
         $scope.handleBlockDropped = function (data, event, containerElement) {
             var container = $scope.$eval($(containerElement).attr("wb-container-model"));
 
-            if (data.loadContent == true && data.block._type != "WYSIWYG") {
-
-                loadBlockContent(data.block, function(updatedBlock) {
-                    $scope.$digest();
-                });
-            }
-
             var block = data.block;
 
             if (data.shouldClone == true) {
@@ -210,7 +214,14 @@
                 angular.copy(data.block, block);
             }
 
-            container.blocks.push(block);
+            if (data.loadContent == true && data.block._type != "WYSIWYG") {
+
+                loadBlockContent(block, function () {
+                    $scope.$apply(function () {
+                        container.blocks.push(block);
+                    });
+                });
+            }
 
             if (data.shouldRemoveFromOrigin) {
                 //note: block array is the block array source
@@ -236,14 +247,22 @@
                 dataType: 'html',
                 cache: false,
                 success: function (data) {
-                    $scope.$digest(function () {
-                        var renderedBlockEl = $(data)
+                    $scope.$apply(function () {
+                        var renderedBlockEl = $(data);
                         block.element.tag = "div";
                         block.element.classes = $(renderedBlockEl).attr("class");
+                        block.content = $(renderedBlockEl).html();
+
                         block.element.attrs = [];
-                        block.content = block.html();
+                        $.each(renderedBlockEl[0].attributes, function () {
+                            // this.attributes is not a plain object, but an array
+                            // of attribute nodes, which contain both the name and value
+                            if (this.specified && this.name != "class") {
+                                block.element.attrs.push({ name: this.name, value: this.value });
+                            }
+                        });
                     });
-                    
+                    callback();
                     //var blockContent = $(data);
                     //$(blockContent).css("display", "none");
                     //$(containerElement).append(blockContent);
@@ -277,7 +296,8 @@
                 $scope.$apply(function () {
                     $scope.ui.showLayoutBuilder = false;
                     $scope.ui.showIFrameEditor = true;
-                    $scope.editorIframeSrc = "/umbraco/#/content/content/edit/1052";
+                    $scope.iframeSession.src = "/umbraco/#/content/content/edit/" + block.id;
+                    $scope.iframeSession.blockId = block.id;
                 });
             }
             else if (block._type == WebBlocksType.WYSIWYG) {
@@ -314,6 +334,36 @@
                 //disable sorting on parent container
                 $(blockElement.parent()).sortable("disable");
             }
+        };
+
+        //gets a rendered copy of the block and updates the content and element property on all blocks on page
+        $scope.updateAllBlockElementsInAllContainers = function (blockId) {
+            var renderedBlock = {
+                _type: WebBlocksType.NODE,
+                id: blockId,
+                name: "",
+                content: '',
+                sortOrder: 2,
+                element: {
+                    tag: "div",
+                    classes: "",
+                    attrs: []
+                }
+            };
+
+            loadBlockContent(renderedBlock, function () {
+                angular.forEach($scope.model.containers, function (container, containerName) {
+                    for (var i = 0; i < container.blocks.length; i++) {
+                        if (container.blocks[i].id == blockId) {
+                            var clonedBlockElement = angular.copy(renderedBlock.element);
+                            container.blocks[i].element = clonedBlockElement;
+                            container.blocks[i].content = renderedBlock.content;
+                            container.blocks[i].shouldRerender = true;
+                        }
+                    }
+                });
+            });
+            
         };
 
         // handle wysiwyg update, for session
