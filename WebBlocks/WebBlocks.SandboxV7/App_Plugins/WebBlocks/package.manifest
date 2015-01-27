@@ -14,10 +14,11 @@
     javascript: [
         '~/App_Plugins/WebBlocks/layoutbuilder.controller.js',
 		'~/App_Plugins/WebBlocks/layoutbuilder.directives.js',
-		"~/App_Plugins/WebBlocks/dialogs/webblocks.contextmenudialog.js",
-		"~/App_Plugins/WebBlocks/dialogs/webblocks.addblockdialog.js",
-		"~/App_Plugins/WebBlocks/dialogs/webblocks.blockstoragedialog.js",
-		"~/App_Plugins/WebBlocks/dialogs/webblocks.recyclebindialog.js",
+		'~/App_Plugins/WebBlocks/layoutbuilder.models.js',
+		"~/App_Plugins/WebBlocks/dialogs/layoutbuilder.contextmenudialog.js",
+		"~/App_Plugins/WebBlocks/dialogs/layoutbuilder.addblockdialog.js",
+		"~/App_Plugins/WebBlocks/dialogs/layoutbuilder.blockstoragedialog.js",
+		"~/App_Plugins/WebBlocks/dialogs/layoutbuilder.recyclebindialog.js",
 		"~/App_Plugins/WebBlocks/assets/draggable.js",
 		"~/App_Plugins/WebBlocks/assets/touchpunch.js"
     ]

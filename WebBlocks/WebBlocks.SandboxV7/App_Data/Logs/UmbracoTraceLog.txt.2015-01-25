@@ -1,0 +1,27 @@
+﻿2015-01-25 17:16:05,154 [10] INFO  umbraco.BusinessLogic.Log - [Thread 108] Log scrubbed.  Removed all items older than 2014-11-26 17:16:03
+2015-01-25 17:16:55,096 [10] INFO  Umbraco.Web.Security.WebSecurity - [Thread 111] User Id: 0 logged in
+2015-01-25 17:16:55,157 [10] INFO  Umbraco.Core.PluginManager - [Thread 119] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-25 17:16:55,157 [10] INFO  Umbraco.Core.PluginManager - [Thread 119] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-25 17:17:30,159 [10] INFO  umbraco.BusinessLogic.Log - [Thread 119] Log scrubbed.  Removed all items older than 2014-11-26 17:17:30
+2015-01-25 17:18:56,551 [10] INFO  umbraco.BusinessLogic.Log - [Thread 119] Log scrubbed.  Removed all items older than 2014-11-26 17:18:56
+2015-01-25 17:20:15,904 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-25 17:20:18,145 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 107] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-25 17:20:22,481 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 108] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-25 17:20:22,961 [10] INFO  umbraco.BusinessLogic.Log - [Thread 107] Log scrubbed.  Removed all items older than 2014-11-26 17:20:22
+2015-01-25 17:20:25,934 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 114] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-25 17:20:35,268 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 107] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-25 17:20:37,796 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-25 17:21:46,761 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 119] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-25 17:21:49,365 [10] INFO  umbraco.BusinessLogic.Log - [Thread 106] Log scrubbed.  Removed all items older than 2014-11-26 17:21:49
+2015-01-25 17:21:52,321 [10] INFO  Umbraco.Core.PluginManager - [Thread 107] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-25 17:21:52,321 [10] INFO  Umbraco.Core.PluginManager - [Thread 107] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-25 17:21:59,093 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 103] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-25 17:22:04,248 [10] INFO  Umbraco.Core.PluginManager - [Thread 107] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-01-25 17:22:04,248 [10] INFO  Umbraco.Core.PluginManager - [Thread 107] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-01-25 17:22:23,426 [10] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 106] Content '72' with Id '1060' has been published.
+2015-01-25 17:22:25,747 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 102] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-01-25 17:23:15,777 [10] INFO  umbraco.BusinessLogic.Log - [Thread 106] Log scrubbed.  Removed all items older than 2014-11-26 17:23:15
+2015-01-25 17:24:42,216 [10] INFO  umbraco.BusinessLogic.Log - [Thread 101] Log scrubbed.  Removed all items older than 2014-11-26 17:24:42
+2015-01-25 17:26:08,593 [10] INFO  umbraco.BusinessLogic.Log - [Thread 101] Log scrubbed.  Removed all items older than 2014-11-26 17:26:08
+2015-01-25 17:27:34,993 [10] INFO  umbraco.BusinessLogic.Log - [Thread 98] Log scrubbed.  Removed all items older than 2014-11-26 17:27:34
+2015-01-25 17:29:01,401 [10] INFO  umbraco.BusinessLogic.Log - [Thread 101] Log scrubbed.  Removed all items older than 2014-11-26 17:29:01

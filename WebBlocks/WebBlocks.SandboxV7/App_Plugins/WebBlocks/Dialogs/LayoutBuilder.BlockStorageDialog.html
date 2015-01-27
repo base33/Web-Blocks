@@ -7,9 +7,9 @@
         <ul class="umb-actions">
             <li ng-repeat="draggableBlock in draggableBlockArray" ng-show="draggableBlockArray.length > 0" class="action ng-scope">
                 <a ng-drag="true" ng-drag-data="draggableBlock" prevent-default="" title="{{getWysiwygContent(draggableBlock)}}">
-                    <i class="icon icon-folder">
+                    <i class="icon {{draggableBlock.BlockIconClass}}">
                     </i>
-                    <span class="menu-label ng-binding">{{draggableBlock.block.name}}</span>
+                    <span class="menu-label ng-binding">{{draggableBlock.Block.Name}}</span>
                 </a>
             </li>
 

@@ -20,8 +20,8 @@
         </a>
 
         <!-- session buttons -->
-        <span ng-show="ui.showIFrameEditor">
-            <a ui-draggable class="btn btn-success" href="#" ng-show="ui.showIFrameEditor" ng-click="ui.showIFrameEditor = false;ui.showLayoutBuilder = true;updateAllBlockElementsInAllContainers(iframeSession.blockId);" title="Recycle Bin" prevent-default>
+        <span ng-show="uiState.IframeEditor.Visible">
+            <a ui-draggable class="btn btn-success" href="#" ng-show="uiState.IframeEditor.Visible" ng-click="uiState.IframeEditor.Visible = false;uiState.LayoutBuilder.Visible = true;updateAllBlockElementsInAllContainers(uiState.IframeEditor.BlockId);" title="Recycle Bin" prevent-default>
                 <i class="icon-pencil"></i>
                 Finish Editing
             </a>
@@ -46,12 +46,12 @@
 
     <div id="webBlocksWrapper" wb-prevent-default-on-click style="margin-left:-240px;margin-top:30px;">
 
-        <div ng-show="ui.showIFrameEditor" class="wb-browser-window wbNoSelect">
-            <iframe src="{{iframeSession.src}}" height="500" width="800"></iframe>
+        <div ng-show="uiState.IframeEditor.Visible" class="wb-browser-window wbNoSelect">
+            <iframe src="{{uiState.IframeEditor.Url}}" height="500" width="800"></iframe>
         </div>
 
         <!-- Canvas -->
-        <div id="outerCanvas" style="width:{{config.canvasWidth}}px;" ng-show="ui.showLayoutBuilder">
+        <div id="outerCanvas" style="width:{{config.canvasWidth}}px;" ng-show="uiState.LayoutBuilder.Visible">
             <div id="canvas" style="width:{{config.canvasWidth}}px;">
                 <div id="canvasRender">
                     <!--<ng-include src="'/App_Plugins/WebBlocks/LayoutBuilder.Test.html'" />-->
@@ -60,16 +60,16 @@
 
                         <div class="contentBlock_9">
 
-                            <div ui-sortable="getSortableOptions(model.containers.contentContainer.blocks)" ng-model="model.containers.contentContainer.blocks" wb-container-model="model.containers.contentContainer" ng-drop="true" ng-drop-success="handleBlockDropped($data, $event, $container)" class="contentBlock_9 wbcontainer wbNoSelect">
+                            <div ui-sortable="getSortableOptions(model.Containers.contentContainer.Blocks)" ng-model="model.Containers.contentContainer.Blocks" wb-container-model="model.Containers.contentContainer" ng-drop="true" ng-drop-success="handleBlockDropped($data, $event, $container)" class="contentBlock_9 wbcontainer wbNoSelect">
 
                                 <div wb-block
                                      wb-on-double-click="editBlock"
                                      wb-on-double-tap="editBlock"
                                      wb-on-right-click="showEditBlockDialog"
                                      wb-on-touch-hold="showEditBlockDialog"
-                                     wb-container-model="model.containers.contentContainer"
+                                     wb-container-model="model.Containers.contentContainer"
                                      ng-model="block"
-                                     ng-repeat="block in model.containers.contentContainer.blocks">
+                                     ng-repeat="block in model.Containers.contentContainer.Blocks">
                                 </div>
 
                             </div>
@@ -81,32 +81,32 @@
                                 </div>
                             </div>
 
-                            <div ui-sortable="getSortableOptions(model.containers.bottomContainer.blocks)" ng-model="model.containers.bottomContainer.blocks" wb-container-model="model.containers.bottomContainer" ng-drop="true" ng-drop-success="handleBlockDropped($data, $event, $container)" class="contentBlock_9 wbcontainer">
+                            <div ui-sortable="getSortableOptions(model.Containers.bottomContainer.blocks)" ng-model="model.Containers.bottomContainer.Blocks" wb-container-model="model.Containers.bottomContainer" ng-drop="true" ng-drop-success="handleBlockDropped($data, $event, $container)" class="contentBlock_9 wbcontainer">
 
                                 <div wb-block
                                      wb-on-double-click="editBlock"
                                      wb-on-double-tap="editBlock"
                                      wb-on-right-click="showEditBlockDialog"
                                      wb-on-touch-hold="showEditBlockDialog"
-                                     wb-container-model="model.containers.bottomContainer"
+                                     wb-container-model="model.Containers.bottomContainer"
                                      ng-model="block"
-                                     ng-repeat="block in model.containers.bottomContainer.blocks">
+                                     ng-repeat="block in model.Containers.bottomContainer.Blocks">
                                 </div>
 
                             </div>
 
                         </div>
 
-                        <div ui-sortable="getSortableOptions(model.containers.sideContainer.blocks)" ng-model="model.containers.sideContainer.blocks" wb-container-model="model.containers.sideContainer" ng-drop="true" ng-drop-success="handleBlockDropped($data, $event, $container)" class="contentBlock_3 wbcontainer">
+                        <div ui-sortable="getSortableOptions(model.Containers.sideContainer.Blocks)" ng-model="model.Containers.sideContainer.Blocks" wb-container-model="model.Containers.sideContainer" ng-drop="true" ng-drop-success="handleBlockDropped($data, $event, $container)" class="contentBlock_3 wbcontainer">
 
                             <div wb-block
                                  wb-on-double-click="editBlock"
                                  wb-on-double-tap="editBlock"
                                  wb-on-right-click="showEditBlockDialog"
                                  wb-on-touch-hold="showEditBlockDialog"
-                                 wb-container-model="model.containers.sideContainer"
+                                 wb-container-model="model.Containers.sideContainer"
                                  ng-model="block"
-                                 ng-repeat="block in model.containers.sideContainer.blocks">
+                                 ng-repeat="block in model.Containers.sideContainer.Blocks">
                             </div>
 
                         </div>

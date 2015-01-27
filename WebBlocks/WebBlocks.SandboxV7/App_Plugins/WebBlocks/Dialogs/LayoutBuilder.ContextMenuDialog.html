@@ -4,11 +4,11 @@
     </div>
     <div class="umb-modalcolumn-body">
         <ul class="umb-actions">
-            <li ng-repeat="event in model.events" class="action ng-scope">
-                <a prevent-default="" ng-click="triggerAction(event.name)">
-                    <i class="icon {{event.icon}}">
+            <li ng-repeat="event in model.Events" class="action ng-scope">
+                <a prevent-default="" ng-click="triggerAction(event.Name)">
+                    <i class="icon {{event.IconClass}}">
                     </i>
-                    <span class="menu-label ng-binding">{{event.name}}</span>
+                    <span class="menu-label ng-binding">{{event.Name}}</span>
                 </a>
             </li>
             <li class="action ng-scope" style="margin-top: 20px;padding-top: 20px;border-top: 1px solid #DDDDDD;">

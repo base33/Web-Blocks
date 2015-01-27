@@ -20,7 +20,6 @@ var WebBlocks;
             else if (confirm("This block has already been added.  Are you sure you wish to add the block again?"))
                 this.Blocks.push(block);
         };
-
         Container.prototype.AlertTypes = function () {
             for (var i = 0; i < this.Blocks.length; i++) {
                 alert(this.Blocks[i].__type);
@@ -29,7 +28,6 @@ var WebBlocks;
         return Container;
     })();
     WebBlocks.Container = Container;
-
     var Block = (function () {
         function Block() {
             this.Id = 0;
@@ -41,7 +39,6 @@ var WebBlocks;
         return Block;
     })();
     WebBlocks.Block = Block;
-
     var NodeBlock = (function (_super) {
         __extends(NodeBlock, _super);
         function NodeBlock() {
@@ -51,7 +48,6 @@ var WebBlocks;
         return NodeBlock;
     })(Block);
     WebBlocks.NodeBlock = NodeBlock;
-
     var WysiwygBlock = (function (_super) {
         __extends(WysiwygBlock, _super);
         function WysiwygBlock() {
@@ -61,7 +57,6 @@ var WebBlocks;
         return WysiwygBlock;
     })(Block);
     WebBlocks.WysiwygBlock = WysiwygBlock;
-
     var ContainerPermissionsResult = (function () {
         function ContainerPermissionsResult() {
             this.Valid = false;
@@ -71,7 +66,6 @@ var WebBlocks;
         return ContainerPermissionsResult;
     })();
     WebBlocks.ContainerPermissionsResult = ContainerPermissionsResult;
-
     var CollectionHelper = (function () {
         function CollectionHelper() {
         }
@@ -83,7 +77,6 @@ var WebBlocks;
             }
             return temp;
         };
-
         CollectionHelper.Exists = function (array, method) {
             for (var i = 0; i < this.length; i++) {
                 if (method(this[i]))

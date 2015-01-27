@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\UmbracoCms.7.2.1\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.7.2.1\build\UmbracoCms.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -21,6 +22,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <NuGetPackageImportStamp>386af035</NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.4</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -206,14 +208,9 @@
     <Content Include="App_Plugins\WebBlocks\Assets\Draggable.js" />
     <Content Include="App_Plugins\WebBlocks\Assets\TouchPunch.js" />
     <Content Include="App_Plugins\WebBlocks\Css\WebBlocks.css" />
-    <Content Include="App_Plugins\WebBlocks\Dialogs\WebBlocks.AddBlockDialog.html" />
-    <Content Include="App_Plugins\WebBlocks\Dialogs\webblocks.addblockdialog.js" />
-    <Content Include="App_Plugins\WebBlocks\Dialogs\WebBlocks.RecycleBinDialog.html" />
-    <Content Include="App_Plugins\WebBlocks\Dialogs\webblocks.recyclebindialog.js" />
-    <Content Include="App_Plugins\WebBlocks\Dialogs\WebBlocks.BlockStorageDialog.html" />
-    <Content Include="App_Plugins\WebBlocks\Dialogs\webblocks.blockstoragedialog.js" />
-    <Content Include="App_Plugins\WebBlocks\Dialogs\webblocks.contextmenudialog.js" />
-    <Content Include="App_Plugins\WebBlocks\LayoutBuilder.WysiwygEditor.html" />
+    <Content Include="App_Plugins\WebBlocks\Dialogs\LayoutBuilder.AddBlockDialog.html" />
+    <Content Include="App_Plugins\WebBlocks\Dialogs\LayoutBuilder.RecycleBinDialog.html" />
+    <Content Include="App_Plugins\WebBlocks\Dialogs\LayoutBuilder.BlockStorageDialog.html" />
     <Content Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -245,7 +242,7 @@
     <Content Include="Views\HomePage.cshtml" />
     <Content Include="Views\Global.cshtml" />
     <Content Include="Views\Partials\FeatureBlock.cshtml" />
-    <Content Include="App_Plugins\WebBlocks\Dialogs\WebBlocks.ContextMenuDialog.html" />
+    <Content Include="App_Plugins\WebBlocks\Dialogs\LayoutBuilder.ContextMenuDialog.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -256,9 +253,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Plugins\WebBlocks\Assets\Sortable.js" />
-    <Content Include="App_Plugins\WebBlocks\layoutbuilder.directives.js" />
-    <Content Include="App_Plugins\WebBlocks\LayoutBuilder.Test.html" />
-    <Content Include="App_Plugins\WebBlocks\layoutbuilder.controller.js" />
     <Content Include="App_Plugins\WebBlocks\LayoutBuilder.html" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="css\960.css" />
@@ -311,11 +305,30 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="App_Plugins\WebBlocks\Dialogs\layoutbuilder.addblockdialog.ts" />
+    <TypeScriptCompile Include="App_Plugins\WebBlocks\Dialogs\layoutbuilder.blockstoragedialog.ts" />
+    <TypeScriptCompile Include="App_Plugins\WebBlocks\Dialogs\layoutbuilder.contextmenudialog.ts" />
+    <TypeScriptCompile Include="App_Plugins\WebBlocks\Dialogs\layoutbuilder.recyclebindialog.ts" />
+    <TypeScriptCompile Include="App_Plugins\WebBlocks\LayoutBuilder.Models.ts" />
+    <TypeScriptCompile Include="App_Plugins\WebBlocks\layoutbuilder.controller.ts" />
+    <TypeScriptCompile Include="App_Plugins\WebBlocks\layoutbuilder.directives.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular-animate.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular-cookies.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular-resource.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular-route.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular-sanitize.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\jqueryui\jqueryui.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>

@@ -1,4 +1,4 @@
-﻿//angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
+//angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
 //    return {
 //        terminal: true, // prevent ng-repeat from compiled twice
 //        priority:1001,
@@ -7,7 +7,6 @@
 //            attrs.$set('dynamicmodel', null);
 //            attrs.$set('wbBlock', null);
 //            attrs.$set('ngModel', block);
-
 //            for (var i = 0; i < block.element.attrs.length; i++) {
 //                var attribute = block.element.attrs[i];
 //                attrs.$set(attribute.name, attribute.value);
@@ -16,7 +15,6 @@
 //        }
 //    };
 //});
-
 angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
     return {
         replace: false,
@@ -24,13 +22,11 @@ angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
         link: function (scope, elem, attr) {
             var block = scope.$eval(attr.ngModel);
             var container = scope.$parent.$eval(attr.wbContainerModel);
-
             render();
             bindEvents();
-
             setInterval(function () {
-                if (block.shouldRerender) {
-                    block.shouldRerender = false;
+                if (block.ViewModel.ShouldRerender == true) {
+                    block.ViewModel.ShouldRerender = false;
                     render();
                 }
             }, 2000);
@@ -40,39 +36,35 @@ angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
             //function (shouldRenderValue, oldShouldRenderValue) {
             //    i
             //});
-
             function render() {
+                //scope.$apply(function () {
                 var requiredAttributes = ["wb-block", "wb-on-double-click", "wb-on-double-tap", "wb-on-right-click", "wb-on-touch-hold", "wb-container-model", "ng-model", "ng-repeat"];
                 $.each($(elem)[0].attributes, function () {
                     // this.attributes is not a plain object, but an array
                     // of attribute nodes, which contain both the name and value
                     if (this.specified && requiredAttributes.indexOf(this.name) < 0) {
-                        elem.removeAttr(this.name)
+                        elem.removeAttr(this.name);
                     }
                 });
-
-                //assign all block attributes
-                for (var i = 0; i < block.element.attrs.length; i++) {
-                    var attribute = block.element.attrs[i];
-                    attr.$set(attribute.name, attribute.value);
+                for (var i = 0; i < block.ViewModel.Attributes.length; i++) {
+                    var attribute = block.ViewModel.Attributes[i];
+                    attr.$set(attribute.Name, attribute.Value);
                 }
-
                 attr.$set("class", "");
-                var blockClasses = block.element.classes;
-                if (block._type == "WYSIWYG")
-                    blockClasses = "wbWysiwyg " + container.wysiwygClass;
-
+                var blockClasses = block.ViewModel.Classes;
+                if (block instanceof WebBlocks.LayoutBuilder.WysiwygBlock)
+                    blockClasses = "wbWysiwyg " + container.WysiwygClass;
                 //add all block classes
                 elem.addClass(blockClasses);
                 //add the block content to the block
-                $(elem).html(block.content);
+                $(elem).html(block.ViewModel.Html);
                 //disable all buttons, submits, and anchortag
                 $(elem).find("a, input[type='button'], input[type='submit'], button").on("click", function (e) {
                     e.preventDefault();
                     return false;
                 });
+                //});
             }
-
             function bindEvents() {
                 //bind block to double click event
                 if (attr.wbOnDoubleClick) {
@@ -80,7 +72,6 @@ angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
                         scope.$eval(attr.wbOnDoubleClick)(elem, block, container);
                     });
                 }
-
                 //bind to the mouse down right click event
                 elem.bind("mousedown", function ($event) {
                     if ($event.which == 3) {
@@ -104,20 +95,16 @@ angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
         }
     };
 });
-
 angular.module('umbraco.directives').directive('wbSticky', function () {
     return {
         link: function (scope, elem, attr) {
             var originalOffset = parseInt($(elem).css("top").replace("px", ""));
-
             var scrollableWindow = getFirstParentWithClass(elem, "umb-scrollable");
-
             $(scrollableWindow).scroll(function (e) {
                 var x = $(this).scrollTop();
                 var position = x > originalOffset ? x : originalOffset;
-                $(elem).css("top", position.toString() + "px")
+                $(elem).css("top", position.toString() + "px");
             });
-
             function getFirstParentWithClass(e, cssClass) {
                 if ($(e).hasClass(cssClass)) {
                     return e;
@@ -125,10 +112,8 @@ angular.module('umbraco.directives').directive('wbSticky', function () {
                 return getFirstParentWithClass($(e).parent(), cssClass);
             }
         }
-    }
+    };
 });
-
-
 //angular.module("umbraco.directives").directive("wbOnClick", function () {
 //    return {
 //        link: function (scope, elem, attr) {
@@ -138,9 +123,6 @@ angular.module('umbraco.directives').directive('wbSticky', function () {
 //        }
 //    }
 //});
-
-
-
 /////
 //// wb-prevent-default-on-click attribute:- prevents hyperlinks within the div
 /////
@@ -156,4 +138,5 @@ angular.module('umbraco.directives').directive('wbSticky', function () {
 //            });
 //        }
 //    };
-//});
+//}); 
+//# sourceMappingURL=layoutbuilder.directives.js.map

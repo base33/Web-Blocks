@@ -8,6 +8,11 @@ namespace WebBlocks.Model
 {
     public class WysiwygBlock : Block
     {
+        public WysiwygBlock()
+        {
+
+        }
+
         public WysiwygBlock(int id)
         {
             Id = id;

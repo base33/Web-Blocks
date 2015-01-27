@@ -23,22 +23,20 @@ $(document).ready(function () {
                             webBlocksApp(data2);
                         }
                     });
-                } else {
+                }
+                else {
                     webBlocksApp(data);
                 }
             }
         });
     });
 });
-
 function webBlocksApp(data) {
     var currentActiveContainer = null;
     var currentActiveBlock = null;
-
     //dragging variables (drag and drop support)
     var draggedEl;
     var dragging = false;
-
     webBlocksLogOut();
     data = data.replace("<body", "<body><div id='wbBackEnd'").replace("</body>", "</div></body>");
     var body = $(data).filter('#wbBackEnd');
@@ -51,25 +49,22 @@ function webBlocksApp(data) {
                 onSelect: function (e, context) {
                     var el = $(this);
                     var blockId = el.attr("rel");
-
                     // Folders shouldn't do anything.. return false from here to prevent menu hiding
                     if (el.hasClass('folder')) {
                         return false;
                     }
-
                     //if the user clicked to add a new Wysiwyg block and the container is allowed to add them
                     if (el.hasClass('wbAddWysiwygBlock') && hasAttr(currentActiveContainer, "dynamicWysiwygClass")) {
                         var newId = generateRandomNumber(10000, 52000);
-
                         //as long as no other wysiwyg blocks have the same id
                         if ($(".pageWysiwygBlock[wbid='" + newId + "']").length <= 0) {
                             var dynamicWysiwygClass = $(currentActiveContainer).attr("dynamicWysiwygClass");
-
                             //add the wysiwyg block
                             $(currentActiveContainer).append("<div class='block pageWysiwygBlock wysiwygOff " + dynamicWysiwygClass + "' templateBlock='true' wbid='" + newId + "'></div>");
                             $('#canvas .block').jeegoocontext('wbBlockContextMenu', contextMenuOptions);
                         }
-                    } else if (el.hasClass('wbAddWysiwygBlock') && !hasAttr(currentActiveContainer, "dynamicWysiwygClass")) {
+                    }
+                    else if (el.hasClass('wbAddWysiwygBlock') && !hasAttr(currentActiveContainer, "dynamicWysiwygClass")) {
                         $("#wysiwygNotAllowedDialog").dialog({
                             modal: true,
                             buttons: {
@@ -79,12 +74,10 @@ function webBlocksApp(data) {
                             }
                         });
                     }
-
                     // Block items can be added to a container
                     if (el.hasClass('blockItem')) {
                         addBlock(blockId, currentActiveContainer);
                     }
-
                     switch (blockId) {
                         case 'delete':
                             deleteBlock(currentActiveBlock, currentActiveContainer);
@@ -98,14 +91,11 @@ function webBlocksApp(data) {
                     }
                 }
             };
-
             // Context menu for block and container
             $('#canvas .block').jeegoocontext('wbBlockContextMenu', contextMenuOptions);
             $('#canvas .container').jeegoocontext('wbContainerContextMenu', contextMenuOptions);
-
             // Make container sortable elements
             $('#canvas .container').sortable({ revert: true });
-
             //event to detect which is the current active block
             $('#canvas .block').live('mousedown', function (e) {
                 if (e.which == 3) {
@@ -118,12 +108,10 @@ function webBlocksApp(data) {
                     currentActiveContainer = $(this);
                 }
             });
-
             //double click edit block event
             $('#canvas .block').live('dblclick', function () {
                 editBlock($(this));
             });
-
             //events to highlight the container being hovered on
             $('#canvas .container').live('mouseover', function () {
                 if ($("#jstree-dragged", window.parent.document).is(":visible") && !dragging) {
@@ -133,32 +121,26 @@ function webBlocksApp(data) {
             $("#canvas .container").live("mouseout", function () {
                 $(this).removeClass("containerHover");
             });
-
             // Go through all page wysiwyg blocks that are empty and update their class
             $('.pageWysiwygBlock').each(function (index, pageWysiwygBlock) {
                 if ($.trim($(pageWysiwygBlock).html()) == '') {
                     $(pageWysiwygBlock).addClass('wysiwygOff');
                 }
             });
-
             // Disable anchor clicks
             $('#canvas a').click(function (e) {
                 e.preventDefault();
                 return false;
             });
-
             // Disable submit buttons
             $('#canvas button, #canvas input[type="submit"]').attr('disabled', 'disabled');
-
             // Disable form submit events
             $('#canvas form').live("submit", function (e) {
                 e.preventDefault();
                 return false;
             });
-
             //disable input selected
             $("#canvas input[type='text']").attr('unselectable', 'on').on('selectstart', false).attr("disabled", true);
-
             //////////////////////////////////////////
             // DRAGGING SUPPORT FOR UMBRACO
             //////////////////////////////////////////
@@ -169,77 +151,62 @@ function webBlocksApp(data) {
                     cursor: 'move'
                 });
             });
-
             $('.tree.tree-umbraco li li', window.parent.document).delegate('a', 'mousedown', function (e) {
                 if (e.which == 1) {
                     draggedEl = $(this).parent();
                     draggedEl.attr('rel', 'dataNode');
                 }
             });
-
             $('#canvas .container').live('mouseover', function () {
                 if ($("#jstree-dragged", window.parent.document).is(":visible") && !dragging) {
                     $(this).addClass("containerHover");
                 }
             });
-
             $("#canvas .container").live("mouseout", function () {
                 $(this).removeClass("containerHover");
             });
-
             $("#canvas .container").live("mouseup", function () {
                 // Put this element into local scope
                 var containerElement = $(this);
-
                 containerElement.removeClass("containerHover");
-
                 if (typeof (draggedEl) !== 'undefined') {
                     var id = draggedEl.attr('id');
                     $("#jstree-dragged", window.parent.document).remove();
                     draggedEl = undefined;
-
                     addBlock(id, containerElement);
                 }
             });
-
             //////////////////////////////////////////
             // END OF DRAGGING SUPPORT FOR UMBRACO
             //////////////////////////////////////////
             //prepare for save
             $("form").submit(function () {
                 var containers = new Array();
-
                 $(".container").each(function () {
                     var container = new WebBlocks.Container();
                     container.Name = $(this).attr("wbid");
-
                     var sortOrder = 0;
                     $(this).find(".block").each(function () {
                         var block = null;
-
                         if ($(this).hasClass("pageWysiwygBlock")) {
                             block = new WebBlocks.WysiwygBlock();
                             block.Content = encodeURIComponent($(this).html());
                             block.Content = block.Content.replace('+', '%2B');
-                        } else {
+                        }
+                        else {
                             block = new WebBlocks.NodeBlock();
                         }
-
                         block.Id = $(this).attr("wbid");
                         block.SortOrder = sortOrder;
                         block.IsTemplateBlock = hasAttrValue($(this), "templateBlock", "true");
                         block.IsDeleted = hasAttrValue($(this), "deletedBlock", "deleted");
-
                         container.Blocks.push(block);
                         sortOrder++;
                     });
-
                     containers.push(container);
                 });
-
                 $("#" + txtHiddenLayoutClientId).val(JSON.stringify(containers));
             });
-
             //IE FIX
             if ($.browser.msie) {
                 $('form').submit(function (e) {
@@ -249,9 +216,7 @@ function webBlocksApp(data) {
                     });
                 });
             }
-
             var tinymceLoaded = false;
-
             //////////
             //  INSTANTIATE DIALOGS
             /////////
@@ -269,7 +234,8 @@ function webBlocksApp(data) {
                             currentActiveBlock.html(content);
                             if (content !== '') {
                                 currentActiveBlock.removeClass('wysiwygOff');
-                            } else {
+                            }
+                            else {
                                 currentActiveBlock.addClass('wysiwygOff');
                             }
                         }
@@ -289,7 +255,8 @@ function webBlocksApp(data) {
                             tinymceLoaded = true;
                             tinyMCE.activeEditor.setContent(currentActiveBlock.html());
                         });
-                    } else {
+                    }
+                    else {
                         tinyMCE.activeEditor.setContent(currentActiveBlock.html());
                     }
                 },
@@ -297,7 +264,6 @@ function webBlocksApp(data) {
                     //tinyMCE.EditorManager.execCommand('mceRemoveControl', true, 'tinymce');
                 }
             });
-
             // Instantiate the edit block iframe for other types of nodes
             var $editBlockIframeDialog = $('#editBlockIframe').dialog({
                 title: 'Edit Block',
@@ -312,11 +278,9 @@ function webBlocksApp(data) {
                     }
                 }
             });
-
             //remove preview cookie
             $.get("/removepreviewcookie.ashx", function (data) {
             });
-
             function rerenderBlock(blockElement) {
                 var blockId = $(blockElement).attr("wbid");
                 var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?pageId=" + currentNodeId + "&blockId=" + blockId;
@@ -336,7 +300,6 @@ function webBlocksApp(data) {
                     }
                 });
             }
-
             function addBlock(blockId, containerElement) {
                 //validate the block - get the block doc type
                 $.ajax({
@@ -347,21 +310,18 @@ function webBlocksApp(data) {
                     success: function (data) {
                         //get whether it is valid
                         var result = validateBlock(data, containerElement);
-
                         //if its a valid block
                         if (result.Valid) {
                             //add the block
                             addBlockToContainer(blockId, containerElement);
-                        } else {
+                        }
+                        else {
                             //show the appropriate error message
                             var message = result.Type == "Allowed" ? "The following blocks are allowed:<br/>" : "The following blocks are not allowed:<br/>";
-
                             for (var i = 0; i < result.DocTypes.length; i++) {
                                 message += result.DocTypes[i] + ",";
                             }
-
                             message = message.substring(0, message.length - 1);
-
                             $("#containerPermissionsDialog .containerPermissionsMessage").html(message);
                             $("#containerPermissionsDialog").dialog({
                                 modal: true,
@@ -375,7 +335,6 @@ function webBlocksApp(data) {
                     }
                 });
             }
-
             function addBlockToContainer(blockId, containerElement) {
                 var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?pageId=" + currentNodeId + "&blockId=" + blockId;
                 $.ajax({
@@ -392,18 +351,17 @@ function webBlocksApp(data) {
                     }
                 });
             }
-
             function editBlock(blockElement) {
                 currentActiveBlock = blockElement;
                 if ($(blockElement).hasClass("pageWysiwygBlock") || $(blockElement).hasClass("wysiwygOff")) {
                     $tinymceDialog.dialog('open');
-                } else {
+                }
+                else {
                     $('#editBlockIframe').attr('src', '/umbraco/editContent.aspx?id=' + currentActiveBlock.attr("wbid"));
                     $editBlockIframeDialog.dialog('open');
                     $('#editBlockIframe').css({ width: 770, height: 500 });
                 }
             }
-
             function deleteBlock(blockElement, containerElement) {
                 $(blockElement).effect("shake", { times: 4, distance: 6 }, 50, function () {
                     $(blockElement).effect("explode", { pieces: 25 }, 600, function () {
@@ -415,52 +373,47 @@ function webBlocksApp(data) {
                     });
                 });
             }
-
             function sortBlocks(containerElement) {
             }
-
             function validateBlock(blockDocType, containerElement) {
                 var validResult = new WebBlocks.ContainerPermissionsResult();
                 if (hasAttr(containerElement, "allowedBlocks")) {
                     validResult.Type = "Allowed";
                     validResult.DocTypes = $(containerElement).attr("allowedBlocks").split(',');
                     validResult.Valid = $.inArray(blockDocType, validResult.DocTypes) != -1;
-                } else if (hasAttr(containerElement, "excludedBlocks")) {
+                }
+                else if (hasAttr(containerElement, "excludedBlocks")) {
                     validResult.Type = "Excluded";
                     validResult.DocTypes = $(containerElement).attr("excludedBlocks").split(',');
                     validResult.Valid = $.inArray(blockDocType, validResult.DocTypes) != -1;
-                } else {
+                }
+                else {
                     validResult.Valid = true;
                 }
                 return validResult;
             }
-
             function hasAttrValue(element, attributeName, valueExpected) {
                 var attr = $(element).attr(attributeName);
-
                 //some older browsers return false
                 if (typeof attr !== 'undefined' && attr !== false) {
                     return attr == valueExpected;
                 }
                 return false;
             }
-
             function hasAttr(element, attributeName) {
                 var attr = $(element).attr(attributeName);
                 return typeof attr !== 'undefined' && attr !== false;
             }
-
             function generateRandomNumber(min, max) {
                 var i = 0;
                 do {
                     i = Math.floor((Math.random() * max) + 1);
-                } while(i < min && i > max);
+                } while (i < min && i > max);
                 return i;
             }
         });
     });
 }
-
 function ensureLoggedInForProtectedPage(callback) {
     if (isProtectedPage)
         $.post("/WebBlocksProtectedPage.ashx", { command: "signin", username: username, password: password }, function () {
@@ -469,19 +422,17 @@ function ensureLoggedInForProtectedPage(callback) {
     else
         callback();
 }
-
 function webBlocksLogOut() {
-    try  {
+    try {
         $.post("/WebBlocksProtectedPage.ashx", { command: "signout" });
-    } catch (ex) {
+    }
+    catch (ex) {
     }
 }
-
 function detectIE() {
     var ua = window.navigator.userAgent;
     var msie = ua.indexOf('MSIE ');
     var trident = ua.indexOf('Trident/');
-
     // other browser
     return msie > 0 || trident > 0;
 }
