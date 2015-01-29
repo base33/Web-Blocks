@@ -14,8 +14,7 @@ namespace WebBlocks.Utilities.WebBlocks
     {
         public static bool IsInBuilder
         {
-            get { return CacheHelper.Get<bool>("wbIsInBuilder") || UmbracoContext.Current.InPreviewMode; }
-            set { CacheHelper.Add("wbIsInBuilder", value); }
+            get { return HttpContext.Current.Request.QueryString["wbPreview"] == "true"; }
         }
 
         public static int CurrentPageNodeId

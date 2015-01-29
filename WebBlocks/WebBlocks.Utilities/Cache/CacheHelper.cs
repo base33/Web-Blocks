@@ -25,7 +25,7 @@ namespace WebBlocks.Utilities.Cache
 
         public static bool Exists(string key)
         {
-            return HttpContext.Current.Cache[key] != null;
+            return HttpContext.Current.Items[key] != null;
         }
     }
 }

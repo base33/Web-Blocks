@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Umbraco.Web;
 using Umbraco.Web.Models;
+using WebBlocks.Models.Angular;
 using WebBlocks.Utilities.MVC;
 using WebBlocks.Utilities.WebBlocks;
 
@@ -31,7 +32,29 @@ namespace WebBlocks.Extensions
             if (isInBuilder)
                 html.ViewContext.Writer.Write("<div class='wbLayout'>");
 
-            return new HtmlClosure(html, isInBuilder ? "</div>" : "");
+            return new LayoutBuilderClosure(html, isInBuilder ? "</div>" : "");
         }
+
+
+        public class LayoutBuilderClosure : IDisposable
+        {
+            protected HtmlHelper<RenderModel> html;
+            protected string htmlToClose;
+
+            public LayoutBuilderClosure(HtmlHelper<RenderModel> html, string htmlToClose)
+            {
+                this.html = html;
+                this.htmlToClose = htmlToClose;
+            }
+
+            public void Dispose()
+            {
+                var containersBuilder = AngularContainersBuilder.Load();
+                string containersJSON = containersBuilder.ConvertToJSON();
+                html.ViewContext.Writer.Write("<script type='text/javascript' id='wbContainerJSON'>{0}</script>", containersJSON);
+                html.ViewContext.Writer.Write(htmlToClose);
+            }
+        }
+
     }
 }

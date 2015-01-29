@@ -18,7 +18,7 @@ angular.module("umbraco").controller("WebBlocks.RecycleBinDialogCtrl", function 
     };
     $scope.deleteBlock = function (draggableBlock) {
         if (confirm("Are you sure you wish to delete this block?")) {
-            removeFromArray(dialogOptions.modelData, draggableBlock.block);
+            removeFromArray(dialogOptions.modelData, draggableBlock.Block);
             removeFromArray($scope.draggableBlockArray, draggableBlock);
         }
     };

@@ -1,12 +1,12 @@
 {   
     propertyEditors: [      
         {
-            alias: "WebBlocks.LayoutBuilder",
-            name: "Mentor Web Blocks",
+            alias: "MentorWebBlocks.LayoutBuilder",
+            name: "Mentor Web Blocks: Layout Builder",
             hideLabel: true,
-            valueType: "JSON",
             editor: {
-                view: "~/App_Plugins/WebBlocks/LayoutBuilder.html"
+                view: "~/App_Plugins/WebBlocks/LayoutBuilder.html",
+				valueType: "JSON"
             }
         }
     ]

@@ -1,6 +1,6 @@
 /// <reference path="../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../scripts/typings/jqueryui/jqueryui.d.ts" />
-angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope, appState, eventsService, assetsService, dialogService, notificationsService, $compile) {
+angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope, $http, $element, appState, eventsService, assetsService, dialogService, notificationsService, $compile) {
     //$scope.wysiwygEditorUrl = "/App_Plugins/WebBlocks/LayoutBuilder.WysiwygEditor.html";
     $scope.activeEditSessions = {};
     $scope.config = {
@@ -9,7 +9,8 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
     $scope.state = {
         navigationVisible: false
     };
-    $scope.model = loadLayoutBuilderModel();
+    $scope.model.value = loadLayoutBuilder();
+    var layoutBuilderModel = $scope.model.value;
     $scope.uiState = new WebBlocks.UI.UIState({
         LayoutBuilder: new WebBlocks.UI.LayoutBuilderState(true),
         IframeEditor: new WebBlocks.UI.IframeEditorState(false)
@@ -49,9 +50,8 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         }
     };
     function loadBlockContent(block, callback) {
-        var segments = window.location.hash.split("/");
-        var currentContentId = segments[segments.length - 1];
-        var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?pageId=" + currentContentId + "&blockId=" + block.Id;
+        var currentContentId = getCurrentContentId();
+        var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?wbPreview=true&pageId=" + currentContentId + "&blockId=" + block.Id;
         $.ajax({
             type: 'GET',
             url: url,
@@ -81,10 +81,10 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildAddBlockDialogOptions(addBlockMenu));
     };
     $scope.showBlockStorageDialog = function () {
-        dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildBlockStorageDialogOptions($scope.model.BlockStorage));
+        dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildBlockStorageDialogOptions(layoutBuilderModel.BlockStorage));
     };
     $scope.showRecycleBinDialog = function () {
-        dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildRecycleBinDialogOptions($scope.model.RecycleBin));
+        dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildRecycleBinDialogOptions(layoutBuilderModel.RecycleBin));
     };
     //handle right click event for blocks
     $scope.showEditBlockDialog = function (sender, block, container) {
@@ -146,7 +146,7 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         var renderedBlock = new WebBlocks.LayoutBuilder.NodeBlock();
         renderedBlock.Id = blockId;
         loadBlockContent(renderedBlock, function () {
-            angular.forEach($scope.model.Containers, function (container, containerName) {
+            angular.forEach(layoutBuilderModel.Containers, function (container, containerName) {
                 for (var i = 0; i < container.Blocks.length; i++) {
                     if (container.Blocks[i].Id == blockId) {
                         var clonedBlockElement = angular.copy(renderedBlock.ViewModel);
@@ -198,12 +198,12 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
                 $scope.editBlock(blockElement, block, container, false);
                 break;
             case 'Move to block storage':
-                $scope.model.BlockStorage.push(block);
+                layoutBuilderModel.BlockStorage.push(block);
                 removeFromArray(container.Blocks, block);
                 notificationsService.success("Successfully added to block storage");
                 break;
             case 'Delete':
-                $scope.model.RecycleBin.push(block);
+                layoutBuilderModel.RecycleBin.push(block);
                 removeFromArray(container.Blocks, block);
                 notificationsService.success("Successfully added to the recycle bin.");
                 break;
@@ -215,22 +215,33 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
             arr.splice(i, 1);
         }
     }
-    function loadLayoutBuilderModel() {
-        var contentContainer = new WebBlocks.LayoutBuilder.Container();
-        contentContainer.WysiwygClass = "grid_9";
-        var sideContainer = new WebBlocks.LayoutBuilder.Container();
-        sideContainer.WysiwygClass = "grid_3";
-        var bottomContainer = new WebBlocks.LayoutBuilder.Container();
-        bottomContainer.WysiwygClass = "grid_9";
-        return {
-            Containers: {
-                contentContainer: contentContainer,
-                sideContainer: sideContainer,
-                bottomContainer: bottomContainer
-            },
-            BlockStorage: [],
-            RecycleBin: []
-        };
+    function getCurrentContentId() {
+        var segments = window.location.hash.split("/");
+        var currentContentId = segments[segments.length - 1];
+        return parseInt(currentContentId);
+    }
+    //triggers an ajax call to load containers and layoutbuilder html
+    //returns the layoutbuilder model that will be loaded into
+    function loadLayoutBuilder() {
+        var currentContentId = getCurrentContentId();
+        var layoutBuilderModel = new WebBlocks.LayoutBuilder.LayoutBuilder();
+        if ($scope.model.value !== undefined) {
+            if ($scope.model.value.BlockStorage !== undefined) {
+                layoutBuilderModel.BlockStorage = $scope.model.value.BlockStorage;
+                layoutBuilderModel.BlockStorage = WebBlocks.LayoutBuilder.TypedBlockConverter.TypeAll(layoutBuilderModel.BlockStorage);
+            }
+            if ($scope.model.value.RecycleBin !== undefined) {
+                layoutBuilderModel.RecycleBin = $scope.model.value.RecycleBin;
+                layoutBuilderModel.RecycleBin = WebBlocks.LayoutBuilder.TypedBlockConverter.TypeAll(layoutBuilderModel.RecycleBin);
+            }
+        }
+        var previewProvider = new WebBlocks.API.LayoutBuilderPreview();
+        previewProvider.GetPreview(currentContentId, $http, function (preview) {
+            layoutBuilderModel.Containers = preview.Containers;
+            var layoutBuilderElements = $compile($(preview.Html)[0].outerHTML)($scope);
+            $element.find("#canvasRender").empty().append(layoutBuilderElements);
+        });
+        return layoutBuilderModel;
     }
     //Button Click - ToggleUmbracoNavigation
     $scope.toggleUmbracoNavigation = function () {
@@ -266,22 +277,4 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
     assetsService.loadCss("/css/960.css");
     assetsService.loadCss("/css/global.backoffice.css");
 });
-var WebBlocksType = {
-    WYSIWYG: "WYSIWYG",
-    NODE: "NODE"
-};
-var WebBlocksApiUrls = {
-    GetNavigationChildren: function (id) {
-        return "/umbraco/WebBlocks/WebBlocksApi/GetChildren?id=" + id;
-    }
-};
-var WebBlocksApiClient = function ($http) {
-    // Gets the navigation children for a specific content id
-    this.GetNavigationChildren = function (id, callback) {
-        var url = WebBlocksApiUrls.GetNavigationChildren(id);
-        $http.get(url).success(function (data, status, headers, config) {
-            callback(data);
-        });
-    };
-};
 //# sourceMappingURL=layoutbuilder.controller.js.map

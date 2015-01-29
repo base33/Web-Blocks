@@ -58,9 +58,37 @@
         }
 
         export class BlockType {
-            public static Wysiwyg: string = "WYSIWYG";
-            public static Node: string = "NODE"
+            public static Wysiwyg: string = "WysiwygBlock";
+            public static Node: string = "NodeBlock"
         };
+
+        export class TypedBlockConverter {
+            public static TypeIt(block: Block) : Block {
+                var typedBlock = block.__type == BlockType.Wysiwyg ?
+                    new WysiwygBlock() :
+                    new NodeBlock();
+
+                typedBlock.Id = block.Id;
+                typedBlock.Name = block.Name;
+                typedBlock.SortOrder = block.SortOrder;
+                typedBlock.IsDeletedBlock = block.IsDeletedBlock;
+                typedBlock.IsTemplateBlock = block.IsTemplateBlock;
+                typedBlock.ViewModel = block.ViewModel;
+
+                if (typedBlock instanceof WysiwygBlock)
+                    typedBlock.Content = (<WysiwygBlock>block).Content;
+
+                return typedBlock;
+            }
+
+            public static TypeAll(blocks: Array<Block>) : Array<Block> {
+                var typedBlocks = new Array<Block>();
+                for (var i = 0; i < blocks.length; i++) {
+                    typedBlocks.push(TypedBlockConverter.TypeIt(blocks[i]));
+                }
+                return typedBlocks;
+            }
+        }
     }//end of WebBlocks.LayoutBuilder
     
 
@@ -178,20 +206,10 @@
 
             export class NavigationViewModel {
                 public Parent: NavigationViewModel;         //the parent navigation view model
-                public Model: NavigationViewModelViewData;  //the data that is used to display in the menu (name, icon etc)
+                public Model: API.Models.NavigationItem;  //the data about the navigation item, such as name, icon, etc
                 public DraggableBlock: DraggableBlockModel; //the draggable block to be dropped into a container
                 public Children: Array<NavigationViewModel>; //child navigation view models ready to the loaded as navigation view models
             }
-
-            export class NavigationViewModelViewData {
-                public constructor(
-                    public Id: number,
-                    public Name: string,
-                    public ContentType: string,
-                    public IconClass: string,
-                    public HasChildren: boolean) {
-                }
-            } 
         }               
     }
 
@@ -228,6 +246,75 @@
                 }
                 return s4() + s4() + s4() + s4() +
                         s4() + s4() + s4() + s4();
+            }
+        }
+    }
+
+    export module API {
+
+        //specialised class to get the layout builder preview html and container json
+        export class LayoutBuilderPreview {
+            public GetPreview(id: number, $http: ng.IHttpService, callback: (preview: Models.LayoutBuilderPreviewModel) => void) {
+                WebBlocksAPIClent.GetPagePreviewHtml(id, $http, function (html) {
+                    var $previewDOM = $(html);
+                    var containersModel = <Array<LayoutBuilder.Container>>JSON.parse($($previewDOM).find("#wbContainerJSON").html());
+                    //convert all blocks so that blocks are their respective type
+                    LayoutBuilderPreview.typeAllBlocks(containersModel);
+                    $($previewDOM).remove("#wbContainerJSON");
+                    var webBlocksPreviewHtml = $($previewDOM).find(".wbLayout").html();
+
+                    var layoutBuilderPreviewModel = new Models.LayoutBuilderPreviewModel(webBlocksPreviewHtml, containersModel);
+                    callback(layoutBuilderPreviewModel);
+                });
+            }
+
+            public static typeAllBlocks(containers: any) {
+                //loop through all containers and type all blocks
+                angular.forEach(containers, function (container: WebBlocks.LayoutBuilder.Container, containerName: string) {
+                    container.Blocks = LayoutBuilder.TypedBlockConverter.TypeAll(container.Blocks);
+                });
+            }
+            
+        }
+
+        export module Models {
+            //The preview html for the web blocks canvas and containers json
+            export class LayoutBuilderPreviewModel {
+                public constructor(
+                    public Html: string,
+                    public Containers: Array<WebBlocks.LayoutBuilder.Container>) {
+                }
+            }
+
+            export class NavigationItem {
+                public constructor(
+                    public Id: number,
+                    public Name: string,
+                    public ContentType: string,
+                    public IconClass: string,
+                    public HasChildren: boolean) {
+                }
+            } 
+        }
+
+        export class WebBlocksAPIClent {
+            //gets the full web block preview html for a content page      
+            public static GetPagePreviewHtml(id: number, $http: ng.IHttpService, callback: (string) => void) {
+                HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetPagePreview?id=" + id, $http, callback);
+            }
+
+            public static GetNavigationChildren(id: number, $http: ng.IHttpService, callback: (navigationItems: Array<Models.NavigationItem>) => void) {
+                HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetChildren?id=" + id, $http, callback);
+            }
+        }
+
+        //$http service wrapper
+        export class HttpRequest {
+            public static Get(url: string, $http: ng.IHttpService, callback: (any) => void) {
+                $http.get(url)
+                    .success(function (data, status, headers, config) {
+                    callback(data);
+                });
             }
         }
     }

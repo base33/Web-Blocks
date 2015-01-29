@@ -12,6 +12,7 @@ using WebBlocks.Model;
 using WebBlocks.Utilities.Umbraco;
 using WebBlocks.Utilities.WebBlocks;
 using WebBlocks.Providers;
+using WebBlocks.Models.Angular;
 
 namespace WebBlocks.Extensions
 {
@@ -41,7 +42,11 @@ namespace WebBlocks.Extensions
             WebBlocksUtility.CurrentContainer = container;
 
             //if the container is being rendered for the builder or a container renderer has not been specified
-            if (WebBlocksUtility.IsInBuilder || (!WebBlocksUtility.IsInBuilder && container.ContainerRenderer == null))
+            if(WebBlocksUtility.IsInBuilder)
+            {
+                RenderAngularJSContainer(container, html);
+            }
+            else if (container.ContainerRenderer == null)
             {
                 RenderStandardContainer(container, html);
             }
@@ -51,6 +56,49 @@ namespace WebBlocks.Extensions
             }
 
             return "";
+        }
+
+        private static void RenderAngularJSContainer(IContainer container, HtmlHelper<RenderModel> html)
+        {
+            //create angularjs container
+            var containersBuilder = AngularContainersBuilder.Load();
+            containersBuilder.AddContainer(
+                new AngularContainer()
+                {
+                    Name = container.Name,
+                    WysiwygClass = container.DynamicWysiwygClass,
+                    Blocks = new List<AngularBlock>()
+                });
+
+
+
+            string renderedBlocks = "";
+            string containerPermissionAttr = WebBlocksUtility.IsInBuilder ? BuildContainerPermissionsAttr(container.ContainerPermissions) : "";
+
+            AngularBlockView blockView = new AngularBlockView();
+            foreach (Block block in container.Blocks)
+            {
+                string renderedBlock = blockView.Render(block, html);
+                renderedBlocks += renderedBlock ?? "";
+            }
+
+            html.ViewContext.Writer.Write("<{0}{1}{2} ui-sortable='getSortableOptions(model.value.Containers.{3}.Blocks)' ng-model='model.value.Containers.{3}.Blocks' wb-container-model='model.value.Containers.{3}' ng-drop='true' ng-drop-success='handleBlockDropped($data, $event, $container)'>",
+                                          container.Element,
+                                          container.CssClass != "" ? string.Format(" class=\"{0} wbcontainer\"", container.CssClass) : "",
+                                          BuildHtmlAttrString(container.Attributes),
+                                          container.Name);
+
+            html.ViewContext.Writer.Write(@"<div wb-block
+                                 wb-on-double-click='editBlock'
+                                 wb-on-double-tap='editBlock'
+                                 wb-on-right-click='showEditBlockDialog'
+                                 wb-on-touch-hold='showEditBlockDialog'
+                                 wb-container-model='model.value.Containers.{0}'
+                                 ng-model='block'
+                                 ng-repeat='block in model.value.Containers.{0}.Blocks'>
+                            </div>", container.Name);
+
+            html.ViewContext.Writer.Write("</{0}>", container.Element);
         }
 
         private static void RenderStandardContainer(IContainer container, HtmlHelper<RenderModel> html)
@@ -93,7 +141,7 @@ namespace WebBlocks.Extensions
 
             //load the current container saved state
             ContainerProvider containerProvider = new ContainerProvider();
-            Container container = containerProvider.ContainerByName(containerName);
+            AngularContainer container = containerProvider.ContainerByName(containerName);
 
             if (container == null) return;
 

@@ -3,12 +3,12 @@
 
 angular.module("umbraco")
     .controller("WebBlocks.LayoutBuilder",
-    function ($scope: any, appState: any, eventsService: any, assetsService, dialogService, notificationsService, $compile: ng.ICompiledExpression) {
+    function ($scope: any, $http: ng.IHttpService, $element: JQuery, appState: any, eventsService: any, assetsService, dialogService, notificationsService, $compile: ng.ICompiledExpression) {
         
         //$scope.wysiwygEditorUrl = "/App_Plugins/WebBlocks/LayoutBuilder.WysiwygEditor.html";
 
         $scope.activeEditSessions = {};
-
+        
         $scope.config = {
             canvasWidth: 960
         };
@@ -17,7 +17,8 @@ angular.module("umbraco")
             navigationVisible: false
         };
 
-        $scope.model = loadLayoutBuilderModel();
+        $scope.model.value = loadLayoutBuilder();
+        var layoutBuilderModel = $scope.model.value;
 
         $scope.uiState = new WebBlocks.UI.UIState({
             LayoutBuilder: new WebBlocks.UI.LayoutBuilderState(true),
@@ -69,9 +70,8 @@ angular.module("umbraco")
         };
 
         function loadBlockContent(block: WebBlocks.LayoutBuilder.Block, callback: () => void) {
-            var segments = window.location.hash.split("/");
-            var currentContentId = segments[segments.length - 1];
-            var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?pageId=" + currentContentId + "&blockId=" + block.Id;
+            var currentContentId = getCurrentContentId();
+            var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?wbPreview=true&pageId=" + currentContentId + "&blockId=" + block.Id;
             $.ajax({
                 type: 'GET',
                 url: url,
@@ -104,11 +104,11 @@ angular.module("umbraco")
         };
 
         $scope.showBlockStorageDialog = function () {
-            dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildBlockStorageDialogOptions($scope.model.BlockStorage));
+            dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildBlockStorageDialogOptions(layoutBuilderModel.BlockStorage));
         };
 
         $scope.showRecycleBinDialog = function () {
-            dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildRecycleBinDialogOptions($scope.model.RecycleBin));
+            dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildRecycleBinDialogOptions(layoutBuilderModel.RecycleBin));
         };
 
         //handle right click event for blocks
@@ -181,7 +181,7 @@ angular.module("umbraco")
             renderedBlock.Id = blockId;
 
             loadBlockContent(renderedBlock, function () {
-                angular.forEach($scope.model.Containers, function (container: WebBlocks.LayoutBuilder.Container, containerName: string) {
+                angular.forEach(layoutBuilderModel.Containers, function (container: WebBlocks.LayoutBuilder.Container, containerName: string) {
                     for (var i = 0; i < container.Blocks.length; i++) {
                         if (container.Blocks[i].Id == blockId) {
                             var clonedBlockElement = angular.copy(renderedBlock.ViewModel);
@@ -241,12 +241,12 @@ angular.module("umbraco")
                     $scope.editBlock(blockElement, block, container, false);
                     break;
                 case 'Move to block storage':
-                    $scope.model.BlockStorage.push(block);
+                    layoutBuilderModel.BlockStorage.push(block);
                     removeFromArray(container.Blocks, block);
                     notificationsService.success("Successfully added to block storage");
                     break;
                 case 'Delete':
-                    $scope.model.RecycleBin.push(block);
+                    layoutBuilderModel.RecycleBin.push(block);
                     removeFromArray(container.Blocks, block);
                     notificationsService.success("Successfully added to the recycle bin.");
                     break;
@@ -260,25 +260,37 @@ angular.module("umbraco")
             }
         }
 
-        function loadLayoutBuilderModel(): WebBlocks.LayoutBuilder.LayoutBuilder {
-            var contentContainer = new WebBlocks.LayoutBuilder.Container();
-            contentContainer.WysiwygClass = "grid_9";
+        function getCurrentContentId() {
+            var segments = window.location.hash.split("/");
+            var currentContentId = segments[segments.length - 1];
+            return parseInt(currentContentId);
+        }
 
-            var sideContainer = new WebBlocks.LayoutBuilder.Container();
-            sideContainer.WysiwygClass = "grid_3";
+        //triggers an ajax call to load containers and layoutbuilder html
+        //returns the layoutbuilder model that will be loaded into
+        function loadLayoutBuilder(): WebBlocks.LayoutBuilder.LayoutBuilder {
+            var currentContentId = getCurrentContentId();
+            var layoutBuilderModel = new WebBlocks.LayoutBuilder.LayoutBuilder();
 
-            var bottomContainer = new WebBlocks.LayoutBuilder.Container();
-            bottomContainer.WysiwygClass = "grid_9";
+            if ($scope.model.value !== undefined) {
+                if ($scope.model.value.BlockStorage !== undefined) {
+                    layoutBuilderModel.BlockStorage = $scope.model.value.BlockStorage;
+                    layoutBuilderModel.BlockStorage = WebBlocks.LayoutBuilder.TypedBlockConverter.TypeAll(layoutBuilderModel.BlockStorage);
+                }
+                if ($scope.model.value.RecycleBin !== undefined) {
+                    layoutBuilderModel.RecycleBin = $scope.model.value.RecycleBin;
+                    layoutBuilderModel.RecycleBin = WebBlocks.LayoutBuilder.TypedBlockConverter.TypeAll(layoutBuilderModel.RecycleBin);
+                }
+            }
 
-            return {
-                Containers: {
-                    contentContainer: contentContainer,
-                    sideContainer: sideContainer,
-                    bottomContainer: bottomContainer
-                },
-                BlockStorage: [],
-                RecycleBin: []
-            };
+            var previewProvider = new WebBlocks.API.LayoutBuilderPreview();
+            previewProvider.GetPreview(currentContentId, $http,
+                function (preview) {
+                    layoutBuilderModel.Containers = preview.Containers;
+                    var layoutBuilderElements = $compile($(preview.Html)[0].outerHTML)($scope);
+                    $element.find("#canvasRender").empty().append(layoutBuilderElements);
+                });
+            return layoutBuilderModel;
         }
 
 
@@ -324,27 +336,3 @@ angular.module("umbraco")
         assetsService.loadCss("/css/global.backoffice.css");
 
     });
-
-var WebBlocksType = {
-    WYSIWYG: "WYSIWYG",
-    NODE: "NODE"
-};
-
-var WebBlocksApiUrls = {
-    GetNavigationChildren: function (id) {
-        return "/umbraco/WebBlocks/WebBlocksApi/GetChildren?id=" + id;
-    }
-};
-
-var WebBlocksApiClient = function ($http) {
-
-    // Gets the navigation children for a specific content id
-    this.GetNavigationChildren = function (id, callback) {
-        var url = WebBlocksApiUrls.GetNavigationChildren(id);
-        $http.get(url)
-            .success(function (data, status, headers, config) {
-            callback(data);
-        })
-    }
-
-};

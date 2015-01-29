@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Script.Serialization;
 using WebBlocks.Model;
+using WebBlocks.Models.Angular;
 using WebBlocks.Serialisation.JavascriptConverters;
 
 namespace WebBlocks.Serialisation
@@ -19,14 +20,14 @@ namespace WebBlocks.Serialisation
         /// </summary>
         /// <param name="json"></param>
         /// <returns></returns>
-        public List<Container> DeserialiseContainers(string json)
+        public AngularLayoutBuilderModel DeserialiseContainers(string json)
         {
-            return JsonConvert.DeserializeObject<List<Container>>(json, new ContainersConverter());
+            return JsonConvert.DeserializeObject<AngularLayoutBuilderModel>(json, new ContainersConverter());
         }
 
-        public string SerialiseContainers(List<Container> containers)
+        public string SerialiseContainers(AngularLayoutBuilderModel layoutBuilder)
         {
-            return JsonConvert.SerializeObject(containers);
+            return JsonConvert.SerializeObject(layoutBuilder);
         }
     }
 }

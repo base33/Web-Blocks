@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Umbraco.Web.Models;
 using WebBlocks.Model;
+using WebBlocks.Models.Angular;
 using WebBlocks.Serialisation;
 using WebBlocks.Utilities.Cache;
 using WebBlocks.Utilities.Umbraco;
@@ -18,21 +19,14 @@ namespace WebBlocks.Providers
     {
         protected List<Container> containers = new List<Container>();
 
-        /// <summary>
-        /// List of all containers saved on the page
-        /// </summary>
-        public List<Container> Containers
-        {
-            get { return containers; }
-            set { containers = value; }
-        }
+        public AngularLayoutBuilderModel LayoutBuilder { get; set; }
 
         /// <summary>
         /// Initialises and loads the current page containers
         /// </summary>
         public ContainerProvider()
         {
-            var json = WebBlocksUtility.CurrentPageContent.GetPropertyValue<string>("webBlocks") ?? "";
+            var json = WebBlocksUtility.CurrentPageContent.GetPropertyValue<string>("webblocks") ?? "";
             LoadContainersFromJson(json, true, WebBlocksUtility.CurrentPageNodeId.ToString());
         }
 
@@ -95,7 +89,7 @@ namespace WebBlocks.Providers
             }
             else
             {
-                containers = DeserialiseContainers(json);
+                LayoutBuilder = DeserialiseContainers(json);
                 if(cacheForRequestLife)
                     CacheHelper.Add(cacheId, this);
             }
@@ -105,7 +99,7 @@ namespace WebBlocks.Providers
         /// Deserialises the saved builder content
         /// </summary>
         /// <param name="json"></param>
-        protected List<Container> DeserialiseContainers(string json)
+        protected AngularLayoutBuilderModel DeserialiseContainers(string json)
         {
             var serialiser = new ContainersSerialiser();
             return serialiser.DeserialiseContainers(json);
@@ -117,10 +111,10 @@ namespace WebBlocks.Providers
         /// </summary>
         /// <param name="name">name of the container</param>
         /// <returns>The container</returns>
-        public Container ContainerByName(string name)
+        public AngularContainer ContainerByName(string name)
         {
-            if (Containers == null) return null;
-            return Containers.FirstOrDefault(c => c.Name == name);
+            if (LayoutBuilder == null) return null;
+            return LayoutBuilder.Containers.FirstOrDefault(c => c.Key == name).Value;
         }
     }
 }

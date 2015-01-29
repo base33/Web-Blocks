@@ -27,20 +27,18 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
     };
     $scope.loadChildNavigationIntoMenu = function (navigationModel) {
         $scope.viewNavigationSource.show = false;
-        //load the children from the API
-        var webBlocksApiClient = new WebBlocksApiClient($http);
-        webBlocksApiClient.GetNavigationChildren(navigationModel.Model.Id, function (childNavigationItems) {
+        WebBlocks.API.WebBlocksAPIClent.GetNavigationChildren(navigationModel.Model.Id, $http, function (childNavigationItems) {
             // call the callback function
             $scope.loadChildNavigationIntoMenuCallback(navigationModel, childNavigationItems);
         });
     };
     // navigationModel = the navigation view model which will be the new root of the menu
     // childNavigationItems = the navigation items loaded from the api (we will create navigation meta data models for each, ready for the menu)
-    $scope.loadChildNavigationIntoMenuCallback = function (navigationModel, childrenToLoad) {
+    $scope.loadChildNavigationIntoMenuCallback = function (navigationModel, navigationChildren) {
         $timeout(function () {
             navigationModel.Children = [];
-            for (var i = 0; i < childrenToLoad.length; i++) {
-                navigationModel.Children.push(createChildNavigationModel(navigationModel, childrenToLoad[i]));
+            for (var i = 0; i < navigationChildren.length; i++) {
+                navigationModel.Children.push(createChildNavigationModel(navigationModel, navigationChildren[i]));
             }
             $scope.viewNavigationSource.navigationModel = navigationModel;
             $scope.viewNavigationSource.show = true;
@@ -68,7 +66,7 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
     init();
     function createRootNavigationViewModel(rootId) {
         var nvm = new WebBlocks.UI.Dialogs.NavigationViewModel();
-        nvm.Model = new WebBlocks.UI.Dialogs.NavigationViewModelViewData(rootId, "Root", "Null", "icon-folder", true);
+        nvm.Model = new WebBlocks.API.Models.NavigationItem(rootId, "Root", "Null", "icon-folder", true);
         nvm.Children = new Array();
         return nvm;
     }

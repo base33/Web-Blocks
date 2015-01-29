@@ -2,29 +2,38 @@
 
 @{
     Layout = "Global.cshtml";
-    //var d = new umbraco.cms.businesslogic.web.Document(Request.GetItemAs<int>("id"));
-    //var pc = new umbraco.presentation.preview.PreviewContent(UmbracoUser, Guid.NewGuid(), false);
-    //pc.PrepareDocument(UmbracoUser, d, true);
-    //pc.SavePreviewSet();
-    //docLit.Text = d.Text;
-    //changeSetUrl.Text = pc.PreviewsetPath;
-    //pc.ActivatePreviewCookie();
-    //Response.Redirect("../../" + d.Id.ToString(CultureInfo.InvariantCulture) + ".aspx", true);
+    
 }
 
 
 @section Content {
 	<div class="container_12 clearfix">
-            @Html.Container(new Container
-       {
-           Name = "fullWidthSliderContainer",
-           CssClass = "contentBlock_12 homeSlider",
-           Blocks = new List<IBlock>()
-           {
-               new NodeBlock(1059),
-               new WysiwygBlock(1)
-           },
-           ContainerPermissions = new AllowedBlocks("flexsliderSlideBlock")
-       })
+        @Html.Container(new Container
+        {
+            Name = "sideContainer",
+            CssClass = "contentBlock_3",
+            DynamicWysiwygClass = "grid_3",
+            Blocks = new List<IBlock>()
+            {
+                new NodeBlock(1059),
+                new WysiwygBlock(1) {
+                    Content = "<p>Here is some content</p>"
+                }
+            }
+        })
+
+        @Html.Container(new Container
+        {
+            Name = "contentContainer",
+            CssClass = "contentBlock_9",
+            DynamicWysiwygClass = "grid_9",
+            Blocks = new List<IBlock>()
+            {
+                new NodeBlock(1059),
+                new WysiwygBlock(1) {
+                    Content = "<p>Here is some content</p>"
+                }
+            }
+        })
     </div>
 }

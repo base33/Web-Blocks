@@ -24,8 +24,6 @@ namespace WebBlocks.SurfaceControllers
         {
             if (umbraco.BusinessLogic.User.GetCurrent() == null) throw new HttpException(401, "Unauthorized");
 
-            WebBlocksUtility.IsInBuilder = true;
-
             WebBlocksAPI blockInstanceApi = new WebBlocksAPI();
             blockInstanceApi.BlockElement = "div";
             blockInstanceApi.BlockAttributes = new Dictionary<string, string>();

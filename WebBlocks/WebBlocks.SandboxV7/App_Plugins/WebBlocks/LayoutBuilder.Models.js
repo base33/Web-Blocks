@@ -81,12 +81,37 @@ var WebBlocks;
         var BlockType = (function () {
             function BlockType() {
             }
-            BlockType.Wysiwyg = "WYSIWYG";
-            BlockType.Node = "NODE";
+            BlockType.Wysiwyg = "WysiwygBlock";
+            BlockType.Node = "NodeBlock";
             return BlockType;
         })();
         _LayoutBuilder.BlockType = BlockType;
         ;
+        var TypedBlockConverter = (function () {
+            function TypedBlockConverter() {
+            }
+            TypedBlockConverter.TypeIt = function (block) {
+                var typedBlock = block.__type == BlockType.Wysiwyg ? new WysiwygBlock() : new NodeBlock();
+                typedBlock.Id = block.Id;
+                typedBlock.Name = block.Name;
+                typedBlock.SortOrder = block.SortOrder;
+                typedBlock.IsDeletedBlock = block.IsDeletedBlock;
+                typedBlock.IsTemplateBlock = block.IsTemplateBlock;
+                typedBlock.ViewModel = block.ViewModel;
+                if (typedBlock instanceof WysiwygBlock)
+                    typedBlock.Content = block.Content;
+                return typedBlock;
+            };
+            TypedBlockConverter.TypeAll = function (blocks) {
+                var typedBlocks = new Array();
+                for (var i = 0; i < blocks.length; i++) {
+                    typedBlocks.push(TypedBlockConverter.TypeIt(blocks[i]));
+                }
+                return typedBlocks;
+            };
+            return TypedBlockConverter;
+        })();
+        _LayoutBuilder.TypedBlockConverter = TypedBlockConverter;
     })(LayoutBuilder = WebBlocks.LayoutBuilder || (WebBlocks.LayoutBuilder = {})); //end of WebBlocks.LayoutBuilder
     var UI;
     (function (UI) {
@@ -212,17 +237,6 @@ var WebBlocks;
                 return NavigationViewModel;
             })();
             Dialogs.NavigationViewModel = NavigationViewModel;
-            var NavigationViewModelViewData = (function () {
-                function NavigationViewModelViewData(Id, Name, ContentType, IconClass, HasChildren) {
-                    this.Id = Id;
-                    this.Name = Name;
-                    this.ContentType = ContentType;
-                    this.IconClass = IconClass;
-                    this.HasChildren = HasChildren;
-                }
-                return NavigationViewModelViewData;
-            })();
-            Dialogs.NavigationViewModelViewData = NavigationViewModelViewData;
         })(Dialogs = UI.Dialogs || (UI.Dialogs = {}));
     })(UI = WebBlocks.UI || (WebBlocks.UI = {}));
     var Utils;
@@ -269,5 +283,81 @@ var WebBlocks;
         })();
         Utils.GuidHelper = GuidHelper;
     })(Utils = WebBlocks.Utils || (WebBlocks.Utils = {}));
+    var API;
+    (function (API) {
+        //specialised class to get the layout builder preview html and container json
+        var LayoutBuilderPreview = (function () {
+            function LayoutBuilderPreview() {
+            }
+            LayoutBuilderPreview.prototype.GetPreview = function (id, $http, callback) {
+                WebBlocksAPIClent.GetPagePreviewHtml(id, $http, function (html) {
+                    var $previewDOM = $(html);
+                    var containersModel = JSON.parse($($previewDOM).find("#wbContainerJSON").html());
+                    //convert all blocks so that blocks are their respective type
+                    LayoutBuilderPreview.typeAllBlocks(containersModel);
+                    $($previewDOM).remove("#wbContainerJSON");
+                    var webBlocksPreviewHtml = $($previewDOM).find(".wbLayout").html();
+                    var layoutBuilderPreviewModel = new Models.LayoutBuilderPreviewModel(webBlocksPreviewHtml, containersModel);
+                    callback(layoutBuilderPreviewModel);
+                });
+            };
+            LayoutBuilderPreview.typeAllBlocks = function (containers) {
+                //loop through all containers and type all blocks
+                angular.forEach(containers, function (container, containerName) {
+                    container.Blocks = LayoutBuilder.TypedBlockConverter.TypeAll(container.Blocks);
+                });
+            };
+            return LayoutBuilderPreview;
+        })();
+        API.LayoutBuilderPreview = LayoutBuilderPreview;
+        var Models;
+        (function (Models) {
+            //The preview html for the web blocks canvas and containers json
+            var LayoutBuilderPreviewModel = (function () {
+                function LayoutBuilderPreviewModel(Html, Containers) {
+                    this.Html = Html;
+                    this.Containers = Containers;
+                }
+                return LayoutBuilderPreviewModel;
+            })();
+            Models.LayoutBuilderPreviewModel = LayoutBuilderPreviewModel;
+            var NavigationItem = (function () {
+                function NavigationItem(Id, Name, ContentType, IconClass, HasChildren) {
+                    this.Id = Id;
+                    this.Name = Name;
+                    this.ContentType = ContentType;
+                    this.IconClass = IconClass;
+                    this.HasChildren = HasChildren;
+                }
+                return NavigationItem;
+            })();
+            Models.NavigationItem = NavigationItem;
+        })(Models = API.Models || (API.Models = {}));
+        var WebBlocksAPIClent = (function () {
+            function WebBlocksAPIClent() {
+            }
+            //gets the full web block preview html for a content page      
+            WebBlocksAPIClent.GetPagePreviewHtml = function (id, $http, callback) {
+                HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetPagePreview?id=" + id, $http, callback);
+            };
+            WebBlocksAPIClent.GetNavigationChildren = function (id, $http, callback) {
+                HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetChildren?id=" + id, $http, callback);
+            };
+            return WebBlocksAPIClent;
+        })();
+        API.WebBlocksAPIClent = WebBlocksAPIClent;
+        //$http service wrapper
+        var HttpRequest = (function () {
+            function HttpRequest() {
+            }
+            HttpRequest.Get = function (url, $http, callback) {
+                $http.get(url).success(function (data, status, headers, config) {
+                    callback(data);
+                });
+            };
+            return HttpRequest;
+        })();
+        API.HttpRequest = HttpRequest;
+    })(API = WebBlocks.API || (WebBlocks.API = {}));
 })(WebBlocks || (WebBlocks = {}));
 //# sourceMappingURL=LayoutBuilder.Models.js.map
