@@ -8,30 +8,30 @@
 
 @section Content {
 	<div class="container_12 clearfix">
-        @Html.Container(new Container
+        @Html.Container(new WebBlocks.Models.Angular.AngularContainer
         {
             Name = "sideContainer",
-            CssClass = "contentBlock_3",
-            DynamicWysiwygClass = "grid_3",
+            Classes = "contentBlock_3",
+            WysiwygClass = "grid_3",
             Blocks = new List<IBlock>()
             {
-                new NodeBlock(1059),
-                new WysiwygBlock(1) {
+                new WebBlocks.Models.Angular.ContentBlock(1059),
+                new WebBlocks.Models.Angular.WysiwygBlock(1) {
                     Content = "<p>Here is some content</p>"
                 }
             }
         })
 
-        @Html.Container(new Container
+        @Html.Container(new WebBlocks.Models.Angular.AngularContainer
         {
             Name = "contentContainer",
-            CssClass = "contentBlock_9",
-            DynamicWysiwygClass = "grid_9",
+            Classes = "contentBlock_9",
+            WysiwygClass = "grid_9",
             Blocks = new List<IBlock>()
             {
-                new NodeBlock(1059),
-                new WysiwygBlock(1) {
-                    Content = "<p>Here is some content</p>"
+                new WebBlocks.Models.Angular.ContentBlock(1059),
+                new WebBlocks.Models.Angular.WysiwygBlock(40) {
+                    Content = "<p>Some other content, yeah</p>"   
                 }
             }
         })

@@ -39,12 +39,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AllowedBlocks.cs" />
-    <Compile Include="Block.cs" />
-    <Compile Include="Container.cs" />
     <Compile Include="ExcludedBlocks.cs" />
-    <Compile Include="NodeBlock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WysiwygBlock.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebBlocks.Interfaces\WebBlocks.Interfaces.csproj">

@@ -12,7 +12,7 @@ using umbraco.cms.businesslogic.web;
 using umbraco.NodeFactory;
 using WebBlocks.BusinessLogic.Interfaces;
 using WebBlocks.Views.RenderingEngines;
-using WebBlocks.Model;
+using WebBlocks.Models.Angular;
 using CacheHelper = WebBlocks.Utilities.Cache.CacheHelper;
 using umbraco.BusinessLogic;
 using umbraco.presentation.preview;
@@ -25,6 +25,7 @@ using System.Web.Mvc.Html;
 using WebBlocks.API;
 using WebBlocks.Helpers;
 using Newtonsoft.Json;
+using WebBlocks.Interfaces;
 
 namespace WebBlocks.Views
 {
@@ -34,18 +35,18 @@ namespace WebBlocks.Views
         /// Renders the block
         /// </summary>
         /// <returns>rendered html for the block</returns>
-        public string Render(Block block, HtmlHelper html)
+        public string Render(IBlock block, HtmlHelper html)
         {
             if (!HttpContext.Current.Response.IsClientConnected)
                 return "";
 
-            if (block is NodeBlock)
-                return RenderNodeBlock(block as NodeBlock, html);
+            if (block is ContentBlock)
+                return RenderNodeBlock(block as ContentBlock, html);
             
             return RenderWysiwygBlock(block as WysiwygBlock, html);
         }
 
-        protected string RenderNodeBlock(NodeBlock block, HtmlHelper html)
+        protected string RenderNodeBlock(ContentBlock block, HtmlHelper html)
         {
             //check if the node exists
             if (block.Content == null) return null;
@@ -86,8 +87,8 @@ namespace WebBlocks.Views
             string blockAttributes = string.Join(" ", blockAttributeDictionary.Keys.Select(c => c + "='" + blockAttributeDictionary[c] + "'"));
 
             string blockClass = string.Format("{0}{1}{0}{2}{3}{4}", 
-                block.Class.Length > 0 ? " " : "", 
-                block.Class,
+                block.ViewModel.Classes.Length > 0 ? " " : "", 
+                block.ViewModel.Classes,
                 WebBlocksUtility.CurrentBlockContent.GetPropertyValue("cssClasses") ?? "",
                 CssClasses.Any() ? " " : "",
                 String.Join(" ", CssClasses));
@@ -100,14 +101,15 @@ namespace WebBlocks.Views
 
         protected string RenderWysiwygBlock(WysiwygBlock block, HtmlHelper html)
         {
+            //TODO: set wysiwyg element type from container
             string webBlocksId = WebBlocksUtility.IsInBuilder ? string.Format(" wbid='{0}'", block.Id) : "";
 
-            string blockClass = string.Format("pageWysiwygBlock{0}{1}", block.Class.Length > 0 ? " " : "", block.Class);
+            string blockClass = string.Format("pageWysiwygBlock{0}{1}", block.ViewModel.Classes.Length > 0 ? " " : "", block.ViewModel.Classes);
 
             blockClass = WebBlocksUtility.IsInBuilder ? "block " + blockClass : blockClass;
 
             string blockTemplateAttribute = WebBlocksUtility.IsInBuilder ? string.Format(" templateblock='{0}'", block.IsTemplateBlock.ToString().ToLower()) : "";
-            string blockDeletedAttribute = WebBlocksUtility.IsInBuilder && block.IsDeleted ? " deletedBlock='deleted' style='display:none;visibilty:hidden;'" : "";
+            string blockDeletedAttribute = WebBlocksUtility.IsInBuilder && block.IsDeletedBlock ? " deletedBlock='deleted' style='display:none;visibilty:hidden;'" : "";
 
             TinyMCE tinyMceHelper = new TinyMCE();
 
@@ -116,20 +118,18 @@ namespace WebBlocks.Views
             if (!WebBlocksUtility.IsInBuilder)
                 blockContent = LocalLinkHelper.ResolveLocalLinks(blockContent);
 
-            return string.Format("<{0}{1} class='{2}'{3}{4}>{5}</{0}>", block.Element, webBlocksId, blockClass, blockTemplateAttribute, blockDeletedAttribute,
+            return string.Format("<{0}{1} class='{2}'{3}{4}>{5}</{0}>", block.ViewModel.Tag, webBlocksId, blockClass, blockTemplateAttribute, blockDeletedAttribute,
                 HttpUtility.UrlDecode(blockContent));
         }
 
-        protected IRenderingEngine ResolveRenderingEngine(NodeBlock block)
+        protected IRenderingEngine ResolveRenderingEngine(ContentBlock block)
         {
             try
             {
-                var blockDoc = new Document(block.Id);
-
                 //resolve with partial view
                 IRenderingEngine engine = new PartialViewRenderingEngine
                 {
-                    Macro = new MacroModel(new Macro { ScriptingFile = blockDoc.ContentType.Alias })
+                    Macro = new MacroModel(new Macro { ScriptingFile = block.Content.ContentType.Alias })
                 };
 
                 return engine;
@@ -142,7 +142,7 @@ namespace WebBlocks.Views
 
         public void RenderPreview(HtmlHelper html)
         {
-            string htmlContent = Render(new NodeBlock(WebBlocksUtility.CurrentBlockContent.Id), html);
+            string htmlContent = Render(new ContentBlock(WebBlocksUtility.CurrentBlockContent.Id), html);
 
             html.ViewContext.Writer.Write(htmlContent);
         }

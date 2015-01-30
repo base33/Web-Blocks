@@ -12,7 +12,6 @@ using umbraco.cms.businesslogic.web;
 using umbraco.NodeFactory;
 using WebBlocks.BusinessLogic.Interfaces;
 using WebBlocks.Views.RenderingEngines;
-using WebBlocks.Model;
 using CacheHelper = WebBlocks.Utilities.Cache.CacheHelper;
 using umbraco.BusinessLogic;
 using umbraco.presentation.preview;
@@ -26,6 +25,7 @@ using WebBlocks.API;
 using WebBlocks.Helpers;
 using Newtonsoft.Json;
 using WebBlocks.Models.Angular;
+using WebBlocks.Interfaces;
 
 namespace WebBlocks.Views
 {
@@ -35,18 +35,18 @@ namespace WebBlocks.Views
         /// Renders the block
         /// </summary>
         /// <returns>rendered html for the block</returns>
-        public string Render(Block block, HtmlHelper html)
+        public string Render(IBlock block, HtmlHelper html)
         {
             if (!HttpContext.Current.Response.IsClientConnected)
                 return "";
 
-            if (block is NodeBlock)
-                return RenderNodeBlock(block as NodeBlock, html);
+            if (block is ContentBlock)
+                return RenderContentBlock(block as ContentBlock, html);
             
             return RenderWysiwygBlock(block as WysiwygBlock, html);
         }
 
-        protected string RenderNodeBlock(NodeBlock block, HtmlHelper html)
+        protected string RenderContentBlock(ContentBlock block, HtmlHelper html)
         {
             //check if the node exists
             if (block.Content == null) return null;
@@ -86,23 +86,23 @@ namespace WebBlocks.Views
             string blockAttributes = string.Join(" ", blockAttributeDictionary.Keys.Select(c => c + "='" + blockAttributeDictionary[c] + "'"));
 
             string blockClass = string.Format("{0}{1}{0}{2}{3}", 
-                block.Class.Length > 0 ? " " : "", 
-                block.Class,
+                block.ViewModel.Classes.Length > 0 ? " " : "", 
+                block.ViewModel.Classes.Length,
                 CssClasses.Any() ? " " : "",
                 String.Join(" ", CssClasses));
 
             //add a node block to the angularjs containers model
             var containersBuilder = AngularContainersBuilder.Load();
-            var angularBlock = AngularBlock.CreateNodeBlock();
+            var angularBlock = new ContentBlock();
             angularBlock.Id = block.Id;
             angularBlock.Name = block.Content.Name;
             angularBlock.SortOrder = block.SortOrder;
-            angularBlock.IsDeletedBlock = block.IsDeleted;
+            angularBlock.IsDeletedBlock = block.IsDeletedBlock;
             angularBlock.IsTemplateBlock = block.IsTemplateBlock;
             angularBlock.ViewModel = new AngularBlockViewModel() 
             {
                 Tag = blockElement,
-                Attributes = blockAttributeDictionary.Select(a => new AngularElementAttribute() { Name = a.Key, Value = a.Value }).ToList(),
+                Attributes = blockAttributeDictionary.Select(a => new AngularElementAttribute() { Name = a.Key, Value = a.Value }).Cast<IBlockElementAttribute>().ToList(),
                 Classes = blockClass,
                 Html = renderedContent
             };
@@ -119,12 +119,12 @@ namespace WebBlocks.Views
         {
             string webBlocksId = WebBlocksUtility.IsInBuilder ? string.Format(" wbid='{0}'", block.Id) : "";
 
-            string blockClass = string.Format("pageWysiwygBlock{0}{1}", block.Class.Length > 0 ? " " : "", block.Class);
+            string blockClass = string.Format("pageWysiwygBlock{0}{1}", block.ViewModel.Classes.Length > 0 ? " " : "", block.ViewModel.Classes);
 
             blockClass = WebBlocksUtility.IsInBuilder ? "block " + blockClass : blockClass;
 
             string blockTemplateAttribute = WebBlocksUtility.IsInBuilder ? string.Format(" templateblock='{0}'", block.IsTemplateBlock.ToString().ToLower()) : "";
-            string blockDeletedAttribute = WebBlocksUtility.IsInBuilder && block.IsDeleted ? " deletedBlock='deleted' style='display:none;visibilty:hidden;'" : "";
+            string blockDeletedAttribute = WebBlocksUtility.IsInBuilder && block.IsDeletedBlock ? " deletedBlock='deleted' style='display:none;visibilty:hidden;'" : "";
 
             TinyMCE tinyMceHelper = new TinyMCE();
 
@@ -135,17 +135,17 @@ namespace WebBlocks.Views
 
             //add a node block to the angularjs containers model
             var containersBuilder = AngularContainersBuilder.Load();
-            var angularBlock = AngularBlock.CreateWysiwygBlock();
+            var angularBlock = new WysiwygBlock();
             angularBlock.Id = block.Id;
             angularBlock.Name = "Wysiwyg";
             angularBlock.Content = blockContent;
             angularBlock.SortOrder = block.SortOrder;
-            angularBlock.IsDeletedBlock = block.IsDeleted;
+            angularBlock.IsDeletedBlock = block.IsDeletedBlock;
             angularBlock.IsTemplateBlock = block.IsTemplateBlock;
             angularBlock.ViewModel = new AngularBlockViewModel() 
             {
-                Tag = block.Element,
-                Attributes = new List<AngularElementAttribute>(),
+                Tag = block.ViewModel.Tag,
+                Attributes = new List<IBlockElementAttribute>(),
                 Classes = blockClass,
                 Html = blockContent
             };
@@ -154,16 +154,14 @@ namespace WebBlocks.Views
             return ""; // not returning content, we will just register a block to the container and will contain the rendered code
         }
 
-        protected IRenderingEngine ResolveRenderingEngine(NodeBlock block)
+        protected IRenderingEngine ResolveRenderingEngine(ContentBlock block)
         {
             try
             {
-                var blockDoc = new Document(block.Id);
-
                 //resolve with partial view
                 IRenderingEngine engine = new PartialViewRenderingEngine
                 {
-                    Macro = new MacroModel(new Macro { ScriptingFile = blockDoc.ContentType.Alias })
+                    Macro = new MacroModel(new Macro { ScriptingFile = block.Content.ContentType.Alias })
                 };
 
                 return engine;
@@ -176,7 +174,7 @@ namespace WebBlocks.Views
 
         public void RenderPreview(HtmlHelper html)
         {
-            string htmlContent = Render(new NodeBlock(WebBlocksUtility.CurrentBlockContent.Id), html);
+            string htmlContent = Render(new ContentBlock(WebBlocksUtility.CurrentBlockContent.Id), html);
 
             html.ViewContext.Writer.Write(htmlContent);
         }

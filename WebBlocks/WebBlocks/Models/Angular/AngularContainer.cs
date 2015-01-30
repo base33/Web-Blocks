@@ -2,13 +2,33 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WebBlocks.Interfaces;
 
 namespace WebBlocks.Models.Angular
 {
-    public class AngularContainer
+    public class AngularContainer : IContainer
     {
-        public string Name = "";
-        public string WysiwygClass = "";
-        public List<AngularBlock> Blocks = new List<AngularBlock>();
+        public string Name { get; set; }
+        public string Tag { get; set; }
+        public string Classes { get; set; }
+        public string WysiwygTag { get; set; }
+        public string WysiwygClass { get; set; }
+        public List<IBlock> Blocks { get; set; }
+        public Dictionary<string, string> Attributes { get; set; }
+        public IContainerPermissions ContainerPermissions { get; set; }
+        public IContainerRenderer ContainerRenderer { get; set; }
+
+        public AngularContainer()
+        {
+            Name = "";
+            Tag = "div";
+            Classes = "";
+            WysiwygTag = "div";
+            WysiwygClass = "";
+            Blocks = new List<IBlock>();
+            Attributes = new Dictionary<string, string>();
+            ContainerPermissions = null;
+            ContainerRenderer = null;
+        }
     }
 }

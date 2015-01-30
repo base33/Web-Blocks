@@ -9,8 +9,33 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
     $scope.state = {
         navigationVisible: false
     };
-    $scope.model.value = loadLayoutBuilder();
-    var layoutBuilderModel = $scope.model.value;
+    //need to keep types, and umbraco replaces typed models with plain json objects after saving.
+    //The approach is to use the layoutBuilderModel to reference a working layout builder.  And $scope.model.value will be a clone.
+    //When the working model is updated, we will clone it over to $scope.model.value
+    //so first, I create a reference variable to use in the code.  This will be the working layout builder
+    var layoutBuilderModel = null;
+    //next I load/sync the layout builder into the property editor model value
+    $scope.model.value = loadLayoutBuilder(function () {
+        //then I want to use the typed LayoutBuilder Model as my working layout builder
+        $scope.layoutBuilderModel = $scope.model.value;
+        //then I want to clone it into $scope.model.value
+        $scope.model.value = angular.copy($scope.layoutBuilderModel);
+        //set the reference variable
+        layoutBuilderModel = $scope.layoutBuilderModel;
+        //watch the layoutbuildermodel scope for changes and then update $scope.model.value
+        $scope.$watch("layoutBuilderModel", function () {
+            //we will clone over
+            $scope.model.value = angular.copy(layoutBuilderModel);
+        }, true);
+    });
+    function updateAllContainersSortOrder(containersObject) {
+        angular.forEach(containersObject, function (value, key) {
+            var container = value;
+            for (var i = 0; i < container.Blocks.length; i++) {
+                container.Blocks[i].SortOrder = i;
+            }
+        });
+    }
     $scope.uiState = new WebBlocks.UI.UIState({
         LayoutBuilder: new WebBlocks.UI.LayoutBuilderState(true),
         IframeEditor: new WebBlocks.UI.IframeEditorState(false)
@@ -19,7 +44,11 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         return {
             handle: ":not(.wbAction)",
             connectWith: ".wbcontainer",
-            modelData: blockList
+            modelData: blockList,
+            stop: function (e, ui) {
+                //we will now update all block sortorders in all containers
+                updateAllContainersSortOrder(layoutBuilderModel.Containers);
+            }
         };
     };
     $scope.handleBlockDropped = function (draggableBlockModel, event, containerElement) {
@@ -48,6 +77,8 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
             //remove the draggable block model from any arrays passed - such as the recycle bin dialog draggable block array
             removeFromArray(draggableBlockModel.OriginDraggableBlockArray, draggableBlockModel);
         }
+        //we will now update all block sortorders in all containers
+        updateAllContainersSortOrder(layoutBuilderModel.Containers);
     };
     function loadBlockContent(block, callback) {
         var currentContentId = getCurrentContentId();
@@ -221,8 +252,9 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         return parseInt(currentContentId);
     }
     //triggers an ajax call to load containers and layoutbuilder html
+    //callback is called after the layout builder model is loaded and containers have been set
     //returns the layoutbuilder model that will be loaded into
-    function loadLayoutBuilder() {
+    function loadLayoutBuilder(callback) {
         var currentContentId = getCurrentContentId();
         var layoutBuilderModel = new WebBlocks.LayoutBuilder.LayoutBuilder();
         if ($scope.model.value !== undefined) {
@@ -240,6 +272,7 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
             layoutBuilderModel.Containers = preview.Containers;
             var layoutBuilderElements = $compile($(preview.Html)[0].outerHTML)($scope);
             $element.find("#canvasRender").empty().append(layoutBuilderElements);
+            callback();
         });
         return layoutBuilderModel;
     }

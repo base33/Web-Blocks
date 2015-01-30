@@ -23,22 +23,16 @@ namespace WebBlocks.Utilities.WebBlocks
             set { CacheHelper.Add("wbCurrentPageNodeId", value); }
         }
 
-        public static DynamicPublishedContent CurrentPageContent
+        public static IPublishedContent CurrentPageContent
         {
-            get { return CacheHelper.Get<DynamicPublishedContent>("wbCurrentPageContent"); }
+            get { return CacheHelper.Get<IPublishedContent>("wbCurrentPageContent"); }
             set { CacheHelper.Add("wbCurrentPageContent", value); }
         }
 
-        public static DynamicPublishedContent CurrentBlockContent
+        public static IPublishedContent CurrentBlockContent
         {
-            get { return CacheHelper.Get<DynamicPublishedContent>("wbCurrentBlockContent"); }
+            get { return CacheHelper.Get<IPublishedContent>("wbCurrentBlockContent"); }
             set { CacheHelper.Add("wbCurrentBlockContent", value); }
-        }
-
-        public static IPublishedContent CurrentPageIPublishedContent
-        {
-            get { return CacheHelper.Get<IPublishedContent>("wbCurrentPageIPublishedContent"); }
-            set { CacheHelper.Add("wbCurrentPageIPublishedContent", value); }
         }
 
         public static IContainer CurrentContainer

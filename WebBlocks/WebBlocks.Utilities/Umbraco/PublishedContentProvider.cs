@@ -25,7 +25,7 @@ namespace WebBlocks.Utilities.Umbraco
         {
             ContextHelper.EnsureHttpContext();
             IPublishedContent content = WebBlocksUtility.IsInBuilder
-                                            ? new DynamicContent(nodeId)
+                                            ? new ContentWrapper(nodeId)
                                             : (new UmbracoHelper(UmbracoContext.Current)).TypedContent(nodeId);
 
             return content != null ? new DynamicPublishedContent(content) : null;

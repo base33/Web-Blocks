@@ -60,6 +60,10 @@
         export class BlockType {
             public static Wysiwyg: string = "WysiwygBlock";
             public static Node: string = "NodeBlock"
+
+            public static IsInstanceOf(block: WebBlocks.LayoutBuilder.Block, blockType: string) {
+                return block.__type == blockType;
+            }
         };
 
         export class TypedBlockConverter {
@@ -259,7 +263,7 @@
                     var $previewDOM = $(html);
                     var containersModel = <Array<LayoutBuilder.Container>>JSON.parse($($previewDOM).find("#wbContainerJSON").html());
                     //convert all blocks so that blocks are their respective type
-                    LayoutBuilderPreview.typeAllBlocks(containersModel);
+                    LayoutBuilderPreview.typeAllContainerBlocks(containersModel);
                     $($previewDOM).remove("#wbContainerJSON");
                     var webBlocksPreviewHtml = $($previewDOM).find(".wbLayout").html();
 
@@ -268,7 +272,7 @@
                 });
             }
 
-            public static typeAllBlocks(containers: any) {
+            public static typeAllContainerBlocks(containers: any) {
                 //loop through all containers and type all blocks
                 angular.forEach(containers, function (container: WebBlocks.LayoutBuilder.Container, containerName: string) {
                     container.Blocks = LayoutBuilder.TypedBlockConverter.TypeAll(container.Blocks);
@@ -300,7 +304,11 @@
         export class WebBlocksAPIClent {
             //gets the full web block preview html for a content page      
             public static GetPagePreviewHtml(id: number, $http: ng.IHttpService, callback: (string) => void) {
-                HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetPagePreview?id=" + id, $http, callback);
+                HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetPagePreview?id=" + id, $http, function (data) {
+                    callback(data);
+                    //remove preview cookie
+                    $http.get('/umbraco/endPreview.aspx');
+                });
             }
 
             public static GetNavigationChildren(id: number, $http: ng.IHttpService, callback: (navigationItems: Array<Models.NavigationItem>) => void) {

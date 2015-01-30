@@ -8,7 +8,6 @@ using Umbraco.Web;
 using Umbraco.Web.Models;
 using WebBlocks.Views;
 using WebBlocks.Interfaces;
-using WebBlocks.Model;
 using WebBlocks.Utilities.Umbraco;
 using WebBlocks.Utilities.WebBlocks;
 using WebBlocks.Providers;
@@ -26,8 +25,7 @@ namespace WebBlocks.Extensions
             if (WebBlocksUtility.CurrentPageContent == null)
             {
                 WebBlocksUtility.CurrentPageNodeId = UmbracoContext.Current.PageId ?? 0;
-                WebBlocksUtility.CurrentPageContent = PublishedContentProvider.Load(UmbracoContext.Current.PageId ?? 0);
-                WebBlocksUtility.CurrentPageIPublishedContent = new UmbracoHelper(UmbracoContext.Current).TypedContent(UmbracoContext.Current.PageId);
+                WebBlocksUtility.CurrentPageContent = (new UmbracoHelper(UmbracoContext.Current)).TypedContent(UmbracoContext.Current.PageId);//PublishedContentProvider.Load(UmbracoContext.Current.PageId ?? 0);
             }
         }
 
@@ -35,7 +33,7 @@ namespace WebBlocks.Extensions
         {
             InitWebBlocks();
 
-            LoadContainerBlocks(container.Name, container.Blocks, container.DynamicWysiwygClass);
+            LoadContainerBlocks(container.Name, container.Blocks, container.WysiwygTag, container.WysiwygClass);
 
             container.Blocks = container.Blocks.OrderBy(b => b.SortOrder).ToList();
 
@@ -58,6 +56,11 @@ namespace WebBlocks.Extensions
             return "";
         }
 
+        /// <summary>
+        /// Renders the angular js container (angular-ready), and builds container model for angular
+        /// </summary>
+        /// <param name="container"></param>
+        /// <param name="html"></param>
         private static void RenderAngularJSContainer(IContainer container, HtmlHelper<RenderModel> html)
         {
             //create angularjs container
@@ -66,8 +69,8 @@ namespace WebBlocks.Extensions
                 new AngularContainer()
                 {
                     Name = container.Name,
-                    WysiwygClass = container.DynamicWysiwygClass,
-                    Blocks = new List<AngularBlock>()
+                    WysiwygClass = container.WysiwygClass,
+                    Blocks = new List<IBlock>()
                 });
 
 
@@ -76,15 +79,15 @@ namespace WebBlocks.Extensions
             string containerPermissionAttr = WebBlocksUtility.IsInBuilder ? BuildContainerPermissionsAttr(container.ContainerPermissions) : "";
 
             AngularBlockView blockView = new AngularBlockView();
-            foreach (Block block in container.Blocks)
+            foreach (IBlock block in container.Blocks)
             {
                 string renderedBlock = blockView.Render(block, html);
                 renderedBlocks += renderedBlock ?? "";
             }
 
-            html.ViewContext.Writer.Write("<{0}{1}{2} ui-sortable='getSortableOptions(model.value.Containers.{3}.Blocks)' ng-model='model.value.Containers.{3}.Blocks' wb-container-model='model.value.Containers.{3}' ng-drop='true' ng-drop-success='handleBlockDropped($data, $event, $container)'>",
-                                          container.Element,
-                                          container.CssClass != "" ? string.Format(" class=\"{0} wbcontainer\"", container.CssClass) : "",
+            html.ViewContext.Writer.Write("<{0}{1}{2} ui-sortable='getSortableOptions(layoutBuilderModel.Containers.{3}.Blocks)' ng-model='layoutBuilderModel.Containers.{3}.Blocks' wb-container-model='layoutBuilderModel.Containers.{3}' ng-drop='true' ng-drop-success='handleBlockDropped($data, $event, $container)'>",
+                                          container.Tag,
+                                          container.Classes != "" ? string.Format(" class=\"{0} wbcontainer\"", container.Classes) : "",
                                           BuildHtmlAttrString(container.Attributes),
                                           container.Name);
 
@@ -93,12 +96,12 @@ namespace WebBlocks.Extensions
                                  wb-on-double-tap='editBlock'
                                  wb-on-right-click='showEditBlockDialog'
                                  wb-on-touch-hold='showEditBlockDialog'
-                                 wb-container-model='model.value.Containers.{0}'
+                                 wb-container-model='layoutBuilderModel.Containers.{0}'
                                  ng-model='block'
-                                 ng-repeat='block in model.value.Containers.{0}.Blocks'>
+                                 ng-repeat='block in layoutBuilderModel.Containers.{0}.Blocks'>
                             </div>", container.Name);
 
-            html.ViewContext.Writer.Write("</{0}>", container.Element);
+            html.ViewContext.Writer.Write("</{0}>", container.Tag);
         }
 
         private static void RenderStandardContainer(IContainer container, HtmlHelper<RenderModel> html)
@@ -107,24 +110,24 @@ namespace WebBlocks.Extensions
             string containerPermissionAttr = WebBlocksUtility.IsInBuilder ? BuildContainerPermissionsAttr(container.ContainerPermissions) : "";
 
             BlockView blockView = new BlockView();
-            foreach (Block block in container.Blocks)
+            foreach (IBlock block in container.Blocks)
             {
                 string renderedBlock = blockView.Render(block, html);
                 renderedBlocks += renderedBlock ?? "";
             }
 
             html.ViewContext.Writer.Write("<{0}{1}{2}{3}{4}{5}>",
-                                          container.Element,
-                                          container.CssClass != "" ? string.Format(" class=\"container {0}\"", container.CssClass) : "",
+                                          container.Tag,
+                                          container.Classes != "" ? string.Format(" class=\"container {0}\"", container.Classes) : "",
                                           WebBlocksUtility.IsInBuilder ? string.Format(" wbid='{0}'", container.Name) : "",
                                           containerPermissionAttr,
-                                          !string.IsNullOrEmpty(container.DynamicWysiwygClass) && WebBlocksUtility.IsInBuilder ?
-                                                string.Format(" dynamicWysiwygClass='{0}'", container.DynamicWysiwygClass) : "",
+                                          !string.IsNullOrEmpty(container.WysiwygClass) && WebBlocksUtility.IsInBuilder ?
+                                                string.Format(" dynamicWysiwygClass='{0}'", container.WysiwygClass) : "",
                                           BuildHtmlAttrString(container.Attributes));
 
             html.ViewContext.Writer.Write(renderedBlocks);
 
-            html.ViewContext.Writer.Write("</{0}>", container.Element);
+            html.ViewContext.Writer.Write("</{0}>", container.Tag);
         }
 
         /// <summary>
@@ -132,48 +135,71 @@ namespace WebBlocks.Extensions
         /// are default on the template and those that have been dragged on.
         /// </summary>
         /// <param name="containerName">The name of the container to load the blocks into</param>
-        /// <param name="blocks">The default template blocks</param>
+        /// <param name="templateBlocks">The default template blocks</param>
         /// <param name="dynamicWysiwygClass">The class that should be added to any dynamically added wysiwyg blocks</param>
-        private static void LoadContainerBlocks(string containerName, List<IBlock> blocks, string dynamicWysiwygClass)
+        private static void LoadContainerBlocks(string containerName, List<IBlock> templateBlocks, string dynamicWysiwygTag, string dynamicWysiwygClass)
         {
             //set IsTemplateBlock to true for all blocks
-            blocks.ForEach(b => b.IsTemplateBlock = true);
+            templateBlocks.ForEach(b => b.IsTemplateBlock = true);
 
             //load the current container saved state
-            ContainerProvider containerProvider = new ContainerProvider();
-            AngularContainer container = containerProvider.ContainerByName(containerName);
+            LayoutBuilderProvider containerProvider = new LayoutBuilderProvider();
+            IContainer container = containerProvider.ContainerByName(containerName);
 
             if (container == null) return;
 
+            //will hold any template blocks that do not match any saved blocks in the container.
+            //we will check if they exist in other containers.  If they are, we will remove the template block from the array
+            //this is to support moving blocks between containers
+            List<IBlock> missingBlocks = new List<IBlock>();
+
             //sync template blocks with what is saved on the page
-            foreach (IBlock templateBlock in blocks)
+            foreach (IBlock templateBlock in templateBlocks)
             {
                 //get the saved state of the current block
                 IBlock savedBlock = container.Blocks.FirstOrDefault(b => b.IsTemplateBlock && b.Id == templateBlock.Id);
-                if (savedBlock == null) continue;
+                if (savedBlock == null)
+                {
+                    //check if the block has been moved
+                    missingBlocks.Add(templateBlock);
+                    continue;
+                }
 
-                templateBlock.IsDeleted = savedBlock.IsDeleted;
+                templateBlock.IsDeletedBlock = savedBlock.IsDeletedBlock;
+                templateBlock.IsTemplateBlock = true;
+
+                //we should set the template container property to the current container name
+                if (templateBlock.TemplateContainer == "")
+                    templateBlock.TemplateContainer = containerName;
+
                 templateBlock.SortOrder = savedBlock.SortOrder;
 
                 //if its a wysiwyg block then add transfer the content
-                if(templateBlock is WysiwygBlock)
+                if (templateBlock is WysiwygBlock)
+                {
                     ((WysiwygBlock)templateBlock).Content = ((WysiwygBlock)savedBlock).Content;
+                    templateBlock.ViewModel.Classes = dynamicWysiwygClass;
+                    templateBlock.ViewModel.Tag = dynamicWysiwygTag;
+                }
             }
 
             //add all dragged-on blocks to the blocks
-            foreach (IBlock pageBlock in container.Blocks.Where(b => (!b.IsTemplateBlock) || (b.IsTemplateBlock && b is WysiwygBlock && !blocks.Exists(tb => tb.Id == b.Id))))
+            foreach (IBlock pageBlock in container.Blocks.Where(b => (!b.IsTemplateBlock && b.TemplateContainer != containerName) || (b.IsTemplateBlock && b is WysiwygBlock && !templateBlocks.Exists(tb => tb.Id == b.Id))))
             {
-                //if this is a dynamically added wysiwyg block then set the default class
-                pageBlock.Class = pageBlock.IsTemplateBlock && pageBlock is WysiwygBlock ? dynamicWysiwygClass : pageBlock.Class;
-                blocks.Add(pageBlock);
+                if (pageBlock is WysiwygBlock)
+                {
+                    pageBlock.ViewModel.Classes = dynamicWysiwygClass;
+                    pageBlock.ViewModel.Tag = dynamicWysiwygTag;
+                }
+                templateBlocks.Add(pageBlock);
             }
 
             //if were not in the builder remove all template blocks that have been deleted
             if (!WebBlocksUtility.IsInBuilder)
-                blocks.RemoveAll(b => b.IsDeleted == true);
+                templateBlocks.RemoveAll(b => b.IsDeletedBlock == true);
 
             //remove any blocks that have been deleted from Umbraco
-            blocks.RemoveAll(b => b is NodeBlock && ((NodeBlock)b).Content == null);
+            templateBlocks.RemoveAll(b => b is ContentBlock && ((ContentBlock)b).Content == null);
         }
 
         /// <summary>
@@ -188,10 +214,10 @@ namespace WebBlocks.Extensions
         {
             string containerPermissionsAttr = "";
             //if AllowedBlocks type was passed in
-            if (containerPermissions != null && containerPermissions is AllowedBlocks)
+            if (containerPermissions != null && containerPermissions is WebBlocks.Model.AllowedBlocks)
                 containerPermissionsAttr = string.Format(" allowedBlocks=\"{0}\"", String.Join(",", containerPermissions.AsStringArray()));
             //if ExcludedBlocks type was passed in
-            else if (containerPermissions != null && containerPermissions is ExcludedBlocks)
+            else if (containerPermissions != null && containerPermissions is WebBlocks.Model.ExcludedBlocks)
                 containerPermissionsAttr = string.Format(" excludedBlocks=\"{0}\"", String.Join(",", containerPermissions.AsStringArray()));
             return containerPermissionsAttr;
         }

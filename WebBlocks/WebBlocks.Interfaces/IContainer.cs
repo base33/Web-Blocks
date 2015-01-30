@@ -19,24 +19,30 @@ namespace WebBlocks.Interfaces
         List<IBlock> Blocks { get; set; }
 
         /// <summary>
-        /// The html element this container should be rendered as
+        /// The container element tag
         /// </summary>
-        string Element { get; set; }
+        string Tag { get; set; }
 
         /// <summary>
-        /// The css classes the container html element should be given
+        /// The container classes attribute value
         /// </summary>
-        string CssClass { get; set; }
+        string Classes { get; set; }
 
         /// <summary>
         /// All additional attributes the container html element should be given
         /// </summary>
         Dictionary<string, string> Attributes { get; set; }
+        //TODO: RENDER ATTRIBUTES in builder
 
         /// <summary>
-        /// The class to give to all dynamic wysiwygs that have been added via the Web Blocks builder
+        /// The class to give to all wysiwygs that have been added (e.g. col-md-3 or grid_3)
         /// </summary>
-        string DynamicWysiwygClass { get; set; }
+        string WysiwygClass { get; set; }
+
+        /// <summary>
+        /// The wysiwyg element tag (div or span etc.)
+        /// </summary>
+        string WysiwygTag { get; set; }
 
         /// <summary>
         /// Specifies what blocks are allowed or excluded

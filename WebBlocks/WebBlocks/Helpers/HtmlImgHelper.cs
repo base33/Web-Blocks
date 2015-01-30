@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
-using WebBlocks.Model;
+using WebBlocks.Models.Angular;
 using WebBlocks.Providers;
 using WebBlocks.Serialisation;
 
@@ -18,10 +18,10 @@ namespace WebBlocks.Helpers
         /// <returns>Layout builder json</returns>
         public static string ResizeImages(string json)
         {
-            ContainersSerialiser containerSerialiser = new ContainersSerialiser();
-            List<Container> containers = containerSerialiser.DeserialiseContainers(json);
-            List<WysiwygBlock> wysiwygBlocks = (from c in containers
-                                         from b in c.Blocks
+            LayoutBuilderSerialiser layoutBuilderSerialiser = new LayoutBuilderSerialiser();
+            AngularLayoutBuilderModel layoutBuilder = layoutBuilderSerialiser.Deserialise(json);
+            List<WysiwygBlock> wysiwygBlocks = (from containerKey in layoutBuilder.Containers.Keys
+                                         from b in layoutBuilder.Containers[containerKey].Blocks
                                          where b is WysiwygBlock
                                          select b as WysiwygBlock).ToList();
 
@@ -50,7 +50,7 @@ namespace WebBlocks.Helpers
                 block.Content = HttpUtility.HtmlEncode(HttpUtility.UrlEncode(block.Content));
             }
 
-            return containerSerialiser.SerialiseContainers(containers);
+            return layoutBuilderSerialiser.Serialise(layoutBuilder);
         }
     }
 }

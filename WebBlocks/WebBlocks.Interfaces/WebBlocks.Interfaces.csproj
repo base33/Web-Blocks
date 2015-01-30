@@ -31,6 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="IBlock.cs" />
+    <Compile Include="IBlockElementAttribute.cs" />
+    <Compile Include="IBlockViewModel.cs" />
     <Compile Include="IContainer.cs" />
     <Compile Include="IContainerPermissions.cs" />
     <Compile Include="IContainerRenderer.cs" />

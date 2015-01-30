@@ -34,7 +34,6 @@ namespace WebBlocks.SurfaceControllers
             WebBlocksUtility.CurrentPageNodeId = pageId;
             WebBlocksUtility.CurrentPageContent = PublishedContentProvider.Load(pageId);
             WebBlocksUtility.CurrentBlockContent = PublishedContentProvider.Load(blockId);
-            WebBlocksUtility.CurrentPageIPublishedContent = new UmbracoHelper(UmbracoContext.Current).TypedContent(pageId);
 
             return PartialView("BlockPreviewRender");
         }

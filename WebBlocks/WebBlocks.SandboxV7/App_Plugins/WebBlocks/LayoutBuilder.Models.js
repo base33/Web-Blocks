@@ -81,6 +81,9 @@ var WebBlocks;
         var BlockType = (function () {
             function BlockType() {
             }
+            BlockType.IsInstanceOf = function (block, blockType) {
+                return block.__type == blockType;
+            };
             BlockType.Wysiwyg = "WysiwygBlock";
             BlockType.Node = "NodeBlock";
             return BlockType;
@@ -294,14 +297,14 @@ var WebBlocks;
                     var $previewDOM = $(html);
                     var containersModel = JSON.parse($($previewDOM).find("#wbContainerJSON").html());
                     //convert all blocks so that blocks are their respective type
-                    LayoutBuilderPreview.typeAllBlocks(containersModel);
+                    LayoutBuilderPreview.typeAllContainerBlocks(containersModel);
                     $($previewDOM).remove("#wbContainerJSON");
                     var webBlocksPreviewHtml = $($previewDOM).find(".wbLayout").html();
                     var layoutBuilderPreviewModel = new Models.LayoutBuilderPreviewModel(webBlocksPreviewHtml, containersModel);
                     callback(layoutBuilderPreviewModel);
                 });
             };
-            LayoutBuilderPreview.typeAllBlocks = function (containers) {
+            LayoutBuilderPreview.typeAllContainerBlocks = function (containers) {
                 //loop through all containers and type all blocks
                 angular.forEach(containers, function (container, containerName) {
                     container.Blocks = LayoutBuilder.TypedBlockConverter.TypeAll(container.Blocks);
@@ -338,7 +341,11 @@ var WebBlocks;
             }
             //gets the full web block preview html for a content page      
             WebBlocksAPIClent.GetPagePreviewHtml = function (id, $http, callback) {
-                HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetPagePreview?id=" + id, $http, callback);
+                HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetPagePreview?id=" + id, $http, function (data) {
+                    callback(data);
+                    //remove preview cookie
+                    $http.get('/umbraco/endPreview.aspx');
+                });
             };
             WebBlocksAPIClent.GetNavigationChildren = function (id, $http, callback) {
                 HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetChildren?id=" + id, $http, callback);

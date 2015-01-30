@@ -9,11 +9,12 @@ namespace WebBlocks.Interfaces
     public interface IBlock
     {
         int Id { get; set; }
-        string Class { get; set; }
-        Dictionary<string, string> Attributes { get; set; }
-        bool IsTemplateBlock { get; set; }
-        bool IsDeleted { get; set; }
+        string Name { get; set; }
         int SortOrder { get; set; }
+        bool IsTemplateBlock { get; set; }
+        string TemplateContainer { get; set; }
+        bool IsDeletedBlock { get; set; }
         string __type { get; set; }
+        IBlockViewModel ViewModel { get; set; }
     }
 }
