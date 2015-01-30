@@ -1459,3 +1459,4 @@ System.NotSupportedException: Specified method is not supported.
 2015-01-30 18:13:39,111 [89] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 88] Dropping property "WBWysiwyg" because it does not belong to the content type.
 2015-01-30 18:13:39,117 [89] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 88] Dropping property "WBWysiwyg" because it does not belong to the content type.
 2015-01-30 18:14:09,385 [89] INFO  umbraco.BusinessLogic.Log - [Thread 83] Log scrubbed.  Removed all items older than 2014-12-01 18:14:09
+2015-01-30 18:15:35,795 [89] INFO  umbraco.BusinessLogic.Log - [Thread 83] Log scrubbed.  Removed all items older than 2014-12-01 18:15:35
