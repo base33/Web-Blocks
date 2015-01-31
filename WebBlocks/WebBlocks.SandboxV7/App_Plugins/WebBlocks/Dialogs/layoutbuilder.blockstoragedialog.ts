@@ -3,10 +3,10 @@
     function ($scope, appState, eventsService, assetsService, dialogService, contentTypeResource, contentResource) {
 
         var dialogOptions = $scope.dialogOptions;
-        var blockList = <Array<WebBlocks.LayoutBuilder.Block>>$scope.dialogOptions.modelData;
-        $scope.draggableBlockArray = [];
+        var originBlockStorageList = <Array<WebBlocks.LayoutBuilder.BlockStorageBlock>>$scope.dialogOptions.modelData;
+        $scope.blockStorageArray = [];
 
-        $scope.getWysiwygContent = function (draggableBlock : WebBlocks.UI.DraggableBlockModel) {
+        $scope.getWysiwygContent = function (draggableBlock: WebBlocks.UI.DraggableBlockModel) {
             var text = "";
             var block = draggableBlock.Block;
             if (block instanceof WebBlocks.LayoutBuilder.WysiwygBlock) {
@@ -16,15 +16,27 @@
             return text;
         }
 
-        function syncDraggableBlockArray() {
-            $scope.draggableBlockArray = [];
+        function syncBlockStorageArray() {
+            $scope.blockStorageArray = [];
             for (var i = 0; i < dialogOptions.modelData.length; i++) {
-                var block = <WebBlocks.LayoutBuilder.Block>dialogOptions.modelData[i];
-                var draggableBlock = <WebBlocks.UI.DraggableBlockModel>{ Block: block, OriginBlockArray: dialogOptions.modelData, OriginDraggableBlockArray: $scope.draggableBlockArray, ShouldRemoveFromOrigin: true, BlockIconClass: "icon-folder" };
+                var blockStorageBlock = <WebBlocks.LayoutBuilder.BlockStorageBlock>dialogOptions.modelData[i];
+                var blockStorageItemViewModel = new WebBlocks.UI.Dialogs.BlockStorageItemViewModel();
+                blockStorageItemViewModel.BlockStorageBlock = blockStorageBlock;
+                blockStorageItemViewModel.DraggableBlock = < WebBlocks.UI.DraggableBlockModel > {
+                    Block: blockStorageBlock.Block, ShouldClone: false, BlockIconClass: "icon-folder",
+                    OnDropCallback: getOnDropCallback(blockStorageItemViewModel)
+                };
 
                 //display the correct up-to-date name and icon
-                LoadContent(block, draggableBlock);
-                $scope.draggableBlockArray.push(draggableBlock);
+                LoadContent(blockStorageBlock.Block, blockStorageItemViewModel.DraggableBlock);
+                $scope.blockStorageArray.push(blockStorageItemViewModel);
+            }
+        }
+
+        function getOnDropCallback(blockStorageItemViewModel: WebBlocks.UI.Dialogs.BlockStorageItemViewModel) {
+            return function (draggableBlock) {
+                removeFromArray($scope.blockStorageArray, blockStorageItemViewModel);
+                removeFromArray(originBlockStorageList, blockStorageItemViewModel.BlockStorageBlock);
             }
         }
 
@@ -37,5 +49,12 @@
             }
         }
 
-        syncDraggableBlockArray();
+        function removeFromArray(arr, item) {
+            var i;
+            while ((i = arr.indexOf(item)) !== -1) {
+                arr.splice(i, 1);
+            }
+        }
+
+        syncBlockStorageArray();
     });

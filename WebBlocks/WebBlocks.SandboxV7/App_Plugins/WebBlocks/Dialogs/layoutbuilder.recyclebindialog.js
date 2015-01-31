@@ -1,9 +1,12 @@
 angular.module("umbraco").controller("WebBlocks.RecycleBinDialogCtrl", function ($scope, appState, eventsService, assetsService, dialogService, contentResource) {
     var dialogOptions = $scope.dialogOptions;
-    $scope.draggableBlockArray = [];
-    $scope.getWysiwygContent = function (draggableBlock) {
+    var recycleBinContext = dialogOptions.modelData;
+    $scope.recycleBinBlockArray = [];
+    $scope.deletedTemplateBlocks = [];
+    loadAddDeletedTemplateBlocks();
+    syncRecycleBinBlockArray();
+    $scope.getWysiwygContent = function (block) {
         var text = "";
-        var block = draggableBlock.Block;
         if (block instanceof WebBlocks.LayoutBuilder.WysiwygBlock) {
             text = $(block.Content).text();
             text = text.substr(0, Math.min(text.length, 100));
@@ -12,34 +15,65 @@ angular.module("umbraco").controller("WebBlocks.RecycleBinDialogCtrl", function 
     };
     $scope.deleteAllBlocks = function () {
         if (confirm("Are you sure you wish to delete all blocks?")) {
-            emptyArray($scope.draggableBlockArray);
-            emptyArray($scope.dialogOptions.modelData);
+            emptyArray($scope.recycleBinBlockArray);
+            emptyArray(recycleBinContext.RecycleBinBlocks);
         }
     };
-    $scope.deleteBlock = function (draggableBlock) {
+    $scope.deleteBlock = function (recycleBinBlock) {
         if (confirm("Are you sure you wish to delete this block?")) {
-            removeFromArray(dialogOptions.modelData, draggableBlock.Block);
-            removeFromArray($scope.draggableBlockArray, draggableBlock);
+            removeFromArray(recycleBinContext.RecycleBinBlocks, recycleBinBlock.RecycleBinBlock);
+            removeFromArray($scope.recycleBinBlockArray, recycleBinBlock);
         }
     };
-    syncDraggableBlockArray();
-    function syncDraggableBlockArray() {
+    $scope.restoreBlock = function (deletedTemplateBlock) {
+        if (confirm(deletedTemplateBlock.Block.Name + "will be restored back in to container: " + deletedTemplateBlock.Container.Name + ". Would you like to continue?")) {
+            deletedTemplateBlock.Block.IsDeletedBlock = false;
+            removeFromArray($scope.deletedTemplateBlocks, deletedTemplateBlock);
+        }
+    };
+    function syncRecycleBinBlockArray() {
         $scope.draggableBlockArray = [];
-        for (var i = 0; i < dialogOptions.modelData.length; i++) {
-            var block = dialogOptions.modelData[i];
-            var draggableBlock = { Block: block, OriginBlockArray: dialogOptions.modelData, OriginDraggableBlockArray: $scope.draggableBlockArray, ShouldRemoveFromOrigin: true, BlockIconClass: "icon-folder" };
+        for (var i = 0; i < recycleBinContext.RecycleBinBlocks.length; i++) {
+            var recycleBinBlock = recycleBinContext.RecycleBinBlocks[i];
+            var recycleBinBlockViewModel = new WebBlocks.UI.Dialogs.RecycleBinItemViewModel();
+            recycleBinBlockViewModel.RecycleBinBlock = recycleBinBlock;
+            recycleBinBlockViewModel.DraggableBlock = {
+                Block: recycleBinBlock.Block,
+                BlockIconClass: "icon-folder",
+                ShouldClone: false,
+                OnDropCallback: getOnDropCallback(recycleBinBlockViewModel)
+            };
             //display the correct up-to-date name and icon
-            LoadContent(block, draggableBlock);
-            $scope.draggableBlockArray.push(draggableBlock);
+            LoadContent(recycleBinBlockViewModel.DraggableBlock);
+            $scope.recycleBinBlockArray.push(recycleBinBlockViewModel);
         }
     }
-    function LoadContent(block, draggableBlock) {
-        if (block instanceof WebBlocks.LayoutBuilder.NodeBlock) {
-            contentResource.getById(block.Id).then(function (content) {
-                block.Name = content.name;
+    function getOnDropCallback(recycleBinBlockViewModel) {
+        return function (draggableBlock) {
+            removeFromArray($scope.recycleBinBlockArray, recycleBinBlockViewModel);
+            removeFromArray(recycleBinContext.RecycleBinBlocks, recycleBinBlockViewModel.RecycleBinBlock);
+        };
+    }
+    function LoadContent(draggableBlock) {
+        if (draggableBlock.Block instanceof WebBlocks.LayoutBuilder.NodeBlock) {
+            contentResource.getById(draggableBlock.Block.Id).then(function (content) {
+                draggableBlock.Block.Name = content.name;
                 draggableBlock.BlockIconClass = content.icon;
             });
         }
+    }
+    function loadAddDeletedTemplateBlocks() {
+        $scope.deletedTemplateBlocks = [];
+        angular.forEach(recycleBinContext.Containers, function (container, containerName) {
+            for (var i = 0; i < container.Blocks.length; i++) {
+                var block = container.Blocks[i];
+                if (block.IsTemplateBlock && block.IsDeletedBlock) {
+                    var deletedTemplateBlockModel = new WebBlocks.UI.Dialogs.DeletedTemplateBlockModel(block, container);
+                    LoadContent(deletedTemplateBlockModel);
+                    $scope.deletedTemplateBlocks.push(deletedTemplateBlockModel);
+                }
+            }
+        });
     }
     //empties an array
     function emptyArray(arr) {

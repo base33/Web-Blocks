@@ -52,7 +52,9 @@ namespace WebBlocks.Providers
         public AngularContainer ContainerByName(string name)
         {
             if (LayoutBuilder == null) return null;
-            return LayoutBuilder.Containers.FirstOrDefault(c => c.Key == name).Value;
+            AngularContainer container = null;
+            LayoutBuilder.Containers.TryGetValue(name, out container);
+            return container;
         }
     }
 }

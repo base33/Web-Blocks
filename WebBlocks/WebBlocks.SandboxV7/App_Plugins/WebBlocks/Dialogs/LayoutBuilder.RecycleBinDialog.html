@@ -5,7 +5,7 @@
     <div class="umb-panel-body with-header with-footer">
         <h5 class="wbDialogTitle">Manage recycle bin:</h5>
         <ul class="umb-actions">
-            <li ng-show="draggableBlockArray.length" class="action ng-scope">
+            <li ng-show="recycleBinBlockArray.length" class="action ng-scope">
                 <a prevent-default="" ng-click="deleteAllBlocks()" title="Delete All">
                     <i class="icon icon-bomb" style="color:red;">
                     </i>
@@ -13,19 +13,32 @@
                 </a>
             </li>
 
-            <li ng-repeat="draggableBlock in draggableBlockArray" ng-show="draggableBlockArray.length" class="action ng-scope">
-                <a ng-drag="true" ng-drag-data="draggableBlock" prevent-default="" title="{{getWysiwygContent(draggableBlock)}}">
-                    <i class="icon {{draggableBlock.BlockIconClass}}">
+            <li ng-repeat="recycleBinBlock in recycleBinBlockArray" ng-show="recycleBinBlockArray.length" class="action ng-scope">
+                <a ng-drag="true" ng-drag-data="recycleBinBlock.DraggableBlock" prevent-default="" title="{{getWysiwygContent(recycleBinBlock.DraggableBlock.Block)}}">
+                    <i class="icon {{recycleBinBlock.DraggableBlock.BlockIconClass}}">
                     </i>
-                    <span class="menu-label ng-binding">{{draggableBlock.Block.Name}}</span>
-                    <i ng-click="deleteBlock(draggableBlock)" class="wbRedIconHover icon icon-delete pull-right"></i>
+                    <span class="menu-label ng-binding">{{recycleBinBlock.DraggableBlock.Block.Name}}</span>
+                    <i ng-click="deleteBlock(recycleBinBlock)" class="wbRedIconHover icon icon-delete pull-right"></i>
                 </a>
             </li>
 
-            <li ng-hide="draggableBlockArray.length > 0" class="action ng-scope">
+            <li ng-hide="recycleBinBlockArray.length > 0" class="action ng-scope">
                 Empty!
             </li>
         </ul>
+
+        <h5 ng-show="deletedTemplateBlocks.length" class="wbDialogTitle">Restore Template Blocks:</h5>
+        <ul ng-show="deletedTemplateBlocks.length" class="umb-actions">
+            <li ng-repeat="deletedTemplateBlock in deletedTemplateBlocks" class="action ng-scope">
+                <a ng-drag="true" ng-drag-data="recycleBinBlock.DraggableBlock" prevent-default="" title="{{getWysiwygContent(recycleBinBlock.Block)}}">
+                    <i class="icon {{deletedTemplateBlock.BlockIconClass}}">
+                    </i>
+                    <span class="menu-label ng-binding">{{deletedTemplateBlock.Block.Name}}</span>
+                    <i ng-click="restoreBlock(deletedTemplateBlock)" class="wbRedIconHover icon icon-refresh pull-right"></i>
+                </a>
+            </li>
+        </ul>
+
     </div>
     <div class="umb-panel-footer">
         <div class="umb-el-wrap umb-panel-buttons">

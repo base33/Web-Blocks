@@ -4,11 +4,12 @@
 
         export class LayoutBuilder {
             public Containers: any = {};                            //array of containers that are on the page
-            public RecycleBin: Array<Block> = new Array<Block>();   //array of blocks added to the recycle bin
-            public BlockStorage: Array<Block> = new Array<Block>(); //array of blocks added to the block storage
+            public RecycleBin: Array<RecycleBinBlock> = new Array<RecycleBinBlock>();   //array of blocks added to the recycle bin
+            public BlockStorage: Array<BlockStorageBlock> = new Array<BlockStorageBlock>(); //array of blocks added to the block storage
         }
 
         export class Container {
+            public Name: string = "";
             public WysiwygClass: string = "";                            //the class to set on any wysiwyg in the container
             public Blocks: Array<Block> = new Array<Block>();
         }
@@ -18,6 +19,7 @@
             public Name: string = "";                                    //the name of the block (normally shown in recycle bin or block storage)
             public SortOrder: number = 0;                               //the sort order
             public IsTemplateBlock: boolean = false;                        //whether the block is one from the template
+            public TemplateContainer: string = "";
             public IsDeletedBlock: boolean = false;                         //whether the block has been deleted
             public ViewModel: BlockViewModel = new BlockViewModel();
             public __type: string = "Unknown";
@@ -57,6 +59,20 @@
             }
         }
 
+        export class BlockStorageBlock {
+            public constructor(
+                public Block: Block,
+                public Message: string) {
+            }
+        }
+
+        export class RecycleBinBlock {
+            public constructor(
+                public Block: Block,
+                public Message: string) {
+            }
+        }
+
         export class BlockType {
             public static Wysiwyg: string = "WysiwygBlock";
             public static Node: string = "NodeBlock"
@@ -78,6 +94,7 @@
                 typedBlock.IsDeletedBlock = block.IsDeletedBlock;
                 typedBlock.IsTemplateBlock = block.IsTemplateBlock;
                 typedBlock.ViewModel = block.ViewModel;
+                typedBlock.TemplateContainer = block.TemplateContainer;
 
                 if (typedBlock instanceof WysiwygBlock)
                     typedBlock.Content = (<WysiwygBlock>block).Content;
@@ -129,11 +146,9 @@
         export class DraggableBlockModel {
             public Block: WebBlocks.LayoutBuilder.Block;
             public BlockIconClass: string = "";
-            public OriginBlockArray: Array<WebBlocks.LayoutBuilder.Block>;
-            public OriginDraggableBlockArray: Array<DraggableBlockModel>;
             public ShouldClone: boolean;
             public LoadContent: boolean;
-            public ShouldRemoveFromOrigin: boolean
+            public OnDropCallback: (DraggableBlockModel) => void;
         }
 
         export module Dialogs {
@@ -163,19 +178,19 @@
                     };
                 }
                 
-                public static BuildBlockStorageDialogOptions(blocks: Array<WebBlocks.LayoutBuilder.Block>): any {
+                public static BuildBlockStorageDialogOptions(layoutBuilder: WebBlocks.LayoutBuilder.LayoutBuilder): any {
                     return {
                         template: WebBlocks.UI.Dialogs.DialogTemplateProvider.BlockStorageTemplate,
                         show: true,
-                        modelData: blocks
+                        modelData: layoutBuilder.BlockStorage
                     };
                 }
 
-                public static BuildRecycleBinDialogOptions(blocks: Array<WebBlocks.LayoutBuilder.Block>): any {
+                public static BuildRecycleBinDialogOptions(layoutBuilder: WebBlocks.LayoutBuilder.LayoutBuilder): any {
                     return {
                         template: WebBlocks.UI.Dialogs.DialogTemplateProvider.RecycleBinTemplate,
                         show: true,
-                        modelData: blocks
+                        modelData: new Dialogs.RecycleBinContext(layoutBuilder.RecycleBin, layoutBuilder.Containers)
                     };
                 }
             }
@@ -213,6 +228,33 @@
                 public Model: API.Models.NavigationItem;  //the data about the navigation item, such as name, icon, etc
                 public DraggableBlock: DraggableBlockModel; //the draggable block to be dropped into a container
                 public Children: Array<NavigationViewModel>; //child navigation view models ready to the loaded as navigation view models
+            }
+
+            export class RecycleBinContext {
+                public constructor(
+                    public RecycleBinBlocks: Array<LayoutBuilder.RecycleBinBlock>,
+                    public Containers: any) {
+                }
+            }
+
+            //used in the recycle bin
+            export class DeletedTemplateBlockModel {
+                public BlockIconClass: string = "";
+                public constructor(
+                    public Block: LayoutBuilder.Block,
+                    public Container: LayoutBuilder.Container
+                    ) {
+                }
+            }
+
+            export class RecycleBinItemViewModel {
+                public DraggableBlock: DraggableBlockModel = null;
+                public RecycleBinBlock: LayoutBuilder.RecycleBinBlock;
+            }
+
+            export class BlockStorageItemViewModel {
+                public DraggableBlock: DraggableBlockModel = null;
+                public BlockStorageBlock: LayoutBuilder.BlockStorageBlock;
             }
         }               
     }

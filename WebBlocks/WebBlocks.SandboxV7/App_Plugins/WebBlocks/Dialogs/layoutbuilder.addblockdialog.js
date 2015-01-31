@@ -75,7 +75,8 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
         draggableBlock.Block = createNodeBlock(nodeId, nodeName);
         draggableBlock.LoadContent = true;
         draggableBlock.ShouldClone = true;
-        draggableBlock.ShouldRemoveFromOrigin = false;
+        draggableBlock.OnDropCallback = function (draggableBlock) {
+        };
         return draggableBlock;
     }
     function createNodeBlock(nodeId, nodeName) {
@@ -90,7 +91,8 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
         draggableBlock.Block = createWysiwygBlock();
         draggableBlock.LoadContent = false;
         draggableBlock.ShouldClone = true;
-        draggableBlock.ShouldRemoveFromOrigin = false;
+        draggableBlock.OnDropCallback = function (draggableBlock) {
+        };
         return draggableBlock;
     }
     function createWysiwygBlock() {

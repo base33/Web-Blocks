@@ -92,6 +92,7 @@ namespace WebBlocks.Extensions
                                           container.Name);
 
             html.ViewContext.Writer.Write(@"<div wb-block
+                                 ng-hide='block.IsDeletedBlock' 
                                  wb-on-double-click='editBlock'
                                  wb-on-double-tap='editBlock'
                                  wb-on-right-click='showEditBlockDialog'
@@ -140,7 +141,10 @@ namespace WebBlocks.Extensions
         private static void LoadContainerBlocks(string containerName, List<IBlock> templateBlocks, string dynamicWysiwygTag, string dynamicWysiwygClass)
         {
             //set IsTemplateBlock to true for all blocks
-            templateBlocks.ForEach(b => b.IsTemplateBlock = true);
+            templateBlocks.ForEach(b => {
+                b.IsTemplateBlock = true;
+                b.TemplateContainer = containerName;
+            });
 
             //load the current container saved state
             LayoutBuilderProvider containerProvider = new LayoutBuilderProvider();
@@ -157,7 +161,7 @@ namespace WebBlocks.Extensions
             foreach (IBlock templateBlock in templateBlocks)
             {
                 //get the saved state of the current block
-                IBlock savedBlock = container.Blocks.FirstOrDefault(b => b.IsTemplateBlock && b.Id == templateBlock.Id);
+                IBlock savedBlock = container.Blocks.FirstOrDefault(b => b.IsTemplateBlock && b.Id == templateBlock.Id && b.TemplateContainer == containerName);
                 if (savedBlock == null)
                 {
                     //check if the block has been moved
@@ -167,11 +171,6 @@ namespace WebBlocks.Extensions
 
                 templateBlock.IsDeletedBlock = savedBlock.IsDeletedBlock;
                 templateBlock.IsTemplateBlock = true;
-
-                //we should set the template container property to the current container name
-                if (templateBlock.TemplateContainer == "")
-                    templateBlock.TemplateContainer = containerName;
-
                 templateBlock.SortOrder = savedBlock.SortOrder;
 
                 //if its a wysiwyg block then add transfer the content
@@ -183,8 +182,8 @@ namespace WebBlocks.Extensions
                 }
             }
 
-            //add all dragged-on blocks to the blocks
-            foreach (IBlock pageBlock in container.Blocks.Where(b => (!b.IsTemplateBlock && b.TemplateContainer != containerName) || (b.IsTemplateBlock && b is WysiwygBlock && !templateBlocks.Exists(tb => tb.Id == b.Id))))
+            //add all dragged-on blocks to the blocks                 not a template block     is a template block from another container                    is a template wysiwyg block that does not longer exist on the template (we should keep it)
+            foreach (IBlock pageBlock in container.Blocks.Where(b => (!b.IsTemplateBlock) || (b.IsTemplateBlock && b.TemplateContainer != containerName) || (b.IsTemplateBlock && b is WysiwygBlock && !templateBlocks.Exists(tb => tb.Id == b.Id))))
             {
                 if (pageBlock is WysiwygBlock)
                 {
@@ -194,9 +193,33 @@ namespace WebBlocks.Extensions
                 templateBlocks.Add(pageBlock);
             }
 
+            //lets find all the missing templates in other containers.
+            //if we find it, we will remove it from the container
+            foreach (IBlock missingBlock in missingBlocks)
+            {
+                bool found = false;
+                foreach(string otherContainerName in containerProvider.LayoutBuilder.Containers.Keys)
+                {
+                    IContainer otherContainer = containerProvider.ContainerByName(otherContainerName);
+                    //if the block is the same id, is also a template block and it was originally from the current container name
+                    if (otherContainer.Blocks.Exists(b => b.Id == missingBlock.Id && b.IsTemplateBlock && b.TemplateContainer == containerName))
+                    {
+                        //remove it from the blocks to be rendered in the container
+                        templateBlocks.Remove(missingBlock);
+                        found = true;
+                        break;
+                    }
+                }
+                if(!found && containerProvider.LayoutBuilder.BlockStorage.Exists(b => b.Block.Id == missingBlock.Id && b.Block.IsTemplateBlock && b.Block.TemplateContainer == containerName))
+                    templateBlocks.Remove(missingBlock);
+                
+            }
+
             //if were not in the builder remove all template blocks that have been deleted
             if (!WebBlocksUtility.IsInBuilder)
                 templateBlocks.RemoveAll(b => b.IsDeletedBlock == true);
+
+
 
             //remove any blocks that have been deleted from Umbraco
             templateBlocks.RemoveAll(b => b is ContentBlock && ((ContentBlock)b).Content == null);

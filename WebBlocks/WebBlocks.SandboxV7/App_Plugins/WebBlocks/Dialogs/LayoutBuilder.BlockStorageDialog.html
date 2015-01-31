@@ -5,16 +5,16 @@
     <div class="umb-panel-body with-header with-footer">
         <h5 class="wbDialogTitle">Manage block storage:</h5>
         <ul class="umb-actions">
-            <li ng-repeat="draggableBlock in draggableBlockArray" ng-show="draggableBlockArray.length > 0" class="action ng-scope">
-                <a ng-drag="true" ng-drag-data="draggableBlock" prevent-default="" title="{{getWysiwygContent(draggableBlock)}}">
-                    <i class="icon {{draggableBlock.BlockIconClass}}">
+            <li ng-repeat="blockStorageBlock in blockStorageArray" ng-show="blockStorageArray.length > 0" class="action ng-scope">
+                <a ng-drag="true" ng-drag-data="blockStorageBlock.DraggableBlock" prevent-default="" title="{{getWysiwygContent(blockStorageBlock.DraggableBlock)}}">
+                    <i class="icon {{blockStorageBlock.DraggableBlock.BlockIconClass}}">
                     </i>
-                    <span class="menu-label ng-binding">{{draggableBlock.Block.Name}}</span>
+                    <span class="menu-label ng-binding">{{blockStorageBlock.DraggableBlock.Block.Name}}</span>
                 </a>
             </li>
 
 
-            <li ng-hide="draggableBlockArray.length > 0" class="action ng-scope">
+            <li ng-hide="blockStorageArray.length > 0" class="action ng-scope">
                 Empty!
             </li>
         </ul>

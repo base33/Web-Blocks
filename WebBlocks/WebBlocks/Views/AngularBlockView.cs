@@ -99,6 +99,7 @@ namespace WebBlocks.Views
             angularBlock.SortOrder = block.SortOrder;
             angularBlock.IsDeletedBlock = block.IsDeletedBlock;
             angularBlock.IsTemplateBlock = block.IsTemplateBlock;
+            angularBlock.TemplateContainer = block.TemplateContainer;
             angularBlock.ViewModel = new AngularBlockViewModel() 
             {
                 Tag = blockElement,
@@ -142,6 +143,7 @@ namespace WebBlocks.Views
             angularBlock.SortOrder = block.SortOrder;
             angularBlock.IsDeletedBlock = block.IsDeletedBlock;
             angularBlock.IsTemplateBlock = block.IsTemplateBlock;
+            angularBlock.TemplateContainer = block.TemplateContainer;
             angularBlock.ViewModel = new AngularBlockViewModel() 
             {
                 Tag = block.ViewModel.Tag,

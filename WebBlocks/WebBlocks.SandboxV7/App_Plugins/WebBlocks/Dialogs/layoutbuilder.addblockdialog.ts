@@ -96,7 +96,7 @@
             draggableBlock.Block = createNodeBlock(nodeId, nodeName);
             draggableBlock.LoadContent = true;
             draggableBlock.ShouldClone = true;
-            draggableBlock.ShouldRemoveFromOrigin = false;
+            draggableBlock.OnDropCallback = (draggableBlock) => { }
             return draggableBlock;
         }
 
@@ -113,7 +113,7 @@
             draggableBlock.Block = createWysiwygBlock();
             draggableBlock.LoadContent = false;
             draggableBlock.ShouldClone = true;
-            draggableBlock.ShouldRemoveFromOrigin = false;
+            draggableBlock.OnDropCallback = (draggableBlock) => { }
             return draggableBlock;
         }
 

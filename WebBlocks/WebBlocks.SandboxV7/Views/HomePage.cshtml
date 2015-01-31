@@ -35,5 +35,19 @@
                 }
             }
         })
+
+        @Html.Container(new WebBlocks.Models.Angular.AngularContainer
+        {
+            Name = "bottomContainer",
+            Classes = "contentBlock_12",
+            WysiwygClass = "grid_12",
+            Blocks = new List<IBlock>()
+            {
+                new WebBlocks.Models.Angular.ContentBlock(1059),
+                new WebBlocks.Models.Angular.WysiwygBlock(8723) {
+                    Content = "<p>Some other content, yeah</p>"
+                }
+            }
+        })
     </div>
 }

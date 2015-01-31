@@ -19,6 +19,7 @@ var WebBlocks;
         _LayoutBuilder.LayoutBuilder = LayoutBuilder;
         var Container = (function () {
             function Container() {
+                this.Name = "";
                 this.WysiwygClass = ""; //the class to set on any wysiwyg in the container
                 this.Blocks = new Array();
             }
@@ -31,6 +32,7 @@ var WebBlocks;
                 this.Name = ""; //the name of the block (normally shown in recycle bin or block storage)
                 this.SortOrder = 0; //the sort order
                 this.IsTemplateBlock = false; //whether the block is one from the template
+                this.TemplateContainer = "";
                 this.IsDeletedBlock = false; //whether the block has been deleted
                 this.ViewModel = new BlockViewModel();
                 this.__type = "Unknown";
@@ -78,6 +80,22 @@ var WebBlocks;
             return BlockViewElementAttribute;
         })();
         _LayoutBuilder.BlockViewElementAttribute = BlockViewElementAttribute;
+        var BlockStorageBlock = (function () {
+            function BlockStorageBlock(Block, Message) {
+                this.Block = Block;
+                this.Message = Message;
+            }
+            return BlockStorageBlock;
+        })();
+        _LayoutBuilder.BlockStorageBlock = BlockStorageBlock;
+        var RecycleBinBlock = (function () {
+            function RecycleBinBlock(Block, Message) {
+                this.Block = Block;
+                this.Message = Message;
+            }
+            return RecycleBinBlock;
+        })();
+        _LayoutBuilder.RecycleBinBlock = RecycleBinBlock;
         var BlockType = (function () {
             function BlockType() {
             }
@@ -101,6 +119,7 @@ var WebBlocks;
                 typedBlock.IsDeletedBlock = block.IsDeletedBlock;
                 typedBlock.IsTemplateBlock = block.IsTemplateBlock;
                 typedBlock.ViewModel = block.ViewModel;
+                typedBlock.TemplateContainer = block.TemplateContainer;
                 if (typedBlock instanceof WysiwygBlock)
                     typedBlock.Content = block.Content;
                 return typedBlock;
@@ -183,18 +202,18 @@ var WebBlocks;
                         show: true
                     };
                 };
-                DialogOptionsFactory.BuildBlockStorageDialogOptions = function (blocks) {
+                DialogOptionsFactory.BuildBlockStorageDialogOptions = function (layoutBuilder) {
                     return {
                         template: WebBlocks.UI.Dialogs.DialogTemplateProvider.BlockStorageTemplate,
                         show: true,
-                        modelData: blocks
+                        modelData: layoutBuilder.BlockStorage
                     };
                 };
-                DialogOptionsFactory.BuildRecycleBinDialogOptions = function (blocks) {
+                DialogOptionsFactory.BuildRecycleBinDialogOptions = function (layoutBuilder) {
                     return {
                         template: WebBlocks.UI.Dialogs.DialogTemplateProvider.RecycleBinTemplate,
                         show: true,
-                        modelData: blocks
+                        modelData: new Dialogs.RecycleBinContext(layoutBuilder.RecycleBin, layoutBuilder.Containers)
                     };
                 };
                 return DialogOptionsFactory;
@@ -240,6 +259,38 @@ var WebBlocks;
                 return NavigationViewModel;
             })();
             Dialogs.NavigationViewModel = NavigationViewModel;
+            var RecycleBinContext = (function () {
+                function RecycleBinContext(RecycleBinBlocks, Containers) {
+                    this.RecycleBinBlocks = RecycleBinBlocks;
+                    this.Containers = Containers;
+                }
+                return RecycleBinContext;
+            })();
+            Dialogs.RecycleBinContext = RecycleBinContext;
+            //used in the recycle bin
+            var DeletedTemplateBlockModel = (function () {
+                function DeletedTemplateBlockModel(Block, Container) {
+                    this.Block = Block;
+                    this.Container = Container;
+                    this.BlockIconClass = "";
+                }
+                return DeletedTemplateBlockModel;
+            })();
+            Dialogs.DeletedTemplateBlockModel = DeletedTemplateBlockModel;
+            var RecycleBinItemViewModel = (function () {
+                function RecycleBinItemViewModel() {
+                    this.DraggableBlock = null;
+                }
+                return RecycleBinItemViewModel;
+            })();
+            Dialogs.RecycleBinItemViewModel = RecycleBinItemViewModel;
+            var BlockStorageItemViewModel = (function () {
+                function BlockStorageItemViewModel() {
+                    this.DraggableBlock = null;
+                }
+                return BlockStorageItemViewModel;
+            })();
+            Dialogs.BlockStorageItemViewModel = BlockStorageItemViewModel;
         })(Dialogs = UI.Dialogs || (UI.Dialogs = {}));
     })(UI = WebBlocks.UI || (WebBlocks.UI = {}));
     var Utils;

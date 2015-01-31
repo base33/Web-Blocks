@@ -91,18 +91,10 @@ angular.module("umbraco")
                 container.Blocks.push(block);
             }
 
-            if (draggableBlockModel.ShouldRemoveFromOrigin) {
-                //note: block array is the block array source
-                //remove block from any origin block arrays passed - such as the recycle bin
-                removeFromArray(draggableBlockModel.OriginBlockArray, draggableBlockModel.Block);
-
-                //note: draggable block array is the draggable view model for the block
-                //remove the draggable block model from any arrays passed - such as the recycle bin dialog draggable block array
-                removeFromArray(draggableBlockModel.OriginDraggableBlockArray, draggableBlockModel);
-            }
-
             //we will now update all block sortorders in all containers
             updateAllContainersSortOrder(layoutBuilderModel.Containers)
+
+            draggableBlockModel.OnDropCallback(draggableBlockModel);
         };
 
         function loadBlockContent(block: WebBlocks.LayoutBuilder.Block, callback: () => void) {
@@ -140,11 +132,11 @@ angular.module("umbraco")
         };
 
         $scope.showBlockStorageDialog = function () {
-            dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildBlockStorageDialogOptions(layoutBuilderModel.BlockStorage));
+            dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildBlockStorageDialogOptions(layoutBuilderModel));
         };
 
         $scope.showRecycleBinDialog = function () {
-            dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildRecycleBinDialogOptions(layoutBuilderModel.RecycleBin));
+            dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildRecycleBinDialogOptions(layoutBuilderModel));
         };
 
         //handle right click event for blocks
@@ -269,7 +261,7 @@ angular.module("umbraco")
         $scope.handleEditBlockDialog = function (event: WebBlocks.UI.Dialogs.ContextMenuResponse) {
             if (typeof (event) == 'undefined') return;
 
-            var block = event.EventData.block;
+            var block = <WebBlocks.LayoutBuilder.Block>event.EventData.block;
             var blockElement = event.EventData.blockElement;
             var container = event.EventData.container;
             switch (event.Event) {
@@ -277,14 +269,21 @@ angular.module("umbraco")
                     $scope.editBlock(blockElement, block, container, false);
                     break;
                 case 'Move to block storage':
-                    layoutBuilderModel.BlockStorage.push(block);
+                    var blockStorageBlock = new WebBlocks.LayoutBuilder.BlockStorageBlock(block, "");
+                    layoutBuilderModel.BlockStorage.push(blockStorageBlock);
                     removeFromArray(container.Blocks, block);
                     notificationsService.success("Successfully added to block storage");
                     break;
                 case 'Delete':
-                    layoutBuilderModel.RecycleBin.push(block);
-                    removeFromArray(container.Blocks, block);
-                    notificationsService.success("Successfully added to the recycle bin.");
+                    if (block.IsTemplateBlock) {
+                        block.IsDeletedBlock = true;
+                    }
+                    else {
+                        var recycleBinBlock = new WebBlocks.LayoutBuilder.RecycleBinBlock(block, "");
+                        layoutBuilderModel.RecycleBin.push(recycleBinBlock);
+                        removeFromArray(container.Blocks, block);
+                        notificationsService.success("Successfully added to the recycle bin.");
+                    }
                     break;
             }
         };
@@ -302,21 +301,35 @@ angular.module("umbraco")
             return parseInt(currentContentId);
         }
 
+        function isInCreateMode() {
+            return window.location.hash.indexOf("create=true") >= 0;
+        }
+
         //triggers an ajax call to load containers and layoutbuilder html
         //callback is called after the layout builder model is loaded and containers have been set
         //returns the layoutbuilder model that will be loaded into
         function loadLayoutBuilder(callback: () => void): WebBlocks.LayoutBuilder.LayoutBuilder {
+            if (isInCreateMode()) {
+                var layoutBuilderNew = new WebBlocks.LayoutBuilder.LayoutBuilder();
+                return layoutBuilderNew;
+            }
             var currentContentId = getCurrentContentId();
             var layoutBuilderModel = new WebBlocks.LayoutBuilder.LayoutBuilder();
 
             if ($scope.model.value !== undefined) {
                 if ($scope.model.value.BlockStorage !== undefined) {
                     layoutBuilderModel.BlockStorage = $scope.model.value.BlockStorage;
-                    layoutBuilderModel.BlockStorage = WebBlocks.LayoutBuilder.TypedBlockConverter.TypeAll(layoutBuilderModel.BlockStorage);
+                    //make sure all blocks in block storage are strongly typed
+                    for (var i = 0; i < layoutBuilderModel.BlockStorage.length; i++) {
+                        layoutBuilderModel.BlockStorage[i].Block = WebBlocks.LayoutBuilder.TypedBlockConverter.TypeIt(layoutBuilderModel.BlockStorage[i].Block);
+                    }
                 }
                 if ($scope.model.value.RecycleBin !== undefined) {
                     layoutBuilderModel.RecycleBin = $scope.model.value.RecycleBin;
-                    layoutBuilderModel.RecycleBin = WebBlocks.LayoutBuilder.TypedBlockConverter.TypeAll(layoutBuilderModel.RecycleBin);
+                    //make sure all blocks in recycle bin are strongly typed
+                    for (var i = 0; i < layoutBuilderModel.RecycleBin.length; i++) {
+                        layoutBuilderModel.RecycleBin[i].Block = WebBlocks.LayoutBuilder.TypedBlockConverter.TypeIt(layoutBuilderModel.RecycleBin[i].Block);
+                    }
                 }
             }
 

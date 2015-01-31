@@ -1,7 +1,7 @@
 angular.module("umbraco").controller("WebBlocks.BlockStorageDialogCtrl", function ($scope, appState, eventsService, assetsService, dialogService, contentTypeResource, contentResource) {
     var dialogOptions = $scope.dialogOptions;
-    var blockList = $scope.dialogOptions.modelData;
-    $scope.draggableBlockArray = [];
+    var originBlockStorageList = $scope.dialogOptions.modelData;
+    $scope.blockStorageArray = [];
     $scope.getWysiwygContent = function (draggableBlock) {
         var text = "";
         var block = draggableBlock.Block;
@@ -11,15 +11,28 @@ angular.module("umbraco").controller("WebBlocks.BlockStorageDialogCtrl", functio
         }
         return text;
     };
-    function syncDraggableBlockArray() {
-        $scope.draggableBlockArray = [];
+    function syncBlockStorageArray() {
+        $scope.blockStorageArray = [];
         for (var i = 0; i < dialogOptions.modelData.length; i++) {
-            var block = dialogOptions.modelData[i];
-            var draggableBlock = { Block: block, OriginBlockArray: dialogOptions.modelData, OriginDraggableBlockArray: $scope.draggableBlockArray, ShouldRemoveFromOrigin: true, BlockIconClass: "icon-folder" };
+            var blockStorageBlock = dialogOptions.modelData[i];
+            var blockStorageItemViewModel = new WebBlocks.UI.Dialogs.BlockStorageItemViewModel();
+            blockStorageItemViewModel.BlockStorageBlock = blockStorageBlock;
+            blockStorageItemViewModel.DraggableBlock = {
+                Block: blockStorageBlock.Block,
+                ShouldClone: false,
+                BlockIconClass: "icon-folder",
+                OnDropCallback: getOnDropCallback(blockStorageItemViewModel)
+            };
             //display the correct up-to-date name and icon
-            LoadContent(block, draggableBlock);
-            $scope.draggableBlockArray.push(draggableBlock);
+            LoadContent(blockStorageBlock.Block, blockStorageItemViewModel.DraggableBlock);
+            $scope.blockStorageArray.push(blockStorageItemViewModel);
         }
+    }
+    function getOnDropCallback(blockStorageItemViewModel) {
+        return function (draggableBlock) {
+            removeFromArray($scope.blockStorageArray, blockStorageItemViewModel);
+            removeFromArray(originBlockStorageList, blockStorageItemViewModel.BlockStorageBlock);
+        };
     }
     function LoadContent(block, draggableBlock) {
         if (block instanceof WebBlocks.LayoutBuilder.NodeBlock) {
@@ -29,6 +42,12 @@ angular.module("umbraco").controller("WebBlocks.BlockStorageDialogCtrl", functio
             });
         }
     }
-    syncDraggableBlockArray();
+    function removeFromArray(arr, item) {
+        var i;
+        while ((i = arr.indexOf(item)) !== -1) {
+            arr.splice(i, 1);
+        }
+    }
+    syncBlockStorageArray();
 });
 //# sourceMappingURL=layoutbuilder.blockstoragedialog.js.map

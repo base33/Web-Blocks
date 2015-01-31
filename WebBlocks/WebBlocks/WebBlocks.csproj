@@ -67,6 +67,8 @@
     <Compile Include="Extensions\HtmlWebBlocksLiveEdit.cs" />
     <Compile Include="Helpers\HtmlImgHelper.cs" />
     <Compile Include="Helpers\TinyMCE.cs" />
+    <Compile Include="Models\Angular\AngularBlockStorageBlock.cs" />
+    <Compile Include="Models\Angular\AngularRecycleBinBlock.cs" />
     <Compile Include="Models\Angular\WysiwygBlock.cs" />
     <Compile Include="Models\Angular\ContentBlock.cs" />
     <Compile Include="Models\Angular\AngularBlock.cs" />
@@ -77,7 +79,7 @@
     <Compile Include="Models\Angular\AngularLayoutBuilderModel.cs" />
     <Compile Include="Models\Navigation\NavigationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\ContainerProvider.cs" />
+    <Compile Include="Providers\LayoutBuilderProvider.cs" />
     <Compile Include="RemovePreviewCookie.ashx.cs">
       <DependentUpon>RemovePreviewCookie.ashx</DependentUpon>
     </Compile>
