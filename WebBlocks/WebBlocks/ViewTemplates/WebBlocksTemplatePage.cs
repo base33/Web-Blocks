@@ -11,11 +11,14 @@ namespace WebBlocks.ViewTemplates
 {
     public class WebBlocksTemplatePage : Umbraco.Web.Mvc.UmbracoTemplatePage
     {
+        private dynamic currentPage = null;
+        public dynamic currentBlock = null;
+
         new public dynamic CurrentPage
         {
             get
             {
-                return WebBlocksUtility.CurrentPageContent.AsDynamic();
+                return currentPage ?? (currentPage = WebBlocksUtility.CurrentPageContent.AsDynamic());
             }
         }
 
@@ -24,7 +27,7 @@ namespace WebBlocks.ViewTemplates
             get
             {
                 //return published model
-                return WebBlocksUtility.CurrentBlockContent.AsDynamic();
+                return currentBlock ?? (currentBlock = WebBlocksUtility.CurrentBlockContent.AsDynamic());
             }
         }
 

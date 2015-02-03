@@ -80,14 +80,10 @@
     <Compile Include="Models\Navigation\NavigationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\LayoutBuilderProvider.cs" />
-    <Compile Include="RemovePreviewCookie.ashx.cs">
-      <DependentUpon>RemovePreviewCookie.ashx</DependentUpon>
-    </Compile>
     <Compile Include="Serialisation\ContainersSerialiser.cs" />
     <Compile Include="Serialisation\JavascriptConverters\IContainerConverter.cs" />
     <Compile Include="Serialisation\JavascriptConverters\IBlockElementAttributeConverter.cs" />
     <Compile Include="Serialisation\JavascriptConverters\IBlockConverter.cs" />
-    <Compile Include="Startup.cs" />
     <Compile Include="SurfaceControllers\BlockRenderSurfaceController.cs" />
     <Compile Include="Views\AngularBlockView.cs" />
     <Compile Include="Views\BlockView.cs" />
@@ -99,7 +95,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RemovePreviewCookie.ashx" />
     <Content Include="Views\WebBlockViews\BlockPreviewRender.cshtml" />
     <Content Include="Views\WebBlockViews\LiveEditRender.cshtml" />
     <Content Include="packages.config" />

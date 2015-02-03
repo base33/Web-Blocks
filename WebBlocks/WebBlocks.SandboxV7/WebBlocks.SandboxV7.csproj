@@ -245,7 +245,7 @@
     <Content Include="Views\Global.cshtml" />
     <Content Include="Views\Partials\FeatureBlock.cshtml" />
     <Content Include="App_Plugins\WebBlocks\Dialogs\LayoutBuilder.ContextMenuDialog.html" />
-    <Content Include="css\Bootstrap.less" />
+    <Content Include="css\Test2.less" />
     <Content Include="css\Test.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

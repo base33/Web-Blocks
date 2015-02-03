@@ -49,10 +49,10 @@ namespace WebBlocks.Providers
         /// </summary>
         /// <param name="name">name of the container</param>
         /// <returns>The container</returns>
-        public AngularContainer ContainerByName(string name)
+        public Container ContainerByName(string name)
         {
             if (LayoutBuilder == null) return null;
-            AngularContainer container = null;
+            Container container = null;
             LayoutBuilder.Containers.TryGetValue(name, out container);
             return container;
         }

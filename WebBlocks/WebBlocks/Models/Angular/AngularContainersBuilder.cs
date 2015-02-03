@@ -14,12 +14,12 @@ namespace WebBlocks.Models.Angular
     public class AngularContainersBuilder
     {
         protected const string CACHEKEY = "wbAngularContainersModel";
-        protected Dictionary<string, AngularContainer> Containers { get; set; }
-        protected AngularContainer CurrentContainer { get; set; }
+        protected Dictionary<string, Container> Containers { get; set; }
+        protected Container CurrentContainer { get; set; }
 
         protected AngularContainersBuilder()
         {
-            Containers = new Dictionary<string, AngularContainer>();
+            Containers = new Dictionary<string, Container>();
         }
 
         public static AngularContainersBuilder Load()
@@ -39,7 +39,7 @@ namespace WebBlocks.Models.Angular
         /// </summary>
         /// <param name="container"></param>
         /// <returns></returns>
-        public void AddContainer(AngularContainer container)
+        public void AddContainer(Container container)
         {
             Containers.Add(container.Name, container);
             CurrentContainer = container;

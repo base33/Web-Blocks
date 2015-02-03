@@ -49,6 +49,7 @@
         $scope.loadChildNavigationIntoMenuCallback = function (navigationModel: WebBlocks.UI.Dialogs.NavigationViewModel, navigationChildren: Array<WebBlocks.API.Models.NavigationItem>) {
             $timeout(function () {
                 navigationModel.Children = [];
+                
                 for (var i = 0; i < navigationChildren.length; i++) {
                     navigationModel.Children.push(createChildNavigationModel(navigationModel, navigationChildren[i]));
                 }

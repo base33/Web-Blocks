@@ -6,7 +6,7 @@ using WebBlocks.Interfaces;
 
 namespace WebBlocks.Models.Angular
 {
-    public class AngularContainer : IContainer
+    public class Container : IContainer
     {
         public string Name { get; set; }
         public string Tag { get; set; }
@@ -18,7 +18,7 @@ namespace WebBlocks.Models.Angular
         public IContainerPermissions ContainerPermissions { get; set; }
         public IContainerRenderer ContainerRenderer { get; set; }
 
-        public AngularContainer()
+        public Container()
         {
             Name = "";
             Tag = "div";

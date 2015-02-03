@@ -29,7 +29,7 @@ namespace WebBlocks.Serialisation.JavascriptConverters
         /// <returns></returns>
         public IContainer Create(Type objectType, JObject jObject)
         {
-            return new AngularContainer();
+            return new Container();
         }
 
 

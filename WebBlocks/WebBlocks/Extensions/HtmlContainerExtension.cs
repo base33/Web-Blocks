@@ -66,7 +66,7 @@ namespace WebBlocks.Extensions
             //create angularjs container
             var containersBuilder = AngularContainersBuilder.Load();
             containersBuilder.AddContainer(
-                new AngularContainer()
+                new Container()
                 {
                     Name = container.Name,
                     WysiwygClass = container.WysiwygClass,

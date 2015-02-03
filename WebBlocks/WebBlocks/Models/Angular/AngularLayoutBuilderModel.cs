@@ -8,13 +8,13 @@ namespace WebBlocks.Models.Angular
 {
     public class AngularLayoutBuilderModel
     {
-        public Dictionary<string, AngularContainer> Containers { get; set; }
+        public Dictionary<string, Container> Containers { get; set; }
         public List<AngularRecycleBinBlock> RecycleBin { get; set; }
         public List<AngularBlockStorageBlock> BlockStorage { get; set; }
 
         public AngularLayoutBuilderModel()
         {
-            Containers = new Dictionary<string, AngularContainer>();
+            Containers = new Dictionary<string, Container>();
             RecycleBin = new List<AngularRecycleBinBlock>();
             BlockStorage = new List<AngularBlockStorageBlock>();
         }
