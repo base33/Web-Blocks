@@ -110,7 +110,7 @@ namespace WebBlocks.Utilities.Umbraco
         {
             get
             {
-                return content.Properties.Select(p => new ContentPropertyWrapper(p)).ToArray();
+                return content.Properties.Select(p => new ContentPropertyWrapper(p, content.PropertyTypes.FirstOrDefault(pt => pt.Alias == p.Alias), ContentType)).ToArray();
             }
         }
 
@@ -193,9 +193,15 @@ namespace WebBlocks.Utilities.Umbraco
                 var property = currentContent.Properties.FirstOrDefault(c => c.Alias == alias);
 
                 if (property != null && property.Value != null)
-                    return new ContentPropertyWrapper(property);
+                {
+                    //var propertyType = ContentType.GetPropertyType(property.Alias);
+                    var propertyType = content.PropertyTypes.FirstOrDefault(p => p.Alias == alias);
+                    return new ContentPropertyWrapper(property, propertyType, ContentType);
+                }
                 else
+                {
                     currentContent = content.Parent();
+                }
             } while (currentContent != null && currentContent.Level > -1 && recurse);
 
             return null;
@@ -211,7 +217,8 @@ namespace WebBlocks.Utilities.Umbraco
         public IPublishedProperty GetProperty(string alias)
         {
             var property = content.Properties.FirstOrDefault(c => c.Alias == alias);
-            return property != null ? new ContentPropertyWrapper(property) : null;
+            var propertyType = content.PropertyTypes.FirstOrDefault(p => p.Alias == alias);
+            return property != null ? new ContentPropertyWrapper(property, propertyType, ContentType) : null;
         }
     }
 }

@@ -14,23 +14,23 @@ body.mceContentBody { margin:8px !important; }
 
 
 /* SITE TEXT STYLES ================================================================================== */	
-#webBlocksWrapper body { font-family:'Open Sans', Helvetica, sans-serif; font-size:12px; line-height:18px; color:#666; }
-#webBlocksWrapper * { -webkit-font-smoothing:antialiased; } 
+body { font-family:'Open Sans', Helvetica, sans-serif; font-size:12px; line-height:18px; color:#666; }
+* { -webkit-font-smoothing:antialiased; } 
 	
-#webBlocksWrapper h1 { margin:0; font-size:30px; font-weight:300; line-height:35px; color:#283F81; }
-#webBlocksWrapper h2 { margin:0 0 5px 0; font-size:22px; font-weight:bold; line-height:25px; color:#333; }
-#webBlocksWrapper h3 { margin:0; font-size:18px; font-weight:bold; line-height:22px; color:#333; }
-#webBlocksWrapper h4 { margin:0; font-size:16px; font-weight:bold; line-height:18px; color:#333; }
-#webBlocksWrapper h5 {  }
-#webBlocksWrapper h6 {  }
-#webBlocksWrapper a, #webBlocksWrapper a:link, #webBlocksWrapper a:visited, #webBlocksWrapper a:active {
+ h1 { margin:0; font-size:30px; font-weight:300; line-height:35px; color:#283F81; }
+ h2 { margin:0 0 5px 0; font-size:22px; font-weight:bold; line-height:25px; color:#333; }
+ h3 { margin:0; font-size:18px; font-weight:bold; line-height:22px; color:#333; }
+ h4 { margin:0; font-size:16px; font-weight:bold; line-height:18px; color:#333; }
+ h5 {  }
+ h6 {  }
+ a, a:link,  a:visited,  a:active {
    color:#0080FF; text-decoration:none; 
    -webkit-transition:all 0.15s ease; -moz-transition:all 0.15s ease; -o-transition:all 0.15s ease; transition:all 0.15s ease; 
 }
-#webBlocksWrapper a:hover { color:#283F81; text-decoration:underline; }
-#webBlocksWrapper p { padding-bottom:10px; }
-#webBlocksWrapper b, strong { font-weight:700; }
-#webBlocksWrapper ul, ol { margin:0 20px 20px 30px; }
+ a:hover { color:#283F81; text-decoration:underline; }
+ p { padding-bottom:10px; }
+ b, strong { font-weight:700; }
+ ul, ol { margin:0 20px 20px 30px; }
 /* =================================================================================================== */
 
 
@@ -40,25 +40,6 @@ body.mceContentBody { margin:8px !important; }
 
 
 
-
-
-
-/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
-h2 {
-
-}
-
-h3 {
-
-}
-
-h4 {
-
-}
-
-p {
-
-}
 
 
 
@@ -75,7 +56,11 @@ p {
 
 }
 
-Heading 3 {
+h3 {
+
+}
+
+h4 {
 
 }
 

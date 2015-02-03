@@ -25,7 +25,7 @@ namespace WebBlocks.Extensions
             if (WebBlocksUtility.CurrentPageContent == null)
             {
                 WebBlocksUtility.CurrentPageNodeId = UmbracoContext.Current.PageId ?? 0;
-                WebBlocksUtility.CurrentPageContent = (new UmbracoHelper(UmbracoContext.Current)).TypedContent(UmbracoContext.Current.PageId);//PublishedContentProvider.Load(UmbracoContext.Current.PageId ?? 0);
+                WebBlocksUtility.CurrentPageContent = PublishedContentProvider.Load(UmbracoContext.Current.PageId ?? 0); //(new UmbracoHelper(UmbracoContext.Current)).TypedContent(UmbracoContext.Current.PageId);
             }
         }
 

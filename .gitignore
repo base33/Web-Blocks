@@ -4,3 +4,5 @@ TEMP/
 *.suo
 *.user
 WebBlocks/WebBlocks.SandboxV6/App_Data/TEMP
+WebBlocks/WebBlocks.SandboxV7/App_Data/TEMP
+WebBlocks/WebBlocks.SandboxV7/App_Data/Logs

@@ -23,10 +23,8 @@ angular.module("umbraco")
 
         //so first, I create a reference variable to use in the code.  This will be the working layout builder
         var layoutBuilderModel : WebBlocks.LayoutBuilder.LayoutBuilder = null;
-        //next I load/sync the layout builder into the property editor model value
-        $scope.model.value = loadLayoutBuilder(function () {
-            //then I want to use the typed LayoutBuilder Model as my working layout builder
-            $scope.layoutBuilderModel = $scope.model.value;
+        //next I load/sync the layout builder
+        $scope.layoutBuilderModel = loadLayoutBuilder(function () {
             //then I want to clone it into $scope.model.value
             $scope.model.value = angular.copy($scope.layoutBuilderModel);
             //set the reference variable
@@ -172,7 +170,7 @@ angular.module("umbraco")
                         config: {
                             editor: {
                                 toolbar: ["code", "undo", "redo", "cut", "styleselect", "bold", "italic", "alignleft", "aligncenter", "alignright", "bullist", "numlist", "link", "umbmediapicker", "umbmacro", "umbembeddialog"],
-                                stylesheets: [],
+                                stylesheets: ["Wysiwyg.Backoffice"],
                                 dimensions: {}
                             }
                         }
@@ -336,8 +334,29 @@ angular.module("umbraco")
             var previewProvider = new WebBlocks.API.LayoutBuilderPreview();
             previewProvider.GetPreview(currentContentId, $http,
                 function (preview) {
+
+                    //if a container was removed, we want to move the blocks into Block Storage
+                    angular.forEach($scope.model.value.Containers,(savedContainer: WebBlocks.LayoutBuilder.Container, savedContainerName: string) => {
+                        console.log(savedContainerName);
+                        var found = false;
+
+                        angular.forEach(preview.Containers,(liveContainer: WebBlocks.LayoutBuilder.Container, liveContainerName: string) => {
+                            if (liveContainer.Name == savedContainer.Name)
+                                found = true;
+                        });
+
+                        if (!found) {
+                            //strongly type all blocks before moving in
+                            WebBlocks.LayoutBuilder.TypedBlockConverter.TypeAll(savedContainer.Blocks);
+                            for (var i = 0; i < savedContainer.Blocks.length; i++) {
+                                layoutBuilderModel.BlockStorage.push(new WebBlocks.LayoutBuilder.BlockStorageBlock(savedContainer.Blocks[i], "Originally from " + savedContainer.Name));
+                            }
+                        }
+                    });
+
                     layoutBuilderModel.Containers = preview.Containers;
                     var layoutBuilderElements = $compile($(preview.Html)[0].outerHTML)($scope);
+                    //load in canvas angular html
                     $element.find("#canvasRender").empty().append(layoutBuilderElements);
                     callback();
                 });
@@ -385,5 +404,11 @@ angular.module("umbraco")
         assetsService.loadCss("/App_Plugins/WebBlocks/Css/WebBlocks.css");
         assetsService.loadCss("/css/960.css");
         assetsService.loadCss("/css/global.backoffice.css");
+
+        function emptyArray(arr) {
+            while (arr.length > 0) {
+                arr.pop();
+            }
+        }
 
     });

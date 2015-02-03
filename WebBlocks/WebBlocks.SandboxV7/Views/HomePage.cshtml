@@ -15,26 +15,18 @@
             WysiwygClass = "grid_3",
             Blocks = new List<IBlock>()
             {
-                new WebBlocks.Models.Angular.ContentBlock(1059),
+                new WebBlocks.Models.Angular.ContentBlock(1080),
                 new WebBlocks.Models.Angular.WysiwygBlock(1) {
                     Content = "<p>Here is some content</p>"
                 }
             }
         })
 
-        @Html.Container(new WebBlocks.Models.Angular.AngularContainer
-        {
-            Name = "contentContainer",
-            Classes = "contentBlock_9",
-            WysiwygClass = "grid_9",
-            Blocks = new List<IBlock>()
-            {
-                new WebBlocks.Models.Angular.ContentBlock(1059),
-                new WebBlocks.Models.Angular.WysiwygBlock(40) {
-                    Content = "<p>Some other content, yeah</p>"   
-                }
-            }
-        })
+        
+		
+		<div class="contentBlock_12">
+			<h1>THIS IS HARD CODED IN</H1>
+			</div>
 
         @Html.Container(new WebBlocks.Models.Angular.AngularContainer
         {
@@ -43,7 +35,6 @@
             WysiwygClass = "grid_12",
             Blocks = new List<IBlock>()
             {
-                new WebBlocks.Models.Angular.ContentBlock(1059),
                 new WebBlocks.Models.Angular.WysiwygBlock(8723) {
                     Content = "<p>Some other content, yeah</p>"
                 }
