@@ -211,6 +211,8 @@
     <Content Include="App_Plugins\WebBlocks\Dialogs\LayoutBuilder.AddBlockDialog.html" />
     <Content Include="App_Plugins\WebBlocks\Dialogs\LayoutBuilder.RecycleBinDialog.html" />
     <Content Include="App_Plugins\WebBlocks\Dialogs\LayoutBuilder.BlockStorageDialog.html" />
+    <Content Include="css\global.backoffice.css" />
+    <Content Include="css\wysiwyg.backoffice.css" />
     <Content Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -243,6 +245,8 @@
     <Content Include="Views\Global.cshtml" />
     <Content Include="Views\Partials\FeatureBlock.cshtml" />
     <Content Include="App_Plugins\WebBlocks\Dialogs\LayoutBuilder.ContextMenuDialog.html" />
+    <Content Include="css\Bootstrap.less" />
+    <Content Include="css\Test.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

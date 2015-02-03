@@ -36,7 +36,16 @@
                 <a ng-click="handleNavigationMore(navigationModel)" class="wb-navigation-item-more umb-options">
                     <i></i><i></i><i></i>
                 </a>
-                <a ng-drag="true" ng-drag-data="navigationModel.DraggableBlock" prevent-default="" class="wb-draggable-item">
+                <a ng-show="navigationModel.Model.HasChildren" ng-drag="true" ng-drag-data="navigationModel.DraggableBlock" prevent-default="" class="wb-draggable-item">
+                    <div class="wb-draggable-item-icon">
+                        <i class="icon {{navigationModel.Model.IconClass}}"></i>
+                    </div>
+                    <div class="wb-draggable-item-name">
+                        <span>{{navigationModel.Model.Name}}</span>
+                    </div>
+                </a>
+
+                <a ng-hide="navigationModel.Model.HasChildren" prevent-default="" class="wb-draggable-item">
                     <div class="wb-draggable-item-icon">
                         <i class="icon {{navigationModel.Model.IconClass}}"></i>
                     </div>

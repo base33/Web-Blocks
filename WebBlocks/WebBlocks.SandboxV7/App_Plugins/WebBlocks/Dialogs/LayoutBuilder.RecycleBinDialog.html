@@ -20,6 +20,7 @@
                     <span class="menu-label ng-binding">{{recycleBinBlock.DraggableBlock.Block.Name}}</span>
                     <i ng-click="deleteBlock(recycleBinBlock)" class="wbRedIconHover icon icon-delete pull-right"></i>
                 </a>
+                <span ng-show="recycleBinBlock.Message.length > 0">{{recycleBinBlock.Message}}</span>
             </li>
 
             <li ng-hide="recycleBinBlockArray.length > 0" class="action ng-scope">
