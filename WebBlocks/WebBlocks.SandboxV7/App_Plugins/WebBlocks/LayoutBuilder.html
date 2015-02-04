@@ -20,12 +20,7 @@
         </a>
 
         <!-- session buttons -->
-        <span ng-show="uiState.IframeEditor.Visible">
-            <a ui-draggable class="btn btn-success" href="#" ng-show="uiState.IframeEditor.Visible" ng-click="uiState.IframeEditor.Visible = false;uiState.LayoutBuilder.Visible = true;updateAllBlockElementsInAllContainers(uiState.IframeEditor.BlockId);" title="Recycle Bin" prevent-default>
-                <i class="icon-pencil"></i>
-                Finish Editing
-            </a>
-        </span>
+        
 
     </div>
 
@@ -46,7 +41,13 @@
 
     <div id="webBlocksWrapper" wb-prevent-default-on-click style="margin-left:-240px;margin-top:30px;">
 
-        <div ng-show="uiState.IframeEditor.Visible" class="wb-browser-window wbNoSelect">
+        <div ng-show="uiState.IframeEditor.Visible" wb-iframe-on-load="updateIframeDocumentStyles($element)" class="wb-browser-window wbNoSelect" style="position:absolute; margin-bottom:60px;">
+            <span class="wbIframeClose" ng-show="uiState.IframeEditor.Visible" style="position: absolute;right: 28px;top: 25px;padding: 5px;background: #ddd;border-radius: 5px;border: 1px solid #cdcdcd;">
+                <a ui-draggable class="btn btn-success" href="#" ng-show="uiState.IframeEditor.Visible" ng-click="uiState.IframeEditor.Visible = false;uiState.LayoutBuilder.Visible = true;updateAllBlockElementsInAllContainers(uiState.IframeEditor.BlockId);" title="Recycle Bin" prevent-default>
+                    <i class="icon-pencil"></i>
+                    Finish Editing
+                </a>
+            </span>
             <iframe src="{{uiState.IframeEditor.Url}}" height="500" width="800"></iframe>
         </div>
 

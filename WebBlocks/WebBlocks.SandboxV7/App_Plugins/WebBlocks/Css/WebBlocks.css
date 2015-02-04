@@ -39,7 +39,7 @@ body.umbracoPage .menubar img { vertical-align:initial; }
 
 /* Containers
 ------------------------------------------ */
-#webBlocksWrapper .container, #webBlocksWrapper .wbcontainer { min-height: 120px; outline: solid 1px #ddd; *border: dashed 1px rgb(221, 221, 221) !important; margin-bottom: 20px; }
+#webBlocksWrapper .container, #webBlocksWrapper .wbcontainer { min-height: 120px; outline: dotted 1px #ddd; *border: dashed 1px rgb(221, 221, 221) !important; margin-bottom: 20px; }
 /*#webBlocksWrapper .clearfix { clear: both; height: 0px; font-size: 0px; visibility: hidden; overflow: hidden; }*/
 #webBlocksWrapper .divider { border-bottom:1px solid #ccc; height:1px;  margin-bottom:10px; margin-top:10px; }
 

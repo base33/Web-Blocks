@@ -73,7 +73,7 @@
     <Compile Include="Models\Angular\ContentBlock.cs" />
     <Compile Include="Models\Angular\AngularBlock.cs" />
     <Compile Include="Models\Angular\AngularBlockViewModel.cs" />
-    <Compile Include="Models\Angular\AngularContainer.cs" />
+    <Compile Include="Models\Angular\Container.cs" />
     <Compile Include="Models\Angular\AngularContainersBuilder.cs" />
     <Compile Include="Models\Angular\AngularElementAttribute.cs" />
     <Compile Include="Models\Angular\AngularLayoutBuilderModel.cs" />

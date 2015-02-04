@@ -38,6 +38,26 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         LayoutBuilder: new WebBlocks.UI.LayoutBuilderState(true),
         IframeEditor: new WebBlocks.UI.IframeEditorState(false)
     });
+    $scope.updateIframeDocumentStyles = function (iframeElement) {
+        setTimeout(function () {
+            updateStylesWhenDocReady();
+            function updateStylesWhenDocReady() {
+                console.log("checking");
+                if (iframeElement.contentDocument.readyState == "complete") {
+                    console.log("doing stuff now");
+                    var $iframeDoc = $(iframeElement.contentDocument);
+                    $iframeDoc.find("#leftcolumn").hide();
+                    $iframeDoc.find("#contentwrapper").css({ "left": "0px" });
+                }
+                else {
+                    console.log("notcomplete");
+                    setTimeout(function () {
+                        updateStylesWhenDocReady();
+                    }, 300);
+                }
+            }
+        }, 1500);
+    };
     $scope.getSortableOptions = function (blockList) {
         return {
             handle: ":not(.wbAction)",

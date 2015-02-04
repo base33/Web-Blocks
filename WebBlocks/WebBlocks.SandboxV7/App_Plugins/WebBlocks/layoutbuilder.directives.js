@@ -114,6 +114,21 @@ angular.module('umbraco.directives').directive('wbSticky', function () {
         }
     };
 });
+//goes on to the parent - for some reason attribute directives doesn't work on iframe elements (?)
+angular.module('umbraco.directives').directive('wbIframeOnLoad', function ($parse) {
+    return {
+        link: function (scope, elem, attr) {
+            var iframeOnLoad = $parse(attr.wbIframeOnLoad);
+            var iframeElement = $(elem).find("iframe")[0];
+            $(iframeElement).on('load', function () {
+                var params = {
+                    $element: iframeElement
+                };
+                iframeOnLoad(scope, params);
+            });
+        }
+    };
+});
 //angular.module("umbraco.directives").directive("wbOnClick", function () {
 //    return {
 //        link: function (scope, elem, attr) {

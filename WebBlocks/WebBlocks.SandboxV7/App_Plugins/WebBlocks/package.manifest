@@ -7,7 +7,32 @@
             editor: {
                 view: "~/App_Plugins/WebBlocks/LayoutBuilder.html",
 				valueType: "json"
-            }
+            },
+			prevalues: {
+				fields: [
+					{
+						label: "Canvas Width (optional)",
+						description: "The canvas width without 'px'.  Default: 960",
+						key: "canvasWidth",
+						view: "number",
+						validation: []
+					},
+					{
+						label: "Iframe Width (optional)",
+						description: "The block editor iframe width without 'px'.",
+						key: "iframeWidth",
+						view: "number",
+						validation: []
+					},
+					{
+						label: "Iframe Height (optional)",
+						description: "The block editor iframe height without 'px'.",
+						key: "iframeHeight",
+						view: "number",
+						validation: []
+					}
+				]
+			}
         }
     ]
     ,
