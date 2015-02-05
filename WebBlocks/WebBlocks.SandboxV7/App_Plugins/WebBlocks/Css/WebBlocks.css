@@ -97,6 +97,9 @@ body.umbracoPage .menubar img { vertical-align:initial; }
   display: block!important;
 }
 
+#webBlocksWrapper .wbWysiwygOff { background: #e8e8e8 url('/umbraco/plugins/webblocks/images/wysiwygOff.jpg') no-repeat top center; text-align: center; font-size: 12pt; line-height: 120px; height: 120px !important; /*margin-bottom: 0px !important;*/ overflow: hidden !important; }
+
+
 .wb-context-menu {
     width: 300px !important;
     margin-left: -300px !important;
@@ -188,30 +191,38 @@ body.umbracoPage .menubar img { vertical-align:initial; }
                 display:inline-block;
                 visibility: visible;
             }
-
+            
         .wb-navigation-item > .wb-draggable-item {
-            float: left; height: 40px; border-radius: 3px;
+             border-radius: 3px;
         }
-        
-            .wb-navigation-item > .wb-draggable-item > .wb-draggable-item-icon {
-                width: 25px;padding: 10px 0px;float: left;display:inline-block;
-            }
 
-                .wb-navigation-item > .wb-draggable-item > .wb-draggable-item-icon i {
-                    font-size: 20px;
-                }
-
-            .wb-navigation-item > .wb-draggable-item > .wb-draggable-item-name {
-                 display:inline-block;padding: 10px 0px;
-            }
-
-            .wb-navigation-item > .wb-draggable-item > .wb-draggable-item-name > span {
-                font-size: 14px;margin:10px;
-            }
+        .wb-draggable-item {
+            cursor: pointer;
+        }
        
             .wb-draggable-item.dragging {
                 background: white;
                 z-index:9999999;
+            }
+
+        .wb-navigation-item > .wb-navigation-item-block {
+            float: left; height: 40px;
+        }
+        
+            .wb-navigation-item > .wb-navigation-item-block > .wb-draggable-item-icon {
+                width: 25px;padding: 10px 0px;float: left;display:inline-block;
+            }
+
+                .wb-navigation-item > .wb-navigation-item-block > .wb-draggable-item-icon i {
+                    font-size: 20px;
+                }
+
+            .wb-navigation-item > .wb-navigation-item-block > .wb-draggable-item-name {
+                 display:inline-block;padding: 10px 0px;
+            }
+
+            .wb-navigation-item > .wb-navigation-item-block > .wb-draggable-item-name > span {
+                font-size: 14px;margin:10px;
             }
 
         .wb-navigation-item > .wb-navigation-item-more {

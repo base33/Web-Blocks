@@ -3,7 +3,7 @@
 
 angular.module("umbraco")
     .controller("WebBlocks.LayoutBuilder",
-    function ($scope: any, $http: ng.IHttpService, $element: JQuery, appState: any, eventsService: any, assetsService, dialogService, notificationsService, $compile: ng.ICompiledExpression) {
+    function ($scope: any, $http: ng.IHttpService, $element: JQuery, appState: any, editorState: any, eventsService: any, assetsService, dialogService, notificationsService, $compile: ng.ICompiledExpression) {
         
         //$scope.wysiwygEditorUrl = "/App_Plugins/WebBlocks/LayoutBuilder.WysiwygEditor.html";
 
@@ -120,8 +120,8 @@ angular.module("umbraco")
         };
 
         function loadBlockContent(block: WebBlocks.LayoutBuilder.Block, callback: () => void) {
-            var currentContentId = getCurrentContentId();
-            var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?wbPreview=true&pageId=" + currentContentId + "&blockId=" + block.Id;
+            var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?wbPreview=true&pageId=" + editorState.current.id
+                + "&blockId=" + block.Id;
             $.ajax({
                 type: 'GET',
                 url: url,
@@ -181,7 +181,7 @@ angular.module("umbraco")
                 
             }
             else if (block instanceof WebBlocks.LayoutBuilder.WysiwygBlock) {
-
+                $(blockElement).removeClass("wbWysiwygOff");
                 var session = {
                     id: WebBlocks.Utils.GuidHelper.GenerateGuid(),
                     block: block,
@@ -200,12 +200,18 @@ angular.module("umbraco")
                         }
                     }
                 };
+                //TODO: type the session
                 $scope.activeEditSessions[session.id] = session;
-                var newElement = $("<div><umb-editor model='activeEditSessions[\"" + session.id + "\"].tinyMceConfig'></umb-editor><div class='wb-wysiwyg-action-bar'><input type='button' class='btn btn-warning' value='Cancel' ng-click='updateWysiwygBlockCancel(\"" + session.id + "\")' /><input type='button' class='btn btn-success' value='Accept' ng-click='updateWysiwygBlock(\"" + session.id + "\")' /></div></div>");
-                $compile(newElement)($scope);
-                $(blockElement).empty();
-                $(blockElement).append(newElement);
-                $(blockElement).click();
+
+                //set a compile flag on the block view model and move this to directive (excl newElement)
+                session.block.ViewModel.Html = "<div><umb-editor model='activeEditSessions[\"" + session.id + "\"].tinyMceConfig'></umb-editor><div class='wb-wysiwyg-action-bar'><input type='button' class='btn btn-warning' value='Cancel' ng-click='updateWysiwygBlockCancel(\"" + session.id + "\")' /><input type='button' class='btn btn-success' value='Accept' ng-click='updateWysiwygBlock(\"" + session.id + "\")' /></div></div>";
+                session.block.ViewModel.ShouldCompile = true;
+                session.block.ViewModel.ShouldRerender = true;
+                
+                //$compile(newElement)($scope);
+                //$(blockElement).empty();
+                //$(blockElement).append(newElement);
+                //$(blockElement).click();
                 setTimeout(function () {
                     $(blockElement).click();
                 }, 2500);
@@ -247,16 +253,19 @@ angular.module("umbraco")
         // handle wysiwyg update, for session
         $scope.updateWysiwygBlock = function (sessionId) {
             var session = $scope.activeEditSessions[sessionId];
-            session.block.Content = session.tinyMceConfig.value;
+            session.block.Content = session.tinyMceConfig.value != "" ? session.tinyMceConfig.value : "<p></p>";
             session.block.ViewModel.Html = session.block.Content;
-            $(session.element).empty();
-            $(session.element).append($(session.block.Content));
 
-            // todo: create a block content helper
-            $(session.element).find("a, input[type='button'], input[type='submit'], button").on("click", function (e) {
-                e.preventDefault();
-                return false;
-            });
+            (<WebBlocks.LayoutBuilder.Block>session.block).ViewModel.ShouldRerender = true;
+
+            //$(session.element).empty();
+            //$(session.element).append($(session.block.Content));
+
+            //// todo: create a block content helper
+            //$(session.element).find("a, input[type='button'], input[type='submit'], button").on("click", function (e) {
+            //    e.preventDefault();
+            //    return false;
+            //});
 
             //enable sorting on parent container
             $(session.element.parent()).sortable("enable");
@@ -266,14 +275,16 @@ angular.module("umbraco")
         // handle wysiwyg cancel update event, for session
         $scope.updateWysiwygBlockCancel = function (sessionId) {
             var session = $scope.activeEditSessions[sessionId];
-            $(session.element).empty();
-            $(session.element).append($(session.block.Content));
+            session.block.ViewModel.Html = session.block.Content;
+            (<WebBlocks.LayoutBuilder.Block>session.block).ViewModel.ShouldRerender = true;
+            //$(session.element).empty();
+            //$(session.element).append($(session.block.Content));
 
-            // todo: create a block content helper
-            $(session.element).find("a, input[type='button'], input[type='submit'], button").on("click", function (e) {
-                e.preventDefault();
-                return false;
-            });
+            //// todo: create a block content helper
+            //$(session.element).find("a, input[type='button'], input[type='submit'], button").on("click", function (e) {
+            //    e.preventDefault();
+            //    return false;
+            //});
 
             //enable sorting on parent container
             $(session.element.parent()).sortable("enable");
@@ -285,13 +296,13 @@ angular.module("umbraco")
 
             var block = <WebBlocks.LayoutBuilder.Block>event.EventData.block;
             var blockElement = event.EventData.blockElement;
-            var container = event.EventData.container;
+            var container = <WebBlocks.LayoutBuilder.Container>event.EventData.container;
             switch (event.Event) {
                 case 'Edit':
                     $scope.editBlock(blockElement, block, container, false);
                     break;
                 case 'Move to block storage':
-                    var blockStorageBlock = new WebBlocks.LayoutBuilder.BlockStorageBlock(block, "");
+                    var blockStorageBlock = new WebBlocks.LayoutBuilder.BlockStorageBlock(block, "", new WebBlocks.LayoutBuilder.BlockHistory(container.Name));
                     layoutBuilderModel.BlockStorage.push(blockStorageBlock);
                     removeFromArray(container.Blocks, block);
                     notificationsService.success("Successfully added to block storage");
@@ -301,7 +312,7 @@ angular.module("umbraco")
                         block.IsDeletedBlock = true;
                     }
                     else {
-                        var recycleBinBlock = new WebBlocks.LayoutBuilder.RecycleBinBlock(block, "");
+                        var recycleBinBlock = new WebBlocks.LayoutBuilder.RecycleBinBlock(block, "", new WebBlocks.LayoutBuilder.BlockHistory(container.Name));
                         layoutBuilderModel.RecycleBin.push(recycleBinBlock);
                         removeFromArray(container.Blocks, block);
                         notificationsService.success("Successfully added to the recycle bin.");
@@ -317,12 +328,6 @@ angular.module("umbraco")
             }
         }
 
-        function getCurrentContentId() {
-            var segments = window.location.hash.split("/");
-            var currentContentId = segments[segments.length - 1];
-            return parseInt(currentContentId);
-        }
-
         function isInCreateMode() {
             return window.location.hash.indexOf("create=true") >= 0;
         }
@@ -335,7 +340,7 @@ angular.module("umbraco")
                 var layoutBuilderNew = new WebBlocks.LayoutBuilder.LayoutBuilder();
                 return layoutBuilderNew;
             }
-            var currentContentId = getCurrentContentId();
+
             var layoutBuilderModel = new WebBlocks.LayoutBuilder.LayoutBuilder();
 
             if ($scope.model.value !== undefined) {
@@ -356,7 +361,7 @@ angular.module("umbraco")
             }
 
             var previewProvider = new WebBlocks.API.LayoutBuilderPreview();
-            previewProvider.GetPreview(currentContentId, $http,
+            previewProvider.GetPreview(editorState.current.id, $http,
                 function (preview) {
 
                     //if a container was removed, we want to move the blocks into Block Storage
@@ -373,7 +378,8 @@ angular.module("umbraco")
                             //strongly type all blocks before moving in
                             WebBlocks.LayoutBuilder.TypedBlockConverter.TypeAll(savedContainer.Blocks);
                             for (var i = 0; i < savedContainer.Blocks.length; i++) {
-                                layoutBuilderModel.BlockStorage.push(new WebBlocks.LayoutBuilder.BlockStorageBlock(savedContainer.Blocks[i], "Originally from " + savedContainer.Name));
+                                layoutBuilderModel.BlockStorage.push(new WebBlocks.LayoutBuilder.BlockStorageBlock(savedContainer.Blocks[i], "Missing container",
+                                    new WebBlocks.LayoutBuilder.BlockHistory(savedContainer.Name)));
                             }
                         }
                     });

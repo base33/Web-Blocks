@@ -33,12 +33,15 @@ angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
                     block.ViewModel.ShouldRerender = false;
                     render();
                 }
-            }, 2000);
+            }, 400);
             //scope.$watch(function () {
-            //    return block.shouldRerender;
+            //    return block.ViewModel.ShouldRerender;
             //},
             //function (shouldRenderValue, oldShouldRenderValue) {
-            //    i
+            //    if (block.ViewModel.ShouldRerender == true) {
+            //        block.ViewModel.ShouldRerender = false;
+            //        render();
+            //    }
             //});
 
             function render() {
@@ -60,13 +63,30 @@ angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
 
                     attr.$set("class", "");
                     var blockClasses = block.ViewModel.Classes;
-                    if (block instanceof WebBlocks.LayoutBuilder.WysiwygBlock)
-                        blockClasses = "wbWysiwyg " + container.WysiwygClass;
+                    if (block instanceof WebBlocks.LayoutBuilder.WysiwygBlock) {
+                        blockClasses = "wbWysiwyg " + container.WysiwygClass +
+                            ((block.ViewModel.Html == "<p>&nbsp;</p>") ? " wbWysiwygOff" : "");
+                    }
 
                     //add all block classes
                     elem.addClass(blockClasses);
+                    
+                    
+                    var innerContent = $(block.ViewModel.Html);
+                    if (block.ViewModel.ShouldCompile == true) {
+                        $compile(innerContent)(scope);
+                    }    
+
+                    //empty the block element
+                    $(elem).empty();
                     //add the block content to the block
-                    $(elem).html(block.ViewModel.Html);
+                    $(elem).append(innerContent);
+                    //trigger rerender faster
+                    if (block.ViewModel.ShouldCompile == true) {
+                        setTimeout(function () {
+                            $(elem).click(); //trigger rerender
+                        }, 150);
+                    }
                     //disable all buttons, submits, and anchortag
                     $(elem).find("a, input[type='button'], input[type='submit'], button").on("click", function (e) {
                         e.preventDefault();

@@ -100,8 +100,8 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
         block.Id = WebBlocks.Utils.MathHelper.GenerateRandomNumber(10000, 52000);
         block.Name = "Wysiwyg Block";
         block.SortOrder = 1000;
-        block.Content = "<p>Double click or right click on me to edit</p>";
-        block.ViewModel.Html = "<p>Double click or right click on me to edit</p>";
+        block.Content = "<p>&nbsp;</p>";
+        block.ViewModel.Html = "<p>&nbsp;</p>";
         return block;
     }
 });

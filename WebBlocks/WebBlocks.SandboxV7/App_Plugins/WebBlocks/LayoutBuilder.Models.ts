@@ -47,6 +47,7 @@
             public Classes: string = "";                                 //any classes to render
             public Html: string = "";                                    //inner html
             public ShouldRerender: boolean = false;                         //flag to rerender the view (used by the wbBlock directive)
+            public ShouldCompile: boolean = false;
         }
 
         export class BlockViewElementAttribute {
@@ -62,14 +63,23 @@
         export class BlockStorageBlock {
             public constructor(
                 public Block: Block,
-                public Message: string) {
+                public Message: string,
+                public BlockHistory: BlockHistory) {
             }
         }
 
         export class RecycleBinBlock {
             public constructor(
                 public Block: Block,
-                public Message: string) {
+                public Message: string,
+                public BlockHistory: BlockHistory) {
+            }
+        }
+
+        export class BlockHistory {
+            public constructor(
+                public LastContainer: string) {
+
             }
         }
 
@@ -354,7 +364,14 @@
             }
 
             public static GetNavigationChildren(id: number, $http: ng.IHttpService, callback: (navigationItems: Array<Models.NavigationItem>) => void) {
-                HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetChildren?id=" + id, $http, callback);
+                HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetChildren?id=" + id, $http,(navigationItems: Array<Models.NavigationItem>) => {
+                    for (var i = 0; i < navigationItems.length; i++) {
+                        navigationItems[i].IconClass = navigationItems[i].IconClass != ".sprTreeFolder" ?
+                            navigationItems[i].IconClass :
+                            "icon-folder";
+                    }
+                    callback(navigationItems);
+                });
             }
         }
 

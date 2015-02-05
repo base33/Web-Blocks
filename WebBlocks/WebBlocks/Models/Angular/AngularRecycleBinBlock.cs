@@ -10,5 +10,6 @@ namespace WebBlocks.Models.Angular
     {
         public IBlock Block { get; set; }
         public string Message { get; set; }
+        public AngularBlockHistory BlockHistory { get; set; }
     }
 }

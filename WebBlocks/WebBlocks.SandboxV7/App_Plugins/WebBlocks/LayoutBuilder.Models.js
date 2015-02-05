@@ -66,6 +66,7 @@ var WebBlocks;
                 this.Classes = ""; //any classes to render
                 this.Html = ""; //inner html
                 this.ShouldRerender = false; //flag to rerender the view (used by the wbBlock directive)
+                this.ShouldCompile = false;
             }
             return BlockViewModel;
         })();
@@ -81,21 +82,30 @@ var WebBlocks;
         })();
         _LayoutBuilder.BlockViewElementAttribute = BlockViewElementAttribute;
         var BlockStorageBlock = (function () {
-            function BlockStorageBlock(Block, Message) {
+            function BlockStorageBlock(Block, Message, BlockHistory) {
                 this.Block = Block;
                 this.Message = Message;
+                this.BlockHistory = BlockHistory;
             }
             return BlockStorageBlock;
         })();
         _LayoutBuilder.BlockStorageBlock = BlockStorageBlock;
         var RecycleBinBlock = (function () {
-            function RecycleBinBlock(Block, Message) {
+            function RecycleBinBlock(Block, Message, BlockHistory) {
                 this.Block = Block;
                 this.Message = Message;
+                this.BlockHistory = BlockHistory;
             }
             return RecycleBinBlock;
         })();
         _LayoutBuilder.RecycleBinBlock = RecycleBinBlock;
+        var BlockHistory = (function () {
+            function BlockHistory(LastContainer) {
+                this.LastContainer = LastContainer;
+            }
+            return BlockHistory;
+        })();
+        _LayoutBuilder.BlockHistory = BlockHistory;
         var BlockType = (function () {
             function BlockType() {
             }
@@ -399,7 +409,12 @@ var WebBlocks;
                 });
             };
             WebBlocksAPIClent.GetNavigationChildren = function (id, $http, callback) {
-                HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetChildren?id=" + id, $http, callback);
+                HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetChildren?id=" + id, $http, function (navigationItems) {
+                    for (var i = 0; i < navigationItems.length; i++) {
+                        navigationItems[i].IconClass = navigationItems[i].IconClass != ".sprTreeFolder" ? navigationItems[i].IconClass : "icon-folder";
+                    }
+                    callback(navigationItems);
+                });
             };
             return WebBlocksAPIClent;
         })();

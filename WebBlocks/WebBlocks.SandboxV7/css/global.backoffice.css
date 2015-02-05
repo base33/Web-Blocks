@@ -4,8 +4,46 @@
 Body Text     #666666
 ====================================================================================================== */
 
-/* GENERIC STYLES ==================================================================================== */
 
+@import "reset.css";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700italic,400,600,700,800,300);
+
+
+/* UMBRACO BLOCK BUILDER OVERRIDES =================================================================== */
+/* To allow web block builder to correctly display fonts on builder editor */
+body.umbracoPage #webBlocksWrapper #canvas { 
+	font-family:'Open Sans', Helvetica, sans-serif; font-size:12px; line-height:18px; color:#666; 
+}
+
+/* SITE TEXT STYLES ================================================================================== */	
+ #canvasRender { font-family:'Open Sans', Helvetica, sans-serif; font-size:12px; line-height:18px; color:#666; }
+ * { -webkit-font-smoothing:antialiased; } 
+	
+#canvasRender  h1 { margin:0; font-size:30px; font-weight:300; line-height:35px; color:#283F81; }
+#canvasRender  h2 { margin:0 0 5px 0; font-size:22px; font-weight:bold; line-height:25px; color:#333; }
+#canvasRender  h3 { margin:0; font-size:18px; font-weight:bold; line-height:22px; color:#333; }
+#canvasRender  h4 { margin:0; font-size:16px; font-weight:bold; line-height:18px; color:#333; }
+#canvasRender  h5 {  }
+#canvasRender  h6 {  }
+#canvasRender  a,#canvasRender a:link, #canvasRender  a:visited,#canvasRender   a:active {
+   color:#0080FF; text-decoration:none; 
+   -webkit-transition:all 0.15s ease; -moz-transition:all 0.15s ease; -o-transition:all 0.15s ease; transition:all 0.15s ease; 
+}
+  #canvasRender a:hover { color:#283F81; text-decoration:underline; }
+  #canvasRender p { padding-bottom:10px; }
+  #canvasRender b, #canvasRender strong { font-weight:700; }
+  #canvasRender ul, #canvasRender ol { margin:0 20px 20px 30px; }
+/* =================================================================================================== */
+
+
+
+
+
+
+
+
+
+/* GENERIC STYLES ==================================================================================== */
 .noBottomMargin { margin-bottom:0px !important; }
 .marginBottomTen { margin-bottom:10px !important; }
 .paddingTen { padding:10px; }

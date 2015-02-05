@@ -23,7 +23,7 @@
                 <span ng-show="recycleBinBlock.Message.length > 0">{{recycleBinBlock.Message}}</span>
             </li>
 
-            <li ng-hide="recycleBinBlockArray.length > 0" class="action ng-scope">
+            <li ng-show="recycleBinBlockArray.length <= 0 && deletedTemplateBlocks.length <= 0" class="action ng-scope">
                 Empty!
             </li>
         </ul>
