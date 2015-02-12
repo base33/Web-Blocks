@@ -11,10 +11,19 @@
 			prevalues: {
 				fields: [
 					{
+						label: "Root Block Content Id",
+						description: "This will be the root of the Add Block menu.  Recommendation: Store all blocks under a single Block folder and set this as the root.",
+						key: "rootBlockFolderId",
+						view: "number",
+						valueType: "string",
+						validation: []
+					},
+					{
 						label: "Canvas Width (optional)",
 						description: "The canvas width without 'px'.  Default: 960",
 						key: "canvasWidth",
 						view: "number",
+						valueType: "string",
 						validation: []
 					},
 					{
@@ -22,6 +31,7 @@
 						description: "The block editor iframe width without 'px'.",
 						key: "iframeWidth",
 						view: "number",
+						valueType: "string",
 						validation: []
 					},
 					{
@@ -29,6 +39,7 @@
 						description: "The block editor iframe height without 'px'.",
 						key: "iframeHeight",
 						view: "number",
+						valueType: "string",
 						validation: []
 					}
 				]

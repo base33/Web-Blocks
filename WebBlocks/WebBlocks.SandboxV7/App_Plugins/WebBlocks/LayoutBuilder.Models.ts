@@ -130,6 +130,7 @@
             public LayoutBuilder: LayoutBuilderState = new LayoutBuilderState(true);
             public IframeEditor: IframeEditorState = new IframeEditorState(false, "");
             public AddBlockDialogState: AddBlockDialogState = new AddBlockDialogState(-1);
+            public ContentNavigationVisible: boolean = true;
 
             public constructor(uiState: UIState) {
                 Utils.PropertyHelper.CopyProperties(uiState, this);
@@ -139,9 +140,13 @@
 
         export class LayoutBuilderState {
             public Visible: boolean = false;
+            public CanvasWidth: number = 1024;
 
-            public constructor(visible) {
+            public constructor(visible, canvasWidth) {
                 this.Visible = visible;
+
+                if (typeof (canvasWidth) === "number")
+                    this.CanvasWidth = canvasWidth;
             }
         }
 

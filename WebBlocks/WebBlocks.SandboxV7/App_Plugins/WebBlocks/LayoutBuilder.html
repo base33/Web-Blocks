@@ -1,14 +1,14 @@
 ﻿<div ng-controller="WebBlocks.LayoutBuilder">
 
     <div wb-sticky class="wb-action-bar wbNoSelect" style="top:15px;">
-        <a class="btn" href="#" ng-click="toggleUmbracoNavigation()" title="{{state.navigationVisible ? 'Hide Navigation' : 'Show Navigation'}}" prevent-default="">
-            <i ng-class="state.navigationVisible ? 'icon-navigation-left' : 'icon-navigation-right'"></i>
+        <a class="btn" href="#" ng-click="toggleUmbracoNavigation()" title="{{uiState.ContentNavigationVisible ? 'Hide Navigation' : 'Show Navigation'}}" prevent-default="">
+            <i ng-class="uiState.ContentNavigationVisible ? 'icon-navigation-left' : 'icon-navigation-right'"></i>
             <!--<i class="icon-list"></i>-->
-            {{state.navigationVisible ? 'Hide Menu' : 'Show Menu'}}
+            {{uiState.ContentNavigationVisible ? 'Hide Menu' : 'Show Menu'}}
         </a>
         <a ui-draggable class="btn" href="#" ng-click="showAddBlockDialog()" title="Add Block" prevent-default>
             <i class="icon-add"></i>
-            Add Block
+            Block Repository
         </a>
         <a ui-draggable class="btn" href="#" ng-click="showBlockStorageDialog()" title="Storage" prevent-default>
             <i class="icon-safe"></i>
@@ -56,8 +56,8 @@
         </div>
 
         <!-- Canvas -->
-        <div id="outerCanvas" style="width:{{config.canvasWidth}}px;" ng-show="uiState.LayoutBuilder.Visible">
-            <div id="canvas" style="width:{{config.canvasWidth}}px;">
+        <div id="outerCanvas" style="width:{{uiState.LayoutBuilder.CanvasWidth}}px;" ng-show="uiState.LayoutBuilder.Visible">
+            <div id="canvas" style="width:{{uiState.LayoutBuilder.CanvasWidth}}px;">
                 <div id="canvasRender">
                     <!-- builder angular-compiled html will be loaded here -->
                     <img src="/umbraco/assets/img/loader.gif" style="margin:auto;display:block;" />

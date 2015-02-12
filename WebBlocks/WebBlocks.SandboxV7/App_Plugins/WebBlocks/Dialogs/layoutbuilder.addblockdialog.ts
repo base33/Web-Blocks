@@ -6,6 +6,7 @@
         var uiState = addBlockDialogContext.UIState;
         $scope.uiState = uiState;
 
+        $scope.ancestors = [];
         $scope.viewNavigationSource = [];
         $scope.menuLoadDelay = 0;
         $scope.showContextMenu = false;
@@ -19,15 +20,20 @@
         $scope.handleNavigationMore = function (navigationModel: WebBlocks.UI.Dialogs.NavigationViewModel) {
             $scope.showContextMenu = true;
             $scope.contextMenuModel.navigationModel = navigationModel;
-            contentTypeResource.getAllowedTypes(navigationModel.Model.Id)
-                .then(function (array) {
-                    $scope.contextMenuModel.allowedChildTypes = array;
-            });
+            $scope.loadContextMenuAllowedChildTypes(navigationModel.Model.Id);
             //var contextMenu = new WebBlocks.UI.Dialogs.ContextMenu(
             //    [{ Name: "Create", IconClass: "icon-add" }, { Name: "Edit on page", IconClass: "icon-edit" }, { Name: "Edit in new window", IconClass: "icon-folder" }],
             //    { navigationModel: navigationModel }
             //);
             //dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildContextMenuDialogOptions(contextMenu, $scope.handleNavigationAction));
+        }
+
+        $scope.loadContextMenuAllowedChildTypes = function (contentId) {
+            $scope.contextMenuModel.allowedChildTypes = [];
+            contentTypeResource.getAllowedTypes(contentId)
+                .then(function (array) {
+                    $scope.contextMenuModel.allowedChildTypes = array;
+            });
         }
 
         $scope.handleNavigationAction = function (event: string) {
@@ -56,6 +62,7 @@
 
         $scope.loadChildNavigationIntoMenu = function (navigationModel : WebBlocks.UI.Dialogs.NavigationViewModel) {
             $scope.viewNavigationSource.show = false;
+            $scope.loadContextMenuAllowedChildTypes(navigationModel.Model.Id);
 
             WebBlocks.API.WebBlocksAPIClent.GetNavigationChildren(navigationModel.Model.Id, $http, function (childNavigationItems) {
                 // call the callback function
@@ -80,7 +87,17 @@
 
             }, $scope.menuLoadDelay);
             $scope.menuLoadDelay = 200;
+            $scope.ancestors = [];
+            buildAncestorsList(navigationModel);
         };
+
+        function buildAncestorsList(navigationModel: WebBlocks.UI.Dialogs.NavigationViewModel) {
+            if (navigationModel.Parent != null) {
+                buildAncestorsList(navigationModel.Parent);
+                //$scope.ancestors.push(navigationModel);
+            }               
+            $scope.ancestors.push(navigationModel);
+        }
 
 
         $scope.onWysiwygDragComplete = function (data, event) {

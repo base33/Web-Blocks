@@ -8,12 +8,6 @@ angular.module("umbraco").filter("wbContainerName", function () {
 angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope, $http, $element, appState, editorState, eventsService, assetsService, dialogService, notificationsService, $compile) {
     //$scope.wysiwygEditorUrl = "/App_Plugins/WebBlocks/LayoutBuilder.WysiwygEditor.html";
     $scope.activeEditSessions = {};
-    $scope.config = {
-        canvasWidth: 960
-    };
-    $scope.state = {
-        navigationVisible: false
-    };
     //need to keep types, and umbraco replaces typed models with plain json objects after saving.
     //The approach is to use the layoutBuilderModel to reference a working layout builder.  And $scope.model.value will be a clone.
     //When the working model is updated, we will clone it over to $scope.model.value
@@ -48,9 +42,10 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         });
     }
     $scope.uiState = new WebBlocks.UI.UIState({
-        LayoutBuilder: new WebBlocks.UI.LayoutBuilderState(true),
+        LayoutBuilder: new WebBlocks.UI.LayoutBuilderState(true, $scope.model.config.canvasWidth),
         IframeEditor: new WebBlocks.UI.IframeEditorState(false, "/umbraco#/"),
-        AddBlockDialogState: new WebBlocks.UI.AddBlockDialogState(-1)
+        AddBlockDialogState: new WebBlocks.UI.AddBlockDialogState(getIntOrDefault($scope.model.config.rootBlockFolderId, -1)),
+        ContentNavigationVisible: true
     });
     $scope.updateIframeDocumentStyles = function (iframeElement) {
         setTimeout(function () {
@@ -372,12 +367,12 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
             if (!args.value) {
                 //Set css left position to 80px (width of appBar)
                 document.getElementById("contentwrapper").style.left = "80px";
-                $scope.state.navigationVisible = false;
+                $scope.uiState.ContentNavigationVisible = false;
             }
             else {
                 //Remove the CSS we set so default CSS of Umbraco kicks in
                 document.getElementById("contentwrapper").style.left = "";
-                $scope.state.navigationVisible = true;
+                $scope.uiState.ContentNavigationVisible = true;
             }
         }
     });
@@ -392,6 +387,16 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         while (arr.length > 0) {
             arr.pop();
         }
+    }
+    function getIntOrDefault(val, def) {
+        if (typeof (val) === "number") {
+            return val;
+        }
+        else if (typeof (val) === "string") {
+            var convertedVal = parseInt(val);
+            return typeof (convertedVal) !== "NaN" ? convertedVal : def;
+        }
+        return def;
     }
 });
 //# sourceMappingURL=layoutbuilder.controller.js.map

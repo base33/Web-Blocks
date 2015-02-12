@@ -153,6 +153,7 @@ var WebBlocks;
                 this.LayoutBuilder = new LayoutBuilderState(true);
                 this.IframeEditor = new IframeEditorState(false, "");
                 this.AddBlockDialogState = new AddBlockDialogState(-1);
+                this.ContentNavigationVisible = true;
                 Utils.PropertyHelper.CopyProperties(uiState, this);
             }
             return UIState;
@@ -161,6 +162,7 @@ var WebBlocks;
         var LayoutBuilderState = (function () {
             function LayoutBuilderState(visible) {
                 this.Visible = false;
+                this.CanvasWidth = 1024;
                 this.Visible = visible;
             }
             return LayoutBuilderState;

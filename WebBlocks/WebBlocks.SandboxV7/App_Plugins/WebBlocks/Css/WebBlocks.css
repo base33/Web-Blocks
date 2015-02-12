@@ -166,7 +166,7 @@ body.umbracoPage .menubar img { vertical-align:initial; }
 }
 
 .wb-navigation-items {
-    width:420px;display:block;overflow-y:scroll !important;position: absolute;top: 110px;bottom: 0px;z-index:88888888;overflow-y:hidden;
+    width:420px;display:block;overflow-y:scroll !important;overflow-x:hidden;position: absolute;top: 110px;bottom: 0px;z-index:88888888;overflow-y:hidden;
 }
 
     .wb-navigation-item {

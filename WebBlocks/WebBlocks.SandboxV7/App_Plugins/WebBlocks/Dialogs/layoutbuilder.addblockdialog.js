@@ -3,6 +3,7 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
     var addBlockDialogContext = $scope.dialogOptions.modelData;
     var uiState = addBlockDialogContext.UIState;
     $scope.uiState = uiState;
+    $scope.ancestors = [];
     $scope.viewNavigationSource = [];
     $scope.menuLoadDelay = 0;
     $scope.showContextMenu = false;
@@ -14,14 +15,18 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
     $scope.handleNavigationMore = function (navigationModel) {
         $scope.showContextMenu = true;
         $scope.contextMenuModel.navigationModel = navigationModel;
-        contentTypeResource.getAllowedTypes(navigationModel.Model.Id).then(function (array) {
-            $scope.contextMenuModel.allowedChildTypes = array;
-        });
+        $scope.loadContextMenuAllowedChildTypes(navigationModel.Model.Id);
         //var contextMenu = new WebBlocks.UI.Dialogs.ContextMenu(
         //    [{ Name: "Create", IconClass: "icon-add" }, { Name: "Edit on page", IconClass: "icon-edit" }, { Name: "Edit in new window", IconClass: "icon-folder" }],
         //    { navigationModel: navigationModel }
         //);
         //dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildContextMenuDialogOptions(contextMenu, $scope.handleNavigationAction));
+    };
+    $scope.loadContextMenuAllowedChildTypes = function (contentId) {
+        $scope.contextMenuModel.allowedChildTypes = [];
+        contentTypeResource.getAllowedTypes(contentId).then(function (array) {
+            $scope.contextMenuModel.allowedChildTypes = array;
+        });
     };
     $scope.handleNavigationAction = function (event) {
         var navigationModel = $scope.contextMenuModel.navigationModel;
@@ -46,6 +51,7 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
     };
     $scope.loadChildNavigationIntoMenu = function (navigationModel) {
         $scope.viewNavigationSource.show = false;
+        $scope.loadContextMenuAllowedChildTypes(navigationModel.Model.Id);
         WebBlocks.API.WebBlocksAPIClent.GetNavigationChildren(navigationModel.Model.Id, $http, function (childNavigationItems) {
             // call the callback function
             $scope.loadChildNavigationIntoMenuCallback(navigationModel, childNavigationItems);
@@ -65,7 +71,15 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
             addBlockDialogContext.UIState.AddBlockDialogState.ActiveId = navigationModel.Model.Id;
         }, $scope.menuLoadDelay);
         $scope.menuLoadDelay = 200;
+        $scope.ancestors = [];
+        buildAncestorsList(navigationModel);
     };
+    function buildAncestorsList(navigationModel) {
+        if (navigationModel.Parent != null) {
+            buildAncestorsList(navigationModel.Parent);
+        }
+        $scope.ancestors.push(navigationModel);
+    }
     $scope.onWysiwygDragComplete = function (data, event) {
         //regenerate a new id+
         $scope.templateDraggableWysiwygBlock.Block.Id = WebBlocks.Utils.MathHelper.GenerateRandomNumber(10000, 52000);
