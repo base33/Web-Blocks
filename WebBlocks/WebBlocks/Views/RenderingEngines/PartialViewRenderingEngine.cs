@@ -30,7 +30,7 @@ namespace WebBlocks.Views.RenderingEngines
             }
             catch(Exception ex)
             {
-                return HttpUtility.HtmlEncode(ex.ToString());
+                return HttpUtility.HtmlEncode("Block Exception:" + ex.ToString());
             }
         }
     }

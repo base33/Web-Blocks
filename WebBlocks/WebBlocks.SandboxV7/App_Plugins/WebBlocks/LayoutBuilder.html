@@ -3,22 +3,26 @@
     <div wb-sticky class="wb-action-bar wbNoSelect" style="top:15px;">
         <a class="btn" href="#" ng-click="toggleUmbracoNavigation()" title="{{state.navigationVisible ? 'Hide Navigation' : 'Show Navigation'}}" prevent-default="">
             <i ng-class="state.navigationVisible ? 'icon-navigation-left' : 'icon-navigation-right'"></i>
-            <i class="icon-list"></i>
+            <!--<i class="icon-list"></i>-->
+            {{state.navigationVisible ? 'Hide Menu' : 'Show Menu'}}
         </a>
         <a ui-draggable class="btn" href="#" ng-click="showAddBlockDialog()" title="Add Block" prevent-default>
             <i class="icon-add"></i>
-            <i class="icon-browser-window"></i>
             Add Block
         </a>
         <a ui-draggable class="btn" href="#" ng-click="showBlockStorageDialog()" title="Storage" prevent-default>
-            <i class="icon-thumbnails"></i>
+            <i class="icon-safe"></i>
             Block Storage
         </a>
         <a ui-draggable class="btn" href="#" ng-click="showRecycleBinDialog()" title="Recycle Bin" prevent-default>
             <i class="icon-trash"></i>
             Recycle Bin
         </a>
-
+        <a ui-draggable class="btn" href="#" ng-click="rerenderLayoutBuilder()" title="Activate a new template after changing the template" prevent-default>
+            <i class="icon icon-brush-alt-2"></i>
+            Rerender Preview
+        </a>
+        
         <!-- session buttons -->
         
 
@@ -41,9 +45,9 @@
 
     <div id="webBlocksWrapper" wb-prevent-default-on-click style="margin-left:-240px;margin-top:30px;">
 
-        <div ng-show="uiState.IframeEditor.Visible" wb-iframe-on-load="updateIframeDocumentStyles($element)" class="wb-browser-window wbNoSelect" style="position:absolute; margin-bottom:60px;">
+        <div ng-show="uiState.IframeEditor.Visible" wb-iframe-on-load="updateIframeDocumentStyles($element)" class="wb-browser-window wbNoSelect" style="position:absolute; margin-bottom:60px;left:20px;">
             <span class="wbIframeClose" ng-show="uiState.IframeEditor.Visible" style="position: absolute;right: 28px;top: 25px;padding: 5px;background: #ddd;border-radius: 5px;border: 1px solid #cdcdcd;">
-                <a ui-draggable class="btn btn-success" href="#" ng-show="uiState.IframeEditor.Visible" ng-click="uiState.IframeEditor.Visible = false;uiState.LayoutBuilder.Visible = true;updateAllBlockElementsInAllContainers(uiState.IframeEditor.BlockId);" title="Recycle Bin" prevent-default>
+                <a ui-draggable class="btn btn-success" href="#" ng-show="uiState.IframeEditor.Visible" ng-click="uiState.IframeEditor.Visible = false;uiState.LayoutBuilder.Visible = true;uiState.IframeEditor.Url = '/umbraco/#/';updateAllBlockElementsInAllContainers(uiState.IframeEditor.BlockId);" title="Recycle Bin" prevent-default>
                     <i class="icon-pencil"></i>
                     Finish Editing
                 </a>

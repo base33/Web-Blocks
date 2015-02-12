@@ -27,7 +27,9 @@ angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
             setInterval(function () {
                 if (block.ViewModel.ShouldRerender == true) {
                     block.ViewModel.ShouldRerender = false;
-                    render();
+                    scope.$apply(function () {
+                        render();
+                    });
                 }
             }, 400);
             //scope.$watch(function () {
@@ -60,16 +62,17 @@ angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
                 }
                 //add all block classes
                 elem.addClass(blockClasses);
+                block.ViewModel.Html = block.ViewModel.Html.substr(0, 16) == "Block Exception:" ? "<p>" + block.ViewModel.Html + "<p>" : block.ViewModel.Html;
                 var innerContent = $(block.ViewModel.Html);
-                if (block.ViewModel.ShouldCompile == true) {
-                    $compile(innerContent)(scope);
-                }
                 //empty the block element
                 $(elem).empty();
                 //add the block content to the block
                 $(elem).append(innerContent);
                 //trigger rerender faster
                 if (block.ViewModel.ShouldCompile == true) {
+                    $compile(innerContent)(scope);
+                }
+                if (block.ViewModel.ShouldForceRerender) {
                     setTimeout(function () {
                         $(elem).click(); //trigger rerender
                     }, 150);

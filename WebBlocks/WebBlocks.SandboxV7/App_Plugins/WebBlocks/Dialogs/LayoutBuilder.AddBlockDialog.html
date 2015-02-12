@@ -4,7 +4,7 @@
     </div>
     <div class="umb-panel-body with-header with-footer">
         <h5 class="wbDialogTitle" style="float:left;">Drag your blocks into a container:</h5>
-        <div style="position:relative;border-bottom:1px solid #ddd;width:100%;display:block;float:left;height:40px;width:100%;">
+        <div style="position:relative;border-bottom:1px solid #ddd;width:100%;display:block;float:left;height:40px;width:100%;cursor:pointer;">
             <a ng-drag="true" ng-drag-data="templateDraggableWysiwygBlock" ng-drag-success="onWysiwygDragComplete($data,$event)">
                 <div style="width: 25px;padding: 10px 0px;float: left;display:inline-block;">
                     <i class="icon icon-newspaper-alt" style="font-size: 20px;"></i>
@@ -15,10 +15,10 @@
             </a>
         </div>
 
-        <h5 class="wbDialogTitle" style="float:left;">Content:</h5>
-        <div class="wb-navigation-items">
+        <h5 class="wbDialogTitle" ng-hide="showContextMenu" style="float:left;">Content:</h5>
+        <div class="wb-navigation-items" ng-hide="showContextMenu" ng-animate="'wbslide'">
 
-            <div ng-show="viewNavigationSource.navigationModel.Parent != null" ng-animate="'wbslide'" ng-click="loadChildNavigationIntoMenu(viewNavigationSource.navigationModel.Parent)" class="wb-navigation-item">
+            <div ng-show="viewNavigationSource.navigationModel.Model.Id != uiState.AddBlockDialogState.RootId" ng-animate="'wbslide'" ng-click="loadChildNavigationIntoMenu(viewNavigationSource.navigationModel.Parent)" class="wb-navigation-item">
                 <a prevent-default="" class="wb-navigation-back">
                     <div class="wb-navigation-back-icon">
                         <i class="icon icon-left-double-arrow"></i>
@@ -47,8 +47,65 @@
                 </a>
             </div>
         </div>
+        <h5 class="wbDialogTitle" ng-show="showContextMenu" style="float:left">Options for: {{contextMenuModel.navigationModel.Model.Name}}</h5>
+        <div class="wb-navigation-items" ng-show="showContextMenu" ng-animate="'wbslide'">
+            
+            <div ng-animate="'wbslide'" ng-click="showContextMenu = false;loadChildNavigationIntoMenu(viewNavigationSource.navigationModel)" class="wb-navigation-item">
+                <a prevent-default="" class="wb-navigation-back" style="width:100%;">
+                    <div class="wb-navigation-back-icon">
+                        <i class="icon icon-left-double-arrow"></i>
+                    </div>
+                    <div class="wb-navigation-back-name">
+                        <span>Back</span>
+                    </div>
+                </a>
+            </div>
+            <h5 class ="wbDialogTitle" style="float:left;">Edit:</h5>
+            <div ng-animate="'wbslide'" ng-click="handleNavigationAction('EditOnPage')" class="wb-navigation-item wb-context-menu-item">
+                <a prevent-default="" class="wb-navigation-back">
+                    <div class="wb-navigation-back-icon">
+                        <i class="icon icon-edit"></i>
+                    </div>
+                    <div class="wb-navigation-back-name">
+                        <span>Here</span>
+                    </div>
+                </a>
+            </div>
+            <div ng-animate="'wbslide'" ng-click="handleNavigationAction('EditNewWindow')" class="wb-navigation-item wb-context-menu-item wb-context-menu-item">
+                <a prevent-default="" class="wb-navigation-back">
+                    <div class="wb-navigation-back-icon">
+                        <i class="icon icon-edit"></i>
+                    </div>
+                    <div class="wb-navigation-back-name">
+                        <span>In new window</span>
+                    </div>
+                </a>
+            </div>
+
+            <h5 ng-show="contextMenuModel.allowedChildTypes.length > 0" class="wbDialogTitle" style="float:left;">Create:</h5>
+            <div ng-show="contextMenuModel.allowedChildTypes.length > 0" ng-animate="'wbslide'" ng-repeat="childContentType in contextMenuModel.allowedChildTypes" ng-click="handleNavigationCreateAction(childContentType.alias)" class="wb-navigation-item wb-context-menu-item">
+                <a prevent-default="" class="wb-navigation-back">
+                    <div class="wb-navigation-back-icon">
+                        <i class="icon {{childContentType.icon == '.sprTreeFolder' ? 'icon-folder' : childContentType.icon }}"></i>
+                    </div>
+                    <div class="wb-navigation-back-name">
+                        <span>{{childContentType.name}}</span>
+                    </div>
+                </a>
+            </div>
+           
+        </div>
 
     </div>
+    <ul class="umb-panel-footer-nav nav nav-pills">
+        <li ng-repeat="ancestor in ancestors" class="ng-scope">
+            <a href="#/content/content/edit/1079" class="ng-binding">Feature Blocks</a>
+        </li>
+        <li>
+            <a href="#/content/content/edit/1078" class="ng-binding">Blocks</a>
+        </li>
+        <li></li>
+    </ul>
     <div class="umb-panel-footer">
         <div class="umb-el-wrap umb-panel-buttons">
             <div class="btn-toolbar umb-btn-toolbar pull-right">

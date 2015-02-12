@@ -67,6 +67,7 @@ var WebBlocks;
                 this.Html = ""; //inner html
                 this.ShouldRerender = false; //flag to rerender the view (used by the wbBlock directive)
                 this.ShouldCompile = false;
+                this.ShouldForceRerender = false;
             }
             return BlockViewModel;
         })();
@@ -150,7 +151,8 @@ var WebBlocks;
         var UIState = (function () {
             function UIState(uiState) {
                 this.LayoutBuilder = new LayoutBuilderState(true);
-                this.IframeEditor = new IframeEditorState(false);
+                this.IframeEditor = new IframeEditorState(false, "");
+                this.AddBlockDialogState = new AddBlockDialogState(-1);
                 Utils.PropertyHelper.CopyProperties(uiState, this);
             }
             return UIState;
@@ -165,15 +167,26 @@ var WebBlocks;
         })();
         UI.LayoutBuilderState = LayoutBuilderState;
         var IframeEditorState = (function () {
-            function IframeEditorState(visible) {
+            function IframeEditorState(visible, url) {
                 this.Visible = false;
                 this.Url = "";
                 this.BlockId = 0;
                 this.Visible = visible;
+                this.Url = url;
             }
             return IframeEditorState;
         })();
         UI.IframeEditorState = IframeEditorState;
+        var AddBlockDialogState = (function () {
+            function AddBlockDialogState(rootId) {
+                this.RootId = -1;
+                this.ActiveId = -1;
+                this.RootId = rootId;
+                this.ActiveId = rootId;
+            }
+            return AddBlockDialogState;
+        })();
+        UI.AddBlockDialogState = AddBlockDialogState;
         var DraggableBlockModel = (function () {
             function DraggableBlockModel() {
                 this.BlockIconClass = "";
@@ -230,9 +243,8 @@ var WebBlocks;
             })();
             Dialogs.DialogOptionsFactory = DialogOptionsFactory;
             var AddBlockMenu = (function () {
-                function AddBlockMenu(rootId, layoutBuilderScope) {
-                    this.rootId = rootId;
-                    this.layoutBuilderScope = layoutBuilderScope;
+                function AddBlockMenu(UIState) {
+                    this.UIState = UIState;
                 }
                 return AddBlockMenu;
             })();

@@ -19,11 +19,11 @@
                         <span>{{blockStorageBlock.DraggableBlock.Block.Name}}</span>
                     </div>
                 </a>
-                <span style="position: absolute;right: 0;bottom: 11px;color: #cdcdcd;font-size: 14px;"><i class="icon"></i><span>From {{blockStorageBlock.BlockStorageBlock.BlockHistory.LastContainer}}</span></span>
+                <span style="position: absolute;right: 0;bottom: 11px;color: #cdcdcd;font-size: 14px;"><i class="icon"></i><span>From {{blockStorageBlock.BlockStorageBlock.BlockHistory.LastContainer | wbContainerName}}</span></span>
             </div>
 
-            <div ng-hide="blockStorageArray.length > 0" class="wb-navigation-item">
-                <span class="">Empty</span>
+            <div ng-hide="blockStorageArray.length > 0" class="wb-navigation-item" style="border-bottom:0px;">
+                <span style="padding-top: 6px;display: block;color: #cdcdcd;">Empty</span>
             </div>
         </div>
 

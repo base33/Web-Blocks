@@ -67,7 +67,7 @@ namespace WebBlocks.Views
             if (renderingEngine == null || block.Content == null) return "";
 
             //string blockIdAttribute = WebBlocksUtility.IsInBuilder ? string.Format(" wbid='{0}'", block.Id) : "";
-            string blockJsonAttribute = string.Format("wbBlockJson='{0}'", JsonConvert.SerializeObject(block));
+            //string blockJsonAttribute = string.Format("wbBlockJson='{0}'", JsonConvert.SerializeObject(block));
             //string blockTemplateAttribute = WebBlocksUtility.IsInBuilder ? 
             //    string.Format(" templateblock='{0}'", block.IsTemplateBlock.ToString().ToLower()) : "";
             //string blockDeletedAttribute = WebBlocksUtility.IsInBuilder && block.IsDeleted ? " deletedBlock='deleted' style='display:none;visibilty:hidden;'" : "";
@@ -93,8 +93,8 @@ namespace WebBlocks.Views
                 CssClasses.Any() ? " " : "",
                 String.Join(" ", CssClasses));
 
-            renderedContent = string.Format("<{0} class='{1}'{2} {3}>{4}</{0}>", 
-                blockElement, blockClass, blockAttributes, blockJsonAttribute, renderedContent);
+            renderedContent = string.Format("<{0} class='{1}'{2}>{3}</{0}>", 
+                blockElement, blockClass, blockAttributes, renderedContent);
 
             return renderedContent;
         }

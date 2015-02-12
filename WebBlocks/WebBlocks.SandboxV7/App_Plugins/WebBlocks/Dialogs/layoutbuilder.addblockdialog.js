@@ -1,29 +1,48 @@
-angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($scope, $timeout, $http, appState, eventsService, assetsService, dialogService) {
+angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($scope, $timeout, $http, appState, contentResource, contentTypeResource, eventsService, assetsService, dialogService) {
     var dialogOptions = $scope.dialogOptions;
+    var addBlockDialogContext = $scope.dialogOptions.modelData;
+    var uiState = addBlockDialogContext.UIState;
+    $scope.uiState = uiState;
     $scope.viewNavigationSource = [];
     $scope.menuLoadDelay = 0;
+    $scope.showContextMenu = false;
+    $scope.contextMenuModel = {
+        allowedChildTypes: [],
+        navigationModel: {}
+    };
     $scope.templateDraggableWysiwygBlock = createDraggableWysiwygBlock();
     $scope.handleNavigationMore = function (navigationModel) {
-        var contextMenu = new WebBlocks.UI.Dialogs.ContextMenu([{ Name: "Create", IconClass: "icon-add" }, { Name: "Edit on page", IconClass: "icon-edit" }, { Name: "Edit in new window", IconClass: "icon-folder" }], { navigationModel: navigationModel });
-        dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildContextMenuDialogOptions(contextMenu, $scope.handleNavigationAction));
+        $scope.showContextMenu = true;
+        $scope.contextMenuModel.navigationModel = navigationModel;
+        contentTypeResource.getAllowedTypes(navigationModel.Model.Id).then(function (array) {
+            $scope.contextMenuModel.allowedChildTypes = array;
+        });
+        //var contextMenu = new WebBlocks.UI.Dialogs.ContextMenu(
+        //    [{ Name: "Create", IconClass: "icon-add" }, { Name: "Edit on page", IconClass: "icon-edit" }, { Name: "Edit in new window", IconClass: "icon-folder" }],
+        //    { navigationModel: navigationModel }
+        //);
+        //dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildContextMenuDialogOptions(contextMenu, $scope.handleNavigationAction));
     };
     $scope.handleNavigationAction = function (event) {
-        if (typeof (event) == 'undefined')
-            return;
-        var navigationModel = event.EventData.navigationModel;
-        switch (event.Event) {
+        var navigationModel = $scope.contextMenuModel.navigationModel;
+        switch (event) {
             case 'Create':
                 break;
-            case 'Edit on page':
-                var rootUIState = $scope.uiScope.ui;
-                rootUIState.IframeEditor.Visible = true;
-                rootUIState.LayoutBuilder.Visible = false;
-                rootUIState.IframeEditor.Url = "/umbraco/#/content/content/edit/" + navigationModel.Model.Id;
+            case 'EditOnPage':
+                uiState.IframeEditor.Visible = true;
+                uiState.LayoutBuilder.Visible = false;
+                uiState.IframeEditor.Url = "/umbraco/#/content/content/edit/" + navigationModel.Model.Id;
                 break;
-            case 'Edit in new window':
+            case 'EditNewWindow':
                 window.open("/umbraco/#/content/content/edit/" + navigationModel.Model.Id, "_blank");
                 break;
         }
+    };
+    $scope.handleNavigationCreateAction = function (contentType) {
+        uiState.IframeEditor.Visible = true;
+        uiState.LayoutBuilder.Visible = false;
+        uiState.IframeEditor.Url = "/umbraco/#/content/content/edit/" + $scope.contextMenuModel.navigationModel.Model.Id + "?doctype=" + contentType + "&create=true";
+        uiState.IframeEditor.BlockId = $scope.contextMenuModel.navigationModel.Model.Id;
     };
     $scope.loadChildNavigationIntoMenu = function (navigationModel) {
         $scope.viewNavigationSource.show = false;
@@ -42,10 +61,13 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
             }
             $scope.viewNavigationSource.navigationModel = navigationModel;
             $scope.viewNavigationSource.show = true;
+            //set the active menu item - for reopening the dialog
+            addBlockDialogContext.UIState.AddBlockDialogState.ActiveId = navigationModel.Model.Id;
         }, $scope.menuLoadDelay);
         $scope.menuLoadDelay = 200;
     };
     $scope.onWysiwygDragComplete = function (data, event) {
+        //regenerate a new id+
         $scope.templateDraggableWysiwygBlock.Block.Id = WebBlocks.Utils.MathHelper.GenerateRandomNumber(10000, 52000);
     };
     function createChildNavigationModel(parent, model) {
@@ -57,17 +79,21 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
         return child;
     }
     function init() {
-        $scope.model = dialogOptions.modelData.rootId;
-        $scope.uiScope = dialogOptions.modelData.uiScope;
-        $scope.root = createRootNavigationViewModel($scope.model);
+        var startId = addBlockDialogContext.UIState.AddBlockDialogState.RootId != addBlockDialogContext.UIState.AddBlockDialogState.ActiveId ? addBlockDialogContext.UIState.AddBlockDialogState.ActiveId : addBlockDialogContext.UIState.AddBlockDialogState.RootId;
+        $scope.root = createRootNavigationViewModel(startId);
         $scope.viewNavigationSource = { show: true, navigationItem: $scope.root };
         $scope.loadChildNavigationIntoMenu($scope.root);
     }
     init();
-    function createRootNavigationViewModel(rootId) {
+    function createRootNavigationViewModel(contentId) {
         var nvm = new WebBlocks.UI.Dialogs.NavigationViewModel();
-        nvm.Model = new WebBlocks.API.Models.NavigationItem(rootId, "Root", "Null", "icon-folder", true);
+        nvm.Model = new WebBlocks.API.Models.NavigationItem(contentId, "Root", "Null", "icon-folder", true);
         nvm.Children = new Array();
+        if (contentId != uiState.AddBlockDialogState.RootId) {
+            contentResource.getById(contentId).then(function (content) {
+                nvm.Parent = createRootNavigationViewModel(content.parentId);
+            });
+        }
         return nvm;
     }
     function createDraggableNodeBlock(nodeId, nodeName) {

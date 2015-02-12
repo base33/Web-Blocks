@@ -12,6 +12,8 @@ namespace WebBlocks.Models.Angular
         public string Classes { get; set; }                                //any classes to render
         public string Html { get; set; }                                   //inner html
         public bool ShouldRerender { get; set; }
+        public bool ShouldCompile { get; set; }
+        public bool ShouldForceRerender { get; set; }
         public List<IBlockElementAttribute> Attributes { get; set; }    //any attributes to render
 
         public AngularBlockViewModel()
@@ -20,6 +22,7 @@ namespace WebBlocks.Models.Angular
             Classes = "";
             Html = "";
             ShouldRerender = false;
+            ShouldCompile = false;
             Attributes = new List<IBlockElementAttribute>();
         }
     }

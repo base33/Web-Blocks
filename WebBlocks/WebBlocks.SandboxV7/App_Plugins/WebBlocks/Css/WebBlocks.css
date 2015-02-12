@@ -140,7 +140,8 @@ body.umbracoPage .menubar img { vertical-align:initial; }
 }
 
 .wbDialogTitle {
-    margin-top: 10px;   
+    margin-top: 10px; 
+    margin-bottom: 0px;  
     font-size:13px;
     color: #b3b3b3;
     text-transform: uppercase;
@@ -165,7 +166,7 @@ body.umbracoPage .menubar img { vertical-align:initial; }
 }
 
 .wb-navigation-items {
-    width:420px;display:block;overflow-y:scroll;position: absolute;top: 100px;bottom: 0px;z-index:88888888;
+    width:420px;display:block;overflow-y:scroll !important;position: absolute;top: 110px;bottom: 0px;z-index:88888888;overflow-y:hidden;
 }
 
     .wb-navigation-item {
@@ -175,8 +176,12 @@ body.umbracoPage .menubar img { vertical-align:initial; }
             background: #f6f6f6;
         }
 
+        .wb-navigation-item.back {
+            cursor: pointer;
+        }
+
         .wb-navigation-item > .wb-navigation-item-load-children{
-            float:right;display:inline-block;width:34px;height:40px;
+            float:right;display:inline-block;width:34px;height:40px;cursor:pointer;
         }
 
             .wb-navigation-item > .wb-navigation-item-load-children i {
@@ -232,7 +237,7 @@ body.umbracoPage .menubar img { vertical-align:initial; }
 
         /* Back button styling */
         .wb-navigation-item > .wb-navigation-back {
-            float: left; height: 40px;
+            float: left; height: 40px; cursor: pointer;
         }
 
             .wb-navigation-item > .wb-navigation-back > .wb-navigation-back-icon {
@@ -250,7 +255,18 @@ body.umbracoPage .menubar img { vertical-align:initial; }
                     font-size: 14px;margin:10px;
                 }
 
+.wb-navigation-item.wb-context-menu-item {
+    height:35px;
+    cursor: pointer;
+}
 
+.wb-navigation-item.wb-context-menu-item .wb-navigation-back-icon {
+    padding: 6px 0px;
+}
+
+.wb-navigation-item.wb-context-menu-item .wb-navigation-back-name {
+    padding: 6px 0px;
+}
 
 
 

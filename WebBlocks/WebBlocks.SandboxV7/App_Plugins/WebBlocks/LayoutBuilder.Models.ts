@@ -48,6 +48,7 @@
             public Html: string = "";                                    //inner html
             public ShouldRerender: boolean = false;                         //flag to rerender the view (used by the wbBlock directive)
             public ShouldCompile: boolean = false;
+            public ShouldForceRerender: boolean = false;
         }
 
         export class BlockViewElementAttribute {
@@ -127,7 +128,8 @@
 
         export class UIState {
             public LayoutBuilder: LayoutBuilderState = new LayoutBuilderState(true);
-            public IframeEditor: IframeEditorState = new IframeEditorState(false);
+            public IframeEditor: IframeEditorState = new IframeEditorState(false, "");
+            public AddBlockDialogState: AddBlockDialogState = new AddBlockDialogState(-1);
 
             public constructor(uiState: UIState) {
                 Utils.PropertyHelper.CopyProperties(uiState, this);
@@ -148,8 +150,19 @@
             public Url: string = "";
             public BlockId: number = 0;
 
-            public constructor(visible) {
+            public constructor(visible, url) {
                 this.Visible = visible;
+                this.Url = url;
+            }
+        }
+
+        export class AddBlockDialogState {
+            public RootId: number = -1;
+            public ActiveId: number = -1;
+
+            public constructor(rootId: number) {
+                this.RootId = rootId;
+                this.ActiveId = rootId;
             }
         }
 
@@ -207,8 +220,7 @@
 
             export class AddBlockMenu {
                 public constructor(
-                    public rootId: number,
-                    public layoutBuilderScope: any) {
+                    public UIState: UIState) {
                 }
             }
 
