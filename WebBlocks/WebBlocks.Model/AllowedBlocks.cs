@@ -10,6 +10,7 @@ namespace WebBlocks.Model
     {
         protected List<string> blockTypes = new List<string>();
 
+        public string __type = "AllowedBlocks";
         public List<string> BlockTypes { get { return blockTypes; } set { blockTypes = value; } }
 
         public AllowedBlocks(params string[] allowedBlocks)

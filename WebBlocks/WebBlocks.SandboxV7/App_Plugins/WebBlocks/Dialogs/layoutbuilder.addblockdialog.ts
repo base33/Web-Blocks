@@ -1,6 +1,6 @@
 ﻿angular.module("umbraco")
     .controller("WebBlocks.AddBlockDialogCtrl",
-    function ($scope, $timeout, $http, appState, contentResource, contentTypeResource, eventsService, assetsService, dialogService) {
+    function ($scope, $timeout, $http, appState, contentResource, contentTypeResource, entityResource, eventsService, assetsService, dialogService) {
         var dialogOptions = $scope.dialogOptions;
         var addBlockDialogContext = <WebBlocks.UI.Dialogs.AddBlockMenu>$scope.dialogOptions.modelData;
         var uiState = addBlockDialogContext.UIState;
@@ -21,11 +21,6 @@
             $scope.showContextMenu = true;
             $scope.contextMenuModel.navigationModel = navigationModel;
             $scope.loadContextMenuAllowedChildTypes(navigationModel.Model.Id);
-            //var contextMenu = new WebBlocks.UI.Dialogs.ContextMenu(
-            //    [{ Name: "Create", IconClass: "icon-add" }, { Name: "Edit on page", IconClass: "icon-edit" }, { Name: "Edit in new window", IconClass: "icon-folder" }],
-            //    { navigationModel: navigationModel }
-            //);
-            //dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildContextMenuDialogOptions(contextMenu, $scope.handleNavigationAction));
         }
 
         $scope.loadContextMenuAllowedChildTypes = function (contentId) {
@@ -101,7 +96,7 @@
 
 
         $scope.onWysiwygDragComplete = function (data, event) {
-            //regenerate a new id+
+            //regenerate a new id for the draggable wysiwyg
             (<WebBlocks.UI.DraggableBlockModel>$scope.templateDraggableWysiwygBlock).Block.Id = WebBlocks.Utils.MathHelper.GenerateRandomNumber(10000, 52000);
         };
 
@@ -175,6 +170,18 @@
             block.ViewModel.Html = "<p>&nbsp;</p>";
             return block;
         }
+
+
+
+
+        ///// SEARCH
+        //$scope.search = function (searchTerm) {
+        //    entityResource.searchContent("name:'" + searchTerm + "'").then(function (results) {
+        //        alert(results.length);
+        //    });
+        //};
+
+
     });
 
 

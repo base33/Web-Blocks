@@ -30,7 +30,7 @@ body.umbracoPage .menubar img { vertical-align:initial; }
 /* Canvas. Negative padding bottom to fix overflow IE7 bug. 
 ------------------------------------------- */
 #webBlocksWrapper #outerCanvas  { clear: both; width: 100%; display: block; background: white; border: 1px solid #ccc; min-height: 300px; padding: 0 5px; overflow: auto; height: auto; margin: 0px 0px 10px 0px; text-align: center; }
-#webBlocksWrapper #canvas { margin: 15px auto; width: 960px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; text-align: left; }
+#webBlocksWrapper #canvas { margin: 15px auto; font-family: Arial, Helvetica, sans-serif; font-size: 14px; text-align: left; }
 
 #webBlocksWrapper #builderMenu { position: fixed; top: 28px; left: 100px; z-index: 9999; }
 #webBlocksWrapper #builderMenu ul { margin: 0px; padding: 0px; list-style: none; }
@@ -211,7 +211,7 @@ body.umbracoPage .menubar img { vertical-align:initial; }
             }
 
         .wb-navigation-item > .wb-navigation-item-block {
-            float: left; height: 40px;
+            float: left; height: 40px; min-width: 200px;
         }
         
             .wb-navigation-item > .wb-navigation-item-block > .wb-draggable-item-icon {

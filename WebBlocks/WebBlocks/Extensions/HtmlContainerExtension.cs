@@ -70,7 +70,8 @@ namespace WebBlocks.Extensions
                 {
                     Name = container.Name,
                     WysiwygClass = container.WysiwygClass,
-                    Blocks = new List<IBlock>()
+                    Blocks = new List<IBlock>(),
+                    ContainerPermissions = container.ContainerPermissions
                 });
 
 

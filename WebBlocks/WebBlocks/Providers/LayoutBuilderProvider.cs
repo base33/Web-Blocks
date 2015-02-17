@@ -36,6 +36,7 @@ namespace WebBlocks.Providers
                 jsonSerialiser.Converters.Add(new IBlockConverter());
                 jsonSerialiser.Converters.Add(new IContainerConverter());
                 jsonSerialiser.Converters.Add(new IBlockElementAttributeConverter());
+                jsonSerialiser.Converters.Add(new IContainerPermissionsConverter());
                 LayoutBuilder = ((JObject)layoutBuilderObj).ToObject<AngularLayoutBuilderModel>(jsonSerialiser);
             }
             else

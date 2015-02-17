@@ -22,6 +22,7 @@ var WebBlocks;
                 this.Name = "";
                 this.WysiwygClass = ""; //the class to set on any wysiwyg in the container
                 this.Blocks = new Array();
+                this.ContainerPermissions = null;
             }
             return Container;
         })();
@@ -119,6 +120,26 @@ var WebBlocks;
         })();
         _LayoutBuilder.BlockType = BlockType;
         ;
+        var AllowedBlocks = (function () {
+            function AllowedBlocks(blockTypes) {
+                this.BlockTypes = blockTypes;
+            }
+            AllowedBlocks.prototype.Validate = function (blockType) {
+                return this.BlockTypes.indexOf(blockType) >= 0;
+            };
+            return AllowedBlocks;
+        })();
+        _LayoutBuilder.AllowedBlocks = AllowedBlocks;
+        var ExcludedBlocks = (function () {
+            function ExcludedBlocks(blockTypes) {
+                this.BlockTypes = blockTypes;
+            }
+            ExcludedBlocks.prototype.Validate = function (blockType) {
+                return this.BlockTypes.indexOf(blockType) < 0;
+            };
+            return ExcludedBlocks;
+        })();
+        _LayoutBuilder.ExcludedBlocks = ExcludedBlocks;
         var TypedBlockConverter = (function () {
             function TypedBlockConverter() {
             }
@@ -145,12 +166,28 @@ var WebBlocks;
             return TypedBlockConverter;
         })();
         _LayoutBuilder.TypedBlockConverter = TypedBlockConverter;
+        var TypedContainerPermissions = (function () {
+            function TypedContainerPermissions() {
+            }
+            TypedContainerPermissions.TypeIt = function (containerPermissions) {
+                if (containerPermissions == null)
+                    return null;
+                if (containerPermissions.__type == "AllowedBlocks") {
+                    return new AllowedBlocks(containerPermissions.BlockTypes);
+                }
+                else {
+                    return new ExcludedBlocks(containerPermissions.BlockTypes);
+                }
+            };
+            return TypedContainerPermissions;
+        })();
+        _LayoutBuilder.TypedContainerPermissions = TypedContainerPermissions;
     })(LayoutBuilder = WebBlocks.LayoutBuilder || (WebBlocks.LayoutBuilder = {})); //end of WebBlocks.LayoutBuilder
     var UI;
     (function (UI) {
         var UIState = (function () {
             function UIState(uiState) {
-                this.LayoutBuilder = new LayoutBuilderState(true);
+                this.LayoutBuilder = new LayoutBuilderState(true, 1024);
                 this.IframeEditor = new IframeEditorState(false, "");
                 this.AddBlockDialogState = new AddBlockDialogState(-1);
                 this.ContentNavigationVisible = true;
@@ -160,10 +197,12 @@ var WebBlocks;
         })();
         UI.UIState = UIState;
         var LayoutBuilderState = (function () {
-            function LayoutBuilderState(visible) {
+            function LayoutBuilderState(visible, canvasWidth) {
                 this.Visible = false;
                 this.CanvasWidth = 1024;
                 this.Visible = visible;
+                if (canvasWidth.length > 0)
+                    this.CanvasWidth = canvasWidth;
             }
             return LayoutBuilderState;
         })();
@@ -383,6 +422,7 @@ var WebBlocks;
                 //loop through all containers and type all blocks
                 angular.forEach(containers, function (container, containerName) {
                     container.Blocks = LayoutBuilder.TypedBlockConverter.TypeAll(container.Blocks);
+                    container.ContainerPermissions = LayoutBuilder.TypedContainerPermissions.TypeIt(container.ContainerPermissions);
                 });
             };
             return LayoutBuilderPreview;

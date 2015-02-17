@@ -5,7 +5,7 @@ angular.module("umbraco").filter("wbContainerName", function () {
         return containerName.replace("_", " ");
     };
 });
-angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope, $http, $element, appState, editorState, eventsService, assetsService, dialogService, notificationsService, $compile) {
+angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope, $http, $element, appState, contentResource, editorState, eventsService, assetsService, dialogService, notificationsService, $compile) {
     //$scope.wysiwygEditorUrl = "/App_Plugins/WebBlocks/LayoutBuilder.WysiwygEditor.html";
     $scope.activeEditSessions = {};
     //need to keep types, and umbraco replaces typed models with plain json objects after saving.
@@ -89,7 +89,20 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         if (draggableBlockModel.LoadContent == true && draggableBlockModel.Block instanceof WebBlocks.LayoutBuilder.NodeBlock) {
             loadBlockContent(block, function () {
                 $scope.$apply(function () {
-                    container.Blocks.push(block);
+                    //if there are restrictions in place
+                    if (container.ContainerPermissions != null) {
+                        //validate the block content type before adding to the container
+                        contentResource.getById(block.Id).then(function (content) {
+                            if (container.ContainerPermissions.Validate(content.contentTypeAlias))
+                                container.Blocks.push(block);
+                            else {
+                                notificationsService.error(content.contentTypeName + " not allowed in this container");
+                            }
+                        });
+                    }
+                    else {
+                        container.Blocks.push(block);
+                    }
                 });
             });
         }
@@ -227,7 +240,7 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         //(<WebBlocks.LayoutBuilder.Block>session.block).ViewModel.ShouldCompile = false;
         $(session.element).empty();
         $(session.element).append($(session.block.Content));
-        if (session.block.Content == "<p>&nbsp;</p>" || session.block.Content == "")
+        if (session.block.Content == "<p>&nbsp;</p>" || session.block.Content == "<p></p>" || session.block.Content == "")
             $(session.element).addClass("wbWysiwygOff");
         // todo: create a block content helper
         $(session.element).find("a, input[type='button'], input[type='submit'], button").on("click", function (e) {
@@ -249,7 +262,7 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         //(<WebBlocks.LayoutBuilder.Block>session.block).ViewModel.ShouldCompile = false;
         $(session.element).empty();
         $(session.element).append($(session.block.Content));
-        if (session.block.Content == "<p>&nbsp;</p>" || session.block.Content == "")
+        if (session.block.Content == "<p>&nbsp;</p>" || session.block.Content == "<p></p>" || session.block.Content == "")
             $(session.element).addClass("wbWysiwygOff");
         // todo: create a block content helper
         $(session.element).find("a, input[type='button'], input[type='submit'], button").on("click", function (e) {
@@ -378,11 +391,10 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
     });
     //hide navigation by default
     appState.setGlobalState("showNavigation", false);
-    var jsAssets = [];
-    assetsService.loadJs(jsAssets, $scope);
-    assetsService.loadCss("/App_Plugins/WebBlocks/Css/WebBlocks.css");
-    assetsService.loadCss("/css/960.css");
-    assetsService.loadCss("/css/global.backoffice.css");
+    assetsService.loadJs($scope.model.config.scripts, $scope);
+    for (var i = 0; i < $scope.model.config.stylesheets.length; i++) {
+        assetsService.loadCss($scope.model.config.stylesheets[i].value);
+    }
     function emptyArray(arr) {
         while (arr.length > 0) {
             arr.pop();

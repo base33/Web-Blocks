@@ -58,7 +58,7 @@ angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
                 attr.$set("class", "");
                 var blockClasses = block.ViewModel.Classes;
                 if (block instanceof WebBlocks.LayoutBuilder.WysiwygBlock) {
-                    blockClasses = "wbWysiwyg " + container.WysiwygClass + ((block.ViewModel.Html == "<p>&nbsp;</p>") ? " wbWysiwygOff" : "");
+                    blockClasses = "wbWysiwyg " + container.WysiwygClass + ((block.ViewModel.Html == "<p>&nbsp;</p>" || block.ViewModel.Html == "<p></p>" || block.ViewModel.Html == "") ? " wbWysiwygOff" : "");
                 }
                 //add all block classes
                 elem.addClass(blockClasses);

@@ -14,7 +14,7 @@
 						label: "Root Block Content Id",
 						description: "This will be the root of the Add Block menu.  Recommendation: Store all blocks under a single Block folder and set this as the root.",
 						key: "rootBlockFolderId",
-						view: "number",
+						view: "textstring",
 						valueType: "string",
 						validation: []
 					},
@@ -22,7 +22,7 @@
 						label: "Canvas Width (optional)",
 						description: "The canvas width without 'px'.  Default: 960",
 						key: "canvasWidth",
-						view: "number",
+						view: "textstring",
 						valueType: "string",
 						validation: []
 					},
@@ -30,7 +30,7 @@
 						label: "Iframe Width (optional)",
 						description: "The block editor iframe width without 'px'.",
 						key: "iframeWidth",
-						view: "number",
+						view: "textstring",
 						valueType: "string",
 						validation: []
 					},
@@ -38,8 +38,22 @@
 						label: "Iframe Height (optional)",
 						description: "The block editor iframe height without 'px'.",
 						key: "iframeHeight",
-						view: "number",
+						view: "textstring",
 						valueType: "string",
+						validation: []
+					},
+					{
+						label: "CSS Stylesheets",
+						description: "Add the relative url or absolute url with protocol",
+						key: "stylesheets",
+						view: "multivalues",
+						validation: []
+					},
+					{
+						label: "Javascript",
+						description: "Add the relative url or absolute url with protocol",
+						key: "scripts",
+						view: "multivalues",
 						validation: []
 					}
 				]

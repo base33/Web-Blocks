@@ -10,7 +10,7 @@ namespace WebBlocks.Model
     {
         protected List<string> blockTypes = new List<string>();
 
-
+        public string __type = "ExcludedBlocks";
         public List<string> BlockTypes
         {
             get { return blockTypes; }

@@ -10,7 +10,7 @@ angular.module("umbraco")
 
 angular.module("umbraco")
     .controller("WebBlocks.LayoutBuilder",
-    function ($scope: any, $http: ng.IHttpService, $element: JQuery, appState: any, editorState: any, eventsService: any, assetsService, dialogService, notificationsService, $compile: ng.ICompiledExpression) {
+    function ($scope: any, $http: ng.IHttpService, $element: JQuery, appState: any, contentResource: any, editorState: any, eventsService: any, assetsService, dialogService, notificationsService, $compile: ng.ICompiledExpression) {
         
         //$scope.wysiwygEditorUrl = "/App_Plugins/WebBlocks/LayoutBuilder.WysiwygEditor.html";
 
@@ -103,6 +103,7 @@ angular.module("umbraco")
 
             var block = <WebBlocks.LayoutBuilder.Block>draggableBlockModel.Block;
 
+
             if (draggableBlockModel.ShouldClone == true) {
                 //clone the block
                 block = draggableBlockModel.Block instanceof WebBlocks.LayoutBuilder.NodeBlock ?
@@ -115,7 +116,20 @@ angular.module("umbraco")
 
                 loadBlockContent(block, function () {
                     $scope.$apply(function () {
-                        container.Blocks.push(block);
+                        //if there are restrictions in place
+                        if (container.ContainerPermissions != null) {
+                            //validate the block content type before adding to the container
+                            contentResource.getById(block.Id).then(function (content) {
+                                if (container.ContainerPermissions.Validate(content.contentTypeAlias))
+                                    container.Blocks.push(block);
+                                else {
+                                    notificationsService.error(content.contentTypeName + " not allowed in this container");
+                                }
+                            });
+                        }
+                        else {
+                            container.Blocks.push(block);
+                        }
                     });
                 });
             }
@@ -280,7 +294,7 @@ angular.module("umbraco")
 
             $(session.element).empty();
             $(session.element).append($(session.block.Content));
-            if (session.block.Content == "<p>&nbsp;</p>" || session.block.Content == "")
+            if (session.block.Content == "<p>&nbsp;</p>" || session.block.Content == "<p></p>" || session.block.Content == "")
                 $(session.element).addClass("wbWysiwygOff");
 
             // todo: create a block content helper
@@ -307,7 +321,7 @@ angular.module("umbraco")
             $(session.element).empty();
             $(session.element).append($(session.block.Content));
             
-            if (session.block.Content == "<p>&nbsp;</p>" || session.block.Content == "")
+            if (session.block.Content == "<p>&nbsp;</p>" || session.block.Content == "<p></p>" || session.block.Content == "")
                 $(session.element).addClass("wbWysiwygOff");
 
             // todo: create a block content helper
@@ -463,11 +477,14 @@ angular.module("umbraco")
         //hide navigation by default
         appState.setGlobalState("showNavigation", false);
 
-        var jsAssets = [];
-        assetsService.loadJs(jsAssets, $scope);
-        assetsService.loadCss("/App_Plugins/WebBlocks/Css/WebBlocks.css");
-        assetsService.loadCss("/css/960.css");
-        assetsService.loadCss("/css/global.backoffice.css");
+        assetsService.loadJs($scope.model.config.scripts, $scope);
+        //assetsService.loadCss("/App_Plugins/WebBlocks/Css/WebBlocks.css");
+        //assetsService.loadCss("/css/960.css");
+        //assetsService.loadCss("/css/global.backoffice.css");
+
+        for (var i = 0; i < $scope.model.config.stylesheets.length; i++) {
+            assetsService.loadCss($scope.model.config.stylesheets[i].value);
+        }
 
         function emptyArray(arr) {
             while (arr.length > 0) {

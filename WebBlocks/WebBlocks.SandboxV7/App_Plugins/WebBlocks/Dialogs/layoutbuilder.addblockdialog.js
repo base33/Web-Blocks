@@ -1,4 +1,4 @@
-angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($scope, $timeout, $http, appState, contentResource, contentTypeResource, eventsService, assetsService, dialogService) {
+angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($scope, $timeout, $http, appState, contentResource, contentTypeResource, entityResource, eventsService, assetsService, dialogService) {
     var dialogOptions = $scope.dialogOptions;
     var addBlockDialogContext = $scope.dialogOptions.modelData;
     var uiState = addBlockDialogContext.UIState;
@@ -16,11 +16,6 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
         $scope.showContextMenu = true;
         $scope.contextMenuModel.navigationModel = navigationModel;
         $scope.loadContextMenuAllowedChildTypes(navigationModel.Model.Id);
-        //var contextMenu = new WebBlocks.UI.Dialogs.ContextMenu(
-        //    [{ Name: "Create", IconClass: "icon-add" }, { Name: "Edit on page", IconClass: "icon-edit" }, { Name: "Edit in new window", IconClass: "icon-folder" }],
-        //    { navigationModel: navigationModel }
-        //);
-        //dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildContextMenuDialogOptions(contextMenu, $scope.handleNavigationAction));
     };
     $scope.loadContextMenuAllowedChildTypes = function (contentId) {
         $scope.contextMenuModel.allowedChildTypes = [];
@@ -81,7 +76,7 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
         $scope.ancestors.push(navigationModel);
     }
     $scope.onWysiwygDragComplete = function (data, event) {
-        //regenerate a new id+
+        //regenerate a new id for the draggable wysiwyg
         $scope.templateDraggableWysiwygBlock.Block.Id = WebBlocks.Utils.MathHelper.GenerateRandomNumber(10000, 52000);
     };
     function createChildNavigationModel(parent, model) {
@@ -144,6 +139,12 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
         block.ViewModel.Html = "<p>&nbsp;</p>";
         return block;
     }
+    ///// SEARCH
+    //$scope.search = function (searchTerm) {
+    //    entityResource.searchContent("name:'" + searchTerm + "'").then(function (results) {
+    //        alert(results.length);
+    //    });
+    //};
 });
 //function getChildNavigationItems(sourceId) {
 //    return [new NavigationItemModel(1000, "Twitter Feed Block", "Twitter Feed Block", "icon-bird", Math.random() >= 0.5),

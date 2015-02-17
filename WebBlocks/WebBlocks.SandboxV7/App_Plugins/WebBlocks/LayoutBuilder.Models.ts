@@ -12,6 +12,7 @@
             public Name: string = "";
             public WysiwygClass: string = "";                            //the class to set on any wysiwyg in the container
             public Blocks: Array<Block> = new Array<Block>();
+            public ContainerPermissions: IContainerPermissions = null;
         }
 
         export class Block {
@@ -93,6 +94,35 @@
             }
         };
 
+        export interface IContainerPermissions {
+            BlockTypes: string[];
+            Validate(blockType: string): boolean;
+        }
+
+        export class AllowedBlocks implements IContainerPermissions {
+            public BlockTypes: string[];
+
+            constructor(blockTypes: string[]) {
+                this.BlockTypes = blockTypes;
+            }
+
+            public Validate(blockType: string): boolean {
+                return this.BlockTypes.indexOf(blockType) >= 0;
+            }
+        }
+
+        export class ExcludedBlocks implements IContainerPermissions {
+            BlockTypes: string[];
+
+            constructor(blockTypes: string[]) {
+                this.BlockTypes = blockTypes;
+            }
+
+            public Validate(blockType: string): boolean {
+                return this.BlockTypes.indexOf(blockType) < 0;
+            }
+        }
+
         export class TypedBlockConverter {
             public static TypeIt(block: Block) : Block {
                 var typedBlock = block.__type == BlockType.Wysiwyg ?
@@ -121,13 +151,26 @@
                 return typedBlocks;
             }
         }
+
+        export class TypedContainerPermissions {
+            public static TypeIt(containerPermissions): LayoutBuilder.IContainerPermissions {
+                if (containerPermissions == null) return null;
+
+                if (containerPermissions.__type == "AllowedBlocks") {
+                    return new AllowedBlocks(containerPermissions.BlockTypes);
+                }
+                else {
+                    return new ExcludedBlocks(containerPermissions.BlockTypes);
+                }
+            }
+        }
     }//end of WebBlocks.LayoutBuilder
     
 
     export module UI {
 
         export class UIState {
-            public LayoutBuilder: LayoutBuilderState = new LayoutBuilderState(true);
+            public LayoutBuilder: LayoutBuilderState = new LayoutBuilderState(true, 1024);
             public IframeEditor: IframeEditorState = new IframeEditorState(false, "");
             public AddBlockDialogState: AddBlockDialogState = new AddBlockDialogState(-1);
             public ContentNavigationVisible: boolean = true;
@@ -144,8 +187,7 @@
 
             public constructor(visible, canvasWidth) {
                 this.Visible = visible;
-
-                if (typeof (canvasWidth) === "number")
+                if (canvasWidth.length > 0)
                     this.CanvasWidth = canvasWidth;
             }
         }
@@ -345,6 +387,7 @@
                 //loop through all containers and type all blocks
                 angular.forEach(containers, function (container: WebBlocks.LayoutBuilder.Container, containerName: string) {
                     container.Blocks = LayoutBuilder.TypedBlockConverter.TypeAll(container.Blocks);
+                    container.ContainerPermissions = LayoutBuilder.TypedContainerPermissions.TypeIt(container.ContainerPermissions);
                 });
             }
             
