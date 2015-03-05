@@ -52,15 +52,28 @@
                     Finish Editing
                 </a>
             </span>
-            <iframe src="{{uiState.IframeEditor.Url}}" height="500" width="800"></iframe>
+            <iframe src="{{uiState.IframeEditor.Url}}" height="{{model.config.iframeHeight}}" width="{{model.config.iframeWidth}}"></iframe>
         </div>
 
         <!-- Canvas -->
         <div id="outerCanvas" style="width:{{uiState.LayoutBuilder.CanvasWidth}};" ng-show="uiState.LayoutBuilder.Visible">
             <div id="canvas" style="width:{{uiState.LayoutBuilder.CanvasWidth}};">
                 <div id="canvasRender">
-                    <!-- builder angular-compiled html will be loaded here -->
-                    <img src="/umbraco/assets/img/loader.gif" style="margin:auto;display:block;" />
+                    <div ng-show="loadInCreateMode" style="display:none;">
+                        <!-- builder angular-compiled html will be loaded here -->
+                        <img class="wbLoadingImage" src="/app_plugins/webblocks/images/logo.png" style="margin:auto;display:block;" />
+                        <div class="wbLoadingCaption" style="display:block;text-align:center;padding-top:20px;">
+                            <h3 style="margin:auto;">Please fill in any mandatory content and then click 'Save' button</h3>
+                        </div>
+                        <input type="submit" class="btn btn-success wbLoadingSaveButton" value="Save" style="margin:auto;display:block;margin-top:20px;" />
+                    </div>
+                    <div ng-show="loadInCreateMode == false" style="display:none;">
+                        <!-- builder angular-compiled html will be loaded here -->
+                        <img class="wbLoadingImage" src="/app_plugins/webblocks/images/ajax-loader.gif" style="margin:auto;display:block;" />
+                        <div class="wbLoadingCaption" style="display:block;text-align:center;padding-top:20px;">
+                            <h3 style="margin:auto;">Loading...</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

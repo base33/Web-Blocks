@@ -100,6 +100,7 @@ namespace WebBlocks.Views
             angularBlock.IsDeletedBlock = block.IsDeletedBlock;
             angularBlock.IsTemplateBlock = block.IsTemplateBlock;
             angularBlock.TemplateContainer = block.TemplateContainer;
+            angularBlock.ContentTypeAlias = block.Content.ContentType.Alias;
             angularBlock.ViewModel = new AngularBlockViewModel() 
             {
                 Tag = blockElement,
@@ -133,6 +134,8 @@ namespace WebBlocks.Views
 
             if (!WebBlocksUtility.IsInBuilder)
                 blockContent = LocalLinkHelper.ResolveLocalLinks(blockContent);
+
+            blockContent = blockContent == "" || blockContent == "<p></p>" ? "<p>&nbsp;</p>" : blockContent;
 
             //add a node block to the angularjs containers model
             var containersBuilder = AngularContainersBuilder.Load();

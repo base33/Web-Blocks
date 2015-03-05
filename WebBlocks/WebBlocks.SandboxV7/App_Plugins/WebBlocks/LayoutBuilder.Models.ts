@@ -27,6 +27,8 @@
         }
 
         export class NodeBlock extends Block {
+            public ContentTypeAlias: string = "";
+
             public constructor() {
                 super();
                 this.__type = "NodeBlock"
@@ -96,7 +98,7 @@
 
         export interface IContainerPermissions {
             BlockTypes: string[];
-            Validate(blockType: string): boolean;
+            Validate(block: Block): boolean;
         }
 
         export class AllowedBlocks implements IContainerPermissions {
@@ -106,8 +108,11 @@
                 this.BlockTypes = blockTypes;
             }
 
-            public Validate(blockType: string): boolean {
-                return this.BlockTypes.indexOf(blockType) >= 0;
+            public Validate(block: Block): boolean {
+                if (block instanceof NodeBlock)
+                    return this.BlockTypes.indexOf(block.ContentTypeAlias) >= 0;
+                else
+                    return true;
             }
         }
 
@@ -118,8 +123,11 @@
                 this.BlockTypes = blockTypes;
             }
 
-            public Validate(blockType: string): boolean {
-                return this.BlockTypes.indexOf(blockType) < 0;
+            public Validate(block: Block): boolean {
+                if (block instanceof NodeBlock)
+                    return this.BlockTypes.indexOf(block.ContentTypeAlias) < 0;
+                else
+                    return true;
             }
         }
 
@@ -136,6 +144,9 @@
                 typedBlock.IsTemplateBlock = block.IsTemplateBlock;
                 typedBlock.ViewModel = block.ViewModel;
                 typedBlock.TemplateContainer = block.TemplateContainer;
+                
+                if (typedBlock instanceof NodeBlock)
+                    typedBlock.ContentTypeAlias = (<NodeBlock>block).ContentTypeAlias;
 
                 if (typedBlock instanceof WysiwygBlock)
                     typedBlock.Content = (<WysiwygBlock>block).Content;

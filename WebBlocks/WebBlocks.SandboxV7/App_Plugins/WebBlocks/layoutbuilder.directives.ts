@@ -83,7 +83,7 @@ angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
                     $(elem).empty();
                     //add the block content to the block
                     $(elem).append(innerContent);
-                    //trigger rerender faster
+
                     if (block.ViewModel.ShouldCompile == true) {
                         $compile(innerContent)(scope);
                     }

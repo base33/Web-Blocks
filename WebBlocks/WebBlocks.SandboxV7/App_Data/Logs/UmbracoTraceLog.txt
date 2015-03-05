@@ -1,214 +1,246 @@
-﻿2015-02-17 00:00:01,607 [6] INFO  Umbraco.Web.UmbracoModule - [Thread 7] Setting OriginalRequestUrl: localhost:52546/umbraco
-2015-02-17 00:00:01,732 [6] INFO  umbraco.content - [Thread 7] Loading content from disk cache...
-2015-02-17 00:00:01,810 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
-2015-02-17 00:00:01,826 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 1ms)
-2015-02-17 00:00:04,001 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
-2015-02-17 00:00:04,001 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 1ms)
-2015-02-17 00:00:49,697 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
-2015-02-17 00:00:49,711 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 9ms)
-2015-02-17 00:00:49,722 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
-2015-02-17 00:00:50,041 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 36 (took 319ms)
-2015-02-17 00:00:50,135 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
-2015-02-17 00:00:50,141 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 6ms)
-2015-02-17 00:00:50,142 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
-2015-02-17 00:00:50,149 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 7ms)
-2015-02-17 00:00:50,175 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
-2015-02-17 00:00:50,181 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 5 (took 6ms)
-2015-02-17 00:00:50,182 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
-2015-02-17 00:00:50,188 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 36 (took 6ms)
-2015-02-17 00:00:50,238 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
-2015-02-17 00:00:50,245 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 7ms)
-2015-02-17 00:00:50,246 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
-2015-02-17 00:00:50,251 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 5ms)
-2015-02-17 00:00:51,220 [6] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
-2015-02-17 00:00:51,331 [6] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
-2015-02-17 00:00:51,608 [6] INFO  Umbraco.Web.UmbracoModule - [Thread 7] Setting OriginalRequestUrl: localhost:52546/umbraco
-2015-02-17 00:00:51,688 [6] INFO  umbraco.content - [Thread 7] Loading content from disk cache...
-2015-02-17 00:00:51,762 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
-2015-02-17 00:00:51,769 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 5ms)
-2015-02-17 00:00:52,224 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
-2015-02-17 00:00:52,240 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 16ms)
-2015-02-17 00:00:55,865 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 7] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:00:59,077 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:00:59,118 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:00:59,135 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:00:59,151 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:00:59,168 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:00:59,192 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:00:59,213 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:01:04,306 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 9] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:01:04,329 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 9] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:01:04,342 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 9] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:01:04,356 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 9] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:01:04,369 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 9] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:01:04,393 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 9] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:01:04,413 [6] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 9] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:01:11,957 [6] INFO  Umbraco.Web.Security.WebSecurity - [Thread 8] User Id: 0 logged in
-2015-02-17 00:01:12,162 [6] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of umbraco.interfaces.IApplication
-2015-02-17 00:01:12,181 [6] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 18ms)
-2015-02-17 00:01:35,227 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
-2015-02-17 00:01:35,243 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 11ms)
-2015-02-17 00:01:35,258 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
-2015-02-17 00:01:35,274 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 36 (took 15ms)
-2015-02-17 00:01:35,415 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
-2015-02-17 00:01:35,415 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
-2015-02-17 00:01:35,415 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
-2015-02-17 00:01:35,415 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 1ms)
-2015-02-17 00:01:35,446 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
-2015-02-17 00:01:35,446 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 5 (took 1ms)
-2015-02-17 00:01:35,446 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
-2015-02-17 00:01:35,446 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 36 (took 5ms)
-2015-02-17 00:01:35,524 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
-2015-02-17 00:01:35,524 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
-2015-02-17 00:01:35,524 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
-2015-02-17 00:01:35,524 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
-2015-02-17 00:01:36,508 [6] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
-2015-02-17 00:01:36,643 [6] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
-2015-02-17 00:01:37,221 [6] INFO  Umbraco.Web.UmbracoModule - [Thread 7] Setting OriginalRequestUrl: localhost:52546/umbraco
-2015-02-17 00:01:37,612 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
-2015-02-17 00:01:37,612 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 0ms)
-2015-02-17 00:01:39,440 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
-2015-02-17 00:01:39,440 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 1ms)
-2015-02-17 00:05:24,683 [6] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 7] An unhandled exception occurred
-Newtonsoft.Json.JsonReaderException: Error reading JObject from JsonReader. Current JsonReader item is not an object: PropertyName. Path 'ContainerPermissions.BlockTypes'.
-   at Newtonsoft.Json.Linq.JObject.Load(JsonReader reader)
-   at WebBlocks.Serialisation.JavascriptConverters.IContainerPermissionsConverter.ReadJson(JsonReader reader, Type objectType, Object existingValue, JsonSerializer serializer) in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\Serialisation\JavascriptConverters\IContainerPermissionsConverter.cs:line 52
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.DeserializeConvertable(JsonConverter converter, JsonReader reader, Type objectType, Object existingValue)
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Populate(JsonReader reader, Object target)
-   at Newtonsoft.Json.Serialization.JsonSerializerProxy.PopulateInternal(JsonReader reader, Object target)
-   at Newtonsoft.Json.JsonSerializer.Populate(JsonReader reader, Object target)
-   at WebBlocks.Serialisation.JavascriptConverters.IContainerConverter.ReadJson(JsonReader reader, Type objectType, Object existingValue, JsonSerializer serializer) in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\Serialisation\JavascriptConverters\IContainerConverter.cs:line 45
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.DeserializeConvertable(JsonConverter converter, JsonReader reader, Type objectType, Object existingValue)
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateDictionary(IDictionary dictionary, JsonReader reader, JsonDictionaryContract contract, JsonProperty containerProperty, String id)
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
-   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
-   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
-   at Newtonsoft.Json.Linq.JToken.ToObject(Type objectType, JsonSerializer jsonSerializer)
-   at Newtonsoft.Json.Linq.JToken.ToObject[T](JsonSerializer jsonSerializer)
-   at WebBlocks.Providers.LayoutBuilderProvider..ctor() in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\Providers\LayoutBuilderProvider.cs:line 40
-   at WebBlocks.Extensions.HtmlContainerExtension.LoadContainerBlocks(String containerName, List`1 templateBlocks, String dynamicWysiwygTag, String dynamicWysiwygClass) in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\Extensions\HtmlContainerExtension.cs:line 151
-   at WebBlocks.Extensions.HtmlContainerExtension.Container(HtmlHelper`1 html, IContainer container) in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks\Extensions\HtmlContainerExtension.cs:line 36
-   at ASP._Page_Views_HomePage_cshtml.<Execute>b__9() in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.SandboxV7\Views\HomePage.cshtml:line 25
-   at System.Web.WebPages.WebPageBase.<>c__DisplayClassb.<RenderSection>b__9(TextWriter tw)
-   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
-   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
-   at ASP._Page_Views_Global_cshtml.Execute() in c:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.SandboxV7\Views\Global.cshtml:line 57
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
-   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
-   at System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderPageCore>b__6(TextWriter writer)
-   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
-   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
-   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
-   at System.Web.WebPages.WebPageBase.PopContext()
-   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
-   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
-   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
-   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
-   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
-   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
-   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
-   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
-   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
-   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
-   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
-   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
-   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
-   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
-   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
-   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
-   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-2015-02-17 00:06:31,962 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
-2015-02-17 00:06:31,978 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 8ms)
-2015-02-17 00:06:31,993 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
-2015-02-17 00:06:40,300 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
-2015-02-17 00:06:40,320 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 14ms)
-2015-02-17 00:06:40,326 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
-2015-02-17 00:06:40,790 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 36 (took 462ms)
-2015-02-17 00:06:40,879 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
-2015-02-17 00:06:40,892 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 13ms)
-2015-02-17 00:06:40,893 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
-2015-02-17 00:06:40,901 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 7ms)
-2015-02-17 00:06:40,925 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
-2015-02-17 00:06:40,932 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 5 (took 6ms)
-2015-02-17 00:06:40,933 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
-2015-02-17 00:06:40,943 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 36 (took 10ms)
-2015-02-17 00:06:41,005 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
-2015-02-17 00:06:41,010 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 5ms)
-2015-02-17 00:06:41,011 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
-2015-02-17 00:06:41,018 [10] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 7ms)
-2015-02-17 00:06:42,041 [10] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
-2015-02-17 00:06:42,153 [10] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
-2015-02-17 00:06:42,593 [10] INFO  Umbraco.Web.UmbracoModule - [Thread 5] Setting OriginalRequestUrl: localhost:52546/umbraco
-2015-02-17 00:06:43,002 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
-2015-02-17 00:06:43,010 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 7ms)
-2015-02-17 00:06:44,980 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
-2015-02-17 00:06:44,997 [10] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 16ms)
-2015-02-17 00:07:14,237 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:07:15,299 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:07:15,451 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:07:15,608 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:07:15,756 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:07:15,904 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:07:16,061 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:07:26,811 [10] INFO  umbraco.content - [Thread 5] Loading content from disk cache...
-2015-02-17 00:07:35,761 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:07:37,600 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:07:37,750 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:07:37,901 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:07:38,045 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:07:38,197 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:07:40,824 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 5] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:08:17,433 [10] INFO  umbraco.BusinessLogic.Log - [Thread 6] Log scrubbed.  Removed all items older than 2014-12-19 00:08:17
-2015-02-17 00:08:21,508 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:08:21,748 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:08:22,091 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:08:22,962 [10] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Web.Trees.TreeController
-2015-02-17 00:08:22,991 [10] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 39ms)
-2015-02-17 00:08:23,272 [10] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of umbraco.interfaces.IApplication
-2015-02-17 00:08:23,300 [10] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 27ms)
-2015-02-17 00:08:23,429 [10] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Web.Trees.TreeController
-2015-02-17 00:08:23,430 [10] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
-2015-02-17 00:08:23,433 [10] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of umbraco.interfaces.ITree
-2015-02-17 00:08:23,457 [10] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 23ms)
-2015-02-17 00:08:24,342 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:08:24,521 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:08:24,777 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:08:25,137 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:08:30,433 [10] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 6] Content 'Home' with Id '2111' has been published.
-2015-02-17 00:08:31,029 [10] INFO  Umbraco.Core.PluginManager - [Thread 6] Starting resolution types of umbraco.interfaces.ICacheRefresher
-2015-02-17 00:08:31,062 [10] INFO  Umbraco.Core.PluginManager - [Thread 6] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 20 (took 35ms)
-2015-02-17 00:08:34,890 [10] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of umbraco.interfaces.IDataType
-2015-02-17 00:08:34,914 [10] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.interfaces.IDataType, found 36 (took 23ms)
-2015-02-17 00:08:34,921 [10] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of umbraco.interfaces.ITree
-2015-02-17 00:08:34,932 [10] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 10ms)
-2015-02-17 00:08:34,973 [10] WARN  Umbraco.Core.PropertyEditors.LegacyPropertyEditorIdToAliasConverter - [Thread 7] A legacy GUID id was generated for property editor MentorWebBlocks.LayoutBuilder. This occurs when the legacy APIs are used and done to attempt to maintain backwards compatibility. Consider upgrading all code to use the new Services APIs instead to avoid any potential issues.
-2015-02-17 00:08:35,227 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:08:35,387 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:08:35,531 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:08:35,736 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:08:35,889 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:08:36,189 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
-2015-02-17 00:08:36,491 [10] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
+﻿2015-03-05 00:00:15,430 [37] INFO  umbraco.BusinessLogic.Log - [Thread 18] Log scrubbed.  Removed all items older than 2015-01-04 00:00:15
+2015-03-05 00:01:41,838 [37] INFO  umbraco.BusinessLogic.Log - [Thread 22] Log scrubbed.  Removed all items older than 2015-01-04 00:01:41
+2015-03-05 00:03:02,773 [37] INFO  Umbraco.Core.PluginManager - [Thread 13] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:03:02,773 [37] INFO  Umbraco.Core.PluginManager - [Thread 13] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:03:04,684 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:03:04,956 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:03:05,196 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:03:05,201 [37] INFO  Umbraco.Core.PluginManager - [Thread 24] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:03:05,201 [37] INFO  Umbraco.Core.PluginManager - [Thread 24] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:03:05,467 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:03:05,788 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:03:06,114 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:03:06,410 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:03:08,240 [37] INFO  umbraco.BusinessLogic.Log - [Thread 25] Log scrubbed.  Removed all items older than 2015-01-04 00:03:08
+2015-03-05 00:04:34,654 [37] INFO  umbraco.BusinessLogic.Log - [Thread 13] Log scrubbed.  Removed all items older than 2015-01-04 00:04:34
+2015-03-05 00:06:01,065 [37] INFO  umbraco.BusinessLogic.Log - [Thread 39] Log scrubbed.  Removed all items older than 2015-01-04 00:06:01
+2015-03-05 00:06:19,849 [37] INFO  Umbraco.Core.PluginManager - [Thread 13] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:06:19,849 [37] INFO  Umbraco.Core.PluginManager - [Thread 13] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:06:21,703 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:06:22,002 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:06:22,243 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:06:22,584 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:06:22,589 [37] INFO  Umbraco.Core.PluginManager - [Thread 39] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:06:22,589 [37] INFO  Umbraco.Core.PluginManager - [Thread 39] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:06:22,770 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:06:23,229 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:06:23,591 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:07:07,018 [37] INFO  Umbraco.Core.PluginManager - [Thread 10] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:07:07,018 [37] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:07:08,841 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:07:09,043 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:07:09,262 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:07:09,377 [37] INFO  Umbraco.Core.PluginManager - [Thread 13] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:07:09,377 [37] INFO  Umbraco.Core.PluginManager - [Thread 13] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:07:09,679 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:07:10,243 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:07:11,139 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:07:11,472 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 43] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:07:27,480 [37] INFO  umbraco.BusinessLogic.Log - [Thread 39] Log scrubbed.  Removed all items older than 2015-01-04 00:07:27
+2015-03-05 00:08:29,371 [37] INFO  Umbraco.Core.PluginManager - [Thread 19] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:08:29,371 [37] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:08:31,670 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 32] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:08:31,732 [37] INFO  Umbraco.Core.PluginManager - [Thread 29] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:08:31,732 [37] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:08:32,264 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 32] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:08:32,934 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 32] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:08:33,418 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 32] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:08:33,662 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 32] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:08:34,030 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 32] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:08:34,354 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 32] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:08:53,893 [37] INFO  umbraco.BusinessLogic.Log - [Thread 25] Log scrubbed.  Removed all items older than 2015-01-04 00:08:53
+2015-03-05 00:09:37,090 [37] INFO  Umbraco.Core.PluginManager - [Thread 36] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:09:37,090 [37] INFO  Umbraco.Core.PluginManager - [Thread 36] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:09:39,016 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:09:39,110 [37] INFO  Umbraco.Core.PluginManager - [Thread 24] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:09:39,110 [37] INFO  Umbraco.Core.PluginManager - [Thread 24] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:09:39,277 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:09:39,621 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:09:39,899 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:09:40,068 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:09:40,358 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:09:40,730 [37] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 25] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:10:20,303 [37] INFO  umbraco.BusinessLogic.Log - [Thread 12] Log scrubbed.  Removed all items older than 2015-01-04 00:10:20
+2015-03-05 00:11:46,704 [37] INFO  umbraco.BusinessLogic.Log - [Thread 30] Log scrubbed.  Removed all items older than 2015-01-04 00:11:46
+2015-03-05 00:12:41,623 [37] INFO  Umbraco.Core.Manifest.ManifestWatcher - [Thread 23] manifest has changed, app pool is restarting (C:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.SandboxV7\App_Plugins\WebBlocks\package.manifest~RF238ec97.TMP)
+2015-03-05 00:12:41,634 [37] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 32] Application shutdown. Reason: UnloadAppDomainCalled
+2015-03-05 00:13:09,897 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Determining hash of code files on disk
+2015-03-05 00:13:09,912 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Hash determined (took 10ms)
+2015-03-05 00:13:09,918 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-03-05 00:13:09,936 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 36 (took 16ms)
+2015-03-05 00:13:10,041 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2015-03-05 00:13:10,043 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+2015-03-05 00:13:10,044 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2015-03-05 00:13:10,046 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 2ms)
+2015-03-05 00:13:10,064 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2015-03-05 00:13:10,067 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 5 (took 1ms)
+2015-03-05 00:13:10,067 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2015-03-05 00:13:10,073 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 36 (took 5ms)
+2015-03-05 00:13:10,124 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2015-03-05 00:13:10,125 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2015-03-05 00:13:10,126 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2015-03-05 00:13:10,127 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2015-03-05 00:13:11,067 [11] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 20] Initializing Examine and binding to business logic events
+2015-03-05 00:13:11,214 [11] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 20] Adding examine event handlers for index providers: 3
+2015-03-05 00:13:11,695 [11] INFO  Umbraco.Web.UmbracoModule - [Thread 33] Setting OriginalRequestUrl: localhost:52546/umbraco
+2015-03-05 00:13:15,486 [11] INFO  Umbraco.Core.Manifest.ManifestWatcher - [Thread 23] manifest has changed, app pool is restarting (C:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.SandboxV7\App_Plugins\WebBlocks\package.manifest~RF23970db.TMP)
+2015-03-05 00:13:15,501 [11] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 33] Application shutdown. Reason: UnloadAppDomainCalled
+2015-03-05 00:13:45,791 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Determining hash of code files on disk
+2015-03-05 00:13:45,804 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Hash determined (took 8ms)
+2015-03-05 00:13:45,811 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-03-05 00:13:45,832 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 36 (took 19ms)
+2015-03-05 00:13:45,940 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2015-03-05 00:13:45,941 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
+2015-03-05 00:13:45,942 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2015-03-05 00:13:45,943 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 1ms)
+2015-03-05 00:13:45,961 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2015-03-05 00:13:45,962 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 5 (took 1ms)
+2015-03-05 00:13:45,962 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2015-03-05 00:13:45,966 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 36 (took 3ms)
+2015-03-05 00:13:46,024 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2015-03-05 00:13:46,025 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 1ms)
+2015-03-05 00:13:46,025 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2015-03-05 00:13:46,026 [26] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2015-03-05 00:13:46,927 [26] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 20] Initializing Examine and binding to business logic events
+2015-03-05 00:13:47,078 [26] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 20] Adding examine event handlers for index providers: 3
+2015-03-05 00:13:47,593 [26] INFO  Umbraco.Web.UmbracoModule - [Thread 33] Setting OriginalRequestUrl: localhost:52546/umbraco
+2015-03-05 00:14:00,951 [26] INFO  Umbraco.Core.Manifest.ManifestWatcher - [Thread 19] manifest has changed, app pool is restarting (C:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.SandboxV7\App_Plugins\WebBlocks\package.manifest~RF23a2277.TMP)
+2015-03-05 00:14:00,965 [26] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 33] Application shutdown. Reason: UnloadAppDomainCalled
+2015-03-05 00:14:20,041 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Determining hash of code files on disk
+2015-03-05 00:14:20,048 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Hash determined (took 5ms)
+2015-03-05 00:14:20,055 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-03-05 00:14:20,068 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 36 (took 13ms)
+2015-03-05 00:14:20,154 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2015-03-05 00:14:20,154 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2015-03-05 00:14:20,154 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2015-03-05 00:14:20,156 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 16 (took 1ms)
+2015-03-05 00:14:20,163 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2015-03-05 00:14:20,166 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 5 (took 3ms)
+2015-03-05 00:14:20,166 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2015-03-05 00:14:20,172 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 36 (took 5ms)
+2015-03-05 00:14:20,217 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2015-03-05 00:14:20,218 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2015-03-05 00:14:20,219 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2015-03-05 00:14:20,219 [12] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2015-03-05 00:14:21,007 [12] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 20] Initializing Examine and binding to business logic events
+2015-03-05 00:14:21,154 [12] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 20] Adding examine event handlers for index providers: 3
+2015-03-05 00:14:21,777 [12] INFO  Umbraco.Web.UmbracoModule - [Thread 33] Setting OriginalRequestUrl: localhost:52546/umbraco
+2015-03-05 00:14:23,556 [12] INFO  Umbraco.Core.PluginManager - [Thread 30] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2015-03-05 00:14:23,558 [12] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 44 (took 1ms)
+2015-03-05 00:14:25,023 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2015-03-05 00:14:25,024 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 23 (took 1ms)
+2015-03-05 00:14:25,133 [12] INFO  umbraco.content - [Thread 8] Loading content from disk cache...
+2015-03-05 00:14:25,559 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:14:25,560 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 1ms)
+2015-03-05 00:14:25,778 [12] INFO  Umbraco.Core.PluginManager - [Thread 29] Starting resolution types of umbraco.interfaces.IApplication
+2015-03-05 00:14:25,779 [12] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 1ms)
+2015-03-05 00:14:25,872 [12] INFO  Umbraco.Core.PluginManager - [Thread 30] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:14:25,873 [12] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 1ms)
+2015-03-05 00:14:25,886 [12] INFO  Umbraco.Core.PluginManager - [Thread 30] Starting resolution types of umbraco.interfaces.ITree
+2015-03-05 00:14:25,890 [12] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 3ms)
+2015-03-05 00:14:27,498 [12] INFO  Umbraco.Core.PluginManager - [Thread 29] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:14:27,498 [12] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:14:34,843 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:14:35,342 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:14:35,555 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:14:35,868 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:14:36,116 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:14:36,446 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:14:36,729 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 8] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:14:40,573 [12] INFO  Umbraco.Core.PluginManager - [Thread 32] Starting resolution types of umbraco.interfaces.ITree
+2015-03-05 00:14:40,574 [12] INFO  Umbraco.Core.PluginManager - [Thread 32] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 1ms)
+2015-03-05 00:14:50,861 [12] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - [Thread 11] Could not find persisted pre-value for field disableContainerDragging
+2015-03-05 00:14:56,348 [12] INFO  Umbraco.Core.PluginManager - [Thread 33] Starting resolution types of umbraco.interfaces.ICacheRefresher
+2015-03-05 00:14:56,349 [12] INFO  Umbraco.Core.PluginManager - [Thread 33] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 20 (took 0ms)
+2015-03-05 00:14:59,664 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 19] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:14:59,971 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 19] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:00,269 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 19] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:00,279 [12] INFO  Umbraco.Core.PluginManager - [Thread 33] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:15:00,279 [12] INFO  Umbraco.Core.PluginManager - [Thread 33] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:15:00,701 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 19] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:01,569 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 19] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:01,946 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 19] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:02,179 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 19] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:22,375 [12] INFO  umbraco.BusinessLogic.Log - [Thread 39] Log scrubbed.  Removed all items older than 2015-01-04 00:15:22
+2015-03-05 00:15:25,571 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:15:25,571 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:15:27,817 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 13] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:27,910 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:15:27,910 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:15:28,139 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 13] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:28,448 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 13] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:28,833 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 13] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:29,022 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 13] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:29,299 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 13] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:29,577 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 13] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:49,980 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:15:49,980 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:15:51,054 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 22] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:51,322 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 22] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:51,560 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 22] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:51,744 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:15:51,745 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:15:51,941 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 22] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:52,544 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 22] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:53,258 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 22] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:15:53,544 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 22] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:16:08,948 [12] INFO  Umbraco.Core.PluginManager - [Thread 10] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:16:08,948 [12] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:16:10,249 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:16:10,475 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:16:10,625 [12] INFO  Umbraco.Core.PluginManager - [Thread 38] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:16:10,625 [12] INFO  Umbraco.Core.PluginManager - [Thread 38] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:16:10,750 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:16:11,552 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:16:12,354 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:16:12,759 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:16:13,112 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:16:48,765 [12] INFO  umbraco.BusinessLogic.Log - [Thread 11] Log scrubbed.  Removed all items older than 2015-01-04 00:16:48
+2015-03-05 00:18:14,188 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:18:14,188 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:18:15,175 [12] INFO  umbraco.BusinessLogic.Log - [Thread 8] Log scrubbed.  Removed all items older than 2015-01-04 00:18:15
+2015-03-05 00:18:15,582 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:18:15,832 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:18:16,065 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:18:16,357 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:18:16,357 [12] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:18:16,460 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:18:16,989 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:18:17,867 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:18:18,240 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 11] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:18:49,506 [12] INFO  Umbraco.Core.PluginManager - [Thread 29] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:18:49,507 [12] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:19:09,616 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 23] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:19:09,873 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 23] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:19:10,213 [12] INFO  Umbraco.Core.PluginManager - [Thread 23] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:19:10,213 [12] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:19:23,495 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 39] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:19:23,722 [12] INFO  Umbraco.Core.PluginManager - [Thread 29] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:19:23,722 [12] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:19:23,832 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 39] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:19:24,352 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 39] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:19:25,052 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 39] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:19:25,338 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 39] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:19:25,559 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 39] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:19:25,780 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 39] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:19:41,582 [12] INFO  umbraco.BusinessLogic.Log - [Thread 33] Log scrubbed.  Removed all items older than 2015-01-04 00:19:41
+2015-03-05 00:20:10,635 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 32] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:20:10,889 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 32] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:20:11,107 [12] INFO  Umbraco.Core.PluginManager - [Thread 38] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:20:11,107 [12] INFO  Umbraco.Core.PluginManager - [Thread 38] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:20:45,335 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 14] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:20:45,606 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 14] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:20:45,714 [12] INFO  Umbraco.Core.PluginManager - [Thread 35] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:20:45,714 [12] INFO  Umbraco.Core.PluginManager - [Thread 35] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:20:51,405 [12] INFO  Umbraco.Core.PluginManager - [Thread 10] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-05 00:20:51,405 [12] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 0ms)
+2015-03-05 00:20:51,927 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 14] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:20:52,232 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 14] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:20:52,439 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 14] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:20:52,730 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 14] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:20:52,908 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 14] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:20:53,157 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 14] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:20:53,380 [12] WARN  Umbraco.Web.PublishedCache.XmlPublishedCache.PublishedMediaCache - [Thread 14] Dropping property "WBWysiwyg" because it does not belong to the content type.
+2015-03-05 00:21:07,988 [12] INFO  umbraco.BusinessLogic.Log - [Thread 10] Log scrubbed.  Removed all items older than 2015-01-04 00:21:07
+2015-03-05 10:19:42,821 [12] INFO  umbraco.BusinessLogic.Log - [Thread 14] Log scrubbed.  Removed all items older than 2015-01-04 10:19:42
+2015-03-05 10:19:55,227 [12] INFO  Umbraco.Web.Security.WebSecurity - [Thread 10] User Id: 0 logged in

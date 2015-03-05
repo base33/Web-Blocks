@@ -45,6 +45,7 @@ var WebBlocks;
             __extends(NodeBlock, _super);
             function NodeBlock() {
                 _super.call(this);
+                this.ContentTypeAlias = "";
                 this.__type = "NodeBlock";
             }
             return NodeBlock;
@@ -124,8 +125,11 @@ var WebBlocks;
             function AllowedBlocks(blockTypes) {
                 this.BlockTypes = blockTypes;
             }
-            AllowedBlocks.prototype.Validate = function (blockType) {
-                return this.BlockTypes.indexOf(blockType) >= 0;
+            AllowedBlocks.prototype.Validate = function (block) {
+                if (block instanceof NodeBlock)
+                    return this.BlockTypes.indexOf(block.ContentTypeAlias) >= 0;
+                else
+                    return true;
             };
             return AllowedBlocks;
         })();
@@ -134,8 +138,11 @@ var WebBlocks;
             function ExcludedBlocks(blockTypes) {
                 this.BlockTypes = blockTypes;
             }
-            ExcludedBlocks.prototype.Validate = function (blockType) {
-                return this.BlockTypes.indexOf(blockType) < 0;
+            ExcludedBlocks.prototype.Validate = function (block) {
+                if (block instanceof NodeBlock)
+                    return this.BlockTypes.indexOf(block.ContentTypeAlias) < 0;
+                else
+                    return true;
             };
             return ExcludedBlocks;
         })();
@@ -152,6 +159,8 @@ var WebBlocks;
                 typedBlock.IsTemplateBlock = block.IsTemplateBlock;
                 typedBlock.ViewModel = block.ViewModel;
                 typedBlock.TemplateContainer = block.TemplateContainer;
+                if (typedBlock instanceof NodeBlock)
+                    typedBlock.ContentTypeAlias = block.ContentTypeAlias;
                 if (typedBlock instanceof WysiwygBlock)
                     typedBlock.Content = block.Content;
                 return typedBlock;

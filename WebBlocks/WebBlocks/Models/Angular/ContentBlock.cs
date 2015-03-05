@@ -11,6 +11,8 @@ namespace WebBlocks.Models.Angular
     {
         protected IPublishedContent content = null;
 
+        public string ContentTypeAlias { get; set; }
+
         public IPublishedContent Content 
         { 
             get
@@ -24,6 +26,7 @@ namespace WebBlocks.Models.Angular
         public ContentBlock()
         {
             __type = "NodeBlock";
+            ContentTypeAlias = "";
         }
 
         public ContentBlock(int id) : this()
