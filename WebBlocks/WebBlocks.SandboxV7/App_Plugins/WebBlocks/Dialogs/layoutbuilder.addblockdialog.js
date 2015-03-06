@@ -3,6 +3,7 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
     var addBlockDialogContext = $scope.dialogOptions.modelData;
     var uiState = addBlockDialogContext.UIState;
     $scope.uiState = uiState;
+    $scope.loaded = false; //show loader to start with
     $scope.ancestors = [];
     $scope.viewNavigationSource = [];
     $scope.menuLoadDelay = 0;
@@ -64,6 +65,7 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
             $scope.viewNavigationSource.show = true;
             //set the active menu item - for reopening the dialog
             addBlockDialogContext.UIState.AddBlockDialogState.ActiveId = navigationModel.Model.Id;
+            $scope.loaded = true;
         }, $scope.menuLoadDelay);
         $scope.menuLoadDelay = 200;
         $scope.ancestors = [];

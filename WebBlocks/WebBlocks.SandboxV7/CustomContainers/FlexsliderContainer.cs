@@ -12,7 +12,7 @@ using WebBlocks.Utilities.Umbraco;
 using WebBlocks.Utilities.WebBlocks;
 using System.Web.Mvc.Html;
 
-namespace WebBlocks.SandboxV6.CustomContainers
+namespace WebBlocks.SandboxV7.CustomContainers
 {
     public class FlexsliderContainer : IContainerRenderer
     {

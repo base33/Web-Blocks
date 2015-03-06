@@ -10,6 +10,7 @@
 
         export class Container {
             public Name: string = "";
+            public WysiwygsAllowed: boolean = true;
             public WysiwygClass: string = "";                            //the class to set on any wysiwyg in the container
             public Blocks: Array<Block> = new Array<Block>();
             public ContainerPermissions: IContainerPermissions = null;
@@ -245,7 +246,7 @@
                     return {
                         template: WebBlocks.UI.Dialogs.DialogTemplateProvider.ContextMenuTemplate,
                         show: true,
-                        modalClass: 'wb-context-menu umb-modal',
+                        modalClass: 'wb-context-menu wbDialog umb-modal',
                         modelData: contextMenu,
                         callback: callback
                     };
@@ -255,7 +256,8 @@
                     return {
                         template: WebBlocks.UI.Dialogs.DialogTemplateProvider.AddBlockTemplate,
                         modelData: addBlockMenu,
-                        show: true
+                        show: true,
+                        modalClass: "umb-modal wbDialog"
                     };
                 }
                 
@@ -263,7 +265,8 @@
                     return {
                         template: WebBlocks.UI.Dialogs.DialogTemplateProvider.BlockStorageTemplate,
                         show: true,
-                        modelData: layoutBuilder.BlockStorage
+                        modelData: layoutBuilder.BlockStorage,
+                        modalClass: "umb-modal wbDialog"
                     };
                 }
 
@@ -271,7 +274,8 @@
                     return {
                         template: WebBlocks.UI.Dialogs.DialogTemplateProvider.RecycleBinTemplate,
                         show: true,
-                        modelData: new Dialogs.RecycleBinContext(layoutBuilder.RecycleBin, layoutBuilder.Containers)
+                        modelData: new Dialogs.RecycleBinContext(layoutBuilder.RecycleBin, layoutBuilder.Containers),
+                        modalClass: "umb-modal wbDialog"
                     };
                 }
             }
@@ -382,14 +386,15 @@
         export class LayoutBuilderPreview {
             public GetPreview(id: number, $http: ng.IHttpService, callback: (preview: Models.LayoutBuilderPreviewModel) => void) {
                 WebBlocksAPIClent.GetPagePreviewHtml(id, $http, function (html) {
-                    var $previewDOM = $(html);
-                    var containersModel = <Array<LayoutBuilder.Container>>JSON.parse($($previewDOM).find("#wbContainerJSON").html());
+                    var $previewDOM = $("<div />").append(html);
+                    var scriptTag = $($previewDOM).find("#wbContainerJSON");
+                    var containersModel = <Array<LayoutBuilder.Container>>JSON.parse(scriptTag.html());
                     //convert all blocks so that blocks are their respective type
                     LayoutBuilderPreview.typeAllContainerBlocks(containersModel);
                     $($previewDOM).remove("#wbContainerJSON");
-                    var webBlocksPreviewHtml = $($previewDOM).find(".wbLayout").html();
-
-                    var layoutBuilderPreviewModel = new Models.LayoutBuilderPreviewModel(webBlocksPreviewHtml, containersModel);
+                    var webBlocksPreviewHtmlEl = $($previewDOM).find(".wbLayout");
+                    $(scriptTag).remove();
+                    var layoutBuilderPreviewModel = new Models.LayoutBuilderPreviewModel(webBlocksPreviewHtmlEl.html(), containersModel);
                     callback(layoutBuilderPreviewModel);
                 });
             }
@@ -443,6 +448,10 @@
                     }
                     callback(navigationItems);
                 });
+            }
+
+            public static ValidateRenderedBlock(block: LayoutBuilder.NodeBlock): boolean {
+                return block.ViewModel.Html != "";
             }
         }
 

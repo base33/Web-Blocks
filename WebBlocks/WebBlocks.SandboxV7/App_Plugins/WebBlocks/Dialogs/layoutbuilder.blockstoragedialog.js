@@ -20,6 +20,7 @@ angular.module("umbraco").controller("WebBlocks.BlockStorageDialogCtrl", functio
             blockStorageItemViewModel.DraggableBlock = {
                 Block: blockStorageBlock.Block,
                 ShouldClone: false,
+                LoadContent: true,
                 BlockIconClass: "icon-folder",
                 OnDropCallback: getOnDropCallback(blockStorageItemViewModel)
             };

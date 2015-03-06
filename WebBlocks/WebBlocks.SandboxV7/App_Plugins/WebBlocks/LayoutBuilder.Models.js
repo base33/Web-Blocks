@@ -20,6 +20,7 @@ var WebBlocks;
         var Container = (function () {
             function Container() {
                 this.Name = "";
+                this.WysiwygsAllowed = true;
                 this.WysiwygClass = ""; //the class to set on any wysiwyg in the container
                 this.Blocks = new Array();
                 this.ContainerPermissions = null;
@@ -263,7 +264,7 @@ var WebBlocks;
                     return {
                         template: WebBlocks.UI.Dialogs.DialogTemplateProvider.ContextMenuTemplate,
                         show: true,
-                        modalClass: 'wb-context-menu umb-modal',
+                        modalClass: 'wb-context-menu wbDialog umb-modal',
                         modelData: contextMenu,
                         callback: callback
                     };
@@ -272,21 +273,24 @@ var WebBlocks;
                     return {
                         template: WebBlocks.UI.Dialogs.DialogTemplateProvider.AddBlockTemplate,
                         modelData: addBlockMenu,
-                        show: true
+                        show: true,
+                        modalClass: "umb-modal wbDialog"
                     };
                 };
                 DialogOptionsFactory.BuildBlockStorageDialogOptions = function (layoutBuilder) {
                     return {
                         template: WebBlocks.UI.Dialogs.DialogTemplateProvider.BlockStorageTemplate,
                         show: true,
-                        modelData: layoutBuilder.BlockStorage
+                        modelData: layoutBuilder.BlockStorage,
+                        modalClass: "umb-modal wbDialog"
                     };
                 };
                 DialogOptionsFactory.BuildRecycleBinDialogOptions = function (layoutBuilder) {
                     return {
                         template: WebBlocks.UI.Dialogs.DialogTemplateProvider.RecycleBinTemplate,
                         show: true,
-                        modelData: new Dialogs.RecycleBinContext(layoutBuilder.RecycleBin, layoutBuilder.Containers)
+                        modelData: new Dialogs.RecycleBinContext(layoutBuilder.RecycleBin, layoutBuilder.Containers),
+                        modalClass: "umb-modal wbDialog"
                     };
                 };
                 return DialogOptionsFactory;
@@ -417,13 +421,15 @@ var WebBlocks;
             }
             LayoutBuilderPreview.prototype.GetPreview = function (id, $http, callback) {
                 WebBlocksAPIClent.GetPagePreviewHtml(id, $http, function (html) {
-                    var $previewDOM = $(html);
-                    var containersModel = JSON.parse($($previewDOM).find("#wbContainerJSON").html());
+                    var $previewDOM = $("<div />").append(html);
+                    var scriptTag = $($previewDOM).find("#wbContainerJSON");
+                    var containersModel = JSON.parse(scriptTag.html());
                     //convert all blocks so that blocks are their respective type
                     LayoutBuilderPreview.typeAllContainerBlocks(containersModel);
                     $($previewDOM).remove("#wbContainerJSON");
-                    var webBlocksPreviewHtml = $($previewDOM).find(".wbLayout").html();
-                    var layoutBuilderPreviewModel = new Models.LayoutBuilderPreviewModel(webBlocksPreviewHtml, containersModel);
+                    var webBlocksPreviewHtmlEl = $($previewDOM).find(".wbLayout");
+                    $(scriptTag).remove();
+                    var layoutBuilderPreviewModel = new Models.LayoutBuilderPreviewModel(webBlocksPreviewHtmlEl.html(), containersModel);
                     callback(layoutBuilderPreviewModel);
                 });
             };
@@ -478,6 +484,9 @@ var WebBlocks;
                     }
                     callback(navigationItems);
                 });
+            };
+            WebBlocksAPIClent.ValidateRenderedBlock = function (block) {
+                return block.ViewModel.Html != "";
             };
             return WebBlocksAPIClent;
         })();

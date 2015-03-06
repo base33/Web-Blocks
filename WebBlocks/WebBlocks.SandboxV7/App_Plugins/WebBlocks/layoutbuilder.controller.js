@@ -36,6 +36,15 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
             $scope.loadLayoutBuilder();
         }
     };
+    //show navigation if you change tab
+    //$scope.$watch(function () {
+    //    return $scope.$parent.$parent.$parent.$parent.$parent.tab.active;
+    //}, function () {
+    //    alert($scope.$parent.$parent.$parent.$parent.$parent.tab.active);
+    //    if (!$scope.$parent.$parent.$parent.$parent.$parent.tab.active) {
+    //        appState.setGlobalState("showNavigation", true);
+    //    }
+    //}, true);
     function updateAllContainersSortOrder(containersObject) {
         angular.forEach(containersObject, function (value, key) {
             var container = value;
@@ -73,25 +82,35 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
     $scope.getSortableOptions = function (blockList) {
         return {
             handle: ":not(.wbAction)",
-            connectWith: $scope.model.config.disableContainerDragging ? "" : ".wbcontainer",
+            connectWith: $scope.model.config.disableContainerDragging == true || $scope.model.config.disableContainerDragging == 1 ? "" : ".wbcontainer",
             modelData: blockList,
+            over: function (e, ui) {
+                $scope.currentSortableHoveredContainer = $scope.$eval($(e.target).attr("wb-container-model"));
+            },
             update: function (e, ui) {
                 //if sender is not null, this means the container which had the block dropped on it is being updated
                 if (ui.sender != null) {
-                    //get the current container
-                    var container = $scope.$eval($(e.target).attr("wb-container-model"));
-                    var block = $scope.currentSortableDraggedBlock;
-                    //if this is a node block and has constraints
-                    if (block instanceof WebBlocks.LayoutBuilder.NodeBlock && container.ContainerPermissions != null) {
-                        if (!container.ContainerPermissions.Validate(block)) {
-                            notificationsService.error(block.ContentTypeAlias + " not allowed in this container");
-                            ui.item.sortable.cancel();
-                        }
-                    }
                 }
                 else {
                     //set the current dragged block
-                    $scope.currentSortableDraggedBlock = $scope.$eval($(ui.item.parent()).attr("ng-model"))[ui.item.index()];
+                    var draggedBlock = $scope.$eval($(ui.item.parent()).attr("ng-model"))[ui.item.index()];
+                    var newContainer = $scope.currentSortableHoveredContainer;
+                    if (typeof (newContainer) == "undefined") {
+                        return;
+                    }
+                    //if this is a node block and has constraints
+                    if (draggedBlock instanceof WebBlocks.LayoutBuilder.NodeBlock && newContainer.ContainerPermissions != null) {
+                        if (!newContainer.ContainerPermissions.Validate(draggedBlock)) {
+                            ui.item.sortable.cancel();
+                            notificationsService.warning(draggedBlock.ContentTypeAlias + " not allowed in this container");
+                        }
+                    }
+                    else if (draggedBlock instanceof WebBlocks.LayoutBuilder.WysiwygBlock) {
+                        if (!newContainer.WysiwygsAllowed) {
+                            ui.item.sortable.cancel();
+                            notificationsService.warning("Wysiwyg Blocks are not allowed in this container");
+                        }
+                    }
                 }
             },
             stop: function (e, ui) {
@@ -101,6 +120,7 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         };
     };
     $scope.handleBlockDropped = function (draggableBlockModel, event, containerElement) {
+        var success = true;
         var container = $scope.$eval($(containerElement).attr("wb-container-model"));
         var block = draggableBlockModel.Block;
         if (draggableBlockModel.ShouldClone == true) {
@@ -111,29 +131,44 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         if (draggableBlockModel.LoadContent == true && draggableBlockModel.Block instanceof WebBlocks.LayoutBuilder.NodeBlock) {
             loadBlockContent(block, function () {
                 $scope.$apply(function () {
-                    //if there are restrictions in place
-                    if (container.ContainerPermissions != null) {
-                        //validate the block content type before adding to the container
-                        contentResource.getById(block.Id).then(function (content) {
-                            if (container.ContainerPermissions.Validate(content.contentTypeAlias))
-                                container.Blocks.push(block);
-                            else {
-                                notificationsService.error(content.contentTypeName + " not allowed in this container");
-                            }
-                        });
+                    //validate the block (ie, it didn't have a partial view - hence it is not a block
+                    if (!WebBlocks.API.WebBlocksAPIClent.ValidateRenderedBlock(block)) {
+                        notificationsService.warning("Not a valid block");
+                        success = false;
+                        return;
                     }
-                    else {
-                        container.Blocks.push(block);
-                    }
+                    //validate the block content type before adding to the container
+                    contentResource.getById(block.Id).then(function (content) {
+                        //set the content type alias
+                        block.ContentTypeAlias = content.contentTypeAlias;
+                        //validate against the content type alias
+                        //if container permissions are set, and is valid
+                        if (container.ContainerPermissions == null || (container.ContainerPermissions != null && container.ContainerPermissions.Validate(block))) {
+                            container.Blocks.push(block);
+                            draggableBlockModel.OnDropCallback(draggableBlockModel);
+                            //we will now update all block sortorders in all containers
+                            updateAllContainersSortOrder(layoutBuilderModel.Containers);
+                        }
+                        else {
+                            notificationsService.warning(content.contentTypeName + " not allowed in this container");
+                            success = false;
+                        }
+                    });
                 });
             });
         }
-        else {
-            container.Blocks.push(block);
+        else if (draggableBlockModel.Block instanceof WebBlocks.LayoutBuilder.WysiwygBlock) {
+            if (container.WysiwygsAllowed) {
+                container.Blocks.push(block);
+                draggableBlockModel.OnDropCallback(draggableBlockModel);
+                //we will now update all block sortorders in all containers
+                updateAllContainersSortOrder(layoutBuilderModel.Containers);
+            }
+            else {
+                notificationsService.warning("Wysiwyg Blocks are not allowed in this container");
+                success = false;
+            }
         }
-        //we will now update all block sortorders in all containers
-        updateAllContainersSortOrder(layoutBuilderModel.Containers);
-        draggableBlockModel.OnDropCallback(draggableBlockModel);
     };
     function loadBlockContent(block, callback) {
         var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?wbPreview=true&pageId=" + editorState.current.id + "&blockId=" + block.Id;
@@ -378,9 +413,15 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
                 }
             });
             layoutBuilderModel.Containers = preview.Containers;
-            var layoutBuilderElements = $compile($(preview.Html)[0].outerHTML)($scope);
             //load in canvas angular html
-            $element.find("#canvasRender").empty().append(layoutBuilderElements);
+            //$element.find("#canvasRender").empty().append(layoutBuilderElements);
+            var elToAppend = $(preview.Html);
+            $element.find("#canvasRender").empty();
+            for (var i = 0; i < elToAppend.length; i++) {
+                var layoutBuilderElements = $compile(elToAppend[i].outerHTML)($scope);
+                //load in canvas angular html
+                $element.find("#canvasRender").append(layoutBuilderElements);
+            }
             callback();
         });
         return layoutBuilderModel;
@@ -412,7 +453,7 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         }
     });
     //hide navigation depending on the settings
-    if ($scope.model.config.autoHideContentTree)
+    if ($scope.model.config.autoHideContentTree == true || $scope.model.config.autoHideContentTree == 1)
         appState.setGlobalState("showNavigation", false);
     assetsService.loadJs($scope.model.config.scripts, $scope);
     for (var i = 0; i < $scope.model.config.stylesheets.length; i++) {

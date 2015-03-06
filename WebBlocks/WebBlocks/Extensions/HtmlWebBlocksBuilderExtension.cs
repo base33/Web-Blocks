@@ -51,7 +51,8 @@ namespace WebBlocks.Extensions
             {
                 var containersBuilder = AngularContainersBuilder.Load();
                 string containersJSON = containersBuilder.ConvertToJSON();
-                html.ViewContext.Writer.Write("<script type='text/javascript' id='wbContainerJSON'>{0}</script>", containersJSON);
+                if(htmlToClose != "")
+                    html.ViewContext.Writer.Write("<script type='text/javascript' id='wbContainerJSON'>{0}</script>", containersJSON);
                 html.ViewContext.Writer.Write(htmlToClose);
             }
         }

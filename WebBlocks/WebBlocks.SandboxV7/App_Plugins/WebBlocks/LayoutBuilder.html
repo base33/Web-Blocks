@@ -20,7 +20,7 @@
         </a>
         <a ui-draggable class="btn" href="#" ng-click="rerenderLayoutBuilder()" title="Activate a new template after changing the template" prevent-default>
             <i class="icon icon-brush-alt-2"></i>
-            Rerender Preview
+            Rerender Builder
         </a>
         
         <!-- session buttons -->
@@ -57,7 +57,7 @@
 
         <!-- Canvas -->
         <div id="outerCanvas" style="width:{{uiState.LayoutBuilder.CanvasWidth}};" ng-show="uiState.LayoutBuilder.Visible">
-            <div id="canvas" style="width:{{uiState.LayoutBuilder.CanvasWidth}};">
+            <div id="canvas">
                 <div id="canvasRender">
                     <div ng-show="loadInCreateMode" style="display:none;">
                         <!-- builder angular-compiled html will be loaded here -->

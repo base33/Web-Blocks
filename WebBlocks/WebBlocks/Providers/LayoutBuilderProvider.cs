@@ -30,7 +30,7 @@ namespace WebBlocks.Providers
         {
             var property = WebBlocksUtility.CurrentPageContent.GetProperty("webblocks");
             var layoutBuilderObj = property != null ? property.Value : null;
-            if (layoutBuilderObj != null)
+            if (layoutBuilderObj != null && layoutBuilderObj.ToString() != "")
             {
                 var jsonSerialiser = new JsonSerializer();
                 jsonSerialiser.Converters.Add(new IBlockConverter());

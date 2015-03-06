@@ -35,6 +35,11 @@ namespace WebBlocks.Interfaces
         //TODO: RENDER ATTRIBUTES in builder
 
         /// <summary>
+        /// Allows wysiwyg blocks to be dragged in to the container.  This is true by default.
+        /// </summary>
+        bool WysiwygsAllowed { get; set; }
+
+        /// <summary>
         /// The class to give to all wysiwygs that have been added (e.g. col-md-3 or grid_3)
         /// </summary>
         string WysiwygClass { get; set; }

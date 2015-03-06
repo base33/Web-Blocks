@@ -23,7 +23,7 @@
                 var blockStorageItemViewModel = new WebBlocks.UI.Dialogs.BlockStorageItemViewModel();
                 blockStorageItemViewModel.BlockStorageBlock = blockStorageBlock;
                 blockStorageItemViewModel.DraggableBlock = < WebBlocks.UI.DraggableBlockModel > {
-                    Block: blockStorageBlock.Block, ShouldClone: false, BlockIconClass: "icon-folder",
+                    Block: blockStorageBlock.Block, ShouldClone: false, LoadContent: true, BlockIconClass: "icon-folder",
                     OnDropCallback: getOnDropCallback(blockStorageItemViewModel)
                 };
 

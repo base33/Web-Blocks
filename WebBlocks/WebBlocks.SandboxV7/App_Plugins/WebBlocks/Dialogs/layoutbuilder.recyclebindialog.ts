@@ -49,7 +49,7 @@
                 var recycleBinBlockViewModel = new WebBlocks.UI.Dialogs.RecycleBinItemViewModel();
                 recycleBinBlockViewModel.RecycleBinBlock = recycleBinBlock;
                 recycleBinBlockViewModel.DraggableBlock = <WebBlocks.UI.DraggableBlockModel>{
-                    Block: recycleBinBlock.Block, BlockIconClass: "icon-folder", ShouldClone: false,
+                    Block: recycleBinBlock.Block, BlockIconClass: "icon-folder", ShouldClone: false, LoadContent: true,
                     OnDropCallback: getOnDropCallback(recycleBinBlockViewModel)
                 };
                 

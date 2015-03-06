@@ -6,7 +6,7 @@ using WebBlocks.Interfaces;
 using System.Web.Mvc.Html;
 using System.Web.Mvc;
 
-namespace WebBlocks.SandboxV6.CustomContainers
+namespace WebBlocks.SandboxV7.CustomContainers
 {
     public class YouTubeChannelContainer : IContainerRenderer
     {

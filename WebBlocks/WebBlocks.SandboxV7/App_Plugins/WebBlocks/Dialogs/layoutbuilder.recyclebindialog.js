@@ -41,6 +41,7 @@ angular.module("umbraco").controller("WebBlocks.RecycleBinDialogCtrl", function 
                 Block: recycleBinBlock.Block,
                 BlockIconClass: "icon-folder",
                 ShouldClone: false,
+                LoadContent: true,
                 OnDropCallback: getOnDropCallback(recycleBinBlockViewModel)
             };
             //display the correct up-to-date name and icon

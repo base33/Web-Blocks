@@ -237,7 +237,7 @@ body.umbracoPage .menubar img { vertical-align:initial; }
 
         /* Back button styling */
         .wb-navigation-item > .wb-navigation-back {
-            float: left; height: 40px; cursor: pointer;
+            float: left; height: 40px; cursor: pointer; width: 100%;
         }
 
             .wb-navigation-item > .wb-navigation-back > .wb-navigation-back-icon {
@@ -342,3 +342,11 @@ body.umbracoPage .menubar img { vertical-align:initial; }
 .wbWysiwyg:hover {
     background: #F8F8F8;
 }
+
+.wbDialog {
+    background: rgba(255,255,255,0.95) !important;
+}
+
+    .wbDialog .umb-panel-footer {
+        background: rgba(248, 248, 248, 1) !important;
+    }

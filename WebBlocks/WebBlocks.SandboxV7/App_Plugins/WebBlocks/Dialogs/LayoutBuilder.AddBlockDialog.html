@@ -21,7 +21,7 @@
 
         <!-- ADD BLOCK MENU NAVIGATION -->
         <h5 class="wbDialogTitle" ng-hide="showContextMenu || showCreateBlockMenu" style="float:left;">Content:</h5>
-        <div class="wb-navigation-items" ng-hide="showContextMenu || showCreateBlockMenu" ng-animate="'wbslide'">
+        <div class="wb-navigation-items" ng-hide="showContextMenu || showCreateBlockMenu || !loaded" ng-animate="'wbslide'">
 
             <div ng-show="viewNavigationSource.navigationModel.Model.Id != uiState.AddBlockDialogState.RootId" ng-animate="'wbslide'" ng-click="loadChildNavigationIntoMenu(viewNavigationSource.navigationModel.Parent)" class="wb-navigation-item">
                 <a prevent-default="" class="wb-navigation-back">
@@ -106,8 +106,8 @@
         <!-- END OF EDIT BLOCK CONTEXT MENU -->
 
 
-        <!-- BLOCK EDIT CONTEXT MENU -->
-        <h5 class="wbDialogTitle" ng-init="showCreateBlockMenu = false;" ng-show="showCreateBlockMenu" style="float:left"> Create a block under: {{contextMenuModel.navigationModel.Model.Name}}</h5>
+        <!-- BLOCK CREATE CONTEXT MENU -->
+        <h5 class="wbDialogTitle" ng-init="showCreateBlockMenu = false;" ng-show="showCreateBlockMenu" style="float:left"> Create under {{contextMenuModel.navigationModel.Model.Name}}</h5>
         <div class="wb-navigation-items" ng-show="showCreateBlockMenu" ng-animate="'wbslide'">
 
             <div ng-animate="'wbslide'" ng-click="showCreateBlockMenu = false;loadChildNavigationIntoMenu(viewNavigationSource.navigationModel)" class="wb-navigation-item">
@@ -120,7 +120,7 @@
                     </div>
                 </a>
             </div>
-            <h5 ng-show="contextMenuModel.allowedChildTypes.length > 0" class="wbDialogTitle" style="float:left;">Create here:</h5>
+            <h5 ng-show="contextMenuModel.allowedChildTypes.length > 0" class="wbDialogTitle" style="float:left;font-size:11px;">Choose Content Type:</h5>
             <div ng-show="contextMenuModel.allowedChildTypes.length > 0" ng-animate="'wbslide'" ng-repeat="childContentType in contextMenuModel.allowedChildTypes" ng-click="handleNavigationCreateAction(childContentType.alias)" class="wb-navigation-item wb-context-menu-item">
                 <a prevent-default="" class="wb-navigation-back">
                     <div class="wb-navigation-back-icon">
@@ -133,7 +133,7 @@
             </div>
 
         </div>
-        <!-- END OF EDIT BLOCK CONTEXT MENU -->
+        <!-- END OF CREATE BLOCK CONTEXT MENU -->
 
 
 
