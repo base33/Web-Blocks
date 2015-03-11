@@ -48,20 +48,11 @@
     <Reference Include="AutoMapper.Net4">
       <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
-    <Reference Include="businesslogic">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\businesslogic.dll</HintPath>
-    </Reference>
     <Reference Include="ClientDependency.Core">
       <HintPath>..\packages\ClientDependency.1.8.0.0\lib\net45\ClientDependency.Core.dll</HintPath>
     </Reference>
     <Reference Include="ClientDependency.Core.Mvc">
       <HintPath>..\packages\ClientDependency-Mvc.1.8.0.0\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="cms">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\cms.dll</HintPath>
-    </Reference>
-    <Reference Include="controls">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\controls.dll</HintPath>
     </Reference>
     <Reference Include="CookComputing.XmlRpcV2">
       <HintPath>..\packages\xmlrpcnet.2.5.0\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
@@ -81,17 +72,8 @@
     <Reference Include="ImageProcessor.Web">
       <HintPath>..\packages\ImageProcessor.Web.3.3.1.0\lib\net45\ImageProcessor.Web.dll</HintPath>
     </Reference>
-    <Reference Include="interfaces">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="Lucene.Net">
       <HintPath>..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationBlocks.Data">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\Microsoft.ApplicationBlocks.Data.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Helpers">
@@ -112,17 +94,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="SQLCE4Umbraco">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\SQLCE4Umbraco.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\System.Data.SqlServerCe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\System.Data.SqlServerCe.Entity.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
@@ -172,33 +143,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="TidyNet">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\TidyNet.dll</HintPath>
-    </Reference>
-    <Reference Include="umbraco">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\umbraco.dll</HintPath>
-    </Reference>
-    <Reference Include="Umbraco.Core">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\Umbraco.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="umbraco.DataLayer">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\umbraco.DataLayer.dll</HintPath>
-    </Reference>
-    <Reference Include="umbraco.editorControls">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\umbraco.editorControls.dll</HintPath>
-    </Reference>
-    <Reference Include="umbraco.MacroEngines">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\umbraco.MacroEngines.dll</HintPath>
-    </Reference>
-    <Reference Include="umbraco.providers">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\umbraco.providers.dll</HintPath>
-    </Reference>
-    <Reference Include="Umbraco.Web.UI">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\Umbraco.Web.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UmbracoExamine">
-      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\UmbracoExamine.dll</HintPath>
-    </Reference>
     <Reference Include="UrlRewritingNet.UrlRewriter">
       <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
     </Reference>
@@ -283,31 +227,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomContainers\FlexsliderContainer.cs" />
-    <Compile Include="CustomContainers\YouTubeChannelContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WebBlocks.Examine\WebBlocks.Examine.csproj">
-      <Project>{ee2e8c6b-e343-4fa5-a684-dbc447f8133f}</Project>
-      <Name>WebBlocks.Examine</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebBlocks.Interfaces\WebBlocks.Interfaces.csproj">
-      <Project>{9df2b481-a599-47c0-a664-7aa882949dd3}</Project>
-      <Name>WebBlocks.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebBlocks.Model\WebBlocks.Model.csproj">
-      <Project>{7198e4c7-f43c-43cc-b2d5-e7e903c1277b}</Project>
-      <Name>WebBlocks.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebBlocks.Utilities\WebBlocks.Utilities.csproj">
-      <Project>{81284ffc-c9d3-4ca1-9683-1adb0b80ead5}</Project>
-      <Name>WebBlocks.Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebBlocks\WebBlocks.csproj">
-      <Project>{71be79b7-8148-446b-b44b-8f12d1eaf734}</Project>
-      <Name>WebBlocks</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -329,6 +249,35 @@
     <TypeScriptCompile Include="scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="scripts\typings\jqueryui\jqueryui.d.ts" />
     <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebBlocks.Examine\WebBlocks.Examine.csproj">
+      <Project>{ee2e8c6b-e343-4fa5-a684-dbc447f8133f}</Project>
+      <Name>WebBlocks.Examine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebBlocks.Interfaces\WebBlocks.Interfaces.csproj">
+      <Project>{9df2b481-a599-47c0-a664-7aa882949dd3}</Project>
+      <Name>WebBlocks.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebBlocks.Model\WebBlocks.Model.csproj">
+      <Project>{7198e4c7-f43c-43cc-b2d5-e7e903c1277b}</Project>
+      <Name>WebBlocks.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebBlocks.Providers\WebBlocks.Providers.csproj">
+      <Project>{1e55512a-7f3d-4d6f-971b-07c495fa0c68}</Project>
+      <Name>WebBlocks.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebBlocks.Utilities\WebBlocks.Utilities.csproj">
+      <Project>{81284ffc-c9d3-4ca1-9683-1adb0b80ead5}</Project>
+      <Name>WebBlocks.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebBlocks\WebBlocks.csproj">
+      <Project>{71be79b7-8148-446b-b44b-8f12d1eaf734}</Project>
+      <Name>WebBlocks</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CustomContainers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

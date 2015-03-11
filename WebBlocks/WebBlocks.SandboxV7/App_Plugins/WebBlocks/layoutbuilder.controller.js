@@ -11,6 +11,8 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
     //$scope.wysiwygEditorUrl = "/App_Plugins/WebBlocks/LayoutBuilder.WysiwygEditor.html";
     $scope.activeEditSessions = {};
     $scope.currentSortableDraggedBlock = 0; //allows us to cache the block that is being dragged.  This is required to prevent disallowed blocks from being dragged in.
+    $scope.model.config.iframeHeight = $scope.model.config.iframeHeight == "" ? "400" : $scope.model.config.iframeHeight;
+    $scope.model.config.iframeWidth = $scope.model.config.iframeWidth == "" ? "700" : $scope.model.config.iframeWidth;
     //need to keep types, and umbraco replaces typed models with plain json objects after saving.
     //The approach is to use the layoutBuilderModel to reference a working layout builder.  And $scope.model.value will be a clone.
     //When the working model is updated, we will clone it over to $scope.model.value
@@ -238,7 +240,7 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
                     config: {
                         editor: {
                             toolbar: ["code", "undo", "redo", "cut", "styleselect", "bold", "italic", "alignleft", "aligncenter", "alignright", "bullist", "numlist", "link", "umbmediapicker", "umbmacro", "umbembeddialog"],
-                            stylesheets: ["Wysiwyg.Backoffice"],
+                            stylesheets: [$scope.model.config.wysiwygStylesheet],
                             dimensions: {}
                         }
                     }
@@ -456,6 +458,7 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
     if ($scope.model.config.autoHideContentTree == true || $scope.model.config.autoHideContentTree == 1)
         appState.setGlobalState("showNavigation", false);
     assetsService.loadJs($scope.model.config.scripts, $scope);
+    assetsService.loadCss("/App_Plugins/WebBlocks/Css/WebBlocks.css");
     for (var i = 0; i < $scope.model.config.stylesheets.length; i++) {
         assetsService.loadCss($scope.model.config.stylesheets[i].value);
     }

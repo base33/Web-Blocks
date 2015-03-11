@@ -20,6 +20,9 @@ angular.module("umbraco")
 
         $scope.currentSortableDraggedBlock = 0; //allows us to cache the block that is being dragged.  This is required to prevent disallowed blocks from being dragged in.
 
+        $scope.model.config.iframeHeight = $scope.model.config.iframeHeight == "" ? "400" : $scope.model.config.iframeHeight;
+        $scope.model.config.iframeWidth = $scope.model.config.iframeWidth == "" ? "700" : $scope.model.config.iframeWidth;
+
         //need to keep types, and umbraco replaces typed models with plain json objects after saving.
         //The approach is to use the layoutBuilderModel to reference a working layout builder.  And $scope.model.value will be a clone.
         //When the working model is updated, we will clone it over to $scope.model.value
@@ -302,7 +305,7 @@ angular.module("umbraco")
                         config: {
                             editor: {
                                 toolbar: ["code", "undo", "redo", "cut", "styleselect", "bold", "italic", "alignleft", "aligncenter", "alignright", "bullist", "numlist", "link", "umbmediapicker", "umbmacro", "umbembeddialog"],
-                                stylesheets: ["Wysiwyg.Backoffice"],
+                                stylesheets: [$scope.model.config.wysiwygStylesheet],
                                 dimensions: {}
                             }
                         }
@@ -567,7 +570,7 @@ angular.module("umbraco")
             appState.setGlobalState("showNavigation", false);
 
         assetsService.loadJs($scope.model.config.scripts, $scope);
-        //assetsService.loadCss("/App_Plugins/WebBlocks/Css/WebBlocks.css");
+        assetsService.loadCss("/App_Plugins/WebBlocks/Css/WebBlocks.css");
         //assetsService.loadCss("/css/960.css");
         //assetsService.loadCss("/css/global.backoffice.css");
 

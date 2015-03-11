@@ -7,6 +7,7 @@
         <add namespace="WebBlocks.Models.Angular" />
         <add namespace="WebBlocks.Interfaces"/>
         <add namespace="WebBlocks.Extensions"/>
+        <add namespace="WebBlocks.Model" />
       </namespaces>
     </pages>
   </system.web.webPages.razor>

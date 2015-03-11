@@ -53,6 +53,13 @@
 						validation: []
 					},
 					{
+						label: "Wysiwyg Stylesheet",
+						description: "The stylesheet name for the stylesheet containing the styling for the wysiwyg editor",
+						key: "wysiwygStylesheet",
+						view: "textstring",
+						validation: []
+					},
+					{
 						label: "Auto Hide Content Tree?",
 						description: "By checking this box, the content tree will automatically close when a page with Web Blocks is open.",
 						key: "autoHideContentTree",

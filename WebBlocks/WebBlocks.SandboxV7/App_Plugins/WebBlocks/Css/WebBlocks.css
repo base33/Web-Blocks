@@ -97,7 +97,7 @@ body.umbracoPage .menubar img { vertical-align:initial; }
   display: block!important;
 }
 
-#webBlocksWrapper .wbWysiwygOff { background: #e8e8e8 url('/umbraco/plugins/webblocks/images/wysiwygOff.jpg') no-repeat top center; text-align: center; font-size: 12pt; line-height: 120px; height: 120px !important; /*margin-bottom: 0px !important;*/ overflow: hidden !important; }
+#webBlocksWrapper .wbWysiwygOff { background: #e8e8e8 url('/App_Plugins/WebBlocks/images/wysiwygOff.jpg') no-repeat top center; text-align: center; font-size: 12pt; line-height: 120px; height: 120px !important; /*margin-bottom: 0px !important;*/ overflow: hidden !important; }
 
 
 .wb-context-menu {
