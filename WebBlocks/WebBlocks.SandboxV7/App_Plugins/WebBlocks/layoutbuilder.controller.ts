@@ -568,8 +568,8 @@ angular.module("umbraco")
         //hide navigation depending on the settings
         if ($scope.model.config.autoHideContentTree == true || $scope.model.config.autoHideContentTree == 1)
             appState.setGlobalState("showNavigation", false);
-
-        assetsService.loadJs($scope.model.config.scripts, $scope);
+        if($scope.model.config.scripts.length > 0)
+            assetsService.loadJs($scope.model.config.scripts, $scope);
         assetsService.loadCss("/App_Plugins/WebBlocks/Css/WebBlocks.css");
         //assetsService.loadCss("/css/960.css");
         //assetsService.loadCss("/css/global.backoffice.css");
