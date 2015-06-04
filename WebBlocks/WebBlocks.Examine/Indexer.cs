@@ -10,7 +10,7 @@ using umbraco.NodeFactory;
 
 namespace WebBlocks.Examine
 {
-    public class Indexer : ApplicationBase
+    public class Indexer : Umbraco.Core.ApplicationEventHandler
     {
         public Indexer()
         {
