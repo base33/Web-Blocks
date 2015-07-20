@@ -441,12 +441,15 @@ $(document).ready(function () {
 });
 
 function ensureLoggedInForProtectedPage(callback) {
-    if (isProtectedPage)
-        $.post("/WebBlocksProtectedPage.ashx", { command: "signin", username: username, password: password }, function () {
-            callback();
-        });
-    else
-        callback();
+	if (isProtectedPage)
+		$.ajax({
+			method: "POST",
+			url: "/WebBlocksProtectedPage.ashx",
+			data: { command: "signin", username: username, password: password },
+			success: callback()
+		});
+	else
+		callback();
 }
 
 function webBlocksLogOut() {
