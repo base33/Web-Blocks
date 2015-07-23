@@ -1,0 +1,25 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    Layout = "Global.cshtml";
+}
+
+@section headContent {}
+
+@section Content {
+    <div class="content-page-full-width">
+        @Html.Container(new Container
+        {
+            Attributes = new Dictionary<string, string> { { "id", "main-container" } },
+            Classes = "main-container",
+            Name = "mainContainer",
+            Tag = "main",          
+            WysiwygClass = "wysiwyg",
+            Blocks = new List<WebBlocks.Interfaces.IBlock>
+            {
+                new ContentBlock(1104),
+                new WysiwygBlock { Id = 1, Content = "Enter Content Here" }
+            }
+        })
+    </div>
+}

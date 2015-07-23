@@ -5,7 +5,7 @@ angular.module("umbraco").filter("wbContainerName", function () {
         return containerName.replace("_", " ");
     };
 });
-angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope, $http, $element, appState, contentResource, editorState, eventsService, assetsService, dialogService, notificationsService, $compile) {
+angular.module("umbraco").controller("WebBlocks.LayoutBuilder", ["$scope", "$http", "$element", "appState", "contentResource", "editorState", "eventsService", "assetsService", "dialogService", "notificationsService", "$compile", function ($scope, $http, $element, appState, contentResource, editorState, eventsService, assetsService, dialogService, notificationsService, $compile) {
     //which loading screen to choose
     $scope.loadInCreateMode = window.location.hash.indexOf("create=true") > 0;
     //$scope.wysiwygEditorUrl = "/App_Plugins/WebBlocks/LayoutBuilder.WysiwygEditor.html";
@@ -217,7 +217,9 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         dialogService.open(WebBlocks.UI.Dialogs.DialogOptionsFactory.BuildContextMenuDialogOptions(contextMenu, $scope.handleEditBlockDialog));
     };
     $scope.editBlock = function (blockElement, block, container, applyScope) {
-        if (applyScope === void 0) { applyScope = true; }
+        if (applyScope === void 0) {
+            applyScope = true;
+        }
         if (block instanceof WebBlocks.LayoutBuilder.NodeBlock) {
             if (applyScope)
                 $scope.$apply(function () {
@@ -457,7 +459,8 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
     //hide navigation depending on the settings
     if ($scope.model.config.autoHideContentTree == true || $scope.model.config.autoHideContentTree == 1)
         appState.setGlobalState("showNavigation", false);
-    assetsService.loadJs($scope.model.config.scripts, $scope);
+    if ($scope.model.config.scripts.lenght > 0)
+        assetsService.loadJs($scope.model.config.scripts, $scope);
     assetsService.loadCss("/App_Plugins/WebBlocks/Css/WebBlocks.css");
     for (var i = 0; i < $scope.model.config.stylesheets.length; i++) {
         assetsService.loadCss($scope.model.config.stylesheets[i].value);
@@ -477,5 +480,6 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", function ($scope
         }
         return def;
     }
-});
+}]);
+//# sourceMappingURL=layoutbuilder.controller.js.map 
 //# sourceMappingURL=layoutbuilder.controller.js.map

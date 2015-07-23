@@ -1,0 +1,21 @@
+﻿@model WebBlocks.SandboxV7.Models.LoginViewModel
+@{
+}
+
+@if (TempData.ContainsKey("LoginError"))
+{
+	<span style="color: red">@TempData["LoginError"]</span>
+}
+
+@using (Html.BeginUmbracoForm<WebBlocks.SandboxV7.Controllers.MembershipController>("HandleLogin"))
+{
+	@Html.HiddenFor(x => x.RedirectUrl)
+	
+	<span>Username</span>
+	@Html.TextBoxFor(x => x.Username)
+	<span><br/></span>
+	<span>Password</span>
+	@Html.PasswordFor(x => x.Password)
+	<span><br /></span>
+	<input type="submit" value="Login" />
+}

@@ -67,6 +67,7 @@
     <Compile Include="Extensions\HtmlWebBlocksLiveEdit.cs" />
     <Compile Include="Helpers\HtmlImgHelper.cs" />
     <Compile Include="Helpers\TinyMCE.cs" />
+    <Compile Include="Helpers\BackofficeUserHelper.cs" />
     <Compile Include="Models\Angular\AngularBlockHistory.cs" />
     <Compile Include="Models\Angular\AngularBlockStorageBlock.cs" />
     <Compile Include="Models\Angular\AngularRecycleBinBlock.cs" />

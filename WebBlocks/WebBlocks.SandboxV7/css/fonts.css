@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'vanilla';
+    src: url("../fonts/vanilla.eot?-plres1");
+    src: url("../fonts/vanilla.eot?#iefix-plres1") format("embedded-opentype"), url("../fonts/vanilla.woff?-plres1") format("woff"), url("../fonts/vanilla.ttf?-plres1") format("truetype"), url("../fonts/vanilla.svg?-plres1#vanilla") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+

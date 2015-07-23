@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
+using umbraco.BusinessLogic;
 using Umbraco.Core.Models;
 using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
@@ -15,10 +16,10 @@ using WebBlocks.Models.Navigation;
 namespace WebBlocks.Controllers
 {
     [PluginController("WebBlocks")]
-    public class WebBlocksApiController : UmbracoApiController//UmbracoAuthorizedApiController
+    public class WebBlocksApiController : UmbracoAuthorizedApiController
     {
         /// <summary>
-        /// Url: /umbraco/WebBlocks/WebBlocksApi/GetChildren?id={id} sample: 1052
+        /// Url: /umbraco/backoffice/WebBlocks/WebBlocksApi/GetChildren?id={id} sample: 1052
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -31,13 +32,13 @@ namespace WebBlocks.Controllers
         }
 
         /// <summary>
-        /// Url: /umbraco/WebBlocks/WebBlocksApi/GetPagePreview?id={id} sample: 1052
+        /// Url: /umbraco/backoffice/WebBlocks/WebBlocksApi/GetPagePreview?id={id} sample: 1052
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         public HttpResponseMessage GetPagePreview(int id)
         {
-            var user = umbraco.BusinessLogic.User.GetCurrent();
+			var user = new User(User.Identity.Name);
             var d = new umbraco.cms.businesslogic.web.Document(id);
             var pc = new umbraco.presentation.preview.PreviewContent(user, Guid.NewGuid(), false);
             pc.PrepareDocument(user, d, true);

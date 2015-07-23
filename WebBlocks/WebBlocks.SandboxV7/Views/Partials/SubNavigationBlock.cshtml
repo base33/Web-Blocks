@@ -1,30 +1,25 @@
-﻿@using System.Linq;
-@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
 
-@{
-    WebBlocks.CssClasses.Add("grid_3");
-    var subNavRoot = CurrentPage.AncestorOrSelf(2);
-}
-<div class="siteBlock featureBlock">
-	<div class="blockTitle">
-		<a href="@subNavRoot.Url" @Html.Raw(CurrentPage.Id == subNavRoot.Id ? "style=\"text-decoration:underline;\"" : "")>
-			@subNavRoot.Name
-		</a>
-	</div>
+@{	
+	WebBlocks.CssClasses.Add("sub-navigation-block");
+
+	var parentOrSelfTwo = CurrentPage.AncestorOrSelf(2);
+	var parentOrSelfThree = CurrentPage.AncestorOrSelf(3);
 	
-	@if (subNavRoot.Children != null && subNavRoot.Children.Count() > 0)
-    {		
-		<div class="blockContent">
-			<ul class="subnav">
-				@foreach (var child in subNavRoot.Children.Where("umbracoNaviHide != true"))
-                {
-                    var selectedClass = CurrentPage.Id == child.Id ? "selected" : "";
+    if(parentOrSelfTwo.Children != null && parentOrSelfTwo.Children.Count() > 0) {	   
+        <h4 class="block-title">
+	        <a href="@parentOrSelfTwo.Url">
+		        @parentOrSelfTwo.Name
+	        </a>
+        </h4>	
+	    <ul>
+		    @foreach (var pageLink in parentOrSelfTwo.Children.Where("umbracoNaviHide != true")){
+			    var currentLoopPage =  CurrentPage.Id == pageLink.Id ? "selected" : "";
 									
-					<li class="@selectedClass">
-						<a href="@child.Url">@child.Name</a>
-					</li>
-				}
-			</ul>		
-		</div>
-	}
-</div>
+			    <li class="@currentLoopPage">
+				    <a href="@pageLink.Url">@pageLink.Name</a>
+			    </li>
+		    }
+	    </ul>
+    }		
+}

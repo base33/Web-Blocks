@@ -1,61 +1,47 @@
+﻿@using System.Linq
+
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-@{ var home = CurrentPage.Site(); }
 
-@if (home.Children.Any())
-{
-    @* Get the first page in the children *@
-    var naviLevel = home.Children.First().Level;
-    
-    @* Add in level for a CSS hook *@
-    <ul class="level-@naviLevel">            
-        @* For each child page under the home node *@
-        @foreach (var childPage in home.Children)
-        {   
-            if (childPage.Children.Any())
-            {                    
-                <li class="has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
-					@if(childPage.DocumentTypeAlias == "LandingPage") 
-					{
-                    	<span>@childPage.Name</span>
-						@childPages(childPage.Children)
-					} else {
-						<a href="@childPage.Url">@childPage.Name</a>
-					}
-                </li>
-            } 
-			else
-            {
-                <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
-                    <a href="@childPage.Url">@childPage.Name</a>
-                </li>
-            }            
-        }
-    </ul>
-}
+@{
+    var level = 1;
+    var ulClass = "header-main-nav";
 
-@helper childPages(dynamic pages)
-{
-    @* Ensure that we have a collection of pages *@
-    if (pages.Any())
+    var parent = CurrentPage.AncestorOrSelf(level);
+    var mainNavPages = parent.Children.Where("Visible && showInMainNav");
+    dynamic navSource = CurrentPage.AncestorOrSelf(level);
+
+    if (parent != null)
     {
-        @* Get the first page in pages and get the level *@
-        var naviLevel = pages.First().Level;
-        
-        @* Add in level for a CSS hook *@
-        <ul class="sublevel level-@(naviLevel)">
-            @foreach (var page in pages)
-            {
-                <li>
-                    <a href="@page.Url">@page.Name</a>
-                    
-                    @* if the current page has any children *@
-                    @if (page.Children.Any())
-                    {                        
-                        @* Call our helper to display the children *@
-                        @childPages(page.Children)
+        var homeSelected = parent.Id == CurrentPage.Id ? "selected" : "";
+
+        <nav class="header-main-nav" role="navigation">
+            <a class="btn-menu" href="#"><span class="icon-menu"></span></a>
+            <div class="menu">
+                <a href="#" class="btn-close"><span class="icon-close"></span></a>
+                <ul class="sf-menu" id="navbar">
+                    <li id="home" class="@Html.Raw(homeSelected)"><a href="@parent.Url ">Home</a></li>
+
+                    @foreach (var item in mainNavPages)
+                    {
+                        var selected = Array.IndexOf(CurrentPage.Path.Split(','), item.Id.ToString()) >= 0 ? "selected" : "";
+                        var itemChildren = item.Children();
+
+                        <li class="@Html.Raw(selected)">
+                            <a href="@item.Url">@item.Name</a>
+                            @if (itemChildren.Count() > 0)
+                            {
+                                <ul class="sub-menu">
+                                    @foreach (var innerItem in itemChildren.Where("Visible && showInMainNav"))
+                                    {
+                                        var subSelected = Array.IndexOf(CurrentPage.Path.Split(','), innerItem.Id.ToString()) >= 0 ? " class=\"selected\"" : "";
+                                        <li @Html.Raw(subSelected)><a href="@innerItem.Url">@innerItem.Name</a></li>
+                                    }
+                                </ul>
+                            }
+                        </li>
                     }
-                </li>
-            }
-        </ul>
+                </ul>
+            </div>
+        </nav>
     }
 }

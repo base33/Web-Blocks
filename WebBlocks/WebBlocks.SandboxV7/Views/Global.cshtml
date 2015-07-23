@@ -1,80 +1,106 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@using System.Dynamic
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
 @{
     Layout = null;
-    
 }
 
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-			<title>@CurrentPage.Name</title>
-			<meta name="description" content="@CurrentPage.metaDescription"/>
-			<meta name="description" content="@CurrentPage.metaKeywords"/>
-			<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
-			
-			<!-- STYLESHEETS ====================================================================================== -->
-			<link type="text/css" rel="stylesheet" href="/css/960.css" />
-    		<link type="text/css" rel="stylesheet" href="/css/global.css" />
-			<!-- ================================================================================================== -->
-			
-			<!-- JAVASCRIPT ======================================================================================= -->
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
-			<script type="text/javascript" src="/scripts/Mentor_Flexslider.js"></script>
-			<script type="text/javascript" src="/scripts/application.js"></script>
-			<!-- ================================================================================================== -->
-        @RenderSection("headContent", false)
-    </head>
-    <body>
-        <!-- HEADER ========================================================================================== -->
-        <div class="siteHeader">
-            <div class="container_12 clearfix">
-                <div class="grid_4">
-                    <a href="/" class="siteLogo">Web Blocks</a>
-                </div>
-					  
-                <div class="grid_6 push_2" align="right">
-                    <br/>
-                    <h4>
-                        Contact <a target="_blank" href="http://www.mentordigital.co.uk/" title="Mentor Digital is a full service digital agency based in Bristol. We offer web design, software development, digital media &amp; video production services to clients in Bristol, and across the UK.">Mentor Digital</a> for bespoke umbraco development, design and support<br/>
-                        <a href="mailto:&#105;&#110;&#102;&#111;&#064;&#109;&#101;&#110;&#116;&#111;&#114;&#100;&#105;&#103;&#105;&#116;&#097;&#108;&#046;&#099;&#111;&#046;&#117;&#107;?Subject=Umbraco%20web%20development">&#105;&#110;&#102;&#111;&#064;&#109;&#101;&#110;&#116;&#111;&#114;&#100;&#105;&#103;&#105;&#116;&#097;&#108;&#046;&#099;&#111;&#046;&#117;&#107;</a>
-                    </h4>
-						  
-                </div>
-					  
-                <div class="grid_12 navMain">
-                    @Html.Partial("TopNavigation")
-                </div>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+    @* ///// YOU MUST ADD A SITE NAME TO THE CONTENT ATTRIBUTE BELOW /////
+        <meta property="og:site_name" content="" />
+    *@
+    @if (CurrentPage.pageTitle != "")
+    {
+        <title>@CurrentPage.pageTitle</title>
+        <meta property="og:title" content="@CurrentPage.pageTitle" />
+    }
+    else
+    {
+        <title>@CurrentPage.Name</title>
+        <meta property="og:title" content="@CurrentPage.Name" />
+    }
+    @if (CurrentPage.metaDescription != "")
+    {
+        <meta name="description" content="@CurrentPage.metaDescription" />
+        <meta property="og:description" content="@CurrentPage.metaDescription" />
+    }
+    else
+    {
+        <meta property="og:description" content="Check out this page on this Website!" />
+    }
+    @if (CurrentPage.metaKeywords != "")
+    {
+        <meta name="keywords" content="@CurrentPage.metaKeywords" />
+    }
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
+
+    <!-- STYLESHEETS ====================================================================================== -->
+    <link type="text/css" rel="stylesheet" href="/css/fonts.css" />
+    <!--[if IE 8]><link type="text/css" rel="stylesheet" href="/css/ie8.css" /><![endif]-->       
+    <!--[if (gt IE 8)|!(IE)]><!-->
+        <link type="text/css" rel="stylesheet" href="/css/style.css" />
+    <!--<![endif]-->
+    <link type="text/css" rel="stylesheet" href="/css/print.css" media="print" />
+    <!-- ================================================================================================== -->
+    <!-- JAVASCRIPT ======================================================================================= -->
+    <script src="/scripts/libs/modernizrRespond/modernizr.2.8.3.custom-respond-1.1.0.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
+    <!--[if (gte IE 6)&(lte IE 8)]>
+              <script src="/scripts/libs/selectivizr/selectivizr.js"></script>
+    <![endif]-->
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.migrate/jquery-migrate-1.2.1.min.js"></script>
+    <!-- ================================================================================================== -->
+    @RenderSection("headContent", false)
+</head>
+
+<body class="front-end @CurrentPage.Name.ToLower()">
+    <!-- HEADER ========================================================================================== -->
+    <header>
+        <div class="secondary-info">
+            <div class="contain">
+                @Html.Partial("TopNavigation")
             </div>
         </div>
-        <!-- ================================================================================================= -->
-        
-        <!-- CONTENT ========================================================================================= -->
-		<div class="siteContent">
-            @* Anything in this will be rendered in the backend *@
-            @using(@Html.WebBlocksBuilder())
-            {
-			    @RenderSection("content", true)
-            }
-		</div>
-        <!-- ================================================================================================= -->
-
-        <!-- FOOTER ========================================================================================== -->
-		<div class="siteFooter">
-			<div class="container_12 clearfix">
-				<div class="grid_6 clearfix">
-					
-				</div>
-						
-				<div class="grid_4 push_2">
-					<strong>MENTOR WEB BLOCKS RUNWAY SITE</strong>
-				</div>
-						
-				<div class="grid_12">
-					<a target="_blank" href="http://www.mentordigital.co.uk/" title="Mentor Digital is a full service digital agency based in Bristol. We offer web design, software development, digital media &amp; video production services to clients in Bristol, and across the UK.">Web Design</a>
-				</div>
-			</div>
-		</div>
-		<!-- ================================================================================================= -->
-    </body>
+        <div class="header-info">
+            <div class="contain">
+                <div class="logo">
+                    <a href="/"><img src="/images/vanilla/logo.png"></a>
+                </div>
+                @Html.Partial("MainNavigation")
+            </div>
+        </div>
+    </header>
+    <!-- ================================================================================================= -->
+    <!-- CONTENT ========================================================================================= -->
+    @* Anything in this will be rendered in the backend *@
+    @using (@Html.WebBlocksBuilder())
+    {
+        @RenderSection("content", true)
+    }
+    <!-- ================================================================================================= -->
+    <!-- FOOTER ========================================================================================== -->
+    <footer>
+        <div class="contain">
+            @Html.Partial("FooterNavigation")
+        </div>
+    </footer>
+    <!-- ================================================================================================= -->
+    <script type="text/javascript" src="/scripts/libs/jRespond/jRespond.min.js"></script>
+    <script type="text/javascript" src="/scripts/libs/superfish/superfish.js"></script>
+    <script type="text/javascript" src="/scripts/libs/owlCarousel/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="/scripts/main.js"></script>
+</body>
 </html>

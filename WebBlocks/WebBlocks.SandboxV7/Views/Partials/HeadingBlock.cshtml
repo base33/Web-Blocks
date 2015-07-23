@@ -1,0 +1,10 @@
+﻿@using System.Dynamic
+@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+
+@{
+    WebBlocks.CssClasses.Add("body-heading");
+
+    var title = !string.IsNullOrEmpty(CurrentPage.h1Override) ? CurrentPage.h1Override : CurrentPage.Name;
+
+    <h1>@Html.Raw(@title)</h1>
+}

@@ -1,0 +1,16 @@
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+
+@{
+    WebBlocks.CssClasses.Add("related-links-block");
+    IPublishedContent block = CurrentBlock;
+    var links = block.GetPropertyValue<RJP.MultiUrlPicker.Models.MultiUrls>("relatedLinks");
+    var title = block.GetPropertyValue<string>("title");
+}
+
+<h4 class="block-title">@title</h4>
+<ul>
+    @foreach (var link in links)
+    {
+        <li><a href="@link.Url" target="@link.Target">@link.Name</a></li>
+    }
+</ul>

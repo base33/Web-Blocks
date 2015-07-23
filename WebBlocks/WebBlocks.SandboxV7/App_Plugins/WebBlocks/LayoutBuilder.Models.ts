@@ -432,7 +432,7 @@
         export class WebBlocksAPIClent {
             //gets the full web block preview html for a content page      
             public static GetPagePreviewHtml(id: number, $http: ng.IHttpService, callback: (string) => void) {
-                HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetPagePreview?id=" + id, $http, function (data) {
+                HttpRequest.Get("/umbraco/backoffice/WebBlocks/WebBlocksApi/GetPagePreview?id=" + id, $http, function (data) {
                     callback(data);
                     //remove preview cookie
                     $http.get('/umbraco/endPreview.aspx');
@@ -440,7 +440,7 @@
             }
 
             public static GetNavigationChildren(id: number, $http: ng.IHttpService, callback: (navigationItems: Array<Models.NavigationItem>) => void) {
-                HttpRequest.Get("/umbraco/WebBlocks/WebBlocksApi/GetChildren?id=" + id, $http,(navigationItems: Array<Models.NavigationItem>) => {
+                HttpRequest.Get("/umbraco/backoffice/WebBlocks/WebBlocksApi/GetChildren?id=" + id, $http,(navigationItems: Array<Models.NavigationItem>) => {
                     for (var i = 0; i < navigationItems.length; i++) {
                         navigationItems[i].IconClass = navigationItems[i].IconClass != ".sprTreeFolder" ?
                             navigationItems[i].IconClass :

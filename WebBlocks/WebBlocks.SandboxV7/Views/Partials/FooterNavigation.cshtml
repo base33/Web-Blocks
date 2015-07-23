@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    IPublishedContent footerSource = CurrentPage.AncestorOrSelf(1);
+    var footerLinks = footerSource.GetPropertyValue<RJP.MultiUrlPicker.Models.MultiUrls>("footerLinks");
+}
+
+<nav class="footer-nav" role="navigation">
+    @loadLinks(footerLinks)
+</nav>
+
+@helper loadLinks(RJP.MultiUrlPicker.Models.MultiUrls links)
+{
+    if (links.Any())
+    {
+        foreach (var link in links)
+        {
+            <a href="@link.Url" target="@link.Target">@link.Name</a>
+        }
+    }
+}

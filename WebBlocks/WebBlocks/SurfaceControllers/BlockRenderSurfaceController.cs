@@ -7,9 +7,11 @@ using Umbraco.Web;
 using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
 using WebBlocks.API;
+using WebBlocks.Helpers;
 using WebBlocks.Providers;
 using WebBlocks.Utilities.Umbraco;
 using WebBlocks.Utilities.WebBlocks;
+using UM = Umbraco;
 
 namespace WebBlocks.SurfaceControllers
 {
@@ -22,7 +24,7 @@ namespace WebBlocks.SurfaceControllers
         [ActionName("RenderBlock")]
         public ActionResult RenderBlock()
         {
-            if (umbraco.BusinessLogic.User.GetCurrent() == null) throw new HttpException(401, "Unauthorized");
+            if (!BackofficeUserHelper.IsUserAuthenticated) throw new HttpException(401, "Unauthorized");
 
             WebBlocksAPI blockInstanceApi = new WebBlocksAPI();
             blockInstanceApi.BlockElement = "div";

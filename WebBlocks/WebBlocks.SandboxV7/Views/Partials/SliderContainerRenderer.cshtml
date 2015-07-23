@@ -1,0 +1,46 @@
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+
+@{
+    var blocks = (List<IBlock>)ViewData["Blocks"];
+
+    if (blocks.Count > 0)
+    {
+        <div id="owl-single-carousel" class="owl-carousel">
+            @{
+                foreach (WebBlocks.Models.Angular.ContentBlock blockItem in blocks)
+                {
+                    IPublishedContent block = blockItem.Content;
+
+                    if (block.DocumentTypeAlias == "HeroSlide")
+                    {
+                        string link = "";
+
+                        @*if (block.link != 0)
+                        {
+                            var linkedPage = Umbraco.TypedContent(block.link);
+                            link = linkedPage.Url;
+                        }*@
+                        
+                        int imageId = block.GetPropertyValue<int>("image");
+                        IPublishedContent image = Umbraco.TypedMedia(imageId);
+                        string imageUrl = image.Url != "" ? image.Url + "?width=1200&height=370&mode=crop" : "";
+                        string mobileImageUrl = image.Url != "" ? image.Url + "?width=768&height=180&mode=crop" : "";
+                        string imageAlt = image.Name;
+
+
+                        if (link != "")
+                        {
+                            <a href="@link">
+                                <img data-src="@imageUrl" data-dt-src="@imageUrl" data-mob-src="@mobileImageUrl" class="lazyOwl" alt="@imageAlt">
+                            </a>
+                        }
+                        else
+                        {
+                            <img data-src="@imageUrl" data-dt-src="@imageUrl" data-mob-src="@mobileImageUrl" class="lazyOwl" alt="@imageAlt">
+                        }
+                    }
+                }
+}
+        </div>
+    }
+}

@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    Layout = "Global.cshtml";
+}
+
+@section headContent {}
+             
+@section Content {
+    <div class="content-page-left-nav">
+        <div id="side-container">
+            @Html.Container(new Container()
+            {
+                Classes = "aside-container",
+                Name = "asideContainer",
+                Tag = "aside",
+                WysiwygClass = "wysiwyg",
+                Blocks = new List<WebBlocks.Interfaces.IBlock>
+                {
+                    new ContentBlock(1139)
+                }
+            })
+        </div>
+
+        @Html.Container(new Container()
+        {
+            Attributes = new Dictionary<string, string> { { "id", "main-container" } },
+            Classes = "main-container",
+            Name = "mainContainer",
+            Tag = "main",
+            WysiwygClass = "wysiwyg",
+            Blocks = new List<WebBlocks.Interfaces.IBlock>
+            {
+                new ContentBlock(1103),
+                new WysiwygBlock { Id = 100 }
+            }
+        })
+
+    </div>
+}

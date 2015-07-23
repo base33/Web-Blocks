@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+    Response.ContentType = "text/xml";
+    var baseUrl = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"));
+    var formattedBaseUrl = baseUrl.Substring(0, baseUrl.Length - 1);
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    @foreach (var page in CurrentPage.AncestorOrSelf(1).Descendants().Where("!hideFromSiteMap"))
+    {
+        <url>
+            <loc>@Html.Raw(formattedBaseUrl + page.Url)</loc>
+            <lastmod>@page.updateDate.ToString("yyyy-MM-dd")</lastmod>
+            <priority>0.5</priority>
+        </url>
+    }  
+</urlset>
+}

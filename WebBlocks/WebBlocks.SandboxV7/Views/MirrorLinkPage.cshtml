@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+}
+
+
+@{    
+    // verify that the property "URL" is not null and that it is not empty; then redirect 
+    if (CurrentPage.mirrorLink.ToString().Trim() != "")
+    {
+        Response.Redirect(CurrentPage.mirrorLink.ToString().Trim());
+    }
+}
