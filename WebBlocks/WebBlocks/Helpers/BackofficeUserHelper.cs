@@ -8,10 +8,16 @@ using Umbraco.Core.Security;
 
 namespace WebBlocks.Helpers
 {
+	/// <summary>
+	/// A helper class for Umbraco 7+ to get the currently logged on back office user from a non-backoffice context.
+	/// </summary>
 	public static class BackofficeUserHelper
 	{
 		const string BackofficeIdentityKey = "UmbracoBackofficeIdentity";
 
+		/// <summary>
+		/// The <c>UmbracoBackOfficeIdentity</c> representing the currently logged on Back Office user
+		/// </summary>
 		public static UmbracoBackOfficeIdentity CurrentIdentity
 		{
 			get
@@ -23,6 +29,9 @@ namespace WebBlocks.Helpers
 			}
 		}
 
+		/// <summary>
+		/// Determines if there is currently a back office user logged on.
+		/// </summary>
 		public static bool IsUserAuthenticated
 		{
 			get
@@ -31,6 +40,10 @@ namespace WebBlocks.Helpers
 			}
 		}
 
+		/// <summary>
+		/// Get the Currently logged on backoffice user as old <c>umbraco.BusinessLogic.User</c>
+		/// </summary>
+		/// <returns><c>umbraco.BusinessLogic.User</c> if a user is logged on, otherwise null</returns>
 		public static umbraco.BusinessLogic.User GetCurrentUser()
 		{
 			if (!IsUserAuthenticated)
@@ -39,6 +52,10 @@ namespace WebBlocks.Helpers
 			return new umbraco.BusinessLogic.User(CurrentIdentity.Name);
 		}
 
+		/// <summary>
+		/// Get the currently logged on backoffice user as new <c>IUser</c>
+		/// </summary>
+		/// <returns><c>IUser</c> if a user is logged on, otherwise null</returns>
 		public static IUser GetCurrentIUser()
 		{
 			if (!IsUserAuthenticated)
