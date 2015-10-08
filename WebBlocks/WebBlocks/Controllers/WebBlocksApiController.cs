@@ -38,7 +38,7 @@ namespace WebBlocks.Controllers
         /// <returns></returns>
         public HttpResponseMessage GetPagePreview(int id)
         {
-			var user = new User(User.Identity.Name);
+			var user = new User(0);
             var d = new umbraco.cms.businesslogic.web.Document(id);
             var pc = new umbraco.presentation.preview.PreviewContent(user, Guid.NewGuid(), false);
             pc.PrepareDocument(user, d, true);
