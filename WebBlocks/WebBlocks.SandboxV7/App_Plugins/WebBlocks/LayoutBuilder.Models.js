@@ -1,4 +1,4 @@
-var __extends = this.__extends || function (d, b) {
+var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
@@ -7,7 +7,7 @@ var __extends = this.__extends || function (d, b) {
 var WebBlocks;
 (function (WebBlocks) {
     var LayoutBuilder;
-    (function (_LayoutBuilder) {
+    (function (LayoutBuilder_1) {
         var LayoutBuilder = (function () {
             function LayoutBuilder() {
                 this.Containers = {}; //array of containers that are on the page
@@ -16,7 +16,7 @@ var WebBlocks;
             }
             return LayoutBuilder;
         })();
-        _LayoutBuilder.LayoutBuilder = LayoutBuilder;
+        LayoutBuilder_1.LayoutBuilder = LayoutBuilder;
         var Container = (function () {
             function Container() {
                 this.Name = "";
@@ -27,7 +27,7 @@ var WebBlocks;
             }
             return Container;
         })();
-        _LayoutBuilder.Container = Container;
+        LayoutBuilder_1.Container = Container;
         var Block = (function () {
             function Block() {
                 this.Id = 0; //the id of the wysiwyg or block
@@ -41,7 +41,7 @@ var WebBlocks;
             }
             return Block;
         })();
-        _LayoutBuilder.Block = Block;
+        LayoutBuilder_1.Block = Block;
         var NodeBlock = (function (_super) {
             __extends(NodeBlock, _super);
             function NodeBlock() {
@@ -51,7 +51,7 @@ var WebBlocks;
             }
             return NodeBlock;
         })(Block);
-        _LayoutBuilder.NodeBlock = NodeBlock;
+        LayoutBuilder_1.NodeBlock = NodeBlock;
         var WysiwygBlock = (function (_super) {
             __extends(WysiwygBlock, _super);
             function WysiwygBlock() {
@@ -61,7 +61,7 @@ var WebBlocks;
             }
             return WysiwygBlock;
         })(Block);
-        _LayoutBuilder.WysiwygBlock = WysiwygBlock;
+        LayoutBuilder_1.WysiwygBlock = WysiwygBlock;
         var BlockViewModel = (function () {
             function BlockViewModel() {
                 this.Tag = "";
@@ -74,7 +74,7 @@ var WebBlocks;
             }
             return BlockViewModel;
         })();
-        _LayoutBuilder.BlockViewModel = BlockViewModel;
+        LayoutBuilder_1.BlockViewModel = BlockViewModel;
         var BlockViewElementAttribute = (function () {
             function BlockViewElementAttribute(name, value) {
                 this.Name = ""; //name of the attribute
@@ -84,7 +84,7 @@ var WebBlocks;
             }
             return BlockViewElementAttribute;
         })();
-        _LayoutBuilder.BlockViewElementAttribute = BlockViewElementAttribute;
+        LayoutBuilder_1.BlockViewElementAttribute = BlockViewElementAttribute;
         var BlockStorageBlock = (function () {
             function BlockStorageBlock(Block, Message, BlockHistory) {
                 this.Block = Block;
@@ -93,7 +93,7 @@ var WebBlocks;
             }
             return BlockStorageBlock;
         })();
-        _LayoutBuilder.BlockStorageBlock = BlockStorageBlock;
+        LayoutBuilder_1.BlockStorageBlock = BlockStorageBlock;
         var RecycleBinBlock = (function () {
             function RecycleBinBlock(Block, Message, BlockHistory) {
                 this.Block = Block;
@@ -102,14 +102,14 @@ var WebBlocks;
             }
             return RecycleBinBlock;
         })();
-        _LayoutBuilder.RecycleBinBlock = RecycleBinBlock;
+        LayoutBuilder_1.RecycleBinBlock = RecycleBinBlock;
         var BlockHistory = (function () {
             function BlockHistory(LastContainer) {
                 this.LastContainer = LastContainer;
             }
             return BlockHistory;
         })();
-        _LayoutBuilder.BlockHistory = BlockHistory;
+        LayoutBuilder_1.BlockHistory = BlockHistory;
         var BlockType = (function () {
             function BlockType() {
             }
@@ -120,7 +120,7 @@ var WebBlocks;
             BlockType.Node = "NodeBlock";
             return BlockType;
         })();
-        _LayoutBuilder.BlockType = BlockType;
+        LayoutBuilder_1.BlockType = BlockType;
         ;
         var AllowedBlocks = (function () {
             function AllowedBlocks(blockTypes) {
@@ -134,7 +134,7 @@ var WebBlocks;
             };
             return AllowedBlocks;
         })();
-        _LayoutBuilder.AllowedBlocks = AllowedBlocks;
+        LayoutBuilder_1.AllowedBlocks = AllowedBlocks;
         var ExcludedBlocks = (function () {
             function ExcludedBlocks(blockTypes) {
                 this.BlockTypes = blockTypes;
@@ -147,12 +147,14 @@ var WebBlocks;
             };
             return ExcludedBlocks;
         })();
-        _LayoutBuilder.ExcludedBlocks = ExcludedBlocks;
+        LayoutBuilder_1.ExcludedBlocks = ExcludedBlocks;
         var TypedBlockConverter = (function () {
             function TypedBlockConverter() {
             }
             TypedBlockConverter.TypeIt = function (block) {
-                var typedBlock = block.__type == BlockType.Wysiwyg ? new WysiwygBlock() : new NodeBlock();
+                var typedBlock = block.__type == BlockType.Wysiwyg ?
+                    new WysiwygBlock() :
+                    new NodeBlock();
                 typedBlock.Id = block.Id;
                 typedBlock.Name = block.Name;
                 typedBlock.SortOrder = block.SortOrder;
@@ -175,7 +177,7 @@ var WebBlocks;
             };
             return TypedBlockConverter;
         })();
-        _LayoutBuilder.TypedBlockConverter = TypedBlockConverter;
+        LayoutBuilder_1.TypedBlockConverter = TypedBlockConverter;
         var TypedContainerPermissions = (function () {
             function TypedContainerPermissions() {
             }
@@ -191,7 +193,7 @@ var WebBlocks;
             };
             return TypedContainerPermissions;
         })();
-        _LayoutBuilder.TypedContainerPermissions = TypedContainerPermissions;
+        LayoutBuilder_1.TypedContainerPermissions = TypedContainerPermissions;
     })(LayoutBuilder = WebBlocks.LayoutBuilder || (WebBlocks.LayoutBuilder = {})); //end of WebBlocks.LayoutBuilder
     var UI;
     (function (UI) {
@@ -405,9 +407,12 @@ var WebBlocks;
             }
             GuidHelper.GenerateGuid = function () {
                 function s4() {
-                    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+                    return Math.floor((1 + Math.random()) * 0x10000)
+                        .toString(16)
+                        .substring(1);
                 }
-                return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4();
+                return s4() + s4() + s4() + s4() +
+                    s4() + s4() + s4() + s4();
             };
             return GuidHelper;
         })();
@@ -480,7 +485,9 @@ var WebBlocks;
             WebBlocksAPIClent.GetNavigationChildren = function (id, $http, callback) {
                 HttpRequest.Get("/umbraco/backoffice/WebBlocks/WebBlocksApi/GetChildren?id=" + id, $http, function (navigationItems) {
                     for (var i = 0; i < navigationItems.length; i++) {
-                        navigationItems[i].IconClass = navigationItems[i].IconClass != ".sprTreeFolder" ? navigationItems[i].IconClass : "icon-folder";
+                        navigationItems[i].IconClass = navigationItems[i].IconClass != ".sprTreeFolder" ?
+                            navigationItems[i].IconClass :
+                            "icon-folder";
                     }
                     callback(navigationItems);
                 });
@@ -496,7 +503,8 @@ var WebBlocks;
             function HttpRequest() {
             }
             HttpRequest.Get = function (url, $http, callback) {
-                $http.get(url).success(function (data, status, headers, config) {
+                $http.get(url)
+                    .success(function (data, status, headers, config) {
                     callback(data);
                 });
             };

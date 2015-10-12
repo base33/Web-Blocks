@@ -19,14 +19,13 @@ namespace WebBlocks.Views.RenderingEngines
 {
     public class PartialViewRenderingEngine : IRenderingEngine
     {
-        public MacroModel Macro { get; set; }
-        public Node CurrentNode { get; set; }
+        public string ScriptName { get; set; }
 
         public string Render(HtmlHelper html)
         {
             try
             {
-                return html.Partial(Macro.ScriptName, html.ViewData).ToHtmlString();
+                return html.Partial(ScriptName, html.ViewData).ToHtmlString();
             }
             catch(Exception ex)
             {

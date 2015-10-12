@@ -26,6 +26,7 @@ using WebBlocks.Helpers;
 using Newtonsoft.Json;
 using WebBlocks.Models.Angular;
 using WebBlocks.Interfaces;
+using WebBlocks.Controllers;
 
 namespace WebBlocks.Views
 {
@@ -161,20 +162,26 @@ namespace WebBlocks.Views
 
         protected IRenderingEngine ResolveRenderingEngine(ContentBlock block)
         {
-            try
+            IRenderingEngine engine;
+
+            if (BlockControllerCache.Controllers.Contains(block.ContentTypeAlias))
+            {
+                engine = new ControllerRenderingEngine()
+                {
+                    ControllerName = block.Content.ContentType.Alias
+                };
+            }
+            else
             {
                 //resolve with partial view
-                IRenderingEngine engine = new PartialViewRenderingEngine
+                engine = new PartialViewRenderingEngine
                 {
-                    Macro = new MacroModel(new Macro { ScriptingFile = block.Content.ContentType.Alias })
+                    ScriptName = block.Content.ContentType.Alias
                 };
+            }
 
-                return engine;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
+
+            return engine;
         }
 
         public void RenderPreview(HtmlHelper html)

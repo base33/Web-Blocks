@@ -1,0 +1,27 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : 12 October 2015 20:05:32
+   Source : D:\mentor-mentor-web-blocks\WebBlocks\WebBlocks.Interfaces\bin\
+     Dest : D:\mentor-mentor-web-blocks\WebBlocks\WebBlocks.Interfaces\App_Data\NuGetBackup\20151012-200532\bin\
+
+    Files : *.*
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                   0	D:\mentor-mentor-web-blocks\WebBlocks\WebBlocks.Interfaces\bin\
+	  New Dir          0	D:\mentor-mentor-web-blocks\WebBlocks\WebBlocks.Interfaces\bin\Debug\
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         2         1         1         0         0         0
+   Files :         0         0         0         0         0         0
+   Bytes :         0         0         0         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+   Ended : 12 October 2015 20:05:32
+

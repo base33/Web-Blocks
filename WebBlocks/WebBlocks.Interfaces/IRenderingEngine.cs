@@ -11,9 +11,6 @@ namespace WebBlocks.BusinessLogic.Interfaces
 {
     public interface IRenderingEngine
     {
-        MacroModel Macro { get; set; }
-        Node CurrentNode { get; set; }
-
         string Render(HtmlHelper html);
     }
 }

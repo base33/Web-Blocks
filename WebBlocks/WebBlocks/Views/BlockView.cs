@@ -26,6 +26,7 @@ using WebBlocks.API;
 using WebBlocks.Helpers;
 using Newtonsoft.Json;
 using WebBlocks.Interfaces;
+using WebBlocks.Controllers;
 
 namespace WebBlocks.Views
 {
@@ -66,12 +67,6 @@ namespace WebBlocks.Views
             //if rendering engine is null then the document doesn't exist anymore
             if (renderingEngine == null || block.Content == null) return "";
 
-            //string blockIdAttribute = WebBlocksUtility.IsInBuilder ? string.Format(" wbid='{0}'", block.Id) : "";
-            //string blockJsonAttribute = string.Format("wbBlockJson='{0}'", JsonConvert.SerializeObject(block));
-            //string blockTemplateAttribute = WebBlocksUtility.IsInBuilder ? 
-            //    string.Format(" templateblock='{0}'", block.IsTemplateBlock.ToString().ToLower()) : "";
-            //string blockDeletedAttribute = WebBlocksUtility.IsInBuilder && block.IsDeleted ? " deletedBlock='deleted' style='display:none;visibilty:hidden;'" : "";
-
             string renderedContent = "";
 
             //render
@@ -91,7 +86,7 @@ namespace WebBlocks.Views
                 block.ViewModel.Classes,
                 WebBlocksUtility.CurrentBlockContent.GetPropertyValue("cssClasses") ?? "",
                 CssClasses.Any() ? " " : "",
-                String.Join(" ", CssClasses));
+                string.Join(" ", CssClasses));
 
             renderedContent = string.Format("<{0} class='{1}'{2}>{3}</{0}>", 
                 blockElement, blockClass, blockAttributes, renderedContent);
@@ -124,20 +119,26 @@ namespace WebBlocks.Views
 
         protected IRenderingEngine ResolveRenderingEngine(ContentBlock block)
         {
-            try
+            IRenderingEngine engine;
+
+            if(BlockControllerCache.Controllers.Contains(block.ContentTypeAlias))
+            {
+                engine = new ControllerRenderingEngine()
+                {
+                    ControllerName = block.Content.ContentType.Alias
+                };
+            }
+            else
             {
                 //resolve with partial view
-                IRenderingEngine engine = new PartialViewRenderingEngine
+                engine = new PartialViewRenderingEngine
                 {
-                    Macro = new MacroModel(new Macro { ScriptingFile = block.Content.ContentType.Alias })
+                    ScriptName = block.Content.ContentType.Alias
                 };
+            }
+            
 
-                return engine;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
+            return engine;
         }
 
         public void RenderPreview(HtmlHelper html)
