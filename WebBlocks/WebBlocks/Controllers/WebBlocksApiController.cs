@@ -56,16 +56,16 @@ namespace WebBlocks.Controllers
         }
 
 
-        public WebBlockRenderModel RenderWebBlock(int id)
-        {
-            //Stream filter = Stream.Null;
-            //StreamWriter writer = new StreamWriter(filter);
-            //var viewContext = new ViewContext((ControllerContext)this.ControllerContext,
-            //    new WebFormView("MyView"),
-            //    new ViewDataDictionary(),
-            //    new TempDataDictionary(), writer);
-            //var helper = new HtmlHelper<RenderModel>(viewContext, new ViewPage());
-            return new WebBlockRenderModel();
-        }
+        //public WebBlockRenderModel RenderWebBlock(int id)
+        //{
+        //    //Stream filter = Stream.Null;
+        //    //StreamWriter writer = new StreamWriter(filter);
+        //    //var viewContext = new ViewContext((ControllerContext)this.ControllerContext,
+        //    //    new WebFormView("MyView"),
+        //    //    new ViewDataDictionary(),
+        //    //    new TempDataDictionary(), writer);
+        //    //var helper = new HtmlHelper<RenderModel>(viewContext, new ViewPage());
+        //    return new WebBlockRenderModel();
+        //}
     }
 }

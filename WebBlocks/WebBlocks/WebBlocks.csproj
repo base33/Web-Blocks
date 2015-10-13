@@ -51,7 +51,7 @@
     <Compile Include="API\WebBlocksAPI.cs" />
     <Compile Include="BaseService\WebBlocksBase.cs" />
     <Compile Include="Controllers\BlockControllerCache.cs" />
-    <Compile Include="Controllers\WebBlockRenderModel.cs" />
+    <Compile Include="Controllers\WebBlockController.cs" />
     <Compile Include="Controllers\WebBlocksApiController.cs" />
     <Compile Include="Extensions\HtmlContainerExtension.cs" />
     <Compile Include="DataTypes\WebBlocks\WebBlocksPreValuesAccessor.cs" />
@@ -66,6 +66,7 @@
     <Compile Include="DataTypes\WebBlocks\WebBlocksDataType.cs" />
     <Compile Include="DataTypes\WebBlocks\WebBlocksPrevalueEditor.cs" />
     <Compile Include="Extensions\HtmlWebBlocksBuilderExtension.cs" />
+    <Compile Include="Extensions\HtmlWebBlocksFormExtension.cs" />
     <Compile Include="Extensions\HtmlWebBlocksLiveEdit.cs" />
     <Compile Include="Helpers\HtmlImgHelper.cs" />
     <Compile Include="Helpers\TinyMCE.cs" />

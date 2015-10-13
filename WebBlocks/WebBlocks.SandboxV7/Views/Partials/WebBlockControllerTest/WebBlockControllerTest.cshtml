@@ -1,3 +1,11 @@
 ﻿@inherits UmbracoViewPage<WebBlocks.SandboxV7.Controllers.TestModel>
 
-<h1>@Model.Name</h1>
+@using (Html.BeginWebBlockForm("HandleSubmit", "WebBlockControllerTest"))
+{
+    <div>
+        Your name: @Html.TextBoxFor(Model => Model.Name)
+    </div>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+}
