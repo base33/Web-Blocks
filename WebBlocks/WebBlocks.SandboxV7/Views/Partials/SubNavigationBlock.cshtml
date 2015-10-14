@@ -1,7 +1,7 @@
-﻿@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksViewPage
 
 @{	
-	WebBlocks.CssClasses.Add("sub-navigation-block");
+	CurrentBlockContext.CssClasses.Add("sub-navigation-block");
 
 	var parentOrSelfTwo = CurrentPage.AncestorOrSelf(2);
 	var parentOrSelfThree = CurrentPage.AncestorOrSelf(3);

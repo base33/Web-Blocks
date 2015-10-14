@@ -354,6 +354,9 @@
     <Content Include="config\404handlers.config" />
     <Content Include="Views\Partials\HeadingBlock.cshtml" />
     <Content Include="Views\Partials\WebBlockControllerTest\WebBlockControllerTest.cshtml" />
+    <Content Include="Views\Partials\FlexsliderContainerRenderer.cshtml" />
+    <Content Include="Views\Partials\SliderContainerRenderer.cshtml" />
+    <Content Include="Views\Shared\BlockPreviewRender.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -382,9 +385,7 @@
   <ItemGroup>
     <Compile Include="Controllers\MembershipController.cs" />
     <Compile Include="Controllers\WebBlockControllerTestController.cs" />
-    <Compile Include="CustomContainers\FlexsliderContainer.cs" />
-    <Compile Include="CustomContainers\SliderContainer.cs" />
-    <Compile Include="CustomContainers\YouTubeChannelContainer.cs" />
+    <Compile Include="CustomContainers\SliderContainerController.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -421,10 +422,6 @@
     <ProjectReference Include="..\WebBlocks.Model\WebBlocks.Model.csproj">
       <Project>{7198e4c7-f43c-43cc-b2d5-e7e903c1277b}</Project>
       <Name>WebBlocks.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebBlocks.Providers\WebBlocks.Providers.csproj">
-      <Project>{1e55512a-7f3d-4d6f-971b-07c495fa0c68}</Project>
-      <Name>WebBlocks.Providers</Name>
     </ProjectReference>
     <ProjectReference Include="..\WebBlocks.Utilities\WebBlocks.Utilities.csproj">
       <Project>{81284ffc-c9d3-4ca1-9683-1adb0b80ead5}</Project>

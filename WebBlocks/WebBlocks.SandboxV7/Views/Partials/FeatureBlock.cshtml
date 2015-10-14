@@ -1,14 +1,14 @@
-﻿@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksViewPage
 
 @{
-    WebBlocks.CssClasses.Add("feature-block");
+    CurrentBlockContext.CssClasses.Add("feature-block");
     
     IPublishedContent block = Umbraco.TypedContent(CurrentBlock.Id);
     string containerName = "asideContainer";
     
-    if(WebBlocks.CurrentContainer != null)
+    if(CurrentBlockContext.CurrentContainer != null)
     { 
-        containerName = WebBlocks.CurrentContainer.Name;
+        containerName = CurrentBlockContext.CurrentContainer.Name;
     }
 
     var mediaItem = Umbraco.TypedMedia(block.GetPropertyValue<int>("image"));

@@ -34,8 +34,8 @@
     <Compile Include="IBlockElementAttribute.cs" />
     <Compile Include="IBlockViewModel.cs" />
     <Compile Include="IContainer.cs" />
+    <Compile Include="IContainerControllerDefinition.cs" />
     <Compile Include="IContainerPermissions.cs" />
-    <Compile Include="IContainerRenderer.cs" />
     <Compile Include="IRenderingEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

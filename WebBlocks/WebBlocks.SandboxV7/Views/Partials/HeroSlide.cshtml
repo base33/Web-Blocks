@@ -1,7 +1,7 @@
-﻿@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksViewPage
 
 @{
-    WebBlocks.CssClasses.Add("hero-slide");
+    CurrentBlockContext.CssClasses.Add("hero-slide");
     
     var imageUrl = Umbraco.Media(@CurrentBlock.image).Url;
     var imageResized = imageUrl + "?width=375&height=150&mode=crop";

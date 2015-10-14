@@ -20,7 +20,7 @@ namespace WebBlocks.Models.Angular
         public List<IBlock> Blocks { get; set; }
         public Dictionary<string, string> Attributes { get; set; }
         public IContainerPermissions ContainerPermissions { get; set; }
-        public IContainerRenderer ContainerRenderer { get; set; }
+        public IContainerControllerDefinition ContainerController { get; set; }
 
         public Container()
         {
@@ -33,7 +33,7 @@ namespace WebBlocks.Models.Angular
             Blocks = new List<IBlock>();
             Attributes = new Dictionary<string, string>();
             ContainerPermissions = null;
-            ContainerRenderer = null;
+            ContainerController = null;
         }
     }
 }

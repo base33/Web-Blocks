@@ -1,15 +1,12 @@
-﻿@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksViewPage<IEnumerable<IPublishedContent>>
 
 @{
-    var blocks = (List<IBlock>)ViewData["Blocks"];
-
-    if (blocks.Count > 0)
+    if (Model.Any())
     {
         <div id="owl-single-carousel" class="owl-carousel">
             @{
-                foreach (WebBlocks.Models.Angular.ContentBlock blockItem in blocks)
+                foreach (IPublishedContent block in Model)
                 {
-                    IPublishedContent block = blockItem.Content;
 
                     if (block.DocumentTypeAlias == "HeroSlide")
                     {

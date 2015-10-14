@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBlocks.Model", "WebBlocks.Model\WebBlocks.Model.csproj", "{7198E4C7-F43C-43CC-B2D5-E7E903C1277B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBlocks.Utilities", "WebBlocks.Utilities\WebBlocks.Utilities.csproj", "{81284FFC-C9D3-4CA1-9683-1ADB0B80EAD5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBlocks.Interfaces", "WebBlocks.Interfaces\WebBlocks.Interfaces.csproj", "{9DF2B481-A599-47C0-A664-7AA882949DD3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBlocks.Providers", "WebBlocks.Providers\WebBlocks.Providers.csproj", "{1E55512A-7F3D-4D6F-971B-07C495FA0C68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBlocks.Examine", "WebBlocks.Examine\WebBlocks.Examine.csproj", "{EE2E8C6B-E343-4FA5-A684-DBC447F8133F}"
 EndProject
@@ -35,10 +33,6 @@ Global
 		{9DF2B481-A599-47C0-A664-7AA882949DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DF2B481-A599-47C0-A664-7AA882949DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DF2B481-A599-47C0-A664-7AA882949DD3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1E55512A-7F3D-4D6F-971B-07C495FA0C68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E55512A-7F3D-4D6F-971B-07C495FA0C68}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1E55512A-7F3D-4D6F-971B-07C495FA0C68}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E55512A-7F3D-4D6F-971B-07C495FA0C68}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE2E8C6B-E343-4FA5-A684-DBC447F8133F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE2E8C6B-E343-4FA5-A684-DBC447F8133F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE2E8C6B-E343-4FA5-A684-DBC447F8133F}.Release|Any CPU.ActiveCfg = Release|Any CPU

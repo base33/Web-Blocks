@@ -39,32 +39,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="CSS\Libraries\jeegoocontext.css" />
-    <Content Include="CSS\Libraries\jquery-ui.custom.css" />
-    <Content Include="CSS\Libraries\jquery.sidr.dark.css" />
     <Content Include="CSS\WebBlocks.css" />
-    <Content Include="CSS\WebBlocks.LiveEdit.css" />
-    <Content Include="DataTypes\WebBlocks\WebBlocks.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\WebBlocksAPI.cs" />
-    <Compile Include="BaseService\WebBlocksBase.cs" />
     <Compile Include="Controllers\BlockControllerCache.cs" />
     <Compile Include="Controllers\WebBlockController.cs" />
     <Compile Include="Controllers\WebBlocksApiController.cs" />
+    <Compile Include="Controllers\WebContainerController.cs" />
     <Compile Include="Extensions\HtmlContainerExtension.cs" />
-    <Compile Include="DataTypes\WebBlocks\WebBlocksPreValuesAccessor.cs" />
-    <Compile Include="DataTypes\WebBlocks\WebBlocks.ascx.cs">
-      <DependentUpon>WebBlocks.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DataTypes\WebBlocks\WebBlocks.ascx.designer.cs">
-      <DependentUpon>WebBlocks.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DataTypes\WebBlocks\WebBlocksCustomControl.cs" />
-    <Compile Include="DataTypes\WebBlocks\WebBlocksDataType.cs" />
-    <Compile Include="DataTypes\WebBlocks\WebBlocksPrevalueEditor.cs" />
     <Compile Include="Extensions\HtmlWebBlocksBuilderExtension.cs" />
     <Compile Include="Extensions\HtmlWebBlocksFormExtension.cs" />
     <Compile Include="Extensions\HtmlWebBlocksLiveEdit.cs" />
@@ -97,7 +81,7 @@
     <Compile Include="Views\RenderingEngines\ControllerRenderingEngine.cs" />
     <Compile Include="Views\RenderingEngines\PartialViewRenderingEngine.cs" />
     <Compile Include="Views\RenderingEngines\RazorMacroRenderingEngine.cs" />
-    <Compile Include="ViewTemplates\WebBlocksTemplatePage.cs" />
+    <Compile Include="ViewTemplates\WebBlocksViewPage.cs" />
     <Compile Include="WebBlocksProtectedPage.ashx.cs">
       <DependentUpon>WebBlocksProtectedPage.ashx</DependentUpon>
     </Compile>
@@ -338,9 +322,7 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <Target Name="BeforeBuild">
     <Exec Command="&quot;$(PROGRAMFILES)\Microsoft SDKs\TypeScript\tsc&quot; @(TypeScriptCompile ->'&quot;%(fullpath)&quot;', ' ')" />
   </Target>

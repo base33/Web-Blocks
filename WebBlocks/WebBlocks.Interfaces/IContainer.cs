@@ -58,6 +58,6 @@ namespace WebBlocks.Interfaces
         /// <summary>
         /// Override the container rendering when the container is being ran outside of the Web Blocks builder
         /// </summary>
-        IContainerRenderer ContainerRenderer { get; set; }
+        IContainerControllerDefinition ContainerController { get; set; }
     }
 }

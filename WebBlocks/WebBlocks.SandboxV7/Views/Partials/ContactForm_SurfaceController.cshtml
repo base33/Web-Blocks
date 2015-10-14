@@ -14,8 +14,7 @@
 }
 else
 {
-    WebBlocksAPI api = new WebBlocksAPI();
-    api.CssClasses.Add("grid_9 contactForm");
+    CurrentBlockContext.CssClasses.Add("grid_9 contactForm");
     using (Html.BeginUmbracoForm<ContactFormSurfaceController>("HandleContactForm"))
     {
         @Html.ValidationSummary(true)

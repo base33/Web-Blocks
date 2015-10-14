@@ -1,7 +1,7 @@
-﻿@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksViewPage
 
 @{
-    WebBlocks.CssClasses.Add("related-links-block");
+    CurrentBlockContext.CssClasses.Add("related-links-block");
     IPublishedContent block = CurrentBlock;
     var links = block.GetPropertyValue<RJP.MultiUrlPicker.Models.MultiUrls>("relatedLinks");
     var title = block.GetPropertyValue<string>("title");

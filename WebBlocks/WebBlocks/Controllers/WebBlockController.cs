@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using Umbraco.Core.Models;
 using Umbraco.Web.Mvc;
 using WebBlocks.API;
@@ -10,9 +11,10 @@ using WebBlocks.Utilities.WebBlocks;
 
 namespace WebBlocks.Controllers
 {
-    public class WebBlockController : SurfaceController
+    public abstract class WebBlockController : SurfaceController
     {
         internal WebBlocksAPI _webBlocksApi = new WebBlocksAPI();
+        internal IPublishedContent _currentBlock = null;
 
         public bool IsInBuilder
         {
@@ -26,7 +28,12 @@ namespace WebBlocks.Controllers
         {
             get
             {
-                WebBlocksUtility.CurrentBlockContent = WebBlocksUtility.CurrentBlockContent ?? Umbraco.TypedContent(ControllerContext.RequestContext.RouteData.Values["wbPostBackCurrentBlock"]);
+                if(_currentBlock == null)
+                {
+                    if(WebBlocksUtility.CurrentBlockContent == null)
+                        WebBlocksUtility.CurrentBlockContent = Umbraco.TypedContent(ControllerContext.RequestContext.RouteData.Values["wbPostBackCurrentBlock"]);
+                    _currentBlock = WebBlocksUtility.CurrentBlockContent;
+                }
                 return WebBlocksUtility.CurrentBlockContent;
             }
         }

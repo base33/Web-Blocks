@@ -44,16 +44,21 @@ namespace WebBlocks.Extensions
             {
                 RenderAngularJSContainer(container, html);
             }
-            else if (container.ContainerRenderer == null)
+            else if (container.ContainerController == null)
             {
                 RenderStandardContainer(container, html);
             }
             else
             {
-                container.ContainerRenderer.Render(container, html);
+                RenderContainerController(container, html);
             }
-
             return "";
+        }
+
+        private static void RenderContainerController(IContainer container, HtmlHelper html)
+        {
+            WebBlocksUtility.CurrentBlocksContent = container.Blocks.Where(b => b is ContentBlock).Select(b => ((ContentBlock)b).Content).ToList();
+            html.ViewContext.Writer.Write(html.Action("Render", container.ContainerController.Type));
         }
 
         /// <summary>

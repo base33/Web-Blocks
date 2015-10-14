@@ -14,7 +14,7 @@
             {
                 Name = "heroSliderContainer",
                 Classes = "hero-slider-container",
-                ContainerRenderer = new SliderContainer(),
+                ContainerController = new WebBlocks.Model.ContainerControllerDefinition(typeof(SliderContainerController)),
                 ContainerPermissions = new WebBlocks.Model.AllowedBlocks("HeroSlide")
             })
         </section>

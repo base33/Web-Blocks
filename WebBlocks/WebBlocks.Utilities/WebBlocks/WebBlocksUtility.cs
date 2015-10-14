@@ -35,6 +35,12 @@ namespace WebBlocks.Utilities.WebBlocks
             set { CacheHelper.Add("wbCurrentBlockContent", value); }
         }
 
+        public static IEnumerable<IPublishedContent> CurrentBlocksContent
+        {
+            get { return CacheHelper.Get <List<IPublishedContent>>("wbCurrentBlocksContent"); }
+            set { CacheHelper.Add("wbCurrentBlocksContent", value); }            
+        }
+
         public static IContainer CurrentContainer
         {
             get { return CacheHelper.Get<IContainer>("wbCurrentContainer"); }
