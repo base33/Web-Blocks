@@ -29,11 +29,11 @@ namespace WebBlocks.Extensions
             }
         }
 
-        public static string Container(this HtmlHelper<RenderModel> html, IContainer container)
+        public static string Container<T>(this HtmlHelper<T> html, string propertyAlias, IContainer container)
         {
             InitWebBlocks();
 
-            LoadContainerBlocks(container.Name, container.Blocks, container.WysiwygTag, container.WysiwygClass);
+            LoadContainerBlocks(propertyAlias, container.Name, container.Blocks, container.WysiwygTag, container.WysiwygClass);
 
             container.Blocks = container.Blocks.OrderBy(b => b.SortOrder).ToList();
 
@@ -42,7 +42,7 @@ namespace WebBlocks.Extensions
             //if the container is being rendered for the builder or a container renderer has not been specified
             if(WebBlocksUtility.IsInBuilder)
             {
-                RenderAngularJSContainer(container, html);
+                RenderAngularJsContainer(container, html);
             }
             else if (container.ContainerController == null)
             {
@@ -66,7 +66,7 @@ namespace WebBlocks.Extensions
         /// </summary>
         /// <param name="container"></param>
         /// <param name="html"></param>
-        private static void RenderAngularJSContainer(IContainer container, HtmlHelper<RenderModel> html)
+        private static void RenderAngularJsContainer(IContainer container, HtmlHelper html)
         {
             //create angularjs container
             var containersBuilder = AngularContainersBuilder.Load();
@@ -84,8 +84,6 @@ namespace WebBlocks.Extensions
 
 
             string renderedBlocks = "";
-            string containerPermissionAttr = WebBlocksUtility.IsInBuilder ? BuildContainerPermissionsAttr(container.ContainerPermissions) : "";
-
             AngularBlockView blockView = new AngularBlockView();
             foreach (IBlock block in container.Blocks)
             {
@@ -113,7 +111,7 @@ namespace WebBlocks.Extensions
             html.ViewContext.Writer.Write("</{0}>", container.Tag);
         }
 
-        private static void RenderStandardContainer(IContainer container, HtmlHelper<RenderModel> html)
+        private static void RenderStandardContainer(IContainer container, HtmlHelper html)
         {
             string renderedBlocks = "";
             string containerPermissionAttr = WebBlocksUtility.IsInBuilder ? BuildContainerPermissionsAttr(container.ContainerPermissions) : "";
@@ -146,7 +144,7 @@ namespace WebBlocks.Extensions
         /// <param name="containerName">The name of the container to load the blocks into</param>
         /// <param name="templateBlocks">The default template blocks</param>
         /// <param name="dynamicWysiwygClass">The class that should be added to any dynamically added wysiwyg blocks</param>
-        private static void LoadContainerBlocks(string containerName, List<IBlock> templateBlocks, string dynamicWysiwygTag, string dynamicWysiwygClass)
+        private static void LoadContainerBlocks(string propertyAlias, string containerName, List<IBlock> templateBlocks, string dynamicWysiwygTag, string dynamicWysiwygClass)
         {
             //set IsTemplateBlock to true for all blocks
             templateBlocks.ForEach(b => {
@@ -155,7 +153,8 @@ namespace WebBlocks.Extensions
             });
 
             //load the current container saved state
-            LayoutBuilderProvider containerProvider = new LayoutBuilderProvider();
+            string webBlocksData = WebBlocksUtility.CurrentPageContent.GetPropertyValue<string>(propertyAlias);
+            LayoutBuilderProvider containerProvider = new LayoutBuilderProvider(webBlocksData);
             IContainer container = containerProvider.ContainerByName(containerName);
 
             if (container == null) return;

@@ -1,5 +1,4 @@
-angular.module("umbraco")
-    .controller("WebBlocks.BlockStorageDialogCtrl", function ($scope, appState, eventsService, assetsService, dialogService, contentTypeResource, contentResource) {
+angular.module("umbraco").controller("WebBlocks.BlockStorageDialogCtrl", function ($scope, appState, eventsService, assetsService, dialogService, contentTypeResource, contentResource) {
     var dialogOptions = $scope.dialogOptions;
     var originBlockStorageList = $scope.dialogOptions.modelData;
     $scope.blockStorageArray = [];
@@ -19,7 +18,10 @@ angular.module("umbraco")
             var blockStorageItemViewModel = new WebBlocks.UI.Dialogs.BlockStorageItemViewModel();
             blockStorageItemViewModel.BlockStorageBlock = blockStorageBlock;
             blockStorageItemViewModel.DraggableBlock = {
-                Block: blockStorageBlock.Block, ShouldClone: false, LoadContent: true, BlockIconClass: "icon-folder",
+                Block: blockStorageBlock.Block,
+                ShouldClone: false,
+                LoadContent: true,
+                BlockIconClass: "icon-folder",
                 OnDropCallback: getOnDropCallback(blockStorageItemViewModel)
             };
             //display the correct up-to-date name and icon

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using Examine;
 using Umbraco.Core;
 using WebBlocks.Controllers;
 
@@ -14,12 +15,10 @@ namespace WebBlocks
         {
             base.ApplicationStarting(umbracoApplication, applicationContext);
 
-            foreach(var asm in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                BlockControllerCache.Controllers.AddRange(asm.GetTypes()
-                    .Where(type => typeof(Umbraco.Web.Mvc.SurfaceController).IsAssignableFrom(type))
-                    .Select(x => x.Name.TrimEnd("Controller")));
-            }
+            var externalIndexer = ExamineManager.Instance.IndexProviderCollection["ExternalIndexer"];
+            Indexer.Indexer.IndexWebBlocks(externalIndexer);
+
+            BlockControllerCache.BuildCache();
         }
     }
 }

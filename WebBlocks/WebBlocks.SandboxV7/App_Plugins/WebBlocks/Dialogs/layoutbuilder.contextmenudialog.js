@@ -1,5 +1,4 @@
-angular.module("umbraco")
-    .controller("WebBlocks.ContextMenuDialogCtrl", function ($scope, appState, eventsService, assetsService, dialogService) {
+angular.module("umbraco").controller("WebBlocks.ContextMenuDialogCtrl", function ($scope, appState, eventsService, assetsService, dialogService) {
     var dialogOptions = $scope.dialogOptions;
     $scope.model = dialogOptions.modelData;
     $scope.triggerAction = function (event) {

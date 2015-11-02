@@ -42,7 +42,7 @@ namespace WebBlocks.Controllers
         {
             get
             {
-                return base.CurrentPage ?? WebBlocksUtility.CurrentBlockContent;
+                return base.CurrentPage ?? WebBlocksUtility.CurrentPageContent;
             }
         }
 

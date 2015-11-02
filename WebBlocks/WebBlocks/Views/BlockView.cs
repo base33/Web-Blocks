@@ -121,7 +121,7 @@ namespace WebBlocks.Views
         {
             IRenderingEngine engine;
 
-            if(BlockControllerCache.Controllers.Contains(block.ContentTypeAlias))
+            if(BlockControllerCache.Controllers.Contains(block.Content.DocumentTypeAlias))
             {
                 engine = new ControllerRenderingEngine()
                 {

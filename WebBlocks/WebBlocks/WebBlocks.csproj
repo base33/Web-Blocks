@@ -55,6 +55,7 @@
     <Compile Include="Helpers\HtmlImgHelper.cs" />
     <Compile Include="Helpers\TinyMCE.cs" />
     <Compile Include="Helpers\BackofficeUserHelper.cs" />
+    <Compile Include="Indexer\Indexer.cs" />
     <Compile Include="Models\Angular\AngularBlockHistory.cs" />
     <Compile Include="Models\Angular\AngularBlockStorageBlock.cs" />
     <Compile Include="Models\Angular\AngularRecycleBinBlock.cs" />
@@ -216,6 +217,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.3.0\lib\System.Data.SqlServerCe.dll</HintPath>
       <Private>True</Private>

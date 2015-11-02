@@ -10,7 +10,7 @@
 @section Content {
     <div class="home-page">
         <section id="hero" class="hero-slider-container">
-            @Html.Container(new Container()
+            @Html.Container("webblocks", new Container()
             {
                 Name = "heroSliderContainer",
                 Classes = "hero-slider-container",
@@ -19,7 +19,7 @@
             })
         </section>
 
-        @Html.Container(new Container()
+        @Html.Container("webblocks", new Container()
         {
             Name = "homeMainContainer",
             Tag = "section",

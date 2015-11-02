@@ -1,5 +1,4 @@
-angular.module("umbraco")
-    .controller("WebBlocks.RecycleBinDialogCtrl", function ($scope, appState, eventsService, assetsService, dialogService, contentResource) {
+angular.module("umbraco").controller("WebBlocks.RecycleBinDialogCtrl", function ($scope, appState, eventsService, assetsService, dialogService, contentResource) {
     var dialogOptions = $scope.dialogOptions;
     var recycleBinContext = dialogOptions.modelData;
     $scope.recycleBinBlockArray = [];
@@ -39,7 +38,10 @@ angular.module("umbraco")
             var recycleBinBlockViewModel = new WebBlocks.UI.Dialogs.RecycleBinItemViewModel();
             recycleBinBlockViewModel.RecycleBinBlock = recycleBinBlock;
             recycleBinBlockViewModel.DraggableBlock = {
-                Block: recycleBinBlock.Block, BlockIconClass: "icon-folder", ShouldClone: false, LoadContent: true,
+                Block: recycleBinBlock.Block,
+                BlockIconClass: "icon-folder",
+                ShouldClone: false,
+                LoadContent: true,
                 OnDropCallback: getOnDropCallback(recycleBinBlockViewModel)
             };
             //display the correct up-to-date name and icon
