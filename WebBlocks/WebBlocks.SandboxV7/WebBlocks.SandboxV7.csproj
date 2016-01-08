@@ -300,6 +300,8 @@
     <Compile Include="CustomContainers\FlexsliderContainer.cs" />
     <Compile Include="CustomContainers\SliderContainer.cs" />
     <Compile Include="CustomContainers\YouTubeChannelContainer.cs" />
+    <Compile Include="MemberRoleProvider.cs" />
+    <Compile Include="MembershipProvider.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

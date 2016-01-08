@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using umbraco.BusinessLogic;
 using Umbraco.Core.Models;
 using Umbraco.Web.Models;
@@ -53,6 +54,27 @@ namespace WebBlocks.Controllers
                     Request.RequestUri.Port != 80 ? Request.RequestUri.Port.ToString() : "",
                     d.Id.ToString(CultureInfo.InvariantCulture)));
             return response;
+        }
+
+        /// <summary>
+        /// Url: /umbraco/backoffice/WebBlocks/WebBlocksApi/Login?dataTypeId={id}
+        /// </summary>
+        /// <param name="dataTypeId"></param>
+        /// <returns></returns>
+        public void GetLogin(int memberId)
+        {
+            var member = Services.MemberService.GetById(memberId);
+            
+            FormsAuthentication.SetAuthCookie(member.Username, true);
+        }
+
+        /// <summary>
+        /// Url: /umbraco/backoffice/WebBlocks/WebBlocksApi/LogOut
+        /// </summary>
+        /// <returns></returns>
+        public void GetLogOut()
+        {
+            FormsAuthentication.SignOut();
         }
 
 

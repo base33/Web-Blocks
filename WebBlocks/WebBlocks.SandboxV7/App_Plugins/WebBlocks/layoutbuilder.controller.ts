@@ -398,7 +398,7 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", ["$scope", "$htt
 				}
 			}
 			var previewProvider = new WebBlocks.API.LayoutBuilderPreview();
-			previewProvider.GetPreview(editorState.current.id, $http, function (preview) {
+			previewProvider.GetPreview(editorState.current.id, $scope.model.config.protectedMember, $http, function (preview) {
 				//if a container was removed, we want to move the blocks into Block Storage
 				angular.forEach($scope.model.value.Containers, function (savedContainer, savedContainerName) {
 					console.log(savedContainerName);

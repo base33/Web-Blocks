@@ -384,8 +384,8 @@
 
         //specialised class to get the layout builder preview html and container json
         export class LayoutBuilderPreview {
-            public GetPreview(id: number, $http: ng.IHttpService, callback: (preview: Models.LayoutBuilderPreviewModel) => void) {
-                WebBlocksAPIClent.GetPagePreviewHtml(id, $http, function (html) {
+            public GetPreview(id: number, memberId: number, $http: ng.IHttpService, callback: (preview: Models.LayoutBuilderPreviewModel) => void) {
+                WebBlocksAPIClent.GetPagePreviewHtml(id, memberId, $http, function (html) {
                     var $previewDOM = $("<div />").append(html);
                     var scriptTag = $($previewDOM).find("#wbContainerJSON");
                     var containersModel = <Array<LayoutBuilder.Container>>JSON.parse(scriptTag.html());
@@ -431,11 +431,14 @@
 
         export class WebBlocksAPIClent {
             //gets the full web block preview html for a content page      
-            public static GetPagePreviewHtml(id: number, $http: ng.IHttpService, callback: (string) => void) {
-                HttpRequest.Get("/umbraco/backoffice/WebBlocks/WebBlocksApi/GetPagePreview?id=" + id, $http, function (data) {
-                    callback(data);
-                    //remove preview cookie
-                    $http.get('/umbraco/endPreview.aspx');
+            public static GetPagePreviewHtml(contentId: number, memberId: number, $http: ng.IHttpService, callback: (string) => void) {
+                HttpRequest.Get("/umbraco/backoffice/WebBlocks/WebBlocksApi/GetLogin?memberId=" + memberId, $http, () => {
+                    HttpRequest.Get("/umbraco/backoffice/WebBlocks/WebBlocksApi/GetPagePreview?id=" + contentId, $http, function(data) {
+                        callback(data);
+                        //remove preview cookie
+                        $http.get('/umbraco/endPreview.aspx');
+                        $http.get("/umbraco/backoffice/WebBlocks/WebBlocksApi/GetLogOut");
+                    });
                 });
             }
 
