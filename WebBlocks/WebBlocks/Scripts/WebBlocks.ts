@@ -241,7 +241,7 @@ function webBlocksApp(data) {
 
                         if ($(this).hasClass("pageWysiwygBlock")) {
                             block = new WebBlocks.WysiwygBlock();
-                            block.Content = encodeURIComponent($(this).html());
+                            block.Content = encodeURIComponent($(this).html().split('+').join('&plus;'));
                             block.Content = block.Content.replace('+', '%2B');
                         }
                         else {
