@@ -432,10 +432,12 @@
         export class WebBlocksAPIClent {
             //gets the full web block preview html for a content page      
             public static GetPagePreviewHtml(id: number, $http: ng.IHttpService, callback: (string) => void) {
-                HttpRequest.Get("/umbraco/backoffice/WebBlocks/WebBlocksApi/GetPagePreview?id=" + id, $http, function (data) {
-                    callback(data);
-                    //remove preview cookie
-                    $http.get('/umbraco/endPreview.aspx');
+                HttpRequest.Get("/umbraco/dialogs/Preview.aspx?id=" + id, $http, function () {
+                    HttpRequest.Get("/" + id + ".aspx?wbPreview=true", $http, function (data) {
+                        callback(data);
+                        //remove preview cookie
+                        $http.get('/umbraco/endPreview.aspx');
+                    });
                 });
             }
 
