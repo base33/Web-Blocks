@@ -471,10 +471,12 @@ var WebBlocks;
             }
             //gets the full web block preview html for a content page      
             WebBlocksAPIClent.GetPagePreviewHtml = function (id, $http, callback) {
-                HttpRequest.Get("/umbraco/backoffice/WebBlocks/WebBlocksApi/GetPagePreview?id=" + id, $http, function (data) {
-                    callback(data);
-                    //remove preview cookie
-                    $http.get('/umbraco/endPreview.aspx');
+                HttpRequest.Get("/umbraco/dialogs/Preview.aspx?id=" + id, $http, function () {
+                    HttpRequest.Get("/" + id + ".aspx?wbPreview=true", $http, function (data) {
+                        callback(data);
+                        //remove preview cookie
+                        $http.get('/umbraco/endPreview.aspx');
+                    });
                 });
             };
             WebBlocksAPIClent.GetNavigationChildren = function (id, $http, callback) {
