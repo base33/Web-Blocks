@@ -23,7 +23,7 @@ namespace WebBlocks.DataTypes.WebBlocks
 
             builder = (WebBlocks)Page.LoadControl("~/usercontrols/webblocks/webblocks.ascx");
             builder.value = InternalValue;
-            builder.PreValueAccessor = new WebBlocksPreValuesAccessor(PreValueEditor);
+            builder.PreValueRepository = new WebBlocksPreValueRepository(PreValueEditor.DataTypeDefinitionId);
 
             Controls.Add(builder);
         }

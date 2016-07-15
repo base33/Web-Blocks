@@ -6,58 +6,153 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Umbraco.Core.IO;
+using umbraco;
+using umbraco.BusinessLogic;
 using umbraco.cms.businesslogic.datatype;
 using umbraco.cms.businesslogic.web;
+using umbraco.editorControls.tinymce;
 using umbraco.interfaces;
+using Umbraco.Core.IO;
 
 namespace WebBlocks.DataTypes.WebBlocks
 {
     public class WebBlocksPrevalueEditor : PlaceHolder, IDataPrevalue
     {
-        private readonly BaseDataType _dataType;
-
-        public SortedList _preValues = null;
-
         private static readonly object m_locker = new object();
 
-        #region Controls
-        /// <summary>
-        /// List of Css files available in Umbraco to populate the styles dropdown
-        /// </summary>
-        protected CheckBoxList ChkStylesheetList { get; set; }
-        protected TextBox TxtBlockSourceNodeId { get; set; }
-        protected TextBox TxtBackEndScriptInclude { get; set; }
-        protected TextBox TxtUsername { get; set; }
-        protected TextBox TxtPassword { get; set; }
+        protected BaseDataType _dataType = null;
+        protected WebBlocksPreValueRepository _preValues;
+
+        public int DataTypeDefinitionId { get { return _dataType.DataTypeDefinitionId; } }
+
+        public WebBlocksPrevalueEditor(BaseDataType baseDataType, WebBlocksPreValueRepository repo)
+        {
+            _dataType = baseDataType;
+            _preValues = repo;
+        }
+
+        #region Render Backend Settings Controls
+
+        #region Input Controls
+
+        protected CheckBoxList _chklstStylesheets { get; set; }
+        protected TextBox _txtBlockSourceNodeId { get; set; }
+        protected TextBox _txtBackEndScriptInclude { get; set; }
+        protected TextBox _txtUsername { get; set; }
+        protected TextBox _txtPassword { get; set; }
+        protected CheckBoxList _chklstSelectedButtons { get; set; }
+        protected CheckBox _chkEnableRightClick { get; set; }
+        protected TextBox _txtWidth { get; set; }
+        protected TextBox _txtHeight { get; set; }
+
         #endregion
 
-        public WebBlocksPrevalueEditor(BaseDataType dataType)
+        protected override void CreateChildControls()
         {
-            _dataType = dataType;
+            base.CreateChildControls();
+
+            _chklstSelectedButtons = new CheckBoxList() { ID = "editorButtons" };
+            _chklstSelectedButtons.RepeatColumns = 4;
+            _chklstSelectedButtons.CellPadding = 3;
+            Controls.Add(_chklstSelectedButtons);
+
+            _chkEnableRightClick = new CheckBox() { ID = "enableRightClick" };
+            Controls.Add(_chkEnableRightClick);
+
+            _chklstStylesheets = new CheckBoxList() { ID = "stylesheetList" };
+            Controls.Add(_chklstStylesheets);
+
+            _txtBlockSourceNodeId = new TextBox { ID = "_txtBlockSourceNodeId" };
+            Controls.Add(_txtBlockSourceNodeId);
+
+            _txtBackEndScriptInclude = new TextBox { ID = "_txtBackEndScriptInclude", TextMode = TextBoxMode.MultiLine, Width = 550, Height = 100 };
+            Controls.Add(_txtBackEndScriptInclude);
+
+            _txtUsername = new TextBox { ID = "_txtUsername" };
+            Controls.Add(_txtUsername);
+
+            _txtPassword = new TextBox { ID = "_txtPassword", TextMode = TextBoxMode.Password };
+            Controls.Add(_txtPassword);
+
+            _txtWidth = new TextBox { ID = "_txtWidth", Width = 50 };
+            Controls.Add(_txtWidth);
+
+            _txtHeight = new TextBox { ID = "_txtHeight", Width = 50 };
+            Controls.Add(_txtHeight);
         }
 
-        public void Save()
+        protected override void Render(System.Web.UI.HtmlTextWriter writer)
         {
-            _dataType.DBType = DBTypes.Ntext;
+            //base.Render(writer);
 
-            lock (m_locker)
-            {
-                var vals = GetPreValues();
+            writer.Write("<div style=\"background: transparent url(" + IOHelper.ResolveUrl(SystemDirectories.Umbraco) + "/plugins/WebBlocks/images/Logo.png) no-repeat right 8px; padding-top: 40px;\">");
 
-                //store the css document value
-                SavePreValue(PropertyIndex.RichTextEditorStylesheet, GetCheckBoxSelections(ChkStylesheetList), vals);
-                SavePreValue(PropertyIndex.BlockSourceNodeId, TxtBlockSourceNodeId.Text, vals);
-                SavePreValue(PropertyIndex.BackEndScriptInclude, TxtBackEndScriptInclude.Text, vals);
-                SavePreValue(PropertyIndex.ProtectedPageUsername, TxtUsername.Text, vals);
-                SavePreValue(PropertyIndex.ProtectedPagePassword, TxtPassword.Text, vals);
-            }
+            writer.Write("<b>Web Blocks Specific Settings</b><br /><br />");
+
+            writer.Write("<table>");
+
+            writer.Write("<tr><th>Input the root block source node id which all available blocks are located under:<br /><br /></th><td>");
+            _txtBlockSourceNodeId.RenderControl(writer);
+            writer.Write("</td></tr>");
+
+            writer.Write("<tr><th>Input the javascript and css that should be added to this builder:<br /><br /></th><td>");
+            _txtBackEndScriptInclude.RenderControl(writer);
+            writer.Write("</td></tr>");
+
+            writer.Write("<tr><th>Protected page username (required to render the preview of a protected page):<br /><br /></th><td>");
+            _txtUsername.RenderControl(writer);
+            writer.Write("</td></tr>");
+
+            writer.Write("<tr><th>Protected page password (required to render the preview of a protected page):<br /><br /></th><td>");
+            _txtPassword.RenderControl(writer);
+            writer.Write("</td></tr>");
+
+            writer.Write("</table>");
+
+            writer.Write("<hr />");
+
+            writer.Write("<b>TinyMCE Settings</b><br /><br />");
+
+
+            writer.WriteLine("<table>");
+            writer.Write("<tr><th>" + ui.Text("editdatatype", "rteButtons") + ":</th><td>");
+            _chklstSelectedButtons.RenderControl(writer);
+            writer.Write("</td></tr>");
+            writer.Write("<tr><th>" + ui.Text("editdatatype", "rteRelatedStylesheets") + ":</th><td>");
+            _chklstStylesheets.RenderControl(writer);
+            writer.Write("</td></tr>");
+            writer.Write("<tr><th>" + ui.Text("editdatatype", "rteEnableContextMenu") + ":</th><td>");
+            _chkEnableRightClick.RenderControl(writer);
+            writer.Write("</td></tr>");
+            writer.Write("<tr><th>Editor Width x Height:</th><td>");
+            _txtWidth.RenderControl(writer);
+            writer.Write(" x ");
+            _txtHeight.RenderControl(writer);
+            writer.Write("</table>");
+
+
+            writer.Write("</div>");
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat(
+                        @"$(document).ready(function() {{
+                            $('#{0}').val(decodeURI($('#{0}').val()));
+                            $('form').submit(function() {{
+                                $('#{0}').val(encodeURI($('#{0}').val()));
+                            }});
+                        }});", _txtBackEndScriptInclude.ClientID);
+            Page.ClientScript.RegisterStartupScript(GetType(), "webBlocksEncoding", sb.ToString(), true);
         }
 
-        public Control Editor { get { return this; } }
+        #endregion
+
+        #region Page Event Overrides
 
         protected override void OnInit(EventArgs e)
         {
+            if (_preValues == null)
+                _preValues = new WebBlocksPreValueRepository(DataTypeDefinitionId);
+
             base.OnInit(e);
             EnsureChildControls();
             Page.ValidateRequestMode = ValidateRequestMode.Disabled;
@@ -67,184 +162,31 @@ namespace WebBlocks.DataTypes.WebBlocks
         {
             base.OnLoad(e);
 
-            SetCheckBoxBasedOnSelection(ChkStylesheetList, RichTextEditorStylesheet.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries));
-            TxtBlockSourceNodeId.Text = GetPreValue(PropertyIndex.BlockSourceNodeId, x => x.Value, "-1");
-            TxtBackEndScriptInclude.Text = GetPreValue(PropertyIndex.BackEndScriptInclude, x => x.Value, "");
-            TxtUsername.Text = GetPreValue(PropertyIndex.ProtectedPageUsername, x => x.Value, "");
-            TxtPassword.Text = GetPreValue(PropertyIndex.ProtectedPagePassword, x => x.Value, "");
+            if (!Page.IsPostBack && _preValues != null)
+            {
+                GetSelectedButtonsCheckList(_preValues.SelectedButtons);
+                SetCheckBox(_chkEnableRightClick, _preValues.ContextMenu);
+                GetStylesheetsCheckList(_preValues.RichTextEditorStylesheet);
+
+                _txtBlockSourceNodeId.Text = _preValues.BlockSourceNodeId.ToString();
+                _txtBackEndScriptInclude.Text = _preValues.BackEndScriptInclude;
+                _txtUsername.Text = _preValues.ProtectedPageUsername;
+                _txtPassword.Attributes.Add("value", _preValues.ProtectedPagePassword);
+                _txtWidth.Text = _preValues.EditorWidth.ToString();
+                _txtHeight.Text = _preValues.EditorHeight.ToString();
+            }
         }
 
-        protected override void CreateChildControls()
-        {
-            base.CreateChildControls();
-
-            //create stylesheet checkbox list
-            ChkStylesheetList = new CheckBoxList();
-            ChkStylesheetList.ID = "ChkStylesheetList";
-            StyleSheet.GetAll()
-                      .ToList()
-                      .ForEach(s => ChkStylesheetList.Items.Add(new ListItem(s.Text, s.Id.ToString())));
-
-            TxtBlockSourceNodeId = new TextBox { ID = "TxtBlockSourceNodeId" };
-
-            TxtBackEndScriptInclude = new TextBox {ID = "TxtBackEndScriptInclude", TextMode = TextBoxMode.MultiLine };
-
-            TxtUsername = new TextBox { ID = "TxtUsername" };
-
-            TxtPassword = new TextBox { ID = "TxtPassword", TextMode = TextBoxMode.Password };
-
-            //add the controls to get the viewstate on postbacks
-            Controls.Add(ChkStylesheetList);
-            Controls.Add(TxtBlockSourceNodeId);
-            Controls.Add(TxtBackEndScriptInclude);
-            Controls.Add(TxtUsername);
-            Controls.Add(TxtPassword);
-        }
-
-        protected override void Render(HtmlTextWriter writer)
-        {
-            writer.AddAttribute(HtmlTextWriterAttribute.Style, "background: transparent url(" + IOHelper.ResolveUrl(SystemDirectories.Umbraco) + "/plugins/WebBlocks/images/Logo.png) no-repeat right 8px; padding-top: 40px;");
-            writer.RenderBeginTag(HtmlTextWriterTag.Div);
-
-
-
-            //render the checkbox stylesheet drop down
-            writer.Write("<div style='padding-bottom:15px;'>");
-            writer.Write("<div><b>Choose the master stylesheet where your Wysiwyg styles come from (needed for Richtext editor style selection drop down):</b></div>");
-            writer.Write("<div>");
-            ChkStylesheetList.RenderControl(writer);
-            writer.Write("</div></div>");
-
-            //render the block source node id text box
-            writer.Write("<div style='padding-bottom:15px;'>");
-            writer.Write("<div><b>Input the root block source node id which all available blocks are located under:</b></div>");
-            writer.Write("<div>");
-            TxtBlockSourceNodeId.RenderControl(writer);
-            writer.Write("</div></div>");
-
-            //render the backend script include text box
-            writer.Write("<div style='padding-bottom:15px;'>");
-            writer.Write("<div><b>Input the javascript and css that should be added to this builder:</b></div>");
-            writer.Write("<div>");
-            TxtBackEndScriptInclude.RenderControl(writer);
-            writer.Write("</div></div>");
-
-            writer.Write("<hr/>");
-
-            writer.Write("<div style='padding-bottom:15px;'>");
-            writer.Write("<div><b>Protected page username (required to render the preview of a protected page):</b></div>");
-            writer.Write("<div>");
-            TxtUsername.RenderControl(writer);
-            writer.Write("</div></div>");
-
-            writer.Write("<div style='padding-bottom:15px;'>");
-            writer.Write("<div><b>Protected page password (required to render the preview of a protected page):</b></div>");
-            writer.Write("<div>");
-            TxtPassword.RenderControl(writer);
-            writer.Write("</div></div>");
-
-
-            writer.RenderEndTag();
-
-            StringBuilder sb = new StringBuilder();
-            sb.AppendFormat(
-                        @"$(document).ready(function() {{
-                            $('#{0}').val(decodeURI($('#{0}').val()));
-                            $('form').submit(function() {{
-                                $('#{0}').val(encodeURI($('#{0}').val()));
-                            }});
-                        }});", TxtBackEndScriptInclude.ClientID);
-            Page.ClientScript.RegisterStartupScript(GetType(), "webBlocksEncoding", sb.ToString(), true);
-        }
-
-        #region Property Index
-        public enum PropertyIndex
-        {
-            RichTextEditorStylesheet = 0,
-            BlockSourceNodeId = 1,
-            BackEndScriptInclude = 2,
-            ProtectedPageUsername = 3,
-            ProtectedPagePassword = 4
-        }
         #endregion
 
-        #region Property
-        public string RichTextEditorStylesheet
-        {
-            get { return GetPreValue(PropertyIndex.RichTextEditorStylesheet, x => x.Value, ""); }
-        }
-
-        public int BlockSourceNodeId
-        {
-            get
-            {
-                int id = 0;
-
-                int.TryParse(GetPreValue(PropertyIndex.BlockSourceNodeId, x => x.Value, "0"), out id);
-
-                return id;
-            }
-        }
-
-        public string BackEndScriptInclude
-        {
-            get { return GetPreValue(PropertyIndex.BackEndScriptInclude, x => x.Value, ""); }
-        }
-
-        public string ProtectedPageUsername
-        {
-            get
-            {
-                return GetPreValue(PropertyIndex.ProtectedPageUsername, x => x.Value, "");
-            }
-        }
-
-        public string ProtectedPagePassword
-        {
-            get { return GetPreValue(PropertyIndex.ProtectedPagePassword, x => x.Value, ""); }
-        }
-        #endregion
-
-        public SortedList GetPreValues()
-        {
-            if (_preValues == null)
-            {
-                _preValues = PreValues.GetPreValues(_dataType.DataTypeDefinitionId);
-            }
-            return _preValues;
-        }
-
-        public void SavePreValue(PropertyIndex propIndex, string value, SortedList currentVals)
-        {
-            var index = (int)propIndex;
-
-            if (currentVals.Count >= (index + 1))
-            {
-                ((PreValue)currentVals[index]).Value = value;
-                ((PreValue)currentVals[index]).SortOrder = index + 1;
-                ((PreValue)currentVals[index]).Save();
-            }
-            else
-            {
-                PreValue preValue = PreValue.MakeNew(_dataType.DataTypeDefinitionId, value);
-                preValue.SortOrder = index + 1;
-                preValue.Save();
-            }
-        }
-
-        public T GetPreValue<T>(PropertyIndex propIndex, Func<PreValue, T> output, T defaultValue)
-        {
-            var index = (int)propIndex;
-            var vals = GetPreValues();
-            return vals.Count >= index + 1 ? output((PreValue)vals[index]) : defaultValue;
-        }
+        #region Helper Methods
 
         /// <summary>
         /// Helper method to return a comma-separated list of selected items in a CheckBoxList.  Needed as .SelectedValue only returns one item.
         /// </summary>
         /// <param name="cbl"></param>
         /// <returns></returns>
-        private string GetCheckBoxSelections(CheckBoxList cbl)
+        protected string GetCheckBoxSelections(CheckBoxList cbl)
         {
             string selectedValues = string.Empty;
 
@@ -261,12 +203,23 @@ namespace WebBlocks.DataTypes.WebBlocks
             return selectedValues;
         }
 
+        protected string GetCheckBoxChecked(CheckBox chk)
+        {
+            return (chk.Checked) ? "1" : "0";
+        }
+
+        protected void SetCheckBox(CheckBox chk, string value)
+        {
+            if (value == "1")
+                chk.Checked = true;
+        }
+
         /// <summary>
-        /// Helper method to set a check
+        /// Helper method to check any check box items found in valueArray
         /// </summary>
         /// <param name="cbl"></param>
         /// <param name="valueArray"></param>
-        private void SetCheckBoxBasedOnSelection(CheckBoxList cbl, string[] valueArray)
+        protected void SetCheckBoxList(CheckBoxList cbl, string[] valueArray)
         {
             foreach (ListItem li in cbl.Items)
             {
@@ -275,6 +228,73 @@ namespace WebBlocks.DataTypes.WebBlocks
                     li.Selected = true;
                 }
             }
+        }
+
+        private void GetStylesheetsCheckList(string stylesheets)
+        {
+            // add stylesheets
+            foreach (StyleSheet st in StyleSheet.GetAll())
+            {
+                ListItem li = new ListItem(st.Text, st.Id.ToString());
+                if (("," + stylesheets + ",").IndexOf("," + st.Id.ToString() + ",") > -1)
+                    li.Selected = true;
+
+                _chklstStylesheets.Items.Add(li);
+            }
+        }
+
+
+        private void GetSelectedButtonsCheckList(string selectedButtons)
+        {
+            // add editor buttons
+            IDictionaryEnumerator ide = tinyMCEConfiguration.SortedCommands.GetEnumerator();
+            while (ide.MoveNext())
+            {
+                tinyMCECommand cmd = (tinyMCECommand)ide.Value;
+                ListItem li =
+                    new ListItem(
+                        string.Format("<img src=\"{0}\" class=\"tinymceIcon\" alt=\"{1}\" />&nbsp;", cmd.Icon,
+                                      cmd.Command), cmd.Command);
+                if (selectedButtons.IndexOf(cmd.Command) > -1)
+                    li.Selected = true;
+
+                _chklstSelectedButtons.Items.Add(li);
+            }
+        }
+
+        #endregion
+
+        public virtual void Save()
+        {
+            lock (m_locker)
+            {
+                _preValues.SelectedButtons = GetCheckBoxSelections(_chklstSelectedButtons);
+                _preValues.ContextMenu = GetCheckBoxChecked(_chkEnableRightClick);
+                _preValues.RichTextEditorStylesheet = GetCheckBoxSelections(_chklstStylesheets);
+                _preValues.BackEndScriptInclude = _txtBackEndScriptInclude.Text;
+                _preValues.ProtectedPageUsername = _txtUsername.Text;
+                _preValues.ProtectedPagePassword = _txtPassword.Text;
+
+                int width = 0;
+                int.TryParse(_txtWidth.Text, out width);
+                _preValues.EditorWidth = width;
+
+                int height = 0;
+                int.TryParse(_txtHeight.Text, out height);
+                _preValues.EditorHeight = height;
+
+                int sourceNodeId = 0;
+                int.TryParse(_txtBlockSourceNodeId.Text, out sourceNodeId);
+                _preValues.BlockSourceNodeId = sourceNodeId;
+
+                // Hack to set password text box value again as MS does not keep viewstate for password textboxes
+                _txtPassword.Attributes.Add("value", _txtPassword.Text);
+            }
+        }
+
+        public Control Editor
+        {
+            get { return this; }
         }
     }
 }

@@ -282,8 +282,8 @@ function webBlocksApp(data) {
             // Instantiate the tinymce dialog
             var $tinymceDialog = $('#tinymce').dialog({
                 title: 'Edit WYSIWYG Content',
-                width: 730,
-                height: 580,
+                width: 'auto',
+                height: 'auto',
                 closeOnEscape: true,
                 autoOpen: false,
                 buttons: {
@@ -312,6 +312,7 @@ function webBlocksApp(data) {
                             $('.mceToolbarExternal').show();
                             tinymceLoaded = true;
                             tinyMCE.activeEditor.setContent(currentActiveBlock.html());
+                            $tinymceDialog.dialog({ position: "center" });
                         });
                     }
                     else {

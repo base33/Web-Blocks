@@ -30,13 +30,11 @@ namespace WebBlocks.DataTypes.WebBlocks
 
         protected string basePath = "/umbraco/plugins/webblocks";
 
-        // tiny mce properties
-        protected string selectedRichTextCss = "";
-        protected string selectedRichTextStyles = "";
         #endregion
 
         #region public properties
-        public WebBlocksPreValuesAccessor PreValueAccessor { get; set; }
+        public WebBlocksPreValueRepository PreValueRepository { get; set; }
+        public WebBlocksTinyMCEConfiguration TinyMCEConfig { get; set; }
 
         public object value
         {
@@ -49,7 +47,7 @@ namespace WebBlocks.DataTypes.WebBlocks
             }
             set
             {
-                if(!IsPostBack)
+                if (!IsPostBack)
                     txtLayoutJSON.Text = value as string;
             }
         }
@@ -57,14 +55,15 @@ namespace WebBlocks.DataTypes.WebBlocks
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            TinyMCEConfig = new WebBlocksTinyMCEConfiguration();
+
             currentDocument = new Document(pageId);
 
             currentContent = UmbracoContext.Current.Application.Services.ContentService.GetById(pageId);
-            LoadRichTextEditorStyles();
             RenderBlockContextMenu();
             RenderScripts();
 
-            if(IsPostBack)
+            if (IsPostBack)
             {
                 txtLayoutJSON.Text = HtmlImgHelper.ResizeImages(txtLayoutJSON.Text);
             }
@@ -72,7 +71,7 @@ namespace WebBlocks.DataTypes.WebBlocks
 
         public void RenderBlockContextMenu()
         {
-            int blockSourceNodeId = PreValueAccessor.BlockSourceNodeId;
+            int blockSourceNodeId = PreValueRepository.BlockSourceNodeId;
             IconProvider iconProvider = new IconProvider();
             try
             {
@@ -126,41 +125,18 @@ namespace WebBlocks.DataTypes.WebBlocks
 
             StringBuilder sb = new StringBuilder();
             sb.AppendFormat("var currentNodeId = '{0}';", currentDocument.Id);
-            sb.AppendFormat("var wbBlockSourceNodeId = '{0}';", PreValueAccessor.BlockSourceNodeId);
+            sb.AppendFormat("var wbBlockSourceNodeId = '{0}';", PreValueRepository.BlockSourceNodeId);
             sb.Append("var wbServiceUrl = '/base/webblocks';");
             sb.AppendFormat("var txtHiddenLayoutClientId = '{0}';", txtLayoutJSON.ClientID);
             sb.AppendFormat("var plcCotnfextMenuClientId = '{0}';", plcContextMenu.ClientID);
             sb.AppendFormat("var wbCanvas = '#{0}';", canvasRender.ClientID);
             sb.AppendFormat("var isProtectedPage = {0};", umbraco.library.IsProtected(currentDocument.Id, currentDocument.Path) ? "true" : "false");
-            sb.AppendFormat("var username = '{0}';", PreValueAccessor.ProtectedPageUsername);
-            sb.AppendFormat("var password = '{0}';", PreValueAccessor.ProtectedPagePassword);
+            sb.AppendFormat("var username = '{0}';", PreValueRepository.ProtectedPageUsername);
+            sb.AppendFormat("var password = '{0}';", PreValueRepository.ProtectedPagePassword);
             sb.AppendFormat("var webBlocksGuid = '{0}';", Guid.NewGuid());
             cs.RegisterStartupScript(GetType(), "WebBlocks", sb.ToString(), true);
 
-            plcBackEndScriptIncludes.Controls.Add(new Literal() { Text = PreValueAccessor.BackEndScriptIncludes });
-        }
-
-        protected void LoadRichTextEditorStyles()
-        {
-            string ids = PreValueAccessor.RichTextEditorStylesheet;
-
-            if (ids != "")
-            {
-                string[] stylesheetIds = ids.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-
-                foreach (var stylesheet in stylesheetIds.Select(s => new StyleSheet(Convert.ToInt32(s))))
-                {
-                    selectedRichTextCss += string.Format("/css/{0}.css,", stylesheet.Text);
-
-                    foreach (var style in stylesheet.Properties)
-                    {
-                        selectedRichTextStyles += string.Format("{0}={1};", style.Text, style.Alias);
-                    }
-                }
-
-                selectedRichTextCss = selectedRichTextCss.TrimEnd(',');
-                selectedRichTextStyles = selectedRichTextStyles.TrimEnd(',');
-            }
+            plcBackEndScriptIncludes.Controls.Add(new Literal() { Text = HttpUtility.UrlDecode(PreValueRepository.BackEndScriptInclude) });
         }
     }
 }
