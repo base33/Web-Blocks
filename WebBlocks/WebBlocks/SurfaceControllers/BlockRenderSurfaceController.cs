@@ -32,10 +32,11 @@ namespace WebBlocks.SurfaceControllers
             blockInstanceApi.CssClasses = new List<string>();
 
             int pageId = int.Parse(Request.QueryString["pageId"]);
-            int blockId = int.Parse(Request.QueryString["blockId"]);
-            WebBlocksUtility.CurrentPageNodeId = pageId;
+            string blockGuid = Request.QueryString["blockGuid"];
+            
             WebBlocksUtility.CurrentPageContent = PublishedContentProvider.Load(pageId);
-            WebBlocksUtility.CurrentBlockContent = PublishedContentProvider.Load(blockId);
+            WebBlocksUtility.CurrentPageNodeId = pageId;
+            WebBlocksUtility.CurrentBlockContent = PublishedContentProvider.Load(blockGuid);
 
             HttpContext.Items["pageId"] = pageId.ToString();
             

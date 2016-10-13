@@ -41,5 +41,21 @@ namespace WebBlocks.Utilities.Umbraco
         {
             return Load(int.Parse(nodeId));
         }
+
+        /// <summary>
+        /// Loads a DynamicPublishedContent instance for a given node guid.
+        /// If WebBlocksUtility.IsInBuilder is true, it will return the unpublished content version
+        /// </summary>
+        /// <param name="guid">The node id of the node</param>
+        /// <returns>DynamicPublishedContent instance for a given node id</returns>
+        public static DynamicPublishedContent LoadByGuid(string guid)
+        {
+            ContextHelper.EnsureHttpContext();
+            IPublishedContent content = WebBlocksUtility.IsInBuilder
+                                            ? new ContentWrapper(Guid.Parse(guid))
+                                            : (new UmbracoHelper(UmbracoContext.Current)).TypedContent(Guid.Parse(guid));
+
+            return content != null ? new DynamicPublishedContent(content) : null;
+        }
     }
 }

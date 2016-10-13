@@ -12,13 +12,22 @@ namespace WebBlocks.Models.Angular
         protected IPublishedContent content = null;
 
         public string ContentTypeAlias { get; set; }
+        public string Guid { get; set; }
 
         public IPublishedContent Content 
         { 
             get
             {
-                if(content == null) 
-                    content = (IPublishedContent)PublishedContentProvider.Load(Id);
+                if (content == null && !string.IsNullOrEmpty(Guid))
+                {
+                    content = PublishedContentProvider.Load(Guid);
+                }
+                
+                if(content == null)
+                {
+                    content = PublishedContentProvider.Load(Id);
+                }
+
                 return content;
             }
         }
@@ -32,6 +41,11 @@ namespace WebBlocks.Models.Angular
         public ContentBlock(int id) : this()
         {
             Id = id;
+        }
+
+        public ContentBlock(string guid) : this()
+        {
+            Guid = guid;
         }
     }
 }

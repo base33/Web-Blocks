@@ -141,22 +141,25 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", ["$scope", "$htt
 							return;
 						}
 						//validate the block content type before adding to the container
-						contentResource.getById(block.Id).then(function (content) {
-							//set the content type alias
-							block.ContentTypeAlias = content.contentTypeAlias;
-							//validate against the content type alias
-							//if container permissions are set, and is valid
-							if (container.ContainerPermissions == null || (container.ContainerPermissions != null && container.ContainerPermissions.Validate(block))) {
-								container.Blocks.push(block);
-								draggableBlockModel.OnDropCallback(draggableBlockModel);
-								//we will now update all block sortorders in all containers
-								updateAllContainersSortOrder(layoutBuilderModel.Containers);
-							}
-							else {
-								notificationsService.warning(content.contentTypeName + " not allowed in this container");
-								success = false;
-							}
-						});
+						WebBlocks.API.WebBlocksAPIClent.GetIdFromGuid(block.Guid, this.$http, (id) => {
+                            contentResource.getById(id).then(function (content) {
+                                //set the content type alias
+                                block.Id = content.Id;
+                                block.ContentTypeAlias = content.contentTypeAlias;
+                                //validate against the content type alias
+                                //if container permissions are set, and is valid
+                                if (container.ContainerPermissions == null || (container.ContainerPermissions != null && container.ContainerPermissions.Validate(block))) {
+                                    container.Blocks.push(block);
+                                    draggableBlockModel.OnDropCallback(draggableBlockModel);
+                                    //we will now update all block sortorders in all containers
+                                    updateAllContainersSortOrder(layoutBuilderModel.Containers);
+                                }
+                                else {
+                                    notificationsService.warning(content.contentTypeName + " not allowed in this container");
+                                    success = false;
+                                }
+                            });
+						}); 
 					});
 				});
 			}
@@ -174,7 +177,7 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", ["$scope", "$htt
 			}
 		};
 		function loadBlockContent(block, callback) {
-			var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?wbPreview=true&pageId=" + editorState.current.id + "&blockId=" + block.Id;
+			var url = "/umbraco/surface/BlockRenderSurface/RenderBlock?wbPreview=true&pageId=" + editorState.current.id + "&blockGuid=" + block.Guid;
 			$.ajax({
 				type: 'GET',
 				url: url,
@@ -272,8 +275,8 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", ["$scope", "$htt
 			var uiState = $scope.uiState;
 			uiState.LayoutBuilder.Visible = false;
 			uiState.IframeEditor.Visible = true;
-			uiState.IframeEditor.Url = "/umbraco/#/content/content/edit/" + block.Id;
-			uiState.IframeEditor.BlockId = block.Id;
+			uiState.IframeEditor.Url = "/umbraco/#/content/content/edit/" + block.Guid;
+			uiState.IframeEditor.BlockId = block.Guid;
 		}
 		//gets a rendered copy of the block and updates the content and element property on all blocks on page
 		$scope.updateAllBlockElementsInAllContainers = function (blockId) {

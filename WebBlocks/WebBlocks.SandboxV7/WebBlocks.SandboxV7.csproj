@@ -23,7 +23,7 @@
     <IISExpressUseClassicPipelineMode />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>1.4</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
     <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -318,7 +318,9 @@
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="Views\Web.config" />
-    <Content Include="config\ClientDependency.config" />
+    <Content Include="config\ClientDependency.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Plugins\WebBlocks\package.manifest" />
     <Content Include="Views\HomePage.cshtml" />
     <Content Include="Views\Global.cshtml" />
@@ -357,6 +359,8 @@
     <Content Include="Views\Partials\FlexsliderContainerRenderer.cshtml" />
     <Content Include="Views\Partials\SliderContainerRenderer.cshtml" />
     <Content Include="Views\Shared\BlockPreviewRender.cshtml" />
+    <Content Include="Views\ContentPageFullWidth.cshtml" />
+    <Content Include="Views\ContentPageLeftNav.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

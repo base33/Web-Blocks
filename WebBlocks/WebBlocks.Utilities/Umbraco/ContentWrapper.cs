@@ -25,6 +25,15 @@ namespace WebBlocks.Utilities.Umbraco
             content = UmbracoContext.Current.Application.Services.ContentService.GetById(id);
         }
 
+        /// <summary>
+        /// Create a new dynamic instance of Content
+        /// </summary>
+        /// <param name="id"></param>
+        public ContentWrapper(Guid guid)
+        {
+            content = UmbracoContext.Current.Application.Services.ContentService.GetById(guid);
+        }
+
         public ContentWrapper(IContent content)
         {
             this.content = content;

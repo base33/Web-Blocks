@@ -55,6 +55,16 @@ namespace WebBlocks.Controllers
             return response;
         }
 
+        /// <summary>
+        /// Url: /umbraco/backoffice/WebBlocks/WebBlocksApi/GetIdFromGuid?guid={guid}
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int GetIdFromGuid(string guid)
+        {
+            return UmbracoContext.Application.Services.ContentService.GetById(Guid.Parse(guid)).Id;
+        }
+
 
         //public WebBlockRenderModel RenderWebBlock(int id)
         //{

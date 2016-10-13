@@ -29,10 +29,11 @@
 
         export class NodeBlock extends Block {
             public ContentTypeAlias: string = "";
+            public Guid: string = "";
 
             public constructor() {
                 super();
-                this.__type = "NodeBlock"
+                this.__type = "NodeBlock";
             }
         }
 
@@ -41,7 +42,7 @@
 
             public constructor() {
                 super();
-                this.__type = "WysiwygBlock"
+                this.__type = "WysiwygBlock";
             }
         }
 
@@ -454,6 +455,12 @@
 
             public static ValidateRenderedBlock(block: LayoutBuilder.NodeBlock): boolean {
                 return block.ViewModel.Html != "";
+            }
+
+            public static GetIdFromGuid(guid: string, $http: ng.IHttpService, callback: (id: number) => void) {
+                HttpRequest.Get("/umbraco/backoffice/WebBlocks/WebBlocksApi/GetIdFromGuid?guid=" + guid, $http, (id: number) => {
+                    callback(id);
+                });
             }
         }
 
