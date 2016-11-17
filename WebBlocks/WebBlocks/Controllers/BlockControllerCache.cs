@@ -19,9 +19,17 @@ namespace WebBlocks.Controllers
         {
             foreach(var asm in AppDomain.CurrentDomain.GetAssemblies())
             {
-                Controllers.AddRange(asm.GetTypes()
-                    .Where(type => typeof(Umbraco.Web.Mvc.SurfaceController).IsAssignableFrom(type))
-                    .Select(x => x.Name.TrimEnd("Controller")));
+                try
+                {
+                    Controllers.AddRange(asm.GetTypes()
+                        .Where(type => typeof(Umbraco.Web.Mvc.SurfaceController).IsAssignableFrom(type))
+                        .Select(x => x.Name.TrimEnd("Controller")));
+                }
+                catch
+                {
+                    Umbraco.Core.Logging.Logger.CreateWithDefaultLog4NetConfiguration().Info(
+                        System.Reflection.MethodBase.GetCurrentMethod().DeclaringType, "BlockControllerCache.BuildCache() : Error adding controllers from assemblies");
+                }
             }
         }
     }
