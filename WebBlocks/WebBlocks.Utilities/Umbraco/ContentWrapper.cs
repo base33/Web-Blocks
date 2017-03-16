@@ -16,15 +16,6 @@ namespace WebBlocks.Utilities.Umbraco
         protected User user = null;
         protected ContentWrapper parent = null;
 
-        /// <summary>
-        /// Create a new dynamic instance of Content
-        /// </summary>
-        /// <param name="id"></param>
-        public ContentWrapper(int id)
-        {
-            content = UmbracoContext.Current.Application.Services.ContentService.GetById(id);
-        }
-
         public ContentWrapper(IContent content)
         {
             this.content = content;
