@@ -40,9 +40,11 @@ namespace WebBlocks.Views
         {
             if (!HttpContext.Current.Response.IsClientConnected)
                 return "";
-
-            if (block is ContentBlock)
-                return RenderContentBlock(block as ContentBlock, html);
+			
+			if (block is ContentBlock)
+			{
+				return RenderContentBlock(block as ContentBlock, html);
+			}
             
             return RenderWysiwygBlock(block as WysiwygBlock, html);
         }
@@ -50,7 +52,7 @@ namespace WebBlocks.Views
         protected string RenderContentBlock(ContentBlock block, HtmlHelper html)
         {
             //check if the node exists
-            if (block.Content == null) return null;
+            if (block.Content == null || block.Content.ContentType == null) return null;
 
             //set the block model for the view to access
             WebBlocksUtility.CurrentBlockContent = block.Content;

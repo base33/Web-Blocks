@@ -57,7 +57,7 @@ namespace WebBlocks.Extensions
 
         private static void RenderContainerController(IContainer container, HtmlHelper html)
         {
-            WebBlocksUtility.CurrentBlocksContent = container.Blocks.Where(b => b is ContentBlock).Select(b => ((ContentBlock)b).Content).ToList();
+            WebBlocksUtility.CurrentBlocksContent = container.Blocks.Where(b => b is ContentBlock).Select(b => ((ContentBlock)b).Content).Where(b => b != null).ToList();
             html.ViewContext.Writer.Write(html.Action("Render", container.ContainerController.Type));
         }
 
