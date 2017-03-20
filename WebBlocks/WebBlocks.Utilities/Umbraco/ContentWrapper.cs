@@ -19,6 +19,11 @@ namespace WebBlocks.Utilities.Umbraco
         public ContentWrapper(IContent content)
         {
             this.content = content;
+            this._properties = content.Properties.Select(
+                p =>
+                    new ContentPropertyWrapper(p, content.PropertyTypes.FirstOrDefault(pt => pt.Alias == p.Alias),
+                        ContentType))
+                .ToDictionary(c => c.Alias, c => (IPublishedProperty) c, StringComparer.OrdinalIgnoreCase);
         }
 
         public IEnumerable<IPublishedContent> Children
@@ -101,9 +106,11 @@ namespace WebBlocks.Utilities.Umbraco
         {
             get
             {
-                return content.Properties.Select(p => new ContentPropertyWrapper(p, content.PropertyTypes.FirstOrDefault(pt => pt.Alias == p.Alias), ContentType)).ToArray();
+                return _properties.Values;
             }
         }
+
+        protected Dictionary<string, IPublishedProperty> _properties;
 
         public int SortOrder
         {
@@ -176,27 +183,7 @@ namespace WebBlocks.Utilities.Umbraco
             return content.Id;
         }
 
-        public IPublishedProperty GetProperty(string alias, bool recurse)
-        {
-            var currentContent = content;
-            do
-            {
-                var property = currentContent.Properties.FirstOrDefault(c => c.Alias == alias);
-
-                if (property != null && property.Value != null)
-                {
-                    //var propertyType = ContentType.GetPropertyType(property.Alias);
-                    var propertyType = content.PropertyTypes.FirstOrDefault(p => p.Alias == alias);
-                    return new ContentPropertyWrapper(property, propertyType, ContentType);
-                }
-                else
-                {
-                    currentContent = content.Parent();
-                }
-            } while (currentContent != null && currentContent.Level > -1 && recurse);
-
-            return null;
-        }
+       
 
         public bool IsDraft
         {
@@ -207,9 +194,21 @@ namespace WebBlocks.Utilities.Umbraco
 
         public IPublishedProperty GetProperty(string alias)
         {
-            var property = content.Properties.FirstOrDefault(c => c.Alias == alias);
-            var propertyType = content.PropertyTypes.FirstOrDefault(p => p.Alias == alias);
-            return property != null ? new ContentPropertyWrapper(property, propertyType, ContentType) : null;
+            IPublishedProperty property;
+
+            return _properties.TryGetValue(alias, out property) ? property : null;
+        }
+
+        public IPublishedProperty GetProperty(string alias, bool recurse)
+        {
+            var value = GetProperty(alias);
+            if (!recurse)
+                return value;
+
+            if (Parent != null && Level > -1 && value == null)
+                return Parent.GetProperty(alias, true);
+           
+            return value;
         }
     }
 }

@@ -38,11 +38,24 @@ namespace WebBlocks.Controllers
             }
         }
 
+        internal IPublishedContent _currentPage;
         public new IPublishedContent CurrentPage
         {
             get
             {
-                return base.CurrentPage ?? WebBlocksUtility.CurrentPageContent;
+                if (_currentPage != null)
+                    return _currentPage;
+                
+                try
+                {
+                    _currentPage = base.CurrentPage ?? WebBlocksUtility.CurrentPageContent;
+                }
+                catch (Exception)
+                {
+                    _currentPage = WebBlocksUtility.CurrentPageContent;
+                }
+
+                return _currentPage;
             }
         }
 
