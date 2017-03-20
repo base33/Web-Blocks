@@ -24,9 +24,18 @@ namespace WebBlocks.Utilities.Umbraco
         public static DynamicPublishedContent Load(int nodeId)
         {
             ContextHelper.EnsureHttpContext();
-            IPublishedContent content = WebBlocksUtility.IsInBuilder
-                                            ? new ContentWrapper(nodeId)
-                                            : (new UmbracoHelper(UmbracoContext.Current)).TypedContent(nodeId);
+
+
+			IPublishedContent content = null;
+			
+			if(WebBlocksUtility.IsInBuilder)
+			{
+				var dbContent = UmbracoContext.Current.Application.Services.ContentService.GetById(nodeId);
+				if (dbContent != null && dbContent.ContentType != null)
+					content = new ContentWrapper(dbContent);
+			}
+			else
+				content = new UmbracoHelper(UmbracoContext.Current).TypedContent(nodeId);
 
             return content != null ? new DynamicPublishedContent(content) : null;
         }
