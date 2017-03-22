@@ -92,7 +92,13 @@ namespace WebBlocks.Utilities.Umbraco
             get
             {
                 if (parent == null)
-                    parent = new ContentWrapper(content.Parent());
+                {
+                    var contentParent = content.Parent();
+                    if (contentParent != null)
+                        parent = new ContentWrapper(content.Parent());
+                    else
+                        return null;
+                }
                 return parent;
             }
         }
