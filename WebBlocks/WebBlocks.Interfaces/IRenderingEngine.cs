@@ -11,6 +11,6 @@ namespace WebBlocks.BusinessLogic.Interfaces
 {
     public interface IRenderingEngine
     {
-        string Render(HtmlHelper html);
+        string Render(HtmlHelper html, object model = null);
     }
 }

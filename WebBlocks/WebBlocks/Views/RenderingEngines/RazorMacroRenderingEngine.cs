@@ -25,7 +25,7 @@ namespace WebBlocks.Views.RenderingEngines
             set { currentNode = value; }
         }
 
-        public string Render(HtmlHelper html)
+        public string Render(HtmlHelper html, object model = null)
         {
             RazorMacroEngine macroEngine = new RazorMacroEngine();
 

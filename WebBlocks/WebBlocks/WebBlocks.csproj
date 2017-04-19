@@ -88,8 +88,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\WebBlockViews\BlockPreviewRender.cshtml" />
-    <Content Include="Views\WebBlockViews\LiveEditRender.cshtml" />
     <Content Include="packages.config" />
     <Content Include="Views\web.config.transform" />
     <None Include="Web.Debug.config">

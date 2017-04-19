@@ -111,7 +111,11 @@ namespace WebBlocks.Views
             string blockContent = WebBlocksUtility.IsInBuilder ? block.Content : umbraco.library.RenderMacroContent(tinyMceHelper.ReplaceMacroTags(HttpUtility.UrlDecode(block.Content)), WebBlocksUtility.CurrentPageNodeId);
 
             if (!WebBlocksUtility.IsInBuilder)
-                blockContent = LocalLinkHelper.ResolveLocalLinks(blockContent);
+            {
+                //blockContent = LocalLinkHelper.ResolveLocalLinks(blockContent);
+                var renderingEngine = new PartialViewRenderingEngine {ScriptName = "WebBlocksWysiwygBlock"};
+                blockContent = renderingEngine.Render(html, block);
+            }
 
             return string.Format("<{0}{1} class='{2}'{3}{4}>{5}</{0}>", block.ViewModel.Tag, webBlocksId, blockClass, blockTemplateAttribute, blockDeletedAttribute,
                 HttpUtility.UrlDecode(blockContent));

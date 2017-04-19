@@ -21,11 +21,11 @@ namespace WebBlocks.Views.RenderingEngines
     {
         public string ScriptName { get; set; }
 
-        public string Render(HtmlHelper html)
+        public string Render(HtmlHelper html, object model = null)
         {
             try
             {
-                return html.Partial(ScriptName, html.ViewData).ToHtmlString();
+                return model != null ? html.Partial(ScriptName, model, html.ViewData).ToHtmlString() : html.Partial(ScriptName, html.ViewData).ToHtmlString();
             }
             catch(Exception ex)
             {

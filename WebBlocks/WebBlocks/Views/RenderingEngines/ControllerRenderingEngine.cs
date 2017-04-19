@@ -12,7 +12,7 @@ namespace WebBlocks.Views.RenderingEngines
     {
         public string ControllerName { get; set; }
 
-        public string Render(HtmlHelper html)
+        public string Render(HtmlHelper html, object model = null)
         {
             return html.Action("Render", ControllerName).ToString();
         }

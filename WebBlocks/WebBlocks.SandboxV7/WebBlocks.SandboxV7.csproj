@@ -357,6 +357,7 @@
     <Content Include="Views\Partials\FlexsliderContainerRenderer.cshtml" />
     <Content Include="Views\Partials\SliderContainerRenderer.cshtml" />
     <Content Include="Views\Shared\BlockPreviewRender.cshtml" />
+    <Content Include="Views\Shared\WebBlocksWysiwygBlock.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
