@@ -22,16 +22,9 @@ namespace WebBlocks.Views.RenderingEngines
         public MacroModel Macro { get; set; }
         public Node CurrentNode { get; set; }
 
-        public string Render(HtmlHelper html)
-        {
-            try
-            {
-                return html.Partial(Macro.ScriptName, html.ViewData).ToHtmlString();
-            }
-            catch(Exception ex)
-            {
-                return HttpUtility.HtmlEncode(ex.ToString());
-            }
-        }
-    }
+		public string Render(HtmlHelper html)
+		{
+			return html.Partial(Macro.ScriptName, html.ViewData).ToHtmlString();
+		}
+	}
 }
