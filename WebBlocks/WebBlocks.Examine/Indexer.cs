@@ -7,10 +7,11 @@ using WebBlocks.Model;
 using WebBlocks.Providers;
 using umbraco.BusinessLogic;
 using umbraco.NodeFactory;
+using Umbraco.Core;
 
 namespace WebBlocks.Examine
 {
-    public class Indexer : Umbraco.Core.ApplicationEventHandler
+    public class Indexer : ApplicationEventHandler
     {
         public Indexer()
         {

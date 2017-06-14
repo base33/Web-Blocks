@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,6 +67,10 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="umbraco">
       <HintPath>..\..\Lib\Umbraco V6.1.6\umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Core, Version=1.0.5261.28997, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Umbraco V6.1.6\Umbraco.Core.dll</HintPath>
     </Reference>
     <Reference Include="UmbracoExamine">
       <HintPath>..\..\Lib\Umbraco V6.1.6\UmbracoExamine.dll</HintPath>

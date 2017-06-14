@@ -1,8 +1,7 @@
-var __extends = this.__extends || function (d, b) {
+var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var WebBlocks;
 (function (WebBlocks) {
@@ -13,23 +12,19 @@ var WebBlocks;
             this.Blocks = new Array();
         }
         Container.prototype.AddBlock = function (block) {
-            if (!CollectionHelper.Exists(this.Blocks, function (a) {
-                return a.Id == block.Id;
-            }))
+            if (!CollectionHelper.Exists(this.Blocks, function (a) { return a.Id == block.Id; }))
                 this.Blocks.push(block);
             else if (confirm("This block has already been added.  Are you sure you wish to add the block again?"))
                 this.Blocks.push(block);
         };
-
         Container.prototype.AlertTypes = function () {
             for (var i = 0; i < this.Blocks.length; i++) {
                 alert(this.Blocks[i].__type);
             }
         };
         return Container;
-    })();
+    }());
     WebBlocks.Container = Container;
-
     var Block = (function () {
         function Block() {
             this.Id = 0;
@@ -39,9 +34,8 @@ var WebBlocks;
             this.IsDeleted = false;
         }
         return Block;
-    })();
+    }());
     WebBlocks.Block = Block;
-
     var NodeBlock = (function (_super) {
         __extends(NodeBlock, _super);
         function NodeBlock() {
@@ -49,9 +43,8 @@ var WebBlocks;
             this.__type = "NodeBlock";
         }
         return NodeBlock;
-    })(Block);
+    }(Block));
     WebBlocks.NodeBlock = NodeBlock;
-
     var WysiwygBlock = (function (_super) {
         __extends(WysiwygBlock, _super);
         function WysiwygBlock() {
@@ -59,9 +52,8 @@ var WebBlocks;
             this.__type = "WysiwygBlock";
         }
         return WysiwygBlock;
-    })(Block);
+    }(Block));
     WebBlocks.WysiwygBlock = WysiwygBlock;
-
     var ContainerPermissionsResult = (function () {
         function ContainerPermissionsResult() {
             this.Valid = false;
@@ -69,9 +61,8 @@ var WebBlocks;
             this.DocTypes = [];
         }
         return ContainerPermissionsResult;
-    })();
+    }());
     WebBlocks.ContainerPermissionsResult = ContainerPermissionsResult;
-
     var CollectionHelper = (function () {
         function CollectionHelper() {
         }
@@ -83,7 +74,6 @@ var WebBlocks;
             }
             return temp;
         };
-
         CollectionHelper.Exists = function (array, method) {
             for (var i = 0; i < this.length; i++) {
                 if (method(this[i]))
@@ -92,7 +82,7 @@ var WebBlocks;
             return false;
         };
         return CollectionHelper;
-    })();
+    }());
     WebBlocks.CollectionHelper = CollectionHelper;
 })(WebBlocks || (WebBlocks = {}));
 //# sourceMappingURL=WebBlocks.Models.js.map
