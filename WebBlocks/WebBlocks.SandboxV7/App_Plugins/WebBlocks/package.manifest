@@ -87,6 +87,7 @@
 		"~/App_Plugins/WebBlocks/dialogs/layoutbuilder.blockstoragedialog.js",
 		"~/App_Plugins/WebBlocks/dialogs/layoutbuilder.recyclebindialog.js",
 		"~/App_Plugins/WebBlocks/assets/draggable.js",
-		"~/App_Plugins/WebBlocks/assets/touchpunch.js"
+		"~/App_Plugins/WebBlocks/assets/touchpunch.js",
+		"~/App_Plugins/WebBlocks/assets/ngcontenteditable.js"
     ]
 }

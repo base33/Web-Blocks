@@ -1,0 +1,352 @@
+﻿/****
+    Mentor Web Blocks for Umbraco
+    Copyright (C) 2013 Mentor Digital 
+    (Mentor Communications Consultancy Ltd, 4 West End, Somerset Street, Bristol, BS2 8NE)
+    
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the 
+    GNU General Public License as published by the Free Software Foundation; either version 2 of the 
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without 
+    even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General 
+    Public License for more details.
+
+    You should have received a copy of the GNU General Public License along with this program; if not, 
+    write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+****/
+/* Umbraco Page
+------------------------------------------ */
+body.umbracoPage { background-color:#FFF !important; }
+body.umbracoPage a { -webkit-transition:none; -moz-transition:none; -o-transition:none; transition:none; }
+body.umbracoPage .menubar img { vertical-align:initial; }
+
+/* Generic Styles 
+------------------------------------------ */
+#webBlocksWrapper {}
+#webBlocksWrapper img { border: none; }
+#webBlocksWrapper select { margin: 0 0 10px 0; display: block; font-size: 10pt; padding: 2px; }
+
+/* Canvas. Negative padding bottom to fix overflow IE7 bug. 
+------------------------------------------- */
+#webBlocksWrapper #outerCanvas  { clear: both; width: 100%; display: block; background: white; border: 1px solid #ccc; min-height: 300px; padding: 0 5px; overflow: auto; height: auto; margin: 0px 0px 10px 0px; text-align: center; }
+#webBlocksWrapper #canvas { margin: 15px auto; font-family: Arial, Helvetica, sans-serif; font-size: 14px; text-align: left; }
+
+#webBlocksWrapper #builderMenu { position: fixed; top: 28px; left: 100px; z-index: 9999; }
+#webBlocksWrapper #builderMenu ul { margin: 0px; padding: 0px; list-style: none; }
+#webBlocksWrapper #builderMenu ul li { float: left; padding: 0px 2px; cursor: pointer; list-style-type: none; }
+#webBlocksWrapper #builderMenu ul li img { vertical-align: middle; height: 20px; border: none; }
+
+/* Containers
+------------------------------------------ */
+#webBlocksWrapper .container, #webBlocksWrapper .wbcontainer { min-height: 120px; outline: dotted 1px #ddd; *border: dashed 1px rgb(221, 221, 221) !important; margin-bottom: 20px; }
+/*#webBlocksWrapper .clearfix { clear: both; height: 0px; font-size: 0px; visibility: hidden; overflow: hidden; }*/
+#webBlocksWrapper .divider { border-bottom:1px solid #ccc; height:1px;  margin-bottom:10px; margin-top:10px; }
+
+#webBlocksWrapper .block { min-height:20px; *height:auto !important; *height:20px; margin-bottom:20px !important; position:relative; overflow:visible; float:left !important; }
+
+#webBlocksWrapper .containerHover { box-shadow:inset 0 0 10px #FFF3C9; box-shadow:inset 0 0 10px #FFF3C9;background: #FFFBF0; }
+
+#webBlocksWrapper .wbContainerAction { position: absolute; right: 10px; top: 0; }
+
+/* Blocks
+------------------------------------------ */
+#webBlocksWrapper .block, #webBlocksWrapper .outerBlock { 
+	opacity: 0.75; filter:alpha(opacity=65); cursor: move; overflow: hidden; 
+	-webkit-transition:opacity 0.3s ease; -moz-transition:opacity 0.3s ease; -o-transition:opacity 0.3s ease; transition:opacity 0.3s ease;
+}
+#webBlocksWrapper .block:hover, #webBlocksWrapper .block:focus, #webBlocksWrapper .outerBlock:hover, #webBlocksWrapper .outerBlock:focus { opacity: 1.0; filter:alpha(opacity=100);/* outline:solid 1px #DDD; */ }
+#webBlocksWrapper .wysiwygOff { background: #e8e8e8 url('/umbraco/plugins/webblocks/images/wysiwygOff.jpg') no-repeat top center; text-align: center; font-size: 12pt; line-height: 120px; height: 120px !important; margin-bottom: 0px !important; overflow: hidden !important; }
+
+/* Tinymce editor
+------------------------------------------ */
+.ui-dialog #tinymce
+{
+    text-align: left;
+    padding-top: 40px !important;
+}
+
+.ui-dialog button { float: right; padding: 8px; }
+
+.ui-dialog #tinymce .tinymceMenuBar{ text-align: left; padding-left: 0 !important; margin-left: 0 !important; position: static !important; width: auto !important; }
+
+.ui-dialog .mceToolbarExternal { display:none; position: absolute !important; left: 0px !important; top: 5px !important; z-index: 100 !important; }
+
+/* Dialog Icons */
+.webblocks-ui-icon-exclamation { background: url("/umbraco/plugins/webblocks/images/exclamation.png") !important; }
+
+/* Builder classes. 
+------------------------------------------ */
+#webBlocksWrapper .iframePopup iframe { width: 860px; height: 600px; border: none; }
+#webBlocksWrapper .iframePopup { display: none; }
+
+/* Unselectable input textboxes 
+------------------------------------------ */
+#canvas input[type='text'] { -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+/* Web Blocks Loader 
+------------------------------------------ */
+#canvas .wbLoadingBox { margin: auto;text-align: center;width: 300px; }
+
+#webBlocksWrapper #outerCanvas {
+  -webkit-transition: display linear 1.5s;
+  transition: display linear 1.5s;
+}
+#webBlocksWrapper #outerCanvas.ng-hide-add,
+#webBlocksWrapper #outerCanvas.ng-hide-remove {
+  display: block!important;
+}
+
+#webBlocksWrapper .wbWysiwygOff { background: #e8e8e8 url('/App_Plugins/WebBlocks/images/wysiwygOff.jpg') no-repeat top center; text-align: center; font-size: 12pt; line-height: 120px; height: 120px !important; /*margin-bottom: 0px !important;*/ overflow: hidden !important; }
+
+
+.wb-context-menu {
+    width: 300px !important;
+    margin-left: -300px !important;
+}
+
+.wb-action-bar {
+    position:absolute;z-index:55555;top:15px;left:20px;padding:5px;border:1px solid #ddd;border-radius: 3px;margin-bottom:5px;background:#ECECEC;box-shadow:0px 0px 9px -5px;
+}
+
+.wb-action-bar > * {
+    float:left;
+    margin-left:5px;
+}
+.wb-action-bar > *:first-child {
+    margin-left:0px;
+}
+
+.wb-action-bar > span {
+    margin: -5px -5px -5px 5px;
+    padding: 5px;
+    border-radius: 0px 2px 2px 0px;
+
+    background: #d3d3d3; /* Old browsers */
+   
+
+
+}
+
+.wb-wysiwyg-action-bar {
+    width:100%;text-align:right;padding:5px;
+}
+.wb-wysiwyg-action-bar input[type='button'] {
+    margin-left:5px;
+}
+
+.wbRedIconHover:hover {
+    color: red !important;
+}
+
+.wbDialogTitle {
+    margin-top: 10px; 
+    margin-bottom: 0px;  
+    font-size:13px;
+    color: #b3b3b3;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.wb-browser-window {
+    
+    padding: 10px;
+    border: 1px solid #cdcdcd;
+    border-radius: 13px;
+    background: #ddd;
+    display: inline-block;
+
+}
+
+.wb-browser-window iframe {
+    
+    border: 1px solid #cdcdcd;
+    border-radius: 10px;
+
+}
+
+.wb-navigation-items {
+    width:420px;padding-bottom:30px;display:block;overflow-y:scroll !important;overflow-x:hidden;position: absolute;top: 110px;bottom: 0px;z-index:88888888;overflow-y:hidden;
+}
+
+    .wb-navigation-item {
+        position:relative;border-bottom:1px solid #E8E8E8;width:100%;display:block;float:left;height:40px;width: 400px;
+    }
+        .wb-navigation-item:hover {
+            background: #f6f6f6;
+        }
+
+        .wb-navigation-item.back {
+            cursor: pointer;
+        }
+
+        .wb-navigation-item > .wb-navigation-item-load-children{
+            float:right;display:inline-block;width:34px;height:40px;cursor:pointer;
+        }
+
+            .wb-navigation-item > .wb-navigation-item-load-children i {
+                float:right;padding: 10px;
+            }
+
+        .wb-navigation-item > .wb-navigation-item-more {
+            float:right;position:relative;margin-top:5px;
+        }
+
+            .wb-navigation-item:hover > .wb-navigation-item-more {
+                display:inline-block;
+                visibility: visible;
+            }
+            
+        .wb-navigation-item > .wb-draggable-item {
+             border-radius: 3px;
+        }
+
+        .wb-draggable-item {
+            cursor: pointer;
+        }
+       
+            .wb-draggable-item.dragging {
+                background: white;
+                z-index:9999999;
+            }
+
+        .wb-navigation-item > .wb-navigation-item-block {
+            float: left; height: 40px; min-width: 200px;
+        }
+        
+            .wb-navigation-item > .wb-navigation-item-block > .wb-draggable-item-icon {
+                width: 25px;padding: 10px 0px;float: left;display:inline-block;
+            }
+
+                .wb-navigation-item > .wb-navigation-item-block > .wb-draggable-item-icon i {
+                    font-size: 20px;
+                }
+
+            .wb-navigation-item > .wb-navigation-item-block > .wb-draggable-item-name {
+                 display:inline-block;padding: 10px 0px;
+            }
+
+            .wb-navigation-item > .wb-navigation-item-block > .wb-draggable-item-name > span {
+                font-size: 14px;margin:10px;
+            }
+
+        .wb-navigation-item > .wb-navigation-item-more {
+            display:none;
+            visibility:hidden;
+        }
+
+        /* Back button styling */
+        .wb-navigation-item > .wb-navigation-back {
+            float: left; height: 40px; cursor: pointer; width: 100%;
+        }
+
+            .wb-navigation-item > .wb-navigation-back > .wb-navigation-back-icon {
+                width: 25px;padding: 10px 0px;float: left;display:inline-block;
+            }
+
+                .wb-navigation-back > .wb-navigation-back-icon > i {
+                    font-size: 20px;
+                }
+            .wb-navigation-item > .wb-navigation-back > .wb-navigation-back-name {
+                display:inline-block;padding: 10px 0px;
+            }
+
+                .wb-navigation-item > .wb-navigation-back > .wb-navigation-back-name > span {
+                    font-size: 14px;margin:10px;
+                }
+
+.wb-navigation-item.wb-context-menu-item {
+    height:35px;
+    cursor: pointer;
+}
+
+.wb-navigation-item.wb-context-menu-item .wb-navigation-back-icon {
+    padding: 6px 0px;
+}
+
+.wb-navigation-item.wb-context-menu-item .wb-navigation-back-name {
+    padding: 6px 0px;
+}
+
+
+
+/* slide animation */
+.wbslide-hide,.wbslide-show{
+    -webkit-transition:all cubic-bezier(0,0,0.175,1) .5s;
+    -moz-transition:all cubic-bezier(0,0,0.175,1) .5s;
+    -o-transition:all cubic-bezier(0,0,0.175,1) .5s;
+    transition:all cubic-bezier(0,0,0.175,1) .5s
+
+}
+
+.wbslide-hide{
+    -webkit-transform:translateX(0);
+    -moz-transform:translateX(0);
+    -ms-transform:translateX(0);
+    transform:translateX(0)
+
+}
+
+.wbslide-hide.wbslide-hide-active{
+    -webkit-transition:all cubic-bezier(0,0,0.6,1) .15s;
+    -moz-transition:all cubic-bezier(0,0,0.6,1) .15s;
+    -o-transition:all cubic-bezier(0,0,0.6,1) .15s;
+    transition:all cubic-bezier(0,0,0.6,1) .15s;
+
+    -webkit-transform:translateX(-100%);
+    -moz-transform:translateX(-100%);
+    -ms-transform:translateX(-100%);
+    transform:translateX(-100%);
+    opacity: 0;
+    height: 0px;
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+
+.wbslide-show{
+    -webkit-transform:translateX(100%);
+    -moz-transform:translateX(100%);
+    -ms-transform:translateX(100%);
+    transform:translateX(100%)
+
+}
+
+.wbslide-show.wbslide-show-active{
+    -webkit-transform:translateX(0);
+    -moz-transform:translateX(0);
+    -ms-transform:translateX(0);
+    transform:translateX(0)
+
+}
+
+
+
+
+
+.wbNoSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.wbWysiwyg {
+    -webkit-transition:background cubic-bezier(0,0,0.6,1) .15s;
+    -moz-transition:background cubic-bezier(0,0,0.6,1) .15s;
+    -o-transition:background cubic-bezier(0,0,0.6,1) .15s;
+    transition:background cubic-bezier(0,0,0.6,1) .15s;
+}
+
+.wbWysiwyg:hover {
+    background: #F8F8F8;
+}
+
+.wbDialog {
+    background: rgba(255,255,255,0.95) !important;
+}
+
+    .wbDialog .umb-panel-footer {
+        background: rgba(248, 248, 248, 1) !important;
+    }

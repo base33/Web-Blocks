@@ -1,22 +1,22 @@
-var __extends = this.__extends || function (d, b) {
+var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var WebBlocks;
 (function (WebBlocks) {
     var LayoutBuilder;
-    (function (_LayoutBuilder) {
+    (function (LayoutBuilder_1) {
         var LayoutBuilder = (function () {
             function LayoutBuilder() {
                 this.Containers = {}; //array of containers that are on the page
+                this.Editors = {}; //array of editors on the page
                 this.RecycleBin = new Array(); //array of blocks added to the recycle bin
                 this.BlockStorage = new Array(); //array of blocks added to the block storage
             }
             return LayoutBuilder;
-        })();
-        _LayoutBuilder.LayoutBuilder = LayoutBuilder;
+        }());
+        LayoutBuilder_1.LayoutBuilder = LayoutBuilder;
         var Container = (function () {
             function Container() {
                 this.Name = "";
@@ -26,8 +26,8 @@ var WebBlocks;
                 this.ContainerPermissions = null;
             }
             return Container;
-        })();
-        _LayoutBuilder.Container = Container;
+        }());
+        LayoutBuilder_1.Container = Container;
         var Block = (function () {
             function Block() {
                 this.Id = 0; //the id of the wysiwyg or block
@@ -40,8 +40,8 @@ var WebBlocks;
                 this.__type = "Unknown";
             }
             return Block;
-        })();
-        _LayoutBuilder.Block = Block;
+        }());
+        LayoutBuilder_1.Block = Block;
         var NodeBlock = (function (_super) {
             __extends(NodeBlock, _super);
             function NodeBlock() {
@@ -50,8 +50,8 @@ var WebBlocks;
                 this.__type = "NodeBlock";
             }
             return NodeBlock;
-        })(Block);
-        _LayoutBuilder.NodeBlock = NodeBlock;
+        }(Block));
+        LayoutBuilder_1.NodeBlock = NodeBlock;
         var WysiwygBlock = (function (_super) {
             __extends(WysiwygBlock, _super);
             function WysiwygBlock() {
@@ -60,8 +60,8 @@ var WebBlocks;
                 this.__type = "WysiwygBlock";
             }
             return WysiwygBlock;
-        })(Block);
-        _LayoutBuilder.WysiwygBlock = WysiwygBlock;
+        }(Block));
+        LayoutBuilder_1.WysiwygBlock = WysiwygBlock;
         var BlockViewModel = (function () {
             function BlockViewModel() {
                 this.Tag = "";
@@ -73,8 +73,8 @@ var WebBlocks;
                 this.ShouldForceRerender = false;
             }
             return BlockViewModel;
-        })();
-        _LayoutBuilder.BlockViewModel = BlockViewModel;
+        }());
+        LayoutBuilder_1.BlockViewModel = BlockViewModel;
         var BlockViewElementAttribute = (function () {
             function BlockViewElementAttribute(name, value) {
                 this.Name = ""; //name of the attribute
@@ -83,8 +83,8 @@ var WebBlocks;
                 this.Value = value;
             }
             return BlockViewElementAttribute;
-        })();
-        _LayoutBuilder.BlockViewElementAttribute = BlockViewElementAttribute;
+        }());
+        LayoutBuilder_1.BlockViewElementAttribute = BlockViewElementAttribute;
         var BlockStorageBlock = (function () {
             function BlockStorageBlock(Block, Message, BlockHistory) {
                 this.Block = Block;
@@ -92,8 +92,8 @@ var WebBlocks;
                 this.BlockHistory = BlockHistory;
             }
             return BlockStorageBlock;
-        })();
-        _LayoutBuilder.BlockStorageBlock = BlockStorageBlock;
+        }());
+        LayoutBuilder_1.BlockStorageBlock = BlockStorageBlock;
         var RecycleBinBlock = (function () {
             function RecycleBinBlock(Block, Message, BlockHistory) {
                 this.Block = Block;
@@ -101,15 +101,15 @@ var WebBlocks;
                 this.BlockHistory = BlockHistory;
             }
             return RecycleBinBlock;
-        })();
-        _LayoutBuilder.RecycleBinBlock = RecycleBinBlock;
+        }());
+        LayoutBuilder_1.RecycleBinBlock = RecycleBinBlock;
         var BlockHistory = (function () {
             function BlockHistory(LastContainer) {
                 this.LastContainer = LastContainer;
             }
             return BlockHistory;
-        })();
-        _LayoutBuilder.BlockHistory = BlockHistory;
+        }());
+        LayoutBuilder_1.BlockHistory = BlockHistory;
         var BlockType = (function () {
             function BlockType() {
             }
@@ -119,8 +119,8 @@ var WebBlocks;
             BlockType.Wysiwyg = "WysiwygBlock";
             BlockType.Node = "NodeBlock";
             return BlockType;
-        })();
-        _LayoutBuilder.BlockType = BlockType;
+        }());
+        LayoutBuilder_1.BlockType = BlockType;
         ;
         var AllowedBlocks = (function () {
             function AllowedBlocks(blockTypes) {
@@ -133,8 +133,8 @@ var WebBlocks;
                     return true;
             };
             return AllowedBlocks;
-        })();
-        _LayoutBuilder.AllowedBlocks = AllowedBlocks;
+        }());
+        LayoutBuilder_1.AllowedBlocks = AllowedBlocks;
         var ExcludedBlocks = (function () {
             function ExcludedBlocks(blockTypes) {
                 this.BlockTypes = blockTypes;
@@ -146,13 +146,15 @@ var WebBlocks;
                     return true;
             };
             return ExcludedBlocks;
-        })();
-        _LayoutBuilder.ExcludedBlocks = ExcludedBlocks;
+        }());
+        LayoutBuilder_1.ExcludedBlocks = ExcludedBlocks;
         var TypedBlockConverter = (function () {
             function TypedBlockConverter() {
             }
             TypedBlockConverter.TypeIt = function (block) {
-                var typedBlock = block.__type == BlockType.Wysiwyg ? new WysiwygBlock() : new NodeBlock();
+                var typedBlock = block.__type == BlockType.Wysiwyg ?
+                    new WysiwygBlock() :
+                    new NodeBlock();
                 typedBlock.Id = block.Id;
                 typedBlock.Name = block.Name;
                 typedBlock.SortOrder = block.SortOrder;
@@ -174,8 +176,8 @@ var WebBlocks;
                 return typedBlocks;
             };
             return TypedBlockConverter;
-        })();
-        _LayoutBuilder.TypedBlockConverter = TypedBlockConverter;
+        }());
+        LayoutBuilder_1.TypedBlockConverter = TypedBlockConverter;
         var TypedContainerPermissions = (function () {
             function TypedContainerPermissions() {
             }
@@ -190,8 +192,8 @@ var WebBlocks;
                 }
             };
             return TypedContainerPermissions;
-        })();
-        _LayoutBuilder.TypedContainerPermissions = TypedContainerPermissions;
+        }());
+        LayoutBuilder_1.TypedContainerPermissions = TypedContainerPermissions;
     })(LayoutBuilder = WebBlocks.LayoutBuilder || (WebBlocks.LayoutBuilder = {})); //end of WebBlocks.LayoutBuilder
     var UI;
     (function (UI) {
@@ -204,7 +206,7 @@ var WebBlocks;
                 Utils.PropertyHelper.CopyProperties(uiState, this);
             }
             return UIState;
-        })();
+        }());
         UI.UIState = UIState;
         var LayoutBuilderState = (function () {
             function LayoutBuilderState(visible, canvasWidth) {
@@ -215,7 +217,7 @@ var WebBlocks;
                     this.CanvasWidth = canvasWidth;
             }
             return LayoutBuilderState;
-        })();
+        }());
         UI.LayoutBuilderState = LayoutBuilderState;
         var IframeEditorState = (function () {
             function IframeEditorState(visible, url) {
@@ -226,7 +228,7 @@ var WebBlocks;
                 this.Url = url;
             }
             return IframeEditorState;
-        })();
+        }());
         UI.IframeEditorState = IframeEditorState;
         var AddBlockDialogState = (function () {
             function AddBlockDialogState(rootId) {
@@ -236,14 +238,14 @@ var WebBlocks;
                 this.ActiveId = rootId;
             }
             return AddBlockDialogState;
-        })();
+        }());
         UI.AddBlockDialogState = AddBlockDialogState;
         var DraggableBlockModel = (function () {
             function DraggableBlockModel() {
                 this.BlockIconClass = "";
             }
             return DraggableBlockModel;
-        })();
+        }());
         UI.DraggableBlockModel = DraggableBlockModel;
         var Dialogs;
         (function (Dialogs) {
@@ -255,7 +257,7 @@ var WebBlocks;
                 DialogTemplateProvider.BlockStorageTemplate = "/app_plugins/WebBlocks/Dialogs/LayoutBuilder.BlockStorageDialog.html";
                 DialogTemplateProvider.RecycleBinTemplate = "/app_plugins/WebBlocks/Dialogs/LayoutBuilder.RecycleBinDialog.html";
                 return DialogTemplateProvider;
-            })();
+            }());
             Dialogs.DialogTemplateProvider = DialogTemplateProvider;
             var DialogOptionsFactory = (function () {
                 function DialogOptionsFactory() {
@@ -294,14 +296,14 @@ var WebBlocks;
                     };
                 };
                 return DialogOptionsFactory;
-            })();
+            }());
             Dialogs.DialogOptionsFactory = DialogOptionsFactory;
             var AddBlockMenu = (function () {
                 function AddBlockMenu(UIState) {
                     this.UIState = UIState;
                 }
                 return AddBlockMenu;
-            })();
+            }());
             Dialogs.AddBlockMenu = AddBlockMenu;
             var ContextMenu = (function () {
                 function ContextMenu(Events, EventData) {
@@ -311,7 +313,7 @@ var WebBlocks;
                     this.EventData = EventData;
                 }
                 return ContextMenu;
-            })();
+            }());
             Dialogs.ContextMenu = ContextMenu;
             var ContextMenuEvent = (function () {
                 function ContextMenuEvent(Name, IconClass) {
@@ -319,7 +321,7 @@ var WebBlocks;
                     this.IconClass = IconClass;
                 }
                 return ContextMenuEvent;
-            })();
+            }());
             Dialogs.ContextMenuEvent = ContextMenuEvent;
             var ContextMenuResponse = (function () {
                 function ContextMenuResponse(Event, EventData) {
@@ -327,13 +329,13 @@ var WebBlocks;
                     this.EventData = EventData;
                 }
                 return ContextMenuResponse;
-            })();
+            }());
             Dialogs.ContextMenuResponse = ContextMenuResponse;
             var NavigationViewModel = (function () {
                 function NavigationViewModel() {
                 }
                 return NavigationViewModel;
-            })();
+            }());
             Dialogs.NavigationViewModel = NavigationViewModel;
             var RecycleBinContext = (function () {
                 function RecycleBinContext(RecycleBinBlocks, Containers) {
@@ -341,7 +343,7 @@ var WebBlocks;
                     this.Containers = Containers;
                 }
                 return RecycleBinContext;
-            })();
+            }());
             Dialogs.RecycleBinContext = RecycleBinContext;
             //used in the recycle bin
             var DeletedTemplateBlockModel = (function () {
@@ -351,21 +353,21 @@ var WebBlocks;
                     this.BlockIconClass = "";
                 }
                 return DeletedTemplateBlockModel;
-            })();
+            }());
             Dialogs.DeletedTemplateBlockModel = DeletedTemplateBlockModel;
             var RecycleBinItemViewModel = (function () {
                 function RecycleBinItemViewModel() {
                     this.DraggableBlock = null;
                 }
                 return RecycleBinItemViewModel;
-            })();
+            }());
             Dialogs.RecycleBinItemViewModel = RecycleBinItemViewModel;
             var BlockStorageItemViewModel = (function () {
                 function BlockStorageItemViewModel() {
                     this.DraggableBlock = null;
                 }
                 return BlockStorageItemViewModel;
-            })();
+            }());
             Dialogs.BlockStorageItemViewModel = BlockStorageItemViewModel;
         })(Dialogs = UI.Dialogs || (UI.Dialogs = {}));
     })(UI = WebBlocks.UI || (WebBlocks.UI = {}));
@@ -385,7 +387,7 @@ var WebBlocks;
                 }
             };
             return PropertyHelper;
-        })();
+        }());
         Utils.PropertyHelper = PropertyHelper;
         var MathHelper = (function () {
             function MathHelper() {
@@ -398,19 +400,22 @@ var WebBlocks;
                 return i;
             };
             return MathHelper;
-        })();
+        }());
         Utils.MathHelper = MathHelper;
         var GuidHelper = (function () {
             function GuidHelper() {
             }
             GuidHelper.GenerateGuid = function () {
                 function s4() {
-                    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+                    return Math.floor((1 + Math.random()) * 0x10000)
+                        .toString(16)
+                        .substring(1);
                 }
-                return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4();
+                return s4() + s4() + s4() + s4() +
+                    s4() + s4() + s4() + s4();
             };
             return GuidHelper;
-        })();
+        }());
         Utils.GuidHelper = GuidHelper;
     })(Utils = WebBlocks.Utils || (WebBlocks.Utils = {}));
     var API;
@@ -441,7 +446,7 @@ var WebBlocks;
                 });
             };
             return LayoutBuilderPreview;
-        })();
+        }());
         API.LayoutBuilderPreview = LayoutBuilderPreview;
         var Models;
         (function (Models) {
@@ -452,7 +457,7 @@ var WebBlocks;
                     this.Containers = Containers;
                 }
                 return LayoutBuilderPreviewModel;
-            })();
+            }());
             Models.LayoutBuilderPreviewModel = LayoutBuilderPreviewModel;
             var NavigationItem = (function () {
                 function NavigationItem(Id, Name, ContentType, IconClass, HasChildren) {
@@ -463,7 +468,7 @@ var WebBlocks;
                     this.HasChildren = HasChildren;
                 }
                 return NavigationItem;
-            })();
+            }());
             Models.NavigationItem = NavigationItem;
         })(Models = API.Models || (API.Models = {}));
         var WebBlocksAPIClent = (function () {
@@ -482,7 +487,9 @@ var WebBlocks;
             WebBlocksAPIClent.GetNavigationChildren = function (id, $http, callback) {
                 HttpRequest.Get("/umbraco/backoffice/WebBlocks/WebBlocksApi/GetChildren?id=" + id, $http, function (navigationItems) {
                     for (var i = 0; i < navigationItems.length; i++) {
-                        navigationItems[i].IconClass = navigationItems[i].IconClass != ".sprTreeFolder" ? navigationItems[i].IconClass : "icon-folder";
+                        navigationItems[i].IconClass = navigationItems[i].IconClass != ".sprTreeFolder" ?
+                            navigationItems[i].IconClass :
+                            "icon-folder";
                     }
                     callback(navigationItems);
                 });
@@ -491,19 +498,20 @@ var WebBlocks;
                 return block.ViewModel.Html != "";
             };
             return WebBlocksAPIClent;
-        })();
+        }());
         API.WebBlocksAPIClent = WebBlocksAPIClent;
         //$http service wrapper
         var HttpRequest = (function () {
             function HttpRequest() {
             }
             HttpRequest.Get = function (url, $http, callback) {
-                $http.get(url).success(function (data, status, headers, config) {
+                $http.get(url)
+                    .success(function (data, status, headers, config) {
                     callback(data);
                 });
             };
             return HttpRequest;
-        })();
+        }());
         API.HttpRequest = HttpRequest;
     })(API = WebBlocks.API || (WebBlocks.API = {}));
 })(WebBlocks || (WebBlocks = {}));

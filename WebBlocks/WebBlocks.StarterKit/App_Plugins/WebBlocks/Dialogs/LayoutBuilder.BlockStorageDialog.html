@@ -1,0 +1,38 @@
+﻿<div ng-controller="WebBlocks.BlockStorageDialogCtrl" class="wbNoSelect">
+    <div class="umb-modalcolumn-header">
+        <h1 class="ng-binding">Block Storage</h1>
+    </div>
+    <div class="umb-panel-body with-header with-footer">
+        <h5 class="wbDialogTitle">Manage block storage:</h5>
+
+        <div class="wb-navigation-items" style="top:0px;position:relative;">
+
+            <div ng-drag="true" ng-drag-data="blockStorageBlock.DraggableBlock" ng-repeat="blockStorageBlock in blockStorageArray" ng-show="blockStorageArray.length > 0" class="wb-navigation-item wb-draggable-item">
+                
+
+
+                <a href="" class="wb-navigation-item-block" prevent-default="" title="{{getWysiwygContent(blockStorageBlock.DraggableBlock)}}">
+                    <div class="wb-draggable-item-icon">
+                        <i class="icon {{blockStorageBlock.DraggableBlock.BlockIconClass}}"></i>
+                    </div>
+                    <div class="wb-draggable-item-name">
+                        <span>{{blockStorageBlock.DraggableBlock.Block.Name}}</span>
+                    </div>
+                </a>
+                <span style="position: absolute;right: 0;bottom: 11px;color: #cdcdcd;font-size: 14px;"><i class="icon"></i><span>From {{blockStorageBlock.BlockStorageBlock.BlockHistory.LastContainer | wbContainerName}}</span></span>
+            </div>
+
+            <div ng-hide="blockStorageArray.length > 0" class="wb-navigation-item" style="border-bottom:0px;">
+                <span style="padding-top: 6px;display: block;color: #cdcdcd;">Empty</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="umb-panel-footer">
+        <div class="umb-el-wrap umb-panel-buttons">
+            <div class="btn-toolbar umb-btn-toolbar pull-right">
+                <input type="button" class="btn btn-success" ng-click="submit()" value="Close" />
+            </div>
+        </div>
+    </div>
+</div>

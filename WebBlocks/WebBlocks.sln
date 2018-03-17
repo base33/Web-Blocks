@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBlocks.Model", "WebBlocks.Model\WebBlocks.Model.csproj", "{7198E4C7-F43C-43CC-B2D5-E7E903C1277B}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBlocks", "WebBlocks\WebBlocks.csproj", "{71BE79B7-8148-446B-B44B-8F12D1EAF734}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBlocks.SandboxV7", "WebBlocks.SandboxV7\WebBlocks.SandboxV7.csproj", "{E34AB1D6-0737-49EF-8804-D93E0D99C84B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBlocks.StarterKit", "WebBlocks.StarterKit\WebBlocks.StarterKit.csproj", "{34348FE6-E828-4179-90CC-EC263496C35F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{E34AB1D6-0737-49EF-8804-D93E0D99C84B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E34AB1D6-0737-49EF-8804-D93E0D99C84B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E34AB1D6-0737-49EF-8804-D93E0D99C84B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34348FE6-E828-4179-90CC-EC263496C35F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34348FE6-E828-4179-90CC-EC263496C35F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34348FE6-E828-4179-90CC-EC263496C35F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34348FE6-E828-4179-90CC-EC263496C35F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

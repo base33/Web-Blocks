@@ -1,0 +1,156 @@
+﻿<div ng-controller="WebBlocks.LayoutBuilder">
+
+    <div wb-sticky class="wb-action-bar wbNoSelect" style="top:15px;">
+        <a class="btn" href="#" ng-click="toggleUmbracoNavigation()" title="{{uiState.ContentNavigationVisible ? 'Hide Navigation' : 'Show Navigation'}}" prevent-default="">
+            <i ng-class="uiState.ContentNavigationVisible ? 'icon-navigation-left' : 'icon-navigation-right'"></i>
+            <!--<i class="icon-list"></i>-->
+            {{uiState.ContentNavigationVisible ? 'Hide Menu' : 'Show Menu'}}
+        </a>
+        <a ui-draggable class="btn" href="#" ng-click="showAddBlockDialog()" title="Add Block" prevent-default>
+            <i class="icon-add"></i>
+            Block Repository
+        </a>
+        <a ui-draggable class="btn" href="#" ng-click="showBlockStorageDialog()" title="Storage" prevent-default>
+            <i class="icon-safe"></i>
+            Block Storage
+        </a>
+        <a ui-draggable class="btn" href="#" ng-click="showRecycleBinDialog()" title="Recycle Bin" prevent-default>
+            <i class="icon-trash"></i>
+            Recycle Bin
+        </a>
+        <a ui-draggable class="btn" href="#" ng-click="rerenderLayoutBuilder()" title="Activate a new template after changing the template" prevent-default>
+            <i class="icon icon-brush-alt-2"></i>
+            Rerender Builder
+        </a>
+        
+        <!-- session buttons -->
+        
+
+    </div>
+
+
+   <!-- add folder to store blocks for later
+    recycle bin
+
+    render angular html normal way via front-end and then, or, 
+    if we can't because the page is unpublished, we will need to generate the cache, and then redirect with a angular flag
+       
+       load wysiwygs already editable!
+       
+       -->
+    
+
+    
+    
+
+    <div id="webBlocksWrapper" wb-prevent-default-on-click style="margin-left:-180px;margin-top:30px;">
+
+        <div ng-show="uiState.IframeEditor.Visible" wb-iframe-on-load="updateIframeDocumentStyles($element)" class="wb-browser-window wbNoSelect" style="position:absolute; margin-bottom:60px;left:20px;">
+            <span class="wbIframeClose" ng-show="uiState.IframeEditor.Visible" style="position: absolute;right: 28px;top: 25px;padding: 5px;background: #ddd;border-radius: 5px;border: 1px solid #cdcdcd;">
+                <a ui-draggable class="btn btn-success" href="#" ng-show="uiState.IframeEditor.Visible" ng-click="uiState.IframeEditor.Visible = false;uiState.LayoutBuilder.Visible = true;uiState.IframeEditor.Url = '/umbraco/#/';updateAllBlockElementsInAllContainers(uiState.IframeEditor.BlockId);" title="Recycle Bin" prevent-default>
+                    <i class="icon-pencil"></i>
+                    Finish Editing
+                </a>
+            </span>
+            <iframe src="{{uiState.IframeEditor.Url}}" height="{{model.config.iframeHeight}}" width="{{model.config.iframeWidth}}"></iframe>
+        </div>
+
+        <!-- Canvas -->
+        <div id="outerCanvas" style="width:{{uiState.LayoutBuilder.CanvasWidth}};" ng-show="uiState.LayoutBuilder.Visible">
+            <div id="canvas">
+                <div id="canvasRender">
+                    <div ng-show="loadInCreateMode" style="display:none;">
+                        <!-- builder angular-compiled html will be loaded here -->
+                        <img class="wbLoadingImage" src="/app_plugins/webblocks/images/logo.png" style="margin:auto;display:block;" />
+                        <div class="wbLoadingCaption" style="display:block;text-align:center;padding-top:20px;">
+                            <h3 style="margin:auto;">Please fill in any mandatory content and then click 'Save' button</h3>
+                        </div>
+                        <input type="submit" class="btn btn-success wbLoadingSaveButton" value="Save" style="margin:auto;display:block;margin-top:20px;" />
+                    </div>
+                    <div ng-show="loadInCreateMode == false" style="display:none;">
+                        <!-- builder angular-compiled html will be loaded here -->
+                        <img class="wbLoadingImage" src="/app_plugins/webblocks/images/ajax-loader.gif" style="margin:auto;display:block;" />
+                        <div class="wbLoadingCaption" style="display:block;text-align:center;padding-top:20px;">
+                            <h3 style="margin:auto;">Loading...</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+<!--ng-bind-html="block.html"-->
+
+
+
+<!--<div ui-sortable style="margin-left:-240px;width:100%;height:400px;background:blue;">
+        <div ng-repeat="block in blocks" ng-bind-html="block.html" style="width:200px;"></div>
+    </div>-->
+
+<!--
+     <div class="container_12 clearfix">
+
+                        <div class="contentBlock_9">
+
+                            <div ui-sortable="getSortableOptions(model.Containers.contentContainer.Blocks)" ng-model="model.Containers.contentContainer.Blocks" wb-container-model="model.Containers.contentContainer" ng-drop="true" ng-drop-success="handleBlockDropped($data, $event, $container)" class="contentBlock_9 wbcontainer wbNoSelect">
+
+                                <div wb-block
+                                     wb-on-double-click="editBlock"
+                                     wb-on-double-tap="editBlock"
+                                     wb-on-right-click="showEditBlockDialog"
+                                     wb-on-touch-hold="showEditBlockDialog"
+                                     wb-container-model="model.Containers.contentContainer"
+                                     ng-model="block"
+                                     ng-repeat="block in model.Containers.contentContainer.Blocks">
+                                </div>
+
+                            </div>
+
+                            <div class="contentBlock_9">
+                                <div class="grid_9">
+                                    <h1>This is some static content in the template</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum tempor ligula nec porttitor. Proin blandit fringilla sapien, a pulvinar purus aliquam eget. Ut non tortor sit amet orci tincidunt feugiat eu eu odio. Mauris et risus scelerisque, congue purus sed, rutrum erat. Aliquam erat volutpat. Maecenas pretium ex ipsum, vel venenatis arcu tristique sit amet. Cras id sodales velit, non tempus est. Nam sit amet massa eu velit suscipit dignissim id nec ligula.</p>
+                                </div>
+                            </div>
+
+                            <div ui-sortable="getSortableOptions(model.Containers.bottomContainer.blocks)" ng-model="model.Containers.bottomContainer.Blocks" wb-container-model="model.Containers.bottomContainer" ng-drop="true" ng-drop-success="handleBlockDropped($data, $event, $container)" class="contentBlock_9 wbcontainer">
+
+                                <div wb-block
+                                     wb-on-double-click="editBlock"
+                                     wb-on-double-tap="editBlock"
+                                     wb-on-right-click="showEditBlockDialog"
+                                     wb-on-touch-hold="showEditBlockDialog"
+                                     wb-container-model="model.Containers.bottomContainer"
+                                     ng-model="block"
+                                     ng-repeat="block in model.Containers.bottomContainer.Blocks">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div ui-sortable="getSortableOptions(model.Containers.sideContainer.Blocks)" ng-model="model.Containers.sideContainer.Blocks" wb-container-model="model.Containers.sideContainer" ng-drop="true" ng-drop-success="handleBlockDropped($data, $event, $container)" class="contentBlock_3 wbcontainer">
+
+                            <div wb-block
+                                 wb-on-double-click="editBlock"
+                                 wb-on-double-tap="editBlock"
+                                 wb-on-right-click="showEditBlockDialog"
+                                 wb-on-touch-hold="showEditBlockDialog"
+                                 wb-container-model="model.Containers.sideContainer"
+                                 ng-model="block"
+                                 ng-repeat="block in model.Containers.sideContainer.Blocks">
+                            </div>
+
+                        </div>
+
+
+                    </div>
+-->

@@ -1,0 +1,216 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : 16 March 2018 23:44:47
+   Source = D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\
+     Dest = D:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.StarterKit\Umbraco_Client\
+
+    Files : *.*
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /IS /IT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                   0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\
+	  New Dir          7	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Application\
+	    New File  		   14404	Extensions.js  0%  100%  
+	    New File  		    2417	HistoryManager.js  0%  100%  
+	    New File  		     839	NamespaceManager.js  0%  100%  
+	    New File  		   18827	UmbracoApplicationActions.js  0%  100%  
+	    New File  		   12855	UmbracoClientManager.js  0%  100%  
+	    New File  		     374	UmbracoUtils.js  0%  100%  
+	    New File  		    2060	UrlEncoder.js  0%  100%  
+	  New Dir         12	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Application\JQuery\
+	    New File  		    2057	jquery-fieldselection.js  0%  100%  
+	    New File  		   30336	jquery.autocomplete.js  0%  100%  
+	    New File  		    5941	jquery.ba-bbq.min.js  0%  100%  
+	    New File  		    4344	jquery.cookie.js  0%  100%  
+	    New File  		    3178	jquery.hotkeys.js  0%  100%  
+	    New File  		    6992	jquery.idle-timer.js  0%  100%  
+	    New File  		    1304	jquery.metadata.min.js  0%  100%  
+	    New File  		     165	jquery.noconflict-invoke.js  0%  100%  
+	    New File  		    2749	jquery.unobtrusive-ajax.min.js  0%  100%  
+	    New File  		   21496	jquery.validate.min.js  0%  100%  
+	    New File  		    3745	jquery.validate.unobtrusive.min.js  0%  100%  
+	    New File  		     255	VerticalAlign.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\CodeArea\
+	    New File  		    6126	javascript.js  0%  100%  
+	    New File  		     305	styles.css  0%  100%  
+	    New File  		    6997	UmbracoEditor.js  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\ContextMenu\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\ContextMenu\Css\
+	    New File  		    4026	jquery.contextMenu.css  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\ContextMenu\Js\
+	    New File  		   62773	jquery.contextMenu.js  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Datepicker\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Datepicker\Aqua\
+	    New File  		    4884	theme.css  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\DateTimePicker\
+	    New File  		   20315	datetimepicker.css  0%  100%  
+	    New File  		   13311	timepicker.js  0%  100%  
+	    New File  		    1939	umbDateTimePicker.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\DateTimePicker\Images\
+	    New File  		    1110	calSprite.png  0%  100%  
+	    New File  		    8673	ui-icons_666666_256x240.png  0%  100%  
+	    New File  		    8641	ui-icons_999999_256x240.png  0%  100%  
+	  New Dir         10	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Dialogs\
+	    New File  		     362	AssignDomain2.css  0%  100%  
+	    New File  		    5351	AssignDomain2.js  0%  100%  
+	    New File  		     212	CreateDialog.css  0%  100%  
+	    New File  		     316	EditMacro.css  0%  100%  
+	    New File  		    7379	EditMacro.js  0%  100%  
+	    New File  		     362	PublishDialog.css  0%  100%  
+	    New File  		    3481	PublishDialog.js  0%  100%  
+	    New File  		    1171	SortDialog.css  0%  100%  
+	    New File  		    4713	SortDialog.js  0%  100%  
+	    New File  		    6012	UmbracoField.js  0%  100%  
+	  New Dir          7	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Editors\
+	    New File  		     486	DirectoryBrowser.css  0%  100%  
+	    New File  		     703	EditMacro.css  0%  100%  
+	    New File  		    3796	EditStyleSheet.js  0%  100%  
+	    New File  		    6259	EditTemplate.js  0%  100%  
+	    New File  		   11260	EditView.js  0%  100%  
+	    New File  		     161	EditXslt.css  0%  100%  
+	    New File  		    2967	EditXslt.js  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\FileUploader\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\FileUploader\Js\
+	    New File  		   16856	jquery.fileUploader.js  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\FolderBrowser\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\FolderBrowser\Css\
+	    New File  		    5366	folderbrowser.css  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\FolderBrowser\Js\
+	    New File  		   18665	folderbrowser.js  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Images\
+	    New File  		   10819	progressbar.gif  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\MacroContainer\
+	    New File  		     666	macroContainer.css  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\MaskedInput\
+	    New File  		    4028	jquery.maskedinput-1.3.min.js  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Menuicon\
+	    New File  		     571	style.css  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Menuicon\Images\
+	    New File  		     273	buttonbg.gif  0%  100%  
+	    New File  		     273	buttonbgdown.gif  0%  100%  
+	    New File  		     851	split.gif  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Modal\
+	    New File  		   24893	jquery.simplemodal.1.4.1.custom.js  0%  100%  
+	    New File  		   20746	modal.js  0%  100%  
+	    New File  		     475	modalBackground.gif  0%  100%  
+	    New File  		     151	modalGradiant.gif  0%  100%  
+	    New File  		    1417	style.css  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Panel\
+	    New File  		     240	javascript.js  0%  100%  
+	    New File  		    2608	style.css  0%  100%  
+	  New Dir          6	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Panel\Images\
+	    New File  		      98	panel_bg.gif  0%  100%  
+	    New File  		      43	panel_boxfooter_bg.gif  0%  100%  
+	    New File  		     162	panel_boxfooter_statusBar_bg.gif  0%  100%  
+	    New File  		     164	panel_boxfooter_statusBar_h2_bg.gif  0%  100%  
+	    New File  		     194	panel_boxhead_bg.gif  0%  100%  
+	    New File  		     193	panel_boxhead_h2_bg.gif  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Preview\
+	    New File  		    3508	previewModeBadge.png  0%  100%  
+	    New File  		     169	umbracoPreview.css  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\ProgressBar\
+	    New File  		     795	javascript.js  0%  100%  
+	    New File  		     524	style.css  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\ProgressBar\Images\
+	    New File  		     314	container_left.gif  0%  100%  
+	    New File  		     102	container_right.gif  0%  100%  
+	    New File  		     113	indicator.gif  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Propertypane\
+	    New File  		    2000	style.css  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Propertypane\Images\
+	    New File  		    9038	propertyBackground.gif  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\PunyCode\
+	    New File  		    2803	punycode.min.js  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Scrollingmenu\
+	    New File  		    2851	javascript.js  0%  100%  
+	    New File  		     255	style.css  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Splitbutton\
+	    New File  		    2245	InsertMacroSplitButton.js  0%  100%  
+	    New File  		   18462	jquery.splitbutton.js  0%  100%  
+	    New File  		    2773	splitbutton.css  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Splitbutton\Images\
+	    New File  		     130	splitbutton_downarrow.png  0%  100%  
+	    New File  		     149	splitbutton_hover.png  0%  100%  
+	  New Dir          4	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Tablesorting\
+	    New File  		   16523	jquery.tablesorter.min.js  0%  100%  
+	    New File  		   18249	tableDragAndDrop.js  0%  100%  
+	    New File  		   23499	tableFilter.js  0%  100%  
+	    New File  		   12838	tableFilterUtill.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Tablesorting\img\
+	    New File  		     830	asc.gif  0%  100%  
+	    New File  		      73	bg.gif  0%  100%  
+	    New File  		     833	desc.gif  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Tabview\
+	    New File  		    3721	javascript.js  0%  100%  
+	    New File  		    1589	oldstyle.css  0%  100%  
+	    New File  		    2633	style.css  0%  100%  
+	  New Dir          7	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Tabview\Images\
+	    New File  		     169	background.gif  0%  100%  
+	    New File  		      73	bg.gif  0%  100%  
+	    New File  		      43	footer_bg.gif  0%  100%  
+	    New File  		     162	footer_statusBar_bg.gif  0%  100%  
+	    New File  		     164	footer_statusBar_h2_bg.gif  0%  100%  
+	    New File  		    1343	left_both.gif  0%  100%  
+	    New File  		    3913	right_both.gif  0%  100%  
+	  New Dir         10	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Tree\
+	    New File  		    2638	jquery.tree.checkbox.js  0%  100%  
+	    New File  		    9637	jquery.tree.contextmenu.js  0%  100%  
+	    New File  		  114705	jquery.tree.js  0%  100%  
+	    New File  		     548	jquery.tree.metadata.js  0%  100%  
+	    New File  		    1642	menuIcons.css  0%  100%  
+	    New File  		    1866	NodeDefinition.js  0%  100%  
+	    New File  		   12897	sprites.png  0%  100%  
+	    New File  		    2597	treeIcons.css  0%  100%  
+	    New File  		    3662	UmbracoContext.js  0%  100%  
+	    New File  		   55287	UmbracoTree.js  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Tree\Themes\
+	  New Dir          4	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Tree\Themes\Default\
+	    New File  		      43	dot_for_ie.gif  0%  100%  
+	    New File  		    6680	icons.png  0%  100%  
+	    New File  		    2435	style.css  0%  100%  
+	    New File  		    1844	throbber.gif  0%  100%  
+	  New Dir         10	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Tree\Themes\Umbraco\
+	    New File  		    1600	arrows.png  0%  100%  
+	    New File  		    2910	check_0.png  0%  100%  
+	    New File  		    3197	check_1.png  0%  100%  
+	    New File  		    3283	check_2.png  0%  100%  
+	    New File  		      54	contextMenuBg.gif  0%  100%  
+	    New File  		    6680	icons.png  0%  100%  
+	    New File  		     381	newVersion_overlay.png  0%  100%  
+	    New File  		     282	protect_overlay.gif  0%  100%  
+	    New File  		    5258	style.css  0%  100%  
+	    New File  		    1844	throbber.gif  0%  100%  
+	  New Dir         14	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco_Client\Ui\
+	    New File  		   52012	base2.js  0%  100%  
+	    New File  		    4482	dd.css  0%  100%  
+	    New File  		     138	dd_arrow.gif  0%  100%  
+	    New File  		   13659	default.css  0%  100%  
+	    New File  		    2324	default.js  0%  100%  
+	    New File  		    1423	jquery.alphanumeric.js  0%  100%  
+	    New File  		   51648	jquery.dd.js  0%  100%  
+	    New File  		   85582	jquery.js  0%  100%  
+	    New File  		    3581	jquery.tooltip.min.js  0%  100%  
+	    New File  		  240439	jqueryui.js  0%   54%  100%  
+	    New File  		    1943	jQueryWresize.js  0%  100%  
+	    New File  		    3954	json2.js  0%  100%  
+	    New File  		   41412	knockout.js  0%  100%  
+	    New File  		    8687	knockout.mapping.js  0%  100%  
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :        44        43         1         0         0         0
+   Files :       143       143         0         0         0         0
+   Bytes :    1.26 m    1.26 m         0         0         0         0
+   Times :   0:00:07   0:00:04                       0:00:00   0:00:03
+
+
+   Speed :              303187 Bytes/sec.
+   Speed :              17.348 MegaBytes/min.
+   Ended : 16 March 2018 23:44:54
+

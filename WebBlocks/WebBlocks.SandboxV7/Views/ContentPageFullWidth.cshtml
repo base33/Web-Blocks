@@ -8,6 +8,7 @@
 
 @section Content {
     <div class="content-page-full-width">
+        @Html.WebBlocksEditor("h1", "Heading", "LiveText", "webblocks")
         @Html.Container("webblocks", new Container
         {
             Attributes = new Dictionary<string, string> { { "id", "main-container" } },

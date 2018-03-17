@@ -4,6 +4,7 @@
 
         export class LayoutBuilder {
             public Containers: any = {};                            //array of containers that are on the page
+            public Editors: any = {};                               //array of editors on the page
             public RecycleBin: Array<RecycleBinBlock> = new Array<RecycleBinBlock>();   //array of blocks added to the recycle bin
             public BlockStorage: Array<BlockStorageBlock> = new Array<BlockStorageBlock>(); //array of blocks added to the block storage
         }

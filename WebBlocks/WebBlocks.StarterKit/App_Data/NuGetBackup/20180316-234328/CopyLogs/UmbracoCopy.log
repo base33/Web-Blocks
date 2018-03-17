@@ -1,0 +1,1658 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : 16 March 2018 23:43:31
+   Source = D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\
+     Dest = D:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.StarterKit\Umbraco\
+
+    Files : *.*
+	    
+Exc Files : UI.xml
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /IS /IT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                  10	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\
+	    New File  		    2359	ClientRedirect.aspx  0%  100%  
+	    New File  		    1442	create.aspx  0%  100%  
+	    New File  		     792	endPreview.aspx  0%  100%  
+	    New File  		    1624	Logout.aspx  0%  100%  
+	    New File  		     492	macroResultWrapper.aspx  0%  100%  
+	    New File  		      61	ping.aspx  0%  100%  
+	    New File  		     891	publishStatus.aspx  0%  100%  
+	    New File  		     179	tree.aspx  0%  100%  
+	    New File  		    1887	treeInit.aspx  0%  100%  
+	    New File  		     126	umbraco.aspx  0%  100%  
+	  New Dir          4	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Actions\
+	    New File  		    1155	delete.aspx  0%  100%  
+	    New File  		     480	editContent.aspx  0%  100%  
+	    New File  		     471	preview.aspx  0%  100%  
+	    New File  		    1203	publish.aspx  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\assets\
+	  New Dir          4	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\assets\css\
+	    New File  		   38215	canvasdesigner.css  0%  100%  
+	    New File  		   35172	installer.css  0%  100%  
+	    New File  		    6585	nonodes.style.min.css  0%  100%  
+	    New File  		  300022	umbraco.css  0%   43%   87%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\assets\fonts\
+	  New Dir          4	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\assets\fonts\helveticons\
+	    New File  		  117324	helveticons.eot  0%  100%  
+	    New File  		  793966	helveticons.svg  0%   33%   66%   99%  100%  
+	    New File  		  117160	helveticons.ttf  0%  100%  
+	    New File  		  294540	helveticons.woff  0%   44%   89%  100%  
+	  New Dir         32	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\assets\fonts\lato\
+	    New File  		   66110	LatoLatin-Black.eot  0%  100%  
+	    New File  		  144228	LatoLatin-Black.ttf  0%   90%  100%  
+	    New File  		   70460	LatoLatin-Black.woff  0%  100%  
+	    New File  		   43456	LatoLatin-Black.woff2  0%  100%  
+	    New File  		   67322	LatoLatin-BlackItalic.eot  0%  100%  
+	    New File  		  150720	LatoLatin-BlackItalic.ttf  0%   86%  100%  
+	    New File  		   72372	LatoLatin-BlackItalic.woff  0%  100%  
+	    New File  		   44316	LatoLatin-BlackItalic.woff2  0%  100%  
+	    New File  		   68209	LatoLatin-Bold.eot  0%  100%  
+	    New File  		  146156	LatoLatin-Bold.ttf  0%   89%  100%  
+	    New File  		   72376	LatoLatin-Bold.woff  0%  100%  
+	    New File  		   44380	LatoLatin-Bold.woff2  0%  100%  
+	    New File  		   69528	LatoLatin-BoldItalic.eot  0%  100%  
+	    New File  		  149756	LatoLatin-BoldItalic.ttf  0%   87%  100%  
+	    New File  		   73700	LatoLatin-BoldItalic.woff  0%  100%  
+	    New File  		   45036	LatoLatin-BoldItalic.woff2  0%  100%  
+	    New File  		   69771	LatoLatin-Italic.eot  0%  100%  
+	    New File  		  153688	LatoLatin-Italic.ttf  0%   85%  100%  
+	    New File  		   74708	LatoLatin-Italic.woff  0%  100%  
+	    New File  		   45388	LatoLatin-Italic.woff2  0%  100%  
+	    New File  		   67508	LatoLatin-Light.eot  0%  100%  
+	    New File  		  151856	LatoLatin-Light.ttf  0%   86%  100%  
+	    New File  		   72604	LatoLatin-Light.woff  0%  100%  
+	    New File  		   43468	LatoLatin-Light.woff2  0%  100%  
+	    New File  		   68553	LatoLatin-LightItalic.eot  0%  100%  
+	    New File  		  153096	LatoLatin-LightItalic.ttf  0%   85%  100%  
+	    New File  		   73444	LatoLatin-LightItalic.woff  0%  100%  
+	    New File  		   44156	LatoLatin-LightItalic.woff2  0%  100%  
+	    New File  		   68135	LatoLatin-Regular.eot  0%  100%  
+	    New File  		  148540	LatoLatin-Regular.ttf  0%   88%  100%  
+	    New File  		   72456	LatoLatin-Regular.woff  0%  100%  
+	    New File  		   43760	LatoLatin-Regular.woff2  0%  100%  
+	  New Dir          9	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\assets\fonts\opensans\
+	    New File  		   19836	OpenSans-Regular-webfont.eot  0%  100%  
+	    New File  		  121229	OpenSans-Regular-webfont.svg  0%  100%  
+	    New File  		   38232	OpenSans-Regular-webfont.ttf  0%  100%  
+	    New File  		   22660	OpenSans-Regular-webfont.woff  0%  100%  
+	    New File  		  217360	OpenSans-Regular.ttf  0%   60%  100%  
+	    New File  		   20028	OpenSans-Semibold-webfont.eot  0%  100%  
+	    New File  		  120293	OpenSans-Semibold-webfont.svg  0%  100%  
+	    New File  		   39476	OpenSans-Semibold-webfont.ttf  0%  100%  
+	    New File  		   22908	OpenSans-Semibold-webfont.woff  0%  100%  
+	  New Dir          7	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\assets\img\
+	    New File  		     957	checkered-background-20.png  0%  100%  
+	    New File  		     165	checkered-background.png  0%  100%  
+	    New File  		  184831	installer.jpg  0%   70%  100%  
+	    New File  		   23155	loader.gif  0%  100%  
+	    New File  		    1746	logo.png  0%  100%  
+	    New File  		  237538	nonodesbg.jpg  0%   55%  100%  
+	    New File  		   14993	transparent.png  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\assets\img\application\
+	    New File  		    1175	logo.png  0%  100%  
+	    New File  		    2433	logo@2x.png  0%  100%  
+	    New File  		    3796	logo@3x.png  0%  100%  
+	    New File  		    1280	logo_black.png  0%  100%  
+	    New File  		    1333	logo_white.png  0%  100%  
+	  New Dir         11	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\assets\img\applicationIcons\
+	    New File  		    1139	content.png  0%  100%  
+	    New File  		    1581	default.png  0%  100%  
+	    New File  		    1376	developer.png  0%  100%  
+	    New File  		    1702	help.svg  0%  100%  
+	    New File  		    7364	hlvticons-umbraco.svg  0%  100%  
+	    New File  		    1386	media.png  0%  100%  
+	    New File  		    1342	members.png  0%  100%  
+	    New File  		    1179	search.png  0%  100%  
+	    New File  		    1612	settings.png  0%  100%  
+	    New File  		    2828	tree-arrow.png  0%  100%  
+	    New File  		    1304	users.png  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\assets\img\forms\
+	    New File  		   37864	installer-background.png  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\assets\img\uploader\
+	    New File  		    1738	upload-illustration.png  0%  100%  
+	    New File  		    1400	upload-illustration.svg  0%  100%  
+	  New Dir         11	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\assets\less\
+	    New File  		     715	background.less  0%  100%  
+	    New File  		    1894	border.less  0%  100%  
+	    New File  		     370	color.less  0%  100%  
+	    New File  		     817	googlefontpicker.less  0%  100%  
+	    New File  		     831	gridRow.less  0%  100%  
+	    New File  		    1872	layout.less  0%  100%  
+	    New File  		    1135	margin.less  0%  100%  
+	    New File  		    1156	padding.less  0%  100%  
+	    New File  		    2247	radius.less  0%  100%  
+	    New File  		     639	shadow.less  0%  100%  
+	    New File  		     473	slider.less  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Config\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Config\Create\
+	  New Dir         20	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Config\Lang\
+	    New File  		   67463	cs.xml  0%  100%  
+	    New File  		  100250	da.xml  0%  100%  
+	    New File  		   71499	de.xml  0%  100%  
+	    New File  		  139333	en.xml  0%   94%  100%  
+	    New File  		  139258	en_us.xml  0%   94%  100%  
+	    New File  		  137570	es.xml  0%   95%  100%  
+	    New File  		  110040	fr.xml  0%  100%  
+	    New File  		   62784	he.xml  0%  100%  
+	    New File  		   63512	it.xml  0%  100%  
+	    New File  		   87698	ja.xml  0%  100%  
+	    New File  		   59597	ko.xml  0%  100%  
+	    New File  		   67051	nb.xml  0%  100%  
+	    New File  		   92971	nl.xml  0%  100%  
+	    New File  		  112438	pl.xml  0%  100%  
+	    New File  		   58192	pt.xml  0%  100%  
+	    New File  		  164621	ru.xml  0%   79%  100%  
+	    New File  		   68079	sv.xml  0%  100%  
+	    New File  		   67514	tr.xml  0%  100%  
+	    New File  		   90631	zh.xml  0%  100%  
+	    New File  		   82101	zh_tw.xml  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Controls\
+	    New File  		     309	ProgressBar.ascx  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Controls\Tree\
+	    New File  		      82	CustomTreeService.asmx  0%  100%  
+	    New File  		    2725	TreeControl.ascx  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Create\
+	    New File  		    1039	language.ascx  0%  100%  
+	    New File  		    1279	simple.ascx  0%  100%  
+	    New File  		    1696	xslt.ascx  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Dashboard\
+	    New File  		     178	FeedProxy.aspx  0%  100%  
+	    New File  		    1761	UserControlProxy.aspx  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Developer\
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Developer\Macros\
+	    New File  		    1674	assemblyBrowser.aspx  0%  100%  
+	    New File  		   11871	editMacro.aspx  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Developer\Packages\
+	    New File  		    1171	directoryBrowser.aspx  0%  100%  
+	    New File  		   12722	editPackage.aspx  0%  100%  
+	    New File  		   18426	installer.aspx  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Developer\RelationTypes\
+	    New File  		    6536	EditRelationType.aspx  0%  100%  
+	    New File  		    3013	NewRelationType.aspx  0%  100%  
+	    New File  		     162	RelationTypesWebService.asmx  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Developer\RelationTypes\Images\
+	    New File  		     421	Bidirectional.png  0%  100%  
+	    New File  		     434	ParentToChild.png  0%  100%  
+	    New File  		    1053	Refresh.gif  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Developer\RelationTypes\TreeMenu\
+	    New File  		     731	ActionDeleteRelationType.js  0%  100%  
+	    New File  		     172	ActionNewRelationType.js  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Developer\Xslt\
+	    New File  		    3251	editXslt.aspx  0%  100%  
+	    New File  		     108	getXsltStatus.asmx  0%  100%  
+	    New File  		    2160	xsltChooseExtension.aspx  0%  100%  
+	    New File  		    2588	xsltInsertValueOf.aspx  0%  100%  
+	    New File  		    2895	xsltVisualize.aspx  0%  100%  
+	  New Dir         20	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Dialogs\
+	    New File  		    4277	AssignDomain2.aspx  0%  100%  
+	    New File  		    6285	ChangeDocType.aspx  0%  100%  
+	    New File  		    3217	create.aspx  0%  100%  
+	    New File  		    3654	EditMacro.aspx  0%  100%  
+	    New File  		     262	empty.htm  0%  100%  
+	    New File  		     150	exportDocumenttype.aspx  0%  100%  
+	    New File  		    2031	importDocumenttype.aspx  0%  100%  
+	    New File  		     815	notifications.aspx  0%  100%  
+	    New File  		     748	Preview.aspx  0%  100%  
+	    New File  		   10333	protectPage.aspx  0%  100%  
+	    New File  		    4211	publish.aspx  0%  100%  
+	    New File  		    1779	republish.aspx  0%  100%  
+	    New File  		    4204	rollBack.aspx  0%  100%  
+	    New File  		    1856	search.aspx  0%  100%  
+	    New File  		     735	SendPublish.aspx  0%  100%  
+	    New File  		    1638	sendToTranslation.aspx  0%  100%  
+	    New File  		    4124	sort.aspx  0%  100%  
+	    New File  		    1076	treePicker.aspx  0%  100%  
+	    New File  		    6939	umbracoField.aspx  0%  100%  
+	    New File  		    3109	viewAuditTrail.aspx  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Install\
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Install\Views\
+	    New File  		    2992	Index.cshtml  0%  100%  
+	    New File  		    2870	Web.config  0%  100%  
+	  New Dir         26	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Js\
+	    New File  		     370	app.dev.js  0%  100%  
+	    New File  		    3044	app.js  0%  100%  
+	    New File  		     647	canvasdesigner.loader.js  0%  100%  
+	    New File  		    1249	dualSelectBox.js  0%  100%  
+	    New File  		    2929	guiFunctions.js  0%  100%  
+	    New File  		    5763	init.js  0%  100%  
+	    New File  		     597	install.loader.js  0%  100%  
+	    New File  		     150	installer.app.js  0%  100%  
+	    New File  		    1385	loader.dev.js  0%  100%  
+	    New File  		    9724	routes.js  0%  100%  
+	    New File  		  133269	umbraco.canvasdesigner.js  0%   98%  100%  
+	    New File  		  876993	umbraco.controllers.js  0%   29%   59%   89%  100%  
+	    New File  		  563140	umbraco.directives.js  0%   46%   93%  100%  
+	    New File  		    4299	umbraco.filters.js  0%  100%  
+	    New File  		   19108	umbraco.installer.js  0%  100%  
+	    New File  		  189179	umbraco.resources.js  0%   69%  100%  
+	    New File  		   11266	umbraco.security.js  0%  100%  
+	    New File  		  482665	umbraco.services.js  0%   27%   54%   81%  100%  
+	    New File  		    2926	umbracoCheckKeys.js  0%  100%  
+	    New File  		    3833	UmbracoSpeechBubble.js  0%  100%  
+	    New File  		    2738	UmbracoSpeechBubbleBackEnd.js  0%  100%  
+	    New File  		     201	UmbracoSpeechBubbleInit.js  0%  100%  
+	    New File  		     586	umbracoUpgradeChecker.js  0%  100%  
+	    New File  		     257	web.config  0%  100%  
+	    New File  		    4102	xmlextras.js  0%  100%  
+	    New File  		    1951	xmlRequest.js  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\ace-builds\
+	  New Dir          8	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\ace-builds\src-min-noconflict\
+	    New File  		  355635	ace.js  0%   36%   73%  100%  
+	    New File  		   34901	ext-language_tools.js  0%  100%  
+	    New File  		   11702	ext-searchbox.js  0%  100%  
+	    New File  		   14054	ext-settings_menu.js  0%  100%  
+	    New File  		   18201	mode-javascript.js  0%  100%  
+	    New File  		   67273	mode-razor.js  0%  100%  
+	    New File  		    2712	theme-chrome.js  0%  100%  
+	    New File  		  164523	worker-javascript.js  0%   79%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\ace-builds\src-min-noconflict\snippets\
+	    New File  		    3840	javascript.js  0%  100%  
+	    New File  		     131	text.js  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\ace-razor-mode\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\ace-razor-mode\theme\
+	    New File  		    3037	razor_chrome.css  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\angular\
+	    New File  		   12518	angular-ui-sortable.js  0%  100%  
+	  New Dir         14	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\angular\1.1.5\
+	    New File  		    5399	angular-cookies.js  0%  100%  
+	    New File  		     806	angular-cookies.min.js  0%  100%  
+	    New File  		   10645	angular-loader.js  0%  100%  
+	    New File  		     933	angular-loader.min.js  0%  100%  
+	    New File  		   17504	angular-mobile.js  0%  100%  
+	    New File  		    2875	angular-mobile.min.js  0%  100%  
+	    New File  		   61335	angular-mocks.js  0%  100%  
+	    New File  		   22149	angular-resource.js  0%  100%  
+	    New File  		    2787	angular-resource.min.js  0%  100%  
+	    New File  		   18873	angular-sanitize.js  0%  100%  
+	    New File  		    3942	angular-sanitize.min.js  0%  100%  
+	    New File  		  934395	angular-scenario.js  0%   28%   56%   84%  100%  
+	    New File  		  590854	angular.js  0%   44%   88%  100%  
+	    New File  		   89030	angular.min.js  0%  100%  
+	  New Dir        287	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\angular\1.1.5\i18n\
+	    New File  		    2218	angular-locale_af-na.js  0%  100%  
+	    New File  		    2226	angular-locale_af-za.js  0%  100%  
+	    New File  		    2223	angular-locale_af.js  0%  100%  
+	    New File  		    2836	angular-locale_am-et.js  0%  100%  
+	    New File  		    2833	angular-locale_am.js  0%  100%  
+	    New File  		    3706	angular-locale_ar-001.js  0%  100%  
+	    New File  		    3705	angular-locale_ar-ae.js  0%  100%  
+	    New File  		    3705	angular-locale_ar-bh.js  0%  100%  
+	    New File  		    3657	angular-locale_ar-dz.js  0%  100%  
+	    New File  		    3705	angular-locale_ar-eg.js  0%  100%  
+	    New File  		    3705	angular-locale_ar-iq.js  0%  100%  
+	    New File  		    3869	angular-locale_ar-jo.js  0%  100%  
+	    New File  		    3705	angular-locale_ar-kw.js  0%  100%  
+	    New File  		    3869	angular-locale_ar-lb.js  0%  100%  
+	    New File  		    3705	angular-locale_ar-ly.js  0%  100%  
+	    New File  		    3657	angular-locale_ar-ma.js  0%  100%  
+	    New File  		    3705	angular-locale_ar-om.js  0%  100%  
+	    New File  		    3705	angular-locale_ar-qa.js  0%  100%  
+	    New File  		    3705	angular-locale_ar-sa.js  0%  100%  
+	    New File  		    3705	angular-locale_ar-sd.js  0%  100%  
+	    New File  		    3869	angular-locale_ar-sy.js  0%  100%  
+	    New File  		    3657	angular-locale_ar-tn.js  0%  100%  
+	    New File  		    3705	angular-locale_ar-ye.js  0%  100%  
+	    New File  		    3702	angular-locale_ar.js  0%  100%  
+	    New File  		    3137	angular-locale_bg-bg.js  0%  100%  
+	    New File  		    3134	angular-locale_bg.js  0%  100%  
+	    New File  		    3458	angular-locale_bn-bd.js  0%  100%  
+	    New File  		    3458	angular-locale_bn-in.js  0%  100%  
+	    New File  		    3455	angular-locale_bn.js  0%  100%  
+	    New File  		    2345	angular-locale_ca-ad.js  0%  100%  
+	    New File  		    2345	angular-locale_ca-es.js  0%  100%  
+	    New File  		    2342	angular-locale_ca.js  0%  100%  
+	    New File  		    1144	angular-locale_chr.js  0%  100%  
+	    New File  		    2445	angular-locale_cs-cz.js  0%  100%  
+	    New File  		    2442	angular-locale_cs.js  0%  100%  
+	    New File  		     938	angular-locale_cy.js  0%  100%  
+	    New File  		    2259	angular-locale_da-dk.js  0%  100%  
+	    New File  		    2256	angular-locale_da.js  0%  100%  
+	    New File  		    2261	angular-locale_de-at.js  0%  100%  
+	    New File  		    2249	angular-locale_de-be.js  0%  100%  
+	    New File  		    2240	angular-locale_de-ch.js  0%  100%  
+	    New File  		    2249	angular-locale_de-de.js  0%  100%  
+	    New File  		    2249	angular-locale_de-li.js  0%  100%  
+	    New File  		    2249	angular-locale_de-lu.js  0%  100%  
+	    New File  		    2246	angular-locale_de.js  0%  100%  
+	    New File  		    3327	angular-locale_el-cy.js  0%  100%  
+	    New File  		    3327	angular-locale_el-gr.js  0%  100%  
+	    New File  		    1495	angular-locale_el-polyton.js  0%  100%  
+	    New File  		    3324	angular-locale_el.js  0%  100%  
+	    New File  		    2212	angular-locale_en-as.js  0%  100%  
+	    New File  		    2216	angular-locale_en-au.js  0%  100%  
+	    New File  		    2212	angular-locale_en-bb.js  0%  100%  
+	    New File  		    2208	angular-locale_en-be.js  0%  100%  
+	    New File  		    2212	angular-locale_en-bm.js  0%  100%  
+	    New File  		    2215	angular-locale_en-bw.js  0%  100%  
+	    New File  		    2206	angular-locale_en-bz.js  0%  100%  
+	    New File  		    2220	angular-locale_en-ca.js  0%  100%  
+	    New File  		    4060	angular-locale_en-dsrt-us.js  0%  100%  
+	    New File  		    4057	angular-locale_en-dsrt.js  0%  100%  
+	    New File  		    2212	angular-locale_en-fm.js  0%  100%  
+	    New File  		    2216	angular-locale_en-gb.js  0%  100%  
+	    New File  		    2212	angular-locale_en-gu.js  0%  100%  
+	    New File  		    2212	angular-locale_en-gy.js  0%  100%  
+	    New File  		    2212	angular-locale_en-hk.js  0%  100%  
+	    New File  		    2224	angular-locale_en-ie.js  0%  100%  
+	    New File  		    2229	angular-locale_en-in.js  0%  100%  
+	    New File  		    2214	angular-locale_en-iso.js  0%  100%  
+	    New File  		    2212	angular-locale_en-jm.js  0%  100%  
+	    New File  		    2212	angular-locale_en-mh.js  0%  100%  
+	    New File  		    2212	angular-locale_en-mp.js  0%  100%  
+	    New File  		    2219	angular-locale_en-mt.js  0%  100%  
+	    New File  		    2212	angular-locale_en-mu.js  0%  100%  
+	    New File  		    2212	angular-locale_en-na.js  0%  100%  
+	    New File  		    2214	angular-locale_en-nz.js  0%  100%  
+	    New File  		    2212	angular-locale_en-ph.js  0%  100%  
+	    New File  		    2213	angular-locale_en-pk.js  0%  100%  
+	    New File  		    2212	angular-locale_en-pr.js  0%  100%  
+	    New File  		    2212	angular-locale_en-pw.js  0%  100%  
+	    New File  		    2212	angular-locale_en-sg.js  0%  100%  
+	    New File  		    2212	angular-locale_en-tc.js  0%  100%  
+	    New File  		    2212	angular-locale_en-tt.js  0%  100%  
+	    New File  		    2212	angular-locale_en-um.js  0%  100%  
+	    New File  		    2212	angular-locale_en-us.js  0%  100%  
+	    New File  		    2212	angular-locale_en-vg.js  0%  100%  
+	    New File  		    2212	angular-locale_en-vi.js  0%  100%  
+	    New File  		    2224	angular-locale_en-za.js  0%  100%  
+	    New File  		    2215	angular-locale_en-zw.js  0%  100%  
+	    New File  		    1242	angular-locale_en-zz.js  0%  100%  
+	    New File  		    2209	angular-locale_en.js  0%  100%  
+	    New File  		    2257	angular-locale_es-419.js  0%  100%  
+	    New File  		    2273	angular-locale_es-ar.js  0%  100%  
+	    New File  		    2273	angular-locale_es-bo.js  0%  100%  
+	    New File  		    2269	angular-locale_es-cl.js  0%  100%  
+	    New File  		    2265	angular-locale_es-co.js  0%  100%  
+	    New File  		    2273	angular-locale_es-cr.js  0%  100%  
+	    New File  		    2273	angular-locale_es-do.js  0%  100%  
+	    New File  		    2273	angular-locale_es-ea.js  0%  100%  
+	    New File  		    2269	angular-locale_es-ec.js  0%  100%  
+	    New File  		    2273	angular-locale_es-es.js  0%  100%  
+	    New File  		    2273	angular-locale_es-gq.js  0%  100%  
+	    New File  		    2269	angular-locale_es-gt.js  0%  100%  
+	    New File  		    2274	angular-locale_es-hn.js  0%  100%  
+	    New File  		    2273	angular-locale_es-ic.js  0%  100%  
+	    New File  		    2273	angular-locale_es-mx.js  0%  100%  
+	    New File  		    2273	angular-locale_es-ni.js  0%  100%  
+	    New File  		    2273	angular-locale_es-pa.js  0%  100%  
+	    New File  		    2271	angular-locale_es-pe.js  0%  100%  
+	    New File  		    2273	angular-locale_es-pr.js  0%  100%  
+	    New File  		    2273	angular-locale_es-py.js  0%  100%  
+	    New File  		    2273	angular-locale_es-sv.js  0%  100%  
+	    New File  		    2269	angular-locale_es-us.js  0%  100%  
+	    New File  		    2273	angular-locale_es-uy.js  0%  100%  
+	    New File  		    2273	angular-locale_es-ve.js  0%  100%  
+	    New File  		    2270	angular-locale_es.js  0%  100%  
+	    New File  		    2316	angular-locale_et-ee.js  0%  100%  
+	    New File  		    2313	angular-locale_et.js  0%  100%  
+	    New File  		    2267	angular-locale_eu-es.js  0%  100%  
+	    New File  		    2264	angular-locale_eu.js  0%  100%  
+	    New File  		    3249	angular-locale_fa-af.js  0%  100%  
+	    New File  		    3345	angular-locale_fa-ir.js  0%  100%  
+	    New File  		    3342	angular-locale_fa.js  0%  100%  
+	    New File  		    2392	angular-locale_fi-fi.js  0%  100%  
+	    New File  		    2389	angular-locale_fi.js  0%  100%  
+	    New File  		    2224	angular-locale_fil-ph.js  0%  100%  
+	    New File  		    2221	angular-locale_fil.js  0%  100%  
+	    New File  		    2293	angular-locale_fr-be.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-bf.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-bi.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-bj.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-bl.js  0%  100%  
+	    New File  		    2296	angular-locale_fr-ca.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-cd.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-cf.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-cg.js  0%  100%  
+	    New File  		    2296	angular-locale_fr-ch.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-ci.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-cm.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-dj.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-fr.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-ga.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-gf.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-gn.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-gp.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-gq.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-km.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-lu.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-mc.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-mf.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-mg.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-ml.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-mq.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-ne.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-re.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-rw.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-sn.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-td.js  0%  100%  
+	    New File  		    2256	angular-locale_fr-tg.js  0%  100%  
+	    New File  		    2295	angular-locale_fr-yt.js  0%  100%  
+	    New File  		    2292	angular-locale_fr.js  0%  100%  
+	    New File  		    2243	angular-locale_gl-es.js  0%  100%  
+	    New File  		    2240	angular-locale_gl.js  0%  100%  
+	    New File  		    2286	angular-locale_gsw-ch.js  0%  100%  
+	    New File  		    2283	angular-locale_gsw.js  0%  100%  
+	    New File  		    3248	angular-locale_gu-in.js  0%  100%  
+	    New File  		    3245	angular-locale_gu.js  0%  100%  
+	    New File  		     926	angular-locale_haw.js  0%  100%  
+	    New File  		    3228	angular-locale_he-il.js  0%  100%  
+	    New File  		    3225	angular-locale_he.js  0%  100%  
+	    New File  		    3266	angular-locale_hi-in.js  0%  100%  
+	    New File  		    3263	angular-locale_hi.js  0%  100%  
+	    New File  		    2556	angular-locale_hr-hr.js  0%  100%  
+	    New File  		    2553	angular-locale_hr.js  0%  100%  
+	    New File  		    2307	angular-locale_hu-hu.js  0%  100%  
+	    New File  		    2304	angular-locale_hu.js  0%  100%  
+	    New File  		    2160	angular-locale_id-id.js  0%  100%  
+	    New File  		    2157	angular-locale_id.js  0%  100%  
+	    New File  		    2157	angular-locale_in.js  0%  100%  
+	    New File  		    2372	angular-locale_is-is.js  0%  100%  
+	    New File  		    2369	angular-locale_is.js  0%  100%  
+	    New File  		    2226	angular-locale_it-ch.js  0%  100%  
+	    New File  		    2259	angular-locale_it-it.js  0%  100%  
+	    New File  		    2259	angular-locale_it-sm.js  0%  100%  
+	    New File  		    2256	angular-locale_it.js  0%  100%  
+	    New File  		    3177	angular-locale_iw.js  0%  100%  
+	    New File  		    2375	angular-locale_ja-jp.js  0%  100%  
+	    New File  		    2372	angular-locale_ja.js  0%  100%  
+	    New File  		    3242	angular-locale_kn-in.js  0%  100%  
+	    New File  		    3239	angular-locale_kn.js  0%  100%  
+	    New File  		    2389	angular-locale_ko-kr.js  0%  100%  
+	    New File  		    2386	angular-locale_ko.js  0%  100%  
+	    New File  		    2746	angular-locale_ln-cd.js  0%  100%  
+	    New File  		    2462	angular-locale_ln-cg.js  0%  100%  
+	    New File  		    2743	angular-locale_ln.js  0%  100%  
+	    New File  		    2522	angular-locale_lt-lt.js  0%  100%  
+	    New File  		    2519	angular-locale_lt.js  0%  100%  
+	    New File  		    2447	angular-locale_lv-lv.js  0%  100%  
+	    New File  		    2444	angular-locale_lv.js  0%  100%  
+	    New File  		    3515	angular-locale_ml-in.js  0%  100%  
+	    New File  		    3512	angular-locale_ml.js  0%  100%  
+	    New File  		    1387	angular-locale_mo.js  0%  100%  
+	    New File  		    3243	angular-locale_mr-in.js  0%  100%  
+	    New File  		    3240	angular-locale_mr.js  0%  100%  
+	    New File  		    2148	angular-locale_ms-bn.js  0%  100%  
+	    New File  		    2153	angular-locale_ms-my.js  0%  100%  
+	    New File  		    2150	angular-locale_ms.js  0%  100%  
+	    New File  		    2492	angular-locale_mt-mt.js  0%  100%  
+	    New File  		    2489	angular-locale_mt.js  0%  100%  
+	    New File  		    2220	angular-locale_nl-aw.js  0%  100%  
+	    New File  		    2218	angular-locale_nl-be.js  0%  100%  
+	    New File  		    2231	angular-locale_nl-cw.js  0%  100%  
+	    New File  		    2231	angular-locale_nl-nl.js  0%  100%  
+	    New File  		    2231	angular-locale_nl-sx.js  0%  100%  
+	    New File  		    2228	angular-locale_nl.js  0%  100%  
+	    New File  		    2254	angular-locale_no.js  0%  100%  
+	    New File  		    3405	angular-locale_or-in.js  0%  100%  
+	    New File  		    3402	angular-locale_or.js  0%  100%  
+	    New File  		    2586	angular-locale_pl-pl.js  0%  100%  
+	    New File  		    2583	angular-locale_pl.js  0%  100%  
+	    New File  		    2264	angular-locale_pt-ao.js  0%  100%  
+	    New File  		    2280	angular-locale_pt-br.js  0%  100%  
+	    New File  		    2264	angular-locale_pt-gw.js  0%  100%  
+	    New File  		    2264	angular-locale_pt-mz.js  0%  100%  
+	    New File  		    2304	angular-locale_pt-pt.js  0%  100%  
+	    New File  		    2264	angular-locale_pt-st.js  0%  100%  
+	    New File  		    2277	angular-locale_pt.js  0%  100%  
+	    New File  		    2344	angular-locale_ro-md.js  0%  100%  
+	    New File  		    2376	angular-locale_ro-ro.js  0%  100%  
+	    New File  		    2373	angular-locale_ro.js  0%  100%  
+	    New File  		    2755	angular-locale_ru-md.js  0%  100%  
+	    New File  		    3607	angular-locale_ru-ru.js  0%  100%  
+	    New File  		    2746	angular-locale_ru-ua.js  0%  100%  
+	    New File  		    3604	angular-locale_ru.js  0%  100%  
+	    New File  		    2379	angular-locale_sk-sk.js  0%  100%  
+	    New File  		    2376	angular-locale_sk.js  0%  100%  
+	    New File  		    2384	angular-locale_sl-si.js  0%  100%  
+	    New File  		    2381	angular-locale_sl.js  0%  100%  
+	    New File  		    2269	angular-locale_sq-al.js  0%  100%  
+	    New File  		    2266	angular-locale_sq.js  0%  100%  
+	    New File  		    2716	angular-locale_sr-cyrl-ba.js  0%  100%  
+	    New File  		    2702	angular-locale_sr-cyrl-me.js  0%  100%  
+	    New File  		    3454	angular-locale_sr-cyrl-rs.js  0%  100%  
+	    New File  		    2699	angular-locale_sr-cyrl.js  0%  100%  
+	    New File  		    2520	angular-locale_sr-latn-ba.js  0%  100%  
+	    New File  		    2519	angular-locale_sr-latn-me.js  0%  100%  
+	    New File  		    2536	angular-locale_sr-latn-rs.js  0%  100%  
+	    New File  		    2517	angular-locale_sr-latn.js  0%  100%  
+	    New File  		    1764	angular-locale_sr-rs.js  0%  100%  
+	    New File  		    3446	angular-locale_sr.js  0%  100%  
+	    New File  		    2230	angular-locale_sv-fi.js  0%  100%  
+	    New File  		    2266	angular-locale_sv-se.js  0%  100%  
+	    New File  		    2263	angular-locale_sv.js  0%  100%  
+	    New File  		    2223	angular-locale_sw-ke.js  0%  100%  
+	    New File  		    2223	angular-locale_sw-tz.js  0%  100%  
+	    New File  		    2220	angular-locale_sw.js  0%  100%  
+	    New File  		    3052	angular-locale_ta-in.js  0%  100%  
+	    New File  		    2543	angular-locale_ta-lk.js  0%  100%  
+	    New File  		    3049	angular-locale_ta.js  0%  100%  
+	    New File  		    3343	angular-locale_te-in.js  0%  100%  
+	    New File  		    3340	angular-locale_te.js  0%  100%  
+	    New File  		    3244	angular-locale_th-th.js  0%  100%  
+	    New File  		    3241	angular-locale_th.js  0%  100%  
+	    New File  		    1251	angular-locale_tl-ph.js  0%  100%  
+	    New File  		    2220	angular-locale_tl.js  0%  100%  
+	    New File  		    2227	angular-locale_tr-tr.js  0%  100%  
+	    New File  		    2224	angular-locale_tr.js  0%  100%  
+	    New File  		    3476	angular-locale_uk-ua.js  0%  100%  
+	    New File  		    3473	angular-locale_uk.js  0%  100%  
+	    New File  		    2374	angular-locale_ur-in.js  0%  100%  
+	    New File  		    3078	angular-locale_ur-pk.js  0%  100%  
+	    New File  		    3075	angular-locale_ur.js  0%  100%  
+	    New File  		    2508	angular-locale_vi-vn.js  0%  100%  
+	    New File  		    2505	angular-locale_vi.js  0%  100%  
+	    New File  		    2410	angular-locale_zh-cn.js  0%  100%  
+	    New File  		    2415	angular-locale_zh-hans-cn.js  0%  100%  
+	    New File  		    2239	angular-locale_zh-hans-hk.js  0%  100%  
+	    New File  		    2239	angular-locale_zh-hans-mo.js  0%  100%  
+	    New File  		    2245	angular-locale_zh-hans-sg.js  0%  100%  
+	    New File  		    2201	angular-locale_zh-hans.js  0%  100%  
+	    New File  		    2228	angular-locale_zh-hant-hk.js  0%  100%  
+	    New File  		    2232	angular-locale_zh-hant-mo.js  0%  100%  
+	    New File  		    2202	angular-locale_zh-hant-tw.js  0%  100%  
+	    New File  		    2199	angular-locale_zh-hant.js  0%  100%  
+	    New File  		    2465	angular-locale_zh-hk.js  0%  100%  
+	    New File  		    2404	angular-locale_zh-tw.js  0%  100%  
+	    New File  		    2407	angular-locale_zh.js  0%  100%  
+	    New File  		    2231	angular-locale_zu-za.js  0%  100%  
+	    New File  		    2228	angular-locale_zu.js  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\angular-bootstrap\
+	    New File  		   53012	ui-bootstrap-tpls-0.10.0.min.js  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\angular-dynamic-locale\
+	    New File  		    2976	tmhDynamicLocale.min.js  0%  100%  
+	    New File  		    4024	tmhDynamicLocale.min.js.map  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\angular-local-storage\
+	    New File  		    5315	angular-local-storage.min.js  0%  100%  
+	    New File  		    6885	angular-local-storage.min.js.map  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\bootstrap\
+	  New Dir          7	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\bootstrap\css\
+	    New File  		   22057	bootstrap-responsive.css  0%  100%  
+	    New File  		   16858	bootstrap-responsive.min.css  0%  100%  
+	    New File  		  114355	bootstrap.cosmo.min.css  0%  100%  
+	    New File  		  105909	bootstrap.css  0%  100%  
+	    New File  		  102601	bootstrap.min.3.0.1.css  0%  100%  
+	    New File  		  105948	bootstrap.min.css  0%  100%  
+	    New File  		   16850	responsive.css  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\bootstrap\img\
+	    New File  		    8777	glyphicons-halflings-white.png  0%  100%  
+	    New File  		   12799	glyphicons-halflings.png  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\bootstrap\js\
+	    New File  		   64245	bootstrap.2.3.2.js  0%  100%  
+	    New File  		   28636	bootstrap.2.3.2.min.js  0%  100%  
+	  New Dir         41	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\bootstrap\less\
+	    New File  		     670	accordion.less  0%  100%  
+	    New File  		    1448	alerts.less  0%  100%  
+	    New File  		    1552	bootstrap.less  0%  100%  
+	    New File  		     455	breadcrumbs.less  0%  100%  
+	    New File  		    5938	button-groups.less  0%  100%  
+	    New File  		    4994	buttons.less  0%  100%  
+	    New File  		    2640	carousel.less  0%  100%  
+	    New File  		     675	close.less  0%  100%  
+	    New File  		    1352	code.less  0%  100%  
+	    New File  		     328	component-animations.less  0%  100%  
+	    New File  		    5730	dropdowns.less  0%  100%  
+	    New File  		   16554	forms.less  0%  100%  
+	    New File  		     450	grid.less  0%  100%  
+	    New File  		     546	hero-unit.less  0%  100%  
+	    New File  		    1968	labels-badges.less  0%  100%  
+	    New File  		     344	layouts.less  0%  100%  
+	    New File  		     915	media.less  0%  100%  
+	    New File  		   23744	mixins.less  0%  100%  
+	    New File  		    2073	modals.less  0%  100%  
+	    New File  		   12547	navbar.less  0%  100%  
+	    New File  		    8572	navs.less  0%  100%  
+	    New File  		     802	pager.less  0%  100%  
+	    New File  		    2801	pagination.less  0%  100%  
+	    New File  		    3210	popovers.less  0%  100%  
+	    New File  		    2980	progress-bars.less  0%  100%  
+	    New File  		    4417	reset.less  0%  100%  
+	    New File  		     593	responsive-1200px-min.less  0%  100%  
+	    New File  		    4113	responsive-767px-max.less  0%  100%  
+	    New File  		     482	responsive-768px-979px.less  0%  100%  
+	    New File  		    4517	responsive-navbar.less  0%  100%  
+	    New File  		    1661	responsive-utilities.less  0%  100%  
+	    New File  		    1117	responsive.less  0%  100%  
+	    New File  		     938	scaffolding.less  0%  100%  
+	    New File  		   11038	sprites.less  0%  100%  
+	    New File  		    6499	tables.less  0%  100%  
+	    New File  		    1342	thumbnails.less  0%  100%  
+	    New File  		    1754	tooltip.less  0%  100%  
+	    New File  		    5104	type.less  0%  100%  
+	    New File  		     365	utilities.less  0%  100%  
+	    New File  		    9443	variables.less  0%  100%  
+	    New File  		     581	wells.less  0%  100%  
+	  New Dir          8	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\bootstrap\less\tests\
+	    New File  		    6550	buttons.html  0%  100%  
+	    New File  		    5625	css-tests.css  0%  100%  
+	    New File  		   41537	css-tests.html  0%  100%  
+	    New File  		    2433	forms-responsive.html  0%  100%  
+	    New File  		    4258	forms.html  0%  100%  
+	    New File  		    4796	navbar-fixed-top.html  0%  100%  
+	    New File  		    4818	navbar-static-top.html  0%  100%  
+	    New File  		    4904	navbar.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\bootstrap-social\
+	    New File  		   20453	bootstrap-social.css  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\bootstrap-tabdrop\
+	    New File  		    3811	bootstrap-tabdrop.js  0%  100%  
+	    New File  		    1552	README.md  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\clipboard\
+	    New File  		   10917	clipboard.min.js  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\codemirror\
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\codemirror\addon\
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\codemirror\addon\dialog\
+	    New File  		     507	dialog.css  0%  100%  
+	    New File  		    4938	dialog.js  0%  100%  
+	  New Dir          6	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\codemirror\addon\edit\
+	    New File  		    6498	closebrackets.js  0%  100%  
+	    New File  		    7590	closetag.js  0%  100%  
+	    New File  		    1750	continuelist.js  0%  100%  
+	    New File  		    5254	matchbrackets.js  0%  100%  
+	    New File  		    2355	matchtags.js  0%  100%  
+	    New File  		    1003	trailingspace.js  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\codemirror\addon\search\
+	    New File  		    4943	match-highlighter.js  0%  100%  
+	    New File  		     188	matchesonscrollbar.css  0%  100%  
+	    New File  		    3808	matchesonscrollbar.js  0%  100%  
+	    New File  		    7294	search.js  0%  100%  
+	    New File  		    7723	searchcursor.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\codemirror\addon\selection\
+	    New File  		    2442	active-line.js  0%  100%  
+	    New File  		    3781	mark-selection.js  0%  100%  
+	    New File  		    3292	selection-pointer.js  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\codemirror\lib\
+	    New File  		    7771	codemirror.css  0%  100%  
+	    New File  		  347063	codemirror.js  0%   37%   75%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\codemirror\mode\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\codemirror\mode\css\
+	    New File  		   34123	css.js  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\codemirror\mode\htmlmixed\
+	    New File  		    5001	htmlmixed.js  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\codemirror\mode\javascript\
+	    New File  		   26636	javascript.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\codemirror\mode\razor\
+	    New File  		   22778	index.html  0%  100%  
+	    New File  		    1172	LICENSE  0%  100%  
+	    New File  		    9631	razor.js  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\codemirror\mode\xml\
+	    New File  		   12375	xml.js  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\cssparser\
+	    New File  		  181181	cssparser.js  0%   72%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\datetimepicker\
+	    New File  		   60823	bootstrap-datetimepicker.js  0%  100%  
+	    New File  		    5062	bootstrap-datetimepicker.min.css  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\font-awesome\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\font-awesome\css\
+	    New File  		   21984	font-awesome.min.css  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\font-awesome\fonts\
+	    New File  		   56006	fontawesome-webfont.eot  0%  100%  
+	    New File  		  287007	fontawesome-webfont.svg  0%   45%   91%  100%  
+	    New File  		  112160	fontawesome-webfont.ttf  0%  100%  
+	    New File  		   65452	fontawesome-webfont.woff  0%  100%  
+	    New File  		   85908	FontAwesome.otf  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\jquery\
+	    New File  		   85578	jquery.min.js  0%  100%  
+	    New File  		  129572	jquery.min.map  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\jquery-migrate\
+	    New File  		    9632	jquery-migrate.min.js  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\jquery-ui\
+	    New File  		   27250	jquery-ui-1.10.4.custom.min.css  0%  100%  
+	    New File  		  240427	jquery-ui.min.js  0%   54%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\jquery-ui-touch-punch\
+	    New File  		    4967	jquery.ui.touch-punch.js  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\less\
+	    New File  		  101869	less-1.7.0.min.js  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\markdown\
+	    New File  		   46407	markdown.converter.js  0%  100%  
+	    New File  		    1655	markdown.css  0%  100%  
+	    New File  		   78543	markdown.editor.js  0%  100%  
+	    New File  		    4185	markdown.sanitizer.js  0%  100%  
+	    New File  		      95	red.css  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\moment\
+	    New File  		  370101	moment-with-locales.js  0%   35%   70%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\ng-file-upload\
+	    New File  		   23766	ng-file-upload.min.js  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\rgrove-lazyload\
+	    New File  		   13187	lazyload.js  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\slider\
+	    New File  		    2285	bootstrap-slider-custom.css  0%  100%  
+	    New File  		    8493	bootstrap-slider.css  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\slider\js\
+	    New File  		   51451	bootstrap-slider.js  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\spectrum\
+	    New File  		   15122	spectrum.css  0%  100%  
+	    New File  		   40684	spectrum.js  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\
+	    New File  		  346415	tinymce.min.js  0%   37%   75%  100%  
+	  New Dir         16	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\langs\
+	    New File  		    7730	da.js  0%  100%  
+	    New File  		    8497	de.js  0%  100%  
+	    New File  		    6515	en.js  0%  100%  
+	    New File  		    6518	en_us.js  0%  100%  
+	    New File  		    8360	fi.js  0%  100%  
+	    New File  		    7765	fr.js  0%  100%  
+	    New File  		   15279	he.js  0%  100%  
+	    New File  		    7815	it.js  0%  100%  
+	    New File  		   12507	ja.js  0%  100%  
+	    New File  		    7452	nl.js  0%  100%  
+	    New File  		    6958	no.js  0%  100%  
+	    New File  		    8362	pl.js  0%  100%  
+	    New File  		    7053	pt.js  0%  100%  
+	    New File  		   22507	ru.js  0%  100%  
+	    New File  		    6966	sv.js  0%  100%  
+	    New File  		    8432	zh.js  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\advlist\
+	    New File  		     205	index.js  0%  100%  
+	    New File  		    5545	plugin.js  0%  100%  
+	    New File  		    2226	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\anchor\
+	    New File  		     202	index.js  0%  100%  
+	    New File  		    3326	plugin.js  0%  100%  
+	    New File  		    1426	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\autolink\
+	    New File  		     208	index.js  0%  100%  
+	    New File  		    5622	plugin.js  0%  100%  
+	    New File  		    2138	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\autoresize\
+	    New File  		     214	index.js  0%  100%  
+	    New File  		    5514	plugin.js  0%  100%  
+	    New File  		    2074	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\autosave\
+	    New File  		     208	index.js  0%  100%  
+	    New File  		    7361	plugin.js  0%  100%  
+	    New File  		    3083	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\bbcode\
+	    New File  		     202	index.js  0%  100%  
+	    New File  		    3908	plugin.js  0%  100%  
+	    New File  		    2850	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\charmap\
+	    New File  		     205	index.js  0%  100%  
+	    New File  		   20935	plugin.js  0%  100%  
+	    New File  		    8601	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\code\
+	    New File  		     196	index.js  0%  100%  
+	    New File  		    2467	plugin.js  0%  100%  
+	    New File  		    1024	plugin.min.js  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\codemirror\
+	    New File  		    1141	plugin.min.js  0%  100%  
+	    New File  		    7671	source.html  0%  100%  
+	  New Dir         16	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\codemirror\langs\
+	    New File  		     224	da.js  0%  100%  
+	    New File  		     224	de.js  0%  100%  
+	    New File  		     224	en.js  0%  100%  
+	    New File  		     224	en_us.js  0%  100%  
+	    New File  		     224	fi.js  0%  100%  
+	    New File  		     224	fr.js  0%  100%  
+	    New File  		     224	he.js  0%  100%  
+	    New File  		     224	it.js  0%  100%  
+	    New File  		     224	ja.js  0%  100%  
+	    New File  		     224	nl.js  0%  100%  
+	    New File  		     224	no.js  0%  100%  
+	    New File  		     224	pl.js  0%  100%  
+	    New File  		     224	pt.js  0%  100%  
+	    New File  		     224	ru.js  0%  100%  
+	    New File  		     224	sv.js  0%  100%  
+	    New File  		     224	zh.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\codesample\
+	    New File  		     214	index.js  0%  100%  
+	    New File  		   33892	plugin.js  0%  100%  
+	    New File  		   19435	plugin.min.js  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\codesample\css\
+	    New File  		    2334	prism.css  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\colorpicker\
+	    New File  		     217	index.js  0%  100%  
+	    New File  		    3361	plugin.js  0%  100%  
+	    New File  		    1349	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\contextmenu\
+	    New File  		     217	index.js  0%  100%  
+	    New File  		    4752	plugin.js  0%  100%  
+	    New File  		    1824	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\directionality\
+	    New File  		     226	index.js  0%  100%  
+	    New File  		    1858	plugin.js  0%  100%  
+	    New File  		     857	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\emoticons\
+	    New File  		     211	index.js  0%  100%  
+	    New File  		    2257	plugin.js  0%  100%  
+	    New File  		    1071	plugin.min.js  0%  100%  
+	  New Dir         16	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\emoticons\img\
+	    New File  		     354	smiley-cool.gif  0%  100%  
+	    New File  		     329	smiley-cry.gif  0%  100%  
+	    New File  		     331	smiley-embarassed.gif  0%  100%  
+	    New File  		     342	smiley-foot-in-mouth.gif  0%  100%  
+	    New File  		     340	smiley-frown.gif  0%  100%  
+	    New File  		     336	smiley-innocent.gif  0%  100%  
+	    New File  		     338	smiley-kiss.gif  0%  100%  
+	    New File  		     343	smiley-laughing.gif  0%  100%  
+	    New File  		     321	smiley-money-mouth.gif  0%  100%  
+	    New File  		     323	smiley-sealed.gif  0%  100%  
+	    New File  		     344	smiley-smile.gif  0%  100%  
+	    New File  		     338	smiley-surprised.gif  0%  100%  
+	    New File  		     328	smiley-tongue-out.gif  0%  100%  
+	    New File  		     337	smiley-undecided.gif  0%  100%  
+	    New File  		     350	smiley-wink.gif  0%  100%  
+	    New File  		     336	smiley-yell.gif  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\fullpage\
+	    New File  		     208	index.js  0%  100%  
+	    New File  		   16270	plugin.js  0%  100%  
+	    New File  		    7168	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\fullscreen\
+	    New File  		     214	index.js  0%  100%  
+	    New File  		    5326	plugin.js  0%  100%  
+	    New File  		    2165	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\help\
+	    New File  		     196	index.js  0%  100%  
+	    New File  		   25393	plugin.js  0%  100%  
+	    New File  		    9207	plugin.min.js  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\help\img\
+	    New File  		   13208	logo.png  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\hr\
+	    New File  		     190	index.js  0%  100%  
+	    New File  		     917	plugin.js  0%  100%  
+	    New File  		     428	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\image\
+	    New File  		     199	index.js  0%  100%  
+	    New File  		   32030	plugin.js  0%  100%  
+	    New File  		   13944	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\imagetools\
+	    New File  		     214	index.js  0%  100%  
+	    New File  		   93026	plugin.js  0%  100%  
+	    New File  		   35722	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\importcss\
+	    New File  		     211	index.js  0%  100%  
+	    New File  		    9088	plugin.js  0%  100%  
+	    New File  		    3167	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\insertdatetime\
+	    New File  		     226	index.js  0%  100%  
+	    New File  		    6029	plugin.js  0%  100%  
+	    New File  		    2633	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\legacyoutput\
+	    New File  		     220	index.js  0%  100%  
+	    New File  		    6589	plugin.js  0%  100%  
+	    New File  		    3402	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\link\
+	    New File  		     196	index.js  0%  100%  
+	    New File  		   22914	plugin.js  0%  100%  
+	    New File  		    8823	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\lists\
+	    New File  		     199	index.js  0%  100%  
+	    New File  		   38498	plugin.js  0%  100%  
+	    New File  		   14272	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\media\
+	    New File  		     199	index.js  0%  100%  
+	    New File  		   35890	plugin.js  0%  100%  
+	    New File  		   14874	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\nonbreaking\
+	    New File  		     217	index.js  0%  100%  
+	    New File  		    2423	plugin.js  0%  100%  
+	    New File  		     993	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\noneditable\
+	    New File  		     217	index.js  0%  100%  
+	    New File  		    4152	plugin.js  0%  100%  
+	    New File  		    1540	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\pagebreak\
+	    New File  		     211	index.js  0%  100%  
+	    New File  		    3431	plugin.js  0%  100%  
+	    New File  		    1436	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\paste\
+	    New File  		     199	index.js  0%  100%  
+	    New File  		   52822	plugin.js  0%  100%  
+	    New File  		   21491	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\preview\
+	    New File  		     205	index.js  0%  100%  
+	    New File  		    4432	plugin.js  0%  100%  
+	    New File  		    2044	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\print\
+	    New File  		     199	index.js  0%  100%  
+	    New File  		     849	plugin.js  0%  100%  
+	    New File  		     366	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\save\
+	    New File  		     196	index.js  0%  100%  
+	    New File  		    3302	plugin.js  0%  100%  
+	    New File  		    1426	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\searchreplace\
+	    New File  		     223	index.js  0%  100%  
+	    New File  		   19706	plugin.js  0%  100%  
+	    New File  		    7363	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\spellchecker\
+	    New File  		     220	index.js  0%  100%  
+	    New File  		   26577	plugin.js  0%  100%  
+	    New File  		   10176	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\tabfocus\
+	    New File  		     208	index.js  0%  100%  
+	    New File  		    3500	plugin.js  0%  100%  
+	    New File  		    1631	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\table\
+	    New File  		     199	index.js  0%  100%  
+	    New File  		  358096	plugin.js  0%   36%   73%  100%  
+	    New File  		  135684	plugin.min.js  0%   96%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\template\
+	    New File  		     208	index.js  0%  100%  
+	    New File  		   12870	plugin.js  0%  100%  
+	    New File  		    5296	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\textcolor\
+	    New File  		     211	index.js  0%  100%  
+	    New File  		   10827	plugin.js  0%  100%  
+	    New File  		    4919	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\textpattern\
+	    New File  		     217	index.js  0%  100%  
+	    New File  		   11295	plugin.js  0%  100%  
+	    New File  		    4412	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\toc\
+	    New File  		     193	index.js  0%  100%  
+	    New File  		    6990	plugin.js  0%  100%  
+	    New File  		    2941	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\visualblocks\
+	    New File  		     220	index.js  0%  100%  
+	    New File  		    4185	plugin.js  0%  100%  
+	    New File  		    1691	plugin.min.js  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\visualblocks\css\
+	    New File  		    5473	visualblocks.css  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\visualchars\
+	    New File  		     217	index.js  0%  100%  
+	    New File  		   17989	plugin.js  0%  100%  
+	    New File  		    5508	plugin.min.js  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\plugins\wordcount\
+	    New File  		     211	index.js  0%  100%  
+	    New File  		   16400	plugin.js  0%  100%  
+	    New File  		   10939	plugin.min.js  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\skins\
+	  New Dir          4	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\skins\umbraco\
+	    New File  		    2389	content.min.css  0%  100%  
+	    New File  		   30624	skin.classic.min.css  0%  100%  
+	    New File  		   30481	skin.ie7.min.css  0%  100%  
+	    New File  		   31598	skin.min.css  0%  100%  
+	  New Dir          9	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\skins\umbraco\fonts\
+	    New File  		      68	readme.md  0%  100%  
+	    New File  		    9492	tinymce-small.eot  0%  100%  
+	    New File  		   24789	tinymce-small.svg  0%  100%  
+	    New File  		    9304	tinymce-small.ttf  0%  100%  
+	    New File  		    9380	tinymce-small.woff  0%  100%  
+	    New File  		   17572	tinymce.eot  0%  100%  
+	    New File  		   46121	tinymce.svg  0%  100%  
+	    New File  		   17408	tinymce.ttf  0%  100%  
+	    New File  		   17484	tinymce.woff  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\skins\umbraco\img\
+	    New File  		      53	anchor.gif  0%  100%  
+	    New File  		    2608	loader.gif  0%  100%  
+	    New File  		     152	object.gif  0%  100%  
+	    New File  		      43	trans.gif  0%  100%  
+	    New File  		      46	wline.gif  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\themes\
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\themes\inlite\
+	    New File  		     198	index.js  0%  100%  
+	    New File  		  326987	theme.js  0%   40%   80%  100%  
+	    New File  		  136940	theme.min.js  0%   95%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\themes\mobile\
+	    New File  		     198	index.js  0%  100%  
+	    New File  		  498965	theme.js  0%   26%   52%   78%  100%  
+	    New File  		  186490	theme.min.js  0%   70%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\themes\modern\
+	    New File  		     198	index.js  0%  100%  
+	    New File  		  321089	theme.js  0%   40%   81%  100%  
+	    New File  		  135740	theme.min.js  0%   96%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\tinymce\themes\umbraco\
+	    New File  		    4762	theme.min.js  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\typeahead.js\
+	    New File  		   29675	typeahead.bundle.min.js  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\umbraco\
+	    New File  		    1223	compat.js  0%  100%  
+	    New File  		   11361	Extensions.js  0%  100%  
+	    New File  		    2435	LegacySpeechBubble.js  0%  100%  
+	    New File  		   19720	LegacyUmbClientMgr.js  0%  100%  
+	    New File  		     836	NamespaceManager.js  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\lib\underscore\
+	    New File  		   15626	underscore-min.js  0%  100%  
+	    New File  		   25382	underscore-min.map  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Masterpages\
+	    New File  		     234	default.Master  0%  100%  
+	    New File  		    1767	umbracoDialog.Master  0%  100%  
+	    New File  		    2281	umbracoPage.Master  0%  100%  
+	  New Dir          4	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Members\
+	    New File  		    1010	EditMemberGroup.aspx  0%  100%  
+	    New File  		    1838	MemberSearch.ascx  0%  100%  
+	    New File  		     798	search.aspx  0%  100%  
+	    New File  		    1913	ViewMembers.aspx  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\PartialViewMacros\
+	  New Dir         20	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\PartialViewMacros\Templates\
+	    New File  		     931	Breadcrumb.cshtml  0%  100%  
+	    New File  		    2658	EditProfile.cshtml  0%  100%  
+	    New File  		      53	Empty (ForUseWithCustomViews).cshtml  0%  100%  
+	    New File  		      49	Empty.cshtml  0%  100%  
+	    New File  		    1617	Gallery.cshtml  0%  100%  
+	    New File  		     903	ListAncestorsFromCurrentPage.cshtml  0%  100%  
+	    New File  		    1005	ListChildPagesFromChangeableSource.cshtml  0%  100%  
+	    New File  		     629	ListChildPagesFromCurrentPage.cshtml  0%  100%  
+	    New File  		     759	ListChildPagesOrderedByDate.cshtml  0%  100%  
+	    New File  		     719	ListChildPagesOrderedByName.cshtml  0%  100%  
+	    New File  		    1025	ListChildPagesOrderedByProperty.cshtml  0%  100%  
+	    New File  		     687	ListChildPagesWithDoctype.cshtml  0%  100%  
+	    New File  		    2337	ListDescendantsFromCurrentPage.cshtml  0%  100%  
+	    New File  		    1032	ListImagesFromMediaFolder.cshtml  0%  100%  
+	    New File  		    1310	Login.cshtml  0%  100%  
+	    New File  		    1402	LoginStatus.cshtml  0%  100%  
+	    New File  		     779	MultinodeTree-picker.cshtml  0%  100%  
+	    New File  		     717	Navigation.cshtml  0%  100%  
+	    New File  		    4538	RegisterMember.cshtml  0%  100%  
+	    New File  		    1335	SiteMap.cshtml  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Plugins\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Plugins\Tinymce3\
+	    New File  		     171	tinymce3tinymceCompress.aspx  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\preview\
+	    New File  		    8443	index.html  0%  100%  
+	  New Dir         11	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\preview\editors\
+	    New File  		    2504	background.html  0%  100%  
+	    New File  		     980	border.html  0%  100%  
+	    New File  		      90	color.html  0%  100%  
+	    New File  		    1518	googlefontpicker.html  0%  100%  
+	    New File  		     199	gridRow.html  0%  100%  
+	    New File  		     339	layout.html  0%  100%  
+	    New File  		     463	margin.html  0%  100%  
+	    New File  		     471	padding.html  0%  100%  
+	    New File  		     897	radius.html  0%  100%  
+	    New File  		     195	shadow.html  0%  100%  
+	    New File  		     215	slider.html  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Search\
+	    New File  		    1100	QuickSearch.ascx  0%  100%  
+	    New File  		    3887	quickSearch.js  0%  100%  
+	    New File  		     139	QuickSearchHandler.ashx  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Settings\
+	    New File  		     688	DictionaryItemList.aspx  0%  100%  
+	    New File  		     726	EditDictionaryItem.aspx  0%  100%  
+	    New File  		     899	editLanguage.aspx  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Settings\Modals\
+	    New File  		    3355	ShowUmbracoTags.aspx  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Settings\Stylesheet\
+	    New File  		    2484	editstylesheet.aspx  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Settings\Stylesheet\Property\
+	    New File  		    2723	EditStyleSheetProperty.aspx  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Translation\
+	    New File  		    2597	default.aspx  0%  100%  
+	    New File  		    1856	details.aspx  0%  100%  
+	    New File  		    1325	preview.aspx  0%  100%  
+	    New File  		    1007	translationTasks.dtd  0%  100%  
+	    New File  		     220	xml.aspx  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\
+	    New File  		    2710	AuthorizeUpgrade.cshtml  0%  100%  
+	    New File  		    4058	Default.cshtml  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\
+	    New File  		    1588	dashboard.html  0%  100%  
+	    New File  		     198	legacy.html  0%  100%  
+	    New File  		      59	login.html  0%  100%  
+	  New Dir         15	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\dialogs\
+	    New File  		     352	approvedcolorpicker.html  0%  100%  
+	    New File  		    2481	help.html  0%  100%  
+	    New File  		    2607	iconpicker.html  0%  100%  
+	    New File  		    2109	insertmacro.html  0%  100%  
+	    New File  		     461	legacydelete.html  0%  100%  
+	    New File  		    2787	linkpicker.html  0%  100%  
+	    New File  		   14885	login.html  0%  100%  
+	    New File  		    1324	macropicker.html  0%  100%  
+	    New File  		    6436	mediapicker.html  0%  100%  
+	    New File  		    1185	membergrouppicker.html  0%  100%  
+	    New File  		      24	property.html  0%  100%  
+	    New File  		    1912	rteembed.html  0%  100%  
+	    New File  		    2450	treepicker.html  0%  100%  
+	    New File  		    4788	user.html  0%  100%  
+	    New File  		     978	ysod.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\dialogs\content\
+	    New File  		    2803	edit.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\dialogs\template\
+	    New File  		    5005	querybuilder.html  0%  100%  
+	    New File  		    1556	snippet.html  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\drawers\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\drawers\help\
+	    New File  		    6896	help.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\notifications\
+	    New File  		     577	confirmroutechange.html  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\contentpicker\
+	    New File  		    1670	contentpicker.html  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\contenttypeeditor\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\contenttypeeditor\compositions\
+	    New File  		    2801	compositions.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\contenttypeeditor\editorpicker\
+	    New File  		    5545	editorpicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\contenttypeeditor\editorsettings\
+	    New File  		     957	editorsettings.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\contenttypeeditor\propertysettings\
+	    New File  		    5568	propertysettings.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\copy\
+	    New File  		    1975	copy.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\embed\
+	    New File  		    1256	embed.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\help\
+	    New File  		    2432	help.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\iconpicker\
+	    New File  		    2215	iconpicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\insert\
+	    New File  		    2426	insert.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\insertfield\
+	    New File  		   10099	insertfield.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\itempicker\
+	    New File  		    1016	itempicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\linkpicker\
+	    New File  		    3178	linkpicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\macropicker\
+	    New File  		    2245	macropicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\mediaPicker\
+	    New File  		    6015	mediapicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\mediatypepicker\
+	    New File  		     459	mediatypepicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\membergrouppicker\
+	    New File  		     317	membergrouppicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\memberpicker\
+	    New File  		    1669	memberpicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\move\
+	    New File  		    1443	move.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\nodepermissions\
+	    New File  		     484	nodepermissions.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\querybuilder\
+	    New File  		    4367	querybuilder.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\sectionpicker\
+	    New File  		     802	sectionpicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\templatesections\
+	    New File  		    3030	templatesections.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\treepicker\
+	    New File  		    1914	treepicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\user\
+	    New File  		    4765	user.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\usergrouppicker\
+	    New File  		    3083	usergrouppicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\userpicker\
+	    New File  		    2318	userpicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\overlays\ysod\
+	    New File  		    1081	ysod.html  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\tours\
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\tours\umbintrocreatecontent\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\tours\umbintrocreatecontent\nodename\
+	    New File  		    1006	nodename.html  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\tours\umbintrocreatedoctype\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\tours\umbintrocreatedoctype\doctypename\
+	    New File  		    1014	doctypename.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\tours\umbintrocreatedoctype\propertyname\
+	    New File  		    1018	propertyname.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\tours\umbintrocreatedoctype\tabname\
+	    New File  		    1005	tabname.html  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\tours\umbintromediasection\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\tours\umbintromediasection\foldername\
+	    New File  		    1023	foldername.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\tours\umbintromediasection\uploadimages\
+	    New File  		    1005	uploadimages.html  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\tours\umbintrorenderintemplate\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\common\tours\umbintrorenderintemplate\templatetree\
+	    New File  		     717	templatetree.html  0%  100%  
+	  New Dir         30	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\
+	    New File  		     330	umb-avatar.html  0%  100%  
+	    New File  		      86	umb-badge.html  0%  100%  
+	    New File  		     111	umb-checkmark.html  0%  100%  
+	    New File  		    1623	umb-child-selector.html  0%  100%  
+	    New File  		     570	umb-confirm-action.html  0%  100%  
+	    New File  		     433	umb-confirm.html  0%  100%  
+	    New File  		    1409	umb-content-grid.html  0%  100%  
+	    New File  		     402	umb-date-time-picker.html  0%  100%  
+	    New File  		      23	umb-dropdown-item.html  0%  100%  
+	    New File  		      75	umb-dropdown.html  0%  100%  
+	    New File  		     204	umb-empty-state.html  0%  100%  
+	    New File  		     620	umb-folder-grid.html  0%  100%  
+	    New File  		     309	umb-generate-alias.html  0%  100%  
+	    New File  		    2501	umb-grid-selector.html  0%  100%  
+	    New File  		   18264	umb-groups-builder.html  0%  100%  
+	    New File  		    2298	umb-keyboard-shortcuts-overview.html  0%  100%  
+	    New File  		     712	umb-layout-selector.html  0%  100%  
+	    New File  		     918	umb-lightbox.html  0%  100%  
+	    New File  		      77	umb-list-view-layout.html  0%  100%  
+	    New File  		    2227	umb-list-view-settings.html  0%  100%  
+	    New File  		     206	umb-load-indicator.html  0%  100%  
+	    New File  		    1570	umb-locked-field.html  0%  100%  
+	    New File  		    2062	umb-media-grid.html  0%  100%  
+	    New File  		    5012	umb-mini-list-view.html  0%  100%  
+	    New File  		    1359	umb-node-preview.html  0%  100%  
+	    New File  		     863	umb-pagination.html  0%  100%  
+	    New File  		     152	umb-progress-bar.html  0%  100%  
+	    New File  		     653	umb-progress-circle.html  0%  100%  
+	    New File  		    3292	umb-table.html  0%  100%  
+	    New File  		      87	umb-tooltip.html  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\application\
+	    New File  		     958	umb-backdrop.html  0%  100%  
+	    New File  		     597	umb-contextmenu.html  0%  100%  
+	    New File  		    5418	umb-navigation.html  0%  100%  
+	    New File  		    2941	umb-sections.html  0%  100%  
+	    New File  		    4056	umb-tour.html  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\application\umbdrawer\
+	    New File  		      52	umb-drawer-content.html  0%  100%  
+	    New File  		      51	umb-drawer-footer.html  0%  100%  
+	    New File  		     170	umb-drawer-header.html  0%  100%  
+	    New File  		      49	umb-drawer-view.html  0%  100%  
+	    New File  		     122	umb-drawer.html  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\application\umbtour\
+	    New File  		     115	umb-tour-step-content.html  0%  100%  
+	    New File  		      76	umb-tour-step-counter.html  0%  100%  
+	    New File  		      55	umb-tour-step-footer.html  0%  100%  
+	    New File  		     129	umb-tour-step-header.html  0%  100%  
+	    New File  		     224	umb-tour-step.html  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\buttons\
+	    New File  		    1372	umb-button-group.html  0%  100%  
+	    New File  		    2094	umb-button.html  0%  100%  
+	    New File  		    1091	umb-toggle.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\content\
+	    New File  		    3602	edit.html  0%  100%  
+	    New File  		   10178	umb-content-node-info.html  0%  100%  
+	  New Dir         10	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\editor\
+	    New File  		     794	umb-breadcrumbs.html  0%  100%  
+	    New File  		     300	umb-editor-container.html  0%  100%  
+	    New File  		      72	umb-editor-footer-content-left.html  0%  100%  
+	    New File  		      73	umb-editor-footer-content-right.html  0%  100%  
+	    New File  		     163	umb-editor-footer.html  0%  100%  
+	    New File  		    3973	umb-editor-header.html  0%  100%  
+	    New File  		     870	umb-editor-menu.html  0%  100%  
+	    New File  		     572	umb-editor-navigation.html  0%  100%  
+	    New File  		     291	umb-editor-sub-views.html  0%  100%  
+	    New File  		     140	umb-editor-view.html  0%  100%  
+	  New Dir          4	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\editor\subheader\
+	    New File  		      71	umb-editor-sub-header-content-left.html  0%  100%  
+	    New File  		      72	umb-editor-sub-header-content-right.html  0%  100%  
+	    New File  		      66	umb-editor-sub-header-section.html  0%  100%  
+	    New File  		     135	umb-editor-sub-header.html  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\html\
+	    New File  		     660	umb-control-group.html  0%  100%  
+	    New File  		      47	umb-pane.html  0%  100%  
+	    New File  		      58	umb-panel.html  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\html\umb-box\
+	    New File  		      49	umb-box-content.html  0%  100%  
+	    New File  		     474	umb-box-header.html  0%  100%  
+	    New File  		      41	umb-box.html  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\imaging\
+	    New File  		     571	umb-image-crop.html  0%  100%  
+	    New File  		     323	umb-image-gravity.html  0%  100%  
+	    New File  		     230	umb-image-thumbnail.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\media\
+	    New File  		    2401	umb-media-node-info.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\notifications\
+	    New File  		     965	umb-notifications.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\overlays\
+	    New File  		      95	umb-overlay-backdrop.html  0%  100%  
+	    New File  		    3683	umb-overlay.html  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\property\
+	    New File  		     131	umb-property-editor.html  0%  100%  
+	    New File  		       0	umb-property-group.html100%  
+	    New File  		     880	umb-property.html  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\tabs\
+	    New File  		     130	umb-tab.html  0%  100%  
+	    New File  		      85	umb-tabs-content.html  0%  100%  
+	    New File  		     248	umb-tabs-nav.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\tree\
+	    New File  		     599	umb-tree-search-box.html  0%  100%  
+	    New File  		     892	umb-tree-search-results.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\upload\
+	    New File  		    3810	umb-file-dropzone.html  0%  100%  
+	  New Dir          4	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\components\users\
+	    New File  		    4183	change-password.html  0%  100%  
+	    New File  		     365	umb-permission.html  0%  100%  
+	    New File  		    2380	umb-user-group-preview.html  0%  100%  
+	    New File  		     700	umb-user-preview.html  0%  100%  
+	  New Dir         11	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\content\
+	    New File  		    3852	copy.html  0%  100%  
+	    New File  		    2256	create.html  0%  100%  
+	    New File  		    1761	createblueprint.html  0%  100%  
+	    New File  		     463	delete.html  0%  100%  
+	    New File  		     468	edit.html  0%  100%  
+	    New File  		     704	emptyrecyclebin.html  0%  100%  
+	    New File  		    3403	move.html  0%  100%  
+	    New File  		     522	recyclebin.html  0%  100%  
+	    New File  		     997	restore.html  0%  100%  
+	    New File  		    6356	rights.html  0%  100%  
+	    New File  		     206	umbpreview.html  0%  100%  
+	  New Dir          4	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\contentblueprints\
+	    New File  		    1551	create.html  0%  100%  
+	    New File  		     441	delete.html  0%  100%  
+	    New File  		     372	edit.html  0%  100%  
+	    New File  		    1857	intro.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\dashboard\
+	    New File  		     587	ChangePassword.html  0%  100%  
+	  New Dir          6	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\dashboard\default\
+	    New File  		   25651	ourumbraco.jpg  0%  100%  
+	    New File  		    3498	StartupDashboardIntro.html  0%  100%  
+	    New File  		    1365	StartupDashboardKits.html  0%  100%  
+	    New File  		       0	StartupDashboardLastEdits.html100%  
+	    New File  		     828	StartupDashboardVideos.html  0%  100%  
+	    New File  		   49817	umbracotv.jpg  0%  100%  
+	  New Dir          6	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\dashboard\developer\
+	    New File  		    1251	developerdashboardintro.html  0%  100%  
+	    New File  		    1015	developerdashboardvideos.html  0%  100%  
+	    New File  		   17956	examinemanagement.html  0%  100%  
+	    New File  		    7081	healthcheck.html  0%  100%  
+	    New File  		    5252	redirecturls.html  0%  100%  
+	    New File  		    1309	xmldataintegrityreport.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\dashboard\forms\
+	    New File  		    1643	formsdashboardintro.html  0%  100%  
+	  New Dir          4	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\dashboard\media\
+	    New File  		    1838	desktopmediauploader.html  0%  100%  
+	    New File  		     917	mediadashboardintro.html  0%  100%  
+	    New File  		     829	mediadashboardvideos.html  0%  100%  
+	    New File  		     157	mediafolderbrowser.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\dashboard\members\
+	    New File  		     394	membersdashboardintro.html  0%  100%  
+	    New File  		     813	membersdashboardvideos.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\dashboard\settings\
+	    New File  		    1321	settingsdashboardintro.html  0%  100%  
+	    New File  		     829	settingsdashboardvideos.html  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\datatypes\
+	    New File  		    1987	create.html  0%  100%  
+	    New File  		    1612	delete.html  0%  100%  
+	    New File  		    2137	edit.html  0%  100%  
+	    New File  		    2135	move.html  0%  100%  
+	    New File  		     966	rename.html  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\directives\
+	  New Dir          8	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\directives\_obsolete\
+	    New File  		     738	umb-content-name.html  0%  100%  
+	    New File  		     406	umb-header.html  0%  100%  
+	    New File  		    1472	umb-item-sorter.html  0%  100%  
+	    New File  		     572	umb-login.html  0%  100%  
+	    New File  		     832	umb-optionsmenu.html  0%  100%  
+	    New File  		    1080	umb-photo-folder.html  0%  100%  
+	    New File  		     147	umb-tab-view.html  0%  100%  
+	    New File  		     239	umb-upload-dropzone.html  0%  100%  
+	  New Dir          8	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\documenttypes\
+	    New File  		    2194	copy.html  0%  100%  
+	    New File  		    2519	create.html  0%  100%  
+	    New File  		    1710	delete.html  0%  100%  
+	    New File  		    2500	edit.html  0%  100%  
+	    New File  		    2192	move.html  0%  100%  
+	    New File  		     148	property.html  0%  100%  
+	    New File  		       0	propertygroup.html100%  
+	    New File  		     973	rename.html  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\documenttypes\views\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\documenttypes\views\design\
+	    New File  		      95	design.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\documenttypes\views\listview\
+	    New File  		     553	listview.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\documenttypes\views\permissions\
+	    New File  		    1680	permissions.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\documenttypes\views\templates\
+	    New File  		     845	templates.html  0%  100%  
+	  New Dir          9	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\install\
+	    New File  		     401	continueinstall.html  0%  100%  
+	    New File  		    4724	database.html  0%  100%  
+	    New File  		     329	error.html  0%  100%  
+	    New File  		    1104	machinekey.html  0%  100%  
+	    New File  		    1006	permissionsreport.html  0%  100%  
+	    New File  		     914	starterkit.html  0%  100%  
+	    New File  		     885	upgrade.html  0%  100%  
+	    New File  		    2921	user.html  0%  100%  
+	    New File  		    1015	version7upgradereport.html  0%  100%  
+	  New Dir          6	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\media\
+	    New File  		    1610	create.html  0%  100%  
+	    New File  		     445	delete.html  0%  100%  
+	    New File  		    2826	edit.html  0%  100%  
+	    New File  		     714	emptyrecyclebin.html  0%  100%  
+	    New File  		    1769	move.html  0%  100%  
+	    New File  		     522	recyclebin.html  0%  100%  
+	  New Dir          6	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\mediatypes\
+	    New File  		    2188	copy.html  0%  100%  
+	    New File  		    1941	create.html  0%  100%  
+	    New File  		    1649	delete.html  0%  100%  
+	    New File  		    2455	edit.html  0%  100%  
+	    New File  		    2170	move.html  0%  100%  
+	    New File  		     966	rename.html  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\mediatypes\views\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\mediatypes\views\design\
+	    New File  		      92	design.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\mediatypes\views\listview\
+	    New File  		     550	listview.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\mediatypes\views\permissions\
+	    New File  		    1679	permissions.html  0%  100%  
+	  New Dir          4	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\member\
+	    New File  		    1009	create.html  0%  100%  
+	    New File  		     459	delete.html  0%  100%  
+	    New File  		    2079	edit.html  0%  100%  
+	    New File  		    1094	list.html  0%  100%  
+	  New Dir          4	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\membertypes\
+	    New File  		    1918	create.html  0%  100%  
+	    New File  		    1127	delete.html  0%  100%  
+	    New File  		    2415	edit.html  0%  100%  
+	    New File  		     362	move.html  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\membertypes\views\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\membertypes\views\design\
+	    New File  		     121	design.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\packager\
+	    New File  		     454	delete.html  0%  100%  
+	    New File  		     814	overview.html  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\packager\views\
+	    New File  		    9227	install-local.html  0%  100%  
+	    New File  		    6122	installed.html  0%  100%  
+	    New File  		   20878	repo.html  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\partialviewmacros\
+	    New File  		    3986	create.html  0%  100%  
+	    New File  		     442	delete.html  0%  100%  
+	    New File  		    4455	edit.html  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\partialviews\
+	    New File  		    3494	create.html  0%  100%  
+	    New File  		     437	delete.html  0%  100%  
+	    New File  		    4824	edit.html  0%  100%  
+	  New Dir         17	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\prevalueeditors\
+	    New File  		     101	boolean.html  0%  100%  
+	    New File  		     437	decimal.html  0%  100%  
+	    New File  		      84	hidden.html  0%  100%  
+	    New File  		    1112	imagepicker.html  0%  100%  
+	    New File  		     876	mediapicker.html  0%  100%  
+	    New File  		     682	multivalues.html  0%  100%  
+	    New File  		     166	nodetype.html  0%  100%  
+	    New File  		     434	number.html  0%  100%  
+	    New File  		     261	radiobuttonlist.html  0%  100%  
+	    New File  		     222	readonlykeyvalues.html  0%  100%  
+	    New File  		     411	requiredfield.html  0%  100%  
+	    New File  		     101	textarea.html  0%  100%  
+	    New File  		      94	textstring.html  0%  100%  
+	    New File  		     470	textstringlimited.html  0%  100%  
+	    New File  		     866	treepicker.html  0%  100%  
+	    New File  		    2942	treesource.html  0%  100%  
+	    New File  		     270	valuetype.html  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\boolean\
+	    New File  		     187	boolean.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\changepassword\
+	    New File  		     230	changepassword.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\checkboxlist\
+	    New File  		     465	checkboxlist.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\colorpicker\
+	    New File  		     684	colorpicker.html  0%  100%  
+	    New File  		     916	colorpicker.prevalues.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\contentpicker\
+	    New File  		    2320	contentpicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\datepicker\
+	    New File  		    1866	datepicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\decimal\
+	    New File  		     645	decimal.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\dropdown\
+	    New File  		     782	dropdown.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\email\
+	    New File  		     700	email.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\entitypicker\
+	    New File  		     661	entitypicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\fileupload\
+	    New File  		    1716	fileupload.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\folderbrowser\
+	    New File  		     149	folderbrowser.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\googlemaps\
+	    New File  		     182	googlemaps.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\grid\
+	    New File  		   16515	grid.html  0%  100%  
+	    New File  		    7307	grid.prevalues.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\grid\config\
+	    New File  		    7328	grid.default.config.js  0%  100%  
+	    New File  		     265	grid.default.rtestyles.css  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\grid\dialogs\
+	    New File  		     485	config.html  0%  100%  
+	    New File  		     472	editconfig.html  0%  100%  
+	    New File  		    4915	layoutconfig.html  0%  100%  
+	    New File  		    4406	rowconfig.html  0%  100%  
+	    New File  		     432	rowdeleteconfirm.html  0%  100%  
+	  New Dir          6	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\grid\editors\
+	    New File  		     519	embed.html  0%  100%  
+	    New File  		     114	error.html  0%  100%  
+	    New File  		     603	macro.html  0%  100%  
+	    New File  		     799	media.html  0%  100%  
+	    New File  		    1042	rte.html  0%  100%  
+	    New File  		     302	textstring.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\imagecropper\
+	    New File  		    3113	imagecropper.html  0%  100%  
+	    New File  		    2373	imagecropper.prevalues.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\integer\
+	    New File  		     663	integer.html  0%  100%  
+	  New Dir          6	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\listview\
+	    New File  		    1218	bulkActionPermissions.prevalues.html  0%  100%  
+	    New File  		    2502	includeproperties.prevalues.html  0%  100%  
+	    New File  		    2297	layouts.prevalues.html  0%  100%  
+	    New File  		    8482	listview.html  0%  100%  
+	    New File  		     459	orderDirection.prevalues.html  0%  100%  
+	    New File  		     190	sortby.prevalues.html  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\listview\layouts\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\listview\layouts\grid\
+	    New File  		    3329	grid.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\listview\layouts\list\
+	    New File  		    2685	list.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\macrocontainer\
+	    New File  		    1159	macrocontainer.html  0%  100%  
+	    New File  		     217	macrolist.prevalues.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\markdowneditor\
+	    New File  		     538	markdowneditor.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\mediapicker\
+	    New File  		    2840	mediapicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\membergrouppicker\
+	    New File  		     688	membergrouppicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\membergroups\
+	    New File  		     688	membergroups.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\memberpicker\
+	    New File  		     728	memberpicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\multipletextbox\
+	    New File  		     960	multipletextbox.html  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\nestedcontent\
+	    New File  		    2879	nestedcontent.doctypepicker.html  0%  100%  
+	    New File  		     456	nestedcontent.editor.html  0%  100%  
+	    New File  		    3595	nestedcontent.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\radiobuttons\
+	    New File  		     474	radiobuttons.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\readonlyvalue\
+	    New File  		     161	readonlyvalue.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\relatedlinks\
+	    New File  		    5870	relatedlinks.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\rte\
+	    New File  		    1050	rte.html  0%  100%  
+	    New File  		    1825	rte.prevalues.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\sensitivevalue\
+	    New File  		     247	sensitivevalue.html  0%  100%  
+	  New Dir          4	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\slider\
+	    New File  		     381	handle.prevalues.html  0%  100%  
+	    New File  		     362	orientation.prevalues.html  0%  100%  
+	    New File  		     143	slider.html  0%  100%  
+	    New File  		     382	tooltip.prevalues.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\tags\
+	    New File  		     962	tags.html  0%  100%  
+	    New File  		     209	tags.prevalues.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\templatepicker\
+	    New File  		     113	templatepicker.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\test\
+	    New File  		     476	test.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\textarea\
+	    New File  		     656	textarea.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\textbox\
+	    New File  		     771	textbox.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\ultrasimple\
+	    New File  		     243	ultrasimple.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\urllist\
+	    New File  		     509	urllist.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\propertyeditors\validationtest\
+	    New File  		     558	validationtest.html  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\scripts\
+	    New File  		    2089	create.html  0%  100%  
+	    New File  		     432	delete.html  0%  100%  
+	    New File  		    1867	edit.html  0%  100%  
+	  New Dir          2	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\templates\
+	    New File  		     446	delete.html  0%  100%  
+	    New File  		    7766	edit.html  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\users\
+	    New File  		   11715	group.html  0%  100%  
+	    New File  		     674	overview.html  0%  100%  
+	    New File  		    2972	user.html  0%  100%  
+	  New Dir          0	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\users\views\
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\users\views\groups\
+	    New File  		    4961	groups.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\users\views\user\
+	    New File  		   18279	details.html  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Views\users\views\users\
+	    New File  		   27903	users.html  0%  100%  
+	  New Dir         14	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Webservices\
+	    New File  		   26403	ajax.js  0%  100%  
+	    New File  		     125	CacheRefresher.asmx  0%  100%  
+	    New File  		     130	CheckForUpgrade.asmx  0%  100%  
+	    New File  		     111	CMSNode.asmx  0%  100%  
+	    New File  		     125	codeEditorSave.asmx  0%  100%  
+	    New File  		     127	legacyAjaxCalls.asmx  0%  100%  
+	    New File  		     142	MacroContainerService.asmx  0%  100%  
+	    New File  		     117	nodeSorter.asmx  0%  100%  
+	    New File  		     125	progressStatus.asmx  0%  100%  
+	    New File  		     106	publication.asmx  0%  100%  
+	    New File  		     154	TagsAutoCompleteHandler.ashx  0%  100%  
+	    New File  		     134	TreeClientService.asmx  0%  100%  
+	    New File  		     130	TreeDataService.ashx  0%  100%  
+	    New File  		    8404	wsdl.xslt  0%  100%  
+	  New Dir          5	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Xslt\
+	    New File  		     667	macroGetCurrent.xsl  0%  100%  
+	    New File  		    1178	macroGetSubs.xsl  0%  100%  
+	    New File  		    1114	searchResult.xslt  0%  100%  
+	    New File  		    1756	sqlNodeHierachy.xslt  0%  100%  
+	    New File  		     594	Web.config  0%  100%  
+	  New Dir         15	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Xslt\Templates\
+	    New File  		    1085	Breadcrumb.xslt  0%  100%  
+	    New File  		     527	Clean.xslt  0%  100%  
+	    New File  		    1264	ListSubPagesAsThumbnails.xslt  0%  100%  
+	    New File  		    1063	ListSubPagesByDateAndLimit.xslt  0%  100%  
+	    New File  		     918	ListSubPagesByDocumentType.xslt  0%  100%  
+	    New File  		     886	ListSubPagesByLevel.xslt  0%  100%  
+	    New File  		     956	ListSubPagesFromAChangableSource.xslt  0%  100%  
+	    New File  		     756	ListSubPagesFromCurrentPage.xslt  0%  100%  
+	    New File  		    1151	ListThumbnailsFromCurrentPage.xslt  0%  100%  
+	    New File  		     771	ListWholeStructureFromCurrentPage.xslt  0%  100%  
+	    New File  		    1280	NavigationPrototype.xslt  0%  100%  
+	    New File  		    1701	RelatedLinks.xslt  0%  100%  
+	    New File  		    3263	RSSFeed.xslt  0%  100%  
+	    New File  		    1579	Sitemap.xslt  0%  100%  
+	    New File  		    1586	TablePrototype.xslt  0%  100%  
+	  New Dir         15	D:\Projects\Mentor-Web-Blocks\WebBlocks\packages\UmbracoCms.7.9.2\UmbracoFiles\Umbraco\Xslt\Templates\Schema2\
+	    New File  		    1066	Breadcrumb.xslt  0%  100%  
+	    New File  		     527	Clean.xslt  0%  100%  
+	    New File  		    1015	ListSubPagesAsThumbnails.xslt  0%  100%  
+	    New File  		    1055	ListSubPagesByDateAndLimit.xslt  0%  100%  
+	    New File  		     891	ListSubPagesByDocumentType.xslt  0%  100%  
+	    New File  		     875	ListSubPagesByLevel.xslt  0%  100%  
+	    New File  		     948	ListSubPagesFromAChangableSource.xslt  0%  100%  
+	    New File  		     748	ListSubPagesFromCurrentPage.xslt  0%  100%  
+	    New File  		     893	ListThumbnailsFromCurrentPage.xslt  0%  100%  
+	    New File  		     763	ListWholeStructureFromCurrentPage.xslt  0%  100%  
+	    New File  		    1267	NavigationPrototype.xslt  0%  100%  
+	    New File  		    1714	RelatedLinks.xslt  0%  100%  
+	    New File  		    3251	RSSFeed.xslt  0%  100%  
+	    New File  		    1567	Sitemap.xslt  0%  100%  
+	    New File  		    1560	TablePrototype.xslt  0%  100%  
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :       321       320         1         0         0         0
+   Files :      1307      1306         1         0         0         0
+   Bytes :   20.41 m   20.40 m     4.2 k         0         0         0
+   Times :   0:01:15   0:00:50                       0:00:00   0:00:25
+
+
+   Speed :              421565 Bytes/sec.
+   Speed :              24.122 MegaBytes/min.
+   Ended : 16 March 2018 23:44:46
+

@@ -1,0 +1,99 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : 16 March 2018 23:41:54
+   Source = D:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.StarterKit\bin\
+     Dest = D:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.StarterKit\App_Data\NuGetBackup\20180316-234153\bin\
+
+    Files : *.*
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                  69	D:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.StarterKit\bin\
+	    New File  		  166400	AutoMapper.dll  0%   78%  100%  
+	    New File  		   28672	AutoMapper.Net4.dll  0%  100%  
+	    New File  		  110592	businesslogic.dll  0%  100%  
+	    New File  		  148992	ClientDependency.Core.dll  0%   87%  100%  
+	    New File  		   23552	ClientDependency.Core.Mvc.dll  0%  100%  
+	    New File  		  491520	cms.dll  0%   26%   53%   80%  100%  
+	    New File  		   50688	controls.dll  0%  100%  
+	    New File  		  120832	Examine.dll  0%  100%  
+	    New File  		  132608	HtmlAgilityPack.dll  0%   98%  100%  
+	    New File  		  200704	ICSharpCode.SharpZipLib.dll  0%   65%  100%  
+	    New File  		  180736	ImageProcessor.dll  0%   72%  100%  
+	    New File  		  121344	ImageProcessor.Web.dll  0%  100%  
+	    New File  		   24576	interfaces.dll  0%  100%  
+	    New File  		   15872	Log4Net.Async.dll  0%  100%  
+	    New File  		  276480	log4net.dll  0%   47%   94%  100%  
+	    New File  		  786432	Lucene.Net.dll  0%   33%   66%  100%  
+	    New File  		   49152	MarkdownSharp.dll  0%  100%  
+	    New File  		   1.8 m	Microsoft.AI.Agent.Intercept.dll  0%   13%   26%   39%   53%   66%   79%   92%  100%  
+	    New File  		   65792	Microsoft.AI.DependencyCollector.dll  0%  100%  
+	    New File  		  130312	Microsoft.AI.PerfCounterCollector.dll  0%  100%  
+	    New File  		  103696	Microsoft.AI.ServerTelemetryChannel.dll  0%  100%  
+	    New File  		   49856	Microsoft.AI.Web.dll  0%  100%  
+	    New File  		   41712	Microsoft.AI.WindowsServer.dll  0%  100%  
+	    New File  		   11264	Microsoft.ApplicationBlocks.Data.dll  0%  100%  
+	    New File  		  188664	Microsoft.ApplicationInsights.dll  0%   69%  100%  
+	    New File  		  171672	Microsoft.AspNet.Identity.Core.dll  0%   76%  100%  
+	    New File  		   54944	Microsoft.AspNet.Identity.Owin.dll  0%  100%  
+	    New File  		  346848	Microsoft.AspNet.SignalR.Core.dll  0%   37%   75%  100%  
+	    New File  		   3.8 m	Microsoft.CodeAnalysis.CSharp.dll  0%   13%   26%   39%   52%   65%   78%   91%  100%  
+	    New File  		   1.6 m	Microsoft.CodeAnalysis.dll  0%   15%   30%   45%   60%   76%   91%  100%  
+	    New File  		   29344	Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll  0%  100%  
+	    New File  		    1805	Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml  0%  100%  
+	    New File  		   41328	Microsoft.IO.RecyclableMemoryStream.dll  0%  100%  
+	    New File  		  101560	Microsoft.Owin.dll  0%  100%  
+	    New File  		  138936	Microsoft.Owin.Host.SystemWeb.dll  0%   94%  100%  
+	    New File  		   36536	Microsoft.Owin.Security.Cookies.dll  0%  100%  
+	    New File  		   53944	Microsoft.Owin.Security.dll  0%  100%  
+	    New File  		   77496	Microsoft.Owin.Security.OAuth.dll  0%  100%  
+	    New File  		   45416	Microsoft.Web.Infrastructure.dll  0%  100%  
+	    New File  		  396288	MiniProfiler.dll  0%   33%   66%   99%  100%  
+	    New File  		  424960	MySql.Data.dll  0%   30%   61%   92%  100%  
+	    New File  		  652288	Newtonsoft.Json.dll  0%   40%   80%  100%  
+	    New File  		    4608	Owin.dll  0%  100%  
+	    New File  		   10240	Semver.dll  0%  100%  
+	    New File  		   21504	SQLCE4Umbraco.dll  0%  100%  
+	    New File  		  204544	System.Collections.Immutable.dll  0%   64%  100%  
+	    New File  		  470696	System.Data.SqlServerCe.dll  0%   27%   55%   83%  100%  
+	    New File  		  240808	System.Data.SqlServerCe.Entity.dll  0%   54%  100%  
+	    New File  		  185544	System.Net.Http.Formatting.dll  0%   70%  100%  
+	    New File  		  262896	System.Reflection.Metadata.dll  0%   49%   99%  100%  
+	    New File  		  179104	System.Threading.Tasks.Dataflow.dll  0%   73%  100%  
+	    New File  		  139976	System.Web.Helpers.dll  0%   93%  100%  
+	    New File  		  471240	System.Web.Http.dll  0%   27%   55%   83%  100%  
+	    New File  		   82120	System.Web.Http.WebHost.dll  0%  100%  
+	    New File  		  566472	System.Web.Mvc.dll  0%   46%   92%  100%  
+	    New File  		  272072	System.Web.Razor.dll  0%   48%   96%  100%  
+	    New File  		   41672	System.Web.WebPages.Deployment.dll  0%  100%  
+	    New File  		  211656	System.Web.WebPages.dll  0%   61%  100%  
+	    New File  		   39624	System.Web.WebPages.Razor.dll  0%  100%  
+	    New File  		  192512	TidyNet.dll  0%   68%  100%  
+	    New File  		   2.7 m	Umbraco.Core.dll  0%   17%   35%   53%   71%   89%  100%  
+	    New File  		   43008	umbraco.DataLayer.dll  0%  100%  
+	    New File  		   2.2 m	umbraco.dll  0%   22%   44%   66%   88%  100%  
+	    New File  		  368640	umbraco.editorControls.dll  0%   35%   71%  100%  
+	    New File  		  126464	umbraco.MacroEngines.dll  0%  100%  
+	    New File  		  105984	Umbraco.ModelsBuilder.dll  0%  100%  
+	    New File  		   36352	umbraco.providers.dll  0%  100%  
+	    New File  		   40960	Umbraco.Web.UI.dll  0%  100%  
+	    New File  		   68096	UmbracoExamine.dll  0%  100%  
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         0         1         0         0         0
+   Files :        69        69         0         0         0         0
+   Bytes :   22.39 m   22.39 m         0         0         0         0
+   Times :   0:00:03   0:00:03                       0:00:00   0:00:00
+
+
+   Speed :             7549635 Bytes/sec.
+   Speed :             431.993 MegaBytes/min.
+   Ended : 16 March 2018 23:41:57
+

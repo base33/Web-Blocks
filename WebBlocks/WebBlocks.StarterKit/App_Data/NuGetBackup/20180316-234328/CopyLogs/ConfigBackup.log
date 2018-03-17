@@ -1,0 +1,73 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : 16 March 2018 23:43:28
+   Source = D:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.StarterKit\Config\
+     Dest = D:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.StarterKit\App_Data\NuGetBackup\20180316-234328\Config\
+
+    Files : *.*
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                  18	D:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.StarterKit\Config\
+	    New File  		     305	404handlers.config  0%  100%  
+	    New File  		     681	applications.config  0%  100%  
+	    New File  		     739	BaseRestExtensions.config  0%  100%  
+	    New File  		    3981	ClientDependency.config  0%  100%  
+	    New File  		    2957	Dashboard.config  0%  100%  
+	    New File  		    7088	EmbeddedMedia.config  0%  100%  
+	    New File  		    1261	ExamineIndex.config  0%  100%  
+	    New File  		    1834	ExamineSettings.config  0%  100%  
+	    New File  		     429	feedProxy.config  0%  100%  
+	    New File  		     286	FileSystemProviders.config  0%  100%  
+	    New File  		    1167	grid.editors.config.js  0%  100%  
+	    New File  		    1141	HealthChecks.config  0%  100%  
+	    New File  		    1108	log4net.config  0%  100%  
+	    New File  		      72	metablogConfig.config  0%  100%  
+	    New File  		     837	scripting.config  0%  100%  
+	    New File  		   12384	tinyMceConfig.config  0%  100%  
+	    New File  		    5510	trees.config  0%  100%  
+	    New File  		    9435	umbracoSettings.config  0%  100%  
+	  New Dir          1	D:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.StarterKit\Config\BackOfficeTours\
+	    New File  		   26256	getting-started.json  0%  100%  
+	  New Dir          3	D:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.StarterKit\Config\imageprocessor\
+	    New File  		     378	cache.config  0%  100%  
+	    New File  		    4025	processing.config  0%  100%  
+	    New File  		    1064	security.config  0%  100%  
+	  New Dir         18	D:\Projects\Mentor-Web-Blocks\WebBlocks\WebBlocks.StarterKit\Config\Lang\
+	    New File  		      83	cs-CZ.user.xml  0%  100%  
+	    New File  		      82	da-DK.user.xml  0%  100%  
+	    New File  		      82	de-DE.user.xml  0%  100%  
+	    New File  		      82	en-GB.user.xml  0%  100%  
+	    New File  		      82	en-US.user.xml  0%  100%  
+	    New File  		      82	es-ES.user.xml  0%  100%  
+	    New File  		      82	fr-FR.user.xml  0%  100%  
+	    New File  		      85	he-IL.user.xml  0%  100%  
+	    New File  		      85	it-IT.user.xml  0%  100%  
+	    New File  		      82	ja-JP.user.xml  0%  100%  
+	    New File  		      85	ko-KR.user.xml  0%  100%  
+	    New File  		      85	nb-NO.user.xml  0%  100%  
+	    New File  		      82	nl-NL.user.xml  0%  100%  
+	    New File  		      85	pl-PL.user.xml  0%  100%  
+	    New File  		      85	pt-BR.user.xml  0%  100%  
+	    New File  		      82	ru-RU.user.xml  0%  100%  
+	    New File  		      85	sv-SE.user.xml  0%  100%  
+	    New File  		      80	zh-CN.user.xml  0%  100%  
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         4         3         1         0         0         0
+   Files :        40        40         0         0         0         0
+   Bytes :    82.4 k    82.4 k         0         0         0         0
+   Times :   0:00:02   0:00:02                       0:00:00   0:00:00
+
+
+   Speed :               39978 Bytes/sec.
+   Speed :               2.287 MegaBytes/min.
+   Ended : 16 March 2018 23:43:30
+

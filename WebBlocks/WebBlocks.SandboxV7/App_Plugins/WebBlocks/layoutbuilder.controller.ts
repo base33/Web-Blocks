@@ -395,8 +395,13 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", ["$scope", "$htt
 					for (var i = 0; i < layoutBuilderModel.RecycleBin.length; i++) {
 						layoutBuilderModel.RecycleBin[i].Block = WebBlocks.LayoutBuilder.TypedBlockConverter.TypeIt(layoutBuilderModel.RecycleBin[i].Block);
 					}
-				}
-			}
+                }
+                if ($scope.model.value.Editors !== undefined) {
+                    layoutBuilderModel.Editors = $scope.model.value.Editors;
+                } else {
+                    layoutBuilderModel.Editors = {};
+                }
+            }
 			var previewProvider = new WebBlocks.API.LayoutBuilderPreview();
 			previewProvider.GetPreview(editorState.current.id, $http, function (preview) {
 				//if a container was removed, we want to move the blocks into Block Storage
@@ -415,7 +420,8 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", ["$scope", "$htt
 						}
 					}
 				});
-				layoutBuilderModel.Containers = preview.Containers;
+                layoutBuilderModel.Containers = preview.Containers;
+                    
 				//load in canvas angular html
 				//$element.find("#canvasRender").empty().append(layoutBuilderElements);
 				var elToAppend = $(preview.Html);

@@ -9,7 +9,7 @@
 
 @section Content {
     <div class="home-page">
-        <section id="hero" class="hero-slider-container">
+        @*<section id="hero" class="hero-slider-container">
             @Html.Container("webblocks", new Container()
             {
                 Name = "heroSliderContainer",
@@ -17,7 +17,11 @@
                 ContainerController = new WebBlocks.Model.ContainerControllerDefinition(typeof(SliderContainerController)),
                 ContainerPermissions = new WebBlocks.Model.AllowedBlocks("HeroSlide")
             })
-        </section>
+        </section>*@
+
+        <div>
+            @Html.WebBlocksEditor("h1", "Heading", "LiveText", "webblocks")
+        </div>
 
         @Html.Container("webblocks", new Container()
         {

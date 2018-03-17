@@ -1,0 +1,93 @@
+{   
+    propertyEditors: [      
+        {
+            alias: "MentorWebBlocks.LayoutBuilder",
+            name: "Mentor Web Blocks: Layout Builder",
+            hideLabel: true,
+            editor: {
+                view: "~/App_Plugins/WebBlocks/LayoutBuilder.html",
+				valueType: "json"
+            },
+			prevalues: {
+				fields: [
+					{
+						label: "Root Block Content Id",
+						description: "This will be the root of the Add Block menu.  Recommendation: Store all blocks under a single Block folder and set this as the root.",
+						key: "rootBlockFolderId",
+						view: "treepicker",
+						validation: []
+					},
+					{
+						label: "Canvas Width (optional)",
+						description: "The canvas width without 'px'.  Default: 960",
+						key: "canvasWidth",
+						view: "textstring",
+						validation: []
+					},
+					{
+						label: "Iframe Width (optional)",
+						description: "The block editor iframe width without 'px'.",
+						key: "iframeWidth",
+						view: "textstring",
+						validation: []
+					},
+					{
+						label: "Iframe Height (optional)",
+						description: "The block editor iframe height without 'px'.",
+						key: "iframeHeight",
+						view: "textstring",
+						validation: []
+					},
+					{
+						label: "CSS Stylesheets",
+						description: "Add the relative url or absolute url with protocol",
+						key: "stylesheets",
+						view: "multivalues",
+						validation: []
+					},
+					{
+						label: "Javascript",
+						description: "Add the relative url or absolute url with protocol",
+						key: "scripts",
+						view: "multivalues",
+						validation: []
+					},
+					{
+						label: "Wysiwyg Stylesheet",
+						description: "The stylesheet name for the stylesheet containing the styling for the wysiwyg editor",
+						key: "wysiwygStylesheet",
+						view: "textstring",
+						validation: []
+					},
+					{
+						label: "Auto Hide Content Tree?",
+						description: "By checking this box, the content tree will automatically close when a page with Web Blocks is open.",
+						key: "autoHideContentTree",
+						view: "boolean",
+						validation: []
+					},
+					{
+						label: "Disable dragging between containers?",
+						description: "You can disable dragging between containers by checking this box.",
+						key: "disableContainerDragging",
+						view: "boolean",
+						validation: []
+					}
+				]
+			}
+        }
+    ]
+    ,
+    javascript: [
+        '~/App_Plugins/WebBlocks/layoutbuilder.controller.js',
+		'~/App_Plugins/WebBlocks/layoutbuilder.directives.js',
+		'~/App_Plugins/WebBlocks/layoutbuilder.models.js',
+		"~/App_Plugins/WebBlocks/dialogs/layoutbuilder.contextmenudialog.js",
+		"~/App_Plugins/WebBlocks/dialogs/layoutbuilder.addblockdialog.js",
+		"~/App_Plugins/WebBlocks/dialogs/layoutbuilder.blockstoragedialog.js",
+		"~/App_Plugins/WebBlocks/dialogs/layoutbuilder.recyclebindialog.js",
+		"~/App_Plugins/WebBlocks/assets/draggable.js",
+		"~/App_Plugins/WebBlocks/assets/touchpunch.js",
+		"~/App_Plugins/WebBlocks/assets/ngcontenteditable.js"
+    ]
+}

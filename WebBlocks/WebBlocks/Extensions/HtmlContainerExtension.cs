@@ -29,6 +29,36 @@ namespace WebBlocks.Extensions
             }
         }
 
+        public static string WebBlocksEditor<T>(this HtmlHelper<T> html, string element, string key, string editor, string propertyAlias, string classes = "")
+        {
+            InitWebBlocks();
+            if(WebBlocksUtility.IsInBuilder)
+            {
+                html.ViewContext.Writer.Write($"<{element} contenteditable ng-model='layoutBuilderModel.Editors.{key}' class='{classes}'></{element}>");
+            }
+            else
+            {
+                var value = GetEditorValue(key, propertyAlias);
+                html.ViewContext.Writer.Write($"<{element} class='{classes}'>{value}</{element}>");
+            }
+            return "";
+        }
+
+        public static string WebBlocksEditor(this HtmlHelper html, string element, string key, string editor, string propertyAlias, string classes = "")
+        {
+            InitWebBlocks();
+            if (WebBlocksUtility.IsInBuilder)
+            {
+                html.ViewContext.Writer.Write($"<{element} contenteditable ng-model='layoutBuilderModel.Editors.{key}' class='{ classes}'></{element}>");
+            }
+            else
+            {
+                var value = GetEditorValue(key, propertyAlias);
+                html.ViewContext.Writer.Write($"<{element} class='{ classes}'>{value}</{element}>");
+            }
+            return "";
+        }
+
         public static string Container<T>(this HtmlHelper<T> html, string propertyAlias, IContainer container)
         {
             InitWebBlocks();
@@ -263,6 +293,17 @@ namespace WebBlocks.Extensions
             if (attributes == null || !attributes.Any()) return "";
 
             return attributes.Keys.Aggregate("", (current, key) => current + string.Format(" {0}=\"{1}\"", key, attributes[key]));
+        }
+
+        private static object GetEditorValue(string key, string propertyAlias)
+        {
+            string webBlocksData = WebBlocksUtility.CurrentPageContent.GetPropertyValue<string>(propertyAlias);
+            LayoutBuilderProvider containerProvider = new LayoutBuilderProvider(webBlocksData);
+
+            object value = null;
+            containerProvider.LayoutBuilder.Editors.TryGetValue(key, out value);
+
+            return value;
         }
     }
 }
