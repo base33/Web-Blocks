@@ -29,7 +29,7 @@ namespace WebBlocks.Extensions
             }
         }
 
-        public static string WebBlocksEditor<T>(this HtmlHelper<T> html, string element, string key, string editor, string propertyAlias, string classes = "")
+        public static string WebBlocksEditor<T>(this HtmlHelper<T> html, string element, string key, string editor, string propertyAlias, object attributes = null)
         {
             InitWebBlocks();
             if(WebBlocksUtility.IsInBuilder)
@@ -44,7 +44,7 @@ namespace WebBlocks.Extensions
             return "";
         }
 
-        public static string WebBlocksEditor(this HtmlHelper html, string element, string key, string editor, string propertyAlias, string classes = "")
+        public static string WebBlocksEditor(this HtmlHelper html, string element, string key, string editor, string propertyAlias, object attributes = null)
         {
             InitWebBlocks();
             if (WebBlocksUtility.IsInBuilder)
