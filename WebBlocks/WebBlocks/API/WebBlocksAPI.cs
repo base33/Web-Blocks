@@ -28,6 +28,23 @@ namespace WebBlocks.API
             set { CacheHelper.Add("wbBlockAttributes", value); }
         }
 
+        public IBlock Block {
+            get
+            {
+                return CacheHelper.Get<IBlock>("wbBlockAngular");
+            }
+            set { CacheHelper.Add("wbBlockAngular", value); }
+        }
+
+        public IBlock ParentBlock
+        {
+            get
+            {
+                return CacheHelper.Get<IBlock>("wbParentBlockAngular");
+            }
+            set { CacheHelper.Add("wbParentBlockAngular", value); }
+        }
+
         public List<string> CssClasses
         {
             get 

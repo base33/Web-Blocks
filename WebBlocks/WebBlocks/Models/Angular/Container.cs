@@ -21,6 +21,7 @@ namespace WebBlocks.Models.Angular
         public Dictionary<string, string> Attributes { get; set; }
         public IContainerPermissions ContainerPermissions { get; set; }
         public IContainerControllerDefinition ContainerController { get; set; }
+        public IEnumerable<GridDefinition> GridDefinitions { get; set; }
 
         public Container()
         {
@@ -34,6 +35,31 @@ namespace WebBlocks.Models.Angular
             Attributes = new Dictionary<string, string>();
             ContainerPermissions = null;
             ContainerController = null;
+            GridDefinitions = new List<GridDefinition>();
         }
+    }
+
+    public class GridDefinition
+    {
+        public string Alias { get; set; }
+        public string ClassName { get; set; }
+        /// <summary>
+        /// Whether to allow this directly within a container
+        /// </summary>
+        public bool AllowAtRoot { get; set; }
+        /// <summary>
+        /// What grid rows can be added within this element?
+        /// </summary>
+        public string[] AllowedChildGrids { get; set; }
+        /// <summary>
+        /// Whether Content/Wysiwyg blocks can be added
+        /// </summary>
+        public bool AllowNonElementBlocks { get; set; }
+        /// <summary>
+        /// Whether to add to the accepting element by default if there are no other options
+        /// </summary>
+        public bool AddByDefaultIfOnlyOption { get; set; }
+
+        public IEnumerable<GridDefinition> GridDefinitions { get; set; } = new List<GridDefinition>();
     }
 }

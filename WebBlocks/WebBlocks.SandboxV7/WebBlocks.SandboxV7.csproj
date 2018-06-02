@@ -23,8 +23,9 @@
     <IISExpressUseClassicPipelineMode />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>1.4</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -407,13 +408,6 @@
     <TypeScriptCompile Include="App_Plugins\WebBlocks\LayoutBuilder.Models.ts" />
     <TypeScriptCompile Include="App_Plugins\WebBlocks\layoutbuilder.controller.ts" />
     <TypeScriptCompile Include="App_Plugins\WebBlocks\layoutbuilder.directives.ts" />
-    <TypeScriptCompile Include="scripts\typings\angularjs\angular-animate.d.ts" />
-    <TypeScriptCompile Include="scripts\typings\angularjs\angular-cookies.d.ts" />
-    <TypeScriptCompile Include="scripts\typings\angularjs\angular-mocks.d.ts" />
-    <TypeScriptCompile Include="scripts\typings\angularjs\angular-resource.d.ts" />
-    <TypeScriptCompile Include="scripts\typings\angularjs\angular-route.d.ts" />
-    <TypeScriptCompile Include="scripts\typings\angularjs\angular-sanitize.d.ts" />
-    <TypeScriptCompile Include="scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="scripts\typings\jqueryui\jqueryui.d.ts" />
     <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>

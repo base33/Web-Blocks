@@ -1,4 +1,3 @@
-/// <reference path="../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../scripts/typings/jqueryui/jqueryui.d.ts" />
 angular.module("umbraco").filter("wbContainerName", function () {
     return function (containerName) {
@@ -121,6 +120,23 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", ["$scope", "$htt
                     updateAllContainersSortOrder(layoutBuilderModel.Containers);
                 }
             };
+        };
+        $scope.getSortableOptionsForBlock = function (child) {
+            return child instanceof WebBlocks.LayoutBuilder.ElementBlock
+                ? {
+                    handle: ":not(.wbAdd)",
+                    modelData: child.Children,
+                    over: function (e, ui) {
+                        //TODO: highlight the current box
+                    },
+                    update: function (e, ui) {
+                    },
+                    stop: function (e, ui) {
+                    }
+                }
+                : {
+                    disabled: true
+                };
         };
         $scope.handleBlockDropped = function (draggableBlockModel, event, containerElement) {
             var success = true;
@@ -483,10 +499,10 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", ["$scope", "$htt
             }
             else if (typeof (val) === "string") {
                 var convertedVal = parseInt(val);
-                return typeof (convertedVal) !== "NaN" ? convertedVal : def;
+                return convertedVal !== NaN ? convertedVal : def;
             }
             return def;
         }
     }]);
-//# sourceMappingURL=layoutbuilder.controller.js.map 
+//# sourceMappingURL=layoutbuilder.controller.js.map
 //# sourceMappingURL=layoutbuilder.controller.js.map

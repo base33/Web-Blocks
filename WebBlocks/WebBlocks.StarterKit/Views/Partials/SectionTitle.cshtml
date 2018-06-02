@@ -1,0 +1,8 @@
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksViewPage
+
+@{ 
+    CurrentBlockContext.CssClasses.Add("col-lg-12 text-center");
+}
+
+@Html.EditableElementForBlock("h2", "ServiceHeading", "LiveText", "webBlocks", "section-heading")
+<hr class="my-4">

@@ -12,6 +12,7 @@ namespace WebBlocks.Models.Angular
         protected IPublishedContent content = null;
 
         public string ContentTypeAlias { get; set; }
+        public Dictionary<string, object> Editors { get; set; }
 
         public IPublishedContent Content 
         { 
@@ -27,6 +28,7 @@ namespace WebBlocks.Models.Angular
         {
             __type = "NodeBlock";
             ContentTypeAlias = "";
+            Editors =  new Dictionary<string, object>();
         }
 
         public ContentBlock(int id) : this()

@@ -17,71 +17,87 @@
                         editor for backoffice,
                         web blocks property alias,
                         optional html attributes *@
-                    @Html.WebBlocksEditor("strong", "Heading", "LiveText", "webBlocks")
+                    @Html.EditableElementForTemplate("strong", "Heading", "LiveText", "webBlocks")
                 </h1>
                 <hr>
             </div>
             <div class="col-lg-8 mx-auto">
-                @Html.WebBlocksEditor("p", "SubText", "LiveText", "webBlocks", "text-faded mb-5")
+                @Html.EditableElementForTemplate("p", "SubText", "LiveText", "webBlocks", "text-faded mb-5")
                 <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
             </div>
         </div>
     </div>
 </header>
 
-<section class="bg-primary" id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                @Html.WebBlocksEditor("h2", "GotWhatYouNeed", "LiveText", "webBlocks", "section-heading text-white")
-                <hr class="light my-4">
-                @Html.WebBlocksEditor("p", "GotWhatYouNeedSubtext", "LiveText", "webBlocks", "text-faded mb-4")<a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section id="services">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                @Html.WebBlocksEditor("h2", "ServiceHeading", "LiveText", "webBlocks", "section-heading")
-                <hr class="my-4">
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box mt-5 mx-auto">
-                    <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
-                    <h3 class="mb-3">Sturdy Templates</h3>
-                    <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box mt-5 mx-auto">
-                    <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
-                    <h3 class="mb-3">Ready to Ship</h3>
-                    <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box mt-5 mx-auto">
-                    <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
-                    <h3 class="mb-3">Up to Date</h3>
-                    <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box mt-5 mx-auto">
-                    <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
-                    <h3 class="mb-3">Made with Love</h3>
-                    <p class="text-muted mb-0">You have to make your websites with love these days!</p>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    @Html.Container("webBlocks", new Container
+{
+    Name = "test",
+    Tag = "div",
+    Classes = "container",
+    //Blocks = Builder.Create()
+    //            .ElementBlock("row")
+    //                .WithChildren(Builder.Create()
+    //                    .ElementBlock("col-md-4")
+    //                    .ElementBlock("col-md-4")
+    //                    .ElementBlock("col-md-4"))
+    //            .ElementBlock("row")
+    //                .WithChildren(Builder.Create()
+    //                    .ContentBlock(1077)
+    //                    .WysiwygBlock(293123))
+    //            .ElementBlock("row")
+    //                .WithChildren(Builder.Create()
+    //                    .ContentBlock(1071)
+    //                    .ContentBlock(1072)
+    //                    .ContentBlock(1073)
+    //                    .ContentBlock(1074))
+    //            .ToList(),
+    GridDefinitions = new List<GridDefinition>
+    {
+        new GridDefinition
+        {
+            Alias = "1 column",
+            ClassName = "row",
+            AllowAtRoot = true,
+            GridDefinitions = new List<GridDefinition>
+            {
+                new GridDefinition { ClassName = "col col-lg-12", AllowedChildGrids = new [] { "BlockRow" } }
+            }
+        },
+        new GridDefinition
+        {
+            Alias = "2 columns",
+            ClassName = "row",
+            AllowAtRoot = true,
+            GridDefinitions = new List<GridDefinition>
+            {
+                new GridDefinition { ClassName = "col col-lg-6", AllowedChildGrids = new [] { "BlockRow" } },
+                new GridDefinition { ClassName = "col col-lg-6", AllowedChildGrids = new [] { "BlockRow" } }
+            }
+        },
+        new GridDefinition
+        {
+            Alias = "3 columns",
+            ClassName = "row",
+            AllowAtRoot = true,
+            GridDefinitions = new List<GridDefinition>
+            {
+                new GridDefinition { ClassName = "col col-lg-4", AllowedChildGrids = new [] { "BlockRow" } },
+                new GridDefinition { ClassName = "col col-lg-4", AllowedChildGrids = new [] { "BlockRow" } },
+                new GridDefinition { ClassName = "col col-lg-4", AllowedChildGrids = new [] { "BlockRow" } }
+            }
+        },
+        new GridDefinition
+        {
+            Alias = "Block Container",
+            ClassName = "row",
+            AllowAtRoot = true,
+            AddByDefaultIfOnlyOption = true,
+            AllowNonElementBlocks = true
+        }
+    }
+})
 </section>
 
 <section class="p-0" id="portfolio">

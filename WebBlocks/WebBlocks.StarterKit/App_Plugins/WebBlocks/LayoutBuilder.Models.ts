@@ -46,6 +46,16 @@
             }
         }
 
+        export class ElementBlock extends Block {
+            public Class: string = "";
+            public Children: Array<Block> = [];
+
+            public constructor() {
+                super();
+                this.__type = "ElementBlock";
+            }
+        }
+
         export class BlockViewModel {
             public Tag: string = "";
             public Attributes: Array<BlockViewElementAttribute> = new Array<BlockViewElementAttribute>();    //any attributes to render
@@ -54,6 +64,10 @@
             public ShouldRerender: boolean = false;                         //flag to rerender the view (used by the wbBlock directive)
             public ShouldCompile: boolean = false;
             public ShouldForceRerender: boolean = false;
+
+            //griddy stuff
+            public EnableAddGrid: boolean = false;
+            public EnableAddBlock: boolean = false;
         }
 
         export class BlockViewElementAttribute {
@@ -92,6 +106,7 @@
         export class BlockType {
             public static Wysiwyg: string = "WysiwygBlock";
             public static Node: string = "NodeBlock"
+            public static Element: string = "ElementBlock";
 
             public static IsInstanceOf(block: WebBlocks.LayoutBuilder.Block, blockType: string) {
                 return block.__type == blockType;
@@ -133,11 +148,31 @@
             }
         }
 
+        export interface IGridDefinition {
+            Alias?: string;
+            ClassName: string;
+            AllowAtRoot: string;
+            AllowedChildGrids: Array<string>;
+            AllowNonElementBlocks: boolean;
+            AddByDefaultIfOnlyOption: boolean;
+            GridDefinitions: Array<IGridDefinition>;
+        }
+
         export class TypedBlockConverter {
             public static TypeIt(block: Block) : Block {
-                var typedBlock = block.__type == BlockType.Wysiwyg ?
-                    new WysiwygBlock() :
-                    new NodeBlock();
+                var typedBlock: Block = null;
+                
+                switch (block.__type) {
+                    case BlockType.Wysiwyg:
+                        typedBlock = new WysiwygBlock();
+                        break;
+                    case BlockType.Node:
+                        typedBlock = new NodeBlock();
+                        break;
+                    case BlockType.Element:
+                        typedBlock = new ElementBlock();
+                        break;
+                }
 
                 typedBlock.Id = block.Id;
                 typedBlock.Name = block.Name;
@@ -152,6 +187,11 @@
 
                 if (typedBlock instanceof WysiwygBlock)
                     typedBlock.Content = (<WysiwygBlock>block).Content;
+
+                if (typedBlock instanceof ElementBlock) {
+                    typedBlock.Class = (<ElementBlock>block).Class;
+                    typedBlock.Children = this.TypeAll((<ElementBlock>block).Children)
+                }
 
                 return typedBlock;
             }
@@ -385,7 +425,7 @@
 
         //specialised class to get the layout builder preview html and container json
         export class LayoutBuilderPreview {
-            public GetPreview(id: number, $http: ng.IHttpService, callback: (preview: Models.LayoutBuilderPreviewModel) => void) {
+            public GetPreview(id: number, $http: any, callback: (preview: Models.LayoutBuilderPreviewModel) => void) {
                 WebBlocksAPIClent.GetPagePreviewHtml(id, $http, function (html) {
                     var $previewDOM = $("<div />").append(html);
                     var scriptTag = $($previewDOM).find("#wbContainerJSON");
@@ -395,6 +435,7 @@
                     $($previewDOM).remove("#wbContainerJSON");
                     var webBlocksPreviewHtmlEl = $($previewDOM).find(".wbLayout");
                     $(scriptTag).remove();
+                    console.log(containersModel);
                     var layoutBuilderPreviewModel = new Models.LayoutBuilderPreviewModel(webBlocksPreviewHtmlEl.html(), containersModel);
                     callback(layoutBuilderPreviewModel);
                 });
@@ -432,7 +473,7 @@
 
         export class WebBlocksAPIClent {
             //gets the full web block preview html for a content page      
-            public static GetPagePreviewHtml(id: number, $http: ng.IHttpService, callback: (string) => void) {
+            public static GetPagePreviewHtml(id: number, $http: any, callback: (string) => void) {
                 HttpRequest.Get("/umbraco/dialogs/Preview.aspx?id=" + id, $http, function () {
                     HttpRequest.Get("/" + id + ".aspx?wbPreview=true", $http, function (data) {
                         callback(data);
@@ -442,7 +483,7 @@
                 });
             }
 
-            public static GetNavigationChildren(id: number, $http: ng.IHttpService, callback: (navigationItems: Array<Models.NavigationItem>) => void) {
+            public static GetNavigationChildren(id: number, $http: any, callback: (navigationItems: Array<Models.NavigationItem>) => void) {
                 HttpRequest.Get("/umbraco/backoffice/WebBlocks/WebBlocksApi/GetChildren?id=" + id, $http,(navigationItems: Array<Models.NavigationItem>) => {
                     for (var i = 0; i < navigationItems.length; i++) {
                         navigationItems[i].IconClass = navigationItems[i].IconClass != ".sprTreeFolder" ?
@@ -460,7 +501,7 @@
 
         //$http service wrapper
         export class HttpRequest {
-            public static Get(url: string, $http: ng.IHttpService, callback: (any) => void) {
+            public static Get(url: string, $http: any, callback: (any) => void) {
                 $http.get(url)
                     .success(function (data, status, headers, config) {
                     callback(data);

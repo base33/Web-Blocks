@@ -12,6 +12,7 @@ using WebBlocks.Utilities.Umbraco;
 using WebBlocks.Utilities.WebBlocks;
 using WebBlocks.Providers;
 using WebBlocks.Models.Angular;
+using WebBlocks.API;
 
 namespace WebBlocks.Extensions
 {
@@ -29,37 +30,43 @@ namespace WebBlocks.Extensions
             }
         }
 
-        public static string WebBlocksEditor<T>(this HtmlHelper<T> html, string element, string key, string editor, string propertyAlias, object attributes = null)
+        public static string EditableElementForTemplate<T>(this HtmlHelper<T> html, string element, string key, string editor, string propertyAlias, object attributes = null)
         {
             InitWebBlocks();
+            var classes = "";
             if(WebBlocksUtility.IsInBuilder)
             {
-                html.ViewContext.Writer.Write($"<{element} contenteditable ng-model='layoutBuilderModel.Editors.{key}' class='{classes}'></{element}>");
+                var value = GetGlobalEditorValue(key, propertyAlias) as string ?? "";
+                html.ViewContext.Writer.Write($"<{element} contenteditable ng-model='layoutBuilderModel.Editors.{key}' ng-init='layoutBuilderModel.Editors.{key} = \"{html.Raw(value.Replace("\"", "\\\""))}\"' class='wbEditableText {classes}'></{element}>");
             }
             else
             {
-                var value = GetEditorValue(key, propertyAlias);
+                var value = GetGlobalEditorValue(key, propertyAlias);
                 html.ViewContext.Writer.Write($"<{element} class='{classes}'>{value}</{element}>");
             }
             return "";
         }
 
-        public static string WebBlocksEditor(this HtmlHelper html, string element, string key, string editor, string propertyAlias, object attributes = null)
+        public static string EditableElementForBlock<T>(this HtmlHelper<T> html, string element, string key, string editor, string propertyAlias, object attributes = null)
         {
             InitWebBlocks();
+            var classes = "";
+            var blockContext = new WebBlocksAPI();
+            blockContext.Block.ViewModel.ShouldCompile = true;
             if (WebBlocksUtility.IsInBuilder)
             {
-                html.ViewContext.Writer.Write($"<{element} contenteditable ng-model='layoutBuilderModel.Editors.{key}' class='{ classes}'></{element}>");
+                var value = GetBlockEditorValue(blockContext.Block as ContentBlock, key, propertyAlias) as string ?? "";
+                html.ViewContext.Writer.Write($"<{element} contenteditable ng-model='block.Editors.{key}' ng-init='block.Editors.{key} = \"{html.Raw(value.Replace("\"", "\\\""))}\"' class='wbEditableText {classes}'></{element}>");
             }
             else
             {
-                var value = GetEditorValue(key, propertyAlias);
-                html.ViewContext.Writer.Write($"<{element} class='{ classes}'>{value}</{element}>");
+                var value = GetBlockEditorValue(blockContext.Block as ContentBlock, key, propertyAlias);
+                html.ViewContext.Writer.Write($"<{element} class='{classes}'>{value}</{element}>");
             }
             return "";
         }
 
-        public static string Container<T>(this HtmlHelper<T> html, string propertyAlias, IContainer container)
+        public static string Container<T>(this HtmlHelper<T> html, string propertyAlias, Container container)
         {
             InitWebBlocks();
 
@@ -96,7 +103,7 @@ namespace WebBlocks.Extensions
         /// </summary>
         /// <param name="container"></param>
         /// <param name="html"></param>
-        private static void RenderAngularJsContainer(IContainer container, HtmlHelper html)
+        private static void RenderAngularJsContainer(Container container, HtmlHelper html)
         {
             //create angularjs container
             var containersBuilder = AngularContainersBuilder.Load();
@@ -108,34 +115,46 @@ namespace WebBlocks.Extensions
                     WysiwygClass = container.WysiwygClass,
                     Blocks = new List<IBlock>(),
                     ContainerPermissions = container.ContainerPermissions,
-                    Attributes = container.Attributes
+                    Attributes = container.Attributes,
+                    GridDefinitions = container.GridDefinitions
                 });
 
 
-
-            string renderedBlocks = "";
+            
             AngularBlockView blockView = new AngularBlockView();
             foreach (IBlock block in container.Blocks)
             {
-                string renderedBlock = blockView.Render(block, html);
-                renderedBlocks += renderedBlock ?? "";
+                var renderedBlock = blockView.Render(block, html);
+                containersBuilder.AddBlockToCurrentContainer(renderedBlock);
             }
 
             html.ViewContext.Writer.Write("<{0}{1}{2} ui-sortable='getSortableOptions(layoutBuilderModel.Containers.{3}.Blocks)' ng-model='layoutBuilderModel.Containers.{3}.Blocks' wb-container-model='layoutBuilderModel.Containers.{3}' ng-drop='true' ng-drop-success='handleBlockDropped($data, $event, $container)'>",
                                           container.Tag,
-                                          container.Classes != "" ? string.Format(" class=\"{0} wbcontainer\"", container.Classes) : "",
+                                          container.Classes != "" ? string.Format(" class=\"{0} wbcontainer\"", container.Classes) : " class=\"wbcontainer\"",
                                           BuildHtmlAttrString(container.Attributes),
                                           container.Name);
 
-            html.ViewContext.Writer.Write(@"<div wb-block
+            html.ViewContext.Writer.Write(@"<div wb-element
                                  ng-hide='block.IsDeletedBlock' 
                                  wb-on-double-click='editBlock'
                                  wb-on-double-tap='editBlock'
                                  wb-on-right-click='showEditBlockDialog'
                                  wb-on-touch-hold='showEditBlockDialog'
                                  wb-container-model='layoutBuilderModel.Containers.{0}'
-                                 ng-model='block'
-                                 ng-repeat='block in layoutBuilderModel.Containers.{0}.Blocks'>
+                                 ng-model='block.Children'
+                                 wb-block-model='block'
+                                 ng-repeat='block in layoutBuilderModel.Containers.{0}.Blocks'
+                                 ui-sortable='getSortableOptionsForBlock(block)'
+                                 grid-definitions='layoutBuilderModel.Containers.{0}.GridDefinitions'>
+                            </div>
+                            <div wb-add-grid block='layoutBuilderModel.Containers.{0}' block-list='layoutBuilderModel.Containers.{0}.Blocks' grid-definitions='layoutBuilderModel.Containers.{0}.GridDefinitions'></div>
+                            <div wb-element-preview
+                                 ng-click='block.onSelect()'
+                                 wb-container-model='layoutBuilderModel.Containers.{0}'
+                                 ng-model='block.Children'
+                                 wb-block-model='block'
+                                 ng-repeat='block in layoutBuilderModel.Containers.{0}.Previews track by $index'
+                                 grid-definitions='layoutBuilderModel.Containers.{0}.GridDefinitions'>
                             </div>", container.Name);
 
             html.ViewContext.Writer.Write("</{0}>", container.Tag);
@@ -155,7 +174,7 @@ namespace WebBlocks.Extensions
 
             html.ViewContext.Writer.Write("<{0}{1}{2}{3}{4}{5}>",
                                           container.Tag,
-                                          container.Classes != "" ? string.Format(" class=\"container {0}\"", container.Classes) : "",
+                                          container.Classes != "" ? string.Format(" class=\"wbcontainer {0}\"", container.Classes) : "",
                                           WebBlocksUtility.IsInBuilder ? string.Format(" wbid='{0}'", container.Name) : "",
                                           containerPermissionAttr,
                                           !string.IsNullOrEmpty(container.WysiwygClass) && WebBlocksUtility.IsInBuilder ?
@@ -188,6 +207,13 @@ namespace WebBlocks.Extensions
             IContainer container = containerProvider.ContainerByName(containerName);
 
             if (container == null) return;
+
+            if(container.Blocks.Any(b => b is ElementBlock))
+            {
+                templateBlocks.RemoveAll(r => true);
+                templateBlocks.AddRange(container.Blocks);
+                return;
+            }
 
             //will hold any template blocks that do not match any saved blocks in the container.
             //we will check if they exist in other containers.  If they are, we will remove the template block from the array
@@ -295,13 +321,21 @@ namespace WebBlocks.Extensions
             return attributes.Keys.Aggregate("", (current, key) => current + string.Format(" {0}=\"{1}\"", key, attributes[key]));
         }
 
-        private static object GetEditorValue(string key, string propertyAlias)
+        private static object GetGlobalEditorValue(string key, string propertyAlias)
         {
             string webBlocksData = WebBlocksUtility.CurrentPageContent.GetPropertyValue<string>(propertyAlias);
             LayoutBuilderProvider containerProvider = new LayoutBuilderProvider(webBlocksData);
 
             object value = null;
             containerProvider.LayoutBuilder.Editors.TryGetValue(key, out value);
+
+            return value;
+        }
+
+        private static object GetBlockEditorValue(ContentBlock block, string key, string propertyAlias)
+        {
+            object value = null;
+            block.Editors.TryGetValue(key, out value);
 
             return value;
         }

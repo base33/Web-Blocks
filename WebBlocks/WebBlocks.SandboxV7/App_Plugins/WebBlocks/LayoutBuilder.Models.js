@@ -1,13 +1,18 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var WebBlocks;
 (function (WebBlocks) {
     var LayoutBuilder;
     (function (LayoutBuilder_1) {
-        var LayoutBuilder = (function () {
+        var LayoutBuilder = /** @class */ (function () {
             function LayoutBuilder() {
                 this.Containers = {}; //array of containers that are on the page
                 this.Editors = {}; //array of editors on the page
@@ -17,7 +22,7 @@ var WebBlocks;
             return LayoutBuilder;
         }());
         LayoutBuilder_1.LayoutBuilder = LayoutBuilder;
-        var Container = (function () {
+        var Container = /** @class */ (function () {
             function Container() {
                 this.Name = "";
                 this.WysiwygsAllowed = true;
@@ -28,7 +33,7 @@ var WebBlocks;
             return Container;
         }());
         LayoutBuilder_1.Container = Container;
-        var Block = (function () {
+        var Block = /** @class */ (function () {
             function Block() {
                 this.Id = 0; //the id of the wysiwyg or block
                 this.Name = ""; //the name of the block (normally shown in recycle bin or block storage)
@@ -42,27 +47,29 @@ var WebBlocks;
             return Block;
         }());
         LayoutBuilder_1.Block = Block;
-        var NodeBlock = (function (_super) {
+        var NodeBlock = /** @class */ (function (_super) {
             __extends(NodeBlock, _super);
             function NodeBlock() {
-                _super.call(this);
-                this.ContentTypeAlias = "";
-                this.__type = "NodeBlock";
+                var _this = _super.call(this) || this;
+                _this.ContentTypeAlias = "";
+                _this.__type = "NodeBlock";
+                return _this;
             }
             return NodeBlock;
         }(Block));
         LayoutBuilder_1.NodeBlock = NodeBlock;
-        var WysiwygBlock = (function (_super) {
+        var WysiwygBlock = /** @class */ (function (_super) {
             __extends(WysiwygBlock, _super);
             function WysiwygBlock() {
-                _super.call(this);
-                this.Content = ""; //the content of the wysiwyg
-                this.__type = "WysiwygBlock";
+                var _this = _super.call(this) || this;
+                _this.Content = ""; //the content of the wysiwyg
+                _this.__type = "WysiwygBlock";
+                return _this;
             }
             return WysiwygBlock;
         }(Block));
         LayoutBuilder_1.WysiwygBlock = WysiwygBlock;
-        var BlockViewModel = (function () {
+        var BlockViewModel = /** @class */ (function () {
             function BlockViewModel() {
                 this.Tag = "";
                 this.Attributes = new Array(); //any attributes to render
@@ -75,7 +82,7 @@ var WebBlocks;
             return BlockViewModel;
         }());
         LayoutBuilder_1.BlockViewModel = BlockViewModel;
-        var BlockViewElementAttribute = (function () {
+        var BlockViewElementAttribute = /** @class */ (function () {
             function BlockViewElementAttribute(name, value) {
                 this.Name = ""; //name of the attribute
                 this.Value = ""; //value of the attribute
@@ -85,7 +92,7 @@ var WebBlocks;
             return BlockViewElementAttribute;
         }());
         LayoutBuilder_1.BlockViewElementAttribute = BlockViewElementAttribute;
-        var BlockStorageBlock = (function () {
+        var BlockStorageBlock = /** @class */ (function () {
             function BlockStorageBlock(Block, Message, BlockHistory) {
                 this.Block = Block;
                 this.Message = Message;
@@ -94,7 +101,7 @@ var WebBlocks;
             return BlockStorageBlock;
         }());
         LayoutBuilder_1.BlockStorageBlock = BlockStorageBlock;
-        var RecycleBinBlock = (function () {
+        var RecycleBinBlock = /** @class */ (function () {
             function RecycleBinBlock(Block, Message, BlockHistory) {
                 this.Block = Block;
                 this.Message = Message;
@@ -103,14 +110,14 @@ var WebBlocks;
             return RecycleBinBlock;
         }());
         LayoutBuilder_1.RecycleBinBlock = RecycleBinBlock;
-        var BlockHistory = (function () {
+        var BlockHistory = /** @class */ (function () {
             function BlockHistory(LastContainer) {
                 this.LastContainer = LastContainer;
             }
             return BlockHistory;
         }());
         LayoutBuilder_1.BlockHistory = BlockHistory;
-        var BlockType = (function () {
+        var BlockType = /** @class */ (function () {
             function BlockType() {
             }
             BlockType.IsInstanceOf = function (block, blockType) {
@@ -122,7 +129,7 @@ var WebBlocks;
         }());
         LayoutBuilder_1.BlockType = BlockType;
         ;
-        var AllowedBlocks = (function () {
+        var AllowedBlocks = /** @class */ (function () {
             function AllowedBlocks(blockTypes) {
                 this.BlockTypes = blockTypes;
             }
@@ -135,7 +142,7 @@ var WebBlocks;
             return AllowedBlocks;
         }());
         LayoutBuilder_1.AllowedBlocks = AllowedBlocks;
-        var ExcludedBlocks = (function () {
+        var ExcludedBlocks = /** @class */ (function () {
             function ExcludedBlocks(blockTypes) {
                 this.BlockTypes = blockTypes;
             }
@@ -148,7 +155,7 @@ var WebBlocks;
             return ExcludedBlocks;
         }());
         LayoutBuilder_1.ExcludedBlocks = ExcludedBlocks;
-        var TypedBlockConverter = (function () {
+        var TypedBlockConverter = /** @class */ (function () {
             function TypedBlockConverter() {
             }
             TypedBlockConverter.TypeIt = function (block) {
@@ -178,7 +185,7 @@ var WebBlocks;
             return TypedBlockConverter;
         }());
         LayoutBuilder_1.TypedBlockConverter = TypedBlockConverter;
-        var TypedContainerPermissions = (function () {
+        var TypedContainerPermissions = /** @class */ (function () {
             function TypedContainerPermissions() {
             }
             TypedContainerPermissions.TypeIt = function (containerPermissions) {
@@ -197,7 +204,7 @@ var WebBlocks;
     })(LayoutBuilder = WebBlocks.LayoutBuilder || (WebBlocks.LayoutBuilder = {})); //end of WebBlocks.LayoutBuilder
     var UI;
     (function (UI) {
-        var UIState = (function () {
+        var UIState = /** @class */ (function () {
             function UIState(uiState) {
                 this.LayoutBuilder = new LayoutBuilderState(true, 1024);
                 this.IframeEditor = new IframeEditorState(false, "");
@@ -208,7 +215,7 @@ var WebBlocks;
             return UIState;
         }());
         UI.UIState = UIState;
-        var LayoutBuilderState = (function () {
+        var LayoutBuilderState = /** @class */ (function () {
             function LayoutBuilderState(visible, canvasWidth) {
                 this.Visible = false;
                 this.CanvasWidth = 1024;
@@ -219,7 +226,7 @@ var WebBlocks;
             return LayoutBuilderState;
         }());
         UI.LayoutBuilderState = LayoutBuilderState;
-        var IframeEditorState = (function () {
+        var IframeEditorState = /** @class */ (function () {
             function IframeEditorState(visible, url) {
                 this.Visible = false;
                 this.Url = "";
@@ -230,7 +237,7 @@ var WebBlocks;
             return IframeEditorState;
         }());
         UI.IframeEditorState = IframeEditorState;
-        var AddBlockDialogState = (function () {
+        var AddBlockDialogState = /** @class */ (function () {
             function AddBlockDialogState(rootId) {
                 this.RootId = -1;
                 this.ActiveId = -1;
@@ -240,7 +247,7 @@ var WebBlocks;
             return AddBlockDialogState;
         }());
         UI.AddBlockDialogState = AddBlockDialogState;
-        var DraggableBlockModel = (function () {
+        var DraggableBlockModel = /** @class */ (function () {
             function DraggableBlockModel() {
                 this.BlockIconClass = "";
             }
@@ -249,7 +256,7 @@ var WebBlocks;
         UI.DraggableBlockModel = DraggableBlockModel;
         var Dialogs;
         (function (Dialogs) {
-            var DialogTemplateProvider = (function () {
+            var DialogTemplateProvider = /** @class */ (function () {
                 function DialogTemplateProvider() {
                 }
                 DialogTemplateProvider.ContextMenuTemplate = "/app_plugins/WebBlocks/Dialogs/LayoutBuilder.ContextMenuDialog.html";
@@ -259,7 +266,7 @@ var WebBlocks;
                 return DialogTemplateProvider;
             }());
             Dialogs.DialogTemplateProvider = DialogTemplateProvider;
-            var DialogOptionsFactory = (function () {
+            var DialogOptionsFactory = /** @class */ (function () {
                 function DialogOptionsFactory() {
                 }
                 DialogOptionsFactory.BuildContextMenuDialogOptions = function (contextMenu, callback) {
@@ -298,14 +305,14 @@ var WebBlocks;
                 return DialogOptionsFactory;
             }());
             Dialogs.DialogOptionsFactory = DialogOptionsFactory;
-            var AddBlockMenu = (function () {
+            var AddBlockMenu = /** @class */ (function () {
                 function AddBlockMenu(UIState) {
                     this.UIState = UIState;
                 }
                 return AddBlockMenu;
             }());
             Dialogs.AddBlockMenu = AddBlockMenu;
-            var ContextMenu = (function () {
+            var ContextMenu = /** @class */ (function () {
                 function ContextMenu(Events, EventData) {
                     if (Events === void 0) { Events = new Array(); }
                     if (EventData === void 0) { EventData = {}; }
@@ -315,7 +322,7 @@ var WebBlocks;
                 return ContextMenu;
             }());
             Dialogs.ContextMenu = ContextMenu;
-            var ContextMenuEvent = (function () {
+            var ContextMenuEvent = /** @class */ (function () {
                 function ContextMenuEvent(Name, IconClass) {
                     this.Name = Name;
                     this.IconClass = IconClass;
@@ -323,7 +330,7 @@ var WebBlocks;
                 return ContextMenuEvent;
             }());
             Dialogs.ContextMenuEvent = ContextMenuEvent;
-            var ContextMenuResponse = (function () {
+            var ContextMenuResponse = /** @class */ (function () {
                 function ContextMenuResponse(Event, EventData) {
                     this.Event = Event;
                     this.EventData = EventData;
@@ -331,13 +338,13 @@ var WebBlocks;
                 return ContextMenuResponse;
             }());
             Dialogs.ContextMenuResponse = ContextMenuResponse;
-            var NavigationViewModel = (function () {
+            var NavigationViewModel = /** @class */ (function () {
                 function NavigationViewModel() {
                 }
                 return NavigationViewModel;
             }());
             Dialogs.NavigationViewModel = NavigationViewModel;
-            var RecycleBinContext = (function () {
+            var RecycleBinContext = /** @class */ (function () {
                 function RecycleBinContext(RecycleBinBlocks, Containers) {
                     this.RecycleBinBlocks = RecycleBinBlocks;
                     this.Containers = Containers;
@@ -346,7 +353,7 @@ var WebBlocks;
             }());
             Dialogs.RecycleBinContext = RecycleBinContext;
             //used in the recycle bin
-            var DeletedTemplateBlockModel = (function () {
+            var DeletedTemplateBlockModel = /** @class */ (function () {
                 function DeletedTemplateBlockModel(Block, Container) {
                     this.Block = Block;
                     this.Container = Container;
@@ -355,14 +362,14 @@ var WebBlocks;
                 return DeletedTemplateBlockModel;
             }());
             Dialogs.DeletedTemplateBlockModel = DeletedTemplateBlockModel;
-            var RecycleBinItemViewModel = (function () {
+            var RecycleBinItemViewModel = /** @class */ (function () {
                 function RecycleBinItemViewModel() {
                     this.DraggableBlock = null;
                 }
                 return RecycleBinItemViewModel;
             }());
             Dialogs.RecycleBinItemViewModel = RecycleBinItemViewModel;
-            var BlockStorageItemViewModel = (function () {
+            var BlockStorageItemViewModel = /** @class */ (function () {
                 function BlockStorageItemViewModel() {
                     this.DraggableBlock = null;
                 }
@@ -373,7 +380,7 @@ var WebBlocks;
     })(UI = WebBlocks.UI || (WebBlocks.UI = {}));
     var Utils;
     (function (Utils) {
-        var PropertyHelper = (function () {
+        var PropertyHelper = /** @class */ (function () {
             function PropertyHelper() {
             }
             PropertyHelper.CopyProperties = function (source, target) {
@@ -389,7 +396,7 @@ var WebBlocks;
             return PropertyHelper;
         }());
         Utils.PropertyHelper = PropertyHelper;
-        var MathHelper = (function () {
+        var MathHelper = /** @class */ (function () {
             function MathHelper() {
             }
             MathHelper.GenerateRandomNumber = function (min, max) {
@@ -402,7 +409,7 @@ var WebBlocks;
             return MathHelper;
         }());
         Utils.MathHelper = MathHelper;
-        var GuidHelper = (function () {
+        var GuidHelper = /** @class */ (function () {
             function GuidHelper() {
             }
             GuidHelper.GenerateGuid = function () {
@@ -421,7 +428,7 @@ var WebBlocks;
     var API;
     (function (API) {
         //specialised class to get the layout builder preview html and container json
-        var LayoutBuilderPreview = (function () {
+        var LayoutBuilderPreview = /** @class */ (function () {
             function LayoutBuilderPreview() {
             }
             LayoutBuilderPreview.prototype.GetPreview = function (id, $http, callback) {
@@ -451,7 +458,7 @@ var WebBlocks;
         var Models;
         (function (Models) {
             //The preview html for the web blocks canvas and containers json
-            var LayoutBuilderPreviewModel = (function () {
+            var LayoutBuilderPreviewModel = /** @class */ (function () {
                 function LayoutBuilderPreviewModel(Html, Containers) {
                     this.Html = Html;
                     this.Containers = Containers;
@@ -459,7 +466,7 @@ var WebBlocks;
                 return LayoutBuilderPreviewModel;
             }());
             Models.LayoutBuilderPreviewModel = LayoutBuilderPreviewModel;
-            var NavigationItem = (function () {
+            var NavigationItem = /** @class */ (function () {
                 function NavigationItem(Id, Name, ContentType, IconClass, HasChildren) {
                     this.Id = Id;
                     this.Name = Name;
@@ -471,7 +478,7 @@ var WebBlocks;
             }());
             Models.NavigationItem = NavigationItem;
         })(Models = API.Models || (API.Models = {}));
-        var WebBlocksAPIClent = (function () {
+        var WebBlocksAPIClent = /** @class */ (function () {
             function WebBlocksAPIClent() {
             }
             //gets the full web block preview html for a content page      
@@ -501,7 +508,7 @@ var WebBlocks;
         }());
         API.WebBlocksAPIClent = WebBlocksAPIClent;
         //$http service wrapper
-        var HttpRequest = (function () {
+        var HttpRequest = /** @class */ (function () {
             function HttpRequest() {
             }
             HttpRequest.Get = function (url, $http, callback) {

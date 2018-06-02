@@ -38,6 +38,8 @@ namespace WebBlocks.Serialisation.JavascriptConverters
                     return new ContentBlock();
                 case "WysiwygBlock":
                     return new WysiwygBlock();
+                case "ElementBlock":
+                    return new ElementBlock();
             }
 
             throw new ApplicationException(String.Format("The block type {0} is not supported!", type));

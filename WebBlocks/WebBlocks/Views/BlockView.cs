@@ -1,32 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.UI.HtmlControls;
-using Umbraco.Core;
 using Umbraco.Web;
-using WebBlocks.Utilities.WebBlocks;
-using umbraco.cms.businesslogic.macro;
-using umbraco.cms.businesslogic.web;
-using umbraco.NodeFactory;
-using WebBlocks.BusinessLogic.Interfaces;
-using WebBlocks.Views.RenderingEngines;
-using WebBlocks.Models.Angular;
-using CacheHelper = WebBlocks.Utilities.Cache.CacheHelper;
-using umbraco.BusinessLogic;
-using umbraco.presentation.preview;
-using System.Xml;
-using Umbraco.Core.Models;
-using Umbraco.Web.Models;
-using WebBlocks.Utilities.Umbraco;
-using System.IO;
-using System.Web.Mvc.Html;
 using WebBlocks.API;
-using WebBlocks.Helpers;
-using Newtonsoft.Json;
-using WebBlocks.Interfaces;
+using WebBlocks.BusinessLogic.Interfaces;
 using WebBlocks.Controllers;
+using WebBlocks.Helpers;
+using WebBlocks.Interfaces;
+using WebBlocks.Models.Angular;
+using WebBlocks.Utilities.WebBlocks;
+using WebBlocks.Views.RenderingEngines;
 
 namespace WebBlocks.Views
 {
@@ -43,8 +27,28 @@ namespace WebBlocks.Views
 
             if (block is ContentBlock)
                 return RenderNodeBlock(block as ContentBlock, html);
+
+            if (block is ElementBlock)
+                return RenderElementBlock(block as ElementBlock, html);
             
             return RenderWysiwygBlock(block as WysiwygBlock, html);
+        }
+
+        public string RenderElementBlock(ElementBlock block, HtmlHelper html)
+        {
+            string markup = string.Format("<div class=\"{0}\">", block.Class);
+
+            WebBlocksAPI blockContext = new WebBlocksAPI();
+
+            foreach(var child in block.Children)
+            {
+                blockContext.ParentBlock = block;
+                markup += Render(child, html);
+            }
+
+            markup += string.Format("</div>");
+
+            return markup;
         }
 
         protected string RenderNodeBlock(ContentBlock block, HtmlHelper html)
@@ -57,6 +61,7 @@ namespace WebBlocks.Views
 
             //initialise WebBlocksAPI for the view
             WebBlocksAPI blockInstanceAPI = new WebBlocksAPI();
+            blockInstanceAPI.Block = block;
             blockInstanceAPI.CssClasses = new List<string>();
             blockInstanceAPI.BlockElement = "";
             blockInstanceAPI.BlockAttributes = new Dictionary<string, string>();

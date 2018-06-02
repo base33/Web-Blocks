@@ -1,0 +1,45 @@
+﻿@using System.Web.Mvc.Html
+@inherits System.Web.Mvc.WebViewPage<Umbraco.Web.Models.ContentEditing.BackOfficePreview>
+@{
+    var disableDevicePreview = Model.DisableDevicePreview.ToString().ToLowerInvariant();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Umbraco Canvas Designer</title>
+    <link href="../assets/css/canvasdesigner.css" type="text/css" rel="stylesheet" />
+    <link href="../lib/jquery-ui/jquery-ui-1.10.4.custom.min.css" type="text/css" rel="stylesheet" />
+</head>
+<body id="canvasdesignerPanel" ng-mouseover="outlinePositionHide()" ng-controller="Umbraco.canvasdesignerController">
+    <div class="wait" ng-show="!frameLoaded"></div>
+
+    @if (string.IsNullOrWhiteSpace(Model.PreviewExtendedHeaderView) == false)
+    {
+        @Html.Partial(Model.PreviewExtendedHeaderView)
+    }
+
+    <div id="demo-iframe-wrapper" ng-show="frameLoaded" class="{{previewDevice.css}}">
+        <iframe id="resultFrame" ng-src="{{pageUrl}}" frameborder="0" iframe-is-loaded></iframe>
+    </div>
+    <div class="canvasdesigner" ng-init="showDevicesPreview = true; showDevices = !@(disableDevicePreview);" ng-mouseenter="positionSelectedHide()">
+        <div class="fix-left-menu selected">
+            <div class="avatar">
+                <img ng-src="../assets/img/application/logo.png"
+                     ng-srcset="../assets/img/application/logo@2x.png 2x,
+                    ../assets/img/application/logo@3x.png 3x" />
+            </div>
+            <ul class="sections" ng-class="{selected: showDevicesPreview && showDevices}">
+                <li ng-repeat="device in devices" ng-class="{ current:previewDevice==device }" ng-click="updatePreviewDevice(device)">
+                    <a href="#"><i class="icon {{device.icon}}" title="{{device.title}}"></i><span></span></a>
+                </li>
+                <li ng-click="exitPreview()">
+                    <a href="#" title="Exit Preview"><i class="icon icon-wrong"></i><span> </span></a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+    <script src="../lib/rgrove-lazyload/lazyload.js"></script>
+    <script src="../js/canvasdesigner.loader.js"></script>
+</body>
+</html>

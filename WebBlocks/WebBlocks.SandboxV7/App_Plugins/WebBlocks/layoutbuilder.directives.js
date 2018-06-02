@@ -175,5 +175,5 @@ angular.module('umbraco.directives').directive('wbIframeOnLoad', function ($pars
 //            });
 //        }
 //    };
-//}); 
+//});
 //# sourceMappingURL=layoutbuilder.directives.js.map

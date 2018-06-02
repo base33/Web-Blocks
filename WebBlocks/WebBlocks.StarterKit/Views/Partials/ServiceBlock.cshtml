@@ -1,0 +1,21 @@
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksViewPage
+
+@{ 
+    var classes = "";
+    if (CurrentBlockContext.ParentBlock.ViewModel.Classes.Contains("row"))
+    {
+        classes = "col-lg-3 col-md-6 text-center";
+    }
+    else
+    {
+        classes = "col-lg-12 text-center";
+    }
+
+    CurrentBlockContext.CssClasses.Add(classes);
+}
+
+<div class="service-box mt-5 mx-auto">
+    <i class="fa fa-4x @CurrentBlock.GetPropertyValue("icon") text-primary mb-3 sr-icons"></i>
+    <h3 class="mb-3">@CurrentBlock.GetPropertyValue("title") @CurrentBlockContext.ParentBlock.ViewModel.Classes</h3>
+    <p class="text-muted mb-0">@CurrentBlock.GetPropertyValue("description")</p>
+</div>

@@ -1,12 +1,12 @@
 ﻿<div ng-controller="WebBlocks.LayoutBuilder">
 
-    <div wb-sticky class="wb-action-bar wbNoSelect" style="top:15px;">
+    <div>
         <a class="btn" href="#" ng-click="toggleUmbracoNavigation()" title="{{uiState.ContentNavigationVisible ? 'Hide Navigation' : 'Show Navigation'}}" prevent-default="">
             <i ng-class="uiState.ContentNavigationVisible ? 'icon-navigation-left' : 'icon-navigation-right'"></i>
             <!--<i class="icon-list"></i>-->
             {{uiState.ContentNavigationVisible ? 'Hide Menu' : 'Show Menu'}}
         </a>
-        <a ui-draggable class="btn" href="#" ng-click="showAddBlockDialog()" title="Add Block" prevent-default>
+        <!--<a ui-draggable class="btn" href="#" ng-click="showAddBlockDialog()" title="Add Block" prevent-default>
             <i class="icon-add"></i>
             Block Repository
         </a>
@@ -21,7 +21,7 @@
         <a ui-draggable class="btn" href="#" ng-click="rerenderLayoutBuilder()" title="Activate a new template after changing the template" prevent-default>
             <i class="icon icon-brush-alt-2"></i>
             Rerender Builder
-        </a>
+        </a>-->
         
         <!-- session buttons -->
         
@@ -43,7 +43,7 @@
     
     
 
-    <div id="webBlocksWrapper" wb-prevent-default-on-click style="margin-left:-180px;margin-top:30px;">
+    <div id="webBlocksWrapper" wb-prevent-default-on-click>
 
         <div ng-show="uiState.IframeEditor.Visible" wb-iframe-on-load="updateIframeDocumentStyles($element)" class="wb-browser-window wbNoSelect" style="position:absolute; margin-bottom:60px;left:20px;">
             <span class="wbIframeClose" ng-show="uiState.IframeEditor.Visible" style="position: absolute;right: 28px;top: 25px;padding: 5px;background: #ddd;border-radius: 5px;border: 1px solid #cdcdcd;">
@@ -69,10 +69,7 @@
                     </div>
                     <div ng-show="loadInCreateMode == false" style="display:none;">
                         <!-- builder angular-compiled html will be loaded here -->
-                        <img class="wbLoadingImage" src="/app_plugins/webblocks/images/ajax-loader.gif" style="margin:auto;display:block;" />
-                        <div class="wbLoadingCaption" style="display:block;text-align:center;padding-top:20px;">
-                            <h3 style="margin:auto;">Loading...</h3>
-                        </div>
+                        <img class="wbLoadingImage" src="/app_plugins/webblocks/images/image_1209190.gif" style="margin:auto;display:block; margin-top: 80px;" />
                     </div>
                 </div>
             </div>

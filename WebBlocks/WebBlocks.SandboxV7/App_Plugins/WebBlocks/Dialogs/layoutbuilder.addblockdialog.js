@@ -77,6 +77,7 @@ angular.module("umbraco")
     function buildAncestorsList(navigationModel) {
         if (navigationModel.Parent != null) {
             buildAncestorsList(navigationModel.Parent);
+            //$scope.ancestors.push(navigationModel);
         }
         $scope.ancestors.push(navigationModel);
     }
@@ -167,5 +168,5 @@ angular.module("umbraco")
 //        new NavigationItemModel(1000, "Facebook Feed Block", "Facebook Feed Block", "icon-bird", Math.random() >= 0.5),
 //        new NavigationItemModel(1000, "Instagram Feed Block", "Instagram Feed Block", "icon-bird", Math.random() >= 0.5),
 //    ];
-//} 
+//}
 //# sourceMappingURL=layoutbuilder.addblockdialog.js.map

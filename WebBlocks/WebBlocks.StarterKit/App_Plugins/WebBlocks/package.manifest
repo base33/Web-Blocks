@@ -6,7 +6,8 @@
             hideLabel: true,
             editor: {
                 view: "~/App_Plugins/WebBlocks/LayoutBuilder.html",
-				valueType: "json"
+				valueType: "json",
+				hideLabel: true
             },
 			prevalues: {
 				fields: [
