@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>MentorWebBlocks</id>
-    <version>5.0.1</version>
+    <version>5.0.2</version>
     <title>Mentor Web Blocks</title>
     <authors>Craig Noble</authors>
     <owners>Mentor Digital</owners>
@@ -21,7 +21,7 @@ The Web Blocks system provides the ability to drag blocks of content into define
     <copyright>Copyright 2015</copyright>
     <tags> Mentor Web Blocks Drag and Drop Umbraco</tags>
     <dependencies>
-      <dependency id="MentorWebBlocks.Core" version="5.0.1" />
+      <dependency id="MentorWebBlocks.Core" version="5.0.2" />
     </dependencies>
   </metadata>
   <files>

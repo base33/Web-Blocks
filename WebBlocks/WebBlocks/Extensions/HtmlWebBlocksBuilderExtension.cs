@@ -24,7 +24,7 @@ namespace WebBlocks.Extensions
         /// </summary>
         /// <param name="html"></param>
         /// <returns></returns>
-        public static IDisposable WebBlocksBuilder(this HtmlHelper<RenderModel> html)
+        public static IDisposable WebBlocksBuilder<TModel>(this HtmlHelper<TModel> html)
         {
             bool isInBuilder = WebBlocksUtility.IsInBuilder;
             
@@ -32,16 +32,17 @@ namespace WebBlocks.Extensions
             if (isInBuilder)
                 html.ViewContext.Writer.Write("<div class='wbLayout'>");
 
-            return new LayoutBuilderClosure(html, isInBuilder ? "</div>" : "");
+            return new LayoutBuilderClosure<TModel>(html, isInBuilder ? "</div>" : "");
         }
 
 
-        public class LayoutBuilderClosure : IDisposable
+
+        public class LayoutBuilderClosure<TModel> : IDisposable
         {
-            protected HtmlHelper<RenderModel> html;
+            protected HtmlHelper<TModel> html;
             protected string htmlToClose;
 
-            public LayoutBuilderClosure(HtmlHelper<RenderModel> html, string htmlToClose)
+            public LayoutBuilderClosure(HtmlHelper<TModel> html, string htmlToClose)
             {
                 this.html = html;
                 this.htmlToClose = htmlToClose;
