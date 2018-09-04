@@ -19,11 +19,11 @@ namespace WebBlocks.Utilities.Umbraco
         public ContentWrapper(IContent content)
         {
             this.content = content;
+            var publishedContentType = PublishedContentType.Get(PublishedItemType.Content, content.ContentType.Alias);
             this._properties = content.Properties.Select(
-                p =>
-                    new ContentPropertyWrapper(p, content.PropertyTypes.FirstOrDefault(pt => pt.Alias == p.Alias),
-                        ContentType))
-                .ToDictionary(c => c.Alias, c => (IPublishedProperty) c, StringComparer.OrdinalIgnoreCase);
+                p => new Tuple<string, IPublishedProperty>(p.Alias,
+                    new ContentPropertyWrapper(publishedContentType.PropertyTypes.FirstOrDefault(pt => pt.PropertyTypeAlias == p.PropertyType.Alias), p.Value, true)))
+                .ToDictionary(c => c.Item1, c => c.Item2);
         }
 
         public IEnumerable<IPublishedContent> Children
