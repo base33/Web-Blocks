@@ -46,12 +46,8 @@ namespace WebBlocks.Controllers
             pc.ActivatePreviewCookie();
             var response = Request.CreateResponse<string>(System.Net.HttpStatusCode.Redirect, "");
             response.Headers.Location = new Uri(
-                string.Format("{0}://{1}{2}{3}/{4}.aspx?wbPreview=true",
-                    Request.RequestUri.Scheme,
-                    Request.RequestUri.Host,
-                    Request.RequestUri.Port != 80 ? ":" : "",
-                    Request.RequestUri.Port != 80 ? Request.RequestUri.Port.ToString() : "",
-                    d.Id.ToString(CultureInfo.InvariantCulture)));
+                string.Format("/{0}.aspx?wbPreview=true",
+                    d.Id.ToString(CultureInfo.InvariantCulture)), UriKind.Relative);
             return response;
         }
 
