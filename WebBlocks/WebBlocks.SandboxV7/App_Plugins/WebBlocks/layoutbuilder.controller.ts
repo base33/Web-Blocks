@@ -1,5 +1,7 @@
-﻿/// <reference path="../../scripts/typings/angularjs/angular.d.ts" />
-/// <reference path="../../scripts/typings/jqueryui/jqueryui.d.ts" />
+﻿declare var angular;
+declare var $;
+declare var ng;
+
 angular.module("umbraco").filter("wbContainerName", function () {
     return function (containerName) {
         return containerName.replace("_", " ");
@@ -398,7 +400,7 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", ["$scope", "$htt
 				}
 			}
 			var previewProvider = new WebBlocks.API.LayoutBuilderPreview();
-			previewProvider.GetPreview(editorState.current.id, $http, function (preview) {
+            previewProvider.GetPreview(editorState.current.id, $scope.model.config.memberUsername, $http, function (preview) {
 				//if a container was removed, we want to move the blocks into Block Storage
 				angular.forEach($scope.model.value.Containers, function (savedContainer, savedContainerName) {
 					console.log(savedContainerName);
@@ -475,7 +477,7 @@ angular.module("umbraco").controller("WebBlocks.LayoutBuilder", ["$scope", "$htt
 			}
 			else if (typeof (val) === "string") {
 				var convertedVal = parseInt(val);
-				return typeof (convertedVal) !== "NaN" ? convertedVal : def;
+				return !isNaN(convertedVal) ? convertedVal : def;
 			}
 			return def;
 		}

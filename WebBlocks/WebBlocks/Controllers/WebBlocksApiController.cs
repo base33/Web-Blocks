@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using umbraco.BusinessLogic;
 using Umbraco.Core.Models;
 using Umbraco.Web.Models;
@@ -29,6 +30,12 @@ namespace WebBlocks.Controllers
 
             return contentService.GetChildren(id)
                 .Select(c => new NavigationItem { Id = c.Id, Name = c.Name, ContentType = c.ContentType.Alias, IconClass = c.ContentType.Icon, HasChildren = c.Children().Any() });
+        }
+
+        [HttpGet]
+        public void LogOut()
+        {
+            FormsAuthentication.SignOut();
         }
 
         /// <summary>

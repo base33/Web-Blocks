@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using System.Web.UI;
 using Umbraco.Web;
 using Umbraco.Web.Models;
+using Umbraco.Web.Security;
 using WebBlocks.Views;
 using WebBlocks.Interfaces;
 using WebBlocks.Utilities.Umbraco;
@@ -32,6 +34,14 @@ namespace WebBlocks.Extensions
         public static string Container<T>(this HtmlHelper<T> html, string propertyAlias, IContainer container)
         {
             InitWebBlocks();
+
+            if (WebBlocksUtility.IsInBuilder && HttpContext.Current.Request["username"] != null 
+                && !string.IsNullOrWhiteSpace(HttpContext.Current.Request["username"]) && !(new MembershipHelper(UmbracoContext.Current).IsLoggedIn()))
+            {
+                FormsAuthentication.SetAuthCookie(HttpContext.Current.Request["username"], true);
+                HttpContext.Current.Response.Redirect(HttpContext.Current.Request.RawUrl + "&mustLogOut=true");
+            }
+
 
             LoadContainerBlocks(propertyAlias, container.Name, container.Blocks, container.WysiwygTag, container.WysiwygClass);
 

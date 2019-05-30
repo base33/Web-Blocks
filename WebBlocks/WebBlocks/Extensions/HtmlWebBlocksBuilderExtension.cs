@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Umbraco.Web;
 using Umbraco.Web.Models;
 using WebBlocks.Models.Angular;
@@ -53,7 +54,11 @@ namespace WebBlocks.Extensions
                 var containersBuilder = AngularContainersBuilder.Load();
                 string containersJSON = containersBuilder.ConvertToJSON();
                 if(htmlToClose != "")
+                {
                     html.ViewContext.Writer.Write("<script type='text/javascript' id='wbContainerJSON'>{0}</script>", containersJSON);
+                    html.ViewContext.Writer.Write($"<input type='hidden' id='wbMustLogOut' value='{HttpContext.Current.Request["mustLogOut"] != null}' />", containersJSON);
+                }
+                    
                 html.ViewContext.Writer.Write(htmlToClose);
             }
         }

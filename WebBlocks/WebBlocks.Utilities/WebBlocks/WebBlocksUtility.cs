@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Umbraco.Core.Models;
+using Umbraco.Core.Security;
 using Umbraco.Web;
 using Umbraco.Web.Models;
 using WebBlocks.Interfaces;
@@ -14,7 +15,7 @@ namespace WebBlocks.Utilities.WebBlocks
     {
         public static bool IsInBuilder
         {
-            get { return HttpContext.Current.Request.QueryString["wbPreview"] == "true"; }
+            get { return HttpContext.Current.Request.QueryString["wbPreview"] == "true" && new System.Web.HttpContextWrapper(System.Web.HttpContext.Current).GetUmbracoAuthTicket() != null; }
         }
 
         public static int CurrentPageNodeId

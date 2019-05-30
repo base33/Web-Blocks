@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>MentorWebBlocks</id>
-    <version>5.0.5</version>
+    <version>5.0.6</version>
     <title>Mentor Web Blocks</title>
     <authors>Craig Noble</authors>
     <owners>Mentor Digital</owners>
@@ -21,11 +21,11 @@ The Web Blocks system provides the ability to drag blocks of content into define
     <copyright>Copyright 2015</copyright>
     <tags> Mentor Web Blocks Drag and Drop Umbraco</tags>
     <dependencies>
-      <dependency id="MentorWebBlocks.Core" version="5.0.4" />
+      <dependency id="MentorWebBlocks.Core" version="5.0.6" />
     </dependencies>
   </metadata>
   <files>
-	<file src="WebBlocks.SandboxV7\App_Plugins\WebBlocks\**" target="content\App_Plugins\WebBlocks\" />
+	<file src="WebBlocks.SandboxV7\App_Plugins\WebBlocks\**" target="content\App_Plugins\WebBlocks\" exclude="**\*.ts;**\*.map;**\*.old.js" />
 	<file src="WebBlocks\Views\web.config.transform" target="content\Views\web.config.transform" />
   	<file src="WebBlocks.SandboxV7\Views\Shared\**" target="content\Views\Shared\" />
   </files>

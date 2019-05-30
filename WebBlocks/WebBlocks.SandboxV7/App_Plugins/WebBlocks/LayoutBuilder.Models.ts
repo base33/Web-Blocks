@@ -1,4 +1,8 @@
-﻿module WebBlocks 
+﻿declare var angular;
+declare var $;
+declare var ng;
+
+module WebBlocks 
 {
     export module LayoutBuilder {
 
@@ -384,9 +388,15 @@
 
         //specialised class to get the layout builder preview html and container json
         export class LayoutBuilderPreview {
-            public GetPreview(id: number, $http: ng.IHttpService, callback: (preview: Models.LayoutBuilderPreviewModel) => void) {
-                WebBlocksAPIClent.GetPagePreviewHtml(id, $http, function (html) {
+            public GetPreview(id: number, memberUsername, $http, callback: (preview: Models.LayoutBuilderPreviewModel) => void) {
+                WebBlocksAPIClent.GetPagePreviewHtml(id, memberUsername, $http, function (html) {
                     var $previewDOM = $("<div />").append(html);
+                    var logOutFlag = $($previewDOM).find('#wbMustLogOut').val() == 'True';
+
+                    if (logOutFlag) {
+                        WebBlocksAPIClent.LogOut($http);
+                    }
+
                     var scriptTag = $($previewDOM).find("#wbContainerJSON");
                     var containersModel = <Array<LayoutBuilder.Container>>JSON.parse(scriptTag.html());
                     //convert all blocks so that blocks are their respective type
@@ -431,17 +441,24 @@
 
         export class WebBlocksAPIClent {
             //gets the full web block preview html for a content page      
-            public static GetPagePreviewHtml(id: number, $http: ng.IHttpService, callback: (string) => void) {
+            public static GetPagePreviewHtml(id: number, memberUsername: string, $http, callback: (string) => void) {
+                if (typeof (memberUsername) == "undefined")
+                    memberUsername = "";
                 HttpRequest.Get("/umbraco/dialogs/Preview.aspx?id=" + id, $http, function () {
-                    HttpRequest.Get("/" + id + ".aspx?wbPreview=true", $http, function (data) {
+                    HttpRequest.Get("/" + id + ".aspx?wbPreview=true" + "&username=" + memberUsername, $http, function (data) {
                         callback(data);
                         //remove preview cookie
                         $http.get('/umbraco/endPreview.aspx');
+                        
                     });
                 });
             }
 
-            public static GetNavigationChildren(id: number, $http: ng.IHttpService, callback: (navigationItems: Array<Models.NavigationItem>) => void) {
+            public static LogOut($http) {
+                $http.get('/umbraco/backoffice/WebBlocks/WebBlocksApi/LogOut');
+            }
+
+            public static GetNavigationChildren(id: number, $http, callback: (navigationItems: Array<Models.NavigationItem>) => void) {
                 HttpRequest.Get("/umbraco/backoffice/WebBlocks/WebBlocksApi/GetChildren?id=" + id, $http,(navigationItems: Array<Models.NavigationItem>) => {
                     for (var i = 0; i < navigationItems.length; i++) {
                         navigationItems[i].IconClass = navigationItems[i].IconClass != ".sprTreeFolder" ?
@@ -459,7 +476,7 @@
 
         //$http service wrapper
         export class HttpRequest {
-            public static Get(url: string, $http: ng.IHttpService, callback: (any) => void) {
+            public static Get(url: string, $http, callback: (any) => void) {
                 $http.get(url)
                     .success(function (data, status, headers, config) {
                     callback(data);
