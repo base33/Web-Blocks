@@ -135,7 +135,7 @@ namespace WebBlocks.Extensions
 
             html.ViewContext.Writer.Write("<{0}{1}{2}{3}{4}{5}>",
                                           container.Tag,
-                                          container.Classes != "" ? string.Format(" class=\"container {0}\"", container.Classes) : "",
+                                          container.Classes != "" ? string.Format(" class=\"{0}\"", container.Classes) : "",
                                           WebBlocksUtility.IsInBuilder ? string.Format(" wbid='{0}'", container.Name) : "",
                                           containerPermissionAttr,
                                           !string.IsNullOrEmpty(container.WysiwygClass) && WebBlocksUtility.IsInBuilder ?
