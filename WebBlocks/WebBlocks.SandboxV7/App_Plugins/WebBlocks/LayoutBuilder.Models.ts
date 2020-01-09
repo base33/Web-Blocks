@@ -444,14 +444,34 @@ module WebBlocks
             public static GetPagePreviewHtml(id: number, memberUsername: string, $http, callback: (string) => void) {
                 if (typeof (memberUsername) == "undefined")
                     memberUsername = "";
-                HttpRequest.Get("/umbraco/dialogs/Preview.aspx?id=" + id, $http, function () {
-                    HttpRequest.Get("/" + id + ".aspx?wbPreview=true" + "&username=" + memberUsername, $http, function (data) {
-                        callback(data);
-                        //remove preview cookie
-                        $http.get('/umbraco/endPreview.aspx');
-                        
+
+                var that = this;
+
+                var getPreview = () => {
+                    HttpRequest.Get("/umbraco/dialogs/Preview.aspx?id=" + id, $http, () => {
+                        HttpRequest.Get("/" + id + ".aspx?wbPreview=true", $http, function (data) {
+                            callback(data);
+                            //remove preview cookie
+                            $http.get('/umbraco/endPreview.aspx');
+
+                            if (memberUsername != "") {
+                                that.LogOut($http);
+                            }
+                        });
                     });
-                });
+                }
+
+                if (memberUsername === "") {
+                    getPreview();
+                }
+                else {
+                    HttpRequest.Get('/umbraco/backoffice/WebBlocks/WebBlocksApi/LogIn?username=' + memberUsername, $http, () => {
+
+                        getPreview();
+                    });
+                }
+
+                
             }
 
             public static LogOut($http) {
@@ -476,11 +496,16 @@ module WebBlocks
 
         //$http service wrapper
         export class HttpRequest {
-            public static Get(url: string, $http, callback: (any) => void) {
+            public static Get(url: string, $http, callback: (any) => void, errorCallback?: () => void) {
                 $http.get(url)
                     .success(function (data, status, headers, config) {
-                    callback(data);
-                });
+                        callback(data);
+                    })
+                    .error(function () {
+                        if (typeof (errorCallback) != "undefined" && errorCallback != null) {
+                            errorCallback();
+                        }
+                    });
             }
         }
     }

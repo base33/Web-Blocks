@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Http;
 using System.Web.Security;
 using umbraco.BusinessLogic;
 using Umbraco.Core.Models;
@@ -33,9 +33,23 @@ namespace WebBlocks.Controllers
         }
 
         [HttpGet]
-        public void LogOut()
+        public LoggedInStateResult LogIn(string username)
+        {
+            FormsAuthentication.SetAuthCookie(username, true);
+            return new LoggedInStateResult
+            {
+                Success = true
+            };
+        }
+
+        [HttpGet]
+        public LoggedInStateResult LogOut()
         {
             FormsAuthentication.SignOut();
+            return new LoggedInStateResult
+            {
+                Success = true
+            };
         }
 
         /// <summary>
@@ -70,5 +84,10 @@ namespace WebBlocks.Controllers
         //    //var helper = new HtmlHelper<RenderModel>(viewContext, new ViewPage());
         //    return new WebBlockRenderModel();
         //}
+    }
+
+    public class LoggedInStateResult
+    {
+        public bool Success { get; set; }
     }
 }
