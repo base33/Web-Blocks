@@ -391,12 +391,6 @@ module WebBlocks
             public GetPreview(id: number, memberUsername, $http, callback: (preview: Models.LayoutBuilderPreviewModel) => void) {
                 WebBlocksAPIClent.GetPagePreviewHtml(id, memberUsername, $http, function (html) {
                     var $previewDOM = $("<div />").append(html);
-                    var logOutFlag = $($previewDOM).find('#wbMustLogOut').val() == 'True';
-
-                    if (logOutFlag) {
-                        WebBlocksAPIClent.LogOut($http);
-                    }
-
                     var scriptTag = $($previewDOM).find("#wbContainerJSON");
                     var containersModel = <Array<LayoutBuilder.Container>>JSON.parse(scriptTag.html());
                     //convert all blocks so that blocks are their respective type
@@ -447,7 +441,7 @@ module WebBlocks
 
                 var that = this;
 
-                var getPreview = () => {
+                var getPreview = (loggedInMemberUserName: string) => {
                     HttpRequest.Get("/umbraco/dialogs/Preview.aspx?id=" + id, $http, () => {
                         HttpRequest.Get("/" + id + ".aspx?wbPreview=true", $http, function (data) {
                             callback(data);
@@ -455,27 +449,26 @@ module WebBlocks
                             $http.get('/umbraco/endPreview.aspx');
 
                             if (memberUsername != "") {
-                                that.LogOut($http);
+                                that.LogOut($http, loggedInMemberUserName);
                             }
                         });
                     });
                 }
 
                 if (memberUsername === "") {
-                    getPreview();
+                    getPreview("");
                 }
                 else {
-                    HttpRequest.Get('/umbraco/backoffice/WebBlocks/WebBlocksApi/LogIn?username=' + memberUsername, $http, () => {
-
-                        getPreview();
+                    HttpRequest.Get('/umbraco/backoffice/WebBlocks/WebBlocksApi/LogIn?username=' + memberUsername, $http, (response) => {
+                        getPreview(response.Username);
                     });
                 }
 
                 
             }
 
-            public static LogOut($http) {
-                $http.get('/umbraco/backoffice/WebBlocks/WebBlocksApi/LogOut');
+            public static LogOut($http, loggedInMemberUserName) {
+                $http.get('/umbraco/backoffice/WebBlocks/WebBlocksApi/LogOut?username=' + loggedInMemberUserName);
             }
 
             public static GetNavigationChildren(id: number, $http, callback: (navigationItems: Array<Models.NavigationItem>) => void) {

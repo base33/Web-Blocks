@@ -35,17 +35,47 @@ namespace WebBlocks.Controllers
         [HttpGet]
         public LoggedInStateResult LogIn(string username)
         {
-            FormsAuthentication.SetAuthCookie(username, true);
+            var frontEndMemberName = string.Empty;
+            var cookieCollection = Request.Headers.GetCookies().FirstOrDefault();
+            if (cookieCollection != null)
+            {
+                var cookieName = "yourAuthCookie";
+                var cookie = cookieCollection.Cookies.FirstOrDefault(x => x.Name == cookieName);
+                
+                if (cookie != null)
+                {
+                    var ticket = FormsAuthentication.Decrypt(cookie.Value);
+                    frontEndMemberName = ticket.Name;
+                    FormsAuthentication.SetAuthCookie(frontEndMemberName, true);
+                }
+                else
+                {
+                    FormsAuthentication.SetAuthCookie(username, true);
+                }
+            }
+            else
+            {
+                FormsAuthentication.SetAuthCookie(username, true);
+            }
+
+           
             return new LoggedInStateResult
             {
-                Success = true
+                Success = true,
+                Username = frontEndMemberName
             };
         }
 
         [HttpGet]
-        public LoggedInStateResult LogOut()
+        public LoggedInStateResult LogOut(string username)
         {
             FormsAuthentication.SignOut();
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                FormsAuthentication.SetAuthCookie(username, true);
+            }
+
             return new LoggedInStateResult
             {
                 Success = true
@@ -89,5 +119,6 @@ namespace WebBlocks.Controllers
     public class LoggedInStateResult
     {
         public bool Success { get; set; }
+        public string Username { get; set; }
     }
 }
