@@ -72,6 +72,13 @@
 						key: "disableContainerDragging",
 						view: "boolean",
 						validation: []
+					},
+					{
+						label: "Authenticate as member on protected pages",
+						description: "Enter the member username that will give access to protected pages in order to render them in the backoffice",
+						key: "memberUsername",
+						view: "textstring",
+						validation: []
 					}
 				]
 			}
