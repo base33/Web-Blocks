@@ -2524,6 +2524,7 @@ Use this directive to render a button with a dropdown of alternative actions.
                 var evts = [];
                 var isInfoTab = false;
                 scope.publishStatus = {};
+                scope.disableTemplates = Umbraco.Sys.ServerVariables.features.disabledFeatures.disableTemplates;
                 function onInit() {
                     scope.allowOpen = true;
                     scope.datePickerConfig = {
@@ -4759,6 +4760,12 @@ will override element type to textarea and add own attribute ngModel tied to jso
                                             } catch (e) {
                                             }
                                         }
+                                    }
+                                    if (val === 'true') {
+                                        tinyMceConfig.customConfig[i] = true;
+                                    }
+                                    if (val === 'false') {
+                                        tinyMceConfig.customConfig[i] = false;
                                     }
                                 }
                                 angular.extend(baseLineConfigObj, tinyMceConfig.customConfig);
@@ -7367,7 +7374,7 @@ Opens an overlay to show a custom YSOD. </br>
                 assetsService.load([
                     'lib/ace-builds/src-min-noconflict/ace.js',
                     'lib/ace-builds/src-min-noconflict/ext-language_tools.js'
-                ]).then(function () {
+                ], scope).then(function () {
                     if (angular.isUndefined(window.ace)) {
                         throw new Error('ui-ace need ace to work... (o rly?)');
                     } else {
@@ -7981,7 +7988,7 @@ Use this directive to render a ui component for selecting child items to a paren
             function link(scope, element, attrs, ctrl) {
                 var clipboard;
                 var target = element[0];
-                assetsService.loadJs('lib/clipboard/clipboard.min.js').then(function () {
+                assetsService.loadJs('lib/clipboard/clipboard.min.js', scope).then(function () {
                     if (scope.umbClipboardTarget) {
                         target.setAttribute('data-clipboard-target', scope.umbClipboardTarget);
                     }
@@ -8372,9 +8379,9 @@ Use this directive to render a date time picker
                     // check for transcluded content so we can hide the defualt markup
                     scope.hasTranscludedContent = element.find('.js-datePicker__transcluded-content')[0].children.length > 0;
                     // load css file for the date picker
-                    assetsService.loadCss('lib/datetimepicker/bootstrap-datetimepicker.min.css');
+                    assetsService.loadCss('lib/datetimepicker/bootstrap-datetimepicker.min.css', scope);
                     // load the js file for the date picker
-                    assetsService.loadJs('lib/datetimepicker/bootstrap-datetimepicker.js').then(function () {
+                    assetsService.loadJs('lib/datetimepicker/bootstrap-datetimepicker.js', scope).then(function () {
                         // init date picker
                         initDatePicker();
                     });
