@@ -633,7 +633,7 @@ Vennlig hilsen Umbraco roboten
   <area alias="publicAccess">
     <key alias="paAdvanced">Avansert: Beskytt ved å velge hvilke brukergrupper som har tilgang til siden</key>
     <key alias="paAdvancedHelp"><![CDATA[Om du ønsker å kontrollere tilgang til siden ved å bruke rolle-basert autentisering,<br /> ved å bruke Umbraco's medlems-grupper]]></key>
-    <key alias="paAdvancedNoGroups"><![CDATA[Du må opprette en medlemsgruppe før du kan bruke <br /> rollebasert autentikasjon.]]></key>
+    <key alias="paAdvancedNoGroups">Du må opprette en medlemsgruppe før du kan bruke rollebasert autentikasjon.</key>
     <key alias="paErrorPage">Feilside</key>
     <key alias="paErrorPageHelp">Brukt når personer logger på, men ikke har tilgang</key>
     <key alias="paHowWould">Hvordan vil du beskytte siden din?</key>
@@ -736,7 +736,7 @@ Vennlig hilsen Umbraco roboten
     <key alias="sortCreationDate">Creation date</key>
     <key alias="sortDone">Sortering ferdig.</key>
     <key alias="sortHelp">Dra elementene opp eller ned for å arrangere dem. Du kan også klikke kolonneoverskriftene for å sortere alt på en gang.</key>
-    <key alias="sortPleaseWait"><![CDATA[Vennligst vent. Elementene blir sortert, dette kan ta litt tid.<br/> <br/> Ikke lukk dette vinduet under sortering]]></key>
+    <key alias="sortPleaseWait"><![CDATA[Vennligst vent. Elementene blir sortert, dette kan ta litt tid.]]></key>
   </area>
   <area alias="speechBubbles">
     <key alias="operationFailedHeader">En feil oppsto</key>
@@ -884,8 +884,6 @@ Vennlig hilsen Umbraco roboten
     <key alias="postContent">Sett inn etter felt</key>
     <key alias="preContent">Sett inn før felt</key>
     <key alias="recursive">Rekursivt</key>
-    <key alias="removeParagraph">Fjern paragraftagger</key>
-    <key alias="removeParagraphHelp">Fjerner eventuelle &lt;P&gt; rundt teksten</key>
     <key alias="standardFields">Standardfelter</key>
     <key alias="uppercase">Store bokstaver</key>
     <key alias="urlEncode">URL koding</key>

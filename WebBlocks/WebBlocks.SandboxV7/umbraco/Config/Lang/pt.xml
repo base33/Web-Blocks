@@ -576,7 +576,7 @@ Você pode remover com segurança do seu sistema clicando em "desinstalar pacote
   <area alias="publicAccess">
     <key alias="paAdvanced">Proteção baseada em função</key>
     <key alias="paAdvancedHelp"><![CDATA[Se você deseja controlar o acesso à página usando autenticação baseada em funções, <br /> usando grupos de membros do Umbraco.]]></key>
-    <key alias="paAdvancedNoGroups"><![CDATA[Você precisa criar um grupo de membros antes que possa usar <br /> autenticação baseada em função.]]></key>
+    <key alias="paAdvancedNoGroups">Você precisa criar um grupo de membros antes que possa usar autenticação baseada em função.</key>
     <key alias="paErrorPage">Página de Erro</key>
     <key alias="paErrorPageHelp">Usado quando as pessoas estão logadas, mas não para ter acesso</key>
     <key alias="paHowWould">Escolha como restringir o acesso à esta página</key>
@@ -658,7 +658,7 @@ Você pode publicar esta página e todas suas sub-páginas ao selecionar <em>pub
     <key alias="sortCreationDate">Creation date</key>
     <key alias="sortDone">Classificação concluída.</key>
     <key alias="sortHelp">Arraste os diferentes itens para cima ou para baixo para definir como os mesmos serão arranjados. Ou clique no título da coluna para classificar a coleção completa de itens</key>
-    <key alias="sortPleaseWait"><![CDATA[Favor esperar. Itens estão sendo classificados, isto pode demorar um tempo. <br /><br /> Não feche esta janela durante a classificação]]></key>
+    <key alias="sortPleaseWait"><![CDATA[Favor esperar. Itens estão sendo classificados, isto pode demorar um tempo.]]></key>
   </area>
   <area alias="speechBubbles">
     <key alias="contentPublishedFailedByEvent">Publicação foi cancelada por add-in de terceiros</key>
@@ -783,8 +783,6 @@ Você pode publicar esta página e todas suas sub-páginas ao selecionar <em>pub
     <key alias="postContent">Inserir após campo</key>
     <key alias="preContent">Inserir antes do campo</key>
     <key alias="recursive">Recursivo</key>
-    <key alias="removeParagraph">Remover etiquetas de parágrafo</key>
-    <key alias="removeParagraphHelp">Removerá quaisquer &amp;lt;P&amp;gt; do começo ao fim do texto</key>
     <key alias="uppercase">Maiúscula</key>
     <key alias="urlEncode">Codificar URL</key>
     <key alias="urlEncodeHelp">Vai formatar caracteres especiais em URLs</key>

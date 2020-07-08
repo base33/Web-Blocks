@@ -221,6 +221,8 @@
     <key alias="copiedItemOfItems">Copied %0% out of %1% items</key>
   </area>
   <area alias="defaultdialogs">
+    <key alias="nodeNameLinkPicker">Name des Link</key>
+    <key alias="urlLinkPicker">Link</key>
     <key alias="anchorInsert">Name</key>
     <key alias="assignDomain">Hostnamen verwalten</key>
     <key alias="closeThisWindow">Fenster schließen</key>
@@ -278,6 +280,7 @@
     <key alias="search">Durchsuchen ...</key>
     <key alias="filter">Filtern ...</key>
     <key alias="enterTags">Tippen, um Tags hinzuzufügen (nach jedem Tag die Eingabetaste drücken) ...</key>
+    <key alias="usernameHint">Der Benutzername ist normalerweise Ihre E-Mail-Adresse</key>
   </area>
   <area alias="editcontenttype">
     <key alias="allowAtRoot" version="7.2">Auf oberster Ebene erlauben</key>
@@ -770,7 +773,7 @@ Wenn Sie sich für Runway entscheiden, können Sie optional Blöcke nutzen, die 
     <key alias="sortCreationDate">Erstellungsdatum</key>
     <key alias="sortDone">Sortierung abgeschlossen.</key>
     <key alias="sortHelp">Ziehen Sie die Elemente an ihre gewünschte neue Position.</key>
-    <key alias="sortPleaseWait">Bitte warten, die Seiten werden sortiert. Das kann einen Moment dauern. Bitte schließen Sie dieses Fenster nicht, bis der Sortiervorgang abgeschlossen ist.</key>
+    <key alias="sortPleaseWait">Bitte warten, die Seiten werden sortiert. Das kann einen Moment dauern.</key>
   </area>
   <area alias="speechBubbles">
     <key alias="operationFailedHeader">Fehlgeschlagen</key>
@@ -858,7 +861,7 @@ Wenn Sie sich für Runway entscheiden, können Sie optional Blöcke nutzen, die 
   <area alias="grid">
     <key alias="insertControl">Element hinzufügen</key>
     <key alias="addRows">Zeilenlayout auswählen</key>
-    <key alias="addElement">Einfach auf &lt;i class="icon icon-add blue"&gt;&lt;/i&gt; klicken, um das erste Element anzulegen</key>
+    <key alias="addElement">Element mit &lt;i class="icon icon-add blue"&gt;&lt;/i&gt; hinzufügen</key>
     <key alias="dropElement">Drop content</key>
     <key alias="clickToEmbed">Klicken, um Inhalt einzubetten</key>
     <key alias="clickToInsertImage">Klicken, um Abbildung einzufügen</key>
@@ -902,8 +905,6 @@ Wenn Sie sich für Runway entscheiden, können Sie optional Blöcke nutzen, die 
     <key alias="postContent">An den Feldinhalt anhängen</key>
     <key alias="preContent">Dem Feldinhalt voranstellen</key>
     <key alias="recursive">Rekursiv</key>
-    <key alias="removeParagraph">Textabsatz entfernen</key>
-    <key alias="removeParagraphHelp">Alle &lt;p&gt; am Anfang und am Ende des Feldinhalts werden entfernt</key>
     <key alias="standardFields">Standardfelder</key>
     <key alias="uppercase">Großbuchstaben</key>
     <key alias="urlEncode">URL kodieren</key>

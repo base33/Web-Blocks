@@ -100,6 +100,8 @@
     <key alias="styleShow">Show styles</key>
     <key alias="tableInsert">Insert table</key>
     <key alias="generateModels">Generate models</key>
+    <key alias="undo">Undo</key>
+    <key alias="redo">Redo</key>
   </area>
   <area alias="changeDocType">
     <key alias="changeDocTypeInstruction">To change the document type for the selected content, first select from the list of valid types for this location.</key>
@@ -141,13 +143,15 @@
     <key alias="lastPublished">Last published</key>
     <key alias="noItemsToShow">There are no items to show</key>
     <key alias="listViewNoItems" version="7.1.5">There are no items to show in the list.</key>
+    <key alias="listViewNoContent">No content has been added</key>
+    <key alias="listViewNoMembers">No members have been added</key>
     <key alias="mediatype">Media Type</key>
     <key alias="mediaLinks">Link to media item(s)</key>
     <key alias="membergroup">Member Group</key>
     <key alias="memberrole">Role</key>
     <key alias="membertype">Member Type</key>
     <key alias="noDate">No date chosen</key>
-    <key alias="nodeName">Link title</key>
+    <key alias="nodeName">Page title</key>
     <key alias="otherElements">Properties</key>
     <key alias="parentNotPublished">This document is published but is not visible because the parent '%0%' is unpublished</key>
     <key alias="parentNotPublishedAnomaly">This document is published but is not in the cache</key>
@@ -175,6 +179,8 @@
     <key alias="target" version="7.0">Target</key>
     <key alias="scheduledPublishServerTime">This translates to the following time on the server:</key>
     <key alias="scheduledPublishDocumentation"><![CDATA[<a href="https://our.umbraco.org/documentation/Getting-Started/Data/Scheduled-Publishing/#timezones" target="_blank">What does this mean?</a>]]></key>
+    <key alias="addTextBox">Add another text box</key>
+    <key alias="removeTextBox">Remove this text box</key>
   </area>
   <area alias="media">
     <key alias="clickToUpload">Click to upload</key>
@@ -197,6 +203,13 @@
     <key alias="documentTypeWithoutTemplate">Document Type without a template</key>
     <key alias="newFolder">New folder</key>
     <key alias="newDataType">New data type</key>
+    <key alias="newJavascriptFile">New javascript file</key>
+    <key alias="newEmptyPartialView">New empty partial view</key>
+    <key alias="newPartialViewMacro">New partial view macro</key>
+    <key alias="newPartialViewFromSnippet">New partial view from snippet</key>
+    <key alias="newEmptyPartialViewMacro">New empty partial view macro</key>
+    <key alias="newPartialViewMacroFromSnippet">New partial view macro from snippet</key>
+    <key alias="newPartialViewMacroNoMacro">New partial view macro (without macro)</key>
   </area>
   <area alias="dashboard">
     <key alias="browser">Browse your website</key>
@@ -242,6 +255,8 @@
     <key alias="copiedItemOfItems">Copied %0% out of %1% items</key>
   </area>
   <area alias="defaultdialogs">
+    <key alias="nodeNameLinkPicker">Link title</key>
+    <key alias="urlLinkPicker">Link</key>
     <key alias="anchorInsert">Name</key>
     <key alias="assignDomain">Manage hostnames</key>
     <key alias="closeThisWindow">Close this window</key>
@@ -295,6 +310,7 @@
     <key alias="linkToPage">Link to page</key>
     <key alias="openInNewWindow">Opens the linked document in a new window or tab</key>
     <key alias="linkToMedia">Link to media</key>
+    <key alias="linkToFile">Link to file</key>
     <key alias="selectMedia">Select media</key>
     <key alias="selectIcon">Select icon</key>
     <key alias="selectItem">Select item</key>
@@ -305,14 +321,16 @@
     <key alias="selectMemberGroup">Select member group</key>
     <key alias="noIconsFound">No icons were found</key>
     <key alias="noMacroParams">There are no parameters for this macro</key>
+    <key alias="noMacros">There are no macros available to insert</key>
     <key alias="externalLoginProviders">External login providers</key>
     <key alias="exceptionDetail">Exception Details</key>
     <key alias="stacktrace">Stacktrace</key>
     <key alias="innerException">Inner Exception</key>
     <key alias="linkYour">Link your</key>
-    <key alias="unLinkYour">Un-Link your</key>
+    <key alias="unLinkYour">Un-link your</key>
     <key alias="account">account</key>
     <key alias="selectEditor">Select editor</key>
+    <key alias="selectSnippet">Select snippet</key>
   </area>
   <area alias="dictionaryItem">
     <key alias="description"><![CDATA[
@@ -338,6 +356,7 @@
     <key alias="filter">Type to filter...</key>
     <key alias="enterTags">Type to add tags (press enter after each tag)...</key>
     <key alias="email">Enter your email</key>
+    <key alias="usernameHint">Your username is usually your email</key>
   </area>
   <area alias="editcontenttype">
     <key alias="allowAtRoot" version="7.2">Allow at root</key>
@@ -369,6 +388,13 @@
     <key alias="rteRelatedStylesheets">Related stylesheets</key>
     <key alias="rteShowLabel">Show label</key>
     <key alias="rteWidthAndHeight">Width and height</key>
+    <key alias="allPropTypes">All property types &amp; property data</key>
+    <key alias="willBeDeleted">using this data type will be deleted permanently, please confirm you want to delete these as well</key>
+    <key alias="yesDelete">Yes, delete</key>
+    <key alias="andAllRelated">and all property types &amp; property data using this data type</key>
+    <key alias="selectFolder">Select the folder to move</key>
+    <key alias="inTheTree">to in the tree structure below</key>
+    <key alias="wasMoved">was moved underneath</key>
   </area>
   <area alias="errorHandling">
     <key alias="errorButDataWasSaved">Your data has been saved, but before you can publish this page there are some errors you need to fix first:</key>
@@ -427,6 +453,7 @@
     <key alias="closewindow">Close Window</key>
     <key alias="comment">Comment</key>
     <key alias="confirm">Confirm</key>
+    <key alias="constrain">Constrain</key>
     <key alias="constrainProportions">Constrain proportions</key>
     <key alias="continue">Continue</key>
     <key alias="copy">Copy</key>
@@ -438,6 +465,7 @@
     <key alias="deleted">Deleted</key>
     <key alias="deleting">Deleting...</key>
     <key alias="design">Design</key>
+    <key alias="dictionary">Dictionary</key>
     <key alias="dimensions">Dimensions</key>
     <key alias="down">Down</key>
     <key alias="download">Download</key>
@@ -447,6 +475,7 @@
     <key alias="email">Email</key>
     <key alias="error">Error</key>
     <key alias="findDocument">Find</key>
+    <key alias="first">First</key>
     <key alias="height">Height</key>
     <key alias="help">Help</key>
     <key alias="icon">Icon</key>
@@ -457,6 +486,7 @@
     <key alias="invalid">Invalid</key>
     <key alias="justify">Justify</key>
     <key alias="language">Language</key>
+    <key alias="last">Last</key>
     <key alias="layout">Layout</key>
     <key alias="loading">Loading</key>
     <key alias="locked">Locked</key>
@@ -484,12 +514,16 @@
     <key alias="reciept">Email to receive form data</key>
     <key alias="recycleBin">Recycle Bin</key>
     <key alias="remaining">Remaining</key>
+    <key alias="remove">Remove</key>
     <key alias="rename">Rename</key>
     <key alias="renew">Renew</key>
     <key alias="required" version="7.0">Required</key>
+    <key alias="retrieve">Retrieve</key>
     <key alias="retry">Retry</key>
     <key alias="rights">Permissions</key>
     <key alias="search">Search</key>
+    <key alias="searchNoResult">Sorry, we can not find what you are looking for</key>
+    <key alias="noItemsInList">No items have been added</key>
     <key alias="server">Server</key>
     <key alias="show">Show</key>
     <key alias="showPageOnSend">Show page on Send</key>
@@ -550,6 +584,16 @@
 
       <key alias="toggleListView">Toggle list view</key>
       <key alias="toggleAllowAsRoot">Toggle allow as root</key>
+
+      <key alias="commentLine">Comment/Uncomment lines</key>
+      <key alias="removeLine">Remove line</key>
+      <key alias="copyLineUp">Copy Lines Up</key>
+      <key alias="copyLineDown">Copy Lines Down</key>
+      <key alias="moveLineUp">Move Lines Up</key>
+      <key alias="moveLineDown">Move Lines Down</key>
+    
+      <key alias="generalHeader">General</key>
+      <key alias="editorHeader">Editor</key>
   </area>
 
   <area alias="graphicheadline">
@@ -783,6 +827,39 @@ To manage your website, simply open the Umbraco back office and start adding con
       Choose Package from your machine, by clicking the Browse<br />
          button and locating the package. Umbraco packages usually have a ".zip" extension.
       ]]></key>
+    <key alias="dropHere">Drop to upload</key>
+    <key alias="orClickHereToUpload">or click here to choose files</key>
+    <key alias="uploadPackage">Upload package</key>
+    <key alias="localPackageDescription">Install a local package by selecting it from your machine. Only install packages from sources you know and trust</key>
+    <key alias="uploadAnother">Upload another package</key>
+    <key alias="cancelAndUploadAnother">Cancel and upload another package</key>
+    <key alias="packageLicense">License</key>
+    <key alias="accept">I accept</key>
+    <key alias="termsOfUse">terms of use</key>
+    <key alias="packageInstall">Install package</key>
+    <key alias="installFinish">Finish</key>
+    <key alias="installedPackages">Installed packages</key>
+    <key alias="noPackages">You don’t have any packages installed</key>
+    <key alias="noPackagesDescription"><![CDATA[You don’t have any packages installed. Either install a local package by selecting it from your machine, or browse through available packages using the <strong>'Packages'</strong> icon in the top right of your screen]]></key>
+    <key alias="packageSearch">Search for packages</key>
+    <key alias="packageSearchResults">Results for</key>
+    <key alias="packageNoResults">We couldn’t find anything for</key>
+    <key alias="packageNoResultsDescription">Please try searching for another package or browse through the categories</key>
+    <key alias="packagesPopular">Popular</key>
+    <key alias="packagesNew">New releases</key>
+    <key alias="packageHas">has</key>
+    <key alias="packageKarmaPoints">karma points</key>
+    <key alias="packageInfo">Information</key>
+    <key alias="packageOwner">Owner</key>
+    <key alias="packageContrib">Contributors</key>
+    <key alias="packageCreated">Created</key>
+    <key alias="packageCurrentVersion">Current version</key>
+    <key alias="packageNetVersion">.NET version</key>
+    <key alias="packageDownloads">Downloads</key>
+    <key alias="packageLikes">Likes</key>
+    <key alias="packageCompatibility">Compatibility</key>
+    <key alias="packageCompatibilityDescription">This package is compatible with the following versions of Umbraco, as reported by community members. Full compatability cannot be gauranteed for versions reported below 100%</key>
+    <key alias="packageExternalSources">External sources</key>
     <key alias="packageAuthor">Author</key>
     <key alias="packageDemonstration">Demonstration</key>
     <key alias="packageDocumentation">Documentation</key>
@@ -795,7 +872,7 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="packageOptions">Package options</key>
     <key alias="packageReadme">Package readme</key>
     <key alias="packageRepository">Package repository</key>
-    <key alias="packageUninstallConfirm">Confirm uninstall</key>
+    <key alias="packageUninstallConfirm">Confirm package uninstall</key>
     <key alias="packageUninstalledHeader">Package was uninstalled</key>
     <key alias="packageUninstalledText">The package was successfully uninstalled</key>
     <key alias="packageUninstallHeader">Uninstall package</key>
@@ -810,14 +887,15 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="packageVersionHistory">Package version history</key>
     <key alias="viewPackageWebsite">View package website</key>
     <key alias="packageAlreadyInstalled">Package already installed</key>
-    <key alias="targetVersionMismatch">This package cannot be installed, it requires a minimum Umbraco version of %0%</key>
+    <key alias="targetVersionMismatch">This package cannot be installed, it requires a minimum Umbraco version of</key>
     <key alias="installStateUninstalling">Uninstalling...</key>
     <key alias="installStateDownloading">Downloading...</key>
     <key alias="installStateImporting">Importing...</key>
     <key alias="installStateInstalling">Installing...</key>
     <key alias="installStateRestarting">Restarting, please wait...</key>
     <key alias="installStateComplete">All done, your browser will now refresh, please wait...</key>
-    <key alias="installStateCompleted">Please click finish to complete installation and reload page.</key>
+    <key alias="installStateCompleted">Please click 'Finish' to complete installation and reload the page.</key>
+    <key alias="installStateUploading">Uploading package...</key>
   </area>
   <area alias="paste">
     <key alias="doNothing">Paste with full formatting (Not recommended)</key>
@@ -828,7 +906,7 @@ To manage your website, simply open the Umbraco back office and start adding con
   <area alias="publicAccess">
     <key alias="paAdvanced">Role based protection</key>
     <key alias="paAdvancedHelp"><![CDATA[If you wish to control access to the page using role-based authentication,<br /> using Umbraco's member groups.]]></key>
-    <key alias="paAdvancedNoGroups"><![CDATA[You need to create a membergroup before you can use <br />role-based authentication.]]></key>
+    <key alias="paAdvancedNoGroups">You need to create a membergroup before you can use role-based authentication</key>
     <key alias="paErrorPage">Error Page</key>
     <key alias="paErrorPageHelp">Used when people are logged on, but do not have access</key>
     <key alias="paHowWould">Choose how to restrict access to this page</key>
@@ -874,6 +952,15 @@ To manage your website, simply open the Umbraco back office and start adding con
   <area alias="colorpicker">
     <key alias="noColors">You have not configured any approved colours</key>
   </area>
+  <area alias="contentPicker">
+    <key alias="pickedTrashedItem">You have picked a content item currently deleted or in the recycle bin</key>
+    <key alias="pickedTrashedItems">You have picked content items currently deleted or in the recycle bin</key>
+  </area>
+  <area alias="mediaPicker">
+    <key alias="pickedTrashedItem">You have picked a media item currently deleted or in the recycle bin</key>
+    <key alias="pickedTrashedItems">You have picked media items currently deleted or in the recycle bin</key>
+    <key alias="deletedItem">Deleted item</key>
+  </area>
   <area alias="relatedlinks">
     <key alias="enterExternal">enter external link</key>
     <key alias="chooseInternal">choose internal page</key>
@@ -885,6 +972,10 @@ To manage your website, simply open the Umbraco back office and start adding con
   </area>
   <area alias="imagecropper">
     <key alias="reset">Reset</key>
+    <key alias="defineCrop">Define crop</key>
+    <key alias="defineCropDescription">Give the crop an alias and its default width and height</key>
+    <key alias="saveCrop">Save crop</key>
+    <key alias="addCrop">Add new crop</key>
   </area>
   <area alias="rollback">
     <key alias="currentVersion">Current version</key>
@@ -947,7 +1038,7 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="sortCreationDate">Creation date</key>
     <key alias="sortDone">Sorting complete.</key>
     <key alias="sortHelp">Drag the different items up or down below to set how they should be arranged. Or click the column headers to sort the entire collection of items</key>
-    <key alias="sortPleaseWait"><![CDATA[ Please wait. Items are being sorted, this can take a while.<br/> <br/> Do not close this window during sorting]]></key>
+    <key alias="sortPleaseWait"><![CDATA[ Please wait. Items are being sorted, this can take a while.]]></key>
   </area>
   <area alias="speechBubbles">
 	<key alias="validationFailedHeader">Validation</key>
@@ -1025,17 +1116,113 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="preview">Preview</key>
     <key alias="styles">Styles</key>
   </area>
+  
   <area alias="template">
     <key alias="edittemplate">Edit template</key>
+
+    <key alias="insertSections">Sections</key>
     <key alias="insertContentArea">Insert content area</key>
     <key alias="insertContentAreaPlaceHolder">Insert content area placeholder</key>
-    <key alias="insertDictionaryItem">Insert dictionary item</key>
-    <key alias="insertMacro">Insert Macro</key>
-    <key alias="insertPageField">Insert Umbraco page field</key>
+
+    <key alias="insert">Insert</key>
+    <key alias="insertDesc">Choose what to insert into your template</key>
+    
+    <key alias="insertDictionaryItem">Dictionary item</key>
+    <key alias="insertDictionaryItemDesc">A dictionary item is a placeholder for a translatable piece of text, which makes it easy to create designs for multilingual websites.</key>
+    
+    <key alias="insertMacro">Macro</key>
+    <key alias="insertMacroDesc">
+      A Macro is a configurable component which is great for
+      reusable parts of your design, where you need the option to provide parameters,
+      such as galleries, forms and lists.
+    </key>
+
+    <key alias="insertPageField">Value</key>
+    <key alias="insertPageFieldDesc">Displays the value of a named field from the current page, with options to modify the value or fallback to alternative values.</key>
+    
+    <key alias="insertPartialView">Partial view</key>
+    <key alias="insertPartialViewDesc">
+      A partial view is a separate template file which can be rendered inside another
+      template, it's great for reusing markup or for separating complex templates into separate files.
+    </key>
+    
     <key alias="mastertemplate">Master template</key>
-    <key alias="quickGuide">Quick Guide to Umbraco template tags</key>
+    <key alias="noMastertemplate">No master template</key>
+    <key alias="noMaster">No master</key>
+
+    <key alias="renderBody">Render child template</key>
+    <key alias="renderBodyDesc">
+      <![CDATA[
+     Renders the contents of a child template, by inserting a
+     <code>@RenderBody()</code> placeholder.
+      ]]>
+    </key>
+    
+    
+    <key alias="defineSection">Define a named section</key>
+    <key alias="defineSectionDesc">
+      <![CDATA[
+         Defines a part of your template as a named section by wrapping it in
+          <code>@section { ... }</code>. This can be rendered in a
+          specific area of the parent of this template, by using <code>@RenderSection</code>.
+      ]]>
+    </key>
+
+    <key alias="renderSection">Render a named section</key>
+    <key alias="renderSectionDesc">
+      <![CDATA[
+      Renders a named area of a child template, by inserting a <code>@RenderSection(name)</code> placeholder.
+      This renders an area of a child template which is wrapped in a corresponding <code>@section [name]{ ... }</code> definition.
+      ]]>
+    </key>
+
+    <key alias="sectionName">Section Name</key>
+    <key alias="sectionMandatory">Section is mandatory</key>
+    <key alias="sectionMandatoryDesc">
+      If mandatory, the child template must contain a <code>@section</code> definition, otherwise an error is shown.
+    </key>
+    
+    
+    <key alias="queryBuilder">Query builder</key>
+    <key alias="buildQuery">Build a query</key>
+    <key alias="itemsReturned">items returned, in</key>
+
+    <key alias="iWant">I want</key>   
+    <key alias="allContent">all content</key>
+    <key alias="contentOfType">content of type &quot;%0%&quot;</key>
+    <key alias="from">from</key>
+    <key alias="websiteRoot">my website</key>
+    <key alias="where">where</key>
+    <key alias="and">and</key>
+    
+    <key alias="is">is</key>
+    <key alias="isNot">is not</key>
+    <key alias="before">before</key>
+    <key alias="beforeIncDate">before (including selected date)</key>
+    <key alias="after">after</key>
+    <key alias="afterIncDate">after (including selected date)</key>
+    <key alias="equals">equals</key>
+    <key alias="doesNotEqual">does not equal</key>
+    <key alias="contains">contains</key>
+    <key alias="doesNotContain">does not contain</key>
+    <key alias="greaterThan">greater than</key>
+    <key alias="greaterThanEqual">greater than or equal to</key>
+    <key alias="lessThan">less than</key>
+    <key alias="lessThanEqual">less than or equal to</key>
+
+    <key alias="id">Id</key>
+    <key alias="name">Name</key>
+    <key alias="createdDate">Created Date</key>
+    <key alias="lastUpdatedDate">Last Updated Date</key>
+
+    <key alias="orderBy">order by</key>
+    <key alias="ascending">ascending</key>
+    <key alias="descending">descending</key>    
+    
     <key alias="template">Template</key>
+    
   </area>
+  
   <area alias="grid">
     <key alias="insertControl">Choose type of content</key>
     <key alias="chooseLayout">Choose a layout</key>
@@ -1143,34 +1330,43 @@ To manage your website, simply open the Umbraco back office and start adding con
   </area>
 
   <area alias="templateEditor">
+    <key alias="addFallbackField">Add fallback field</key>
+    <key alias="fallbackField">Fallback field</key>
+    <key alias="addDefaultValue">Add default value</key>
+    <key alias="defaultValue">Default value</key>
     <key alias="alternativeField">Alternative field</key>
     <key alias="alternativeText">Alternative Text</key>
     <key alias="casing">Casing</key>
     <key alias="encoding">Encoding</key>
     <key alias="chooseField">Choose field</key>
     <key alias="convertLineBreaks">Convert line breaks</key>
-    <key alias="convertLineBreaksHelp">Replaces line breaks with html-tag &amp;lt;br&amp;gt;</key>
+    <key alias="convertLineBreaksDescription">Yes, convert line breaks</key>
+    <key alias="convertLineBreaksHelp">Replaces line breaks with 'br' html tag</key>
     <key alias="customFields">Custom Fields</key>
-    <key alias="dateOnly">Yes, Date only</key>
+    <key alias="dateOnly">Date only</key>
+    <key alias="formatAndEncoding">Format and encoding</key>
     <key alias="formatAsDate">Format as date</key>
+    <key alias="formatAsDateDescr">Format the value as a date, or a date with time, according to the active culture</key>
     <key alias="htmlEncode">HTML encode</key>
     <key alias="htmlEncodeHelp">Will replace special characters by their HTML equivalent.</key>
     <key alias="insertedAfter">Will be inserted after the field value</key>
     <key alias="insertedBefore">Will be inserted before the field value</key>
     <key alias="lowercase">Lowercase</key>
+    <key alias="modifyOutput">Modify output</key>
     <key alias="none">None</key>
+    <key alias="outputSample">Output sample</key>
     <key alias="postContent">Insert after field</key>
     <key alias="preContent">Insert before field</key>
     <key alias="recursive">Recursive</key>
-    <key alias="removeParagraph">Remove Paragraph tags</key>
-    <key alias="removeParagraphHelp">Will remove any &amp;lt;P&amp;gt; in the beginning and end of the text</key>
+    <key alias="recursiveDescr">Yes, make it recursive</key>
+    <key alias="separator">Separator</key>
     <key alias="standardFields">Standard Fields</key>
     <key alias="uppercase">Uppercase</key>
     <key alias="urlEncode">URL encode</key>
     <key alias="urlEncodeHelp">Will format special characters in URLs</key>
     <key alias="usedIfAllEmpty">Will only be used when the field values above are empty</key>
     <key alias="usedIfEmpty">This field will only be used if the primary field is empty</key>
-    <key alias="withTime">Yes, with time. Separator: </key>
+    <key alias="withTime">Date and time</key>
   </area>
   <area alias="translation">
     <key alias="assignedTasks">Tasks assigned to you</key>
@@ -1242,6 +1438,8 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="relationTypes">Relation Types</key>
     <key alias="packager">Packages</key>
     <key alias="packages">Packages</key>
+    <key alias="partialViews">Partial Views</key>
+    <key alias="partialViewMacros">Partial View Macro Files</key>
     <key alias="python">Python Files</key>
     <key alias="repositories">Install from repository</key>
     <key alias="runway">Install Runway</key>
@@ -1252,8 +1450,6 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="templates">Templates</key>
     <key alias="xslt">XSLT Files</key>
     <key alias="analytics">Analytics</key>
-	<key alias="partialViews">Partial Views</key>
-    <key alias="partialViewMacros">Partial View Macro Files</key>
   </area>
   <area alias="update">
     <key alias="updateAvailable">New update ready</key>
@@ -1307,12 +1503,20 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="sessionExpires" version="7.0">Session expires in</key>
   </area>
   <area alias="validation">
-      <key alias="validation">Validation</key>
-      <key alias="validateAsEmail">Validate as email</key>
-      <key alias="validateAsNumber">Validate as a number</key>
-      <key alias="validateAsUrl">Validate as a Url</key>
-      <key alias="enterCustomValidation">...or enter a custom validation</key>
-      <key alias="fieldIsMandatory">Field is mandatory</key>
+    <key alias="validation">Validation</key>
+    <key alias="validateAsEmail">Validate as email</key>
+    <key alias="validateAsNumber">Validate as a number</key>
+    <key alias="validateAsUrl">Validate as a Url</key>
+    <key alias="enterCustomValidation">...or enter a custom validation</key>
+    <key alias="fieldIsMandatory">Field is mandatory</key>
+    <key alias="validationRegExp">Enter a regular expression</key>
+    <key alias="minCount">You need to add at least</key>
+    <key alias="maxCount">You can only have</key>
+    <key alias="items">items</key>
+    <key alias="itemsSelected">items selected</key>
+    <key alias="invalidDate">Invalid date</key>
+    <key alias="invalidNumber">Not a number</key>
+    <key alias="invalidEmail">Invalid email</key>
   </area>
   <area alias="healthcheck">
 	  <!-- The following keys get these tokens passed in:
@@ -1356,8 +1560,10 @@ To manage your website, simply open the Umbraco back office and start adding con
 	  <key alias="xmlDataIntegrityCheckMedia">Media - Total XML: %0%, Total: %1%, Total invalid: %2%</key>
 	  <key alias="xmlDataIntegrityCheckContent">Content - Total XML: %0%, Total published: %1%, Total invalid: %2%</key>
 
-	  <key alias="httpsCheckValidCertificate">Your site certificate was marked as valid.</key>
+	  <key alias="httpsCheckValidCertificate">Your website's certificate is valid.</key>
 	  <key alias="httpsCheckInvalidCertificate">Certificate validation error: '%0%'</key>
+    <key alias="httpsCheckExpiredCertificate">Your website's SSL certificate has expired.</key>
+    <key alias="httpsCheckExpiringCertificate">Your website's SSL certificate is expiring in %0% days.</key>
 	  <key alias="httpsCheckInvalidUrl">Error pinging the URL %0% - '%1%'</key>
 	  <key alias="httpsCheckIsCurrentSchemeHttps">You are currently %0% viewing the site using the HTTPS scheme.</key>
 	  <key alias="httpsCheckConfigurationRectifyNotPossible">The appSetting 'umbracoUseSSL' is set to 'false' in your web.config file. Once you access this site using the HTTPS scheme, that should be set to 'true'.</key>
@@ -1433,5 +1639,11 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="disableError">Error disabling the URL tracker, more information can be found in your log file.</key>
     <key alias="enabledConfirm">URL tracker has now been enabled.</key>
     <key alias="enableError">Error enabling the URL tracker, more information can be found in your log file.</key>
+  </area>
+  <area alias="emptyStates">
+    <key alias="emptyDictionaryTree">No Dictionary items to choose from</key>
+  </area>
+  <area alias="textbox">
+    <key alias="characters_left">characters left</key>
   </area>
 </language>

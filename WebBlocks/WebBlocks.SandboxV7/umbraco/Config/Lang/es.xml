@@ -220,6 +220,8 @@
     <key alias="copiedItemOfItems">Copied %0% out of %1% items</key>
   </area>
   <area alias="defaultdialogs">
+    <key alias="nodeNameLinkPicker">Título del vínculo</key>
+    <key alias="urlLinkPicker">Vínculo</key>
     <key alias="anchorInsert">Nombre</key>
     <key alias="assignDomain">Administrar dominios</key>
     <key alias="closeThisWindow">Cerrar esta ventana</key>
@@ -277,6 +279,7 @@
     <key alias="entername">Escribe un nombre...</key>
     <key alias="search">Escribe tu búsqueda...</key>
     <key alias="filter">Escribe para filtrar resultados...</key>
+    <key alias="usernameHint">Tu nombre de usuario normalmente es tu e-mail</key>
   </area>
   <area alias="editcontenttype">
   <key alias="allowAtRoot" version="7.2">Permitir en nodo raíz</key>
@@ -596,7 +599,7 @@
   <area alias="publicAccess">
     <key alias="paAdvanced">Proteccion basada en roles</key>
     <key alias="paAdvancedHelp"><![CDATA[Si desea controlar el acceso a la página usando autenticación basada en roles,<br /> usando los grupos de miembros de Umbraco.]]></key>
-    <key alias="paAdvancedNoGroups"><![CDATA[Necesita crear un grupo de miembros antes de poder usar <br /> autenticación basada en roles.]]></key>
+    <key alias="paAdvancedNoGroups">Necesita crear un grupo de miembros antes de poder usar autenticación basada en roles</key>
     <key alias="paErrorPage">Página de error</key>
     <key alias="paErrorPageHelp">Usada cuando alguien hace login, pero no tiene acceso</key>
     <key alias="paHowWould">Elija cómo restringir el acceso a esta página</key>
@@ -685,8 +688,7 @@
     <key alias="sortCreationDate">Creation date</key>
     <key alias="sortDone">Ordenación completa.</key>
     <key alias="sortHelp">Arrastra las diferentes páginas debajo para colocarlas como deberían estar. O haz click en las cabeceras de las columnas para ordenar todas las páginas</key>
-    <key alias="sortPleaseWait"><![CDATA[Espere por favor, las páginas están siendo ordenadas. El proceso puede durar un poco.<br/>
-<br/> No cierre esta ventana mientras se está ordenando ]]></key>
+    <key alias="sortPleaseWait"><![CDATA[Espere por favor, las páginas están siendo ordenadas. El proceso puede durar un poco.]]></key>
   </area>
   <area alias="speechBubbles">
     <key alias="contentPublishedFailedByEvent">La publicación fue cancelada por un complemento de terceros</key>
@@ -808,8 +810,6 @@
     <key alias="postContent">Insertar después del campo</key>
     <key alias="preContent">Insertar antes del campo</key>
     <key alias="recursive">Recursivo</key>
-    <key alias="removeParagraph">Borrar los tags del párrafo</key>
-    <key alias="removeParagraphHelp">Borrará cualquier &amp;lt;P&amp;gt; al principio y al final del texto</key>
     <key alias="uppercase">Mayúscula</key>
     <key alias="urlEncode">Codificar URL</key>
     <key alias="urlEncodeHelp">Formateará los caracteres especiales de las URLs</key>
