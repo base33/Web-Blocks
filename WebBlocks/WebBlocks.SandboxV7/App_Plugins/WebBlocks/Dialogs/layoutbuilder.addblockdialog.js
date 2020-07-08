@@ -1,4 +1,5 @@
-angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($scope, $timeout, $http, appState, contentResource, contentTypeResource, entityResource, eventsService, assetsService, dialogService) {
+angular.module("umbraco")
+    .controller("WebBlocks.AddBlockDialogCtrl", function ($scope, $timeout, $http, appState, contentResource, contentTypeResource, entityResource, eventsService, assetsService, dialogService) {
     var dialogOptions = $scope.dialogOptions;
     var addBlockDialogContext = $scope.dialogOptions.modelData;
     var uiState = addBlockDialogContext.UIState;
@@ -20,7 +21,8 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
     };
     $scope.loadContextMenuAllowedChildTypes = function (contentId) {
         $scope.contextMenuModel.allowedChildTypes = [];
-        contentTypeResource.getAllowedTypes(contentId).then(function (array) {
+        contentTypeResource.getAllowedTypes(contentId)
+            .then(function (array) {
             $scope.contextMenuModel.allowedChildTypes = array;
         });
     };
@@ -42,7 +44,8 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
     $scope.handleNavigationCreateAction = function (contentType) {
         uiState.IframeEditor.Visible = true;
         uiState.LayoutBuilder.Visible = false;
-        uiState.IframeEditor.Url = "/umbraco/#/content/content/edit/" + $scope.contextMenuModel.navigationModel.Model.Id + "?doctype=" + contentType + "&create=true";
+        uiState.IframeEditor.Url = "/umbraco/#/content/content/edit/" + $scope.contextMenuModel.navigationModel.Model.Id +
+            "?doctype=" + contentType + "&create=true";
         uiState.IframeEditor.BlockId = $scope.contextMenuModel.navigationModel.Model.Id;
     };
     $scope.loadChildNavigationIntoMenu = function (navigationModel) {
@@ -74,6 +77,7 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
     function buildAncestorsList(navigationModel) {
         if (navigationModel.Parent != null) {
             buildAncestorsList(navigationModel.Parent);
+            //$scope.ancestors.push(navigationModel);
         }
         $scope.ancestors.push(navigationModel);
     }
@@ -90,7 +94,9 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
         return child;
     }
     function init() {
-        var startId = addBlockDialogContext.UIState.AddBlockDialogState.RootId != addBlockDialogContext.UIState.AddBlockDialogState.ActiveId ? addBlockDialogContext.UIState.AddBlockDialogState.ActiveId : addBlockDialogContext.UIState.AddBlockDialogState.RootId;
+        var startId = addBlockDialogContext.UIState.AddBlockDialogState.RootId != addBlockDialogContext.UIState.AddBlockDialogState.ActiveId ?
+            addBlockDialogContext.UIState.AddBlockDialogState.ActiveId :
+            addBlockDialogContext.UIState.AddBlockDialogState.RootId;
         $scope.root = createRootNavigationViewModel(startId);
         $scope.viewNavigationSource = { show: true, navigationItem: $scope.root };
         $scope.loadChildNavigationIntoMenu($scope.root);
@@ -101,7 +107,8 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
         nvm.Model = new WebBlocks.API.Models.NavigationItem(contentId, "Root", "Null", "icon-folder", true);
         nvm.Children = new Array();
         if (contentId != uiState.AddBlockDialogState.RootId) {
-            contentResource.getById(contentId).then(function (content) {
+            contentResource.getById(contentId)
+                .then(function (content) {
                 nvm.Parent = createRootNavigationViewModel(content.parentId);
             });
         }
@@ -112,8 +119,7 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
         draggableBlock.Block = createNodeBlock(nodeId, nodeName);
         draggableBlock.LoadContent = true;
         draggableBlock.ShouldClone = true;
-        draggableBlock.OnDropCallback = function (draggableBlock) {
-        };
+        draggableBlock.OnDropCallback = function (draggableBlock) { };
         return draggableBlock;
     }
     function createNodeBlock(nodeId, nodeName) {
@@ -128,8 +134,7 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
         draggableBlock.Block = createWysiwygBlock();
         draggableBlock.LoadContent = false;
         draggableBlock.ShouldClone = true;
-        draggableBlock.OnDropCallback = function (draggableBlock) {
-        };
+        draggableBlock.OnDropCallback = function (draggableBlock) { };
         return draggableBlock;
     }
     function createWysiwygBlock() {
@@ -163,5 +168,5 @@ angular.module("umbraco").controller("WebBlocks.AddBlockDialogCtrl", function ($
 //        new NavigationItemModel(1000, "Facebook Feed Block", "Facebook Feed Block", "icon-bird", Math.random() >= 0.5),
 //        new NavigationItemModel(1000, "Instagram Feed Block", "Instagram Feed Block", "icon-bird", Math.random() >= 0.5),
 //    ];
-//} 
+//}
 //# sourceMappingURL=layoutbuilder.addblockdialog.js.map

@@ -9,7 +9,7 @@
 @section Content {
     <div class="content-page-left-nav">
         <div id="side-container">
-            @Html.Container(new Container()
+            @Html.Container("webblocks", new Container()
             {
                 Classes = "aside-container",
                 Name = "asideContainer",
@@ -22,7 +22,7 @@
             })
         </div>
 
-        @Html.Container(new Container()
+        @Html.Container("webblocks", new Container()
         {
             Attributes = new Dictionary<string, string> { { "id", "main-container" } },
             Classes = "main-container",
