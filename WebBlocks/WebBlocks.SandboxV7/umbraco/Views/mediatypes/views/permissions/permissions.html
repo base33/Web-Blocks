@@ -7,12 +7,10 @@
             <small><localize key="contentTypeEditor_allowAsRootDescription" /></small>
         </div>
         <div class="sub-view-column-right">
-            <umb-toggle
-                checked="model.allowAsRoot"
-                on-click="vm.toggle()"
-                hotkey="alt+shift+r"
-                >
-            </umb-toggle>
+            <label class="checkbox no-indent" >
+                <input type="checkbox" ng-model="model.allowAsRoot" hotkey="alt+shift+r" />
+                <localize key="contentTypeEditor_allowAsRootCheckbox" />
+            </label>
         </div>
 
     </div>

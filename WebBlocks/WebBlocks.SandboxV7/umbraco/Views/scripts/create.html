@@ -26,10 +26,8 @@
               val-form-manager>
             
             <div ng-show="vm.createFolderError">
-                <div class="alert alert-error">
-                    <div><strong>{{vm.createFolderError.errorMsg}}</strong></div>
-                    <div>{{vm.createFolderError.data.message}}</div>
-                </div>
+                <h5 class="text-error">{{vm.createFolderError.errorMsg}}</h5>
+                <p class="text-error">{{vm.createFolderError.data.message}}</p>
             </div>
 
             <umb-control-group label="Enter a folder name" hide-label="false">

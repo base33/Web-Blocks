@@ -11,17 +11,14 @@
 
             <div ng-show="success">
                 <div class="alert alert-success">
-                    <strong>{{currentNode.name}}</strong>
-                    <localize key="actions_wasCopiedTo">was copied to</localize>
+                    <strong>{{currentNode.name}}</strong> was copied to
                     <strong>{{target.name}}</strong>
                 </div>
                 <button class="btn btn-primary" ng-click="nav.hideDialog()">Ok</button>
             </div>
 
             <p class="abstract" ng-hide="success">
-                <localize key="actions_chooseWhereToCopy">Choose where to copy</localize>
-                <strong>{{currentNode.name}}</strong>
-                <localize key="actions_toInTheTreeStructureBelow">to in the tree structure below</localize>
+                Choose where to copy <strong>{{currentNode.name}}</strong> to in the tree structure below
             </p>
 
             <div class="umb-loader-wrapper" ng-show="busy">
@@ -71,13 +68,13 @@
 
                 <umb-pane>
                     <umb-control-group  localize="label" label="@defaultdialogs_relateToOriginalLabel">
-                        <umb-toggle checked="$parent.$parent.relateToOriginal" on-click="$parent.$parent.toggle('relate')"></umb-toggle>
+                        <input type="checkbox" ng-model="$parent.$parent.relateToOriginal"/>
                     </umb-control-group>
                 </umb-pane>
 
                 <umb-pane>
-                    <umb-control-group localize="label" label="@defaultdialogs_includeDescendants">
-                        <umb-toggle checked="$parent.$parent.recursive" on-click="$parent.$parent.toggle('recursive')"></umb-toggle>
+                    <umb-control-group localize="label" label="@defaultdialogs_includeDescendants"> 
+                        <input type="checkbox" ng-model="$parent.$parent.recursive" />
                     </umb-control-group>
                 </umb-pane>
 
@@ -86,10 +83,10 @@
     </div>
 
     <div class="umb-dialog-footer btn-toolbar umb-btn-toolbar" ng-hide="success">
-        <a class="btn btn-link" ng-click="nav.hideDialog()" ng-show="!busy">
+        <a class="btn btn-link" ng-click="nav.hideDialog()" ng-if="!busy">
             <localize key="general_cancel">Cancel</localize>
         </a>
-        <button class="btn btn-primary" ng-click="copy()" ng-disabled="busy || !target">
+        <button class="btn btn-primary" ng-click="copy()" ng-disabled="busy">
             <localize key="actions_copy">Copy</localize>
         </button>
     </div>

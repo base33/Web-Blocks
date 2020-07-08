@@ -1,44 +1,32 @@
-(function () {
-var print = (function () {
-    'use strict';
+/**
+ * plugin.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2015 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
 
-    var global = tinymce.util.Tools.resolve('tinymce.PluginManager');
+/*global tinymce:true */
 
-    var global$1 = tinymce.util.Tools.resolve('tinymce.Env');
+tinymce.PluginManager.add('print', function(editor) {
+	editor.addCommand('mcePrint', function() {
+		editor.getWin().print();
+	});
 
-    var register = function (editor) {
-      editor.addCommand('mcePrint', function () {
-        if (global$1.ie && global$1.ie <= 11) {
-          editor.getDoc().execCommand('print', false, null);
-        } else {
-          editor.getWin().print();
-        }
-      });
-    };
-    var Commands = { register: register };
+	editor.addButton('print', {
+		title: 'Print',
+		cmd: 'mcePrint'
+	});
 
-    var register$1 = function (editor) {
-      editor.addButton('print', {
-        title: 'Print',
-        cmd: 'mcePrint'
-      });
-      editor.addMenuItem('print', {
-        text: 'Print',
-        cmd: 'mcePrint',
-        icon: 'print'
-      });
-    };
-    var Buttons = { register: register$1 };
+	editor.addShortcut('Meta+P', '', 'mcePrint');
 
-    global.add('print', function (editor) {
-      Commands.register(editor);
-      Buttons.register(editor);
-      editor.addShortcut('Meta+P', '', 'mcePrint');
-    });
-    function Plugin () {
-    }
-
-    return Plugin;
-
-}());
-})();
+	editor.addMenuItem('print', {
+		text: 'Print',
+		cmd: 'mcePrint',
+		icon: 'print',
+		shortcut: 'Meta+P',
+		context: 'file'
+	});
+});

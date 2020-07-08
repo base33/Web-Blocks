@@ -30,10 +30,12 @@
             </div>
 
             <div id="sortingDone" style="display: none;" class="success">
-                <div class="alert alert-success">
+                <p>
                     <asp:Literal runat="server" ID="sortDone"></asp:Literal>
-                </div>
-                <button class="btn btn-primary" onclick="UmbClientMgr.closeModalWindow()"><%= umbraco.ui.Text("general", "ok")%></button>
+                </p>
+                <p>
+                    <a href="#" onclick="UmbClientMgr.closeModalWindow()"><%= umbraco.ui.Text("defaultdialogs", "closeThisWindow")%></a>
+                </p>
             </div>
 
             <div id="sortArea">

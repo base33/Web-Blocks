@@ -6,9 +6,10 @@
 
             <li ng-repeat="docType in allowedTypes">
                 <a href="#member/member/edit/{{currentNode.id}}?doctype={{docType.alias}}&create=true" ng-click="nav.hideNavigation()">
-                    <i class="large {{docType.icon}}"></i>
-                    <span class="menu-label">
-                        {{docType.name}}
+
+                    <i class="large icon-users"></i>
+
+                    <span class="menu-label">{{docType.name}}
                         <small>{{docType.description}}</small>
                     </span>
                 </a>
@@ -23,3 +24,4 @@
         <localize key="buttons_somethingElse">Do something else</localize>
     </button>
 </div>
+

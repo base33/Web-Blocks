@@ -6,10 +6,8 @@
               val-form-manager>
 
             <div ng-show="error">
-                <div class="alert alert-error">
-                    <div><strong>{{error.errorMsg}}</strong></div>
-                    <div>{{error.data.message}}</div>
-                </div>
+                <h5 class="text-error">{{error.errorMsg}}</h5>
+                <p class="text-error">{{error.data.message}}</p>
             </div>
 
             <umb-control-group label="@renamecontainer_enterNewFolderName" hide-label="false">

@@ -61,7 +61,8 @@
                           <input type="checkbox"
                                  ng-model="currentSection.allowAll"
                                  style="float: left; margin-right: 10px;"
-                                 ng-change="toggleAllowed(currentSection)" />
+                                 ng-checked="currentSection.allowed === undefined"
+                                 ng-change="toggleCollection(currentSection.allowed, currentSection.allowAll)" />
                                  <localize key="grid_allowAllRowConfigurations"/>
                       </label>
                   </li>

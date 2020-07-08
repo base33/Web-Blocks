@@ -1,4 +1,5 @@
 <div ng-controller="Umbraco.Overlays.UserController">
+
     <div class="umb-control-group" ng-if="!showPasswordFields">
 
        <h5><localize key="user_yourProfile" /></h5>
@@ -10,7 +11,6 @@
        </p>
 
         <umb-button
-            alias="editUser"
             type="link"
             href="#/users/users/user/{{user.id}}"
             action="model.close()"
@@ -21,7 +21,6 @@
        </umb-button>
 
         <umb-button
-            alias="changePassword"
             type="button"
             action="togglePasswordFields()"
             label="Change password"
@@ -30,7 +29,6 @@
        </umb-button>
 
         <umb-button
-            alias="logOut"
             type="button"
             action="logout()"
             shortcut="ctrl+shift+l"
@@ -76,8 +74,7 @@
 
     </div>
 
-
-    <div class="umb-control-group" ng-if="!showPasswordFields && history.length">
+    <div class="umb-control-group" ng-if="!showPasswordFields">
         <h5><localize key="user_yourHistory" /></h5>
         <ul class="umb-tree">
             <li ng-repeat="item in history | orderBy:'time':true">
@@ -125,14 +122,4 @@
 
     </div>
 
-    <div class="umb-control-group" ng-if="tab.length">
-        <div ng-repeat="tab in dashboard">
-            <div ng-repeat="property in tab.properties">
-                <div>
-                    <h3 ng-if="property.caption">{{property.caption}}</h3>
-                    <div ng-include="property.path"></div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>

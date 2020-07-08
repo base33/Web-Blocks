@@ -17,7 +17,7 @@
                 Umbraco.Dialogs.EditMacro.getInstance().init({
                     useAspNetMasterPages: <%=UmbracoConfig.For.UmbracoSettings().Templates.UseAspNetMasterPages.ToString().ToLower() %>,
                     codeEditorElementId: "<%=Request.CleanForXss("objectId") %>",
-                    renderingEngine: "<%=Request.CleanForXss("renderingEngine", "Mvc")%>",
+                    renderingEngine: "<%=Request.GetItemAsString("renderingEngine", "Mvc")%>",
                     macroAlias: '<%= _macroAlias %>'
                 });
             });

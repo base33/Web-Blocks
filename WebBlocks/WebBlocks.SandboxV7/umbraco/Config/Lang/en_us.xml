@@ -2,7 +2,7 @@
 <language alias="en_us" intName="English (US)" localName="English (US)" lcid="" culture="en-US">
     <creator>
         <name>The Umbraco community</name>
-        <link>https://our.umbraco.com/documentation/Extending-Umbraco/Language-Files</link>
+        <link>http://our.umbraco.org/documentation/Extending-Umbraco/Language-Files</link>
     </creator>
     <area alias="actions">
         <key alias="assignDomain">Culture and Hostnames</key>
@@ -11,7 +11,6 @@
         <key alias="changeDocType">Change Document Type</key>
         <key alias="copy">Copy</key>
         <key alias="create">Create</key>
-        <key alias="export">Export</key>
         <key alias="createPackage">Create Package</key>
         <key alias="createGroup">Create group</key>
         <key alias="delete">Delete</key>
@@ -33,12 +32,8 @@
         <key alias="rename" version="7.3.0">Rename</key>
         <key alias="restore" version="7.3.0">Restore</key>
         <key alias="SetPermissionsForThePage">Set permissions for the page %0%</key>
-        <key alias="chooseWhereToCopy">Choose where to copy</key>
         <key alias="chooseWhereToMove">Choose where to move</key>
-        <key alias="toInTheTreeStructureBelow">to in the tree structure below</key>
-        <key alias="wasMovedTo">was moved to</key>
-        <key alias="wasCopiedTo">was copied to</key>
-        <key alias="wasDeleted">was deleted</key>
+        <key alias="toInTheTreeStructureBelow">In the tree structure below</key>
         <key alias="rights">Permissions</key>
         <key alias="rollback">Rollback</key>
         <key alias="sendtopublish">Send To Publish</key>
@@ -50,7 +45,6 @@
         <key alias="setPermissions">Set permissions</key>
         <key alias="unlock">Unlock</key>
         <key alias="createblueprint">Create Content Template</key>
-        <key alias="resendInvite">Resend Invitation</key>
     </area>
     <area alias="actionCategories">
         <key alias="content">Content</key>
@@ -105,6 +99,9 @@
         </key>
         <key alias="setDomains">Domains</key>
     </area>
+    <area alias="auditTrails">
+        <key alias="atViewingFor">Viewing for</key>
+    </area>
     <area alias="buttons">
         <key alias="clearSelection">Clear selection</key>
         <key alias="select">Select</key>
@@ -130,7 +127,6 @@
         <key alias="returnToList">Return to list</key>
         <key alias="save">Save</key>
         <key alias="saveAndPublish">Save and publish</key>
-        <key alias="saveAndSchedule">Save and schedule</key>
         <key alias="saveToPublish">Save and send for approval</key>
         <key alias="saveListView">Save list view</key>
         <key alias="showPage">Preview</key>
@@ -142,34 +138,7 @@
         <key alias="saveAndGenerateModels">Save and generate models</key>
         <key alias="undo">Undo</key>
         <key alias="redo">Redo</key>
-        <key alias="deleteTag">Delete tag</key>
-        <key alias="confirmActionCancel">Cancel</key>
-        <key alias="confirmActionConfirm">Confirm</key>
     </area>
-    <area alias="auditTrails">
-        <key alias="atViewingFor">Viewing for</key>
-        <key alias="delete">Delete Content performed by user</key>
-        <key alias="unpublish">UnPublish performed by user</key>
-        <key alias="publish">Save and Publish performed by user</key>
-        <key alias="save">Save Content performed by user</key>
-        <key alias="move">Move Content performed by user</key>
-        <key alias="copy">Copy Content performed by user</key>
-        <key alias="rollback">Content rollback performed by user</key>
-        <key alias="sendtopublish">Content Send To Publish performed by user</key>
-        <key alias="sendtotranslate">Content Send To Translation performed by user</key>
-        <key alias="sort">Sort child items performed by user</key>
-        <key alias="smallCopy">Copy</key>
-        <key alias="smallPublish">Publish</key>
-        <key alias="smallMove">Move</key>
-        <key alias="smallSave">Save</key>
-        <key alias="smallDelete">Delete</key>
-        <key alias="smallUnPublish">Unpublish</key>
-        <key alias="smallRollBack">Rollback</key>
-        <key alias="smallSendToPublish">Send To Publish</key>
-        <key alias="smallSendToTranslate">Send To Translation</key>
-        <key alias="smallSort">Sort</key>
-    </area>
-
     <area alias="changeDocType">
         <key alias="changeDocTypeInstruction">To change the document type for the selected content, first select from the list of valid types for this location.</key>
         <key alias="changeDocTypeInstruction2">Then confirm and/or amend the mapping of properties from the current type to the new, and click Save.</key>
@@ -189,11 +158,6 @@
         <key alias="to">to</key>
         <key alias="validationErrorPropertyWithMoreThanOneMapping">Could not complete property mapping as one or more properties have more than one mapping defined.</key>
         <key alias="validDocTypesNote">Only alternate types valid for the current location are displayed.</key>
-    </area>
-    <area alias="codefile">
-        <key alias="createFolderFailedById">Failed to create a folder under parent with ID %0%</key>
-        <key alias="createFolderFailedByName">Failed to create a folder under parent with name %0%</key>
-        <key alias="deleteItemFailed">Failed to delete item: %0%</key>
     </area>
     <area alias="content">
         <key alias="isPublished" version="7.2">Is Published</key>
@@ -222,23 +186,18 @@
         <key alias="membergroup">Member Group</key>
         <key alias="memberrole">Role</key>
         <key alias="membertype">Member Type</key>
-        <key alias="noChanges">No changes have been made</key>
         <key alias="noDate">No date chosen</key>
         <key alias="nodeName">Page title</key>
-        <key alias="noMediaLink">This media item has no link</key>
         <key alias="otherElements">Properties</key>
         <key alias="parentNotPublished">This document is published but is not visible because the parent '%0%' is unpublished</key>
         <key alias="parentNotPublishedAnomaly">This document is published but is not in the cache</key>
         <key alias="getUrlException">Could not get the url</key>
         <key alias="routeError">This document is published but its url would collide with content %0%</key>
         <key alias="publish">Publish</key>
-        <key alias="published">Published</key>
-        <key alias="publishedPendingChanges">Published (pending changes)</key>
         <key alias="publishStatus">Publication Status</key>
         <key alias="releaseDate">Publish at</key>
         <key alias="unpublishDate">Unpublish at</key>
         <key alias="removeDate">Clear Date</key>
-        <key alias="setDate">Set date</key>
         <key alias="sortDone">Sortorder is updated</key>
         <key alias="sortHelp">To sort the nodes, simply drag the nodes or click one of the column headers. You can select multiple nodes by holding the "shift" or "control" key while selecting</key>
         <key alias="statistics">Statistics</key>
@@ -246,7 +205,6 @@
         <key alias="altTextOptional">Alternative text (optional)</key>
         <key alias="type">Type</key>
         <key alias="unPublish">Unpublish</key>
-        <key alias="unpublished">Unpublished</key>
         <key alias="updateDate">Last edited</key>
         <key alias="updateDateDesc" version="7.0">Date/time this document was edited</key>
         <key alias="uploadClear">Remove file(s)</key>
@@ -256,14 +214,12 @@
         <key alias="childItems" version="7.0">Child items</key>
         <key alias="target" version="7.0">Target</key>
         <key alias="scheduledPublishServerTime">This translates to the following time on the server:</key>
-        <key alias="scheduledPublishDocumentation"><![CDATA[<a href="https://our.umbraco.com/documentation/Getting-Started/Data/Scheduled-Publishing/#timezones" target="_blank">What does this mean?</a>]]></key>
+        <key alias="scheduledPublishDocumentation"><![CDATA[<a href="https://our.umbraco.org/documentation/Getting-Started/Data/Scheduled-Publishing/#timezones" target="_blank">What does this mean?</a>]]></key>
         <key alias="nestedContentDeleteItem">Are you sure you want to delete this item?</key>
         <key alias="nestedContentEditorNotSupported">Property %0% uses editor %1% which is not supported by Nested Content.</key>
         <key alias="addTextBox">Add another text box</key>
         <key alias="removeTextBox">Remove this text box</key>
         <key alias="contentRoot">Content root</key>
-        <key alias="isSensitiveValue">This value is hidden. If you need access to view this value please contact your website administrator.</key>
-        <key alias="isSensitiveValue_short">This value is hidden.</key>
     </area>
     <area alias="blueprints">
         <key alias="createBlueprintFrom">Create a new Content Template from '%0%'</key>
@@ -279,16 +235,10 @@
         <key alias="dropFilesHere">Drop your files here...</key>
         <key alias="urls">Link to media</key>
         <key alias="orClickHereToUpload">or click here to choose files</key>
-        <key alias="dragFilesHereToUpload">You can drag files here to upload.</key>
         <key alias="onlyAllowedFiles">Only allowed file types are</key>
         <key alias="disallowedFileType">Cannot upload this file, it does not have an approved file type</key>
         <key alias="maxFileSize">Max file size is</key>
         <key alias="mediaRoot">Media root</key>
-        <key alias="moveFailed">Failed to move media</key>
-        <key alias="moveToSameFolderFailed">Parent and destination folders cannot be the same</key>
-        <key alias="copyFailed">Failed to copy media</key>
-        <key alias="createFolderFailed">Failed to create a folder under parent id %0%</key>
-        <key alias="renameFolderFailed">Failed to rename the folder with id %0%</key>
     </area>
     <area alias="member">
         <key alias="createNewMember">Create a new member</key>
@@ -298,14 +248,13 @@
         <key alias="chooseNode">Where do you want to create the new %0%</key>
         <key alias="createUnder">Create an item under</key>
         <key alias="createContentBlueprint">Select the document type you want to make a content template for</key>
-        <key alias="enterFolderName">Enter a folder name</key>
         <key alias="updateData">Choose a type and a title</key>
         <key alias="noDocumentTypes" version="7.0"><![CDATA[There are no allowed document types available. You must enable these in the settings section under <strong>"document types"</strong>.]]></key>
         <key alias="noMediaTypes" version="7.0"><![CDATA[There are no allowed media types available. You must enable these in the settings section under <strong>"media types"</strong>.]]></key>
         <key alias="documentTypeWithoutTemplate">Document Type without a template</key>
         <key alias="newFolder">New folder</key>
         <key alias="newDataType">New data type</key>
-        <key alias="newJavascriptFile">New JavaScript file</key>
+        <key alias="newJavascriptFile">New javascript file</key>
         <key alias="newEmptyPartialView">New empty partial view</key>
         <key alias="newPartialViewMacro">New partial view macro</key>
         <key alias="newPartialViewFromSnippet">New partial view from snippet</key>
@@ -327,7 +276,6 @@
         <key alias="discardChanges">Discard changes</key>
         <key alias="unsavedChanges">You have unsaved changes</key>
         <key alias="unsavedChangesWarning">Are you sure you want to navigate away from this page? - you have unsaved changes</key>
-        <key alias="confirmUnpublish">Unpublishing will remove this page and all its descendants from the site.</key>
     </area>
     <area alias="bulk">
         <key alias="done">Done</key>
@@ -360,8 +308,8 @@
     <area alias="defaultdialogs">
         <key alias="nodeNameLinkPicker">Link title</key>
         <key alias="urlLinkPicker">Link</key>
-        <key alias="anchorLinkPicker">Anchor / querystring</key>
         <key alias="anchorInsert">Name</key>
+        <key alias="assignDomain">Manage hostnames</key>
         <key alias="closeThisWindow">Close this window</key>
         <key alias="confirmdelete">Are you sure you want to delete</key>
         <key alias="confirmdisable">Are you sure you want to disable</key>
@@ -460,7 +408,6 @@
       The key '%0%' already exists.
    ]]>
         </key>
-        <key alias="overviewTitle">Dictionary overview</key>
     </area>
     <area alias="placeholders">
         <key alias="username">Enter your username</key>
@@ -478,9 +425,6 @@
         <key alias="email">Enter your email...</key>
         <key alias="enterMessage">Enter a message...</key>
         <key alias="usernameHint">Your username is usually your email</key>
-        <key alias="anchor">#value or ?key=value</key>
-        <key alias="enterAlias">Enter alias...</key>
-        <key alias="generatingAlias">Generating alias...</key>
     </area>
     <area alias="editcontenttype">
         <key alias="allowAtRoot" version="7.2">Allow at root</key>
@@ -499,7 +443,6 @@
         <key alias="currentListViewDesc" version="7.2">The active list view data type</key>
         <key alias="createListView" version="7.2">Create custom list view</key>
         <key alias="removeListView" version="7.2">Remove custom list view</key>
-        <key alias="aliasAlreadyExists">A content type, media type or member type with this alias already exists</key>
     </area>
     <area alias="renamecontainer">
         <key alias="renamed">Renamed</key>
@@ -566,7 +509,6 @@
         <key alias="missingPropertyEditorErrorMessage">There is a configuration error with the data type used for this property, please check the data type</key>
     </area>
     <area alias="general">
-        <key alias="options">Options</key>
         <key alias="about">About</key>
         <key alias="action">Action</key>
         <key alias="actions">Actions</key>
@@ -607,16 +549,12 @@
         <key alias="error">Error</key>
         <key alias="findDocument">Find</key>
         <key alias="first">First</key>
-        <key alias="general">General</key>
         <key alias="groups">Groups</key>
         <key alias="height">Height</key>
         <key alias="help">Help</key>
         <key alias="hide">Hide</key>
-        <key alias="history">History</key>
         <key alias="icon">Icon</key>
-        <key alias="id">Id</key>
         <key alias="import">Import</key>
-        <key alias="info">Info</key>
         <key alias="innerMargin">Inner margin</key>
         <key alias="insert">Insert</key>
         <key alias="install">Install</key>
@@ -626,7 +564,6 @@
         <key alias="language">Language</key>
         <key alias="last">Last</key>
         <key alias="layout">Layout</key>
-        <key alias="links">Links</key>
         <key alias="loading">Loading</key>
         <key alias="locked">Locked</key>
         <key alias="login">Login</key>
@@ -665,9 +602,9 @@
         <key alias="retrieve">Retrieve</key>
         <key alias="retry">Retry</key>
         <key alias="rights">Permissions</key>
-        <key alias="scheduledPublishing">Scheduled Publishing</key>
         <key alias="search">Search</key>
-        <key alias="searchNoResult">Sorry, we can not find what you are looking for.</key>
+        <key alias="searchNoResult">Sorry, we can not find what you are looking for</key>
+        <key alias="clearSearch">Clear search</key>
         <key alias="noItemsInList">No items have been added</key>
         <key alias="server">Server</key>
         <key alias="show">Show</key>
@@ -678,7 +615,6 @@
         <key alias="submit">Submit</key>
         <key alias="type">Type</key>
         <key alias="typeToSearch">Type to search...</key>
-        <key alias="under">under</key>
         <key alias="up">Up</key>
         <key alias="update">Update</key>
         <key alias="upgrade">Upgrade</key>
@@ -702,9 +638,8 @@
         <key alias="saving">Saving...</key>
         <key alias="current">current</key>
         <key alias="embed">Embed</key>
-        <key alias="retrieve">Retrieve</key>
+    <key alias="retrieve">Retrieve</key>
         <key alias="selected">selected</key>
-		<key alias="includeFromsubFolders">Include subfolders in search</key>
     </area>
     <area alias="colors">
         <key alias="black">Black</key>
@@ -712,20 +647,7 @@
         <key alias="yellow">Yellow</key>
         <key alias="orange">Orange</key>
         <key alias="blue">Blue</key>
-        <key alias="bluegrey">Blue Grey</key>
-        <key alias="grey">Grey</key>
-        <key alias="brown">Brown</key>
-        <key alias="lightblue">Light Blue</key>
-        <key alias="cyan">Cyan</key>
-        <key alias="lightgreen">Light Green</key>
-        <key alias="lime">Lime</key>
-        <key alias="amber">Amber</key>
-        <key alias="deeporange">Deep Orange</key>
         <key alias="red">Red</key>
-        <key alias="pink">Pink</key>
-        <key alias="purple">Purple</key>
-        <key alias="deeppurple">Deep Purple</key>
-        <key alias="indigo">Indigo</key>
     </area>
     <area alias="shortcuts">
         <key alias="addTab">Add tab</key>
@@ -781,7 +703,7 @@
               <p>To proceed, please edit the "web.config" file (using Visual Studio or your favourite text editor), scroll to the bottom, add the connection string for your database in the key named "UmbracoDbDSN" and save the file. </p>
               <p>
               Click the <strong>retry</strong> button when
-              done.<br /><a href="https://our.umbraco.com/documentation/Using-Umbraco/Config-files/webconfig7" target="_blank">
+              done.<br /><a href="http://our.umbraco.org/documentation/Using-Umbraco/Config-files/webconfig7" target="_blank">
 			              More information on editing web.config here.</a></p>]]>
         </key>
         <key alias="databaseText">
@@ -936,8 +858,6 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="forgottenPassword">Forgotten password?</key>
         <key alias="forgottenPasswordInstruction">An email will be sent to the address specified with a link to reset your password</key>
         <key alias="requestPasswordResetConfirmation">An email with password reset instructions will be sent to the specified address if it matched our records</key>
-        <key alias="showPassword">Show password</key>
-        <key alias="hidePassword">Hide password</key>
         <key alias="returnToLogin">Return to login form</key>
         <key alias="setPasswordInstruction">Please provide a new password</key>
         <key alias="setPasswordConfirmation">Your Password has been updated</key>
@@ -945,41 +865,41 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="resetPasswordEmailCopySubject">Umbraco: Reset Password</key>
         <key alias="resetPasswordEmailCopyFormat">
             <![CDATA[
-        <html>
-			<head>
-				<meta name='viewport' content='width=device-width'>
-				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-			</head>
-			<body class='' style='font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; color: #392F54; line-height: 22px; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #1d1333; margin: 0; padding: 0;' bgcolor='#1d1333'>
-				<style type='text/css'> @media only screen and (max-width: 620px) {table[class=body] h1 {font-size: 28px !important; margin-bottom: 10px !important; } table[class=body] .wrapper {padding: 32px !important; } table[class=body] .article {padding: 32px !important; } table[class=body] .content {padding: 24px !important; } table[class=body] .container {padding: 0 !important; width: 100% !important; } table[class=body] .main {border-left-width: 0 !important; border-radius: 0 !important; border-right-width: 0 !important; } table[class=body] .btn table {width: 100% !important; } table[class=body] .btn a {width: 100% !important; } table[class=body] .img-responsive {height: auto !important; max-width: 100% !important; width: auto !important; } } .btn-primary table td:hover {background-color: #34495e !important; } .btn-primary a:hover {background-color: #34495e !important; border-color: #34495e !important; } .btn  a:visited {color:#FFFFFF;} </style>
+        <html> 
+			<head> 
+				<meta name='viewport' content='width=device-width'> 
+				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> 
+			</head> 
+			<body class='' style='font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; color: #392F54; line-height: 22px; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #1d1333; margin: 0; padding: 0;' bgcolor='#1d1333'> 
+				<style type='text/css'> @media only screen and (max-width: 620px) {table[class=body] h1 {font-size: 28px !important; margin-bottom: 10px !important; } table[class=body] .wrapper {padding: 32px !important; } table[class=body] .article {padding: 32px !important; } table[class=body] .content {padding: 24px !important; } table[class=body] .container {padding: 0 !important; width: 100% !important; } table[class=body] .main {border-left-width: 0 !important; border-radius: 0 !important; border-right-width: 0 !important; } table[class=body] .btn table {width: 100% !important; } table[class=body] .btn a {width: 100% !important; } table[class=body] .img-responsive {height: auto !important; max-width: 100% !important; width: auto !important; } } .btn-primary table td:hover {background-color: #34495e !important; } .btn-primary a:hover {background-color: #34495e !important; border-color: #34495e !important; } .btn  a:visited {color:#FFFFFF;} </style> 
 				<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #1d1333;" bgcolor="#1d1333">
-					<tr>
-						<td style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding: 24px;" valign="top">
+					<tr> 
+						<td style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding: 24px;" valign="top"> 
 							<table style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
-								<tr>
-									<td background="https://umbraco.com/umbraco/assets/img/application/logo.png" bgcolor="#1d1333" width="28" height="28" valign="top" style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
-										<!--[if gte mso 9]> <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:30px;height:30px;"> <v:fill type="tile" src="https://umbraco.com/umbraco/assets/img/application/logo.png" color="#1d1333" /> <v:textbox inset="0,0,0,0"> <![endif]-->
-										<div> </div>
-										<!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]-->
-									</td>
-									<td style="font-family: sans-serif; font-size: 14px; vertical-align: top;" valign="top"></td>
+								<tr> 
+									<td background="https://umbraco.com/umbraco/assets/img/application/logo.png" bgcolor="#1d1333" width="28" height="28" valign="top" style="font-family: sans-serif; font-size: 14px; vertical-align: top;"> 
+										<!--[if gte mso 9]> <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:30px;height:30px;"> <v:fill type="tile" src="https://umbraco.com/umbraco/assets/img/application/logo.png" color="#1d1333" /> <v:textbox inset="0,0,0,0"> <![endif]--> 
+										<div> </div> 
+										<!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> 
+									</td> 
+									<td style="font-family: sans-serif; font-size: 14px; vertical-align: top;" valign="top"></td> 
 								</tr>
-							</table>
-						</td>
+							</table> 
+						</td> 
 					</tr>
-				</table>
+				</table> 
 				<table border='0' cellpadding='0' cellspacing='0' class='body' style='border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #1d1333;' bgcolor='#1d1333'>
-					<tr>
-						<td style='font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'> </td>
-						<td class='container' style='font-family: sans-serif; font-size: 14px; vertical-align: top; display: block; max-width: 560px; width: 560px; margin: 0 auto; padding: 10px;' valign='top'>
+					<tr> 
+						<td style='font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'> </td> 
+						<td class='container' style='font-family: sans-serif; font-size: 14px; vertical-align: top; display: block; max-width: 560px; width: 560px; margin: 0 auto; padding: 10px;' valign='top'> 
 							<div class='content' style='box-sizing: border-box; display: block; max-width: 560px; margin: 0 auto; padding: 10px;'>
 								<br>
 								<table class='main' style='border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; border-radius: 3px; background: #FFFFFF;' bgcolor='#FFFFFF'>
-									<tr>
-										<td class='wrapper' style='font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 50px;' valign='top'>
+									<tr> 
+										<td class='wrapper' style='font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 50px;' valign='top'> 
 											<table border='0' cellpadding='0' cellspacing='0' style='border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;'>
-												<tr>
-													<td style='line-height: 24px; font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'>
+												<tr> 
+													<td style='line-height: 24px; font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'>     
 														<h1 style='color: #392F54; font-family: sans-serif; font-weight: bold; line-height: 1.4; font-size: 24px; text-align: left; text-transform: capitalize; margin: 0 0 30px;' align='left'>
 															Password reset requested
 														</h1>
@@ -989,12 +909,12 @@ To manage your website, simply open the Umbraco back office and start adding con
 														<p style='color: #392F54; font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;'>
 															<table border='0' cellpadding='0' cellspacing='0' style='border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;'>
 																<tbody>
-																	<tr>
-																		<td style='font-family: sans-serif; font-size: 14px; vertical-align: top; border-radius: 5px; text-align: center; background: #35C786;' align='center' bgcolor='#35C786' valign='top'>
+																	<tr> 
+																		<td style='font-family: sans-serif; font-size: 14px; vertical-align: top; border-radius: 5px; text-align: center; background: #35C786;' align='center' bgcolor='#35C786' valign='top'> 
 																			<a href='%1%' target='_blank' style='color: #FFFFFF; text-decoration: none; -ms-word-break: break-all; word-break: break-all; border-radius: 5px; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 14px; font-weight: bold; text-transform: capitalize; background: #35C786; margin: 0; padding: 12px 30px; border: 1px solid #35c786;'>
 																				Click this link to reset your password
-																			</a>
-																		</td>
+																			</a> 
+																		</td> 
 																	</tr>
 																</tbody>
 															</table>
@@ -1006,22 +926,22 @@ To manage your website, simply open the Umbraco back office and start adding con
 																		<font style="-ms-word-break: break-all; word-break: break-all; font-size: 11px; line-height:14px;">
 																			<a style='-ms-word-break: break-all; word-break: break-all; color: #392F54; text-decoration: underline; font-size: 11px; line-height:15px;' href='%1%'>%1%</a>
 																		</font>
-																	</td>
+																	</td> 
 																</tr>
 															</table>
 														</p>
-													</td>
+													</td> 
 												</tr>
-											</table>
-										</td>
+											</table> 
+										</td> 
 									</tr>
-								</table>
-								<br><br><br>
-							</div>
-						</td>
-						<td style='font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'> </td>
+								</table> 
+								<br><br><br> 
+							</div> 
+						</td> 
+						<td style='font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'> </td> 
 					</tr>
-				</table>
+				</table> 
 			</body>
 		</html>
 	]]>
@@ -1047,8 +967,7 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="relateToOriginal">Relate copied items to original</key>
     </area>
     <area alias="notifications">
-        <key alias="editNotifications"><![CDATA[Select your notification for <strong>%0%</strong>]]></key>
-        <key alias="notificationsSavedFor">Notification settings saved for</key>
+        <key alias="editNotifications">Edit your notification for %0%</key>
         <key alias="mailBody">
             <![CDATA[
       Hi %0%
@@ -1066,53 +985,53 @@ To manage your website, simply open the Umbraco back office and start adding con
         </key>
         <key alias="mailBodyHtml">
             <![CDATA[
-        <html>
-			<head>
-				<meta name='viewport' content='width=device-width'>
-				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-			</head>
-			<body class='' style='font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; color: #392F54; line-height: 22px; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #1d1333; margin: 0; padding: 0;' bgcolor='#1d1333'>
-				<style type='text/css'> @media only screen and (max-width: 620px) {table[class=body] h1 {font-size: 28px !important; margin-bottom: 10px !important; } table[class=body] .wrapper {padding: 32px !important; } table[class=body] .article {padding: 32px !important; } table[class=body] .content {padding: 24px !important; } table[class=body] .container {padding: 0 !important; width: 100% !important; } table[class=body] .main {border-left-width: 0 !important; border-radius: 0 !important; border-right-width: 0 !important; } table[class=body] .btn table {width: 100% !important; } table[class=body] .btn a {width: 100% !important; } table[class=body] .img-responsive {height: auto !important; max-width: 100% !important; width: auto !important; } } .btn-primary table td:hover {background-color: #34495e !important; } .btn-primary a:hover {background-color: #34495e !important; border-color: #34495e !important; } .btn  a:visited {color:#FFFFFF;} </style>
+        <html> 
+			<head> 
+				<meta name='viewport' content='width=device-width'> 
+				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> 
+			</head> 
+			<body class='' style='font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; color: #392F54; line-height: 22px; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #1d1333; margin: 0; padding: 0;' bgcolor='#1d1333'> 
+				<style type='text/css'> @media only screen and (max-width: 620px) {table[class=body] h1 {font-size: 28px !important; margin-bottom: 10px !important; } table[class=body] .wrapper {padding: 32px !important; } table[class=body] .article {padding: 32px !important; } table[class=body] .content {padding: 24px !important; } table[class=body] .container {padding: 0 !important; width: 100% !important; } table[class=body] .main {border-left-width: 0 !important; border-radius: 0 !important; border-right-width: 0 !important; } table[class=body] .btn table {width: 100% !important; } table[class=body] .btn a {width: 100% !important; } table[class=body] .img-responsive {height: auto !important; max-width: 100% !important; width: auto !important; } } .btn-primary table td:hover {background-color: #34495e !important; } .btn-primary a:hover {background-color: #34495e !important; border-color: #34495e !important; } .btn  a:visited {color:#FFFFFF;} </style> 
 				<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #1d1333;" bgcolor="#1d1333">
-					<tr>
-						<td style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding: 24px;" valign="top">
+					<tr> 
+						<td style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding: 24px;" valign="top"> 
 							<table style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
-								<tr>
-									<td background="https://umbraco.com/umbraco/assets/img/application/logo.png" bgcolor="#1d1333" width="28" height="28" valign="top" style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
-										<!--[if gte mso 9]> <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:30px;height:30px;"> <v:fill type="tile" src="https://umbraco.com/umbraco/assets/img/application/logo.png" color="#1d1333" /> <v:textbox inset="0,0,0,0"> <![endif]-->
-										<div> </div>
-										<!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]-->
-									</td>
+								<tr> 
+									<td background="https://umbraco.com/umbraco/assets/img/application/logo.png" bgcolor="#1d1333" width="28" height="28" valign="top" style="font-family: sans-serif; font-size: 14px; vertical-align: top;"> 
+										<!--[if gte mso 9]> <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:30px;height:30px;"> <v:fill type="tile" src="https://umbraco.com/umbraco/assets/img/application/logo.png" color="#1d1333" /> <v:textbox inset="0,0,0,0"> <![endif]--> 
+										<div> </div> 
+										<!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> 
+									</td> 
 									<td style="font-family: sans-serif; font-size: 14px; vertical-align: top;" valign="top"></td>
 								</tr>
-							</table>
-						</td>
+							</table> 
+						</td> 
 					</tr>
-				</table>
+				</table> 
 				<table border='0' cellpadding='0' cellspacing='0' class='body' style='border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #1d1333;' bgcolor='#1d1333'>
-					<tr>
-						<td style='font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'> </td>
-						<td class='container' style='font-family: sans-serif; font-size: 14px; vertical-align: top; display: block; max-width: 560px; width: 560px; margin: 0 auto; padding: 10px;' valign='top'>
+					<tr> 
+						<td style='font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'> </td> 
+						<td class='container' style='font-family: sans-serif; font-size: 14px; vertical-align: top; display: block; max-width: 560px; width: 560px; margin: 0 auto; padding: 10px;' valign='top'> 
 							<div class='content' style='box-sizing: border-box; display: block; max-width: 560px; margin: 0 auto; padding: 10px;'>
 								<br>
 								<table class='main' style='border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; border-radius: 3px; background: #FFFFFF;' bgcolor='#FFFFFF'>
-									<tr>
-										<td class='wrapper' style='font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 50px;' valign='top'>
+									<tr> 
+										<td class='wrapper' style='font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 50px;' valign='top'> 
 											<table border='0' cellpadding='0' cellspacing='0' style='border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;'>
-												<tr>
-													<td style='line-height: 24px; font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'>
+												<tr> 
+													<td style='line-height: 24px; font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'>      
 														<h1 style='color: #392F54; font-family: sans-serif; font-weight: bold; line-height: 1.4; font-size: 24px; text-align: left; text-transform: capitalize; margin: 0 0 30px;' align='left'>
 															Hi %0%,
 														</h1>
-														<p style='color: #392F54; font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;'>
+														<p style='color: #392F54; font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;'> 
 															This is an automated mail to inform you that the task <strong>'%1%'</strong> has been performed on the page <a style="color: #392F54; text-decoration: none; -ms-word-break: break-all; word-break: break-all;" href="http://%4%/#/content/content/edit/%5%"><strong>'%2%'</strong></a> by the user <strong>'%3%'</strong>
 														</p>
 														<table border='0' cellpadding='0' cellspacing='0' class='btn btn-primary' style='border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;'>
 															<tbody>
 																<tr>
 																	<td align='left' style='font-family: sans-serif; font-size: 14px; vertical-align: top; padding-bottom: 15px;' valign='top'>
-																		<table border='0' cellpadding='0' cellspacing='0' style='border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;'><tbody><tr>
-																			<td style='font-family: sans-serif; font-size: 14px; vertical-align: top; border-radius: 5px; text-align: center; background: #35C786;' align='center' bgcolor='#35C786' valign='top'>
+																		<table border='0' cellpadding='0' cellspacing='0' style='border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;'><tbody><tr> 
+																			<td style='font-family: sans-serif; font-size: 14px; vertical-align: top; border-radius: 5px; text-align: center; background: #35C786;' align='center' bgcolor='#35C786' valign='top'> 
 																				<a href='http://%4%/#/content/content/edit/%5%' target='_blank' style='color: #FFFFFF; text-decoration: none; -ms-word-break: break-all; word-break: break-all; border-radius: 5px; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 14px; font-weight: bold; text-transform: capitalize; background: #35C786; margin: 0; padding: 12px 30px; border: 1px solid #35c786;'>EDIT</a> </td> </tr></tbody></table>
 																	</td>
 																</tr>
@@ -1122,7 +1041,7 @@ To manage your website, simply open the Umbraco back office and start adding con
 															<h3>Update summary:</h3>
 															<table style="width: 100%;">
 																 %6%
-															</table>
+															</table>	
 														</p>
 														<p style='color: #392F54; font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;'>
 															Have a nice day!<br /><br />
@@ -1134,10 +1053,10 @@ To manage your website, simply open the Umbraco back office and start adding con
 										</td>
 									</tr>
 								</table>
-								<br><br><br>
+								<br><br><br> 
 							</div>
 						</td>
-						<td style='font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'> </td>
+						<td style='font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'> </td> 
 					</tr>
 				</table>
 			</body>
@@ -1236,7 +1155,7 @@ To manage your website, simply open the Umbraco back office and start adding con
     </area>
     <area alias="publicAccess">
         <key alias="paAdvanced">Role based protection</key>
-        <key alias="paAdvancedHelp">If you wish to control access to the page using role-based authentication, using Umbraco's member groups.</key>
+        <key alias="paAdvancedHelp"><![CDATA[If you wish to control access to the page using role-based authentication,<br /> using Umbraco's member groups.]]></key>
         <key alias="paAdvancedNoGroups">You need to create a membergroup before you can use role-based authentication</key>
         <key alias="paErrorPage">Error Page</key>
         <key alias="paErrorPageHelp">Used when people are logged on, but do not have access</key>
@@ -1301,7 +1220,6 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="pickedTrashedItem">You have picked a media item currently deleted or in the recycle bin</key>
         <key alias="pickedTrashedItems">You have picked media items currently deleted or in the recycle bin</key>
         <key alias="deletedItem">Deleted item</key>
-        <key alias="trashed">Trashed</key>
     </area>
     <area alias="relatedlinks">
         <key alias="enterExternal">enter external link</key>
@@ -1313,14 +1231,13 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="externalLinkPlaceholder">Enter the link</key>
     </area>
     <area alias="imagecropper">
-        <key alias="reset">Reset crop</key>
+        <key alias="reset">Reset</key>
+        <key alias="defineCrop">Define crop</key>
+        <key alias="defineCropDescription">Give the crop an alias and its default width and height</key>
         <key alias="saveCrop">Save crop</key>
         <key alias="addCrop">Add new crop</key>
-        <key alias="updateEditCrop">Done</key>
-        <key alias="undoEditCrop">Undo edits</key>
     </area>
     <area alias="rollback">
-        <key alias="headline">Select a version to compare with the current version</key>
         <key alias="currentVersion">Current version</key>
         <key alias="diffHelp"><![CDATA[This shows the differences between the current version and the selected version<br /><del>Red</del> text will not be shown in the selected version. , <ins>green means added</ins>]]></key>
         <key alias="documentRolledBack">Document has been rolled back</key>
@@ -1408,16 +1325,13 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="editContentPublishedFailedByParent">Publishing failed because the parent page isn't published</key>
         <key alias="editContentPublishedHeader">Content published</key>
         <key alias="editContentPublishedText">and visible on the website</key>
-        <key alias="editContentPublishedWithExpireDateText">and visible on the website until %0% at %1%</key>
         <key alias="editContentSavedHeader">Content saved</key>
         <key alias="editContentSavedText">Remember to publish to make changes visible</key>
-        <key alias="editContentSavedWithReleaseDateText">Changes will be published on %0% at %1%</key>
         <key alias="editContentSendToPublish">Sent For Approval</key>
         <key alias="editContentSendToPublishText">Changes have been sent for approval</key>
         <key alias="editMediaSaved">Media saved</key>
         <key alias="editMediaSavedText">Media saved without any errors</key>
         <key alias="editMemberSaved">Member saved</key>
-        <key alias="editMemberGroupSaved">Member group saved</key>
         <key alias="editStylesheetPropertySaved">Stylesheet Property Saved</key>
         <key alias="editStylesheetSaved">Stylesheet saved</key>
         <key alias="editTemplateSaved">Template saved</key>
@@ -1473,11 +1387,6 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="unlockUsersError">An error occurred while unlocking the users</key>
         <key alias="unlockUserSuccess">%0% is now unlocked</key>
         <key alias="unlockUserError">An error occurred while unlocking the user</key>
-        <key alias="memberExportedSuccess">Member was exported to file</key>
-        <key alias="memberExportedError">An error occurred while exporting the member</key>
-        <key alias="deleteUserSuccess">User %0% was deleted</key>
-        <key alias="resendInviteHeader">Invite user</key>
-        <key alias="resendInviteSuccess">Invitation has been re-sent to %0%</key>
     </area>
     <area alias="stylesheet">
         <key alias="aliasHelp">Uses CSS syntax ex: h1, .redHeader, .blueTex</key>
@@ -1488,7 +1397,6 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="styles">Styles</key>
     </area>
     <area alias="template">
-        <key alias="deleteByIdFailed">Failed to delete template with ID %0%</key>
         <key alias="edittemplate">Edit template</key>
 
         <key alias="insertSections">Sections</key>
@@ -1593,12 +1501,12 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="template">Template</key>
     </area>
     <area alias="grid">
-        <key alias="rte">Rich Text Editor</key>
-        <key alias="media">Image</key>
-        <key alias="macro">Macro</key>
-        <key alias="embed">Embed</key>
-        <key alias="headline">Headline</key>
-        <key alias="quote">Quote</key>
+		<key alias="rte">Rich Text Editor</key>
+		<key alias="media">Image</key>
+		<key alias="macro">Macro</key>
+		<key alias="embed">Embed</key>
+		<key alias="headline">Headline</key>
+		<key alias="quote">Quote</key>	
         <key alias="insertControl">Choose type of content</key>
         <key alias="chooseLayout">Choose a layout</key>
         <key alias="addRows">Add a row</key>
@@ -1700,16 +1608,8 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="thisEditorUpdateSettings">using this editor will get updated with the new settings</key>
 
         <key alias="memberCanEdit">Member can edit</key>
-        <key alias="memberCanEditDescription">Allow this property value to be edited by the member on their profile page</key>
-        <key alias="isSensitiveData">Is sensitive data</key>
-        <key alias="isSensitiveDataDescription">Hide this property value from content editors that don't have access to view sensitive information</key>
         <key alias="showOnMemberProfile">Show on member profile</key>
-        <key alias="showOnMemberProfileDescription">Allow this property value to be displayed on the member profile page</key>
-
         <key alias="tabHasNoSortOrder">tab has no sort order</key>
-
-        <key alias="compositionUsageHeading">Where is this composition used?</key>
-        <key alias="compositionUsageSpecification">This composition is currently used in the composition of the following content types:</key>
     </area>
 
     <area alias="modelsBuilder">
@@ -1884,7 +1784,7 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="goToProfile">Go to user profile</key>
         <key alias="groupsHelp">Add groups to assign access and permissions</key>
         <key alias="inviteAnotherUser">Invite another user</key>
-        <key alias="inviteUserHelp">Invite new users to give them access to Umbraco. An invite email will be sent to the user with information on how to log in to Umbraco. Invites last for 72 hours.</key>
+        <key alias="inviteUserHelp">Invite new users to give them access to Umbraco. An invite email will be sent to the user with information on how to log in to Umbraco.</key>
         <key alias="language">Language</key>
         <key alias="languageHelp">Set the language you will see in menus and dialogs</key>
         <key alias="lastLockoutDate">Last lockout date</key>
@@ -1948,8 +1848,7 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="userInvited">has been invited</key>
         <key alias="userInvitedSuccessHelp">An invitation has been sent to the new user with details about how to log in to Umbraco.</key>
         <key alias="userinviteWelcomeMessage">Hello there and welcome to Umbraco! In just 1 minute you’ll be good to go, we just need you to setup a password and add a picture for your avatar.</key>
-        <key alias="userinviteExpiredMessage">Welcome to Umbraco! Unfortunately your invite has expired. Please contact your administrator and ask them to resend it.</key>
-        <key alias="userinviteAvatarMessage">Uploading a photo of yourself will make it easy for other users to recognize you. Click the circle above to upload your photo.</key>
+        <key alias="userinviteAvatarMessage">Upload a picture to make it easy for other users to recognize you.</key>
         <key alias="writer">Writer</key>
         <key alias="translator">Translator</key>
         <key alias="change">Change</key>
@@ -1963,46 +1862,46 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="inviteEmailCopySubject">Umbraco: Invitation</key>
         <key alias="inviteEmailCopyFormat">
             <![CDATA[
-        <html>
-			<head>
-				<meta name='viewport' content='width=device-width'>
-				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-			</head>
-			<body class='' style='font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; color: #392F54; line-height: 22px; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #1d1333; margin: 0; padding: 0;' bgcolor='#1d1333'>
-				<style type='text/css'> @media only screen and (max-width: 620px) {table[class=body] h1 {font-size: 28px !important; margin-bottom: 10px !important; } table[class=body] .wrapper {padding: 32px !important; } table[class=body] .article {padding: 32px !important; } table[class=body] .content {padding: 24px !important; } table[class=body] .container {padding: 0 !important; width: 100% !important; } table[class=body] .main {border-left-width: 0 !important; border-radius: 0 !important; border-right-width: 0 !important; } table[class=body] .btn table {width: 100% !important; } table[class=body] .btn a {width: 100% !important; } table[class=body] .img-responsive {height: auto !important; max-width: 100% !important; width: auto !important; } } .btn-primary table td:hover {background-color: #34495e !important; } .btn-primary a:hover {background-color: #34495e !important; border-color: #34495e !important; } .btn  a:visited {color:#FFFFFF;} </style>
+        <html> 
+			<head> 
+				<meta name='viewport' content='width=device-width'> 
+				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'> 
+			</head> 
+			<body class='' style='font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; color: #392F54; line-height: 22px; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #1d1333; margin: 0; padding: 0;' bgcolor='#1d1333'> 
+				<style type='text/css'> @media only screen and (max-width: 620px) {table[class=body] h1 {font-size: 28px !important; margin-bottom: 10px !important; } table[class=body] .wrapper {padding: 32px !important; } table[class=body] .article {padding: 32px !important; } table[class=body] .content {padding: 24px !important; } table[class=body] .container {padding: 0 !important; width: 100% !important; } table[class=body] .main {border-left-width: 0 !important; border-radius: 0 !important; border-right-width: 0 !important; } table[class=body] .btn table {width: 100% !important; } table[class=body] .btn a {width: 100% !important; } table[class=body] .img-responsive {height: auto !important; max-width: 100% !important; width: auto !important; } } .btn-primary table td:hover {background-color: #34495e !important; } .btn-primary a:hover {background-color: #34495e !important; border-color: #34495e !important; } .btn  a:visited {color:#FFFFFF;} </style> 
 				<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #1d1333;" bgcolor="#1d1333">
-					<tr>
-						<td style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding: 24px;" valign="top">
+					<tr> 
+						<td style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding: 24px;" valign="top"> 
 							<table style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
-								<tr>
-									<td background="https://umbraco.com/umbraco/assets/img/application/logo.png" bgcolor="#1d1333" width="28" height="28" valign="top" style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
-										<!--[if gte mso 9]> <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:30px;height:30px;"> <v:fill type="tile" src="https://umbraco.com/umbraco/assets/img/application/logo.png" color="#1d1333" /> <v:textbox inset="0,0,0,0"> <![endif]-->
-										<div> </div>
-										<!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]-->
-									</td>
-									<td style="font-family: sans-serif; font-size: 14px; vertical-align: top;" valign="top"></td>
+								<tr> 
+									<td background="https://umbraco.com/umbraco/assets/img/application/logo.png" bgcolor="#1d1333" width="28" height="28" valign="top" style="font-family: sans-serif; font-size: 14px; vertical-align: top;"> 
+										<!--[if gte mso 9]> <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:30px;height:30px;"> <v:fill type="tile" src="https://umbraco.com/umbraco/assets/img/application/logo.png" color="#1d1333" /> <v:textbox inset="0,0,0,0"> <![endif]--> 
+										<div> </div> 
+										<!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> 
+									</td> 
+									<td style="font-family: sans-serif; font-size: 14px; vertical-align: top;" valign="top"></td> 
 								</tr>
-							</table>
-						</td>
+							</table> 
+						</td> 
 					</tr>
-				</table>
+				</table> 
 				<table border='0' cellpadding='0' cellspacing='0' class='body' style='border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #1d1333;' bgcolor='#1d1333'>
-					<tr>
-						<td style='font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'> </td>
-						<td class='container' style='font-family: sans-serif; font-size: 14px; vertical-align: top; display: block; max-width: 560px; width: 560px; margin: 0 auto; padding: 10px;' valign='top'>
+					<tr> 
+						<td style='font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'> </td> 
+						<td class='container' style='font-family: sans-serif; font-size: 14px; vertical-align: top; display: block; max-width: 560px; width: 560px; margin: 0 auto; padding: 10px;' valign='top'> 
 							<div class='content' style='box-sizing: border-box; display: block; max-width: 560px; margin: 0 auto; padding: 10px;'>
 								<br>
 								<table class='main' style='border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; border-radius: 3px; background: #FFFFFF;' bgcolor='#FFFFFF'>
-									<tr>
-										<td class='wrapper' style='font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 50px;' valign='top'>
+									<tr> 
+										<td class='wrapper' style='font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 50px;' valign='top'> 
 											<table border='0' cellpadding='0' cellspacing='0' style='border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;'>
-												<tr>
-													<td style='line-height: 24px; font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'>
+												<tr> 
+													<td style='line-height: 24px; font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'>     
 														<h1 style='color: #392F54; font-family: sans-serif; font-weight: bold; line-height: 1.4; font-size: 24px; text-align: left; text-transform: capitalize; margin: 0 0 30px;' align='left'>
 															Hi %0%,
 														</h1>
 														<p style='color: #392F54; font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;'>
-															You have been invited by <a href="mailto:%4%" style="text-decoration: underline; color: #392F54; -ms-word-break: break-all; word-break: break-all;">%1%</a> to the Umbraco Back Office.
+															You have been invited by <a href="mailto:%1%" style="text-decoration: underline; color: #392F54; -ms-word-break: break-all; word-break: break-all;">%1%</a> to the Umbraco Back Office.
 														</p>
 														<p style='color: #392F54; font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;'>
 															Message from <a href="mailto:%1%" style="text-decoration: none; color: #392F54; -ms-word-break: break-all; word-break: break-all;">%1%</a>:
@@ -2015,12 +1914,12 @@ To manage your website, simply open the Umbraco back office and start adding con
 																	<td align='left' style='font-family: sans-serif; font-size: 14px; vertical-align: top; padding-bottom: 15px;' valign='top'>
 																		<table border='0' cellpadding='0' cellspacing='0' style='border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;'>
 																			<tbody>
-																				<tr>
-																					<td style='font-family: sans-serif; font-size: 14px; vertical-align: top; border-radius: 5px; text-align: center; background: #35C786;' align='center' bgcolor='#35C786' valign='top'>
+																				<tr> 
+																					<td style='font-family: sans-serif; font-size: 14px; vertical-align: top; border-radius: 5px; text-align: center; background: #35C786;' align='center' bgcolor='#35C786' valign='top'> 
 																						<a href='%3%' target='_blank' style='color: #FFFFFF; text-decoration: none; -ms-word-break: break-all; word-break: break-all; border-radius: 5px; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 14px; font-weight: bold; text-transform: capitalize; background: #35C786; margin: 0; padding: 12px 30px; border: 1px solid #35c786;'>
 																							Click this link to accept the invite
-																						</a>
-																					</td>
+																						</a> 
+																					</td> 
 																				</tr>
 																			</tbody>
 																		</table>
@@ -2035,35 +1934,32 @@ To manage your website, simply open the Umbraco back office and start adding con
 																		<font style="-ms-word-break: break-all; word-break: break-all; font-size: 11px; line-height:14px;">
 																			<a style='-ms-word-break: break-all; word-break: break-all; color: #392F54; text-decoration: underline; font-size: 11px; line-height:15px;' href='%3%'>%3%</a>
 																		</font>
-																	</td>
+																	</td> 
 																</tr>
 															</table>
 														</p>
-													</td>
+													</td> 
 												</tr>
-											</table>
-										</td>
+											</table> 
+										</td> 
 									</tr>
-								</table>
-								<br><br><br>
-							</div>
-						</td>
-						<td style='font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'> </td>
+								</table> 
+								<br><br><br> 
+							</div> 
+						</td> 
+						<td style='font-family: sans-serif; font-size: 14px; vertical-align: top;' valign='top'> </td> 
 					</tr>
-				</table>
+				</table> 
 			</body>
     </html>]]>
         </key>
         <key alias="invite">Invite</key>
-        <key alias="defaultInvitationMessage">Resending invitation...</key>
-        <key alias="deleteUser">Delete User</key>
-        <key alias="deleteUserConfirmation">Are you sure you wish to delete this user account?</key>
     </area>
     <area alias="validation">
         <key alias="validation">Validation</key>
-        <key alias="validateAsEmail">Validate as an email address</key>
+        <key alias="validateAsEmail">Validate as email</key>
         <key alias="validateAsNumber">Validate as a number</key>
-        <key alias="validateAsUrl">Validate as a URL</key>
+        <key alias="validateAsUrl">Validate as a Url</key>
         <key alias="enterCustomValidation">...or enter a custom validation</key>
         <key alias="fieldIsMandatory">Field is mandatory</key>
         <key alias="validationRegExp">Enter a regular expression</key>
@@ -2117,15 +2013,11 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="xmlDataIntegrityCheckMedia">Media - Total XML: %0%, Total: %1%, Total invalid: %2%</key>
         <key alias="xmlDataIntegrityCheckContent">Content - Total XML: %0%, Total published: %1%, Total invalid: %2%</key>
 
-        <key alias="databaseSchemaValidationCheckDatabaseOk">Database - The database schema is correct for this version of Umbraco</key>
-        <key alias="databaseSchemaValidationCheckDatabaseErrors">%0% problems were detected with your database schema (Check the log for details)</key>
-        <key alias="databaseSchemaValidationCheckDatabaseLogMessage">Some errors were detected while validating the database schema against the current version of Umbraco.</key>
-
         <key alias="httpsCheckValidCertificate">Your website's certificate is valid.</key>
         <key alias="httpsCheckInvalidCertificate">Certificate validation error: '%0%'</key>
         <key alias="httpsCheckExpiredCertificate">Your website's SSL certificate has expired.</key>
         <key alias="httpsCheckExpiringCertificate">Your website's SSL certificate is expiring in %0% days.</key>
-        <key alias="healthCheckInvalidUrl">Error pinging the URL %0% - '%1%'</key>
+        <key alias="httpsCheckInvalidUrl">Error pinging the URL %0% - '%1%'</key>
         <key alias="httpsCheckIsCurrentSchemeHttps">You are currently %0% viewing the site using the HTTPS scheme.</key>
         <key alias="httpsCheckConfigurationRectifyNotPossible">The appSetting 'umbracoUseSSL' is set to 'false' in your web.config file. Once you access this site using the HTTPS scheme, that should be set to 'true'.</key>
         <key alias="httpsCheckConfigurationCheckResult">The appSetting 'umbracoUseSSL' is set to '%0%' in your web.config file, your cookies are %1% marked as secure.</key>
@@ -2165,25 +2057,10 @@ To manage your website, simply open the Umbraco back office and start adding con
 
         <key alias="clickJackingCheckHeaderFound"><![CDATA[The header or meta-tag <strong>X-Frame-Options</strong> used to control whether a site can be IFRAMEd by another was found.]]></key>
         <key alias="clickJackingCheckHeaderNotFound"><![CDATA[The header or meta-tag <strong>X-Frame-Options</strong> used to control whether a site can be IFRAMEd by another was not found.]]></key>
-        <key alias="setHeaderInConfig">Set Header in Config</key>
+        <key alias="clickJackingSetHeaderInConfig">Set Header in Config</key>
         <key alias="clickJackingSetHeaderInConfigDescription">Adds a value to the httpProtocol/customHeaders section of web.config to prevent the site being IFRAMEd by other websites.</key>
         <key alias="clickJackingSetHeaderInConfigSuccess">A setting to create a header preventing IFRAMEing of the site by other websites has been added to your web.config file.</key>
-        <key alias="setHeaderInConfigError">Could not update web.config file. Error: %0%</key>
-
-        <key alias="noSniffCheckHeaderFound"><![CDATA[The header or meta-tag <strong>X-Content-Type-Options</strong> used to protect against MIME sniffing vulnerabilities was found.]]></key>
-        <key alias="noSniffCheckHeaderNotFound"><![CDATA[The header or meta-tag <strong>X-Content-Type-Options</strong> used to protect against MIME sniffing vulnerabilities was not found.]]></key>
-        <key alias="noSniffSetHeaderInConfigDescription">Adds a value to the httpProtocol/customHeaders section of web.config to protect against MIME sniffing vulnerabilities.</key>
-        <key alias="noSniffSetHeaderInConfigSuccess">A setting to create a header protecting against MIME sniffing vulnerabilities has been added to your web.config file.</key>
-
-        <key alias="hSTSCheckHeaderFound"><![CDATA[The header <strong>Strict-Transport-Security</strong>, also known as the HSTS-header, was found.]]></key>
-        <key alias="hSTSCheckHeaderNotFound"><![CDATA[The header <strong>Strict-Transport-Security</strong> was not found.]]></key>
-        <key alias="hSTSSetHeaderInConfigDescription">Adds the header 'Strict-Transport-Security' with the value 'max-age=10886400; preload' to the httpProtocol/customHeaders section of web.config. Use this fix only if you will have your domains running with https for the next 18 weeks (minimum).</key>
-        <key alias="hSTSSetHeaderInConfigSuccess">The HSTS header has been added to your web.config file.</key>
-
-        <key alias="xssProtectionCheckHeaderFound"><![CDATA[The header <strong>X-XSS-Protection</strong> was found.]]></key>
-        <key alias="xssProtectionCheckHeaderNotFound"><![CDATA[The header <strong>X-XSS-Protection</strong> was not found.]]></key>
-        <key alias="xssProtectionSetHeaderInConfigDescription">Adds the header 'X-XSS-Protection' with the value '1; mode=block' to the httpProtocol/customHeaders section of web.config. </key>
-        <key alias="xssProtectionSetHeaderInConfigSuccess">The X-XSS-Protection header has been added to your web.config file.</key>
+        <key alias="clickJackingSetHeaderInConfigError">Could not update web.config file. Error: %0%</key>
 
         <!-- The following key get these tokens passed in:
 	    0: Comma delimitted list of headers found
@@ -2199,18 +2076,13 @@ To manage your website, simply open the Umbraco back office and start adding con
         <key alias="notificationEmailsCheckSuccessMessage"><![CDATA[Notification email has been set to <strong>%0%</strong>.]]></key>
         <key alias="notificationEmailsCheckErrorMessage"><![CDATA[Notification email is still set to the default value of <strong>%0%</strong>.]]></key>
         <key alias="scheduledHealthCheckEmailBody"><![CDATA[<html><body><p>Results of the scheduled Umbraco Health Checks run on %0% at %1% are as follows:</p>%2%</body></html>]]></key>
-        <key alias="scheduledHealthCheckEmailSubject">Umbraco Health Check Status: %0%</key>
-
-        <key alias="tls12HealthCheckSuccess">Your site can use the TLS 1.2 security protocol when making outbound connections to HTTPS endpoints.</key>
-        <key alias="tls12HealthCheckWarn">Your site isn't configured to allow the TLS 1.2 security protocol when making outbound connections: some HTTPS endpoints might not be reachable using a less secure protocol.</key>
+        <key alias="scheduledHealthCheckEmailSubject">Umbraco Health Check Status</key>
     </area>
     <area alias="redirectUrls">
         <key alias="disableUrlTracker">Disable URL tracker</key>
         <key alias="enableUrlTracker">Enable URL tracker</key>
         <key alias="originalUrl">Original URL</key>
         <key alias="redirectedTo">Redirected To</key>
-        <key alias="redirectUrlManagement">Redirect Url Management</key>
-        <key alias="panelInformation">The following URLs redirect to this content item:</key>
         <key alias="noRedirects">No redirects have been made</key>
         <key alias="noRedirectsDescription">When a published page gets renamed or moved a redirect will automatically be made to the new page.</key>
         <key alias="removeButton">Remove</key>
@@ -2228,12 +2100,5 @@ To manage your website, simply open the Umbraco back office and start adding con
     </area>
     <area alias="textbox">
         <key alias="characters_left">characters left</key>
-    </area>
-    <area alias="recycleBin">
-        <key alias="contentTrashed">Trashed content with Id: {0} related to original parent content with Id: {1}</key>
-        <key alias="mediaTrashed">Trashed media with Id: {0} related to original parent media item with Id: {1}</key>
-        <key alias="itemCannotBeRestored">Cannot automatically restore this item</key>
-        <key alias="itemCannotBeRestoredHelpText">There is no location where this item can be automatically restored. You can move the item manually using the tree below.</key>
-        <key alias="wasRestored">was restored under</key>
     </area>
 </language>

@@ -1,11 +1,9 @@
 <div class="umb-list-view-settings">
 
   <div class="umb-list-view-settings__trigger">
-        <umb-toggle
-            checked="enableListView"
-            on-click="toggle()"
-            hotkey="alt+shift+l">
-        </umb-toggle>
+    <label class="checkbox no-indent">
+        <input type="checkbox" ng-model="enableListView" hotkey="alt+shift+l" />
+        <localize key="general_yes"></localize> - <localize key="contentTypeEditor_enableListViewHeading"></localize>
   </div>
 
   <!-- list view enabled -->
@@ -33,10 +31,8 @@
             <umb-editor model="preValue" is-pre-value="true"></umb-editor>
         </umb-property>
 
-        <div class="text-right">
-            <button type="button" class="btn btn-link" ng-click="toggleEditListViewDataTypeSettings()"><localize key="general_close">Close</localize></button>
-            <button type="button" class="btn btn-success" ng-click="saveListViewDataType()"><localize key="buttons_saveListView"></localize></button>
-        </div>
+        <button type="button" class="btn" ng-click="toggleEditListViewDataTypeSettings()"><localize key="general_close">Close</localize></button>
+        <button type="button" class="btn btn-success" ng-click="saveListViewDataType()"><localize key="buttons_saveListView"></localize></button>
 
     </div>
   </div>
