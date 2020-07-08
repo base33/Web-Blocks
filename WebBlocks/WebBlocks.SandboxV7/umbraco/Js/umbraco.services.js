@@ -1711,13 +1711,6 @@
                 }
                 return crop;
             },
-            centerInsideViewPort: function (img, viewport) {
-                var left = viewport.width / 2 - img.width / 2, top = viewport.height / 2 - img.height / 2;
-                return {
-                    left: left,
-                    top: top
-                };
-            },
             alignToCoordinates: function (image, center, viewport) {
                 var min_left = image.width - viewport.width;
                 var min_top = image.height - viewport.height;

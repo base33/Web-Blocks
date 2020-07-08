@@ -3785,10 +3785,10 @@
          *
          */
             getByChildId: function (id, alias) {
-                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('relationApiBaseUrl', 'GetByChildId', [{
-                        childId: id,
-                        relationTypeAlias: alias
-                    }])), 'Failed to get relation by child ID ' + id + ' and type of ' + alias);
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('relationApiBaseUrl', 'GetByChildId', {
+                    childId: id,
+                    relationTypeAlias: alias
+                })), 'Failed to get relation by child ID ' + id + ' and type of ' + alias);
             },
             /**
          * @ngdoc method

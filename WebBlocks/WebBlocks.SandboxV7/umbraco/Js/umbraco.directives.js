@@ -4637,6 +4637,103 @@ Use this directive to prevent default action of an element. Effectively implemen
             }
         };
     });
+    /**
+@ngdoc directive
+@name umbraco.directives.directive:umbCheckbox
+@restrict E
+@scope
+
+@description
+<b>Added in Umbraco version 7.14.0</b> Use this directive to render an umbraco checkbox.
+
+<h3>Markup example</h3>
+<pre>
+    <div ng-controller="My.Controller as vm">
+
+        <umb-checkbox
+            name="checkboxlist"
+            value="{{key}}"
+            model="true"
+            text="{{text}}">
+        </umb-checkbox>
+
+    </div>
+</pre>
+
+@param {boolean} model Set to <code>true</code> or <code>false</code> to set the checkbox to checked or unchecked.
+@param {string} value Set the value of the checkbox.
+@param {string} name Set the name of the checkbox.
+@param {string} text Set the text for the checkbox label.
+
+
+**/
+    (function () {
+        'use strict';
+        function CheckboxDirective() {
+            var directive = {
+                restrict: 'E',
+                replace: true,
+                templateUrl: 'views/components/forms/umb-checkbox.html',
+                scope: {
+                    model: '=',
+                    value: '@',
+                    name: '@',
+                    text: '@',
+                    required: '='
+                }
+            };
+            return directive;
+        }
+        angular.module('umbraco.directives').directive('umbCheckbox', CheckboxDirective);
+    }());
+    /**
+@ngdoc directive
+@name umbraco.directives.directive:umbRadiobutton
+@restrict E
+@scope
+
+@description
+<b>Added in Umbraco version 7.14.0</b> Use this directive to render an umbraco radio button.
+
+<h3>Markup example</h3>
+<pre>
+    <div ng-controller="My.Controller as vm">
+
+        <umb-radiobutton
+            name="checkboxlist"
+            value="{{key}}"
+            model="true"
+            text="{{text}}">
+        </umb-radiobutton>
+
+    </div>
+</pre>
+
+@param {boolean} model Set to <code>true</code> or <code>false</code> to set the radiobutton to checked or unchecked.
+@param {string} value Set the value of the radiobutton.
+@param {string} name Set the name of the radiobutton.
+@param {string} text Set the text for the radiobutton label.
+
+
+**/
+    (function () {
+        'use strict';
+        function RadiobuttonDirective() {
+            var directive = {
+                restrict: 'E',
+                replace: true,
+                templateUrl: 'views/components/forms/umb-radiobutton.html',
+                scope: {
+                    model: '=',
+                    value: '@',
+                    name: '@',
+                    text: '@'
+                }
+            };
+            return directive;
+        }
+        angular.module('umbraco.directives').directive('umbRadiobutton', RadiobuttonDirective);
+    }());
     /*
 example usage: <textarea json-edit="myObject" rows="8" class="form-control"></textarea>
 
@@ -5388,23 +5485,6 @@ Use this directive to construct a title. Recommended to use it inside an {@link 
                     // scope.dimensions.viewport.width - 2 * scope.dimensions.margin;
                     scope.dimensions.cropper.height = _viewPortH;    //  scope.dimensions.viewport.height - 2 * scope.dimensions.margin;
                 };
-                //when loading an image without any crop info, we center and fit it
-                var resizeImageToEditor = function () {
-                    //returns size fitting the cropper
-                    var size = cropperHelper.calculateAspectRatioFit(scope.dimensions.image.width, scope.dimensions.image.height, scope.dimensions.cropper.width, scope.dimensions.cropper.height, true);
-                    //sets the image size and updates the scope
-                    scope.dimensions.image.width = size.width;
-                    scope.dimensions.image.height = size.height;
-                    //calculate the best suited ratios
-                    scope.dimensions.scale.min = size.ratio;
-                    scope.dimensions.scale.max = 2;
-                    scope.dimensions.scale.current = size.ratio;
-                    //center the image
-                    var position = cropperHelper.centerInsideViewPort(scope.dimensions.image, scope.dimensions.cropper);
-                    scope.dimensions.top = position.top;
-                    scope.dimensions.left = position.left;
-                    setConstraints();
-                };
                 //resize to a given ratio
                 var resizeImageToScale = function (ratio) {
                     //do stuff
@@ -5471,11 +5551,16 @@ Use this directive to construct a title. Recommended to use it inside an {@link 
                     scope.loaded = false;
                     //set dimensions on image, viewport, cropper etc
                     setDimensions(image);
-                    //if we have a crop already position the image
-                    if (scope.crop) {
-                        resizeImageToCrop();
-                    } else {
-                        resizeImageToEditor();
+                    //create a default crop if we haven't got one already
+                    var createDefaultCrop = !scope.crop;
+                    if (createDefaultCrop) {
+                        calculateCropBox();
+                    }
+                    resizeImageToCrop();
+                    //if we're creating a new crop, make sure to zoom out fully
+                    if (createDefaultCrop) {
+                        scope.dimensions.scale.current = scope.dimensions.scale.min;
+                        resizeImageToScale(scope.dimensions.scale.min);
                     }
                     //sets constaints for the cropper
                     setConstraints();
@@ -5493,7 +5578,7 @@ Use this directive to construct a title. Recommended to use it inside an {@link 
                 var throttledResizing = _.throttle(function () {
                     resizeImageToScale(scope.dimensions.scale.current);
                     calculateCropBox();
-                }, 100);
+                }, 16);
                 //happens when we change the scale
                 scope.$watch('dimensions.scale.current', function () {
                     if (scope.loaded) {
@@ -5550,7 +5635,7 @@ Use this directive to construct a title. Recommended to use it inside an {@link 
                 var $image = element.find('img');
                 var $overlay = element.find('.overlay');
                 scope.style = function () {
-                    if (scope.dimensions.width <= 0) {
+                    if (scope.dimensions.width <= 0 || scope.dimensions.height <= 0) {
                         setDimensions();
                     }
                     return {
