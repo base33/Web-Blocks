@@ -1,5 +1,5 @@
 (function () {
-    angular.module('umbraco.install', []);
+    angular.module('umbraco.install', ['umbraco.directives']);
     angular.module('umbraco.install').controller('Umbraco.InstallerController', function ($scope, installerService) {
         //TODO: Decouple the service from the controller - the controller should be responsible
         // for the model (state) and the service should be responsible for helping the controller,
@@ -367,6 +367,16 @@
                     $scope.checking = false;
                 });
             }
+        };
+    });
+    angular.module('umbraco.install').controller('Umbraco.Installer.MachineKeyController', function ($scope, installerService) {
+        $scope.continue = function () {
+            installerService.status.current.model = true;
+            installerService.forward();
+        };
+        $scope.ignoreKey = function () {
+            installerService.status.current.model = false;
+            installerService.forward();
         };
     });
     angular.module('umbraco.install').controller('Umbraco.Installer.PackagesController', function ($scope, installerService) {

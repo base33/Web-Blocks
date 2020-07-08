@@ -26,25 +26,25 @@
                 }), 'Could not verify code');
             },
             /**
-         * @ngdoc method
-         * @name umbraco.resources.authResource#performLogin
-         * @methodOf umbraco.resources.authResource
-         *
-         * @description
-         * Logs the Umbraco backoffice user in if the credentials are good
-         *
-         * ##usage
-         * <pre>
-         * authResource.performLogin(login, password)
-         *    .then(function(data) {
-         *        //Do stuff for login...
-         *    });
-         * </pre> 
-         * @param {string} login Username of backoffice user
-         * @param {string} password Password of backoffice user
-         * @returns {Promise} resourcePromise object
-         *
-         */
+     * @ngdoc method
+     * @name umbraco.resources.authResource#performLogin
+     * @methodOf umbraco.resources.authResource
+     *
+     * @description
+     * Logs the Umbraco backoffice user in if the credentials are good
+     *
+     * ##usage
+     * <pre>
+     * authResource.performLogin(login, password)
+     *    .then(function(data) {
+     *        //Do stuff for login...
+     *    });
+     * </pre> 
+     * @param {string} login Username of backoffice user
+     * @param {string} password Password of backoffice user
+     * @returns {Promise} resourcePromise object
+     *
+     */
             performLogin: function (username, password) {
                 if (!username || !password) {
                     return angularHelper.rejectedPromise({ errorMsg: 'Username or password cannot be empty' });
@@ -55,25 +55,34 @@
                 }), 'Login failed for user ' + username);
             },
             /**
-         * @ngdoc method
-         * @name umbraco.resources.authResource#performRequestPasswordReset
-         * @methodOf umbraco.resources.authResource
-         *
-         * @description
-         * Checks to see if the provided email address is a valid user account and sends a link
-         * to allow them to reset their password
-         *
-         * ##usage
-         * <pre>
-         * authResource.performRequestPasswordReset(email)
-         *    .then(function(data) {
-         *        //Do stuff for password reset request...
-         *    });
-         * </pre> 
-         * @param {string} email Email address of backoffice user
-         * @returns {Promise} resourcePromise object
-         *
-         */
+     * There are not parameters for this since when the user has clicked on their invite email they will be partially
+     * logged in (but they will not be approved) so we need to use this method to verify the non approved logged in user's details.
+     * Using the getCurrentUser will not work since that only works for approved users
+     * @returns {} 
+     */
+            getCurrentInvitedUser: function () {
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('authenticationApiBaseUrl', 'GetCurrentInvitedUser')), 'Failed to verify invite');
+            },
+            /**
+     * @ngdoc method
+     * @name umbraco.resources.authResource#performRequestPasswordReset
+     * @methodOf umbraco.resources.authResource
+     *
+     * @description
+     * Checks to see if the provided email address is a valid user account and sends a link
+     * to allow them to reset their password
+     *
+     * ##usage
+     * <pre>
+     * authResource.performRequestPasswordReset(email)
+     *    .then(function(data) {
+     *        //Do stuff for password reset request...
+     *    });
+     * </pre> 
+     * @param {string} email Email address of backoffice user
+     * @returns {Promise} resourcePromise object
+     *
+     */
             performRequestPasswordReset: function (email) {
                 if (!email) {
                     return angularHelper.rejectedPromise({ errorMsg: 'Email address cannot be empty' });
@@ -88,25 +97,25 @@
                 return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('authenticationApiBaseUrl', 'PostRequestPasswordReset'), { email: email }), 'Request password reset failed for email ' + email);
             },
             /**
-         * @ngdoc method
-         * @name umbraco.resources.authResource#performValidatePasswordResetCode
-         * @methodOf umbraco.resources.authResource
-         *
-         * @description
-         * Checks to see if the provided password reset code is valid
-         *
-         * ##usage
-         * <pre>
-         * authResource.performValidatePasswordResetCode(resetCode)
-         *    .then(function(data) {
-         *        //Allow reset of password
-         *    });
-         * </pre> 
-         * @param {integer} userId User Id
-         * @param {string} resetCode Password reset code
-         * @returns {Promise} resourcePromise object
-         *
-         */
+     * @ngdoc method
+     * @name umbraco.resources.authResource#performValidatePasswordResetCode
+     * @methodOf umbraco.resources.authResource
+     *
+     * @description
+     * Checks to see if the provided password reset code is valid
+     *
+     * ##usage
+     * <pre>
+     * authResource.performValidatePasswordResetCode(resetCode)
+     *    .then(function(data) {
+     *        //Allow reset of password
+     *    });
+     * </pre> 
+     * @param {integer} userId User Id
+     * @param {string} resetCode Password reset code
+     * @returns {Promise} resourcePromise object
+     *
+     */
             performValidatePasswordResetCode: function (userId, resetCode) {
                 if (!userId) {
                     return angularHelper.rejectedPromise({ errorMsg: 'User Id cannot be empty' });
@@ -120,27 +129,38 @@
                 }), 'Password reset code validation failed for userId ' + userId + ', code' + resetCode);
             },
             /**
-         * @ngdoc method
-         * @name umbraco.resources.authResource#performSetPassword
-         * @methodOf umbraco.resources.authResource
-         *
-         * @description
-         * Checks to see if the provided password reset code is valid and sets the user's password
-         *
-         * ##usage
-         * <pre>
-         * authResource.performSetPassword(userId, password, confirmPassword, resetCode)
-         *    .then(function(data) {
-         *        //Password set
-         *    });
-         * </pre> 
-         * @param {integer} userId User Id
-         * @param {string} password New password
-         * @param {string} confirmPassword Confirmation of new password
-         * @param {string} resetCode Password reset code
-         * @returns {Promise} resourcePromise object
-         *
-         */
+     * @ngdoc method
+     * @name umbraco.resources.currentUserResource#getMembershipProviderConfig
+     * @methodOf umbraco.resources.currentUserResource
+     *
+     * @description
+     * Gets the configuration of the user membership provider which is used to configure the change password form         
+     */
+            getMembershipProviderConfig: function () {
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('authenticationApiBaseUrl', 'GetMembershipProviderConfig')), 'Failed to retrieve membership provider config');
+            },
+            /**
+     * @ngdoc method
+     * @name umbraco.resources.authResource#performSetPassword
+     * @methodOf umbraco.resources.authResource
+     *
+     * @description
+     * Checks to see if the provided password reset code is valid and sets the user's password
+     *
+     * ##usage
+     * <pre>
+     * authResource.performSetPassword(userId, password, confirmPassword, resetCode)
+     *    .then(function(data) {
+     *        //Password set
+     *    });
+     * </pre> 
+     * @param {integer} userId User Id
+     * @param {string} password New password
+     * @param {string} confirmPassword Confirmation of new password
+     * @param {string} resetCode Password reset code
+     * @returns {Promise} resourcePromise object
+     *
+     */
             performSetPassword: function (userId, password, confirmPassword, resetCode) {
                 if (userId === undefined || userId === null) {
                     return angularHelper.rejectedPromise({ errorMsg: 'User Id cannot be empty' });
@@ -170,44 +190,44 @@
                 }), 'Unlinking login provider failed');
             },
             /**
-         * @ngdoc method
-         * @name umbraco.resources.authResource#performLogout
-         * @methodOf umbraco.resources.authResource
-         *
-         * @description
-         * Logs out the Umbraco backoffice user
-         *
-         * ##usage
-         * <pre>
-         * authResource.performLogout()
-         *    .then(function(data) {
-         *        //Do stuff for logging out...
-         *    });
-         * </pre>
-         * @returns {Promise} resourcePromise object
-         *
-         */
+     * @ngdoc method
+     * @name umbraco.resources.authResource#performLogout
+     * @methodOf umbraco.resources.authResource
+     *
+     * @description
+     * Logs out the Umbraco backoffice user
+     *
+     * ##usage
+     * <pre>
+     * authResource.performLogout()
+     *    .then(function(data) {
+     *        //Do stuff for logging out...
+     *    });
+     * </pre>
+     * @returns {Promise} resourcePromise object
+     *
+     */
             performLogout: function () {
                 return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('authenticationApiBaseUrl', 'PostLogout')));
             },
             /**
-         * @ngdoc method
-         * @name umbraco.resources.authResource#getCurrentUser
-         * @methodOf umbraco.resources.authResource
-         *
-         * @description
-         * Sends a request to the server to get the current user details, will return a 401 if the user is not logged in
-         *
-         * ##usage
-         * <pre>
-         * authResource.getCurrentUser()
-         *    .then(function(data) {
-         *        //Do stuff for fetching the current logged in Umbraco backoffice user
-         *    });
-         * </pre>
-         * @returns {Promise} resourcePromise object
-         *
-         */
+     * @ngdoc method
+     * @name umbraco.resources.authResource#getCurrentUser
+     * @methodOf umbraco.resources.authResource
+     *
+     * @description
+     * Sends a request to the server to get the current user details, will return a 401 if the user is not logged in
+     *
+     * ##usage
+     * <pre>
+     * authResource.getCurrentUser()
+     *    .then(function(data) {
+     *        //Do stuff for fetching the current logged in Umbraco backoffice user
+     *    });
+     * </pre>
+     * @returns {Promise} resourcePromise object
+     *
+     */
             getCurrentUser: function () {
                 return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('authenticationApiBaseUrl', 'GetCurrentUser')), 'Server call failed for getting current user');
             },
@@ -215,23 +235,23 @@
                 return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('authenticationApiBaseUrl', 'GetCurrentUserLinkedLogins')), 'Server call failed for getting current users linked logins');
             },
             /**
-         * @ngdoc method
-         * @name umbraco.resources.authResource#isAuthenticated
-         * @methodOf umbraco.resources.authResource
-         *
-         * @description
-         * Checks if the user is logged in or not - does not return 401 or 403
-         *
-         * ##usage
-         * <pre>
-         * authResource.isAuthenticated()
-         *    .then(function(data) {
-         *        //Do stuff to check if user is authenticated
-         *    });
-         * </pre>
-         * @returns {Promise} resourcePromise object
-         *
-         */
+     * @ngdoc method
+     * @name umbraco.resources.authResource#isAuthenticated
+     * @methodOf umbraco.resources.authResource
+     *
+     * @description
+     * Checks if the user is logged in or not - does not return 401 or 403
+     *
+     * ##usage
+     * <pre>
+     * authResource.isAuthenticated()
+     *    .then(function(data) {
+     *        //Do stuff to check if user is authenticated
+     *    });
+     * </pre>
+     * @returns {Promise} resourcePromise object
+     *
+     */
             isAuthenticated: function () {
                 return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('authenticationApiBaseUrl', 'IsAuthenticated')), {
                     success: function (data, status, headers, config) {
@@ -251,23 +271,23 @@
                 });
             },
             /**
-         * @ngdoc method
-         * @name umbraco.resources.authResource#getRemainingTimeoutSeconds
-         * @methodOf umbraco.resources.authResource
-         *
-         * @description
-         * Gets the user's remaining seconds before their login times out
-         *
-         * ##usage
-         * <pre>
-         * authResource.getRemainingTimeoutSeconds()
-         *    .then(function(data) {
-         *        //Number of seconds is returned
-         *    });
-         * </pre>
-         * @returns {Promise} resourcePromise object
-         *
-         */
+     * @ngdoc method
+     * @name umbraco.resources.authResource#getRemainingTimeoutSeconds
+     * @methodOf umbraco.resources.authResource
+     *
+     * @description
+     * Gets the user's remaining seconds before their login times out
+     *
+     * ##usage
+     * <pre>
+     * authResource.getRemainingTimeoutSeconds()
+     *    .then(function(data) {
+     *        //Number of seconds is returned
+     *    });
+     * </pre>
+     * @returns {Promise} resourcePromise object
+     *
+     */
             getRemainingTimeoutSeconds: function () {
                 return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('authenticationApiBaseUrl', 'GetRemainingTimeoutSeconds')), 'Server call failed for checking remaining seconds');
             }
@@ -506,9 +526,9 @@
   **/
     function contentResource($q, $http, umbDataFormatter, umbRequestHelper) {
         /** internal method process the saving of data and post processing the result */
-        function saveContentItem(content, action, files) {
+        function saveContentItem(content, action, files, restApiUrl) {
             return umbRequestHelper.postSaveContent({
-                restApiUrl: umbRequestHelper.getApiUrl('contentApiBaseUrl', 'PostSave'),
+                restApiUrl: restApiUrl,
                 content: content,
                 action: action,
                 files: files,
@@ -518,6 +538,18 @@
             });
         }
         return {
+            savePermissions: function (saveModel) {
+                if (!saveModel) {
+                    throw 'saveModel cannot be null';
+                }
+                if (!saveModel.contentId) {
+                    throw 'saveModel.contentId cannot be null';
+                }
+                if (!saveModel.permissions) {
+                    throw 'saveModel.permissions cannot be null';
+                }
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('contentApiBaseUrl', 'PostSaveUserGroupPermissions'), saveModel), 'Failed to save permissions');
+            },
             getRecycleBin: function () {
                 return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('contentApiBaseUrl', 'GetRecycleBin')), 'Failed to retrieve data for content recycle bin');
             },
@@ -704,6 +736,9 @@
             deleteById: function (id) {
                 return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('contentApiBaseUrl', 'DeleteById', [{ id: id }])), 'Failed to delete item ' + id);
             },
+            deleteBlueprint: function (id) {
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('contentApiBaseUrl', 'DeleteBlueprint', [{ id: id }])), 'Failed to delete blueprint ' + id);
+            },
             /**
           * @ngdoc method
           * @name umbraco.resources.contentResource#getById
@@ -727,6 +762,9 @@
           */
             getById: function (id) {
                 return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('contentApiBaseUrl', 'GetById', [{ id: id }])), 'Failed to retrieve data for content id ' + id);
+            },
+            getBlueprintById: function (id) {
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('contentApiBaseUrl', 'GetBlueprintById', [{ id: id }])), 'Failed to retrieve data for content id ' + id);
             },
             /**
           * @ngdoc method
@@ -793,6 +831,12 @@
                     { contentTypeAlias: alias },
                     { parentId: parentId }
                 ])), 'Failed to retrieve data for empty content item type ' + alias);
+            },
+            getBlueprintScaffold: function (parentId, blueprintId) {
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('contentApiBaseUrl', 'GetEmpty', [
+                    { blueprintId: blueprintId },
+                    { parentId: parentId }
+                ])), 'Failed to retrieve blueprint for id ' + blueprintId);
             },
             /**
           * @ngdoc method
@@ -917,6 +961,9 @@
                     { nodeId: id }
                 ])), 'Failed to check permission for item ' + id);
             },
+            getDetailedPermissions: function (contentId) {
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('contentApiBaseUrl', 'GetDetailedPermissions', { contentId: contentId })), 'Failed to retrieve permissions for content item ' + contentId);
+            },
             getPermissions: function (nodeIds) {
                 return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('contentApiBaseUrl', 'GetPermissions'), nodeIds), 'Failed to get permissions');
             },
@@ -949,7 +996,12 @@
           *
           */
             save: function (content, isNew, files) {
-                return saveContentItem(content, 'save' + (isNew ? 'New' : ''), files);
+                var endpoint = umbRequestHelper.getApiUrl('contentApiBaseUrl', 'PostSave');
+                return saveContentItem(content, 'save' + (isNew ? 'New' : ''), files, endpoint);
+            },
+            saveBlueprint: function (content, isNew, files) {
+                var endpoint = umbRequestHelper.getApiUrl('contentApiBaseUrl', 'PostSaveBlueprint');
+                return saveContentItem(content, 'save' + (isNew ? 'New' : ''), files, endpoint);
             },
             /**
           * @ngdoc method
@@ -980,7 +1032,8 @@
           *
           */
             publish: function (content, isNew, files) {
-                return saveContentItem(content, 'publish' + (isNew ? 'New' : ''), files);
+                var endpoint = umbRequestHelper.getApiUrl('contentApiBaseUrl', 'PostSave');
+                return saveContentItem(content, 'publish' + (isNew ? 'New' : ''), files, endpoint);
             },
             /**
           * @ngdoc method
@@ -1009,7 +1062,8 @@
           *
           */
             sendToPublish: function (content, isNew, files) {
-                return saveContentItem(content, 'sendPublish' + (isNew ? 'New' : ''), files);
+                var endpoint = umbRequestHelper.getApiUrl('contentApiBaseUrl', 'PostSave');
+                return saveContentItem(content, 'sendPublish' + (isNew ? 'New' : ''), files, endpoint);
             },
             /**
           * @ngdoc method
@@ -1036,6 +1090,12 @@
                     throw 'id cannot be null';
                 }
                 return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('contentApiBaseUrl', 'PostPublishById', [{ id: id }])), 'Failed to publish content with id ' + id);
+            },
+            createBlueprintFromContent: function (contentId, name) {
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('contentApiBaseUrl', 'CreateBlueprintFromContent', {
+                    contentId: contentId,
+                    name: name
+                })), 'Failed to create blueprint from content with id ' + contentId);
             }
         };
     }
@@ -1206,6 +1266,12 @@
                     parentId: parentId,
                     name: name
                 })), 'Failed to create a folder under parent id ' + parentId);
+            },
+            renameContainer: function (id, name) {
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('contentTypeApiBaseUrl', 'PostRenameContainer', {
+                    id: id,
+                    name: name
+                })), 'Failed to rename the folder with id ' + id);
             }
         };
     }
@@ -1217,9 +1283,15 @@
     * 
     *
     **/
-    function currentUserResource($q, $http, umbRequestHelper) {
+    function currentUserResource($q, $http, umbRequestHelper, umbDataFormatter) {
         //the factory object returned
         return {
+            performSetInvitedUserPassword: function (newPassword) {
+                if (!newPassword) {
+                    return angularHelper.rejectedPromise({ errorMsg: 'newPassword cannot be empty' });
+                }
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('currentUserApiBaseUrl', 'PostSetInvitedUserPassword'), angular.toJson(newPassword)), 'Failed to change password');
+            },
             /**
          * @ngdoc method
          * @name umbraco.resources.currentUserResource#changePassword
@@ -1232,18 +1304,11 @@
          *
          */
             changePassword: function (changePasswordArgs) {
+                changePasswordArgs = umbDataFormatter.formatChangePasswordModel(changePasswordArgs);
+                if (!changePasswordArgs) {
+                    throw 'No password data to change';
+                }
                 return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('currentUserApiBaseUrl', 'PostChangePassword'), changePasswordArgs), 'Failed to change password');
-            },
-            /**
-         * @ngdoc method
-         * @name umbraco.resources.currentUserResource#getMembershipProviderConfig
-         * @methodOf umbraco.resources.currentUserResource
-         *
-         * @description
-         * Gets the configuration of the user membership provider which is used to configure the change password form         
-         */
-            getMembershipProviderConfig: function () {
-                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('currentUserApiBaseUrl', 'GetMembershipProviderConfig')), 'Failed to retrieve membership provider config');
             }
         };
     }
@@ -1557,6 +1622,12 @@
                     parentId: parentId,
                     name: name
                 })), 'Failed to create a folder under parent id ' + parentId);
+            },
+            renameContainer: function (id, name) {
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('dataTypeApiBaseUrl', 'PostRenameContainer', {
+                    id: id,
+                    name: name
+                })), 'Failed to rename the folder with id ' + id);
             }
         };
     }
@@ -2644,7 +2715,7 @@
           * @methodOf umbraco.resources.mediaResource
           *
           * @description
-          * Empties the media recycle bin
+          * Paginated search for media items starting on the supplied nodeId
           *
           * ##usage
           * <pre>
@@ -2657,7 +2728,7 @@
           * @param {string} query The search query
           * @param {int} pageNumber The page number
           * @param {int} pageSize The number of media items on a page
-          * @param {int} searchFrom Id to search from
+          * @param {int} searchFrom NodeId to search from (-1 for root)
           * @returns {Promise} resourcePromise object.
           *
           */
@@ -2796,6 +2867,12 @@
                     parentId: parentId,
                     name: name
                 })), 'Failed to create a folder under parent id ' + parentId);
+            },
+            renameContainer: function (id, name) {
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('mediaTypeApiBaseUrl', 'PostRenameContainer', {
+                    id: id,
+                    name: name
+                })), 'Failed to rename the folder with id ' + id);
             }
         };
     }
@@ -3055,6 +3132,14 @@
         };
     }
     angular.module('umbraco.resources').factory('memberTypeResource', memberTypeResource);
+    angular.module('umbraco.resources').factory('Umbraco.PropertyEditors.NestedContent.Resources', function ($q, $http, umbRequestHelper) {
+        return {
+            getContentTypes: function () {
+                var url = Umbraco.Sys.ServerVariables.umbracoSettings.umbracoPath + '/backoffice/UmbracoApi/NestedContent/GetContentTypes';
+                return umbRequestHelper.resourcePromise($http.get(url), 'Failed to retrieve content types');
+            }
+        };
+    });
     /**
     * @ngdoc service
     * @name umbraco.resources.ourPackageRepositoryResource
@@ -3347,6 +3432,10 @@
             /** Loads in the data to display the section list */
             getSections: function () {
                 return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('sectionApiBaseUrl', 'GetSections')), 'Failed to retrieve data for sections');
+            },
+            /** Loads in all available sections */
+            getAllSections: function () {
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('sectionApiBaseUrl', 'GetAllSections')), 'Failed to retrieve data for sections');
             }
         };
     }
@@ -3741,18 +3830,391 @@
     }
     angular.module('umbraco.resources').factory('treeResource', treeResource);
     /**
-    * @ngdoc service
-    * @name umbraco.resources.userResource
-    **/
-    function userResource($q, $http, umbDataFormatter, umbRequestHelper) {
-        return {
-            disableUser: function (userId) {
-                if (!userId) {
-                    throw 'userId not specified';
-                }
-                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('userApiBaseUrl', 'PostDisableUser', [{ userId: userId }])), 'Failed to disable the user ' + userId);
+ * @ngdoc service
+ * @name umbraco.resources.usersResource
+ * @function
+ *
+ * @description
+ * Used by the users section to get users and send requests to create, invite, delete, etc. users.
+ */
+    (function () {
+        'use strict';
+        function userGroupsResource($http, umbRequestHelper, $q, umbDataFormatter) {
+            function getUserGroupScaffold() {
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('userGroupsApiBaseUrl', 'GetEmptyUserGroup')), 'Failed to get the user group scaffold');
             }
-        };
-    }
-    angular.module('umbraco.resources').factory('userResource', userResource);
+            function saveUserGroup(userGroup, isNew) {
+                if (!userGroup) {
+                    throw 'userGroup not specified';
+                }
+                //need to convert the user data into the correctly formatted save data - it is *not* the same and we don't want to over-post
+                var formattedSaveData = umbDataFormatter.formatUserGroupPostData(userGroup, 'save' + (isNew ? 'New' : ''));
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('userGroupsApiBaseUrl', 'PostSaveUserGroup'), formattedSaveData), 'Failed to save user group');
+            }
+            function getUserGroup(id) {
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('userGroupsApiBaseUrl', 'GetUserGroup', { id: id })), 'Failed to retrieve data for user group ' + id);
+            }
+            function getUserGroups(args) {
+                if (!args) {
+                    args = { onlyCurrentUserGroups: true };
+                }
+                if (args.onlyCurrentUserGroups === undefined || args.onlyCurrentUserGroups === null) {
+                    args.onlyCurrentUserGroups = true;
+                }
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('userGroupsApiBaseUrl', 'GetUserGroups', args)), 'Failed to retrieve user groups');
+            }
+            function deleteUserGroups(userGroupIds) {
+                var query = 'userGroupIds=' + userGroupIds.join('&userGroupIds=');
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('userGroupsApiBaseUrl', 'PostDeleteUserGroups', query)), 'Failed to delete user groups');
+            }
+            var resource = {
+                saveUserGroup: saveUserGroup,
+                getUserGroup: getUserGroup,
+                getUserGroups: getUserGroups,
+                getUserGroupScaffold: getUserGroupScaffold,
+                deleteUserGroups: deleteUserGroups
+            };
+            return resource;
+        }
+        angular.module('umbraco.resources').factory('userGroupsResource', userGroupsResource);
+    }());
+    /**
+ * @ngdoc service
+ * @name umbraco.resources.usersResource
+ * @function
+ *
+ * @description
+ * Used by the users section to get users and send requests to create, invite, disable, etc. users.
+ */
+    (function () {
+        'use strict';
+        function usersResource($http, umbRequestHelper, $q, umbDataFormatter) {
+            /**
+          * @ngdoc method
+          * @name umbraco.resources.usersResource#clearAvatar
+          * @methodOf umbraco.resources.usersResource
+          *
+          * @description
+          * Deletes the user avatar
+          *
+          * ##usage
+          * <pre>
+          * usersResource.clearAvatar(1)
+          *    .then(function() {
+          *        alert("avatar is gone");
+          *    });
+          * </pre>
+          * 
+          * @param {Array} id id of user.
+          * @returns {Promise} resourcePromise object.
+          *
+          */
+            function clearAvatar(userId) {
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('userApiBaseUrl', 'PostClearAvatar', { id: userId })), 'Failed to clear the user avatar ' + userId);
+            }
+            /**
+          * @ngdoc method
+          * @name umbraco.resources.usersResource#disableUsers
+          * @methodOf umbraco.resources.usersResource
+          *
+          * @description
+          * Disables a collection of users
+          *
+          * ##usage
+          * <pre>
+          * usersResource.disableUsers([1, 2, 3, 4, 5])
+          *    .then(function() {
+          *        alert("users were disabled");
+          *    });
+          * </pre>
+          * 
+          * @param {Array} ids ids of users to disable.
+          * @returns {Promise} resourcePromise object.
+          *
+          */
+            function disableUsers(userIds) {
+                if (!userIds) {
+                    throw 'userIds not specified';
+                }
+                //we need to create a custom query string for the usergroup array, so create it now and we can append the user groups if needed
+                var qry = 'userIds=' + userIds.join('&userIds=');
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('userApiBaseUrl', 'PostDisableUsers', qry)), 'Failed to disable the users ' + userIds.join(','));
+            }
+            /**
+          * @ngdoc method
+          * @name umbraco.resources.usersResource#enableUsers
+          * @methodOf umbraco.resources.usersResource
+          *
+          * @description
+          * Enables a collection of users
+          *
+          * ##usage
+          * <pre>
+          * usersResource.enableUsers([1, 2, 3, 4, 5])
+          *    .then(function() {
+          *        alert("users were enabled");
+          *    });
+          * </pre>
+          * 
+          * @param {Array} ids ids of users to enable.
+          * @returns {Promise} resourcePromise object.
+          *
+          */
+            function enableUsers(userIds) {
+                if (!userIds) {
+                    throw 'userIds not specified';
+                }
+                //we need to create a custom query string for the usergroup array, so create it now and we can append the user groups if needed
+                var qry = 'userIds=' + userIds.join('&userIds=');
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('userApiBaseUrl', 'PostEnableUsers', qry)), 'Failed to enable the users ' + userIds.join(','));
+            }
+            /**
+          * @ngdoc method
+          * @name umbraco.resources.usersResource#unlockUsers
+          * @methodOf umbraco.resources.usersResource
+          *
+          * @description
+          * Unlocks a collection of users
+          *
+          * ##usage
+          * <pre>
+          * usersResource.unlockUsers([1, 2, 3, 4, 5])
+          *    .then(function() {
+          *        alert("users were unlocked");
+          *    });
+          * </pre>
+          * 
+          * @param {Array} ids ids of users to unlock.
+          * @returns {Promise} resourcePromise object.
+          *
+          */
+            function unlockUsers(userIds) {
+                if (!userIds) {
+                    throw 'userIds not specified';
+                }
+                //we need to create a custom query string for the usergroup array, so create it now and we can append the user groups if needed
+                var qry = 'userIds=' + userIds.join('&userIds=');
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('userApiBaseUrl', 'PostUnlockUsers', qry)), 'Failed to enable the users ' + userIds.join(','));
+            }
+            /**
+          * @ngdoc method
+          * @name umbraco.resources.usersResource#setUserGroupsOnUsers
+          * @methodOf umbraco.resources.usersResource
+          *
+          * @description
+          * Overwrites the existing user groups on a collection of users
+          *
+          * ##usage
+          * <pre>
+          * usersResource.setUserGroupsOnUsers(['admin', 'editor'], [1, 2, 3, 4, 5])
+          *    .then(function() {
+          *        alert("users were updated");
+          *    });
+          * </pre>
+          * 
+          * @param {Array} userGroupAliases aliases of user groups.
+          * @param {Array} ids ids of users to update.
+          * @returns {Promise} resourcePromise object.
+          *
+          */
+            function setUserGroupsOnUsers(userGroups, userIds) {
+                var userGroupAliases = userGroups.map(function (o) {
+                    return o.alias;
+                });
+                var query = 'userGroupAliases=' + userGroupAliases.join('&userGroupAliases=') + '&userIds=' + userIds.join('&userIds=');
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('userApiBaseUrl', 'PostSetUserGroupsOnUsers', query)), 'Failed to set user groups ' + userGroupAliases.join(',') + ' on the users ' + userIds.join(','));
+            }
+            /**
+          * @ngdoc method
+          * @name umbraco.resources.usersResource#getPagedResults
+          * @methodOf umbraco.resources.usersResource
+          *
+          * @description
+          * Get users
+          *
+          * ##usage
+          * <pre>
+          * usersResource.getPagedResults({pageSize: 10, pageNumber: 2})
+          *    .then(function(data) {
+          *        var users = data.items;
+          *        alert('they are here!');
+          *    });
+          * </pre>
+          * 
+          * @param {Object} options optional options object
+          * @param {Int} options.pageSize if paging data, number of users per page, default = 25
+          * @param {Int} options.pageNumber if paging data, current page index, default = 1
+          * @param {String} options.filter if provided, query will only return those with names matching the filter
+          * @param {String} options.orderDirection can be `Ascending` or `Descending` - Default: `Ascending`
+          * @param {String} options.orderBy property to order users by, default: `Username`
+          * @param {Array} options.userGroups property to filter users by user group
+          * @param {Array} options.userStates property to filter users by user state
+          * @returns {Promise} resourcePromise object containing an array of content items.
+          *
+          */
+            function getPagedResults(options) {
+                var defaults = {
+                    pageSize: 25,
+                    pageNumber: 1,
+                    filter: '',
+                    orderDirection: 'Ascending',
+                    orderBy: 'Username',
+                    userGroups: [],
+                    userStates: []
+                };
+                if (options === undefined) {
+                    options = {};
+                }
+                //overwrite the defaults if there are any specified
+                angular.extend(defaults, options);
+                //now copy back to the options we will use
+                options = defaults;
+                //change asc/desct
+                if (options.orderDirection === 'asc') {
+                    options.orderDirection = 'Ascending';
+                } else if (options.orderDirection === 'desc') {
+                    options.orderDirection = 'Descending';
+                }
+                var params = {
+                    pageNumber: options.pageNumber,
+                    pageSize: options.pageSize,
+                    orderBy: options.orderBy,
+                    orderDirection: options.orderDirection,
+                    filter: options.filter
+                };
+                //we need to create a custom query string for the usergroup array, so create it now and we can append the user groups if needed
+                var qry = umbRequestHelper.dictionaryToQueryString(params);
+                if (options.userGroups.length > 0) {
+                    //we need to create a custom query string for an array
+                    qry += '&userGroups=' + options.userGroups.join('&userGroups=');
+                }
+                if (options.userStates.length > 0) {
+                    //we need to create a custom query string for an array
+                    qry += '&userStates=' + options.userStates.join('&userStates=');
+                }
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('userApiBaseUrl', 'GetPagedUsers', qry)), 'Failed to retrieve users paged result');
+            }
+            /**
+          * @ngdoc method
+          * @name umbraco.resources.usersResource#getUser
+          * @methodOf umbraco.resources.usersResource
+          *
+          * @description
+          * Gets a user
+          *
+          * ##usage
+          * <pre>
+          * usersResource.getUser(1)
+          *    .then(function(user) {
+          *        alert("It's here");
+          *    });
+          * </pre>
+          * 
+          * @param {Array} id user id.
+          * @returns {Promise} resourcePromise object containing the user.
+          *
+          */
+            function getUser(userId) {
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('userApiBaseUrl', 'GetById', { id: userId })), 'Failed to retrieve data for user ' + userId);
+            }
+            /**
+          * @ngdoc method
+          * @name umbraco.resources.usersResource#createUser
+          * @methodOf umbraco.resources.usersResource
+          *
+          * @description
+          * Creates a new user
+          *
+          * ##usage
+          * <pre>
+          * usersResource.createUser(user)
+          *    .then(function(newUser) {
+          *        alert("It's here");
+          *    });
+          * </pre>
+          * 
+          * @param {Object} user user to create
+          * @returns {Promise} resourcePromise object containing the new user.
+          *
+          */
+            function createUser(user) {
+                if (!user) {
+                    throw 'user not specified';
+                }
+                //need to convert the user data into the correctly formatted save data - it is *not* the same and we don't want to over-post
+                var formattedSaveData = umbDataFormatter.formatUserPostData(user);
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('userApiBaseUrl', 'PostCreateUser'), formattedSaveData), 'Failed to save user');
+            }
+            /**
+          * @ngdoc method
+          * @name umbraco.resources.usersResource#inviteUser
+          * @methodOf umbraco.resources.usersResource
+          *
+          * @description
+          * Creates and sends an email invitation to a new user
+          *
+          * ##usage
+          * <pre>
+          * usersResource.inviteUser(user)
+          *    .then(function(newUser) {
+          *        alert("It's here");
+          *    });
+          * </pre>
+          * 
+          * @param {Object} user user to invite
+          * @returns {Promise} resourcePromise object containing the new user.
+          *
+          */
+            function inviteUser(user) {
+                if (!user) {
+                    throw 'user not specified';
+                }
+                //need to convert the user data into the correctly formatted save data - it is *not* the same and we don't want to over-post
+                var formattedSaveData = umbDataFormatter.formatUserPostData(user);
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('userApiBaseUrl', 'PostInviteUser'), formattedSaveData), 'Failed to invite user');
+            }
+            /**
+          * @ngdoc method
+          * @name umbraco.resources.usersResource#saveUser
+          * @methodOf umbraco.resources.usersResource
+          *
+          * @description
+          * Saves a user
+          *
+          * ##usage
+          * <pre>
+          * usersResource.saveUser(user)
+          *    .then(function(updatedUser) {
+          *        alert("It's here");
+          *    });
+          * </pre>
+          * 
+          * @param {Object} user object to save
+          * @returns {Promise} resourcePromise object containing the updated user.
+          *
+          */
+            function saveUser(user) {
+                if (!user) {
+                    throw 'user not specified';
+                }
+                //need to convert the user data into the correctly formatted save data - it is *not* the same and we don't want to over-post
+                var formattedSaveData = umbDataFormatter.formatUserPostData(user);
+                return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('userApiBaseUrl', 'PostSaveUser'), formattedSaveData), 'Failed to save user');
+            }
+            var resource = {
+                disableUsers: disableUsers,
+                enableUsers: enableUsers,
+                unlockUsers: unlockUsers,
+                setUserGroupsOnUsers: setUserGroupsOnUsers,
+                getPagedResults: getPagedResults,
+                getUser: getUser,
+                createUser: createUser,
+                inviteUser: inviteUser,
+                saveUser: saveUser,
+                clearAvatar: clearAvatar
+            };
+            return resource;
+        }
+        angular.module('umbraco.resources').factory('usersResource', usersResource);
+    }());
 }());
