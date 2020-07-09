@@ -30,12 +30,10 @@
             </div>
 
             <div id="sortingDone" style="display: none;" class="success">
-                <p>
+                <div class="alert alert-success">
                     <asp:Literal runat="server" ID="sortDone"></asp:Literal>
-                </p>
-                <p>
-                    <a href="#" onclick="UmbClientMgr.closeModalWindow()"><%= umbraco.ui.Text("defaultdialogs", "closeThisWindow")%></a>
-                </p>
+                </div>
+                <button class="btn btn-primary" onclick="UmbClientMgr.closeModalWindow()"><%= umbraco.ui.Text("general", "ok")%></button>
             </div>
 
             <div id="sortArea">
@@ -47,9 +45,9 @@
                     <table id="sortableNodes">
                         <thead>
                             <tr>
-                                <th style="width: 100%">Name</th>
-                                <th class="nowrap" style="display: <%=HideDateColumn ? "none;" : "block;" %>">Creation date</th>
-                                <th class="nowrap">Sort order</th>
+                                <th style="width: 100%"><%= umbraco.ui.Text("general", "name") %></th>
+                                <th class="nowrap" style="display: <%= HideDateColumn ? "none" : "table-cell" %>;"><%= umbraco.ui.Text("sort", "sortCreationDate") %></th>
+                                <th class="nowrap"><%= umbraco.ui.Text("sort", "sortOrder") %></th>
                             </tr>
                         </thead>
                         <tbody>

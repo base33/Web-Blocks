@@ -2,8 +2,10 @@
 
 @{
     CurrentBlockContext.CssClasses.Add("hero-slide");
-    
-    var imageUrl = Umbraco.Media(@CurrentBlock.image).Url;
+
+    var mediaItem = Umbraco.TypedMedia(CurrentBlock.GetPropertyValue<int>("image"));
+    var imageUrl = mediaItem != null ? mediaItem.Url : "";
+
     var imageResized = imageUrl + "?width=375&height=150&mode=crop";
 
     <img alt="Slide" src="@imageResized" />

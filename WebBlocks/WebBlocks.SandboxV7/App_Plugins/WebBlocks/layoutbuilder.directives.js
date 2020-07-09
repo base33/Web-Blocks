@@ -51,6 +51,7 @@ angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
                         elem.removeAttr(this.name);
                     }
                 });
+                //assign all block attributes
                 for (var i = 0; i < block.ViewModel.Attributes.length; i++) {
                     var attribute = block.ViewModel.Attributes[i];
                     attr.$set(attribute.Name, attribute.Value);
@@ -58,11 +59,14 @@ angular.module("umbraco.directives").directive("wbBlock", function ($compile) {
                 attr.$set("class", "");
                 var blockClasses = block.ViewModel.Classes;
                 if (block instanceof WebBlocks.LayoutBuilder.WysiwygBlock) {
-                    blockClasses = "wbWysiwyg " + container.WysiwygClass + ((block.ViewModel.Html == "<p>&nbsp;</p>" || block.ViewModel.Html == "<p></p>" || block.ViewModel.Html == "") ? " wbWysiwygOff" : "");
+                    blockClasses = "wbWysiwyg " + container.WysiwygClass +
+                        ((block.ViewModel.Html == "<p>&nbsp;</p>" || block.ViewModel.Html == "<p></p>" || block.ViewModel.Html == "") ? " wbWysiwygOff" : "");
                 }
                 //add all block classes
                 elem.addClass(blockClasses);
-                block.ViewModel.Html = block.ViewModel.Html.substr(0, 16) == "Block Exception:" ? "<p>" + block.ViewModel.Html + "<p>" : block.ViewModel.Html;
+                block.ViewModel.Html = block.ViewModel.Html.substr(0, 16) == "Block Exception:" ?
+                    "<p>" + block.ViewModel.Html + "<p>" :
+                    block.ViewModel.Html;
                 var innerContent = $(block.ViewModel.Html);
                 //empty the block element
                 $(elem).empty();
@@ -171,5 +175,5 @@ angular.module('umbraco.directives').directive('wbIframeOnLoad', function ($pars
 //            });
 //        }
 //    };
-//}); 
+//});
 //# sourceMappingURL=layoutbuilder.directives.js.map

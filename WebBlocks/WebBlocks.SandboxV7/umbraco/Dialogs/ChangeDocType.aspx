@@ -19,7 +19,7 @@
     .umb-dialog .umb-control-group .umb-el-wrap { overflow: hidden; }
     .umb-dialog .umb-control-group .umb-el-wrap label { float: left; width: 140px; font-weight: bold; }
     .umb-dialog .umb-control-group .umb-el-wrap label:after { content:":"; }
-    .umb-dialog .umb-control-group .umb-el-wrap .controls-row { float: left; width: 280px; padding-top: 8px; }
+    .umb-dialog .umb-control-group .umb-el-wrap .controls-row { float: left; width: 280px; padding-bottom: 8px; }
     .umb-dialog .umb-control-group .umb-el-wrap .controls-row select { width: auto; }
     </style>
 
@@ -108,16 +108,13 @@
         </div>
     </asp:PlaceHolder>
 
-    <asp:PlaceHolder ID="SaveAndCancelPlaceholder" runat="server">
-        <br />
-        <p>
+    <div class="btn-toolbar umb-btn-toolbar">
+        <asp:PlaceHolder ID="SaveAndCancelPlaceholder" runat="server">
+            <a href="#" class="btn btn-link" onclick="UmbClientMgr.closeModalWindow()"><%=umbraco.ui.Text("cancel")%></a>
             <asp:PlaceHolder ID="SavePlaceholder" runat="server">        
-                <asp:Button ID="ValidateAndSave" runat="server" OnClick="ValidateAndSave_Click" />
-                <em> <%= umbraco.ui.Text("or") %> </em>
-            </asp:PlaceHolder>        
-            <a href="#" style="color: blue" onclick="UmbClientMgr.closeModalWindow()"><%=umbraco.ui.Text("general", "cancel", this.getUser())%></a>  
-        </p>
-    </asp:PlaceHolder>
-  
+                <asp:Button ID="ValidateAndSave" runat="server" CssClass="btn btn-primary" Text="Create" OnClick="ValidateAndSave_Click"></asp:Button>
+            </asp:PlaceHolder>
+        </asp:Placeholder>
+    </div>
+     
 </asp:Content>
-  
