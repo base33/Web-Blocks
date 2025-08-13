@@ -1,19 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Umbraco.Core;
-using Umbraco.Core.Models;
-using Umbraco.Core.Services;
-using Umbraco.Web;
-using Umbraco.Web.Models;
-using WebBlocks.BusinessLogic.Interfaces;
-using umbraco.MacroEngines;
-using umbraco.NodeFactory;
-using umbraco.cms.businesslogic.macro;
 using System.Web.Mvc.Html;
-using WebBlocks.Utilities.WebBlocks;
+using WebBlocks.BusinessLogic.Interfaces;
 
 namespace WebBlocks.Views.RenderingEngines
 {
@@ -29,7 +18,10 @@ namespace WebBlocks.Views.RenderingEngines
             }
             catch(Exception ex)
             {
-                return HttpUtility.HtmlEncode("Block Exception:" + ex.ToString());
+                if (HttpContext.Current.IsDebuggingEnabled)
+                    return HttpUtility.HtmlEncode("Block Exception: " + ex);
+                else
+                    return string.Empty;
             }
         }
     }
